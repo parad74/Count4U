@@ -922,9 +922,6 @@
       <LastGenOutput>Model8.cs</LastGenOutput>
       <DependentUpon>Count4UDB.edmx</DependentUpon>
     </Content>
-    <Content Include="op.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="ImportData\Branch\BranchCode1_1\ImportIturBitTest.txt" />
     <Content Include="ImportData\Branch\BranchCode1_1\ImportIturDocTest.txt" />
     <Content Include="ImportData\Branch\BranchCode1_1\ImportIturTest.txt" />
