@@ -649,7 +649,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ReportTemplate\ReportLinkScript\AuditReportLinkScript.txt" />
-    <Content Include="ReportTemplate\ReportLinkScript\MainReportLinkScript27032022.txt" />
     <Content Include="ReportTemplate\ReportLinkScript\MainReportLinkScript.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
