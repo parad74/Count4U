@@ -1,0 +1,1523 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A511450D-26CB-4D17-92B1-4C9A331B5290}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Count4U.Model</RootNamespace>
+    <AssemblyName>Count4U.Model.ExportImport</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.85.0.0, Culture=neutral, PublicKeyToken=fd1eb21b62ae805b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data, Version=5.0.1450.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Devart.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Devart.Data.SQLite, Version=5.5.658.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Devart.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Devart.Data.SQLite.Design, Version=5.5.658.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Devart.Data.SQLite.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.SQLite.Vs, Version=5.5.658.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Devart.Data.SQLite.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.PrivateDeployment.6.2.0.1\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ErikEJ.SqlCe40, Version=2.1.6.14, Culture=neutral, PublicKeyToken=03b0b5a60fec3719, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErikEJ.SqlCeBulkCopy.2.1.6.15\lib\net40\ErikEJ.SqlCe40.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="FastMember.Signed, Version=1.0.0.9, Culture=neutral, PublicKeyToken=9e8f22703bef9a29, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\FastMember.Signed.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Lib\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\Lib\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\Lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\Lib\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Salient.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=03b0b5a60fec3719, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErikEJ.SqlCeBulkCopy.2.1.6.15\lib\net40\Salient.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLite.Designer">
+      <HintPath>..\Lib\SQLite.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SQLite, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.PrivateDeployment.6.2.0.1\lib\net45\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseImportEFRepository.cs" />
+    <Compile Include="BaseExportFileRepository.cs" />
+    <Compile Include="BaseImportADORepository.cs" />
+    <Compile Include="BaseProvider.cs" />
+    <Compile Include="BaseCopyBulkRepository.cs" />
+    <Compile Include="BaseExportERPProvider.cs" />
+    <Compile Include="ExportProvider\Catalog\ExportCatalogPdaMISFileProvider.cs" />
+    <Compile Include="ExportProvider\Catalog\ExportCatalogPdaHt630FileProvider.cs" />
+    <Compile Include="ExportProvider\Config\ExportCustomerMISConfigToFileProvider.cs" />
+    <Compile Include="ExportProvider\Config\ExportCustomerConfigToFileProvider.cs" />
+    <Compile Include="ExportProvider\Config\ExportUserIniToFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Honigman\ExportInventProducAS400HonigmanERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Jafora\ExportInventProductAS400JaforaERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Leumit\ExportInventProductAS400LeumitERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Leumit\ExportInventProductAS400LeumitERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\AvivMulti\ExportInventProductAvivMultiERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AvivMulti\ExportInventProductAvivMultiERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\AvivPOS\ExportInventProductAvivPOSERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Clalit\ExportInventProductClalitXlsxTemplateProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Comax\ExportInventProductComaxERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400AmericanEagle\ExportInventProducAS400AmericanEagleERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400AmericanEagle\ExportInventProductAS400AmericanEagleERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Jafora\ExportInventProductAS400JaforaERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Jafora\ExportInventProductAS400JaforaERPFileProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400April\ExportInventProductAS400AprilERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400April\ExportInventProductAS400AprilERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\BazanCsv\ExportInventProductBazanCsvERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Mango\ExportInventProducAS400MangoERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Mango\ExportInventProductAS400MangoERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Honigman\ExportInventProducAS400HonigmanERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Honigman\ExportInventProducAS400HonigmanERPFileProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Mega\ExportInventProducAS400MegaERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Mega\ExportInventProductAS400MegaERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Hamashbir\ExportInventProductAS400HamashbirERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Hamashbir\ExportInventProductAS400HamashbirERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Ho\ExportInventProductAS400HoFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Ho\ExportInventProductAS400HoFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\AS400Ho\ExportInventProductAS400HoFileProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativExportErp\ExportInventProductNativExportErpFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Nesher\ExportInventProductNesherERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityRenuar\ExportInventProductPriorityRenuarERPFileProvider_TM.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityRenuar\ExportInventProductPriorityRenuarERPFileProvider_TW.cs" />
+    <Compile Include="ExportProvider\InventProduct\YtungXslx\ExportInventProductYtungXslxFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\OrenMutagim\ExportInventProductOrenMutagimERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\GazitLeeCooper\ExportInventProductGazitLeeCooperERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\MerkavaGov\ExportInventProductMerkavaGovProvider2_1.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlusLadpcXslx\ExportInventProductNativPlusLadpcCsvProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlusLadpcXslx\ExportInventProductNativPlusLadpcXslxProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlusMateAsher\ExportInventProductNativPlusMateAsherProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlusMisradApnim\ExportInventProductNativPlusMisradApnimProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlusYes\ExportInventProductNativPlusYesProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlusYes\ExportInventProductNativPlusYesProvider1_Q.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlusYes\ExportInventProductNativPlusYesProvider1_SN.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlusYes\ExportInventProductNativPlusYesProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\H_M\ExportInventProductH_M_NewERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlus\ExportInventProductNativPlusProvider1_SN.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlus\ExportInventProductNativPlusProvider1_Q.cs" />
+    <Compile Include="ExportProvider\InventProduct\NimrodAviv\ExportInventProductNimrodAvivERPFileProvider3.cs" />
+    <Compile Include="ExportProvider\InventProduct\StockSonigoXslx\ExportInventProductStockSonigoXslxProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\XtechMeuhedetXlsx\ExportInventProductXtechMeuhedetXlsxFileProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\XtechMeuhedetXlsx\ExportInventProductXtechMeuhedetXlsxFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\XtechMeuhedetXlsx\ExportInventProductXtechMeuhedetXlsxFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\GeneralXslx\ExportInventProductGeneralXslxFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Merkava\ExportInventProductMerkavaProvider5.cs" />
+    <Compile Include="ExportProvider\InventProduct\Merkava\ExportInventProductMerkavaProvider4.cs" />
+    <Compile Include="ExportProvider\InventProduct\Merkava\ExportInventProductMerkavaProvider3.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlus\ExportInventProductNativPlusProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\NativPlus\ExportInventProductNativPlusProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityAldo\ExportInventProductPriorityAldoERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\PrioritySweetGirlXlsx\ExportInventProductPrioritySweetGirlXlsxErpFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\PrioritySweetGirlXlsx\ExportInventProductPrioritySweetGirlXlsxErpFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Unizag\ExportInventProductUnizagERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\YellowPaz\ExportInventProductYellowPazERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Nativ\ExportInventProductNativProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\GazitVerifoneSteimaztzky\ExportInventProductGazitVerifoneSteimaztzkyERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\GazitVerifoneSteimaztzky\ExportInventProductGazitVerifoneSteimaztzkyERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Merkava\ExportInventProductMerkavaProvider2_2.cs" />
+    <Compile Include="ExportProvider\InventProduct\Merkava\ExportInventProductMerkavaProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Merkava\ExportInventProductMerkavaProvider2_1.cs" />
+    <Compile Include="ExportProvider\InventProduct\NikeInt\ExportInventProductNikeIntERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\NikeInt\ExportInventProductNikeIntERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Otech\ExportInventProductOtechERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Otech\ExportInventProductOtechERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Otech\ExportInventProductOtechERPFileProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\Otech\ExportInventProductOtechERPFileProvider_M.cs" />
+    <Compile Include="ExportProvider\InventProduct\Otech\ExportInventProductOtechERPFileProvider_T.cs" />
+    <Compile Include="ExportProvider\InventProduct\Otech\ExportInventProductOtechERPFileProvider_W.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityCastro\ExportInventProductPriorityCastroERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityCastro\ExportInventProductPriorityCastroERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Sapb1Xslx\ExportInventProductSapb1XslxERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Sapb1Xslx\ExportInventProductSapb1XslxERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Sapb1Zometsfarim\ExportInventProductSapb1ZometsfarimERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Sapb1Zometsfarim\ExportInventProductSapb1ZometsfarimERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\TafnitMatrix\ExportInventProductTafnitMatrixERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\TafnitMatrix\ExportInventProductTafnitMatrixERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\MPL\ExportInventProductMPLFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\MPL\ExportInventProductMPLFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\FRSVisionMirkam\ExportInventProductFRSVisionMirkamERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\FRSVisionMirkam\ExportInventProductFRSVisionMirkamERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Hash\ExportInventProductHashERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Hash\ExportInventProductHashERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityKedsShowRoom\ExportInventProductPriorityKedsShowRoomERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityKedsShowRoom\ExportInventProductPriorityKedsShowRoomERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\H_M\ExportInventProductH_MERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\NimrodAviv\ExportInventProductNimrodAvivERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\NimrodAviv\ExportInventProductNimrodAvivERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\NimrodAviv\ExportInventProductNimrodAvivERPFileProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\Nibit\ExportInventProductNibitERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Nibit\ExportInventProductNibitERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Made4Net\ExportInventProductMade4NetERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Made4Net\ExportInventProductMade4NetERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\LadyComfort\ExportInventProductLadyComfortERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\LadyComfort\ExportInventProductLadyComfortERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\MaccabiPharmSAP\ExportInventProductMaccabiPharmSAPERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\MaccabiPharmSAP\ExportInventProductMaccabiPharmSAPERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\MikiKupot\ExportInventProductMikiKupotERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\MiniSoft\ExportInventProductMiniSoftERPFileProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\One1\ExportInventProductOne1ERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\OrenOriginals\ExportInventProductOrenOriginalsERPFileProvider.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExportProvider\InventProduct\OrenOriginals\ExportInventProductOrenOriginalsERPFileProvider1.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExportProvider\InventProduct\OrenOriginals\ExportInventProductOrenOriginalsERPFileProvider2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ExportProvider\InventProduct\PriorityRenuar\ExportInventProductPriorityRenuarERPFileProvider_T.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityRenuar\ExportInventProductPriorityRenuarERPFileProvider_M.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityRenuar\ExportInventProductPriorityRenuarERPFileProvider_W.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityRenuar\ExportInventProductPriorityRenuarERPFileProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\RetalixNext\ExportInventProductRetalixNextERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\RetalixNext\ExportInventProductRetalixNextERPFileProvider0.cs" />
+    <Compile Include="ExportProvider\InventProduct\RetalixNext\ExportInventProductRetalixNextERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\GeneralCSV\ExportInventProductGeneralCSVERPFileProvider2.cs" />
+    <Compile Include="ExportProvider\InventProduct\MiniSoft\ExportInventProductMiniSoftERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\MiniSoft\ExportInventProductMiniSoftERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\RetalixPosHO\ExportInventProductRetalixPosHOERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\RetalixPosHO\ExportInventProductRetalixPosHOERPFileProvider0.cs" />
+    <Compile Include="ExportProvider\InventProduct\RetalixPosHO\ExportInventProductRetalixPosHOERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\MikramSonolSAP\ExportInventProductMikramSonolSAPERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\MikramSonolSAP\ExportInventProductMikramSonolSAPERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityKeds\ExportInventProductPriorityKedsRegularERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityKeds\ExportInventProductPriorityKedsMatrixERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityKeds\ExportInventProductPriorityKedsERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\MikramTen\ExportInventProductMikramTenERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\MikramTen\ExportInventProductMikramTenERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Gazit\ExportInventProductGazitERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\GeneralCSV\ExportInventProductGeneralCSVERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\GeneralCSV\ExportInventProductGeneralCSVERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\MikramSonol\ExportInventProductMikramSonolERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\MikramSonol\ExportInventProductMikramSonolERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\NetPOSSuperPharm\ExportInventProductNetPOSSuperPharmERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\NetPOSSuperPharm\ExportInventProductNetPOSSuperPharmERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityRenuar\ExportInventProductPriorityRenuarERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\PriorityRenuar\ExportInventProductPriorityRenuarERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Unizag\ExportInventProductUnizagERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\WarehouseXslx\ExportInventProductWarehouseXslxFileFormulaProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\WarehouseXslx\ExportInventProductWarehouseXslxFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\WarehouseXslx\ExportInventProductWarehouseXslxFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\XtechMeuhedet\ExportInventProductXtechMeuhedetERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\XtechMeuhedet\ExportInventProductXtechMeuhedetERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\InventProduct\Yarpa\ExportInventProductYarpaERPFileProvider.cs" />
+    <Compile Include="ExportProvider\InventProduct\Yarpa\ExportInventProductYarpaERPFileProvider1.cs" />
+    <Compile Include="ExportProvider\Itur\ExportIturPdaMISFileProvider.cs" />
+    <Compile Include="ExportProvider\Itur\ExportIturPdaHt630FileProvider.cs" />
+    <Compile Include="ExportProvider\Itur\ExportIturToFileProvider.cs" />
+    <Compile Include="ForwardProvider\InventProduct\Malam\ForwardInventProductMalamDataSetProvider.cs" />
+    <Compile Include="ForwardProvider\InventProduct\Malam\ForwardInventProductMalamFileProvider.cs" />
+    <Compile Include="ForwardProvider\InventProduct\Malam\Malam.cs" />
+    <Compile Include="ImportProvider\Branch\AS400Honigman\ImportBranchAS400HonigmanProvider.cs" />
+    <Compile Include="ImportProvider\Branch\AS400Leumit\ImportBranchAS400LeumitProvider.cs" />
+    <Compile Include="ImportProvider\Branch\XtechMeuhedetXlsx\ImportBranchXtechMeuhedetXlsxProvider.cs" />
+    <Compile Include="ImportProvider\Branch\DefautXlsx\ImportBranchDefautXlsxProvider.cs" />
+    <Compile Include="ImportProvider\Branch\PriorityCastro\ImportBranchPriorityCastroProvider.cs" />
+    <Compile Include="ImportProvider\Branch\MikramSonol\ImportBranchMikramSonolProvider.cs" />
+    <Compile Include="ImportProvider\BuildingConfig\ClalitXslx\ImportBuildingConfigClalitXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\BuildingConfig\NativXslx\ImportBuildingConfigNativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\BuildingConfig\MerkavaXslx\ImportBuildingConfigMerkavaXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400AmericanEagle\ImportCatalogAS400AmericanEagleADOProvider3.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400AmericanEagle\ImportCatalogAS400AmericanEagleADOProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Hamashbir\ImportCatalogAS400HamashbirUpdateERPQuentetyProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Hamashbir\ImportCatalogAS400HamashbirUpdateERPQuentetyProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Hamashbir\ImportCatalogAS400HamashbirUpdateERPQuentetyProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Honigman\ImportCatalogAS400HonigmanProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Honigman\ImportCatalogAS400HonigmanProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Honigman\ImportCatalogAS400HonigmanProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Ho\ImportCatalogAS400HoProvider2_1.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Leumit\ImportCatalogAS400LeumitADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Leumit\ImportCatalogAS400LeumitADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Leumit\ImportCatalogAS400LeumitUpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Autosoft\ImportCatalogAutosoftProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Autosoft\ImportCatalogAutosoftProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\Autosoft\ImportCatalogAutosoftProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AvivMulti\ImportCatalogAvivMultiADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AvivMulti\ImportCatalogAvivMultiADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AvivMulti\ImportCatalogAvivMultiUpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AvivPOS\ImportCatalogAvivPOSADOProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\AvivPOS\ImportCatalogAvivPOSADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AvivPOS\ImportCatalogAvivPOSADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AvivPOS\ImportCatalogAvivPOSUpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400AmericanEagle\ImportCatalogAS400AmericanEagleADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400AmericanEagle\ImportCatalogAS400AmericanEagleADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\ClalitXslx\ImportCatalogClalitXslxProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\ComaxASPMultiBarcode\ImportCatalogComaxASPMultiBarcodeADOProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\ComaxASPMultiBarcode\ImportCatalogComaxASPMultiBarcodeADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\ComaxASPMultiBarcode\ImportCatalogComaxASPMultiBarcodeADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Jafora\ImportCatalogAS400JaforaProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400April\ImportCatalogAS400AprilProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400April\ImportCatalogAS400AprilProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400April\ImportCatalogAS400AprilUpdateERPQuentetyProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\BazanCsv\ImportCatalogBazanCsvProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Mango\ImportCatalogAS400MangoProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Mango\ImportCatalogAS400MangoProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Mega\ImportCatalogAS400MegaProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Mega\ImportCatalogAS400MegaProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Mega\ImportCatalogAS400MegaUpdateERPQuentetyProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Hamashbir\ImportCatalogAS400HamashbirProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Hamashbir\ImportCatalogAS400HamashbirProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Ho\ImportCatalogAS400HoProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Ho\ImportCatalogAS400HoProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\AS400Ho\ImportCatalogAS400HoProvider2_2.cs" />
+    <Compile Include="ImportProvider\Catalog\Nesher\ImportCatalogBazanCsvProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\YtungXlsx\ImportCatalogYtungXlsxProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\GazitGlobalXlsx\ImportCatalogGazitGlobalXlsxProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\GazitLeeCooper\ImportCatalogGazitLeeCooperProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\GazitLeeCooper\ImportCatalogGazitLeeCooperProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\GeneralXLSX\ImportCatalogGeneralXLSXUpdateERPQuentetyADOProvider2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImportProvider\Catalog\H_M\New\ImportCatalogH_M_NewProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\H_M\New\ImportCatalogH_M_NewProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\H_M\New\ImportCatalogH_M_NewProvider3.cs" />
+    <Compile Include="ImportProvider\Catalog\NativPlusLadpc\ImportCatalogNativPlusLadpcProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\OrenMutagim\ImportCatalogOrenMutagimProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\OrenMutagim\ImportCatalogOrenMutagimProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\PrioritytEsteeLouderXslx\ImportCatalogPrioritytEsteeLouderUpdateERPQuentetyProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\PrioritytEsteeLouderXslx\ImportCatalogPrioritytEsteeLouderXslxProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\ShalevetCsv\ImportCatalogShalevetCsvProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\XtechMeuhedetXLSX\ImportCatalogXtechMeuhedetXLSXProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\XtechMeuhedetXLSX\ImportCatalogXtechMeuhedetXLSXProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\XtechMeuhedetXLSX\ImportCatalogXtechMeuhedetXLSXProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\XtechMeuhedetXLSX\ImportCatalogXtechMeuhedetXLSXUpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\NativMISSqlite2Sdf\ImportCatalogNativMISSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\GazitAlufHaSportXlsx\ImportCatalogGazitAlufHaSportXlsxProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\NativXslx\ImportCatalogNativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\NativSqlite2Sdf\ImportCatalogNativSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\NativXslx\ImportCatalogNativXslxUpdateERPQuentetyProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\GazitVerifoneSteimaztzky\ImportCatalogGazitVerifoneSteimaztzkyProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\GazitVerifoneSteimaztzky\ImportCatalogGazitVerifoneSteimaztzkyProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\GazitVerifoneSteimaztzky\ImportCatalogGazitVerifoneSteimaztzkyUpdateERPQuentetyProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\PriorityAldo\ImportCatalogPriorityAldoProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\PriorityAldo\ImportCatalogPriorityAldoProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\PrioritySweetGirlXLSX\ImportCatalogPrioritySweetGirlXLSXProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Sapb1Zometsfarim\ImportCatalogSapb1ZometsfarimProvider3.cs" />
+    <Compile Include="ImportProvider\Catalog\Sapb1Zometsfarim\ImportCatalogSapb1ZometsfarimProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Sapb1Zometsfarim\ImportCatalogSapb1ZometsfarimProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Sapb1Zometsfarim\ImportCatalogSapb1ZometsfarimProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\Sapb1Zometsfarim\ImportCatalogSapb1ZometsfarimUpdateERPQuentetyProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\YesXlsx\ImportCatalogYesXslxProviderQ.cs" />
+    <Compile Include="ImportProvider\Catalog\YesXlsx\ImportCatalogYesXlsxProviderSN.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\BuildingConfig\Sdf2Sqlite\ImportBuildingConfigNativPlusMISSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Catalog\Sdf2Sqlite\ImportCatalogNativPlusMISSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\CurrentInventor\Sdf2Sqlite\ImportCurrentInventorNativPlusSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Location\Sdf2Sqlite\ImportLocationNativPlusMISSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\DocumentHeader\ImportDocumentHeaderAddSpetialDocToIturBlukProvider.cs" />
+    <Compile Include="ImportProvider\Family\H_M\ImportFamilyH_M_NewProvider.cs" />
+    <Compile Include="ImportProvider\Family\NativXslx\ImportFamilyNativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Itur\MultiCsv\ImportIturMultiCsvDelete9999999Provider.cs" />
+    <Compile Include="ImportProvider\Itur\MultiCsv\ImportIturMultiCsvProvider1.cs" />
+    <Compile Include="ImportProvider\Itur\MultiCsv\ImportIturMultiCsvProvider.cs" />
+    <Compile Include="ImportProvider\Itur\NativPlusLadpc\ImportIturNativPlusLadpcProvider1.cs" />
+    <Compile Include="ImportProvider\Itur\NativPlusLadpc\ImportIturNativPlusLadpcProvider9999.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ImportProvider\Location\MultiCsv\ImportLocationMultiCsvProvider.cs" />
+    <Compile Include="ImportProvider\Location\NativPlusLadpc\ImportLocationNativPlusLadpcProvider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductFromNativDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductMultiCsvProvider.cs" />
+    <Compile Include="ImportProvider\PDA\MerkavaXlsx\ImportInventProductMerkavaXlsxProviderQ.cs" />
+    <Compile Include="ImportProvider\PDA\MerkavaXlsx\ImportInventProductMerkavaXlsxProviderSN.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\BeforeCompare\ImportInventProductUpdate2SumByIturMakatSNumberProp10DbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\BeforeCompare\ImportInventProductUpdate2SumByIturBarcodeSNumberProp10DbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\UpdateFixMistake\ImportInventProductBulkUpdateProvider4.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\AfterCompare\ImportInventProductAfterCompareFromDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\Sqlite\ImportInventProductMISSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PDA\Sqlite\ImportInventProductNativPlusMISSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PreviousInventory\NativPlusLadpc\ImportPreviousInventoryNativPlusLadpcDbSetProvider.cs" />
+    <Compile Include="ImportProvider\Profile\ImportProfileXml2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Profile\NativXslx\ImportProfileNativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\BuildingConfig\Sdf2Sqlite\ImportBuildingConfigNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\BuildingConfig\Sdf2Sqlite\ImportBuildingConfigClalitSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\BuildingConfig\Sdf2Sqlite\ImportBuildingConfigMerkavaSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\BuildingConfig\Xslx2Sqlite\ImportBuildingConfigMerkavaSqliteXslxProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Catalog\Sdf2Sqlite\ImportCatalogNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Catalog\Sdf2Sqlite\ImportCatalogClalitSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Catalog\Sdf2Sqlite\ImportCatalogMerkavaSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Catalog\Xslx2Sqlite\ImportCatalogNativSqliteXslxProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Catalog\Xslx2Sqlite\ImportCatalogMerkavaSqliteXslxProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\MerkavaXslx\ImportCatalogMerkavaXslxProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\MerkavaXslx\ImportCatalogMerkavaXslxProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\MerkavaXslx\ImportCatalogMerkavaXslxUpdateERPQuentetyProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\NikeInt\ImportCatalogNikeIntProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\NikeInt\ImportCatalogNikeIntProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\NikeInt\ImportCatalogNikeIntProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\NikeInt\ImportCatalogNikeIntUpdateERPQuentetyProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Otech\ImportCatalogOtechProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\Otech\ImportCatalogOtechProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Otech\ImportCatalogOtechProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Otech\ImportCatalogOtechUpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\GeneralXLSX\ImportCatalogGeneralXLSXProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\GeneralXLSX\ImportCatalogGeneralXLSXProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\GeneralXLSX\ImportCatalogGeneralXLSXUpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\OrenOriginals\ImportCatalogOrenOriginalsProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\OrenOriginals\ImportCatalogOrenOriginalsUpdateERPQuentetyProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\PriorityCastro\ImportCatalogPriorityCastroProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\PriorityCastro\ImportCatalogPriorityCastroProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Sapb1Xslx\ImportCatalogSapb1XslxProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Sapb1Xslx\ImportCatalogSapb1XslxProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Sapb1Xslx\ImportCatalogSapb1XslxUpdateERPQuentetyProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\TafnitMatrix\ImportCatalogTafnitMatrixProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\TafnitMatrix\ImportCatalogTafnitMatrixUpdateERPQuentetyProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\TafnitMatrix\ImportCatalogTafnitMatrixProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\TafnitMatrix\ImportCatalogTafnitMatrixProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\MPL\ImportCatalogMPLProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\MPL\ImportCatalogMPLProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\MPL\ImportCatalogMPLProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\MPL\ImportCatalogMPLUpdateERPQuentetyProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\FRSVisionMirkam\ImportCatalogFRSVisionMirkamADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\FRSVisionMirkam\ImportCatalogFRSVisionMirkamADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Hash\ImportCatalogHashProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Hash\ImportCatalogHashProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Nibit\ImportCatalogNibitADOProvider0.cs" />
+    <Compile Include="ImportProvider\Catalog\PriorityKedsShowRoom\ImportCatalogPriorityKedsShowRoomProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\H_M\ImportCatalogH_MProvider3.cs" />
+    <Compile Include="ImportProvider\Catalog\H_M\ImportCatalogH_MProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\H_M\ImportCatalogH_MProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\H_M\ImportCatalogH_MProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\NimrodAviv\ImportCatalogNimrodAvivProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\NimrodAviv\ImportCatalogNimrodAvivProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\NimrodAviv\ImportCatalogNimrodAvivProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\OrenOriginals\ImportCatalogOrenOriginalsProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\OrenOriginals\ImportCatalogOrenOriginalsProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Nibit\ImportCatalogNibitADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Nibit\ImportCatalogNibitADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Nibit\ImportCatalogNibitUpdateERPQuentetyADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Made4Net\ImportCatalogMade4NetADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Made4Net\ImportCatalogMade4NetADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\LadyComfort\ImportCatalogLadyComfortADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\MaccabiPharmSAP\ImportCatalogMaccabiPharmSAPADOProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\MaccabiPharmSAP\ImportCatalogMaccabiPharmSAPADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\MaccabiPharmSAP\ImportCatalogMaccabiPharmSAPADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\MaccabiPharmSAP\ImportCatalogMaccabiPharmSAPUpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\MikiKupot\ImportCatalogMikiKupotProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\One1\ImportCatalogOne1ADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\One1\ImportCatalogOne1ADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\One1\ImportCatalogOne1UpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\RetalixNext\ImportCatalogRetalixNextADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\RetalixNext\ImportCatalogRetalixNextADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\RetalixNext\ImportCatalogRetalixNextBulkProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\RetalixNext\ImportCatalogRetalixNextUpdateERPQuentetyADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\MiniSoft\ImportCatalogPriorityRenuarADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\MiniSoft\ImportCatalogPriorityRenuarADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\NetPOSSuperPharm\ImportCatalogNetPOSSuperPharmBulkProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\PriorityKeds\ImportCatalogPriorityKedsADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\PriorityKeds\ImportCatalogPriorityKedsADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\PriorityKeds\ImportCatalogPriorityKedsUpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\MikramSonol\ImportCatalogMikramSonolADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\MikramSonol\ImportCatalogMikramSonolADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\MikramSonol\ImportCatalogMikramSonolUpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\GeneralCSV\ImportCatalogGeneralCSVUpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\GeneralCSV\ImportCatalogGeneralCSVADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\GeneralCSV\ImportCatalogGeneralCSVADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\RetalixPosHO\ImportCatalogRetalixPosHOADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\RetalixPosHO\ImportCatalogRetalixPosHOUpdateERPQuentetyADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Unizag\ImportCatalogUnizagADOProvider3.cs" />
+    <Compile Include="ImportProvider\Catalog\Unizag\ImportCatalogUnizagADOProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\WarehouseXslx\ImportCatalogWarehouseXslxProvider3.cs" />
+    <Compile Include="ImportProvider\Catalog\WarehouseXslx\ImportCatalogWarehouseXslxProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\WarehouseXslx\ImportCatalogWarehouseXslxProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\WarehouseXslx\ImportCatalogWarehouseXslxProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\YarpaWindows\ImportCatalogYarpaUpdateERPQuentetyWindowsADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\YarpaWindows\ImportCatalogYarpaUpdateERPQuentetyWindowsADOProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\YarpaWindows\ImportCatalogYarpaWindowsADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\YarpaWindows\ImportCatalogYarpaWindowsADOProvider1.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\CurrentInventor\Sdf2Sqlite\ImportCurrentInventorNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\CurrentInventor\Sdf2Sqlite\ImportCurrentInventorClalitSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\CurrentInventor\Sdf2Sqlite\ImportCurrentInventorMerkavaSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Itur\Sdf2Sqlite\ImportIturMerkavaSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Location\Sdf2Sqlite\ImportLocationNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Location\Sdf2Sqlite\ImportLocationClalitSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PreviousInventory\Sdf2Sqlite\ImportPreviousInventoryNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PreviousInventory\Sdf2Sqlite\ImportPreviousInventoryClalitSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Clalit\ImportPropertyStrListClalitSdf2SqliteProvider5.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Clalit\ImportPropertyStrListClalitSdf2SqliteProvider4.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Clalit\ImportPropertyStrListClalitSdf2SqliteProvider3.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Clalit\ImportPropertyStrListClalitSdf2SqliteProvider2.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Clalit\ImportPropertyStrListClalitSdf2SqliteProvider1.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Merkava\ImportPropertyStr18ListMerkavaSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Nativ\ImportPropertyStr9LisNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Nativ\ImportPropertyStr10LisNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Nativ\ImportPropertyStr3ListNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Nativ\ImportPropertyStr4LisNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Nativ\ImportPropertyStr5ListNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Nativ\ImportPropertyStr8LisNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Nativ\ImportPropertyStr1ListNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Nativ\ImportPropertyStr2LisNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Nativ\ImportPropertyStr6ListNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Nativ\ImportPropertyStr7LisNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\TemplateInventory\Sdf2Sqlite\ImportTemplateInventoryNativSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\DocumentHeader\ImportDocumentHeaderAddFristDocToIturBlukProvider.cs" />
+    <Compile Include="ImportProvider\DocumentHeader\ImportDocumentHeaderFromDBBlukProvider.cs" />
+    <Compile Include="ImportProvider\Family\AS400Hamashbir\ImportFamilyAS400HamashbirProvider.cs" />
+    <Compile Include="ImportProvider\Family\GeneralXLSX\ImportFamilyGeneralXLSXProvider.cs" />
+    <Compile Include="ImportProvider\Itur\Clalit\ImportIturClalitXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Itur\ImportIturFromDBBlukProvider.cs" />
+    <Compile Include="ImportProvider\Itur\Nativ\ImportIturNativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Itur\YesXslx\ImportIturYesXlsxProviderSN.cs" />
+    <Compile Include="ImportProvider\Itur\YesXslx\ImportIturYesXlsxProviderQ.cs" />
+    <Compile Include="ImportProvider\Location\Clalit\ImportLocationClalitXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Location\Clalit\ImportLocationUpdateClalitSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Location\Nativ\ImportLocationUpdateNativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Location\Nativ\ImportLocationNativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Location\Nativ\ImportLocationUpdateNativSimpleSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Location\Nativ\ImportLocationUpdateNativSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Location\Merkava\ImportLocationUpdateMerkavaSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Location\Sdf2Sqlite\ImportLocationMerkavaSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PreviousInventory\Sdf2Sqlite\ImportPreviousInventoryMerkavaSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PreviousInventory\Xslx2Sqlite\ImportPreviousInventoryMerkavaSqliteXslxProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Merkava\ImportPropertyStr6ListMerkavaSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Sdf2Sqlite\Merkava\ImportPropertyStr7ListMerkavaSdf2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Xslx2Sqlite\ImportPropertyStr7ListMerkavaSqliteXslxProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\PropertyStrList\Xslx2Sqlite\ImportPropertyStr6ListMerkavaSqliteXslxProvider.cs" />
+    <Compile Include="ImportProvider\Location\YesXslx\ImportLocationYesXlsxProviderSN.cs" />
+    <Compile Include="ImportProvider\Location\YesXslx\ImportLocationYesXlsxProviderQ.cs" />
+    <Compile Include="ImportProvider\PDA\YesXlsx\ImportInventProductYesXlsxProviderQ.cs" />
+    <Compile Include="ImportProvider\PDA\YesXlsx\ImportInventProductYesXlsxProviderSN.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\BeforeCompare\ImportInventProductUpdate2SumByIturBarcodeDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\UpdateKey2Code\ImportInventProductUpdate2BarcodeAndSNDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\BeforeCompare\ImportInventProductUpdate2SumByIturBarcodeSNumberDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\BeforeCompare\ImportInventProductUpdate2SumByIturMakatSNumberDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\UpdateKey2Code\ImportInventProductUpdateMakat2BarcodeDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\UpdateKey2Code\ImportInventProductUpdate2MakatAndSNDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\UpdateFixMistake\ImportInventProductUpdateBarcodeFromDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\Compare\ImportInventProductUpdateCompare2SumByIturMakatDbBulkProvider2.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\Compare\ImportInventProductUpdateCompare2SumByIturMakatDbBulkProvider1.cs" />
+    <Compile Include="ImportProvider\PDA\Sqlite\ImportInventProductNativPlusSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\BeforeCompare\ImportInventProductUpdate2SumByIturDocMakatDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\BeforeCompare\ImportInventProductUpdate2SumByIturMakatDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\ImportInventProductMinusByMakatFromDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\UpdateFixMistake\ImportInventProductBulkUpdateProvider3.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\UpdateFixMistake\ImportInventProductBulkUpdateProvider2.cs" />
+    <Compile Include="ImportProvider\PDA\SetOperation\UpdateFixMistake\ImportInventProductBulkUpdateProvider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductFromDbBulkProvider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductDefaultBackupProvider.cs" />
+    <Compile Include="ImportProvider\PDA\Sqlite\ImportInventProductNativSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PDA\Sqlite\ImportInventProductClalitSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PDA\Sqlite\ImportInventProductMerkavaSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PreviousInventory\Clalit\ImportPreviousInventoryClalitDbSetProvider.cs" />
+    <Compile Include="ImportProvider\PreviousInventory\NativXslx\ImportPreviousInventoryNativYesDbSetProviderQ.cs" />
+    <Compile Include="ImportProvider\PreviousInventory\NativXslx\ImportPreviousInventoryNativYesDbSetProviderSN.cs" />
+    <Compile Include="ImportProvider\PreviousInventory\NativXslx\ImportPreviousInventoryNativPlusDbSetProvider.cs" />
+    <Compile Include="ImportProvider\PreviousInventory\NativXslx\ImportPreviousInventoryNativDbSetProvider.cs" />
+    <Compile Include="ImportProvider\PropertyDecorator\NativExportErp\ImportPropertyDecoratorNativExportErpProvider4.cs" />
+    <Compile Include="ImportProvider\PropertyDecorator\NativExportErp\ImportPropertyDecoratorNativExportErpProvider3.cs" />
+    <Compile Include="ImportProvider\PropertyDecorator\NativExportErp\ImportPropertyDecoratorNativExportErpProvider2.cs" />
+    <Compile Include="ImportProvider\PropertyDecorator\NativExportErp\ImportPropertyDecoratorNativExportErpProvider1.cs" />
+    <Compile Include="ImportProvider\PropertyDecorator\NativXslx\ImportPropertyDecoratorNativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Clalit\ImportPropertyStrClalitXslx2SdfProvider5.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Clalit\ImportPropertyStrClalitXslx2SdfProvider4.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Clalit\ImportPropertyStrClalitXslx2SdfProvider3.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Clalit\ImportPropertyStrClalitXslx2SdfProvider2.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Clalit\ImportPropertyStrClalitXslx2SdfProvider1.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Merkava\ImportPropertyStr18MerkavaXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Merkava\ImportPropertyStr7MerkavaXslx2SdfProvider1.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Merkava\ImportPropertyStr7MerkavaXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Merkava\ImportPropertyStr6MerkavaXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Family\Default\ImportFamilyDefaultProvider.cs" />
+    <Compile Include="ImportProvider\Family\TafnitMatrix\ImportFamilyTafnitMatrixProvider.cs" />
+    <Compile Include="ImportProvider\Family\PriorityKedsShowRoom\ImportFamilyPriorityKedsShowRoomProvider.cs" />
+    <Compile Include="ImportProvider\Family\H_M\ImportFamilyH_MProvider.cs" />
+    <Compile Include="ImportProvider\Family\LadyComfort\ImportFamilyLadyComfortADOProvider.cs" />
+    <Compile Include="ImportProvider\Family\PriorityRenuar\ImportFamilyPriorityRenuarADOProvider.cs" />
+    <Compile Include="ImportProvider\Itur\ImportIturFacingProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Itur\Xslx2Sqlite\ImportIturMerkavaSqliteXslxProvider.cs" />
+    <Compile Include="ImportProvider\Itur\Merkava\ImportIturMerkavaXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Location\ImportLocationUpdateTagProvider.cs" />
+    <Compile Include="ImportProvider\Location\ImportLocationXlsxProvider.cs" />
+    <Compile Include="ImportProvider\Location\ImportEmulationLocationADOProvider.cs" />
+    <Compile Include="ImportProvider\Count4Mobile\Location\Xslx2Sqlite\ImportLocationMerkavaXslx2SqliteProvider.cs" />
+    <Compile Include="ImportProvider\Location\Merkava\ImportLocationMerkavaXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductMisAndDefaultADOProvider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductBD3Provider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductWarehouseADOProvider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductMisADOProvider.cs" />
+    <Compile Include="ImportProvider\PreviousInventory\MerkavaXslx\ImportPreviousInventoryMerkavaDbSetProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Nativ\ImportPropertyStr10NativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Nativ\ImportPropertyStr8NativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Nativ\ImportPropertyStrUpdateNativSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Nativ\ImportPropertyStr7NativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Nativ\ImportPropertyStr9NativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Nativ\ImportPropertyStr4NativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Nativ\ImportPropertyStr5NativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Nativ\ImportPropertyStr6NativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Nativ\ImportPropertyStr3NativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Nativ\ImportPropertyStr2NativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\PropertyStr\Nativ\ImportPropertyStr1NativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Section\AS400Hamashbir\ImportSectionAS400HamashbirProvider.cs" />
+    <Compile Include="ImportProvider\Section\AS400Mega\ImportSectionAS400MegaProvider.cs" />
+    <Compile Include="ImportProvider\Section\GazitGlobalXlsx\ImportSectionGazitGlobalXlsxProvider.cs" />
+    <Compile Include="ImportProvider\Section\GazitVerifoneSteimaztzky\ImportSectionGazitVerifoneSteimaztzkyProvider.cs" />
+    <Compile Include="ImportProvider\Section\GazitVerifoneSteimaztzky\ImportSectionGazitVerifoneSteimaztzkyProvider1.cs" />
+    <Compile Include="ImportProvider\Section\GeneralXLSX\ImportSectionGeneralXLSXProvider.cs" />
+    <Compile Include="ImportProvider\Section\H_M\ImportSectionH_M_NewProvider.cs" />
+    <Compile Include="ImportProvider\Section\NativXslx\ImportSectionNativXslx2SdfProvider1.cs" />
+    <Compile Include="ImportProvider\Section\NativXslx\ImportSectionNativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Section\Sapb1Zometsfarim\ImportSectionSapb1ZometsfarimProvider.cs" />
+    <Compile Include="ImportProvider\Section\Sapb1Zometsfarim\ImportSectionSapb1ZometsfarimProvider1.cs" />
+    <Compile Include="ImportProvider\Section\TafnitMatrix\ImportSectionTafnitMatrixProvider.cs" />
+    <Compile Include="ImportProvider\Section\MPL\ImportSectionMPLProvider.cs" />
+    <Compile Include="ImportProvider\Section\FRSVisionMirkam\ImportSectionFRSVisionMirkamProvider.cs" />
+    <Compile Include="ImportProvider\Section\H_M\ImportSectionH_MProvider.cs" />
+    <Compile Include="ImportProvider\Section\NimrodAviv\ImportSectionNimrodAvivProvider.cs" />
+    <Compile Include="ImportProvider\Shelf\ImportIturFacingProvider.cs" />
+    <Compile Include="ImportProvider\StatusInventProduct\ImportStatusInventProductUpdateSumNativPlusSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\StatusInventProduct\ImportStatusInventProductNativPlusSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\AS400April\ImportSupplierAS400AprilProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\NativXslx\ImportSupplierNativXslx2SdfProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\GeneralXLSX\ImportSupplierGeneralXLSXProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\FRSVisionMirkam\ImportSupplierFRSVisionMirkamADOProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\AS400Mega\ImportSupplierAS400MegaProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\Made4Net\ImportSupplierMade4NetADOProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\Nibit\ImportSupplierNibitADOProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\Sapb1Zometsfarim\ImportSupplierSapb1ZometsfarimProvider.cs" />
+    <Compile Include="ImportProvider\TemplateInventory\NativXslx\ImportTemplateInventoryNativPlusDbSetProvider.cs" />
+    <Compile Include="ImportProvider\TemplateInventory\Nativ\ImportTemplateInventoryNativSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\TemporaryInventory\Clalit\ImportTemporaryInventoryClalitSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\TemporaryInventory\NativPlusMIS\ImportTemporaryInventoryNativPlusMISSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\TemporaryInventory\Nativ\ImportTemporaryInventoryNativSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\TemporaryInventory\Merkava\ImportTemporaryInventoryMerkavaSqlite2SdfProvider.cs" />
+    <Compile Include="ImportProvider\UnitPlan\ImportPartUnitEFProvider.cs" />
+    <Compile Include="ImportProvider\UnitPlan\ImportUnitPlanDBEFProvider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductBulkProvider1.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductAdvancedYarpaADOProvider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductAdvancedADOProvider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductSimpleYarpaADOProvider.cs" />
+    <Compile Include="ImportProvider\Branch\Default\ImportBranchDefautProvider.cs" />
+    <Compile Include="ImportProvider\Branch\GazitVerifone\ImportBranchGazitVerifoneProvider.cs" />
+    <Compile Include="ImportProvider\Branch\XtechMeuhedet\ImportBranchXtechMeuhedetProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\ComaxASP\ImportCatalogForComaxASPADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\ComaxASP\ImportCatalogForComaxASPADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\DB\ImportCatalogFromDBADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\DB\ImportCatalogFromDBBulkProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\GazitVarifone\ImportCatalogGazitVerifoneADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\GazitVarifone\ImportHamarotGazitVerifoneADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\GazitVarifone\ImportHamarotGazitVerifoneADOProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\NetPOSSuperPharm\ImportCatalogNetPOSSuperPharmUpdateERPQuentetyADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\NetPOSSuperPharm\ImportCatalogNetPOSSuperPharmADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\NetPOSSuperPharm\ImportCatalogNetPOSSuperPharmADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\PriorityRenuar\ImportCatalogPriorityRenuarADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\PriorityRenuar\ImportCatalogPriorityRenuarADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Unizag\ImportCatalogUnizagADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Unizag\ImportCatalogUnizagADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\XtechMeuhedet\ImportCatalogXtechMeuhedetUpdateERPQuentetyADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\XtechMeuhedet\ImportCatalogXtechMeuhedetADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\XtechMeuhedet\ImportCatalogXtechMeuhedetADOProvider2.cs" />
+    <Compile Include="ImportProvider\Catalog\Yarpa\ImportCatalogYarpaADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Yarpa\ImportCatalogYarpaADOProvider.cs" />
+    <Compile Include="ImportProvider\Catalog\Yarpa\ImportCatalogYarpaUpdateERPQuentetyADOProvider1.cs" />
+    <Compile Include="ImportProvider\Catalog\Yarpa\ImportCatalogYarpaUpdateERPQuentetyADOProvider2.cs" />
+    <Compile Include="ImportProvider\Common\ProviderEnum.cs" />
+    <Compile Include="ImportProvider\Itur\ImportIturERPADOProvider.cs" />
+    <Compile Include="ImportProvider\Itur\ImportIturADOProvider.cs" />
+    <Compile Include="ImportProvider\Itur\ImportIturFromDBADOProvider.cs" />
+    <Compile Include="ImportProvider\Location\ImportLocationADOProvider.cs" />
+    <Compile Include="ImportProvider\Location\ImportLocationFromDBADOProvider.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductADOProvider1.cs" />
+    <Compile Include="ImportProvider\PDA\ImportInventProductSimpleADOProvider.cs" />
+    <Compile Include="ImportProvider\Section\MikramSonol\ImportSectionMikramSonolADOProvider.cs" />
+    <Compile Include="ImportProvider\Section\GeneralCSV\ImportSectionGeneralCSVADOProvider.cs" />
+    <Compile Include="ImportProvider\Section\ImportSectionFromDBADOProvider.cs" />
+    <Compile Include="ImportProvider\Section\NetPOSSuperPharm\ImportSectionNetPOSSuperPharmADOProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\AvivPOS\ImportSupplierAvivPOSADOProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\ComaxASP\ImportSupplierComaxASPADOProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\Default\ImportSupplierDefaultADOProvider.cs" />
+    <Compile Include="ImportProvider\Supplier\ImportSupplierFromDBADOProvider.cs" />
+    <Compile Include="Interface\ExportProvider\IExportERPProvider.cs" />
+    <Compile Include="Interface\ExportProvider\IExportProvider.cs" />
+    <Compile Include="Interface\ExportRepository\IExportCurrentInventorAdvancedRepository.cs" />
+    <Compile Include="Interface\ExportRepository\IExportInventProductSimpleRepository.cs" />
+    <Compile Include="Interface\ExportRepository\IExportCatalogSimpleRepository.cs" />
+    <Compile Include="Interface\ExportRepository\IExportConfigIniRepository.cs" />
+    <Compile Include="Interface\ExportRepository\IExportIturRepository.cs" />
+    <Compile Include="Interface\IImportLog.cs" />
+    <Compile Include="Interface\ImportProvider\IImportBranchProvider.cs" />
+    <Compile Include="Interface\ImportProvider\IImportCatalogProvider.cs" />
+    <Compile Include="Interface\ImportProvider\IImportInventProductProvider.cs" />
+    <Compile Include="Interface\ImportProvider\IImportIturProvider.cs" />
+    <Compile Include="Interface\ImportProvider\IImportLocationProvider.cs" />
+    <Compile Include="Interface\ImportProvider\IImportProvider.cs" />
+    <Compile Include="Interface\ImportRepository\IImportStatusInventProductBlukRepository.cs" />
+    <Compile Include="Interface\ImportRepository\Count4Mobile\IImportTemplateInventorySQLiteADORepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportTemplateInventoryRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportDocumentHeaderBlukRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportTemporaryInventoryRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportCurrentInventoryAdvancedBlukRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportIturBlukRepository.cs" />
+    <Compile Include="Interface\ImportRepository\Count4Mobile\IImportCurrentInventorSQLiteADORepository.cs" />
+    <Compile Include="Interface\ImportRepository\Count4Mobile\IImportBuildingConfigADORepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportPreviousInventorysRepository.cs" />
+    <Compile Include="Interface\ImportRepository\Count4Mobile\IImportPreviousInventorysSQLiteADORepository.cs" />
+    <Compile Include="Interface\ImportRepository\Count4Mobile\IImportPropertyStrListSQLiteADORepository.cs" />
+    <Compile Include="Interface\ImportRepository\Count4Mobile\IImportLocationSQLiteADORepository.cs" />
+    <Compile Include="Interface\ImportRepository\Count4Mobile\IImportCatalogSQLiteADORepository.cs" />
+    <Compile Include="Interface\ImportRepository\Count4Mobile\IImportBuildingConfigSQLiteADORepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportPropertyStrRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportIturRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportShelfBlukRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportFamilyRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportIturAnalyzesBlukRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportUnitPlanRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportCatalogSimpleBlukRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportSupplierRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportBranchRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportSectionRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportCatalogSimpleRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportCatalogSqlBulkRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportInventProductRepository.cs" />
+    <Compile Include="Interface\ImportRepository\IImportLocationRepository.cs" />
+    <Compile Include="Interface\FieldLink\IScriptFieldLinkRepository.cs" />
+    <Compile Include="Interface\Parser\IStatusInventProductSimpleParser.cs" />
+    <Compile Include="Interface\Parser\Count4Mobile\ITemplateInventorySQLiteParser.cs" />
+    <Compile Include="Interface\Parser\IInventProductToMalamXMLParser.cs" />
+    <Compile Include="Interface\Parser\IDocumentHeaderParser.cs" />
+    <Compile Include="Interface\Parser\Count4Mobile\ITemporaryInventorySQLiteParser.cs" />
+    <Compile Include="Interface\Parser\Count4Mobile\ICurrentInventorSQLiteParser.cs" />
+    <Compile Include="Interface\Parser\Count4Mobile\IPreviousInventorySQLiteParser.cs" />
+    <Compile Include="Interface\Parser\Count4Mobile\IPropertyStrListSQLiteParser.cs" />
+    <Compile Include="Interface\Parser\Count4Mobile\IBuildingConfigParser.cs" />
+    <Compile Include="Interface\Parser\Count4Mobile\ICatalogSQLiteParser.cs" />
+    <Compile Include="Interface\Parser\Count4Mobile\ILocationSQLiteParser.cs" />
+    <Compile Include="Interface\Parser\IPropertyStrParser.cs" />
+    <Compile Include="Interface\Parser\IShelfParser.cs" />
+    <Compile Include="Interface\Parser\IFamilyParser.cs" />
+    <Compile Include="Interface\Parser\IUnitPlanParser.cs" />
+    <Compile Include="Interface\Parser\ISupplierParser.cs" />
+    <Compile Include="Interface\Parser\IBranchParser.cs" />
+    <Compile Include="Interface\Parser\ISectionParser.cs" />
+    <Compile Include="Interface\Parser\IFileParser.cs" />
+    <Compile Include="Interface\Parser\IInventProductParser.cs" />
+    <Compile Include="Interface\Parser\IInventProductSimpleParser.cs" />
+    <Compile Include="Interface\Parser\IIturParser.cs" />
+    <Compile Include="Interface\Parser\ILocationParser.cs" />
+    <Compile Include="Interface\Parser\IMask.cs" />
+    <Compile Include="Interface\Parser\IProductParser.cs" />
+    <Compile Include="Interface\Parser\IProductSimpleParser.cs" />
+    <Compile Include="Interface\Reader\ICurrentInventoryAdvancedReader.cs" />
+    <Compile Include="Interface\WrapperMulti\IWrapperMulti.cs" />
+    <Compile Include="Interface\WrapperMulti\IWrapperMultiRepository.cs" />
+    <Compile Include="Interface\Writer\IExportCurrentInventoryWriter.cs" />
+    <Compile Include="Interface\Writer\IExportIturStreamWriter.cs" />
+    <Compile Include="Interface\Writer\IExportProductStreamWriter.cs" />
+    <Compile Include="Interface\Writer\IExportInventProductWriter.cs" />
+    <Compile Include="Lib\Common.cs" />
+    <Compile Include="Lib\FileItemViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Lib\IMulti.cs" />
+    <Compile Include="Lib\Multi.cs" />
+    <Compile Include="Parser\Branch\AS400Leumit\BranchAS400LeumitParser.cs" />
+    <Compile Include="Parser\Branch\AS400Honigman\BranchAS400HonigmanParser.cs" />
+    <Compile Include="Parser\Branch\XtechMeuhedetXlsx\BranchXtechMeuhedetXlsxParser.cs" />
+    <Compile Include="Parser\Branch\DefaultXlsx\BranchDefaultXlsxParser.cs" />
+    <Compile Include="Parser\Branch\PriorityCastro\BranchPriorityCastroParser.cs" />
+    <Compile Include="Parser\Branch\MikramSonol\BranchMikramSonolParser.cs" />
+    <Compile Include="Parser\Branch\Default\BranchDefaultParser.cs" />
+    <Compile Include="Parser\Branch\GazitVerifone\BranchGazitVerifoneParser.cs" />
+    <Compile Include="Parser\Branch\XtechMeuhedet\BranchXtechMeuhedetParser.cs" />
+    <Compile Include="Parser\BuildingConfig\BuildingConfigMerkavaXslxParser.cs" />
+    <Compile Include="Parser\Catalog\AS400AmericanEagle\ProductCatalogAS400AmericanEagleParser3.cs" />
+    <Compile Include="Parser\Catalog\AS400AmericanEagle\ProductCatalogAS400AmericanEagleParser2.cs" />
+    <Compile Include="Parser\Catalog\AS400Hamashbir\ProductCatalogAS400HamashbirUpdateERPQuentetyParser1.cs" />
+    <Compile Include="Parser\Catalog\AS400Hamashbir\ProductCatalogAS400HamashbirUpdateERPQuentetyParser2.cs" />
+    <Compile Include="Parser\Catalog\AS400Hamashbir\ProductCatalogAS400HamashbirUpdateERPQuentetyParser.cs" />
+    <Compile Include="Parser\Catalog\AS400Honigman\ProductCatalogAS400HonigmanParser.cs" />
+    <Compile Include="Parser\Catalog\AS400Honigman\ProductCatalogAS400HonigmanParser1.cs" />
+    <Compile Include="Parser\Catalog\AS400Honigman\ProductCatalogAS400HonigmanParser2.cs" />
+    <Compile Include="Parser\Catalog\AS400Ho\ProductCatalogAS400HoParser2_1.cs" />
+    <Compile Include="Parser\Catalog\AS400Ho\ProductCatalogAS400HoParser2_2.cs" />
+    <Compile Include="Parser\Catalog\AS400Ho\ProductCatalogAS400HoParser1.cs" />
+    <Compile Include="Parser\Catalog\AS400Leumit\ProductCatalogAS400LeumitParser.cs" />
+    <Compile Include="Parser\Catalog\AS400Leumit\ProductCatalogAS400LeumitParser1.cs" />
+    <Compile Include="Parser\Catalog\AS400Leumit\ProductCatalogAS400LeumitUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\Autosoft\ProductCatalogAutosoftParser.cs" />
+    <Compile Include="Parser\Catalog\Autosoft\ProductCatalogAutosoftParser2.cs" />
+    <Compile Include="Parser\Catalog\Autosoft\ProductCatalogAutosoftParser1.cs" />
+    <Compile Include="Parser\Catalog\AvivMulti\ProductCatalogAvivMultiUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\AvivMulti\ProductCatalogAvivMultiParser.cs" />
+    <Compile Include="Parser\Catalog\AvivMulti\ProductCatalogAvivMultiParser1.cs" />
+    <Compile Include="Parser\Catalog\AvivPOS\ProductCatalogAvivPOSParser3.cs" />
+    <Compile Include="Parser\Catalog\AvivPOS\ProductCatalogAvivPOSParser2.cs" />
+    <Compile Include="Parser\Catalog\AvivPOS\ProductCatalogAvivPOSParser.cs" />
+    <Compile Include="Parser\Catalog\AvivPOS\ProductCatalogAvivPOSParser1.cs" />
+    <Compile Include="Parser\Catalog\AvivPOS\ProductCatalogAvivPOSUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\ClalitXslx\ProductCatalogClalitXslx2SdfParser.cs" />
+    <Compile Include="Parser\Catalog\ComaxASPMultiBarcode\ProductCatalogComaxASPMultiBarcodeParser2.cs" />
+    <Compile Include="Parser\Catalog\ComaxASP\ProductCatalogForComaxASPParser.cs" />
+    <Compile Include="Parser\Catalog\ComaxASP\ProductCatalogForComaxASPParser1.cs" />
+    <Compile Include="Parser\Catalog\AS400AmericanEagle\ProductCatalogAS400AmericanEagleParser.cs" />
+    <Compile Include="Parser\Catalog\AS400AmericanEagle\ProductCatalogAS400AmericanEagleParser1.cs" />
+    <Compile Include="Parser\Catalog\ComaxASPMultiBarcode\ProductCatalogComaxASPMultiBarcodeParser.cs" />
+    <Compile Include="Parser\Catalog\ComaxASPMultiBarcode\ProductCatalogComaxASPMultiBarcodeParser1.cs" />
+    <Compile Include="Parser\Catalog\AS400Jafora\ProductCatalogAS400JaforaParser.cs" />
+    <Compile Include="Parser\Catalog\AS400April\ProductCatalogAS400AprilParser.cs" />
+    <Compile Include="Parser\Catalog\AS400April\ProductCatalogAS400AprilParser1.cs" />
+    <Compile Include="Parser\Catalog\AS400April\ProductCatalogAS400AprilUpdateERPQuentetyParser.cs" />
+    <Compile Include="Parser\Catalog\BazanCsv\ProductCatalogBazanCsvParser.cs" />
+    <Compile Include="Parser\Catalog\AS400Mango\ProductCatalogAS400MangoParser.cs" />
+    <Compile Include="Parser\Catalog\AS400Mango\ProductCatalogAS400MangoParser1.cs" />
+    <Compile Include="Parser\Catalog\AS400Mega\ProductCatalogAS400MegaParser.cs" />
+    <Compile Include="Parser\Catalog\AS400Mega\ProductCatalogAS400MegaParser1.cs" />
+    <Compile Include="Parser\Catalog\AS400Mega\ProductCatalogAS400MegaUpdateERPQuentetyParser.cs" />
+    <Compile Include="Parser\Catalog\AS400Hamashbir\ProductCatalogAS400HamashbirParser.cs" />
+    <Compile Include="Parser\Catalog\AS400Hamashbir\ProductCatalogAS400HamashbirParser1.cs" />
+    <Compile Include="Parser\Catalog\AS400Ho\ProductCatalogAS400HoParser.cs" />
+    <Compile Include="Parser\Catalog\Nesher\ProductCatalogNesherParser.cs" />
+    <Compile Include="Parser\Catalog\YtungXlsx\ProductCatalogYtungXlsxXParser.cs" />
+    <Compile Include="Parser\Catalog\GazitGlobalXlsx\ProductCatalogGazitGlobalXlsxXParser.cs" />
+    <Compile Include="Parser\Catalog\GazitLeeCooper\ProductCatalogGazitLeeCooperParser.cs" />
+    <Compile Include="Parser\Catalog\GazitLeeCooper\ProductCatalogGazitLeeCooperParser1.cs" />
+    <Compile Include="Parser\Catalog\GeneralXLSX\ProductCatalogForGeneralXLSXUpdateERPQuentetyDBParser2.cs" />
+    <Compile Include="Parser\Catalog\NativPlusLadpc\ProductCatalogNativPlusLadpcParser.cs" />
+    <Compile Include="Parser\Catalog\OrenMutagim\ProductCatalogOrenMutagimParser.cs" />
+    <Compile Include="Parser\Catalog\OrenMutagim\ProductCatalogOrenMutagimParser1.cs" />
+    <Compile Include="Parser\Catalog\PrioritySweetGirlXLSX\ProductCatalogPrioritySweetGirlXLSXParser.cs" />
+    <Compile Include="Parser\Catalog\PrioritytEsteeLouderXslx\ProductCatalogPrioritytEsteeLouderUpdateERPQuentetyDBParser.cs" />
+    <Compile Include="Parser\Catalog\PrioritytEsteeLouderXslx\ProductCatalogPrioritytEsteeLouderXslxParser.cs" />
+    <Compile Include="Parser\Catalog\H_M\New\ProductCatalogH_M_NewParser2.cs" />
+    <Compile Include="Parser\Catalog\H_M\New\ProductCatalogH_M_NewParser.cs" />
+    <Compile Include="Parser\Catalog\H_M\New\ProductCatalogH_M_NewParser3.cs" />
+    <Compile Include="Parser\Catalog\XtechMeuhedetXLSX\ProductCatalogXtechMeuhedetXLSXParser2.cs" />
+    <Compile Include="Parser\Catalog\XtechMeuhedetXLSX\ProductCatalogXtechMeuhedetXLSXParser.cs" />
+    <Compile Include="Parser\Catalog\XtechMeuhedetXLSX\ProductCatalogXtechMeuhedetXLSXParser1.cs" />
+    <Compile Include="Parser\Catalog\XtechMeuhedetXLSX\ProductCatalogXtechMeuhedetXLSXUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\NativMISSqlite2Sdf\ProductCatalogNativMISSqlite2SdfParser.cs" />
+    <Compile Include="Parser\Catalog\GazitAlufHaSportXlsx\ProductCatalogGazitAlufHaSportXlsxParser.cs" />
+    <Compile Include="Parser\Catalog\NativSqlite2Sdf\ProductCatalogNativSqlite2SdfParser.cs" />
+    <Compile Include="Parser\Catalog\NativXslx\ProductCatalogNativXslx2SdfParser.cs" />
+    <Compile Include="Parser\Catalog\NativXslx\ProductCatalogNativXslx2SdfUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\GazitVerifoneSteimaztzky\ProductCatalogGazitVerifoneSteimaztzkyParser1.cs" />
+    <Compile Include="Parser\Catalog\GazitVerifoneSteimaztzky\ProductCatalogGazitVerifoneSteimaztzkyParser.cs" />
+    <Compile Include="Parser\Catalog\GazitVerifoneSteimaztzky\ProductCatalogGazitVerifoneSteimaztzkyUpdateERPQuentetyDBParser.cs" />
+    <Compile Include="Parser\Catalog\PriorityAldo\ProductCatalogPriorityAldoParser.cs" />
+    <Compile Include="Parser\Catalog\PriorityAldo\ProductCatalogPriorityAldoParser1.cs" />
+    <Compile Include="Parser\Catalog\Sapb1Zometsfarim\ProductCatalogSapb1ZometsfarimParser3.cs" />
+    <Compile Include="Parser\Catalog\Sapb1Zometsfarim\ProductCatalogSapb1ZometsfarimUpdateERPQuentetyDBParser.cs" />
+    <Compile Include="Parser\Catalog\Sapb1Zometsfarim\ProductCatalogSapb1ZometsfarimParser2.cs" />
+    <Compile Include="Parser\Catalog\Sapb1Zometsfarim\ProductCatalogSapb1ZometsfarimParser.cs" />
+    <Compile Include="Parser\Catalog\Sapb1Zometsfarim\ProductCatalogSapb1ZometsfarimParser1.cs" />
+    <Compile Include="Parser\Catalog\YesXlsx\ProductCatalogYesXslxParserQ.cs" />
+    <Compile Include="Parser\Catalog\YesXlsx\ProductCatalogYesXslxParserSN.cs" />
+    <Compile Include="Parser\Count4Mobile\BuildingConfig\Sdf2Sqlite\BuildingConfigMerkavaSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\BuildingConfig\Sdf2Sqlite\BuildingConfigClalitSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\BuildingConfig\Sdf2Sqlite\BuildingConfigNativSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\BuildingConfig\Sdf2Sqlite\BuildingConfigNativPlusMISSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Catalog\BaseCatalogSOLiteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\BuildingConfig\Xslx2Sqlite\BuildingConfigMerkavaXslx2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Catalog\Sdf2Sqlite\CatalogMerkavaSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Catalog\Sdf2Sqlite\CatalogClalitSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Catalog\Sdf2Sqlite\CatalogNativSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Catalog\Sdf2Sqlite\CatalogNativPlusMISSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Catalog\Xslx2Sqlite\CatalogMerkavaXslx2SqliteParser.cs" />
+    <Compile Include="Parser\Catalog\MerkavaXslx\ProductCatalogMerkavaXslx2SdfParser.cs" />
+    <Compile Include="Parser\Catalog\MerkavaXslx\ProductCatalogMerkavaXslx2SdfParser1.cs" />
+    <Compile Include="Parser\Catalog\MerkavaXslx\ProductCatalogMerkavaXslx2SdfUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\NikeInt\ProductCatalogNikeIntParser.cs" />
+    <Compile Include="Parser\Catalog\NikeInt\ProductCatalogNikeIntParser1.cs" />
+    <Compile Include="Parser\Catalog\NikeInt\ProductCatalogNikeIntParser2.cs" />
+    <Compile Include="Parser\Catalog\NikeInt\ProductCatalogNikeIntUpdateERPQuentetyDBParser.cs" />
+    <Compile Include="Parser\Catalog\Otech\ProductCatalogOtechParser2.cs" />
+    <Compile Include="Parser\Catalog\Otech\ProductCatalogOtechParser.cs" />
+    <Compile Include="Parser\Catalog\Otech\ProductCatalogOtechParser1.cs" />
+    <Compile Include="Parser\Catalog\Otech\ProductCatalogOtechUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\GeneralXLSX\ProductCatalogForGeneralXLSXParser.cs" />
+    <Compile Include="Parser\Catalog\GeneralXLSX\ProductCatalogForGeneralXLSXParser1.cs" />
+    <Compile Include="Parser\Catalog\GeneralXLSX\ProductCatalogForGeneralXLSXUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\OrenOriginals\ProductCatalogOrenOriginalsParser2.cs" />
+    <Compile Include="Parser\Catalog\OrenOriginals\ProductCatalogOrenOriginalsUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\PriorityCastro\ProductCatalogPriorityCastroParser.cs" />
+    <Compile Include="Parser\Catalog\PriorityCastro\ProductCatalogPriorityCastroParser1.cs" />
+    <Compile Include="Parser\Catalog\Sapb1Xslx\ProductCatalogSapb1XslxParser.cs" />
+    <Compile Include="Parser\Catalog\Sapb1Xslx\ProductCatalogSapb1XslxParser1.cs" />
+    <Compile Include="Parser\Catalog\Sapb1Xslx\ProductCatalogSapb1XslxUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\TafnitMatrix\ProductCatalogTafnitMatrixParser2.cs" />
+    <Compile Include="Parser\Catalog\TafnitMatrix\ProductCatalogTafnitMatrixUpdateERPQuentetyDBParser.cs" />
+    <Compile Include="Parser\Catalog\TafnitMatrix\ProductCatalogTafnitMatrixParser.cs" />
+    <Compile Include="Parser\Catalog\TafnitMatrix\ProductCatalogTafnitMatrixParser1.cs" />
+    <Compile Include="Parser\Catalog\MPL\ProductCatalogMPLParser2.cs" />
+    <Compile Include="Parser\Catalog\MPL\ProductCatalogMPLParser.cs" />
+    <Compile Include="Parser\Catalog\MPL\ProductCatalogMPLParser1.cs" />
+    <Compile Include="Parser\Catalog\MPL\ProductCatalogMPLUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\FRSVisionMirkam\ProductCatalogFRSVisionMirkamParser.cs" />
+    <Compile Include="Parser\Catalog\FRSVisionMirkam\ProductCatalogFRSVisionMirkamParser1.cs" />
+    <Compile Include="Parser\Catalog\Hash\ProductCatalogHashParser.cs" />
+    <Compile Include="Parser\Catalog\Hash\ProductCatalogHashParser1.cs" />
+    <Compile Include="Parser\Catalog\IturQuantity\ProductCatalogIturERPCodeQuantityParser.cs" />
+    <Compile Include="Parser\Catalog\Nibit\ProductCatalogNibitParser0.cs" />
+    <Compile Include="Parser\Catalog\PriorityKedsShowRoom\ProductCatalogPriorityKedsShowRoomParser.cs" />
+    <Compile Include="Parser\Catalog\H_M\ProductCatalogH_MParser3.cs" />
+    <Compile Include="Parser\Catalog\H_M\ProductCatalogH_MParser2.cs" />
+    <Compile Include="Parser\Catalog\H_M\ProductCatalogH_MParser.cs" />
+    <Compile Include="Parser\Catalog\H_M\ProductCatalogH_MParser1.cs" />
+    <Compile Include="Parser\Catalog\NimrodAviv\ProductCatalogNimrodAvivParser1.cs" />
+    <Compile Include="Parser\Catalog\NimrodAviv\ProductCatalogNimrodAvivParser.cs" />
+    <Compile Include="Parser\Catalog\NimrodAviv\ProductCatalogNimrodAvivParser2.cs" />
+    <Compile Include="Parser\Catalog\OrenOriginals\ProductCatalogOrenOriginalsParser.cs" />
+    <Compile Include="Parser\Catalog\OrenOriginals\ProductCatalogOrenOriginalsParser1.cs" />
+    <Compile Include="Parser\Catalog\Nibit\ProductCatalogNibitParser1.cs" />
+    <Compile Include="Parser\Catalog\Nibit\ProductCatalogNibitParser.cs" />
+    <Compile Include="Parser\Catalog\Made4Net\ProductCatalogMade4NetParser.cs" />
+    <Compile Include="Parser\Catalog\Made4Net\ProductCatalogMade4NetParser1.cs" />
+    <Compile Include="Parser\Catalog\LadyComfort\ProductCatalogLadyComfortParser.cs" />
+    <Compile Include="Parser\Catalog\MaccabiPharmSAP\ProductCatalogMaccabiPharmSAPParser2.cs" />
+    <Compile Include="Parser\Catalog\MaccabiPharmSAP\ProductCatalogMaccabiPharmSAPUpdateERPQuentetyParser.cs" />
+    <Compile Include="Parser\Catalog\MaccabiPharmSAP\ProductCatalogMaccabiPharmSAPParser.cs" />
+    <Compile Include="Parser\Catalog\MaccabiPharmSAP\ProductCatalogMaccabiPharmSAPParser1.cs" />
+    <Compile Include="Parser\Catalog\MikiKupot\ProductCatalogMikiKupotParser.cs" />
+    <Compile Include="Parser\Catalog\Nibit\ProductCatalogNibitUpdateERPQuentetyDBParser.cs" />
+    <Compile Include="Parser\Catalog\One1\ProductCatalogOne1Parser.cs" />
+    <Compile Include="Parser\Catalog\One1\ProductCatalogOne1Parser1.cs" />
+    <Compile Include="Parser\Catalog\One1\ProductCatalogOne1UpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\RetalixNext\ProductCatalogRetalixNextParser.cs" />
+    <Compile Include="Parser\Catalog\RetalixNext\ProductCatalogRetalixNextParser1.cs" />
+    <Compile Include="Parser\Catalog\RetalixNext\ProductRetalixNextParser.cs" />
+    <Compile Include="Parser\Catalog\RetalixNext\ProductRetalixNextUpdateERPQuentetyDBParser.cs" />
+    <Compile Include="Parser\Catalog\NetPOSSuperPharm\ProductNetPOSSuperPharmParser.cs" />
+    <Compile Include="Parser\Catalog\PriorityKeds\ProductCatalogPriorityKedsParser.cs" />
+    <Compile Include="Parser\Catalog\PriorityKeds\ProductCatalogPriorityKedsParser1.cs" />
+    <Compile Include="Parser\Catalog\PriorityKeds\ProductCatalogPriorityKedsUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\MikramSonol\ProductCatalogMikramSonolParser.cs" />
+    <Compile Include="Parser\Catalog\MikramSonol\ProductCatalogMikramSonolParser1.cs" />
+    <Compile Include="Parser\Catalog\MikramSonol\ProductCatalogMikramSonolUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\DB\ProductFromDBUpdateERPQuentetyParser.cs" />
+    <Compile Include="Parser\Catalog\GeneralCSV\ProductCatalogForGeneralCSVUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\GeneralCSV\ProductCatalogForGeneralCSVParser.cs" />
+    <Compile Include="Parser\Catalog\GeneralCSV\ProductCatalogForGeneralCSVParser1.cs" />
+    <Compile Include="Parser\Catalog\NetPOSSuperPharm\ProductNetPOSSuperPharmParserUpdateERPQuentetyDBParser.cs" />
+    <Compile Include="Parser\Catalog\DB\ProductFromDBParser.cs" />
+    <Compile Include="Parser\Catalog\GazitVerifone\ProductHamarotForGazitVerifoneParser2.cs" />
+    <Compile Include="Parser\Catalog\GazitVerifone\ProductCatalogForGazitVerifoneParser.cs" />
+    <Compile Include="Parser\Catalog\GazitVerifone\ProductHamarotForGazitVerifoneParser1.cs" />
+    <Compile Include="Parser\Catalog\NetPOSSuperPharm\ProductCatalogForNetPOSSuperPharmParser.cs" />
+    <Compile Include="Parser\Catalog\NetPOSSuperPharm\ProductCatalogForNetPOSSuperPharmParser1.cs" />
+    <Compile Include="Parser\Catalog\MiniSoft\ProductCatalogMiniSoftParser.cs" />
+    <Compile Include="Parser\Catalog\MiniSoft\ProductCatalogMiniSoftParser1.cs" />
+    <Compile Include="Parser\Catalog\PriorityRenuar\ProductCatalogForPriorityRenuarParser.cs" />
+    <Compile Include="Parser\Catalog\PriorityRenuar\ProductCatalogForPriorityRenuarParser1.cs" />
+    <Compile Include="Parser\Catalog\RetalixPosHO\ProductRetalixPosHOParser.cs" />
+    <Compile Include="Parser\Catalog\RetalixPosHO\ProductRetalixPosHOParserUpdateERPQuentetyDBParser.cs" />
+    <Compile Include="Parser\Catalog\Unizag\ProductCatalogForUnizagParser3.cs" />
+    <Compile Include="Parser\Catalog\Unizag\ProductCatalogForUnizagParser2.cs" />
+    <Compile Include="Parser\Catalog\Unizag\ProductCatalogForUnizagParser.cs" />
+    <Compile Include="Parser\Catalog\Unizag\ProductCatalogForUnizagParser1.cs" />
+    <Compile Include="Parser\Catalog\BaseProductCatalogParser.cs" />
+    <Compile Include="Parser\Catalog\Mask\MaskEnum.cs" />
+    <Compile Include="Parser\Catalog\Mask\MaskPackage.cs" />
+    <Compile Include="Parser\Catalog\ParserParms .cs" />
+    <Compile Include="Parser\Catalog\WarehouseXslx\ProductCatalogWarehouseXslxParser3.cs" />
+    <Compile Include="Parser\Catalog\WarehouseXslx\ProductCatalogWarehouseXslxParser2.cs" />
+    <Compile Include="Parser\Catalog\WarehouseXslx\ProductCatalogWarehouseXslxParser.cs" />
+    <Compile Include="Parser\Catalog\WarehouseXslx\ProductCatalogWarehouseXslxParser1.cs" />
+    <Compile Include="Parser\Catalog\XtechMeuhedet\ProductCatalogForXtechMeuhedetParser2.cs" />
+    <Compile Include="Parser\Catalog\XtechMeuhedet\ProductCatalogForXtechMeuhedetParser1.cs" />
+    <Compile Include="Parser\Catalog\XtechMeuhedet\ProductCatalogForXtechMeuhedetUpdateERPQuentetyDBParser.cs" />
+    <Compile Include="Parser\Catalog\YarpaWindows\ProductCatalogForYarpaWindowsParser.cs" />
+    <Compile Include="Parser\Catalog\YarpaWindows\ProductCatalogForYarpaWindowsParser1.cs" />
+    <Compile Include="Parser\Catalog\YarpaWindows\ProductCatalogForYarpaUpdateERPQuentetyWindowsDBParser1.cs" />
+    <Compile Include="Parser\Catalog\Yarpa\ProductCatalogForYarpaParser1.cs" />
+    <Compile Include="Parser\Catalog\Yarpa\ProductCatalogForYarpaUpdateERPQuentetyDBParser2.cs" />
+    <Compile Include="Parser\Catalog\Yarpa\ProductCatalogForYarpaUpdateERPQuentetyDBParser1.cs" />
+    <Compile Include="Parser\Catalog\Yarpa\ProductCatalogForYarpaParser.cs" />
+    <Compile Include="Parser\Common\ParserEnum.cs" />
+    <Compile Include="Parser\Common\ParserOperation.cs" />
+    <Compile Include="Parser\Common\Point.cs" />
+    <Compile Include="Parser\Count4Mobile\CurrentInventory\Sdf2Sqlite\CurrentInventoryNativPlusSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\CurrentInventory\Sdf2Sqlite\CurrentInventoryNativSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\CurrentInventory\Sdf2Sqlite\CurrentInventoryClalitSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\CurrentInventory\Sdf2Sqlite\CurrentInventoryMerkavaSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Itur\Sdf2Sqlite\IturMerkavaSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Location\Sdf2Sqlite\LocationNativPlusMISSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Location\Sdf2Sqlite\LocationNativPlusMISSdf2SqliteParserERP.cs" />
+    <Compile Include="Parser\Count4Mobile\Location\Sdf2Sqlite\LocationNativPlusMISSdf2SqliteParserIturCode.cs" />
+    <Compile Include="Parser\Count4Mobile\Location\Sdf2Sqlite\LocationNativSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Location\Sdf2Sqlite\LocationClalitSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Location\Sdf2Sqlite\LocationMerkavaSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\PreviousInventory\Sdf2Sqlite\PreviousInventoryNativSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\PreviousInventory\Sdf2Sqlite\PreviousInventoryClalitSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\PreviousInventory\Sdf2Sqlite\PreviousInventoryMerkavaSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\PreviousInventory\Xslx2Sqlite\PreviousInventoryMerkavaXslx2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\PropertyStrList\Sdf2Sqlite\PropertyStrListNativSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\PropertyStrList\Sdf2Sqlite\PropertyStrListClalitSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\PropertyStrList\Xslx2Sqlite\PropertyStrListDefaultXslx2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\PropertyStrList\Sdf2Sqlite\PropertyStrListMerkavaSdf2SqliteParser.cs" />
+    <Compile Include="Parser\Count4Mobile\TemplateInventory\Sdf2Sqlite\TemplateInventoryNativSdf2SqliteParser.cs" />
+    <Compile Include="Parser\DocumentHeader\DocumentHeaderAddSpetialDocToIturParser.cs" />
+    <Compile Include="Parser\DocumentHeader\DocumentHeaderAddFristDocToIturParser.cs" />
+    <Compile Include="Parser\DocumentHeader\DocumentHeaderFromDBParser.cs" />
+    <Compile Include="Parser\Family\AS400Hamashbir\FamilyAS400HamashbirParser.cs" />
+    <Compile Include="Parser\Family\NativXslx\FamilyNativXslx2SdfParser.cs" />
+    <Compile Include="Parser\Family\GeneralXLSX\FamilyGeneralXLSXParser.cs" />
+    <Compile Include="Parser\Family\H_M\FamilyH_M_NewParser.cs" />
+    <Compile Include="Parser\Itur\IturFromDBParser1.cs" />
+    <Compile Include="Parser\Itur\MultiCsv\IturMultiCsv2SdfParser1.cs" />
+    <Compile Include="Parser\Itur\MultiCsv\IturMultiCsv2SdfParser.cs" />
+    <Compile Include="Parser\Itur\MerkavaSdf\IturMerkavaXslx2SdfUpdateUpLevelParser.cs" />
+    <Compile Include="Parser\Itur\NativPlusLadpc\IturNativPlusLadpcParser1.cs" />
+    <Compile Include="Parser\Itur\NativPlusLadpc\IturNativPlusLadpcParser9999.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Parser\Itur\NativSdf\IturNativXslx2SdfUpdateUpLevelParser.cs" />
+    <Compile Include="Parser\Itur\NativSdf\IturUpdateNativXslx2SdfParser.cs" />
+    <Compile Include="Parser\Itur\NativSdf\IturNativXslx2SdfParser.cs" />
+    <Compile Include="Parser\Itur\NativSdf\IturUpdateNativSimpleSqlite2SdfParser.cs" />
+    <Compile Include="Parser\Itur\NativSdf\IturUpdateNativSqlite2SdfParser.cs" />
+    <Compile Include="Parser\Itur\YesXlsx\IturYesXlsxParserSN.cs" />
+    <Compile Include="Parser\Itur\YesXlsx\IturYesXlsxParserQ.cs" />
+    <Compile Include="Parser\Location\MultiCsv\LocationMultyCsvParser.cs" />
+    <Compile Include="Parser\Location\NativPlusLadpc\LocationNativPlusLadpcParser.cs" />
+    <Compile Include="Parser\Location\NativSdf\LocationNativXslx2SdfParser.cs" />
+    <Compile Include="Parser\Location\NativSdf\LocationUpdateNativSqlite2SdfParser.cs" />
+    <Compile Include="Parser\Location\YesXslx\LocationYesXlsxParserSN.cs" />
+    <Compile Include="Parser\Location\YesXslx\LocationYesXlsxParserQ.cs" />
+    <Compile Include="Parser\PDA\InventProductFromNativDBParser.cs" />
+    <Compile Include="Parser\PDA\InventProductMultiCsvParser.cs" />
+    <Compile Include="Parser\PDA\MerkavaXlsx\InventProductMerkavaXlsxParserSN.cs" />
+    <Compile Include="Parser\PDA\MerkavaXlsx\InventProductMerkavaXlsxParserQ.cs" />
+    <Compile Include="Parser\PDA\SetOperation\AfterCompare\InventProductFromDBAfterCompareParser.cs" />
+    <Compile Include="Parser\PDA\SetOperation\BeforeCompare\InventProductUpdate2SumByIturMakatSNumberProp10FromDBParser.cs" />
+    <Compile Include="Parser\PDA\SetOperation\BeforeCompare\InventProductUpdate2SumByIturBarcodeSNumberProp10FromDBParser.cs" />
+    <Compile Include="Parser\PDA\Sqlite\InventProductMISSqlite2SdfParser.cs" />
+    <Compile Include="Parser\PDA\YesXlsx\InventProductYesXlsxParserSN.cs" />
+    <Compile Include="Parser\PDA\YesXlsx\InventProductYesXlsxParserQ.cs" />
+    <Compile Include="Parser\PDA\SetOperation\BeforeCompare\InventProductUpdate2SumByIturBarcodeFromDBParser.cs" />
+    <Compile Include="Parser\PDA\SetOperation\BeforeCompare\InventProductUpdate2SumByIturBarcodeSNumberFromDBParser.cs" />
+    <Compile Include="Parser\PDA\Sqlite\InventProductNativPlusMISSqlite2SdfParser.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Parser\PDA\UpdateFixMistake\InventProductUpdateDBParser4.cs" />
+    <Compile Include="Parser\PDA\UpdateKey2Code\InventProductUpdate2BarcodeAndSNFromDBParser.cs" />
+    <Compile Include="Parser\PDA\SetOperation\BeforeCompare\InventProductUpdate2SumByIturMakatSNumberFromDBParser.cs" />
+    <Compile Include="Parser\PDA\UpdateKey2Code\InventProductUpdateMakat2BarcodeDBParser.cs" />
+    <Compile Include="Parser\PDA\UpdateKey2Code\InventProductUpdate2MakatAndSNFromDBParser.cs" />
+    <Compile Include="Parser\PDA\UpdateFixMistake\InventProductUpdateBarcodeFromDBParser.cs" />
+    <Compile Include="Parser\PDA\SetOperation\Compare\InventProductUpdateCompare2SumByIturMakatFromDBParser1.cs" />
+    <Compile Include="Parser\PDA\Sqlite\InventProductNativPlusSqlite2SdfParser.cs" />
+    <Compile Include="Parser\PDA\SetOperation\InventProductUpdate2SumByIturDocMakatFromDBParser.cs" />
+    <Compile Include="Parser\PDA\SetOperation\BeforeCompare\InventProductUpdate2SumByIturMakatFromDBParser.cs" />
+    <Compile Include="Parser\PDA\SetOperation\InventProductMinusByMakatFromDBParser.cs" />
+    <Compile Include="Parser\PDA\SetOperation\Compare\InventProductUpdateCompare2SumByIturMakatFromDBParser2.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Parser\PDA\UpdateFixMistake\InventProductUpdateDBParser3.cs" />
+    <Compile Include="Parser\PDA\UpdateFixMistake\InventProductUpdateDBParser3old.cs" />
+    <Compile Include="Parser\PDA\UpdateFixMistake\InventProductUpdateDBParser2.cs" />
+    <Compile Include="Parser\PDA\UpdateFixMistake\InventProductUpdateDBParser.cs" />
+    <Compile Include="Parser\PDA\InventProductToMalamDataSetParser.cs" />
+    <Compile Include="Parser\PDA\InventProductToMalamXMLParser.cs" />
+    <Compile Include="Parser\PDA\InventProductDefaultBackupParser.cs" />
+    <Compile Include="Parser\PDA\Sqlite\InventProductNativSqlite2SdfParser.cs" />
+    <Compile Include="Parser\PreviousInventory\Merkava2Sdf\PreviousInventoryMerkavaXslx2DictiontyParser.cs" />
+    <Compile Include="Parser\PreviousInventory\Nativ2Sdf\PreviousInventoryNativPlusYesXlsxDbSetParserSN.cs" />
+    <Compile Include="Parser\PreviousInventory\Nativ2Sdf\PreviousInventoryNativPlusYesXlsxDbSetParserQ.cs" />
+    <Compile Include="Parser\PreviousInventory\Nativ2Sdf\PreviousInventoryNativPlusXslx2DbSetParser.cs" />
+    <Compile Include="Parser\PreviousInventory\Nativ2Sdf\PreviousInventoryNativXslx2DbSetParser.cs" />
+    <Compile Include="Parser\PreviousInventory\NativPlusLadpc2DbSet\PreviousInventoryNativPlusLadpc2DbSetParser.cs" />
+    <Compile Include="Parser\PropertyStr\BuildingConfig\Nativ2Sdf\PropertyStrBuildingConfigNativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Merkava2Sdf\PropertyStr18MerkavaXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Nativ\PropertyStr10NativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Nativ\PropertyStr8NativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Nativ\PropertyStrNativSqlite2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Nativ\PropertyStr7NativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Nativ\PropertyStr9NativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Nativ\PropertyStr4NativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Nativ\PropertyStr5NativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Nativ\PropertyStr6NativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Nativ\PropertyStr3NativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Nativ\PropertyStr2NativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Nativ\PropertyStr1NativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Profile\Nativ2Sdf\PropertyStrProfileNativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Profile\PropertyStrProfileXml2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\PropertyDecorator\Nativ2Sdf\PropertyStrPropertyDecoratorNativXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\PropertyDecorator\NativExportErp\PropertyStrPropertyDecoratorNativExportErpParser1.cs" />
+    <Compile Include="Parser\PropertyStr\PropertyDecorator\NativExportErp\PropertyStrPropertyDecoratorNativExportErpParser2.cs" />
+    <Compile Include="Parser\PropertyStr\PropertyDecorator\NativExportErp\PropertyStrPropertyDecoratorNativExportErpParser4.cs" />
+    <Compile Include="Writer\ERP\NativExportErp\ExportInventProductNativExportErpERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\NativExportErp\Object_ToDataBase.cs" />
+    <Compile Include="Parser\PropertyStr\PropertyDecorator\NativExportErp\PropertyStrPropertyDecoratorNativExportErpParser3.cs" />
+    <Compile Include="Parser\Section\AS400Hamashbir\SectionAS400HamashbirParser.cs" />
+    <Compile Include="Parser\Section\AS400Mega\SectionAS400MegaParser.cs" />
+    <Compile Include="Parser\Section\GazitGlobalXlsx\SectionGazitGlobalXlsxParser.cs" />
+    <Compile Include="Parser\Section\NativXslx\SectionNativXslx2SdfParser1.cs" />
+    <Compile Include="Parser\Section\NativXslx\SectionNativXslx2SdfParser.cs" />
+    <Compile Include="Parser\Section\H_M\SectionH_M_NewParser.cs" />
+    <Compile Include="Parser\StatusInventProduct\StatusInventProductUpdateSumNativPlusSqlite2SdfParser.cs" />
+    <Compile Include="Parser\StatusInventProduct\StatusInventProductNativPlusSqlite2SdfParser.cs" />
+    <Compile Include="Parser\Supplier\AS400Mega\SupplierAS400MegaParser.cs" />
+    <Compile Include="Parser\Supplier\NativXslx\SupplierNativXslx2SdfParser.cs" />
+    <Compile Include="Parser\TemplateInventory\Nativ2Sdf\TemplateInventoryNativPlusXslx2DbSetParser.cs" />
+    <Compile Include="Parser\TemporaryInventory\Sqlite2Sdf\AddedInventory\TemporaryInventoryFromAddedInventorySqlite2SdfParser.cs" />
+    <Compile Include="Parser\TemporaryInventory\Sqlite2Sdf\DeletedInventory\TemporaryInventoryFromDeletedInventorySqlite2SdfParser.cs" />
+    <Compile Include="Parser\Family\Default\FamilyDefaultParser.cs" />
+    <Compile Include="Parser\Family\TafnitMatrix\FamilyTafnitMatrixParser.cs" />
+    <Compile Include="Parser\Family\PriorityKedsShowRoom\FamilyPriorityKedsShowRoomParser.cs" />
+    <Compile Include="Parser\Family\H_M\FamilyH_MParser.cs" />
+    <Compile Include="Parser\Family\LadyComfort\FamilyLadyComfortParser.cs" />
+    <Compile Include="Parser\Family\PriorityRenuar\FamilyPriorityRenuarParser.cs" />
+    <Compile Include="Parser\FileParser\ExcelMacrosFileParser.cs" />
+    <Compile Include="Parser\FileParser\ExcelFileParser.cs" />
+    <Compile Include="Parser\FileParser\CsvFileParser.cs" />
+    <Compile Include="Parser\FileParser\SqliteFileParser.cs" />
+    <Compile Include="Parser\FileParser\TextFileParser.cs" />
+    <Compile Include="Parser\Itur\ClalitSdf\IturClalitXslx2SdfParser.cs" />
+    <Compile Include="Parser\Itur\ClalitSdf\IturUpdateClalitSqlite2SdfParser.cs" />
+    <Compile Include="Parser\Itur\IturFacingParser.cs" />
+    <Compile Include="Parser\Itur\IturERPParser.cs" />
+    <Compile Include="Parser\Itur\IturFromDBParser.cs" />
+    <Compile Include="Parser\Itur\IturParser.cs" />
+    <Compile Include="Parser\Itur\MerkavaSdf\IturUpdateMerkavaSqlite2SdfParser.cs" />
+    <Compile Include="Parser\Itur\MerkavaSdf\IturMerkavaXslx2SdfParser.cs" />
+    <Compile Include="Parser\Location\ClalitSdf\LocationClalitXslx2SdfParser.cs" />
+    <Compile Include="Parser\Location\ClalitSdf\LocationUpdateClalitSqlite2SdfParser.cs" />
+    <Compile Include="Parser\Location\LocationUpdateTagParser.cs" />
+    <Compile Include="Parser\Location\LocationXlsxParser.cs" />
+    <Compile Include="Parser\Location\LocationEmulationParser.cs" />
+    <Compile Include="Parser\Location\LocationFromDBParser.cs" />
+    <Compile Include="Parser\Location\LocationParser.cs" />
+    <Compile Include="Parser\Count4Mobile\Location\Xslx2Sqlite\LocationMerkavaXslx2SqliteParser.cs" />
+    <Compile Include="Parser\Location\MerkavaSdf\LocationUpdateMerkavaSqlite2SdfParser.cs" />
+    <Compile Include="Parser\Location\MerkavaSdf\LocationMerkavaXslx2SdfParser.cs" />
+    <Compile Include="Parser\PDA\Sqlite\InventProductClalitSqlite2SdfParser.cs" />
+    <Compile Include="Parser\PDA\Sqlite\InventProductMerkavaSqlite2SdfParser.cs" />
+    <Compile Include="Parser\PDA\Sqlite\InventProductDB3Parser.cs" />
+    <Compile Include="Parser\PDA\InventProductWarehouseParser.cs" />
+    <Compile Include="Parser\PDA\InventProductMisParser.cs" />
+    <Compile Include="Parser\PDA\InventProductParser.cs" />
+    <Compile Include="Parser\PDA\InventProductParserBase.cs" />
+    <Compile Include="Parser\PDA\InventProductSimpleYarpaParser.cs" />
+    <Compile Include="Parser\PDA\InventProductCsvParser.cs" />
+    <Compile Include="Parser\PDA\InventProductSimpleParser.cs" />
+    <Compile Include="Parser\PDA\InventProductFromDBParser.cs" />
+    <Compile Include="Parser\PreviousInventory\Clalit2Sdf\PreviousInventoryClalitXslx2DbSetParser.cs" />
+    <Compile Include="Parser\PreviousInventory\Merkava2Sdf\PreviousInventoryMerkavaXslx2DbSetParser.cs" />
+    <Compile Include="Parser\PropertyStr\BuildingConfig\Clalit2Sdf\PropertyStrBuildingConfigClalitXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\BuildingConfig\Merkava2Sdf\PropertyStrBuildingConfigMerkavaXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Clalit2Sdf\PropertyStrClalitXslx2SdfParser5.cs" />
+    <Compile Include="Parser\PropertyStr\Clalit2Sdf\PropertyStrClalitXslx2SdfParser4.cs" />
+    <Compile Include="Parser\PropertyStr\Clalit2Sdf\PropertyStrClalitXslx2SdfParser3.cs" />
+    <Compile Include="Parser\PropertyStr\Clalit2Sdf\PropertyStrClalitXslx2SdfParser2.cs" />
+    <Compile Include="Parser\PropertyStr\Clalit2Sdf\PropertyStrClalitXslx2SdfParser1.cs" />
+    <Compile Include="Parser\PropertyStr\Merkava2Sdf\PropertyStr7MerkavaXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Merkava2Sdf\PropertyStr6MerkavaXslx2SdfParser.cs" />
+    <Compile Include="Parser\PropertyStr\Merkava2Sdf\PropertyStr6MerkavaXslx2SdfParser1.cs" />
+    <Compile Include="Parser\Section\GazitVerifoneSteimaztzky\SectionGazitVerifoneSteimaztzkyParser.cs" />
+    <Compile Include="Parser\Section\GazitVerifoneSteimaztzky\SectionGazitVerifoneSteimaztzkyParser1.cs" />
+    <Compile Include="Parser\Section\GeneralXLSX\SectionGeneralXLSXParser.cs" />
+    <Compile Include="Parser\Section\Sapb1Zometsfarim\SectionSapb1ZometsfarimParser.cs" />
+    <Compile Include="Parser\Section\Sapb1Zometsfarim\SectionSapb1ZometsfarimParser1.cs" />
+    <Compile Include="Parser\Section\TafnitMatrix\SectionTafnitMatrixParser.cs" />
+    <Compile Include="Parser\Section\MPL\SectionMPLParser.cs" />
+    <Compile Include="Parser\Section\FRSVisionMirkam\SectionFRSVisionMirkamParser.cs" />
+    <Compile Include="Parser\Section\H_M\SectionH_MParser.cs" />
+    <Compile Include="Parser\Section\NimrodAviv\SectionNimrodAvivParser.cs" />
+    <Compile Include="Parser\Section\MikramSonol\SectionMikramSonolParser.cs" />
+    <Compile Include="Parser\Section\GeneralCSV\SectionGeneralCSVParser.cs" />
+    <Compile Include="Parser\Section\SectionFromDBParser.cs" />
+    <Compile Include="Parser\Section\NetPOSSuperPharm\SectionNetPOSSuperPharmParser.cs" />
+    <Compile Include="Parser\Shelf\ShelfFacingParser.cs" />
+    <Compile Include="Parser\Supplier\AvivPOS\SupplierAvivPOSParser.cs" />
+    <Compile Include="Parser\Supplier\ComaxASP\SupplierComaxASPParser.cs" />
+    <Compile Include="Parser\Supplier\AS400April\SupplierAS400AprilParser.cs" />
+    <Compile Include="Parser\Supplier\FRSVisionMirkam\SupplierFRSVisionMirkamParser.cs" />
+    <Compile Include="Parser\Supplier\GeneralXLSX\SupplierGeneralXLSXParser.cs" />
+    <Compile Include="Parser\Supplier\Nibit\SupplierNibitParser.cs" />
+    <Compile Include="Parser\Supplier\Made4Net\SupplierMade4NetParser.cs" />
+    <Compile Include="Parser\Supplier\Default\SupplierDefaultParser.cs" />
+    <Compile Include="Parser\Supplier\Sapb1Zometsfarim\SupplierSapb1ZometsfarimParser.cs" />
+    <Compile Include="Parser\Supplier\SupplierFromDBParser.cs" />
+    <Compile Include="Parser\UnitPlan\UnitPlanFromDBParser.cs" />
+    <Compile Include="Parser\UnitPlan\UnitPlanParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ExportImportModuleInit.cs" />
+    <Compile Include="Interface\Reader\IIturAnalyzesReader.cs" />
+    <Compile Include="Reader\CurrentInventoryAdvanced\CurrentInventoryAdvancedReader.cs" />
+    <Compile Include="Reader\IturAnalyzes\IturAnalyzesFamilyReader.cs" />
+    <Compile Include="Reader\IturAnalyzes\IturAnalyzesSimpleReader.cs" />
+    <Compile Include="Reader\IturAnalyzes\IturAnalyzesReader.cs" />
+    <Compile Include="Reader\IturAnalyzes\IturAnalyzesSimpleSumReader.cs" />
+    <Compile Include="Repository\BuildingConfig\ImportBuildingConfigADORepository.cs" />
+    <Compile Include="Repository\Count4Mobile\TemplateInventory\ImportTemplateInventorySQLiteADORepository.cs" />
+    <Compile Include="Repository\StatusInventProduct\ImportStatusInventProductBulkRepository.cs" />
+    <Compile Include="Repository\TemplateInventory\ImportTemplateInventoryBulkRepository.cs" />
+    <Compile Include="Repository\Count4Mobile\BuildingConfig\ImportBuildingConfigSQLiteADORepository.cs" />
+    <Compile Include="Repository\Count4Mobile\Catalog\ImportCatalogSQLiteADORepository.cs" />
+    <Compile Include="Repository\CurrentInventoryAdvanced\CurrentInventoryAdvancedSource\CurrentInventoryAdvancedSourceReaderBulkRepository.cs" />
+    <Compile Include="Repository\CurrentInventoryAdvanced\ExportCurrentInventorAdvancedERPRepository.cs" />
+    <Compile Include="Repository\Count4Mobile\CurrentInventor\ImportCurrentInventorSQLiteADORepository.cs" />
+    <Compile Include="Repository\Count4Mobile\Previous\ImportPreviousInventorySQLiteADORepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Repository\Count4Mobile\PropertyStrList\ImportPropertyStrListSQLiteADORepository.cs" />
+    <Compile Include="Repository\Count4Mobile\Location\ImportLocationSQLiteADORepository.cs" />
+    <Compile Include="Repository\CurrentInventoryAdvanced\Reader\CurrentInventoryAdvancedReaderBlukRepository.cs" />
+    <Compile Include="Repository\CustomerConfig\ExportCustomerMISConfigFileRepository.cs" />
+    <Compile Include="Repository\CustomerConfig\ExportCustomerConfigFileRepository.cs" />
+    <Compile Include="Repository\CustomerConfig\ExportUserIniFileRepository.cs" />
+    <Compile Include="Repository\DocumentHeader\ImportDocumentHeaderBulkRepository.cs" />
+    <Compile Include="Repository\Family\ImportFamilyADORepository.cs" />
+    <Compile Include="Repository\InventProduct\ExportInventProductSimpleERPFileRepository.cs" />
+    <Compile Include="Repository\InventProduct\ImportInventProductBulkRepository.cs" />
+    <Compile Include="Repository\InventProduct\ImportInventProductSimpleADORepository.cs" />
+    <Compile Include="Repository\IturAnalyzes\IturAnalyzesSource\IturAnalyzesSourceRepository.cs" />
+    <Compile Include="Repository\IturAnalyzes\IturAnalyzesSource\IturAnalyzesSourceReaderBulkRepository.cs" />
+    <Compile Include="Repository\IturAnalyzes\IturAnalyzesSource\IturAnalyzesSourceReaderADORepository.cs" />
+    <Compile Include="Repository\IturAnalyzes\Reader\IturAnalyzesReaderBulkRepository.cs" />
+    <Compile Include="Repository\Itur\ExportIturFileRepository.cs" />
+    <Compile Include="Repository\Itur\ImportIturBulkRepository.cs" />
+    <Compile Include="Repository\Itur\ImportIturADORepository.cs" />
+    <Compile Include="Repository\Location\ImportLocationADORepository.cs" />
+    <Compile Include="Interface\IUploadUnitRepository.cs" />
+    <Compile Include="Repository\PreviousInventory\ImportPreviousInventorysBulkRepository.cs" />
+    <Compile Include="Repository\Product\WrapperMulti\WrapperMulti.cs" />
+    <Compile Include="Repository\Product\WrapperMulti\WrapperMultiEnum.cs" />
+    <Compile Include="Repository\Product\WrapperMulti\WrapperMultiRepository.cs" />
+    <Compile Include="Repository\Product\UploadUnit\UploadUnit.cs" />
+    <Compile Include="Repository\Product\UploadUnit\UploadUnitRepository.cs" />
+    <Compile Include="Repository\Product\UploadUnit\UploadUnits.cs" />
+    <Compile Include="Repository\Product\ImportCatalogADORepository.cs" />
+    <Compile Include="Repository\Product\ExportCatalogSimpleFileRepository.cs" />
+    <Compile Include="Repository\Product\ImportCatalogSimpleADORepository.cs" />
+    <Compile Include="Repository\Product\ImportCatalogSqlBulkRepository.cs" />
+    <Compile Include="Repository\Product\ImportCatalogBulkRepository.cs" />
+    <Compile Include="Repository\PropertyStr\ImportPropertyStrADORepository.cs" />
+    <Compile Include="Repository\Section\ImportSectionADORepository.cs" />
+    <Compile Include="Repository\Shelf\ImportShelfBulkRepository.cs" />
+    <Compile Include="Repository\Supplier\ImportSupplierADORepository.cs" />
+    <Compile Include="Repository\TemporaryInventory\ImportTemporaryInventoryBulkRepository.cs" />
+    <Compile Include="Repository\UnitPlan\ImportUnitPlanEFRepository.cs" />
+    <Compile Include="Repository\UnitPlan\ImportUnitPlanADORepository.cs" />
+    <Compile Include="Writer\Catalog\ExportCatalogPdaHt630FileWriter.cs" />
+    <Compile Include="Writer\CurrentInventory\ClalitXslx\ExportCurrentInventoryClaitXslxWriter1.cs" />
+    <Compile Include="Writer\CurrentInventory\MerkavaGovXslx\ExportCurrentInventoryMerkavaGovXslxWriter2_1.cs" />
+    <Compile Include="Writer\CurrentInventory\MerkavaGovXslx\ExportCurrentInventoryMerkavaGovXslxWriter2_2.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusLadpcXslx\ExportCurrentInventoryNativPlusLadpcXslxWriter2.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusLadpcXslx\ExportCurrentInventoryNativPlusLadpcCsvWriter1.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusMateAsher\ExportCurrentInventoryNativPlusMateAsherXslxWriter1.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusMisradApnim\ExportCurrentInventoryNativPlusMisradApnimXslxWriter.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusYesXslx\ExportCurrentInventoryNativPlusYesXslxWriter1.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusYesXslx\ExportCurrentInventoryNativPlusYesXslxWriter1_Q.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusYesXslx\ExportCurrentInventoryNativPlusYesXslxWriter1_SN.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusYesXslx\ExportCurrentInventoryNativPlusYesXslxWriter2.cs" />
+    <Compile Include="Writer\CurrentInventory\MerkavaXslx\ExportCurrentInventoryMerkavaXslxWriter5.cs" />
+    <Compile Include="Writer\CurrentInventory\MerkavaXslx\ExportCurrentInventoryMerkavaXslxWriter4.cs" />
+    <Compile Include="Writer\CurrentInventory\MerkavaXslx\ExportCurrentInventoryMerkavaXslxWriter3.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusXslx\ExportCurrentInventoryNativPlusXslxWriter1_SN.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusXslx\ExportCurrentInventoryNativPlusXslxWriter1_Q.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusXslx\ExportCurrentInventoryNativPlusXslxWriter2.cs" />
+    <Compile Include="Writer\CurrentInventory\NativPlusXslx\ExportCurrentInventoryNativPlusXslxWriter1.cs" />
+    <Compile Include="Writer\CurrentInventory\NativXslx\ExportCurrentInventoryNativXslxWriter1.cs" />
+    <Compile Include="Writer\CurrentInventory\MerkavaXslx\ExportCurrentInventoryMerkavaXslxWriter2_2.cs" />
+    <Compile Include="Writer\CurrentInventory\MerkavaXslx\ExportCurrentInventoryMerkavaXslxWriter1.cs" />
+    <Compile Include="Writer\CurrentInventory\MerkavaXslx\ExportCurrentInventoryMerkavaXslxWriter2_1.cs" />
+    <Compile Include="Writer\CurrentInventory\StockSonigoXslx\ExportCurrentInventoryStockSonigoXslxWriter1.cs" />
+    <Compile Include="Writer\ERP\AS400Honigman\ExportInventProductAS400HonigmanERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\AS400Honigman\ExportInventProductAS400HonigmanERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\AS400Honigman\ExportInventProductAS400HonigmanERPFileWriter2.cs" />
+    <Compile Include="Writer\ERP\AS400Ho\ExportInventProductAS400HoERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\AS400Ho\ExportInventProductAS400HoERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\AS400Ho\ExportInventProductAS400HoERPFileWriter2.cs" />
+    <Compile Include="Writer\ERP\AS400Jafora\ExportInventProductAS400JaforaERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\AS400Leumit\ExportInventProductAS400LeumitERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\AS400Leumit\ExportInventProductAS400LeumitERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\AvivMulti\ExportInventProductAvivMultiERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\AvivMulti\ExportInventProductAvivMultiERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\AvivPOS\ExportInventProductAvivPOSERPFileWriter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Writer\ERP\ComaxASP\ExportInventProductComaxERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\AS400AmericanEagle\ExportInventProductAS400AmericanEagleERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\AS400AmericanEagle\ExportInventProductAS400AmericanEagleERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\AS400Jafora\ExportInventProductAS400JaforaERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\AS400Jafora\ExportInventProductAS400JaforaERPFileWriter2.cs" />
+    <Compile Include="Writer\ERP\AS400April\ExportInventProductAS400AprilERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\AS400April\ExportInventProductAS400AprilERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\BazanCsv\ExportInventProductBazanCsvERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\AS400Mango\ExportInventProductAS400MangoERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\AS400Mango\ExportInventProductAS400MangoERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\AS400Mega\ExportInventProductAS400MegaERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\AS400Mega\ExportInventProductAS400MegaERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\AS400Hamashbir\ExportInventProductAS400HamashbirERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\AS400Hamashbir\ExportInventProductAS400HamashbirERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\Nesher\ExportInventProductNesherERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\PriorityRenuar\ExportInventProductPriorityRenuarERPFileWriter_TM.cs" />
+    <Compile Include="Writer\ERP\PriorityRenuar\ExportInventProductPriorityRenuarERPFileWriter_TW.cs" />
+    <Compile Include="Writer\ERP\YtungXslx\ExportInventProductYtungXslxFileWriter.cs" />
+    <Compile Include="Writer\ERP\OrenMutagim\ExportInventProductOrenMutagimERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\GazitLeeCooper\ExportInventProductGazitLeeCooperERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\H_M\ExportInventProductH_M_NewERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\NimrodAviv\ExportInventProductNimrodAvivERPFileWriter3.cs" />
+    <Compile Include="Writer\ERP\XtechMeuhedetXlsx\ExportInventProductXtechMeuhedetXlsxERPFileWriter2.cs" />
+    <Compile Include="Writer\ERP\XtechMeuhedetXlsx\ExportInventProductXtechMeuhedetXlsxERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\XtechMeuhedetXlsx\ExportInventProductXtechMeuhedetXlsxERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\GeneralXslx\ExportInventProductGeneralXslxFileWriter.cs" />
+    <Compile Include="Writer\ERP\GazitVerifoneSteimaztzky\ExportInventProductGazitVerifoneSteimaztzkyERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\GazitVerifoneSteimaztzky\ExportInventProductGazitVerifoneSteimaztzkyERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\NikeInt\ExportInventProductNikeIntERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\NikeInt\ExportInventProductNikeIntERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\Otech\ExportInventProductOtechERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\Otech\ExportInventProductOtechERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\Otech\ExportInventProductOtechERPFileWriter2.cs" />
+    <Compile Include="Writer\ERP\Otech\ExportInventProductOtechERPFileWriter_M.cs" />
+    <Compile Include="Writer\ERP\Otech\ExportInventProductOtechERPFileWriter_T.cs" />
+    <Compile Include="Writer\ERP\Otech\ExportInventProductOtechERPFileWriter_W.cs" />
+    <Compile Include="Writer\ERP\PriorityAldoXslx\ExportInventProductPriorityAldoERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\PriorityCastro\ExportInventProductPriorityCastroERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\PriorityCastro\ExportInventProductPriorityCastroERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\PrioritySweetGirlXlsx\ExportInventProductPrioritySweetGirlXlsxErpFileWriter1.cs" />
+    <Compile Include="Writer\ERP\PrioritySweetGirlXlsx\ExportInventProductPrioritySweetGirlXlsxErpFileWriter.cs" />
+    <Compile Include="Writer\ERP\Sapb1Xslx\ExportInventProductSapb1XslxERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\Sapb1Xslx\ExportInventProductSapb1XslxERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\Sapb1Zometsfarim\ExportInventProductSapb1ZometsfarimERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\Sapb1Zometsfarim\ExportInventProductSapb1ZometsfarimERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\TafnitMatrix\ExportInventProductTafnitMatrixERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\TafnitMatrix\ExportInventProductTafnitMatrixERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\FRSVisionMirkam\ExportInventProductFRSVisionMirkamERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\FRSVisionMirkam\ExportInventProductFRSVisionMirkamERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\Hash\ExportInventProductHashERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\Hash\ExportInventProductHashERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\MPL\ExportInventProductMPLFileWriter1.cs" />
+    <Compile Include="Writer\ERP\MPL\ExportInventProductMPLFileWriter2.cs" />
+    <Compile Include="Writer\ERP\PriorityKedsShowRoom\ExportInventProductPriorityKedsShowRoomERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\PriorityKedsShowRoom\ExportInventProductPriorityKedsShowRoomERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\H_M\ExportInventProductH_MERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\NimrodAviv\ExportInventProductNimrodAvivERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\NimrodAviv\ExportInventProductNimrodAvivERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\NimrodAviv\ExportInventProductNimrodAvivERPFileWriter2.cs" />
+    <Compile Include="Writer\ERP\OrenOriginals\ExportInventProductOrenOriginalsERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\OrenOriginals\ExportInventProductOrenOriginalsERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\OrenOriginals\ExportInventProductOrenOriginalsERPFileWriter2.cs" />
+    <Compile Include="Writer\ERP\Nibit\ExportInventProductNibitERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\Nibit\ExportInventProductNibitERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\Made4Net\ExportInventProductMade4NetERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\Made4Net\ExportInventProductMade4NetERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\LadyComfort\ExportInventProductLadyComfortERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\LadyComfort\ExportInventProductLadyComfortERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\MaccabiPharmSAP\ExportInventProductMaccabiPharmSAPERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\MaccabiPharmSAP\ExportInventProductMaccabiPharmSAPERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\GeneralCSV\ExportInventProductGeneralCSVERPFileWriter2.cs" />
+    <Compile Include="Writer\ERP\MikiKupot\ExportInventProductMikiKupotERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\MiniSoft\ExportInventProductMiniSoftERPFileWriter2.cs" />
+    <Compile Include="Writer\ERP\MiniSoft\ExportInventProductMiniSoftERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\MiniSoft\ExportInventProductMiniSoftERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\One1\ExportInventProducOne1ERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\PriorityRenuar\ExportInventProductPriorityRenuarERPFileWriter_M.cs" />
+    <Compile Include="Writer\ERP\PriorityRenuar\ExportInventProductPriorityRenuarERPFileWriter_T.cs" />
+    <Compile Include="Writer\ERP\PriorityRenuar\ExportInventProductPriorityRenuarERPFileWriter_W.cs" />
+    <Compile Include="Writer\ERP\PriorityRenuar\ExportInventProductPriorityRenuarERPFileWriter2.cs" />
+    <Compile Include="Writer\ERP\RetalixNext\ExportInventProductRetalixNextERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\RetalixNext\ExportInventProductRetalixNextERPFileWriter0.cs" />
+    <Compile Include="Writer\ERP\RetalixNext\ExportInventProductRetalixNextERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\MikramSonolSAP\ExportInventProductMikramSonolSAPERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\MikramSonolSAP\ExportInventProductMikramSonolSAPERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\PriorityKeds\ExportInventProductPriorityKedsMatrixERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\PriorityKeds\ExportInventProductPriorityKedsRegularERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\PriorityKeds\ExportInventProductPriorityKedsERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\MikramTen\ExportInventProductMikramTenERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\MikramTen\ExportInventProductMikramTenERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\MikramSonol\ExportInventProductMikramSonolERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\MikramSonol\ExportInventProductMikramSonolERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\GazitVerifone\ExportInventProductGazitERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\GeneralCSV\ExportInventProductGeneralCSVERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\GeneralCSV\ExportInventProductGeneralCSVERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\NetPOSSuperPharm\ExportInventProductNetPOSSuperPharmERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\NetPOSSuperPharm\ExportInventProductNetPOSSuperPharmERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\PriorityRenuar\ExportInventProductPriorityRenuarERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\PriorityRenuar\ExportInventProductPriorityRenuarERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\RetalixPosHO\ExportInventProductRetalixPosHOERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\RetalixPosHO\ExportInventProductRetalixPosHOERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\RetalixPosHO\ExportInventProductRetalixPosHOERPFileWriter0.cs" />
+    <Compile Include="Writer\ERP\Unizag\ExportInventProductUnizagERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\WarehouseXslx\ExportInventProductWarehouseXslxFileFormulaWriter.cs" />
+    <Compile Include="Writer\ERP\WarehouseXslx\ExportInventProductWarehouseXslxFileWriter.cs" />
+    <Compile Include="Writer\ERP\WarehouseXslx\ExportInventProductWarehouseXslxFileWriter1.cs" />
+    <Compile Include="Writer\ERP\XtechMeuhedet\ExportInventProductXtechMeuhedetERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\XtechMeuhedet\ExportInventProductXtechMeuhedetERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\Yarpa\ExportInventProductYarpaERPFileWriter.cs" />
+    <Compile Include="Writer\ERP\Yarpa\ExportInventProductYarpaERPFileWriter1.cs" />
+    <Compile Include="Writer\ERP\YellowPaz\ExportInventProductYellowPazERPFileWriter.cs" />
+    <Compile Include="Writer\Itur\ExportIturPdaMISFileWriter.cs" />
+    <Compile Include="Writer\Itur\ExportIturFileWriter.cs" />
+    <Compile Include="Writer\Itur\ExportIturPdaHt630FileWriter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Interface\UploadRepository\" />
+    <Folder Include="Reader\FamilyAnalyzes\" />
+    <Folder Include="Repository\FamilyAnalyzes\FamilyAnalyzesSource\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Repository\Branch\ImportBranchEFRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interface\ImportRepository\IImportInventProductBlukRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Count4U.Localization\Count4U.Localization.csproj">
+      <Project>{c1716c1b-995a-481b-8853-1b984f75be45}</Project>
+      <Name>Count4U.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.Common\Count4U.Model.Common.csproj">
+      <Project>{5e70d036-3982-4d9f-95ca-197e616d7f59}</Project>
+      <Name>Count4U.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ServiceContract\Count4U.Model.ServiceContract.csproj">
+      <Project>{6c200172-9847-40e4-ae97-ec50bbf4d0a4}</Project>
+      <Name>Count4U.Model.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model\Count4U.Model.csproj">
+      <Project>{a3145385-051f-4ffa-9dcb-3014da552419}</Project>
+      <Name>Count4U.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

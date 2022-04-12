@@ -1,0 +1,457 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.Customer.CustomerChooseView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Pagination="clr-namespace:Count4U.CustomControls.Pagination;assembly=Count4U.CustomControls" 
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Interactivity.InteractionRequest;assembly=Microsoft.Practices.Prism.Interactivity" 
+             xmlns:Helpers="clr-namespace:Count4U.Common.Helpers;assembly=Count4U.Common" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+             xmlns:Converter="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:Behaviours="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+             xmlns:ImageButtonCursor="clr-namespace:Count4U.CustomControls.ImageButtonCursor;assembly=Count4U.CustomControls"
+             xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:actions="clr-namespace:Count4U.Common.Helpers.Actions;assembly=Count4U.Common"
+             xmlns:uiCommandService="clr-namespace:Count4U.Common.Services.UICommandService;assembly=Count4U.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="700" MinWidth="750">
+    <Grid>
+
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Modules.ContextCBI;component/Views/Resources.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+
+                <Converter:CBIContextToBoolConverter x:Key="contextToBool" />
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <i:Interaction.Triggers>
+            <prism:InteractionRequestTrigger SourceObject="{Binding YesNoRequest}">
+                <actions:MessageBoxYesNoAction />
+            </prism:InteractionRequestTrigger>
+        </i:Interaction.Triggers>
+
+        <Border Grid.Row="0" BorderBrush="{StaticResource backForwardLineBorderBrush}" Background="{StaticResource backForwardLineBrush}"  BorderThickness="1">
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+
+                <Grid Grid.Column="0">
+                    <ContentControl x:Name="backForward" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"
+												 />
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="10,0,0,0">
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="0,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="1,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                </Grid>
+
+                <Grid Grid.Column="2" Margin="10,0,0,0">
+
+                    <ImageButton:ImageButton Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+								             Name="btnSearch"                                        
+                                             
+                                            ToolTip="{Binding Path=SearchCommand.Title}"					
+					                        ImageSource="{Binding Path=SearchCommand.Icon}"
+                                                                                                       
+                                             ImageWidth="24" ImageHeight="24" CenterX="12" CenterY="12">
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton Margin="30,0,0,00" HorizontalAlignment="Left" VerticalAlignment="Center" 
+								             Name="btnFilter"                                             
+                                             ToolTip="{x:Static Localization:Resources.Command_Filter}"					                         
+                                             ImageWidth="24" ImageHeight="24" CenterX="12" CenterY="12">
+                        <ImageButton:ImageButton.Style>
+                            <Style TargetType="{x:Type ImageButton:ImageButton}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=IsFilterAnyField}" Value="True">
+                                        <DataTrigger.Setters>
+                                            <Setter Property="ImageSource" Value="{x:Static uiCommandService:UICommandIconRepository.FilterState2}" />
+                                        </DataTrigger.Setters>
+                                    </DataTrigger>
+
+                                    <DataTrigger Binding="{Binding Path=IsFilterAnyField}" Value="False">
+                                        <DataTrigger.Setters>
+                                            <Setter Property="ImageSource" Value="{x:Static uiCommandService:UICommandIconRepository.FilterState1}" />
+                                        </DataTrigger.Setters>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ImageButton:ImageButton.Style>
+                    </ImageButton:ImageButton>
+
+                </Grid>
+                
+                <Grid Grid.Column="3" Margin="10,0,0,0">
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="0,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="1,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                </Grid>
+                
+                <Grid Grid.Column="4" Margin="10,0,0,0">
+                    <ImageButton:ImageButton Margin="0,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"                                              
+                                               ToolTip="{Binding Path=AddCommand.Title}"
+					Command="{Binding Path=AddCommand}" 
+					ImageSource="{Binding Path=AddCommand.Icon}"
+                        
+                                           >
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton Margin="36,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"                                                                                          
+                            ToolTip="{Binding Path=EditCommand.Title}"
+					        Command="{Binding Path=EditCommand}" 
+					        ImageSource="{Binding Path=EditCommand.Icon}"
+                                            >
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton Margin="72,0,0,0" 
+                                             HorizontalAlignment="Left" 
+                                             VerticalAlignment="Center"                                                                                         
+                                             ToolTip="{Binding Path=DeleteCommand.Title}"
+					                         Command="{Binding Path=DeleteCommand}" 
+					                         ImageSource="{Binding Path=DeleteCommand.Icon}"
+                                             >
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton Margin="108,0,0,0" 
+                                             HorizontalAlignment="Left" 
+                                             VerticalAlignment="Center"                                                                                         
+                                             ToolTip="{Binding Path=DeleteWithoutChildCommand.Title}"
+					                         Command="{Binding Path=DeleteWithoutChildCommand}" 
+					                         ImageSource="{Binding Path=DeleteWithoutChildCommand.Icon}"
+                                             >
+                    </ImageButton:ImageButton>
+                </Grid>
+                
+                <Grid Grid.Column="5" Margin="10,0,0,0">
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="0,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="1,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                </Grid>
+                <Grid Grid.Column="6" Margin="10,0,0,0">
+                    <ImageButton:ImageButton Margin="0,0,0,0" 
+                                             x:Name="btnReport"
+                                             HorizontalAlignment="Left" 
+                                             VerticalAlignment="Center" 
+                                             Visibility="Visible"                                                 
+                                             ToolTip="{Binding Path=ReportCommand.Title}"					                         
+					                          ImageSource="{x:Static uiCommandService:UICommandIconRepository.Report}"                                                                                         
+                                             IsEnabled="True" 
+                                             ToolTipService.ShowOnDisabled="True" 
+                                             Width="32" 
+                                             Height="32" >
+                        <i:Interaction.Behaviors>
+                            <Behaviours:ContextMenuLeftButtonBehavior />
+                        </i:Interaction.Behaviors>
+                    </ImageButton:ImageButton>
+                </Grid>
+
+                <Grid Grid.Column="7" Margin="10,0,0,0">
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="0,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="1,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                </Grid>
+                
+                <Grid Grid.Column="8" Margin="10,0,0,0">
+                    <ImageButton:ImageButton x:Name="btnOpenScript"
+                                Margin="0,0,0,0" 
+                                HorizontalAlignment="Left" 
+                                VerticalAlignment="Center" 
+                                             
+                                              ToolTip="{Binding Path=ScriptOpenCommand.Title}"
+					                         Command="{Binding Path=ScriptOpenCommand}" 
+					                         ImageSource="{Binding Path=ScriptOpenCommand.Icon}"  
+                                              Width="32" 
+                                             Height="32"
+                                                                           >
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton x:Name="btnSaveScript"
+                                 Margin="36,0,0,0"
+                                 HorizontalAlignment="Left" 
+                                 VerticalAlignment="Center"                                                                               
+                                             
+                                 ToolTip="{Binding Path=ScriptSaveCommand.Title}"
+					             Command="{Binding Path=ScriptSaveCommand}" 
+					             ImageSource="{Binding Path=ScriptSaveCommand.Icon}" 
+                                              Width="32" 
+                                             Height="32"
+                                             >
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton x:Name="btnRepair"
+                                 Margin="72,0,0,0" 
+                                 HorizontalAlignment="Left" 
+                                 VerticalAlignment="Center" 
+                                             
+                                 ToolTip="{Binding Path=RepairCommand.Title}"
+					             Command="{Binding Path=RepairCommand}" 
+					             ImageSource="{Binding Path=RepairCommand.Icon}"      
+                                 >                                              
+                    </ImageButton:ImageButton>
+
+                </Grid>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Margin="5,5,0,5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+
+            <TextBlock Grid.Column="0" Margin="0,0,0,0" VerticalAlignment="Center" Text="{x:Static Localization:Resources.View_CustomerChoose_tbCustomer}" />
+
+            <Pagination:Pagination Grid.Column="1" Margin="5,0,0,0" 
+							   PageSize="{Binding Path=PageSize, Mode=TwoWay}" 
+							   PageCurrent="{Binding Path=PageCurrent, Mode=TwoWay}" 
+							   ItemsTotal="{Binding Path=ItemsTotal, Mode=TwoWay}"/>
+
+        </Grid>
+
+        <DataGrid Grid.Row="2"
+                  Grid.Column="0" 
+                  x:Name="dataGrid"
+                  Margin="5,0,5,5" 
+                  ItemsSource="{Binding Path=List}" 
+				  SelectedItem="{Binding Path=Current}"                  
+				  Background="Transparent"
+				  BorderBrush="Transparent" BorderThickness="0"
+                  VirtualizingStackPanel.VirtualizationMode="Standard"  
+				  SelectionMode="Extended"
+                  MouseDoubleClick="DataGrid_MouseDoubleClick"
+							>
+            <DataGrid.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/MdiThemes/Theme1.xaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchCustomerField_tbCode}"
+                                        Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Code, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_CustomerChoose_columnLogo}"
+                                        Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Width="20" Height="20"  Source="{Binding Path=Image}"  />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_CustomerChoose_columnName}"
+                                        Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Name, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_CustomerChoose_columnDescription}"
+                                        Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Description, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_CustomerChoose_columnContactPerson}"
+                                        Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ContactPerson, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_CustomerChoose_columnMail}"
+                                        Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Mail, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_CustomerChoose_columnAddress}"
+                                        Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Address, Mode=OneWay}" HorizontalAlignment="Left" VerticalAlignment="Center"
+                                       ToolTip="{Binding Path=Address, Mode=OneWay}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_CustomerChoose_columnPhone}"
+                                        Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Phone, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_CustomerChoose_columnFax}"
+                                        Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Fax, Mode=OneWay}" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="" Width="75" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <Grid x:Name="stackEdit" HorizontalAlignment="Stretch" VerticalAlignment="Center">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <ImageButtonCursor:ImageButtonCursor HorizontalAlignment="Center" Grid.Column="0" 
+                                                                         Margin="0,0,0,0"
+                                                	Command="{Binding Path=DataContext.EditSelectedCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"                                                                         
+									                CommandParameter="{Binding Path=.}"
+                                                    ImageSource="{Binding Path=DataContext.EditSelectedCommand.Icon16, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                                    ImageWidth="12" ImageHeight="12">
+                                    </ImageButtonCursor:ImageButtonCursor>
+
+                                    <ImageButtonCursor:ImageButtonCursor Grid.Column="1" 
+                                                                         HorizontalAlignment="Center" 
+                                                                         Margin="0,0,0,0"
+                                                 	Command="{Binding Path=DataContext.ChildSelectedCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+									                CommandParameter="{Binding Path=.}"
+                                                    ImageSource="{Binding Path=DataContext.ChildSelectedCommand.Icon, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                                    ImageWidth="12" ImageHeight="12">
+                                    </ImageButtonCursor:ImageButtonCursor>
+
+
+                                    <ImageButtonCursor:ImageButtonCursor Grid.Column="2" 
+                                                                         HorizontalAlignment="Center" 
+                                                                         Margin="0,0,0,0"
+                                                 	Command="{Binding Path=DataContext.DeleteSelectedCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+									                CommandParameter="{Binding Path=.}"
+                                                    ImageSource="{Binding Path=DataContext.DeleteSelectedCommand.Icon16, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                                    ImageWidth="12" ImageHeight="12">
+                                    </ImageButtonCursor:ImageButtonCursor>
+
+                                </Grid>
+
+                                <StackPanel x:Name="stackView" Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Center">
+
+                                    <ImageButtonCursor:ImageButtonCursor HorizontalAlignment="Center" Margin="0,0,0,0"
+                                                 	Command="{Binding Path=DataContext.ViewCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+									                CommandParameter="{Binding Path=.}"
+                                                    ImageSource="{Binding Path=DataContext.ViewCommand.Icon, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                                    ImageWidth="12" ImageHeight="12">
+                                    </ImageButtonCursor:ImageButtonCursor>
+
+                                </StackPanel>
+                            </Grid>
+
+                            <DataTemplate.Triggers>
+                                <DataTrigger Binding="{Binding Path=DataContext.Context, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Converter={StaticResource contextToBool}}" Value="True"  >
+                                    <Setter TargetName="stackView" Property="Visibility" Value="Visible" />
+                                    <Setter TargetName="stackEdit" Property="Visibility" Value="Collapsed" />
+                                </DataTrigger>
+
+                                <DataTrigger Binding="{Binding Path=DataContext.Context, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Converter={StaticResource contextToBool}}" Value="False"  >
+                                    <Setter TargetName="stackView" Property="Visibility" Value="Collapsed" />
+                                    <Setter TargetName="stackEdit" Property="Visibility" Value="Visible" />
+                                </DataTrigger>
+
+                            </DataTemplate.Triggers>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

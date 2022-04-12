@@ -1,0 +1,799 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{890131A9-84AF-48EB-9DA7-27FA48C3A81C}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Count4U.ExportErpTextAdapter</RootNamespace>
+    <AssemblyName>Count4U.ExportErpTextAdapter</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\Lib\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AS400_Leumit\ExportErpAS400_LeumitAdapterViewModel.cs" />
+    <Compile Include="AS400_Leumit\ExportERPAS400_LeumitAdapterView.xaml.cs">
+      <DependentUpon>ExportERPAS400_LeumitAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AvivMultiBarcodes\ExportErpAvivMulitBarcodesView.xaml.cs">
+      <DependentUpon>ExportErpAvivMulitBarcodesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AvivMultiBarcodes\ExportErpAvivMulitBarcodesViewModel.cs" />
+    <Compile Include="AvivPOS\ExportErpAvivPOSAdapterView.xaml.cs">
+      <DependentUpon>ExportErpAvivPOSAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AvivPOS\ExportErpAvivPOSAdapterViewModel.cs" />
+    <Compile Include="BazanCsv\ExportErpBazanCsvAdapterView.xaml.cs">
+      <DependentUpon>ExportErpBazanCsvAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BazanCsv\ExportErpBazanCsvAdapterViewModel.cs" />
+    <Compile Include="Clalit\ExportErpTemplateClalitAdapterView.xaml.cs">
+      <DependentUpon>ExportErpTemplateClalitAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Clalit\ExportErpTemplateClalitAdapterViewModel.cs" />
+    <Compile Include="Comax\ExportErpComaxAdapterView.xaml.cs">
+      <DependentUpon>ExportErpComaxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Comax\ExportErpComaxAdapterViewModel.cs" />
+    <Compile Include="Common\ExportErpMakatViewModel.cs" />
+    <Compile Include="AS400AmericanEagle\ExportErpAS400AmericanEagleAdapterView.xaml.cs">
+      <DependentUpon>ExportErpAS400AmericanEagleAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400AmericanEagle\ExportErpAS400AmericanEagleAdapterViewModel.cs" />
+    <Compile Include="AS400Jafora\ExportErpAS400JaforaView.xaml.cs">
+      <DependentUpon>ExportErpAS400JaforaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Jafora\ExportErpAS400JaforaViewModel.cs" />
+    <Compile Include="AS400April\ExportErpAS400AprilAdapterView.xaml.cs">
+      <DependentUpon>ExportErpAS400AprilAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400April\ExportErpAS400AprilAdapterViewModel.cs" />
+    <Compile Include="NativExportErp\ExportErpNativExportErpAdapterView.xaml.cs">
+      <DependentUpon>ExportErpNativExportErpAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativExportErp\ExportErpNativExportErpAdapterViewModel.cs" />
+    <Compile Include="AS400Mango\ExportErpAS400MangoAdapterView.xaml.cs">
+      <DependentUpon>ExportErpAS400MangoAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Mango\ExportErpAS400MangoAdapterViewModel.cs" />
+    <Compile Include="AS400Honigman\ExportErpAS400HonigmanAdapterView.xaml.cs">
+      <DependentUpon>ExportErpAS400HonigmanAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Honigman\ExportErpAS400HonigmanAdapterViewModel.cs" />
+    <Compile Include="AS400Mega\ExportErpAS400MegaAdapterView.xaml.cs">
+      <DependentUpon>ExportErpAS400MegaAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Mega\ExportErpAS400MegaAdapterViewModel.cs" />
+    <Compile Include="AS400Hamashbir\ExportErpAS400HamashbirAdapterView.xaml.cs">
+      <DependentUpon>ExportErpAS400HamashbirAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Hamashbir\ExportErpAS400HamashbirAdapterViewModel.cs" />
+    <Compile Include="Nesher\ExportErpNesherAdapterView.xaml.cs">
+      <DependentUpon>ExportErpNesherAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nesher\ExportErpNesherAdapterViewModel.cs" />
+    <Compile Include="YtungXslx\ExportErpYtungXslxAdapterView.xaml.cs">
+      <DependentUpon>ExportErpYtungXslxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="YtungXslx\ExportErpYtungXslxAdapterViewModel.cs" />
+    <Compile Include="NativPlusMisradApnim\ExportErpNativPlusMisradApnimAdapterView.xaml.cs">
+      <DependentUpon>ExportErpNativPlusMisradApnimAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativPlusMisradApnim\ExportErpNativPlusMisradApnimAdapterViewModel.cs" />
+    <Compile Include="MerkavaGov\ExportErpTemplateMerkavaGovAdapterView.xaml.cs">
+      <DependentUpon>ExportErpTemplateMerkavaGovAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MerkavaGov\ExportErpTemplateMerkavaGovAdapterViewModel.cs" />
+    <Compile Include="NativPlusMateAshe\ExportErpNativPlusMateAsheAdapterView.xaml.cs">
+      <DependentUpon>ExportErpNativPlusMateAsheAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativPlusMateAshe\ExportErpNativPlusMateAsheAdapterViewModel.cs" />
+    <Compile Include="GazitLeeCooper\ExportErpGazitLeeCooperAdapterView.xaml.cs">
+      <DependentUpon>ExportErpGazitLeeCooperAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GazitLeeCooper\ExportErpGazitLeeCooperAdapterViewModel.cs" />
+    <Compile Include="NativPlusLadpc\ExportErpNativPlusLadpcAdapterView.xaml.cs">
+      <DependentUpon>ExportErpNativPlusLadpcAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativPlusLadpc\ExportErpNativPlusLadpcAdapterViewModel.cs" />
+    <Compile Include="NativPlusYes\ExportErpNativPlusYesAdapterView.xaml.cs">
+      <DependentUpon>ExportErpNativPlusYesAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativPlusYes\ExportErpNativPlusYesAdapterViewModel.cs" />
+    <Compile Include="H_M\New\ExportErpH_M_NewAdapterView.xaml.cs">
+      <DependentUpon>ExportErpH_M_NewAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="H_M\New\ExportErpH_M_NewAdapterViewModel.cs" />
+    <Compile Include="OrenMutagim\ExportErpOrenMutagimAdapterView.xaml.cs">
+      <DependentUpon>ExportErpOrenMutagimAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrenMutagim\ExportErpOrenMutagimAdapterViewModel.cs" />
+    <Compile Include="StockSonigoXslx\ExportErpStockSonigoXslxAdapterView.xaml.cs">
+      <DependentUpon>ExportErpStockSonigoXslxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StockSonigoXslx\ExportErpStockSonigoXslxAdapterViewModel.cs" />
+    <Compile Include="XtechMeuhedetXlsx\ExportErpXtechMeuhedetXlsxAdapterView.xaml.cs">
+      <DependentUpon>ExportErpXtechMeuhedetXlsxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XtechMeuhedetXlsx\ExportErpXtechMeuhedetXlsxAdapterViewModel.cs" />
+    <Compile Include="GeneralCSV\ExportErpGeneralCSVAdapterViewModel.cs" />
+    <Compile Include="GeneralCSV\ExportErpGeneralCSVAdapterView.xaml.cs">
+      <DependentUpon>ExportErpGeneralCSVAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralXslx\ExportErpGeneralXslxAdapterView.xaml.cs">
+      <DependentUpon>ExportErpGeneralXslxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralXslx\ExportErpGeneralXslxAdapterViewModel.cs" />
+    <Compile Include="NativPlus\ExportErpNativPlusAdapterView.xaml.cs">
+      <DependentUpon>ExportErpNativPlusAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativPlus\ExportErpNativPlusAdapterViewModel.cs" />
+    <Compile Include="PriorityAldo\ExportErpPriorityAldoView.xaml.cs">
+      <DependentUpon>ExportErpPriorityAldoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PriorityAldo\ExportErpPriorityAldoViewModel.cs" />
+    <Compile Include="Nativ\ExportErpNativAdapterView.xaml.cs">
+      <DependentUpon>ExportErpNativAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nativ\ExportErpNativAdapterViewModel.cs" />
+    <Compile Include="GazitVerifoneSteimaztzky\ExportErpGazitVerifoneSteimaztzkyView.xaml.cs">
+      <DependentUpon>ExportErpGazitVerifoneSteimaztzkyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GazitVerifoneSteimaztzky\ExportErpGazitVerifoneSteimaztzkyViewModel.cs" />
+    <Compile Include="Merkava\ExportErpTemplateMerkavaAdapterView.xaml.cs">
+      <DependentUpon>ExportErpTemplateMerkavaAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Merkava\ExportErpTemplateMerkavaAdapterViewModel.cs" />
+    <Compile Include="NikeInt\ExportErpNikeIntAdapterView.xaml.cs">
+      <DependentUpon>ExportErpNikeIntAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NikeInt\ExportErpNikeIntAdapterViewModel.cs" />
+    <Compile Include="Otech\ExportErpOtechAdapterView.xaml.cs">
+      <DependentUpon>ExportErpOtechAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Otech\ExportErpOtechAdapterViewModel.cs" />
+    <Compile Include="PriorityCastro\ExportErpPriorityCastroAdapterView.xaml.cs">
+      <DependentUpon>ExportErpPriorityCastroAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PriorityCastro\ExportErpPriorityCastroAdapterViewModel.cs" />
+    <Compile Include="PrioritySweetGirlXlsx\ExportErpPrioritySweetGirlXlsxAdapterView.xaml.cs">
+      <DependentUpon>ExportErpPrioritySweetGirlXlsxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrioritySweetGirlXlsx\ExportErpPrioritySweetGirlXlsxAdapterViewModel.cs" />
+    <Compile Include="Sapb1Xslx\ExportErpSapb1XslxAdapterView.xaml.cs">
+      <DependentUpon>ExportErpSapb1XslxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sapb1Xslx\ExportErpSapb1XslxAdapterViewModel.cs" />
+    <Compile Include="Sapb1Zometsfarim\ExportErpSapb1ZometsfarimView.xaml.cs">
+      <DependentUpon>ExportErpSapb1ZometsfarimView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sapb1Zometsfarim\ExportErpSapb1ZometsfarimViewModel.cs" />
+    <Compile Include="TafnitMatrix\ExportErpTafnitMatrixAdapterView.xaml.cs">
+      <DependentUpon>ExportErpTafnitMatrixAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TafnitMatrix\ExportErpTafnitMatrixAdapterViewModel.cs" />
+    <Compile Include="MPL\ExportErpMPLAdapterViewModel.cs" />
+    <Compile Include="MPL\ExportErpMPLAdapterView.xaml.cs">
+      <DependentUpon>ExportErpMPLAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FRSVisionMirkam\ExportErpFRSVisionMirkamAdapterView.xaml.cs">
+      <DependentUpon>ExportErpFRSVisionMirkamAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FRSVisionMirkam\ExportErpFRSVisionMirkamAdapterViewModel.cs" />
+    <Compile Include="Gazit\ExportErpGazitAdapterViewModel.cs" />
+    <Compile Include="Hash\ExportErpHashAdapterView.xaml.cs">
+      <DependentUpon>ExportErpHashAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hash\ExportErpHashAdapterViewModel.cs" />
+    <Compile Include="H_M\ExportErpH_MAdapterView.xaml.cs">
+      <DependentUpon>ExportErpH_MAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="H_M\ExportErpH_MAdapterViewModel.cs" />
+    <Compile Include="PriorityKedsShowRoom\ExportErpPriorityKedsShowRoomAdapterViewModel.cs" />
+    <Compile Include="PriorityKedsShowRoom\ExportErpPriorityKedsShowRoomAdapterView.xaml.cs">
+      <DependentUpon>ExportErpPriorityKedsShowRoomAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NimrodAviv\ExportErpNimrodAvivAdapterViewModel.cs" />
+    <Compile Include="NimrodAviv\ExportErpNimrodAvivAdapterView.xaml.cs">
+      <DependentUpon>ExportErpNimrodAvivAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nibit\ExportErpNibitAdapterView.xaml.cs">
+      <DependentUpon>ExportErpNibitAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nibit\ExportErpNibitAdapterViewModel.cs" />
+    <Compile Include="Made4Net\ExportErpMade4NetAdapterView.xaml.cs">
+      <DependentUpon>ExportErpMade4NetAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Made4Net\ExportErpMade4NetAdapterViewModel.cs" />
+    <Compile Include="LadyComfort\ExportErpLadyComfortAdapterView.xaml.cs">
+      <DependentUpon>ExportErpLadyComfortAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LadyComfort\ExportErpLadyComfortAdapterViewModel.cs" />
+    <Compile Include="MikiKupot\ExportErpMikiKupotAdapterView.xaml.cs">
+      <DependentUpon>ExportErpMikiKupotAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MikiKupot\ExportErpMikiKupotAdapterViewModel.cs" />
+    <Compile Include="MaccabiPharmSAP\ExportErpGeneralMaccabiPharmSAPViewModel.cs" />
+    <Compile Include="MaccabiPharmSAP\ExportErpMaccabiPharmSAPView.xaml.cs">
+      <DependentUpon>ExportErpMaccabiPharmSAPView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="One1\ExportErpOne1AdapterView.xaml.cs">
+      <DependentUpon>ExportErpOne1AdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="One1\ExportErpOne1AdapterViewModel.cs" />
+    <Compile Include="OrenOriginals\ExportErpOrenOriginalsAdapterView.xaml.cs">
+      <DependentUpon>ExportErpOrenOriginalsAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrenOriginals\ExportErpOrenOriginalsAdapterViewModel.cs" />
+    <Compile Include="RetalixNext\ExportErpRetalixNextAdapterView.xaml.cs">
+      <DependentUpon>ExportErpRetalixNextAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RetalixNext\ExportErpRetalixNextAdapterViewModel.cs" />
+    <Compile Include="ExportErpTextModuleInit.cs" />
+    <Compile Include="Gazit\ExportErpGazitAdapterView.xaml.cs">
+      <DependentUpon>ExportErpGazitAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Ho\ExportErpAS400HoAdapterViewModel.cs" />
+    <Compile Include="AS400Ho\ExportErpAS400HoAdapterView.xaml.cs">
+      <DependentUpon>ExportErpAS400HoAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MiniSoft\ExportErpMiniSoftViewModel.cs" />
+    <Compile Include="MiniSoft\ExportErpMiniSoftAdapterView.xaml.cs">
+      <DependentUpon>ExportErpMiniSoftAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MirkamSonolSAP\ExportErpMirkamSonolSAPAdapterView.xaml.cs">
+      <DependentUpon>ExportErpMirkamSonolSAPAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MirkamSonolSAP\ExportErpMirkamSonolSAPAdapterViewModel.cs" />
+    <Compile Include="MirkamSonol\ExportErpMirkamSonolAdapterView.xaml.cs">
+      <DependentUpon>ExportErpMirkamSonolAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MirkamSonol\ExportErpMirkamSonolAdapterViewModel.cs" />
+    <Compile Include="MirkamTen\ExportErpMirkamTenAdapterView.xaml.cs">
+      <DependentUpon>ExportErpMirkamTenAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MirkamTen\ExportErpMirkamTenAdapterViewModel.cs" />
+    <Compile Include="PosSuperPharm\ExportErpPosSuperPharmAdapterView.xaml.cs">
+      <DependentUpon>ExportErpPosSuperPharmAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PosSuperPharm\ExportErpPosSuperPharmAdapterViewModel.cs" />
+    <Compile Include="PriorityKeds\Matrix\ExportErpPriorityKedsMatrixAdapterViewModel.cs" />
+    <Compile Include="PriorityKeds\Matrix\ExportErpPriorityKedsRegularAdapterView.xaml.cs">
+      <DependentUpon>ExportErpPriorityKedsRegularAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PriorityKeds\Regular\ExportErpPriorityKedsRegularAdapterViewModel.cs" />
+    <Compile Include="PriorityKeds\Regular\ExportErpPriorityKedsRegularAdapterView.xaml.cs">
+      <DependentUpon>ExportErpPriorityKedsRegularAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PriorityRenuar\ExportErpPriorityRenuarAdapterView.xaml.cs">
+      <DependentUpon>ExportErpPriorityRenuarAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PriorityRenuar\ExportErpPriorityRenuarAdapterViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RetalixPOS_HO\ExportErpRetalixPOS_HOAdapterView.xaml.cs">
+      <DependentUpon>ExportErpRetalixPOS_HOAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RetalixPOS_HO\ExportErpRetalixPOS_HOAdapterViewModel.cs" />
+    <Compile Include="Unizag\ExportErpUnizagAdapterView.xaml.cs">
+      <DependentUpon>ExportErpUnizagAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Unizag\ExportErpUnizagAdapterViewModel.cs" />
+    <Compile Include="WarehouseXslx\ExportErpWarehouseXslxAdapterView.xaml.cs">
+      <DependentUpon>ExportErpWarehouseXslxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseXslx\ExportErpWarehouseXslxAdapterViewModel.cs" />
+    <Compile Include="XtechMeuhedet\ExportErpXtechMeuhedetAdapterView.xaml.cs">
+      <DependentUpon>ExportErpXtechMeuhedetAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XtechMeuhedet\ExportErpXtechMeuhedetAdapterViewModel.cs" />
+    <Compile Include="Yarpa\ExportERPYarpaAdapterView.xaml.cs">
+      <DependentUpon>ExportERPYarpaAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Yarpa\ExportErpYarpaAdapterViewModel.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="AS400_Leumit\ExportErpAS400_LeumitAdapter.ini" />
+    <None Include="AvivMultiBarcodes\ExportErpAvivMultibarcodesAdapter.ini" />
+    <None Include="AvivPOS\ExportErpAvivPOSAdapter.ini" />
+    <None Include="BazanCsv\ExportErpBazanCsvAdapter.ini" />
+    <None Include="Clalit\ExportErpTemplateClalitAdapter.ini" />
+    <None Include="Comax\ExportErpComaxAdapter.ini" />
+    <None Include="AS400AmericanEagle\ExportErpAS400AmericanEagleAdapter.ini" />
+    <None Include="AS400Jafora\ExportErpAS400JaforaAdapter.ini" />
+    <None Include="AS400April\ExportErpAS400AprilAdapter.ini" />
+    <None Include="NativExportErp\ExportErpNativExportErpAdapter.ini" />
+    <None Include="AS400Mango\ExportErpAS400MangoAdapter.ini" />
+    <None Include="AS400Honigman\ExportErpAS400HonigmanAdapter.ini" />
+    <None Include="AS400Mega\ExportErpAS400MegaAdapter.ini" />
+    <None Include="AS400Hamashbir\ExportErpAS400HamashbirAdapter.ini" />
+    <None Include="Nesher\ExportErpNesherAdapter.ini" />
+    <None Include="YtungXslx\ExportErpYtungXslxAdapter.ini" />
+    <None Include="NativPlusMisradApnim\ExportErpNativPlusMisradApnimAdapter.ini" />
+    <None Include="MerkavaGov\ExportErpTemplateMerkavaGovAdapter.ini" />
+    <None Include="NativPlusMateAshe\ExportErpNativPlusMateAsheAdapter.ini" />
+    <None Include="GazitLeeCooper\ExportErpGazitLeeCooperAdapter.ini" />
+    <None Include="NativPlusLadpc\ExportErpNativPlusLadpcAdapter.ini" />
+    <None Include="NativPlusYes\ExportErpNativPlusYesAdapter.ini" />
+    <None Include="H_M\New\ExportErpH_M_NewAdapter.ini" />
+    <None Include="OrenMutagim\ExportErpOrenMutagimAdapter.ini" />
+    <None Include="packages.config" />
+    <None Include="StockSonigoXslx\ExportErpStockSonigoXslxAdapter.ini" />
+    <None Include="XtechMeuhedetXlsx\ExportErpXtechMeuhedetXlsxAdapter.ini" />
+    <None Include="GeneralCSV\ExportErpGeneralCSVAdapter.ini" />
+    <None Include="GeneralXslx\ExportErpGeneralXslxAdapter.ini" />
+    <None Include="NativPlus\ExportErpNativPlusAdapter.ini" />
+    <None Include="PriorityAldo\ExportErpPriorityAldoAdapter.ini" />
+    <None Include="Nativ\ExportErpNativAdapter.ini" />
+    <None Include="GazitVerifoneSteimaztzky\ExportErpGazitVerifoneSteimaztzkyAdapter.ini" />
+    <None Include="Merkava\ExportErpTemplateMerkavaAdapter.ini" />
+    <None Include="NikeInt\ExportErpNikeIntAdapter.ini" />
+    <None Include="Otech\ExportErpOtechAdapter.ini" />
+    <None Include="PriorityCastro\ExportErpPriorityCastroAdapter.ini" />
+    <None Include="PrioritySweetGirlXlsx\ExportErpPrioritySweetGirlXlsxAdapter.ini" />
+    <None Include="Sapb1Xslx\ExportErpSapb1XslxAdapter.ini" />
+    <None Include="Sapb1Zometsfarim\ExportErpSapb1ZometsfarimAdapter.ini" />
+    <None Include="TafnitMatrix\ExportErpTafnitMatrixAdapter.ini" />
+    <None Include="MPL\ExportErpMPLAdapter.ini" />
+    <None Include="FRSVisionMirkam\ExportErpFRSVisionMirkamAdapter.ini" />
+    <None Include="Hash\ExportErpHashAdapter.ini" />
+    <None Include="H_M\ExportErpH_MAdapter.ini" />
+    <None Include="PriorityKedsShowRoom\ExportErpPriorityKedsShowRoomAdapter.ini" />
+    <None Include="NimrodAviv\ExportErpNimrodAvivAdapter.ini" />
+    <None Include="Nibit\ExportErpNibitAdapter.ini" />
+    <None Include="Made4Net\ExportErpMade4NetAdapter.ini" />
+    <None Include="LadyComfort\ExportErpLadyComfortAdapter.ini" />
+    <None Include="MikiKupot\ExportErpMikiKupotAdapter.ini" />
+    <None Include="MaccabiPharmSAP\ExportErpMaccabiPharmSAPAdapter.ini" />
+    <None Include="One1\ExportErpOne1Adapter.ini" />
+    <None Include="OrenOriginals\ExportErpOrenOriginalsAdapter.ini" />
+    <None Include="RetalixNext\ExportErpRetalixNextAdapter.ini" />
+    <None Include="Gazit\ExportErpGazitAdapter.ini" />
+    <None Include="AS400Ho\ExportErpAS400HoAdapter.ini" />
+    <None Include="MiniSoft\ExportErpMiniSoftAdapter.ini" />
+    <None Include="MirkamSonolSAP\ExportErpMirkamSonolSAPAdapter.ini" />
+    <None Include="MirkamSonol\ExportErpMirkamSonolAdapter.ini" />
+    <None Include="MirkamTen\ExportErpMirkamTenAdapter.ini" />
+    <None Include="PosSuperPharm\ExportErpPosSuperPharmAdapter.ini" />
+    <None Include="PriorityKeds\Matrix\ExportErpPriorityKedsMatrixAdapter.ini" />
+    <None Include="PriorityKeds\Regular\ExportErpPriorityKedsRegularAdapter.ini" />
+    <None Include="PriorityRenuar\ExportErpPriorityRenuarAdapter.ini" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="RetalixPOS_HO\ExportErpRetalixPOS_HOAdapter.ini" />
+    <None Include="Unizag\ExportErpUnizagAdapter.ini" />
+    <None Include="WarehouseXslx\ExportErpWarehouseXslxAdapter.ini" />
+    <None Include="XtechMeuhedet\ExportErpXtechMeuhedetAdapter.ini" />
+    <None Include="Yarpa\ExportErpYarpaAdapter.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Count4U.Common\Count4U.Common.csproj">
+      <Project>{ea11d75f-fdb9-410d-9f9b-5d055b4377b8}</Project>
+      <Name>Count4U.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Localization\Count4U.Localization.csproj">
+      <Project>{C1716C1B-995A-481B-8853-1B984F75BE45}</Project>
+      <Name>Count4U.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.Common\Count4U.Model.Common.csproj">
+      <Project>{5e70d036-3982-4d9f-95ca-197e616d7f59}</Project>
+      <Name>Count4U.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ExportImport\Count4U.Model.ExportImport.csproj">
+      <Project>{A511450D-26CB-4D17-92B1-4C9A331B5290}</Project>
+      <Name>Count4U.Model.ExportImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ServiceContract\Count4U.Model.ServiceContract.csproj">
+      <Project>{6c200172-9847-40e4-ae97-ec50bbf4d0a4}</Project>
+      <Name>Count4U.Model.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model\Count4U.Model.csproj">
+      <Project>{A3145385-051F-4FFA-9DCB-3014DA552419}</Project>
+      <Name>Count4U.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Page Include="AS400_Leumit\ExportERPAS400_LeumitAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AvivMultiBarcodes\ExportErpAvivMulitBarcodesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AvivPOS\ExportErpAvivPOSAdapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="BazanCsv\ExportErpBazanCsvAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Clalit\ExportErpTemplateClalitAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Comax\ExportErpComaxAdapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AS400AmericanEagle\ExportErpAS400AmericanEagleAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Jafora\ExportErpAS400JaforaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400April\ExportErpAS400AprilAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NativExportErp\ExportErpNativExportErpAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Mango\ExportErpAS400MangoAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Honigman\ExportErpAS400HonigmanAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Mega\ExportErpAS400MegaAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Hamashbir\ExportErpAS400HamashbirAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Nesher\ExportErpNesherAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="YtungXslx\ExportErpYtungXslxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NativPlusMisradApnim\ExportErpNativPlusMisradApnimAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MerkavaGov\ExportErpTemplateMerkavaGovAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NativPlusMateAshe\ExportErpNativPlusMateAsheAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GazitLeeCooper\ExportErpGazitLeeCooperAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NativPlusLadpc\ExportErpNativPlusLadpcAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NativPlusYes\ExportErpNativPlusYesAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="H_M\New\ExportErpH_M_NewAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OrenMutagim\ExportErpOrenMutagimAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="StockSonigoXslx\ExportErpStockSonigoXslxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XtechMeuhedetXlsx\ExportErpXtechMeuhedetXlsxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GeneralCSV\ExportErpGeneralCSVAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GeneralXslx\ExportErpGeneralXslxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NativPlus\ExportErpNativPlusAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PriorityAldo\ExportErpPriorityAldoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Nativ\ExportErpNativAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GazitVerifoneSteimaztzky\ExportErpGazitVerifoneSteimaztzkyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Merkava\ExportErpTemplateMerkavaAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NikeInt\ExportErpNikeIntAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Otech\ExportErpOtechAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PriorityCastro\ExportErpPriorityCastroAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PrioritySweetGirlXlsx\ExportErpPrioritySweetGirlXlsxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sapb1Xslx\ExportErpSapb1XslxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sapb1Zometsfarim\ExportErpSapb1ZometsfarimView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TafnitMatrix\ExportErpTafnitMatrixAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MPL\ExportErpMPLAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FRSVisionMirkam\ExportErpFRSVisionMirkamAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hash\ExportErpHashAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="H_M\ExportErpH_MAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PriorityKedsShowRoom\ExportErpPriorityKedsShowRoomAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NimrodAviv\ExportErpNimrodAvivAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Nibit\ExportErpNibitAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Made4Net\ExportErpMade4NetAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LadyComfort\ExportErpLadyComfortAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MikiKupot\ExportErpMikiKupotAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MaccabiPharmSAP\ExportErpMaccabiPharmSAPView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="One1\ExportErpOne1AdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OrenOriginals\ExportErpOrenOriginalsAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RetalixNext\ExportErpRetalixNextAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gazit\ExportErpGazitAdapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AS400Ho\ExportErpAS400HoAdapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MiniSoft\ExportErpMiniSoftAdapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MirkamSonolSAP\ExportErpMirkamSonolSAPAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MirkamSonol\ExportErpMirkamSonolAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MirkamTen\ExportErpMirkamTenAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PosSuperPharm\ExportErpPosSuperPharmAdapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PriorityKeds\Matrix\ExportErpPriorityKedsRegularAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PriorityKeds\Regular\ExportErpPriorityKedsRegularAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PriorityRenuar\ExportErpPriorityRenuarAdapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="RetalixPOS_HO\ExportErpRetalixPOS_HOAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Unizag\ExportErpUnizagAdapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WarehouseXslx\ExportErpWarehouseXslxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="XtechMeuhedet\ExportErpXtechMeuhedetAdapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Yarpa\ExportERPYarpaAdapterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>IF NOT EXIST $(SolutionDir)Count4U\$(OutDir)ExportModules ( mkdir $(SolutionDir)Count4U\$(OutDir)ExportModules )
+
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\$(OutDir)Count4U.ExportErpTextAdapter.dll $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\$(OutDir)Count4U.ExportErpTextAdapter.pdb $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\Comax\ExportErpComaxAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\Gazit\ExportErpGazitAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\PriorityRenuar\ExportErpPriorityRenuarAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\RetalixPOS_HO\ExportErpRetalixPOS_HOAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\Unizag\ExportErpUnizagAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\PosSuperPharm\ExportErpPosSuperPharmAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\Yarpa\ExportErpYarpaAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\GeneralCSV\ExportErpGeneralCSVAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\AvivPOS\ExportErpAvivPOSAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\XtechMeuhedet\ExportErpXtechMeuhedetAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\AvivMultiBarcodes\ExportErpAvivMultiBarcodesAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\PriorityKeds\Regular\ExportErpPriorityKedsRegularAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\PriorityKeds\Matrix\ExportErpPriorityKedsMatrixAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\MirkamSonol\ExportErpMirkamSonolAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\MirkamSonolSAP\ExportErpMirkamSonolSAPAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\MirkamTen\ExportErpMirkamTenAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\AS400_Leumit\ExportErpAS400_LeumitAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+copy $(SolutionDir)Count4U.ExportErpTextAdapter\MiniSoft\ExportErpMiniSoftAdapter.ini $(SolutionDir)Count4U\$(OutDir)ExportModules\
+</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

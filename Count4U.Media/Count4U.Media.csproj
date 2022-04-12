@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{201020E5-ADF0-4E0C-9287-2A7F5E6E6080}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Count4U.Media</RootNamespace>
+    <AssemblyName>Count4U.Media</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MediaResources.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\addedititurim.png" />
+    <Resource Include="Icons\catalog.png" />
+    <Resource Include="Icons\pda.png" />
+    <Resource Include="Icons\itur_edit.png" />
+    <Resource Include="Icons\additurim.png" />
+    <Resource Include="Icons\changelocationiturim.png" />
+    <Resource Include="Icons\deleteiturim.png" />
+    <Resource Include="Icons\exportiturim.png" />
+    <Resource Include="Icons\importiturim.png" />
+    <Resource Include="Icons\edit.png" />
+    <Resource Include="Icons\add_small.png" />
+    <Resource Include="Icons\status.png" />
+    <Resource Include="Icons\back.png" />
+    <Resource Include="Icons\forward.png" />
+    <Resource Include="Icons\refresh.png" />
+    <Resource Include="Icons\home.png" />
+    <Resource Include="Background\wood.png" />
+    <Resource Include="Icons\back2.png" />
+    <Resource Include="Icons\back2_1.png" />
+    <Resource Include="Icons\forward2.png" />
+    <Resource Include="Icons\forward2_1.png" />
+    <Resource Include="Background\LineVert.png" />
+    <Resource Include="Background\LineVertGreen.png" />
+    <Resource Include="Icons\edit_small.png" />
+    <Resource Include="Icons\add_very_small.png" />
+    <Resource Include="Icons\delete_very_small.png" />
+    <Resource Include="Icons\database.png" />
+    <Resource Include="Icons\folder.png" />
+    <Resource Include="Icons\reports.png" />
+    <Resource Include="Icons\module_small.png" />
+    <Resource Include="Icons\report_small.png" />
+    <Resource Include="Icons\view.png" />
+    <Resource Include="Icons\clear.png" />
+    <Resource Include="Icons\generate.png" />
+    <Resource Include="Icons\export.png" />
+    <Resource Include="Icons\log.png" />
+    <Resource Include="Icons\generate_small.png" />
+    <Resource Include="Icons\start_new_inventory.png" />
+    <Resource Include="Icons\go_to_inventory.png" />
+    <Resource Include="Icons\home2.png" />
+    <Resource Include="Icons\go_to_inventory2.png" />
+    <Resource Include="Icons\check.png" />
+    <Resource Include="Icons\refresh_small.png" />
+    <Resource Include="Icons\reset_small.png" />
+    <Resource Include="Icons\open_folder_32.png" />
+    <Resource Include="Icons\switch.png" />
+    <Resource Include="Icons\copy.png" />
+    <Resource Include="Icons\maindashboard.png" />
+    <Resource Include="Icons\maindashboard2.ico" />
+    <Resource Include="Icons\reports1.png" />
+    <Resource Include="Icons\run_script.png" />
+    <Resource Include="Icons\find.png" />
+    <Resource Include="Icons\open_script.png" />
+    <Resource Include="Icons\save_script.png" />
+    <Resource Include="Icons\export_data_zip_icon.png" />
+    <Resource Include="Icons\repair.png" />
+    <Resource Include="Icons\filter.png" />
+    <Resource Include="Icons\search.png" />
+    <Resource Include="Icons\filter1.png" />
+    <Resource Include="Icons\filter2.png" />
+    <Resource Include="Icons\filter3.png" />
+    <Resource Include="Icons\search2.png" />
+    <Resource Include="Icons\filter4.png" />
+    <Resource Include="Icons\photo.png" />
+    <Resource Include="Icons\arrow_for_new.png" />
+    <Resource Include="Icons\re.png" />
+    <Resource Include="Icons\app_name.png" />
+    <Resource Include="Icons\up.png" />
+    <Resource Include="Icons\down.png" />
+    <Resource Include="Icons\refresh2.png" />
+    <Resource Include="Icons\clear2.png" />
+    <Resource Include="Background\customer_add.png" />
+    <Resource Include="Background\customer_edit.png" />
+    <Resource Include="Background\branch_add.png" />
+    <Resource Include="Background\branch_edit.png" />
+    <Resource Include="Background\inventor_add.png" />
+    <Resource Include="Background\inventor_edit.png" />
+    <Resource Include="Icons\fast_move.png" />
+    <Resource Include="Icons\speed_arrow.png" />
+    <Resource Include="Icons\speed_folder.png" />
+    <Resource Include="Icons\speed_network.png" />
+    <Resource Include="Icons\speed_printer.png" />
+    <Resource Include="Icons\speed_target.png" />
+    <Resource Include="Icons\children2.png" />
+    <Resource Include="Icons\asc.png" />
+    <Resource Include="Icons\desc.png" />
+    <Resource Include="Background\fancy_1.png" />
+    <Resource Include="Icons\changelocationiturimsmall.png" />
+    <Resource Include="Icons\export64.png" />
+    <Resource Include="Icons\import64.png" />
+    <Resource Include="Icons\branch.png" />
+    <Resource Include="Icons\customer.png" />
+    <Resource Include="Icons\inventor.png" />
+    <Resource Include="Icons\fromimporttogrid.png" />
+    <Resource Include="Icons\print_report.png" />
+    <Resource Include="Icons\pin48.png" />
+    <Resource Include="Icons\print_48.png" />
+    <Resource Include="Icons\original.png" />
+    <Resource Include="Icons\pda_auto.png" />
+    <Resource Include="Icons\edit48.png" />
+    <Resource Include="Icons\resetBit48.png" />
+    <Resource Include="Icons\undo48.png" />
+    <Resource Include="Icons\command_ImportFromPda.png" />
+    <Resource Include="Icons\command_reportFavorites.png" />
+    <Resource Include="Icons\command_exportErp.png" />
+    <Resource Include="Icons\command_exportPDA.png" />
+    <Resource Include="Icons\command_pack.png" />
+    <Resource Include="Icons\command_properties.png" />
+    <Resource Include="Icons\command_adapter.png" />
+    <Resource Include="Icons\command_unpack.png" />
+    <Resource Include="Icons\command_customerAdd.png" />
+    <Resource Include="Icons\command_customerGrid.png" />
+    <Resource Include="Icons\command_invrntorAdd.png" />
+    <Resource Include="Icons\command_invrntorGrid.png" />
+    <Resource Include="Icons\deletewithoutchild.png" />
+    <Resource Include="Icons\command_branchAdd.png" />
+    <Resource Include="Icons\command_branchGrid.png" />
+    <Resource Include="Icons\ascHe.png" />
+    <Resource Include="Icons\descHe.png" />
+    <Resource Include="Icons\deleteallwithoutchild.png" />
+    <Resource Include="Icons\post_branch_add.png" />
+    <Resource Include="Icons\post_branch_dashboard.png" />
+    <Resource Include="Icons\post_branch_edit.png" />
+    <Resource Include="Icons\post_customer_add.png" />
+    <Resource Include="Icons\post_customer_dashbord.png" />
+    <Resource Include="Icons\post_customer_edit.png" />
+    <Resource Include="Icons\post_inventor_add.png" />
+    <Resource Include="Icons\post_inventor_dashboard.png" />
+    <Resource Include="Icons\post_inventor_edit.png" />
+    <Resource Include="Icons\post_inventor_main.png" />
+    <Resource Include="Icons\post_main_dashbord.png" />
+    <Resource Include="Icons\clone.png" />
+    <Resource Include="Icons\planogram.png" />
+    <Resource Include="Icons\post_home_dashboard.png" />
+    <Resource Include="Icons\plan\plan_cursor.png" />
+    <Resource Include="Icons\plan\plan_cursor2.png" />
+    <Resource Include="Icons\plan\plan_hand.png" />
+    <Resource Include="Icons\plan\plan_zoom.png" />
+    <Resource Include="Icons\plan\plan_shelf.png" />
+    <Resource Include="Icons\plan\plan_wall.png" />
+    <Resource Include="Icons\plan\plan_window.png" />
+    <Resource Include="Cursors\zoom-in.cur" />
+    <Resource Include="Cursors\zoom-out.cur" />
+    <Resource Include="Icons\updatemain.png" />
+    <Resource Include="Icons\exporterpmain.png" />
+    <Resource Include="Icons\exportpdamain.png" />
+    <Resource Include="Icons\switch2.png" />
+    <Resource Include="Icons\disable.png" />
+    <Resource Include="Icons\enable.png" />
+    <Resource Include="Icons\plan\align_bottom.png" />
+    <Resource Include="Icons\plan\align_left.png" />
+    <Resource Include="Icons\plan\align_right.png" />
+    <Resource Include="Icons\plan\align_top.png" />
+    <Resource Include="Icons\plan\align_same_height.png" />
+    <Resource Include="Icons\plan\align_same_width.png" />
+    <Resource Include="Icons\plan\lock.png" />
+    <Resource Include="Icons\ChangeStatus.png" />
+    <Resource Include="Icons\plan\bring_forward.png" />
+    <Resource Include="Icons\plan\send_backward.png" />
+    <Resource Include="Icons\plan\plan_location.png" />
+    <Resource Include="Icons\upload32.png" />
+    <Resource Include="Icons\downloadblue.png" />
+    <Resource Include="Icons\downloadred.png" />
+    <Resource Include="Icons\uploadblue.png" />
+    <Resource Include="Icons\uploadred.png" />
+    <Resource Include="Icons\check16.png" />
+    <Resource Include="Icons\delete16.png" />
+    <Resource Include="Icons\abort16.png" />
+    <Resource Include="Icons\plan\plan_text.png" />
+    <Resource Include="Icons\plan\plan_picture.png" />
+    <Resource Include="Icons\empty.png" />
+    <Resource Include="Icons\print_report1.png" />
+    <Resource Include="Icons\addMulti.png" />
+    <Resource Include="Icons\addMulti32.png" />
+    <Resource Include="Icons\download32.png" />
+    <Resource Include="Icons\downLevel.png" />
+    <Resource Include="Icons\print_report2.png" />
+    <Resource Include="Icons\statistic64.png" />
+    <Resource Include="Icons\DeleteX.png" />
+    <Resource Include="Icons\command_inventorEdit.png" />
+    <Resource Include="Icons\command_customerEdit.png" />
+    <Resource Include="Icons\command_unpack64.png" />
+    <Resource Include="Icons\command_pack64.png" />
+    <Resource Include="Icons\command_invrntorAdd1.png" />
+    <Resource Include="Icons\command_inventor_select.png" />
+    <Resource Include="Icons\command_invrntorEdit.png" />
+    <Resource Include="Icons\command_invrntorAdd2.png" />
+    <Resource Include="Icons\clear48.png" />
+    <Resource Include="Icons\clear64.png" />
+    <Resource Include="Icons\clear_64.png" />
+    <Resource Include="Icons\Checkbox-1.png" />
+    <Resource Include="Icons\Checkbox-2.png" />
+    <Resource Include="Icons\Checkbox-3.png" />
+    <Resource Include="Icons\bullet_blue.png" />
+    <Resource Include="Icons\locations.png" />
+    <Content Include="splash.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Icons\quickly.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,338 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.Customer.CustomerFormView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Interactivity.InteractionRequest;assembly=Microsoft.Practices.Prism.Interactivity" 
+             xmlns:Behaviours="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" 
+             xmlns:Converters="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:TextBox="clr-namespace:Count4U.CustomControls.TextBox;assembly=Count4U.CustomControls"
+             xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             xmlns:actions="clr-namespace:Count4U.Common.Helpers.Actions;assembly=Count4U.Common"
+             mc:Ignorable="d" 
+			 d:DesignHeight="700" d:DesignWidth="700"
+             >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Buttons/ButtonThemeV7.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters:BoolToVisiblityConverter  x:Key="boolToVis" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <i:Interaction.Triggers>
+            <prism:InteractionRequestTrigger SourceObject="{Binding CustomerFormVM.FileChooseDilogRequest}">
+                <actions:OpenFileDialogAction />
+            </prism:InteractionRequestTrigger>
+
+            <prism:InteractionRequestTrigger SourceObject="{Binding CustomerFormVM.MessageBoxRequest}">
+                <actions:MessageBoxAction />
+            </prism:InteractionRequestTrigger>
+        </i:Interaction.Triggers>
+
+        <Image Height="62" 
+               Source="/Count4U.Media;component/Background/fancy_1.png" 
+               Margin="160,0,0,0" 
+               VerticalAlignment="Top"
+               HorizontalAlignment="Left" 
+               Width="302" 
+               />
+
+        <ImageButton:ImageButton Margin="386,17,0,0" 
+                                 HorizontalAlignment="Left" 
+                                 VerticalAlignment="Top" 	
+                                 ToolTip="{x:Static Localization:Resources.View_CustomerForm_btnGenerateNew}"
+                                 Command="{Binding Path=CustomerFormVM.CodeGenerateCommand}"                                            
+                                 
+					             ImageSource="/Count4U.Media;component/Icons/re.png"
+                                 ImageWidth="27" 
+                                 ImageHeight="28" 
+                                 CenterX="13"
+                                 CenterY="13">
+        </ImageButton:ImageButton>
+        <!-- CODE -->
+        <TextBox:TextBoxV7 
+                x:FieldModifier="public"
+                IsReadOnly="{Binding Path=CustomerFormVM.IsCodeReadOnly}" 
+                Height="23" HorizontalAlignment="Left" 
+                Margin="170,21,0,0" 
+                Name="txtCode" 		
+                MaxLength="10"
+                TabIndex="1"
+                VerticalAlignment="Top"
+                Width="200" 
+                IsNecessary="True">
+            <TextBox:TextBoxV7.Text>
+                <Binding Path="CustomerFormVM.Code" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox:TextBoxV7.Text>
+        </TextBox:TextBoxV7>
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,15,0,0" Name="textBlock6" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbCode}"
+                   VerticalAlignment="Top" Width="180" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,66,0,0" Name="textBlock7" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbCustomerName}"
+                   VerticalAlignment="Top" Width="180" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,97,0,0" Name="textBlock8" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbDescription}"
+                   VerticalAlignment="Top" Width="165" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,127,0,0" Name="textBlock18" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbParameters}"
+                   VerticalAlignment="Top" Width="165" />
+        <!-- NAME -->
+        <TextBox:TextBoxV7 Height="23" HorizontalAlignment="Left" IsNecessary="True" 
+                               Margin="170,66,0,0" Name="txtName" 
+                               MaxLength="50"
+                               IsReadOnly="{Binding Path=CustomerFormVM.IsReadOnly}" TabIndex="2"
+                               VerticalAlignment="Top" Width="220">
+            <TextBox:TextBoxV7.Text>
+                <Binding Path="CustomerFormVM.Name" UpdateSourceTrigger="Explicit" IsAsync="False" >
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox:TextBoxV7.Text>
+            <i:Interaction.Behaviors>
+                <Behaviours:TextChangedDelayedBehavior  IsTimerEnabled="True" />
+            </i:Interaction.Behaviors>
+        </TextBox:TextBoxV7>
+
+        <!-- DESCRIPTION -->
+        <TextBox:TextBoxV7 Height="23" 
+                               HorizontalAlignment="Left"
+                               IsNecessary="False"
+                               MaxLength="200"      
+                               Margin="170,97,0,0"                                
+                               VerticalAlignment="Top"
+                               Text="{Binding Path=CustomerFormVM.Description, UpdateSourceTrigger=PropertyChanged}" 
+                               IsReadOnly="{Binding Path=CustomerFormVM.IsReadOnly}" TabIndex="3"
+                               Width="220">
+        </TextBox:TextBoxV7>
+
+        <!-- PARAMETERS -->
+        <TextBox:TextBoxV7 Height="23" 
+                               HorizontalAlignment="Left"
+                               IsNecessary="False"
+                               MaxLength="200"      
+                               Margin="170,127,0,0"                                
+                               VerticalAlignment="Top"
+                               Text="{Binding Path=CustomerFormVM.Params, UpdateSourceTrigger=PropertyChanged}" 
+                               IsReadOnly="{Binding Path=CustomerFormVM.IsReadOnly}" TabIndex="3"
+                               Width="220">
+        </TextBox:TextBoxV7>
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,159,0,0" Name="textBlock9" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbContact}"
+                   VerticalAlignment="Top" Foreground="#FFBABABA" />
+
+        <Border BorderBrush="#E2E2E2" 
+                    BorderThickness="1" 
+                    Height="1" 
+                    HorizontalAlignment="Left" 
+                    Margin="0,160,0,0" Name="border1" 
+                    VerticalAlignment="Top" 
+                    Width="430" Background="#E2E2E2" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,183,0,0" Name="textBlock10" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbContactPerson}"
+                   VerticalAlignment="Top" Width="180" />
+
+        <!-- CONTACT PERSON -->
+        <TextBox:TextBoxV7 Height="23" 
+                               HorizontalAlignment="Left" 
+                               IsNecessary="False"
+                               Margin="170,183,0,0"                                
+                               VerticalAlignment="Top"
+                               MaxLength="50"
+                               IsReadOnly="{Binding Path=CustomerFormVM.IsReadOnly}" 
+                               TabIndex="4"
+                               Width="220">
+            <TextBox:TextBoxV7.Text>
+                <Binding Path="CustomerFormVM.ContactPerson" UpdateSourceTrigger="Explicit">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox:TextBoxV7.Text>
+            <i:Interaction.Behaviors>
+                <Behaviours:TextChangedDelayedBehavior  IsTimerEnabled="True" />
+            </i:Interaction.Behaviors>
+        </TextBox:TextBoxV7>
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,212,0,0" Name="textBlock11" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbMail}"
+                   VerticalAlignment="Top" Width="180" />
+
+        <!-- MAIL -->
+        <TextBox:TextBoxV7 Height="23" 
+                               HorizontalAlignment="Left" 
+                               IsNecessary="False"
+                               MaxLength="50" 
+                               Margin="170,212,0,0"                                
+                               VerticalAlignment="Top" 
+                               IsReadOnly="{Binding Path=CustomerFormVM.IsReadOnly}" 
+                               TabIndex="5"
+                               Width="220">
+            <TextBox:TextBoxV7.Text>
+                <Binding Path="CustomerFormVM.Mail" UpdateSourceTrigger="Explicit">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox:TextBoxV7.Text>
+            <i:Interaction.Behaviors>
+                <Behaviours:TextChangedDelayedBehavior  IsTimerEnabled="True" />
+            </i:Interaction.Behaviors>
+        </TextBox:TextBoxV7>
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,241,0,0" Name="textBlock12" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbAddress}"
+                   VerticalAlignment="Top" Width="180" />
+
+        <!-- ADDRESS -->
+        <TextBox:TextBoxV7 Height="23" 
+                               HorizontalAlignment="Left" 
+                               IsNecessary="False" 
+                               Margin="170,241,0,0"                                
+                               VerticalAlignment="Top" 
+                               Text="{Binding Path=CustomerFormVM.Address1, UpdateSourceTrigger=PropertyChanged}"
+                               IsReadOnly="{Binding Path=CustomerFormVM.IsReadOnly}" 
+                               TabIndex="6"
+                               MaxLength="100" 
+                               Width="220">
+        </TextBox:TextBoxV7>
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,270,0,0" Name="textBlock13" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbContinuationAddress}"
+                   VerticalAlignment="Top" Width="180" />
+
+        <!-- ADDRESS2 -->
+        <TextBox:TextBoxV7 Height="23" 
+                               HorizontalAlignment="Left" 
+                               IsNecessary="False" 
+                               Margin="170,270,0,0"                               
+                               VerticalAlignment="Top" 
+                               Text="{Binding Path=CustomerFormVM.Address2, UpdateSourceTrigger=PropertyChanged}"
+                               MaxLength="100" 
+						       IsReadOnly="{Binding Path=CustomerFormVM.IsReadOnly}" 
+                               TabIndex="7"
+                               Width="220">
+        </TextBox:TextBoxV7>
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,299,0,0" Name="textBlock14" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbPhone}"
+                   VerticalAlignment="Top" Width="180" />
+
+        <!-- PHONE -->
+        <TextBox:TextBoxV7 HorizontalAlignment="Left" 
+                               IsNecessary="False" 
+                               Margin="170,299,0,0" MaxLength="30"
+                               IsReadOnly="{Binding Path=CustomerFormVM.IsReadOnly}" TabIndex="8"
+                               Width="220" Height="23" VerticalAlignment="Top">
+            <i:Interaction.Behaviors>
+                <Behaviours:TextChangedDelayedBehavior IsTimerEnabled="True" />
+            </i:Interaction.Behaviors>
+            <TextBox:TextBoxV7.Text>
+                <Binding Path="CustomerFormVM.Phone" UpdateSourceTrigger="Explicit">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox:TextBoxV7.Text>
+        </TextBox:TextBoxV7>
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,328,0,0" Name="textBlock15" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbFAX}"
+                   VerticalAlignment="Top" Width="180" />
+
+        <!-- FAX -->
+        <TextBox:TextBoxV7 Height="23" 
+                               HorizontalAlignment="Left" 
+                               IsNecessary="False"
+                               Margin="170,328,0,0"                               
+                               VerticalAlignment="Top" 
+                               MaxLength="30"
+                               IsReadOnly="{Binding Path=CustomerFormVM.IsReadOnly}" TabIndex="9"
+                               Width="220">
+            <i:Interaction.Behaviors>
+                <Behaviours:TextChangedDelayedBehavior IsTimerEnabled="True" />
+            </i:Interaction.Behaviors>
+            <TextBox:TextBoxV7.Text>
+                <Binding Path="CustomerFormVM.Fax" UpdateSourceTrigger="Explicit">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox:TextBoxV7.Text>
+        </TextBox:TextBoxV7>
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="0,357,0,0" Name="textBlock16" 
+                   Text="{x:Static Localization:Resources.View_CustomerForm_tbLogo}"
+                   VerticalAlignment="Top" Width="180" />
+
+         <!-- LOGO -->
+        <TextBox:TextBoxV7 Height="23" 
+                               HorizontalAlignment="Left" 
+                               IsNecessary="False" 
+                               Margin="170,357,0,0"                                
+                               VerticalAlignment="Top"
+                               IsReadOnly="True"                            
+                               TabIndex="11"
+                               Width="220">
+            <i:Interaction.Behaviors>
+                <Behaviours:TextChangedDelayedBehavior IsTimerEnabled="True" />
+            </i:Interaction.Behaviors>
+            <TextBox:TextBoxV7.Text>
+                <Binding Path="CustomerFormVM.FilePath" UpdateSourceTrigger="Explicit">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox:TextBoxV7.Text>
+        </TextBox:TextBoxV7>
+
+        <CheckBox 
+                  Visibility="{Binding Path=CustomerFormVM.IsNewMode, Converter={StaticResource boolToVis}}"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_tbProfile}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Top"
+                  IsChecked="{Binding Path=CustomerFormVM.AskProfile}" 
+                  Margin="170,387,0,10" Width="170"  />
+        <CheckBox 
+                  Content="{x:Static Localization:Resources.View_Create_Profile_Automatically}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Top"
+                  IsChecked="{Binding Path=CustomerFormVM.CreateProfileAutomatically}" 
+                  Margin="170,413,0,10" Width="170"  />
+
+
+
+        <Button Content="{x:Static Localization:Resources.Command_Browse}"
+                    Height="23" HorizontalAlignment="Left" 
+                    Margin="335,390" 
+                    Style="{StaticResource ButtonStyleV7_2}" 
+                    VerticalAlignment="Top"
+                    Width="55" 
+                    Command="{Binding Path=CustomerFormVM.BrowseCommand}"
+                    />
+
+        <Button Content="{x:Static Localization:Resources.Command_Clear}"
+                    Command="{Binding Path=CustomerFormVM.ClearImageCommand}"
+                    Height="23" HorizontalAlignment="Left" Margin="170,390" 
+                    Style="{StaticResource ButtonStyleV7_2}" VerticalAlignment="Top" 
+                    Width="75" />
+
+
+    </Grid>
+</UserControl>

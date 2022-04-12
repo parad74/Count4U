@@ -1,0 +1,115 @@
+﻿<UserControl x:Class="Count4U.Planogram.View.PlanSizeChangeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:TextBox="clr-namespace:Count4U.CustomControls.TextBox;assembly=Count4U.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid Background="#CDD0D1">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Buttons/ButtonThemeV7.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            
+            <TextBlock 
+                Grid.Column="0"
+                HorizontalAlignment="Center" 
+                Margin="10,10,0,0"                                             	
+                Text="{x:Static Localization:Resources.View_PlanSizeChange_tbWidth}"   
+                Height="21" 
+                VerticalAlignment="Top" />
+
+            <TextBox:TextBoxV7                 
+                Grid.Column="0"
+                x:Name="txtWidth" 
+                Margin="10,30,10,0" 
+                TextWrapping="NoWrap" 
+                Height="20" 
+                MaxLength="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                      >
+                <Binding IsAsync="False" Path="Width" UpdateSourceTrigger="Explicit">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox:TextBoxV7>
+            
+            <TextBlock Text="X" 
+                       Grid.Column="0" 
+                       Grid.ColumnSpan="2" 
+                       Margin="0,31,0,0"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Top"
+                       />
+
+            <TextBlock 
+                Grid.Column="1"
+                HorizontalAlignment="Center" 
+                Margin="0,10,0,0"                                             	
+                Text="{x:Static Localization:Resources.View_PlanSizeChange_tbHeight}"                 
+                Height="21" 
+                VerticalAlignment="Top" />
+
+            <TextBox:TextBoxV7 
+                Grid.Column="1"
+                x:Name="txtHeight" 
+                Margin="10,30,10,0" 
+                TextWrapping="NoWrap" 
+                Height="20" 
+                MaxLength="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Top"
+                      >
+                <Binding IsAsync="False" Path="Height" UpdateSourceTrigger="Explicit">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox:TextBoxV7>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Button Content="{x:Static Localization:Resources.Command_OK}"
+                    Height="23" 
+                    Margin="0,0,120,0"
+                    Name="btnSaveClose"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Width="100"  
+                    IsDefault="True"
+					Command="{Binding Path=OkCommand}"
+                    Style="{StaticResource ButtonStyleV7}" 
+                    />
+
+            <Button Content="{x:Static Localization:Resources.Command_Cancel}"
+                    Height="23"
+                    Margin="0,0,10,0"
+                    Name="button2"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Width="100" 
+					Command="{Binding Path=CancelCommand}"
+                    IsCancel="True" 
+                    Style="{StaticResource ButtonStyleV7_2}" 
+                    />
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<IturAdvancedFilterData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DisplayName>6 Disable With Docs</DisplayName>
+  <SortDirection>ASC</SortDirection>
+  <SortIsAbsolute>false</SortIsAbsolute>
+  <Text />
+  <Field>IturNumber</Field>
+  <IsLocation>false</IsLocation>
+  <IsStatus>true</IsStatus>
+  <IsTag>false</IsTag>
+  <IsInventProduct>false</IsInventProduct>
+  <Statuses>
+    <int>5</int>
+  </Statuses>
+  <InventProductMakat />
+  <InventProductBarcode />
+  <InventProductName />
+  <IsLocationExpanded>true</IsLocationExpanded>
+  <IsStatusExpanded>true</IsStatusExpanded>
+  <IsTagExpanded>true</IsTagExpanded>
+  <IsFromFilter>true</IsFromFilter>
+  <IsInventProductExpanded>true</IsInventProductExpanded>
+</IturAdvancedFilterData>

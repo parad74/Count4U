@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E0FB14E5-A1E7-453C-AD53-ED731CC427D3}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Count4U.UpdateCatalogKitAdapter</RootNamespace>
+    <AssemblyName>Count4U.UpdateCatalogKitAdapter</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AS400April\UpdateCatalogAS400AprilView.xaml.cs">
+      <DependentUpon>UpdateCatalogAS400AprilView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400April\UpdateCatalogAS400AprilViewModel.cs" />
+    <Compile Include="AS400Mega\UpdateCatalogAS400MegaView.xaml.cs">
+      <DependentUpon>UpdateCatalogAS400MegaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Mega\UpdateCatalogAS400MegaViewModel.cs" />
+    <Compile Include="AS400Hamashbir\UpdateCatalogAS400HamashbirView.xaml.cs">
+      <DependentUpon>UpdateCatalogAS400HamashbirView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Hamashbir\UpdateCatalogAS400HamashbirViewModel.cs" />
+    <Compile Include="PrioritytEsteeLouder\UpdateCatalogERPQuantityPrioritytEsteeLouderView.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantityPrioritytEsteeLouderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrioritytEsteeLouder\UpdateCatalogERPQuantityPrioritytEsteeLouderViewModel.cs" />
+    <Compile Include="NativPlusXslx\UpdateCatalogNativPlusXslxAdapterView.xaml.cs">
+      <DependentUpon>UpdateCatalogNativPlusXslxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativPlusXslx\UpdateCatalogNativPlusXslxAdapterViewModel.cs" />
+    <Compile Include="GeneralCSV\UpdateCatalogERPQuantityGeneralCSVView.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantityGeneralCSVView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GeneralCSV\UpdateCatalogERPQuantityGeneralCSVViewModel.cs" />
+    <Compile Include="GazitVerifoneSteimaztzky\UpdateCatalogERPQuantityGazitVerifoneSteimaztzkyView.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantityGazitVerifoneSteimaztzkyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GazitVerifoneSteimaztzky\UpdateCatalogERPQuantityGazitVerifoneSteimaztzkyViewModel.cs" />
+    <Compile Include="NikeInt\UpdateCatalogERPQuantityNikeIntView.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantityNikeIntView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NikeInt\UpdateCatalogERPQuantityNikeIntViewModel.cs" />
+    <Compile Include="Otech\UpdateCatalogERPQuantityOtechView.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantityOtechView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Otech\UpdateCatalogERPQuantityOtechViewModel.cs" />
+    <Compile Include="OrenOriginals\UpdateCatalogERPQuantityOrenOriginalsView.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantityOrenOriginalsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrenOriginals\UpdateCatalogERPQuantityOrenOriginalsViewModel.cs" />
+    <Compile Include="ProfileXml\ImportCatalogProfileXmlAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogProfileXmlAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ProfileXml\ImportCatalogProfileXmlAdapterViewModel.cs" />
+    <Compile Include="Sapb1Xslx\UpdateCatalogERPQuantitySapb1XslxAdapterView.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantitySapb1XslxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sapb1Xslx\UpdateCatalogERPQuantitySapb1XslxAdapterViewModel.cs" />
+    <Compile Include="Sapb1Zometsfarim\UpdateCatalogERPQuantitySapb1ZometsfarimView.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantitySapb1ZometsfarimView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sapb1Zometsfarim\UpdateCatalogERPQuantitySapb1ZometsfarimViewModel.cs" />
+    <Compile Include="TafnitMatrix\UpdateCatalogERPQuantityTafnitMatrixView.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantityTafnitMatrixView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TafnitMatrix\UpdateCatalogERPQuantityTafnitMatrixViewModel.cs" />
+    <Compile Include="MPL\UpdateCatalogERPQuantityMPLView.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantityMPLView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MPL\UpdateCatalogERPQuantityMPLViewModel.cs" />
+    <Compile Include="Nibit\UpdateCatalogNibitView.xaml.cs">
+      <DependentUpon>UpdateCatalogNibitView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nibit\UpdateCatalogNibitViewModel.cs" />
+    <Compile Include="MaccabiPharmSAP\UpdateCatalogERPQuantityMaccabiPharmSAPView.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantityMaccabiPharmSAPView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MaccabiPharmSAP\UpdateCatalogERPQuantityMaccabiPharmSAPViewModel.cs" />
+    <Compile Include="One1\UpdateCatalogERPQuantityOne1View.xaml.cs">
+      <DependentUpon>UpdateCatalogERPQuantityOne1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="One1\UpdateCatalogERPQuantityOne1ViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RetalixNext\UpdateCatalogRetalixNextView.xaml.cs">
+      <DependentUpon>UpdateCatalogRetalixNextView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RetalixNext\UpdateCatalogRetalixNextViewModel.cs" />
+    <Compile Include="UpdateCatalogKitModuleInit.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="AS400April\Count4U.UpdateCatalogERPAS400AprilAdapter.ini" />
+    <None Include="AS400Mega\Count4U.UpdateCatalogERPAS400MegaAdapter.ini" />
+    <None Include="AS400Hamashbir\Count4U.UpdateCatalogERPAAS400HamashbirAdapter.ini" />
+    <None Include="PrioritytEsteeLouder\Count4U.UpdateCatalogERPQuantityPrioritytEsteeLouderAdapter.ini" />
+    <None Include="NativPlusXslx\Count4U.UpdateCatalogNativPlusXslxAdapter.ini" />
+    <None Include="GeneralCSV\Count4U.UpdateCatalogERPQuantityGeneralCSVAdapter.ini" />
+    <None Include="GazitVerifoneSteimaztzky\Count4U.UpdateCatalogERPQuantityGazitVerifoneSteimaztzkyAdapter.ini" />
+    <None Include="NikeInt\Count4U.UpdateCatalogERPQuantityNikeIntAdapter.ini" />
+    <None Include="Otech\Count4U.UpdateCatalogERPQuantityOtechAdapter.ini" />
+    <None Include="OrenOriginals\Count4U.UpdateCatalogERPQuantityOrenOriginalsAdapter.ini" />
+    <None Include="packages.config" />
+    <None Include="ProfileXml\Count4U.ImportCatalogProfileXmlAdapter.ini" />
+    <None Include="Sapb1Xslx\Count4U.UpdateCatalogERPQuantitySapb1XslxAdapter.ini" />
+    <None Include="Sapb1Zometsfarim\Count4U.UpdateCatalogERPQuantitySapb1ZometsfarimAdapter.ini" />
+    <None Include="TafnitMatrix\Count4U.UpdateCatalogERPQuantityTafnitMatrixAdapter.ini" />
+    <None Include="MPL\Count4U.UpdateCatalogERPQuantityMPLAdapter.ini" />
+    <None Include="Nibit\Count4U.UpdateCatalogERPNibitAdapter.ini" />
+    <None Include="MaccabiPharmSAP\Count4U.UpdateCatalogERPQuantityMaccabiPharmSAPAdapter.ini" />
+    <None Include="One1\Count4U.UpdateCatalogERPQuantityOne1Adapter.ini" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="RetalixNext\Count4U.UpdateCatalogERPRetalixNextAdapter.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Count4U.Common.Web\Count4U.Common.Web.csproj">
+      <Project>{6bd02894-6ebe-40f1-b5a4-70e5141b2540}</Project>
+      <Name>Count4U.Common.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Common\Count4U.Common.csproj">
+      <Project>{ea11d75f-fdb9-410d-9f9b-5d055b4377b8}</Project>
+      <Name>Count4U.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.CustomControls\Count4U.CustomControls.csproj">
+      <Project>{d20ac0d3-74fb-489c-977c-5712e022eb2b}</Project>
+      <Name>Count4U.CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Localization\Count4U.Localization.csproj">
+      <Project>{c1716c1b-995a-481b-8853-1b984f75be45}</Project>
+      <Name>Count4U.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.Common\Count4U.Model.Common.csproj">
+      <Project>{5e70d036-3982-4d9f-95ca-197e616d7f59}</Project>
+      <Name>Count4U.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ExportImport\Count4U.Model.ExportImport.csproj">
+      <Project>{a511450d-26cb-4d17-92b1-4c9a331b5290}</Project>
+      <Name>Count4U.Model.ExportImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ServiceContract\Count4U.Model.ServiceContract.csproj">
+      <Project>{6c200172-9847-40e4-ae97-ec50bbf4d0a4}</Project>
+      <Name>Count4U.Model.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model\Count4U.Model.csproj">
+      <Project>{a3145385-051f-4ffa-9dcb-3014da552419}</Project>
+      <Name>Count4U.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AS400April\UpdateCatalogAS400AprilView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Mega\UpdateCatalogAS400MegaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Hamashbir\UpdateCatalogAS400HamashbirView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PrioritytEsteeLouder\UpdateCatalogERPQuantityPrioritytEsteeLouderView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NativPlusXslx\UpdateCatalogNativPlusXslxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GeneralCSV\UpdateCatalogERPQuantityGeneralCSVView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GazitVerifoneSteimaztzky\UpdateCatalogERPQuantityGazitVerifoneSteimaztzkyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NikeInt\UpdateCatalogERPQuantityNikeIntView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Otech\UpdateCatalogERPQuantityOtechView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OrenOriginals\UpdateCatalogERPQuantityOrenOriginalsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ProfileXml\ImportCatalogProfileXmlAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sapb1Xslx\UpdateCatalogERPQuantitySapb1XslxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sapb1Zometsfarim\UpdateCatalogERPQuantitySapb1ZometsfarimView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TafnitMatrix\UpdateCatalogERPQuantityTafnitMatrixView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MPL\UpdateCatalogERPQuantityMPLView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Nibit\UpdateCatalogNibitView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MaccabiPharmSAP\UpdateCatalogERPQuantityMaccabiPharmSAPView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="One1\UpdateCatalogERPQuantityOne1View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RetalixNext\UpdateCatalogRetalixNextView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>IF NOT EXIST $(SolutionDir)Count4U\$(OutDir)ImportModules ( mkdir $(SolutionDir)Count4U\$(OutDir)ImportModules )
+
+copy "$(SolutionDir)Count4U.UpdateCatalogKitAdapter\$(OutDir)Count4U.UpdateCatalogKitAdapter.dll" "$(SolutionDir)Count4U\$(OutDir)ImportModules\"
+copy "$(SolutionDir)Count4U.UpdateCatalogKitAdapter\$(OutDir)Count4U.UpdateCatalogKitAdapter.pdb" "$(SolutionDir)Count4U\$(OutDir)ImportModules\"
+copy $(SolutionDir)Count4U.UpdateCatalogKitAdapter\RetalixNext\Count4U.UpdateCatalogERPRetalixNextAdapter.ini $(SolutionDir)Count4U\$(OutDir)ImportModules\
+</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

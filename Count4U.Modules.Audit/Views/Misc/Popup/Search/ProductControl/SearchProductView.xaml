@@ -1,0 +1,322 @@
+﻿<UserControl x:Class="Count4U.Modules.Audit.Views.Misc.Popup.Search.ProductControl.SearchProductView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:Pagination="clr-namespace:Count4U.CustomControls.Pagination;assembly=Count4U.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Background="White" Margin="4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="23" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="#555555" BorderThickness="1" Background="#999999" Margin="5,3,3,0">
+            <Grid>
+                <TextBlock Text="{x:Static Localization:Resources.Domain_Product}"
+                           HorizontalAlignment="Left" 
+                           VerticalAlignment="Center" 
+                           Margin="12,4,0,6" />
+
+                <Pagination:Pagination Margin="125,0,0,0" VerticalAlignment="Center"
+									   PageSize="{Binding Path=PageSize, Mode=TwoWay}" 
+									   PageCurrent="{Binding Path=PageCurrent, Mode=TwoWay}" 
+									   ItemsTotal="{Binding Path=ItemsTotal, Mode=TwoWay}"
+                                       Background="{StaticResource vertLineBrush}"
+                                       />
+            </Grid>
+        </Border>
+
+        <DataGrid Name="dataGrid"
+                              Grid.Row="1" 
+                              Grid.Column="0" 
+                              Margin="5,0,1,0" 
+                              ItemsSource="{Binding Path=Items}" 
+				              SelectedItem="{Binding Path=Current}"                  
+				              Background="Transparent"
+				              BorderBrush="Transparent" 
+                              BorderThickness="0"                             
+                              IsReadOnly="True"
+                              CanUserResizeColumns="True"
+                              VirtualizingStackPanel.IsVirtualizing="True"
+                              VirtualizingStackPanel.VirtualizationMode="Standard"        
+                              ScrollViewer.CanContentScroll="False"           
+                              SelectionMode="Single"
+            >
+            
+            <DataGrid.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/MdiThemes/Theme3.xaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Width="*" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnMakat}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnMakat}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Makat, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="*" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnName}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnName}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Name, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="100" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnSectionCode}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnSectionCode}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=SectionCode, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="100" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnSupplierCode}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnSupplierCode}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=SupplierCode, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="70" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnPriceSale}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnPriceSale}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=PriceSale, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="70" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnPriceBuy}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnPriceBuy}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=PriceBuy, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="70" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnPriceExtra}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnPriceExtra}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=PriceExtra, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="*" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnBalanceQuantityERP}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnBalanceQuantityERP}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=BalanceQuantityERP, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="*" >
+
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnBalanceQuantityPartialERP}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnBalanceQuantityPartialERP}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=BalanceQuantityPartialERP, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="50" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnMakatOriginal}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnMakatOriginal}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=MakatOriginal, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="50" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnInputTypeCode}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnInputTypeCode}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=InputTypeCode, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="50" >
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnTypeCode}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnTypeCode}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=TypeCode, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="*" >
+
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnParentMakat}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnParentMakat}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ParentMakat, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="*" >
+
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnCountInParentPack}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnCountInParentPack}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=CountInParentPack, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="*" >
+
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{x:Static Localization:Resources.View_CatalogForm_columnModifyDate}"                                        
+                                       ToolTip="{x:Static Localization:Resources.View_CatalogForm_columnModifyDate}"
+                                       HorizontalAlignment="Stretch" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ModifyDate, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Border Grid.Row="2" BorderBrush="#999999" BorderThickness="1" Background="#D3D3D3" Margin="5,0,3,3">
+            <Grid>
+
+                <TextBlock Text="{Binding Path=TotalString}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12, 0, 0,0" />
+
+                <TextBlock HorizontalAlignment="Right" Margin="0,0,15,0" VerticalAlignment="Center" >
+			            <Hyperlink Command="{Binding Path=MoreCommand}" >
+                            <Run Text="{x:Static Localization:Resources.Command_More}" />
+                        </Hyperlink>
+                </TextBlock>
+
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

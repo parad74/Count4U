@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<liber8>
+  <proxys comment="IdSip2.WindowsHost.Program.Main()">
+    <proxy name="Test Data" isdefault="0"/>
+    <proxy name="Ale Kotarim" isdefault="1"/>
+    <proxy name="Idea" isdefault="0"/>
+    <proxy name="Topsys" isdefault="0"/>
+  </proxys>
+  <liber8proxys comment="IdSip2.WindowsHost.Program.Main()">
+    <liber8proxy name="Liber8 Test" isdefault="0"/>
+    <liber8proxy name="Liber8 Connect" isdefault="1"/>
+ </liber8proxys>
+  <log path="C:\idsip2\log"></log>
+	<protocols>
+		<protocol backspace="r" filePath ="\3M"  isdefault="1"></protocol>
+		<protocol backspace="rn" filePath =""  isdefault="0"></protocol>
+	</protocols>
+ </liber8>

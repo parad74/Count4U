@@ -1,0 +1,36 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton"
+                    xmlns:ImageButtonCursor="clr-namespace:Count4U.CustomControls.ImageButtonCursor">
+
+    <Style TargetType="{x:Type ImageButtonCursor:ImageButtonCursor}">
+        <Style.Setters>
+            <Setter Property="ToolTipService.ShowOnDisabled" Value="True" />
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ImageButtonCursor:ImageButtonCursor}">
+                        <ControlTemplate.Resources>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                        </ControlTemplate.Resources>
+
+                        <Image x:Name="image" Source="{TemplateBinding ImageSource}" Stretch="Fill" Width="{TemplateBinding ImageWidth}" Height="{TemplateBinding ImageHeight}" />
+
+                        <ControlTemplate.Triggers>
+
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter TargetName="image" Property="Opacity" Value="0.5" />
+                            </Trigger>
+
+                            <Trigger SourceName="image" Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,424 @@
+﻿<UserControl x:Class="Count4U.Report.Views.ReportFavoritesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cal="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+             xmlns:Common="clr-namespace:Count4U.Common;assembly=Count4U.Common"
+              xmlns:Converters="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:uiCommandService="clr-namespace:Count4U.Common.Services.UICommandService;assembly=Count4U.Common"
+             xmlns:Behaviours="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+              xmlns:behaviors="clr-namespace:Count4U.CustomControls.Behaviors;assembly=Count4U.CustomControls"
+              xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Interactivity.InteractionRequest;assembly=Microsoft.Practices.Prism.Interactivity"
+             xmlns:Helpers="clr-namespace:Count4U.Common.Helpers;assembly=Count4U.Common"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+              xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:actions="clr-namespace:Count4U.Common.Helpers.Actions;assembly=Count4U.Common"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+                <Converters:DoubleToHebrewConverter x:Key="doubleToHebrew" />
+                <Converters:BoolToVisiblityConverter  x:Key="boolToVis" />
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <i:Interaction.Triggers>
+            <prism:InteractionRequestTrigger SourceObject="{Binding YesNoRequest}">
+                <actions:MessageBoxYesNoAction />
+            </prism:InteractionRequestTrigger>
+        </i:Interaction.Triggers>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="Gray" Background="{StaticResource backForwardLineBrush}"  BorderThickness="1" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <ContentControl Grid.Column="0" x:Name="backForward" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"
+												cal:RegionManager.RegionName="{x:Static Common:RegionNames.ReportFavoritesBackForward}" />
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="10,0,0,0">
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="0,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="1,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <!--<ImageButton:ImageButton Margin="17,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                              ToolTip="{Binding Path=AddCommand.Title}"
+					        Command="{Binding Path=AddCommand}" 
+					        ImageSource="{Binding Path=AddCommand.Icon}"
+                                             >
+                    </ImageButton:ImageButton>-->
+
+                    <ImageButton:ImageButton Margin="17,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                             ToolTip="{Binding Path=EditCommand.Title}"
+					                         Command="{Binding Path=EditCommand}" 
+					                         ImageSource="{Binding Path=EditCommand.Icon}"                                                                                          
+                                             >
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton Margin="55,0,0,0" 
+                                             HorizontalAlignment="Left" 
+                                             VerticalAlignment="Center" 
+                                             ToolTip="{x:Static Localization:Resources.Command_Delete}"
+								Command="{Binding Path=DeleteCommand}" 
+					            ImageSource="{Binding Path=DeleteCommand.Icon}">
+                    </ImageButton:ImageButton>
+
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="91,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="92,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <ImageButton:ImageButton Margin="96,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                                ToolTip="{Binding Path=ScriptOpenCommand.Title}"
+					                         Command="{Binding Path=ScriptOpenCommand}" 
+					                         ImageSource="{Binding Path=ScriptOpenCommand.Icon}"                                                
+                                >
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton Margin="132,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                             ToolTip="{Binding Path=ScriptSaveCommand.Title}"
+					                         Command="{Binding Path=ScriptSaveCommand}" 
+					                         ImageSource="{Binding Path=ScriptSaveCommand.Icon}"                                             
+                              >
+                    </ImageButton:ImageButton>
+
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="167,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="168,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <ImageButton:ImageButton Margin="173,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                             ToolTip="{Binding Path=UpCommand.Title}"
+					                         Command="{Binding Path=UpCommand}" 
+					                         ImageSource="{Binding Path=UpCommand.Icon}"                                             
+                              >
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton Margin="209,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                             ToolTip="{Binding Path=DownCommand.Title}"
+					                         Command="{Binding Path=DownCommand}" 
+					                         ImageSource="{Binding Path=DownCommand.Icon}"                                                                                          
+                              >
+                    </ImageButton:ImageButton>
+
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="244,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+                    
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="245,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <ImageButton:ImageButton Margin="250,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                             ToolTip="{Binding Path=RunScriptCommand.Title}"
+					                         Command="{Binding Path=RunScriptCommand}" 
+					                         ImageSource="{Binding Path=RunScriptCommand.Icon}"        
+                                             x:Name="btnRepair"
+					            >
+                    </ImageButton:ImageButton>
+
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="295,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="296,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <ImageButton:ImageButton Margin="301,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                             ToolTip="{Binding Path=ClearScriptCommand.Title}"
+					                         Command="{Binding Path=ClearScriptCommand}" 
+					                         ImageSource="{Binding Path=ClearScriptCommand.Icon}"        
+                                             x:Name="btnClear"
+					            >
+                    </ImageButton:ImageButton>
+
+
+                </Grid>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0" Margin="5,0,0,0" VerticalAlignment="Center" Text="{x:Static Localization:Resources.Domain_Report}" />
+
+            <RadioButton Content="{x:Static Localization:Resources.View_ReportFavorites_radioMain}"
+                         VerticalAlignment="Center" 
+                         Width="85" 
+                         HorizontalAlignment="Left" 
+                         Margin="70,0,0,0" Height="16" 
+                      IsChecked="{Binding Path=IsMain}"/>
+
+            <RadioButton Content="{x:Static Localization:Resources.View_ReportFavorites_radioCurrentUser}"
+                         VerticalAlignment="Center"
+                         Width="111" 
+                         HorizontalAlignment="Left" 
+                         Margin="143,0,0,0" 
+                         Height="16" 
+                      IsChecked="{Binding Path=IsCurrentUser}"/>
+
+            <CheckBox Content="{x:Static Localization:Resources.View_ReportScript_chkSaveTags}"
+                  Height="16" HorizontalAlignment="Left" Margin="330,0,0,0" Name="checkBox11" VerticalAlignment="Center"
+                  IsChecked="{Binding Path=IsSaveTags}"/>
+
+            <DataGrid Grid.Row="1"  Margin="0,0,0,0" 
+					  Background="Transparent"
+					  BorderBrush="Transparent" BorderThickness="0"
+					  ItemsSource="{Binding Path=Items}" 										
+                      VirtualizingStackPanel.VirtualizationMode="Standard"  
+				      SelectionMode="Single"
+                      Name="masterDataGrid"
+					  SelectedItem="{Binding Path=SelectedItem}"      
+                       IsReadOnly="False"
+                  CanUserDeleteRows="False"
+							>
+                <DataGrid.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.MergedDictionaries>
+                            <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/MdiThemes/Theme1.xaml"/>
+                        </ResourceDictionary.MergedDictionaries>
+                    </ResourceDictionary>
+                </DataGrid.Resources>
+                
+                <i:Interaction.Behaviors>
+                    <Behaviours:DataGridBehavior 
+                                EditCommand="{Binding Path=EditGridCommand}"
+                                CommitCommand="{Binding Path=CommitGridCommand}"
+                                CancelCommand="{Binding Path=CancelGridCommand}" 
+                                />
+                </i:Interaction.Behaviors>
+
+
+                <DataGrid.CellStyle>
+                    <Style TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource {x:Type DataGridCell}}">
+                        <Style.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding Path=IsReportExistInFs}" Value="False" />
+                                    <Condition Binding="{Binding RelativeSource={RelativeSource Mode=Self},Path=IsSelected}"                                               
+                                               Value="False" />
+                                </MultiDataTrigger.Conditions>
+                                <MultiDataTrigger.Setters>
+                                    <Setter Property="Background" Value="LightPink" />
+                                    <Setter Property="ToolTip" Value="{x:Static Localization:Resources.Message_ReportMissedInFileSystem}" />
+                                </MultiDataTrigger.Setters>
+                            </MultiDataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+
+                <DataGrid.Columns>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_ReportFavorites_columnReportCode}"
+                                            Width="*" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=ReportCode, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_ReportFavorites_columnFileName}"
+                                            Width="*" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=FileName, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_ReportFavorites_columnDescription}"
+                                            Width="*" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Description, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_ReportFavorites_columnShowInMenu}"
+                                            Width="*" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding Path=Menu}" IsEnabled="False" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <!--<DataGridTemplateColumn Header="{x:Static Localization:Resources.View_ReportFavorites_columnMenuCaption}"
+                                            Width="*" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=MenuCaption, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>-->
+
+                    <DataGridTemplateColumn x:Name="MenuCaptionolumn" Header="{x:Static Localization:Resources.View_ReportFavorites_columnMenuCaption}"
+                                                                                Width="*" IsReadOnly="False" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=MenuCaption, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <TextBox Name="textBox" 
+                                     FlowDirection="LeftToRight"
+                                     Style="{StaticResource textBoxErrorStyle}"                                                                                                                                                                         
+                                                                             >
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:TextSelectBehavior />
+                                    </i:Interaction.Behaviors>
+                                    <TextBox.Text>
+                                        <Binding Path="MenuCaption" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" >
+                                            <Binding.ValidationRules>
+                                                <DataErrorValidationRule></DataErrorValidationRule>
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </TextBox.Text>
+                                </TextBox>
+                                <DataTemplate.Triggers>
+                                    <Trigger SourceName="textBox" Property="IsVisible" Value="True" >
+                                        <Setter TargetName="textBox" Property="FocusManager.FocusedElement" Value="{Binding ElementName=textBox}" />
+                                    </Trigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn x:Name="TagColumn" Header="{x:Static Localization:Resources.View_ReportFavorites_columnTag}"
+                                                                                Width="90" IsReadOnly="False" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Tag, Mode=OneWay}" HorizontalAlignment="Center" />
+                                    </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <TextBox Name="textBox" 
+                                     FlowDirection="LeftToRight"
+                                     Style="{StaticResource textBoxErrorStyle}"                                                                                                                                                                         
+                                                                             >
+                                    <i:Interaction.Behaviors>
+                                        <behaviors:TextSelectBehavior />
+                                    </i:Interaction.Behaviors>
+                                    <TextBox.Text>
+                                        <Binding Path="Tag" UpdateSourceTrigger="PropertyChanged" Mode="TwoWay" >
+                                            <Binding.ValidationRules>
+                                                <DataErrorValidationRule></DataErrorValidationRule>
+                                            </Binding.ValidationRules>
+                                        </Binding>
+                                    </TextBox.Text>
+                                </TextBox>
+                                <DataTemplate.Triggers>
+                                    <Trigger SourceName="textBox" Property="IsVisible" Value="True" >
+                                        <Setter TargetName="textBox" Property="FocusManager.FocusedElement" Value="{Binding ElementName=textBox}" />
+                                    </Trigger>
+                                </DataTemplate.Triggers>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                    </DataGridTemplateColumn>
+
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_ReportFavorites_columnPath}"
+                                            Width="*" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Path, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>                    
+
+                </DataGrid.Columns>
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Command="{Binding Path=EditCommand}"  
+                              Header="{x:Static Localization:Resources.Command_Edit}"
+                              >
+                            <MenuItem.Icon>
+                                <Image Source="{Binding Path=EditCommand.Icon32}" Width="24" Height="24" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                        <MenuItem Command="{Binding Path=DeleteCommand}" 
+                              Header="{x:Static Localization:Resources.Command_Delete}"
+                              >
+                            <MenuItem.Icon>
+                                <Image Source="{Binding Path=DeleteCommand.Icon32}" Width="24" Height="24" />
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+
+            </DataGrid>
+        </Grid>
+
+        <xctk:BusyIndicator Grid.RowSpan="2" IsBusy="{Binding Path=IsBusy}" BusyContent="{x:Static Localization:Resources.View_ReportFavorites_busyContent}" >
+        
+        </xctk:BusyIndicator>
+    </Grid>
+
+</UserControl>

@@ -1,0 +1,99 @@
+﻿<Dashboard:DashboardBaseView x:Class="Count4U.Modules.ContextCBI.Views.Branch.BranchDashboardFullView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:MDI="clr-namespace:WPF.MDI;assembly=WPF.MDI"
+             xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             xmlns:cal="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+             xmlns:Common="clr-namespace:Count4U.Common;assembly=Count4U.Common" mc:Ignorable="d" 
+              xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+                       xmlns:Dashboard="clr-namespace:Count4U.Modules.ContextCBI.Views.Misc.Dashboard"
+                             xmlns:uiCommandService="clr-namespace:Count4U.Common.Services.UICommandService;assembly=Count4U.Common"
+                             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid>
+
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="{StaticResource backForwardLineBorderBrush}" Background="{StaticResource backForwardLineBrush}"  BorderThickness="1" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <ContentControl Grid.Column="0" x:Name="backForward" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"
+												 />
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="10,0,0,0">
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="0,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="1,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <ImageButton:ImageButton Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+								             Name="btnSearch"                                             
+                                             ToolTip="Search"
+					                         ImageSource="{x:Static uiCommandService:UICommandIconRepository.IconSearch}"
+                                             ImageWidth="24" ImageHeight="24" CenterX="12" CenterY="12">
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton Margin="40,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+								             Name="btnFilter"                                             
+                                             ToolTip="{x:Static Localization:Resources.Command_Filter}"					                        
+                                             ImageWidth="24" ImageHeight="24" CenterX="12" CenterY="12">
+                        <ImageButton:ImageButton.Style>
+                            <Style TargetType="{x:Type ImageButton:ImageButton}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=IsMdiAll}" Value="True">
+                                        <DataTrigger.Setters>
+                                            <Setter Property="ImageSource" Value="{x:Static uiCommandService:UICommandIconRepository.FilterState1}" />
+                                        </DataTrigger.Setters>
+                                    </DataTrigger>
+
+                                    <DataTrigger Binding="{Binding Path=IsMdiAll}" Value="False">
+                                        <DataTrigger.Setters>
+                                            <Setter Property="ImageSource" Value="{x:Static uiCommandService:UICommandIconRepository.FilterState2}" />
+                                        </DataTrigger.Setters>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ImageButton:ImageButton.Style>
+                    </ImageButton:ImageButton>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1" Background="{Binding BackgroundViewModel.LocalBackground}" FlowDirection="LeftToRight">
+
+        </Grid>
+
+        <Grid Grid.Row="1" Background="Transparent">
+            <MDI:MdiContainer x:Name="mdiContainer" Background="Transparent"  Opacity="1">
+
+            </MDI:MdiContainer>
+        </Grid>
+
+    </Grid>
+</Dashboard:DashboardBaseView>

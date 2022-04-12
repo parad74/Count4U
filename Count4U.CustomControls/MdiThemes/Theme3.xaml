@@ -1,0 +1,40 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Converters="clr-namespace:Count4U.CustomControls.Converters">
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/MdiThemes/BaseTheme.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+
+	<SolidColorBrush x:Key="alternationColor" Color="#EBEBEB" />
+	<SolidColorBrush x:Key="cellBorderBrush" Color="#D3D3D3" />
+
+	<Style x:Key="{x:Type DataGrid}" TargetType="{x:Type DataGrid}" BasedOn="{StaticResource DataGridStyle}" >
+        <Setter Property="AlternatingRowBackground" Value="{StaticResource alternationColor}" />
+    </Style>
+
+	<Style x:Key="{x:Type DataGridColumnHeadersPresenter}" TargetType="{x:Type DataGridColumnHeadersPresenter}" BasedOn="{StaticResource DataGridColumnHeadersPresenterStyle}"
+				 x:Shared="true">
+
+	</Style>
+
+	<Converters:CellBackgroundConverter x:Key="cellBackgroundConverter" x:Shared="true"/>
+
+	<Style x:Key="{x:Type DataGridColumnHeader}" TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource DataGridColumnHeaderStyle}"
+				 x:Shared="true">
+		<Setter Property="Background" Value="{DynamicResource cellBorderBrush}" />
+		<Setter Property="BorderBrush" Value="#999999" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+	</Style>
+
+    <Style x:Key="DataGridColumnHeaderStyleTheme3" TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource DataGridColumnHeaderStyle}"
+				 >
+        <Setter Property="Background" Value="{DynamicResource cellBorderBrush}" />
+        <Setter Property="BorderBrush" Value="#999999" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="{x:Type DataGridCell}" TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource DataGridCellStyle}" x:Shared="true">
+
+	</Style>
+</ResourceDictionary>

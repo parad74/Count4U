@@ -1,0 +1,19 @@
+﻿@using System.Web.Optimization
+@{
+    ViewBag.Title = "Planogram";
+}
+
+@section AddToHead
+{
+    @Styles.Render("~/bundles/planogramCss")
+}
+
+<h2>Planogram</h2>
+
+ <div id="container"></div>
+
+@section AddToBottom
+{
+    @Scripts.Render("~/bundles/kinetic")
+    @Scripts.Render("~/bundles/planogram")
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<InventProductSimpleFilterData xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <DisplayName>דוח פריטים מחוקים</DisplayName>
+  <SortDirection>ASC</SortDirection>
+  <SortIsAbsolute>false</SortIsAbsolute>
+  <IsLocationExpanded>true</IsLocationExpanded>
+  <IsFilterByLocation>true</IsFilterByLocation>
+  <LocationItems />
+  <IsIturExpanded>false</IsIturExpanded>
+  <IsFilterByItur>false</IsFilterByItur>
+  <IturCode />
+  <IturERPCode />
+  <IturNumberPrefix />
+  <IturNumberSuffix />
+  <IsInventProductExpanded>false</IsInventProductExpanded>
+  <IsFilterByInventProduct>false</IsFilterByInventProduct>
+  <InventProductInputTypeK>true</InventProductInputTypeK>
+  <InventProductInputTypeB>true</InventProductInputTypeB>
+  <InventProductIsItemsFromCatalog>true</InventProductIsItemsFromCatalog>
+  <InventProductIsItemsNotInCatalog>true</InventProductIsItemsNotInCatalog>
+  <InventProductQuantityDifference />
+  <InventProductQuantityDifferenceEquality>=</InventProductQuantityDifferenceEquality>
+  <InventProductQuantityDifferenceIsAbsolute>false</InventProductQuantityDifferenceIsAbsolute>
+  <InventProductQuantityEdit />
+  <InventProductQuantityEditEquality>=</InventProductQuantityEditEquality>
+  <InventProductQuantityEditIsAbsolute>false</InventProductQuantityEditIsAbsolute>
+  <InventProductValueBuyDifference />
+  <InventProductValueBuyDifferenceEquality>=</InventProductValueBuyDifferenceEquality>
+  <InventProductValueBuyDifferenceIsAbsolute>false</InventProductValueBuyDifferenceIsAbsolute>
+  <InventProductValueBuyEdit />
+  <InventProductValueBuyEditIsAbsolute>false</InventProductValueBuyEditIsAbsolute>
+  <InventProductValueBuyEditEquality>=</InventProductValueBuyEditEquality>
+  <IsProductExpanded>false</IsProductExpanded>
+  <IsFilterByProduct>false</IsFilterByProduct>
+  <ProductMakat />
+  <ProductBarcode />
+  <ProductPriceBuy />
+  <ProductPriceBuyEquality>=</ProductPriceBuyEquality>
+  <ProductPriceBuyIsAbsolute>false</ProductPriceBuyIsAbsolute>
+  <ProductPriceSale />
+  <ProductPriceSaleEquality>=</ProductPriceSaleEquality>
+  <ProductPriceSaleIsAbsolute>false</ProductPriceSaleIsAbsolute>
+  <ProductName />
+  <IsSupplierExpanded>false</IsSupplierExpanded>
+  <IsFilterBySupplier>false</IsFilterBySupplier>
+  <SupplierCode />
+  <SupplierName />
+  <IsSectionExpanded>true</IsSectionExpanded>
+  <IsFilterBySection>true</IsFilterBySection>
+  <SectionItems>
+    <string>1</string>
+  </SectionItems>
+  <IsReportExpanded>false</IsReportExpanded>
+  <IsFilterByReport>false</IsFilterByReport>
+  <ReportQuantityDifferenceOriginalERPEquality>&gt;=</ReportQuantityDifferenceOriginalERPEquality>
+  <ReportQuantityDifferenceOriginalERP>0</ReportQuantityDifferenceOriginalERP>
+  <ReportQuantityDifferenceOriginalERPIsAbsolute>true</ReportQuantityDifferenceOriginalERPIsAbsolute>
+  <ReportValueDifferenceOriginalERPEquality>&gt;=</ReportValueDifferenceOriginalERPEquality>
+  <ReportValueDifferenceOriginalERP>0</ReportValueDifferenceOriginalERP>
+  <ReportValueDifferenceOriginalERPIsAbsolute>true</ReportValueDifferenceOriginalERPIsAbsolute>
+</InventProductSimpleFilterData>

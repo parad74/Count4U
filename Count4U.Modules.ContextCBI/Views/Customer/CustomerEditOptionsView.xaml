@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.Customer.CustomerEditOptionsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+						 xmlns:Inventor="clr-namespace:Count4U.Modules.ContextCBI.Views.Inventor"
+             xmlns:Views="clr-namespace:Count4U.Modules.ContextCBI.Views"
+             xmlns:Common="clr-namespace:Count4U.Common;assembly=Count4U.Common"
+              xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" 
+             xmlns:cal="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+
+  
+        <Inventor:InventorOptionsCommon x:Name="common" />
+</UserControl>

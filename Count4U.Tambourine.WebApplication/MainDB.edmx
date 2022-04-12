@@ -1,0 +1,652 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MainDBModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MainDBModelStoreContainer">
+          <EntitySet Name="Branch" EntityType="MainDBModel.Store.Branch" store:Type="Tables" />
+          <EntitySet Name="BranchMask" EntityType="MainDBModel.Store.BranchMask" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="MainDBModel.Store.Customer" store:Type="Tables" />
+          <EntitySet Name="CustomerConfig" EntityType="MainDBModel.Store.CustomerConfig" store:Type="Tables" />
+          <EntitySet Name="CustomerMask" EntityType="MainDBModel.Store.CustomerMask" store:Type="Tables" />
+          <EntitySet Name="CustomerReport" EntityType="MainDBModel.Store.CustomerReport" store:Type="Tables" />
+          <EntitySet Name="ImportAdapter" EntityType="MainDBModel.Store.ImportAdapter" store:Type="Tables" />
+          <EntitySet Name="MainDBIni" EntityType="MainDBModel.Store.MainDBIni" store:Type="Tables" />
+          <EntitySet Name="Report" EntityType="MainDBModel.Store.Report" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Address" Type="nvarchar" MaxLength="500" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="200" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ImportCatalogProviderCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportIturProviderCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportLocationProviderCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportPDAProviderCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="DBPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="ImportCatalogAdapterParms" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImportLocationAdapterParms" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImportPDAAdapterParms" Type="nvarchar" MaxLength="500" />
+          <Property Name="BranchCodeLocal" Type="nvarchar" MaxLength="100" />
+          <Property Name="BranchCodeERP" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportIturAdapterParms" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaskCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReportPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="ExportCatalogAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExportIturAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ReportContext" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReportDS" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReportName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportSectionAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExportSectionAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="UpdateCatalogAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Restore" Type="nvarchar" MaxLength="100" />
+          <Property Name="RestoreBit" Type="bit" />
+          <Property Name="ExportERPAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportSupplierAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="PriceCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Print" Type="bit" />
+          <Property Name="PDAType" Type="nvarchar" MaxLength="100" />
+          <Property Name="MaintenanceType" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProgramType" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="BranchMask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="AdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="FileCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="BarcodeMask" Type="nvarchar" MaxLength="100" />
+          <Property Name="MakadMask" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="20" />
+          <Property Name="Address" Type="nvarchar" MaxLength="200" />
+          <Property Name="ContactPerson" Type="nvarchar" MaxLength="200" />
+          <Property Name="Mail" Type="nvarchar" MaxLength="50" />
+          <Property Name="Logo" Type="binary" MaxLength="5000" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="Fax" Type="nvarchar" MaxLength="20" />
+          <Property Name="LogoPath" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportCatalogProviderCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportIturProviderCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportLocationProviderCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportPDAProviderCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="DBPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="ImportCatalogAdapterParms" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImportIturAdapterParms" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImportLocationAdapterParms" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImportPDAAdapterParms" Type="nvarchar" MaxLength="500" />
+          <Property Name="MaskCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReportPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="ExportCatalogAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExportIturAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Print" Type="bit" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ReportContext" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReportDS" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReportName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportSectionAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExportSectionAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="UpdateCatalogAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportBranchAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExportBranchAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Restore" Type="nvarchar" MaxLength="100" />
+          <Property Name="RestoreBit" Type="bit" />
+          <Property Name="ExportERPAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportSupplierAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="PriceCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="PDAType" Type="nvarchar" MaxLength="100" />
+          <Property Name="MaintenanceType" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProgramType" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CustomerConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Value" Type="nvarchar" MaxLength="10" />
+          <Property Name="CustomerCode" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CustomerMask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="AdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="FileCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="BarcodeMask" Type="nvarchar" MaxLength="100" />
+          <Property Name="MakadMask" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CustomerReport">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="ReportCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerCode" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ImportAdapter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="AdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="DomainType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="MainDBIni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Ver" Type="nvarchar" MaxLength="10" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="DomainContext" Type="nvarchar" MaxLength="100" />
+          <Property Name="TypeDS" Type="nvarchar" MaxLength="100" />
+          <Property Name="Path" Type="nvarchar" MaxLength="250" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DomainType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="250" />
+          <Property Name="Menu" Type="bit" />
+          <Property Name="MenuCaption" Type="nvarchar" MaxLength="100" />
+          <Property Name="Print" Type="bit" />
+          <Property Name="NN" Type="int" />
+          <Property Name="MenuCaptionLocalizationCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="IturAdvancedSearchMenu" Type="bit" />
+          <Property Name="InventProductAdvancedSearchMenu" Type="bit" />
+          <Property Name="InventProductSumAdvancedSearchMenu" Type="bit" />
+          <Property Name="CustomerSearchMenu" Type="bit" />
+          <Property Name="BranchSearchMenu" Type="bit" />
+          <Property Name="InventorSearchMenu" Type="bit" />
+          <Property Name="AuditConfigSearchMenu" Type="bit" />
+          <Property Name="IturSearchMenu" Type="bit" />
+          <Property Name="InventProductSearchMenu" Type="bit" />
+          <Property Name="LocationSearchMenu" Type="bit" />
+          <Property Name="ProductSearchMenu" Type="bit" />
+          <Property Name="CodeReport" Type="nvarchar" MaxLength="50" />
+          <Property Name="Landscape" Type="bit" />
+          <Property Name="SupplierSearchMenu" Type="bit" />
+          <Property Name="SectionSearchMenu" Type="bit" />
+          <Property Name="ItursPopupMenu" Type="bit" />
+          <Property Name="IturPopupMenu" Type="bit" />
+          <Property Name="DocumentHeaderPopupMenu" Type="bit" />
+          <Property Name="ItursListPopupMenu" Type="bit" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MainDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MainDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CustomerConfig" EntityType="MainDBModel.CustomerConfig" />
+          <EntitySet Name="CustomerReport" EntityType="MainDBModel.CustomerReport" />
+          <EntitySet Name="Report" EntityType="MainDBModel.Report" />
+          <EntitySet Name="Branch" EntityType="MainDBModel.Branch" />
+          <EntitySet Name="Customer" EntityType="MainDBModel.Customer" />
+          <EntitySet Name="BranchMask" EntityType="MainDBModel.BranchMask" />
+          <EntitySet Name="CustomerMask" EntityType="MainDBModel.CustomerMask" />
+          <EntitySet Name="ImportAdapter" EntityType="MainDBModel.ImportAdapter" />
+          <EntitySet Name="MainDBIni" EntityType="MainDBModel.MainDBIni" />
+        </EntityContainer>
+        <EntityType Name="CustomerConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Value" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="CustomerCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CustomerReport">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ReportCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CustomerCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="DomainContext" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeDS" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Path" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FileName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DomainType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tag" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Menu" />
+          <Property Type="String" Name="MenuCaption" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Print" />
+          <Property Type="Int32" Name="NN" />
+          <Property Type="String" Name="MenuCaptionLocalizationCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IturAdvancedSearchMenu" />
+          <Property Type="Boolean" Name="InventProductAdvancedSearchMenu" />
+          <Property Type="Boolean" Name="InventProductSumAdvancedSearchMenu" />
+          <Property Type="Boolean" Name="CustomerSearchMenu" />
+          <Property Type="Boolean" Name="BranchSearchMenu" />
+          <Property Type="Boolean" Name="InventorSearchMenu" />
+          <Property Type="Boolean" Name="AuditConfigSearchMenu" />
+          <Property Type="Boolean" Name="IturSearchMenu" />
+          <Property Type="Boolean" Name="InventProductSearchMenu" />
+          <Property Type="Boolean" Name="LocationSearchMenu" />
+          <Property Type="Boolean" Name="ProductSearchMenu" />
+          <Property Type="String" Name="CodeReport" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Landscape" />
+          <Property Type="Boolean" Name="SupplierSearchMenu" />
+          <Property Type="Boolean" Name="SectionSearchMenu" />
+          <Property Type="Boolean" Name="ItursPopupMenu" />
+          <Property Type="Boolean" Name="IturPopupMenu" />
+          <Property Type="Boolean" Name="DocumentHeaderPopupMenu" />
+          <Property Type="Boolean" Name="ItursListPopupMenu" />
+        </EntityType>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactPerson" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mail" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Code" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="CustomerCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="ImportCatalogProviderCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportIturProviderCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportLocationProviderCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportPDAProviderCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DBPath" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportCatalogAdapterParms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportLocationAdapterParms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportPDAAdapterParms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BranchCodeLocal" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BranchCodeERP" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportIturAdapterParms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MaskCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportPath" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExportCatalogAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExportIturAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModifyDate" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="String" Name="ReportContext" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportDS" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportSectionAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExportSectionAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UpdateCatalogAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Restore" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="RestoreBit" />
+          <Property Type="String" Name="ExportERPAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportSupplierAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PriceCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Print" />
+          <Property Type="String" Name="PDAType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MaintenanceType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProgramType" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Phone" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Address" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ContactPerson" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Mail" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Binary" Name="Logo" MaxLength="5000" FixedLength="true" />
+          <Property Type="String" Name="Code" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Fax" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LogoPath" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tag" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportCatalogProviderCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportIturProviderCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportLocationProviderCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportPDAProviderCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DBPath" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportCatalogAdapterParms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportIturAdapterParms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportLocationAdapterParms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportPDAAdapterParms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MaskCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportPath" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExportCatalogAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExportIturAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Print" />
+          <Property Type="DateTime" Name="ModifyDate" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="String" Name="ReportName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportContext" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportDS" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportSectionAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExportSectionAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UpdateCatalogAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Restore" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="RestoreBit" />
+          <Property Type="String" Name="ImportBranchAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExportBranchAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExportERPAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportSupplierAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PriceCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PDAType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MaintenanceType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProgramType" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="BranchMask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FileCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BarcodeMask" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MakadMask" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CustomerMask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FileCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BarcodeMask" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MakadMask" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ImportAdapter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DomainType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MainDBIni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Ver" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Code" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MainDBModelStoreContainer" CdmEntityContainer="MainDB">
+          <EntitySetMapping Name="CustomerConfig"><EntityTypeMapping TypeName="MainDBModel.CustomerConfig"><MappingFragment StoreEntitySet="CustomerConfig">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Value" ColumnName="Value" />
+            <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="CustomerReport"><EntityTypeMapping TypeName="MainDBModel.CustomerReport"><MappingFragment StoreEntitySet="CustomerReport">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="ReportCode" ColumnName="ReportCode" />
+            <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Report"><EntityTypeMapping TypeName="MainDBModel.Report"><MappingFragment StoreEntitySet="Report">
+            <ScalarProperty Name="ItursListPopupMenu" ColumnName="ItursListPopupMenu" />
+                <ScalarProperty Name="DocumentHeaderPopupMenu" ColumnName="DocumentHeaderPopupMenu" />
+                <ScalarProperty Name="IturPopupMenu" ColumnName="IturPopupMenu" />
+                <ScalarProperty Name="ItursPopupMenu" ColumnName="ItursPopupMenu" />
+                <ScalarProperty Name="SectionSearchMenu" ColumnName="SectionSearchMenu" />
+                <ScalarProperty Name="SupplierSearchMenu" ColumnName="SupplierSearchMenu" />
+                <ScalarProperty Name="Landscape" ColumnName="Landscape" />
+                <ScalarProperty Name="CodeReport" ColumnName="CodeReport" />
+                <ScalarProperty Name="ProductSearchMenu" ColumnName="ProductSearchMenu" />
+                <ScalarProperty Name="LocationSearchMenu" ColumnName="LocationSearchMenu" />
+                <ScalarProperty Name="InventProductSearchMenu" ColumnName="InventProductSearchMenu" />
+                <ScalarProperty Name="IturSearchMenu" ColumnName="IturSearchMenu" />
+                <ScalarProperty Name="AuditConfigSearchMenu" ColumnName="AuditConfigSearchMenu" />
+                <ScalarProperty Name="InventorSearchMenu" ColumnName="InventorSearchMenu" />
+                <ScalarProperty Name="BranchSearchMenu" ColumnName="BranchSearchMenu" />
+                <ScalarProperty Name="CustomerSearchMenu" ColumnName="CustomerSearchMenu" />
+                <ScalarProperty Name="InventProductSumAdvancedSearchMenu" ColumnName="InventProductSumAdvancedSearchMenu" />
+                <ScalarProperty Name="InventProductAdvancedSearchMenu" ColumnName="InventProductAdvancedSearchMenu" />
+                <ScalarProperty Name="IturAdvancedSearchMenu" ColumnName="IturAdvancedSearchMenu" />
+                <ScalarProperty Name="MenuCaptionLocalizationCode" ColumnName="MenuCaptionLocalizationCode" />
+                <ScalarProperty Name="NN" ColumnName="NN" />
+                <ScalarProperty Name="Print" ColumnName="Print" />
+                <ScalarProperty Name="MenuCaption" ColumnName="MenuCaption" />
+                <ScalarProperty Name="Menu" ColumnName="Menu" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="DomainType" ColumnName="DomainType" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="TypeDS" ColumnName="TypeDS" />
+                <ScalarProperty Name="DomainContext" ColumnName="DomainContext" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="Code" ColumnName="Code" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Branch">
+            <EntityTypeMapping TypeName="MainDBModel.Branch">
+              <MappingFragment StoreEntitySet="Branch">
+                <ScalarProperty Name="ProgramType" ColumnName="ProgramType" />
+                <ScalarProperty Name="MaintenanceType" ColumnName="MaintenanceType" />
+                <ScalarProperty Name="PDAType" ColumnName="PDAType" />
+                <ScalarProperty Name="Print" ColumnName="Print" />
+                <ScalarProperty Name="PriceCode" ColumnName="PriceCode" />
+                <ScalarProperty Name="ImportSupplierAdapterCode" ColumnName="ImportSupplierAdapterCode" />
+                <ScalarProperty Name="ExportERPAdapterCode" ColumnName="ExportERPAdapterCode" />
+                <ScalarProperty Name="RestoreBit" ColumnName="RestoreBit" />
+                <ScalarProperty Name="Restore" ColumnName="Restore" />
+                <ScalarProperty Name="UpdateCatalogAdapterCode" ColumnName="UpdateCatalogAdapterCode" />
+                <ScalarProperty Name="ExportSectionAdapterCode" ColumnName="ExportSectionAdapterCode" />
+                <ScalarProperty Name="ImportSectionAdapterCode" ColumnName="ImportSectionAdapterCode" />
+                <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+                <ScalarProperty Name="ReportDS" ColumnName="ReportDS" />
+                <ScalarProperty Name="ReportContext" ColumnName="ReportContext" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ExportIturAdapterCode" ColumnName="ExportIturAdapterCode" />
+                <ScalarProperty Name="ExportCatalogAdapterCode" ColumnName="ExportCatalogAdapterCode" />
+                <ScalarProperty Name="ReportPath" ColumnName="ReportPath" />
+                <ScalarProperty Name="MaskCode" ColumnName="MaskCode" />
+                <ScalarProperty Name="ImportIturAdapterParms" ColumnName="ImportIturAdapterParms" />
+                <ScalarProperty Name="BranchCodeERP" ColumnName="BranchCodeERP" />
+                <ScalarProperty Name="BranchCodeLocal" ColumnName="BranchCodeLocal" />
+                <ScalarProperty Name="ImportPDAAdapterParms" ColumnName="ImportPDAAdapterParms" />
+                <ScalarProperty Name="ImportLocationAdapterParms" ColumnName="ImportLocationAdapterParms" />
+                <ScalarProperty Name="ImportCatalogAdapterParms" ColumnName="ImportCatalogAdapterParms" />
+                <ScalarProperty Name="DBPath" ColumnName="DBPath" />
+                <ScalarProperty Name="ImportPDAProviderCode" ColumnName="ImportPDAProviderCode" />
+                <ScalarProperty Name="ImportLocationProviderCode" ColumnName="ImportLocationProviderCode" />
+                <ScalarProperty Name="ImportIturProviderCode" ColumnName="ImportIturProviderCode" />
+                <ScalarProperty Name="ImportCatalogProviderCode" ColumnName="ImportCatalogProviderCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="MainDBModel.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="ProgramType" ColumnName="ProgramType" />
+                <ScalarProperty Name="MaintenanceType" ColumnName="MaintenanceType" />
+                <ScalarProperty Name="PDAType" ColumnName="PDAType" />
+                <ScalarProperty Name="PriceCode" ColumnName="PriceCode" />
+                <ScalarProperty Name="ImportSupplierAdapterCode" ColumnName="ImportSupplierAdapterCode" />
+                <ScalarProperty Name="ExportERPAdapterCode" ColumnName="ExportERPAdapterCode" />
+                <ScalarProperty Name="ExportBranchAdapterCode" ColumnName="ExportBranchAdapterCode" />
+                <ScalarProperty Name="ImportBranchAdapterCode" ColumnName="ImportBranchAdapterCode" />
+                <ScalarProperty Name="RestoreBit" ColumnName="RestoreBit" />
+                <ScalarProperty Name="Restore" ColumnName="Restore" />
+                <ScalarProperty Name="UpdateCatalogAdapterCode" ColumnName="UpdateCatalogAdapterCode" />
+                <ScalarProperty Name="ExportSectionAdapterCode" ColumnName="ExportSectionAdapterCode" />
+                <ScalarProperty Name="ImportSectionAdapterCode" ColumnName="ImportSectionAdapterCode" />
+                <ScalarProperty Name="ReportDS" ColumnName="ReportDS" />
+                <ScalarProperty Name="ReportContext" ColumnName="ReportContext" />
+                <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="Print" ColumnName="Print" />
+                <ScalarProperty Name="ExportIturAdapterCode" ColumnName="ExportIturAdapterCode" />
+                <ScalarProperty Name="ExportCatalogAdapterCode" ColumnName="ExportCatalogAdapterCode" />
+                <ScalarProperty Name="ReportPath" ColumnName="ReportPath" />
+                <ScalarProperty Name="MaskCode" ColumnName="MaskCode" />
+                <ScalarProperty Name="ImportPDAAdapterParms" ColumnName="ImportPDAAdapterParms" />
+                <ScalarProperty Name="ImportLocationAdapterParms" ColumnName="ImportLocationAdapterParms" />
+                <ScalarProperty Name="ImportIturAdapterParms" ColumnName="ImportIturAdapterParms" />
+                <ScalarProperty Name="ImportCatalogAdapterParms" ColumnName="ImportCatalogAdapterParms" />
+                <ScalarProperty Name="DBPath" ColumnName="DBPath" />
+                <ScalarProperty Name="ImportPDAProviderCode" ColumnName="ImportPDAProviderCode" />
+                <ScalarProperty Name="ImportLocationProviderCode" ColumnName="ImportLocationProviderCode" />
+                <ScalarProperty Name="ImportIturProviderCode" ColumnName="ImportIturProviderCode" />
+                <ScalarProperty Name="ImportCatalogProviderCode" ColumnName="ImportCatalogProviderCode" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Logo" ColumnName="Logo" />
+                <ScalarProperty Name="Mail" ColumnName="Mail" />
+                <ScalarProperty Name="ContactPerson" ColumnName="ContactPerson" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BranchMask">
+            <EntityTypeMapping TypeName="MainDBModel.BranchMask">
+              <MappingFragment StoreEntitySet="BranchMask">
+                <ScalarProperty Name="MakadMask" ColumnName="MakadMask" />
+                <ScalarProperty Name="BarcodeMask" ColumnName="BarcodeMask" />
+                <ScalarProperty Name="FileCode" ColumnName="FileCode" />
+                <ScalarProperty Name="AdapterCode" ColumnName="AdapterCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerMask">
+            <EntityTypeMapping TypeName="MainDBModel.CustomerMask">
+              <MappingFragment StoreEntitySet="CustomerMask">
+                <ScalarProperty Name="MakadMask" ColumnName="MakadMask" />
+                <ScalarProperty Name="BarcodeMask" ColumnName="BarcodeMask" />
+                <ScalarProperty Name="FileCode" ColumnName="FileCode" />
+                <ScalarProperty Name="AdapterCode" ColumnName="AdapterCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ImportAdapter">
+            <EntityTypeMapping TypeName="MainDBModel.ImportAdapter">
+              <MappingFragment StoreEntitySet="ImportAdapter">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="DomainType" ColumnName="DomainType" />
+                <ScalarProperty Name="AdapterCode" ColumnName="AdapterCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MainDBIni">
+            <EntityTypeMapping TypeName="MainDBModel.MainDBIni">
+              <MappingFragment StoreEntitySet="MainDBIni">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Ver" ColumnName="Ver" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="MainDB" ZoomLevel="67">
+        <EntityTypeShape EntityType="MainDBModel.CustomerConfig" Width="1.5" PointX="7" PointY="0.875" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDBModel.CustomerReport" Width="1.5" PointX="7.125" PointY="3.25" Height="1.9802864583333335" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDBModel.Report" Width="3.75" PointX="2.75" PointY="6.875" Height="7.3647265625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MainDBModel.Branch" Width="2.25" PointX="0.75" PointY="0.75" Height="7.7493294270833335" />
+        <EntityTypeShape EntityType="MainDBModel.Customer" Width="2.25" PointX="3.75" PointY="0.75" Height="5.8263151041666656" />
+        <EntityTypeShape EntityType="MainDBModel.BranchMask" Width="1.5" PointX="7.75" PointY="6.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="MainDBModel.CustomerMask" Width="1.5" PointX="5.375" PointY="6.75" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="MainDBModel.ImportAdapter" Width="1.5" PointX="9.375" PointY="0.75" Height="1.9802864583333317" />
+        <EntityTypeShape EntityType="MainDBModel.MainDBIni" Width="1.5" PointX="9.375" PointY="3.75" Height="1.5956835937499996" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EA11D75F-FDB9-410D-9F9B-5D055B4377B8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Count4U.Common</RootNamespace>
+    <AssemblyName>Count4U.Common</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.PrivateDeployment.6.2.0.1\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ErikEJ.SqlCe40, Version=2.1.6.14, Culture=neutral, PublicKeyToken=03b0b5a60fec3719, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErikEJ.SqlCeBulkCopy.2.1.6.15\lib\net40\ErikEJ.SqlCe40.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="INIFileParser, Version=1.7.1.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
+      <HintPath>..\Lib\INIFileParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\Lib\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Salient.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=03b0b5a60fec3719, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErikEJ.SqlCeBulkCopy.2.1.6.15\lib\net40\Salient.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.PrivateDeployment.6.2.0.1\lib\net45\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive">
+      <HintPath>..\Lib\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading">
+      <HintPath>..\Lib\System.Reactive.Windows.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\Lib\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>..\Lib\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviours\TextBoxHebrewAlignmentLeftBehavior.cs" />
+    <Compile Include="Behaviours\DataGridBehavior.cs" />
+    <Compile Include="Behaviours\GridCancelEditBehavior.cs" />
+    <Compile Include="Behaviours\TextBoxHebrewAlignmentBehavior.cs" />
+    <Compile Include="Behaviours\TextBoxPropertybehavior.cs" />
+    <Compile Include="Constants\AdapterNames\AdapterConnections.cs" />
+    <Compile Include="Constants\AdapterNames\Complex\ComplexAdapterName.cs" />
+    <Compile Include="Constants\AdapterNames\Complex\CompleхAdapterTitle.cs" />
+    <Compile Include="Constants\AdapterNames\Export\ExportAdapterViewModel.cs" />
+    <Compile Include="Constants\AdapterNames\Export\ExportAdapterName.cs" />
+    <Compile Include="Constants\AdapterNames\Export\ExportAdapterTitle.cs" />
+    <Compile Include="Constants\AdapterNames\ExportErp\ExportErpAdapterName.cs" />
+    <Compile Include="Constants\AdapterNames\ExportErp\ExportErpAdapterTitle.cs" />
+    <Compile Include="Constants\AdapterNames\Import\ImportAdapterName.cs" />
+    <Compile Include="Constants\AdapterNames\Import\ImportAdapterTitle.cs" />
+    <Compile Include="Constants\AdapterNames\Update\UpdateCatalogAdapterName.cs" />
+    <Compile Include="Constants\CurrencySymbol.cs" />
+    <Compile Include="Constants\DashboardNames.cs" />
+    <Compile Include="Constants\FocusValues.cs" />
+    <Compile Include="Constants\MdiMenus.cs" />
+    <Compile Include="Constants\ServiceWcfName.cs" />
+    <Compile Include="Constants\ViewDomainContextEnum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Converters\CBIContextToBoolConverter.cs" />
+    <Compile Include="Converters\ColorToBrushConverter.cs" />
+    <Compile Include="Converters\ContextToVisibilityConverter.cs" />
+    <Compile Include="Converters\DateTimeToStringConverter.cs" />
+    <Compile Include="Converters\DateConverter.cs" />
+    <Compile Include="Converters\DefaultImportCBIAdapterConverter.cs" />
+    <Compile Include="Converters\DoubleToHebrewConverter.cs" />
+    <Compile Include="Converters\ImportFromConfigCBIConverter.cs" />
+    <Compile Include="Converters\ImportInternalCBIConverter.cs" />
+    <Compile Include="Converters\IntToHebrewConverter.cs" />
+    <Compile Include="Converters\StatusToBrushConverter.cs" />
+    <Compile Include="Converters\StringToImageSourceConverter.cs" />
+    <Compile Include="Constants\FtpFolderName.cs" />
+    <Compile Include="Converters\StringToNullableNumberConverter.cs" />
+    <Compile Include="Enums\ComplexAdapter.cs" />
+    <Compile Include="Enums\enBranchAdapterInherit.cs" />
+    <Compile Include="Enums\enInventorAdapterInherit.cs" />
+    <Compile Include="Events\ApplicationClosingEvent.cs" />
+    <Compile Include="Events\ApplicationDeactivatedEvent.cs" />
+    <Compile Include="Events\BackgroundChangedEvent.cs" />
+    <Compile Include="Events\Itur\IturQuantityEditChangedEvent.cs" />
+    <Compile Include="Events\Location\LocationMultiAddEvent.cs" />
+    <Compile Include="Events\PrintQueueRunningEvent.cs" />
+    <Compile Include="Events\Process\ProcessAddedEvent.cs" />
+    <Compile Include="Events\Process\ProcessAddEvent.cs" />
+    <Compile Include="Events\Process\ProcessEditedEvent.cs" />
+    <Compile Include="Events\WindowPreviewKeyUpEvent.cs" />
+    <Compile Include="Helpers\Ftp\FileDirectoryInfo.cs" />
+    <Compile Include="Helpers\Ftp\FtpClient.cs" />
+    <Compile Include="Helpers\Utils\UtilsItur.cs" />
+    <Compile Include="Helpers\Xml\OperationXElement.cs" />
+    <Compile Include="Helpers\Xml\XDocumentConfigRepository.cs" />
+    <Compile Include="Info\DissableItursInfo.cs" />
+    <Compile Include="Interfaces\Adapters\ComplexModuleBaseViewModel.cs" />
+    <Compile Include="Interfaces\Adapters\IResultModuleInfo.cs" />
+    <Compile Include="Interfaces\Adapters\IBaseImportExportModuleInfo.cs" />
+    <Compile Include="Interfaces\IFilterTemplateRepository.cs" />
+    <Compile Include="Interfaces\IRowEdititing.cs" />
+    <Compile Include="UserSettings\Common\StartFormEnum.cs" />
+    <Compile Include="UserSettings\Menu\MenuElement.cs" />
+    <Compile Include="UserSettings\Menu\MenuElementCollection.cs" />
+    <Compile Include="UserSettings\Menu\MenuSection.cs" />
+    <Compile Include="ViewModel\Adapters\Abstract\IAdapterModule.cs" />
+    <Compile Include="ViewModel\Adapters\Abstract\IExportErpModule.cs" />
+    <Compile Include="ViewModel\Adapters\Abstract\IExportPdaModule.cs" />
+    <Compile Include="ViewModel\Adapters\AdapterMaskViewModel.cs" />
+    <Compile Include="ViewModel\BackgroundViewModel.cs" />
+    <Compile Include="ViewModel\ExportPda\ExportPdaMerkavaAdapterViewModel.cs" />
+    <Compile Include="ViewModel\ExportPda\ExportPdaProgramTypeItemViewModel.cs" />
+    <Compile Include="ViewModel\ExportPda\ExportPdaProgramTypeViewModel.cs" />
+    <Compile Include="ViewModel\Filter\Data\FamilyFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\LocationFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\PackFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\ProductFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\SectionFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\SupplierFilterData.cs" />
+    <Compile Include="ViewModel\Filter\FilterTemplate\FilterTemplateAddEditDTO.cs" />
+    <Compile Include="ViewModel\Filter\FilterTemplate\FilterTemplateAddEditViewModel.cs" />
+    <Compile Include="ViewModel\Filter\FilterTemplate\FilterTemplateItemViewModel.cs" />
+    <Compile Include="ViewModel\Filter\FilterTemplate\FilterTemplateViewModel.cs" />
+    <Compile Include="ViewModel\Misc\ItemFindVisibilityViewModel.cs" />
+    <Compile Include="ViewModel\SearchFilter\SearchFilterViewModel.cs" />
+    <Compile Include="View\Adapter\AdaptersMaskView.xaml.cs">
+      <DependentUpon>AdaptersMaskView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Behaviours\ColorPickerSortBehavior.cs" />
+    <Compile Include="Behaviours\ContextMenuLeftButtonBehavior.cs" />
+    <Compile Include="Behaviours\TextChangedDelayedBehavior.cs" />
+    <Compile Include="Behaviours\MaskedTextChangedDelayedBehavior.cs" />
+    <Compile Include="Behaviours\TextChangedDelayedBehavior2.cs" />
+    <Compile Include="CommonModuleInit.cs" />
+    <Compile Include="Constants\AdapterNames\Update\UpdateCatalogAdapterTitle.cs" />
+    <Compile Include="Constants\Colors.cs" />
+    <Compile Include="Constants\ComboValues.cs" />
+    <Compile Include="Constants\MdiTitles.cs" />
+    <Compile Include="Constants\Messages.cs" />
+    <Compile Include="Constants\Misc.cs" />
+    <Compile Include="Constants\NavigationObjects.cs" />
+    <Compile Include="Constants\Visual.cs" />
+    <Compile Include="Interfaces\IPopupChildControl.cs" />
+    <Compile Include="Controls\ModalWindowShell.xaml.cs">
+      <DependentUpon>ModalWindowShell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\DragDrop\DefaultDragDropHandler.cs" />
+    <Compile Include="View\DragDrop\DefaultDropHandler.cs" />
+    <Compile Include="View\DragDrop\DragAdorner.cs" />
+    <Compile Include="View\DragDrop\DragDrop.cs" />
+    <Compile Include="View\DragDrop\DragInfo.cs" />
+    <Compile Include="View\DragDrop\DragInsertAdorner.cs" />
+    <Compile Include="View\DragDrop\DropInfo.cs" />
+    <Compile Include="View\DragDrop\DropTargetAdorner.cs" />
+    <Compile Include="View\DragDrop\DropTargetAdorners.cs" />
+    <Compile Include="View\DragDrop\DropTargetHighlightAdorner.cs" />
+    <Compile Include="View\DragDrop\IDragSource.cs" />
+    <Compile Include="View\DragDrop\IDropTarget.cs" />
+    <Compile Include="View\DragDrop\Utilities\ItemsControlExtension.cs" />
+    <Compile Include="View\DragDrop\Utilities\TypeUtilities.cs" />
+    <Compile Include="View\DragDrop\Utilities\VisualTreeExtensions.cs" />
+    <Compile Include="View\ExportPda\ExportPdaMerkavaAdapterView.xaml.cs">
+      <DependentUpon>ExportPdaMerkavaAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExportPda\ExportPdaProgramTypeView.xaml.cs">
+      <DependentUpon>ExportPdaProgramTypeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Filter\FilterTemplateAddEditView.xaml.cs">
+      <DependentUpon>FilterTemplateAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Filter\FilterTemplateView.xaml.cs">
+      <DependentUpon>FilterTemplateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PopupView.xaml.cs">
+      <DependentUpon>PopupView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BooleanInvertConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\StringToBrushConverter.cs" />
+    <Compile Include="Events\ApplicationBusyEvent.cs" />
+    <Compile Include="Events\Configuration\ApplicationConfSetChangedEvent.cs" />
+    <Compile Include="Events\Configuration\ApplicationConfSetPreChangedEvent.cs" />
+    <Compile Include="Events\ApplicationLoadedEvent.cs" />
+    <Compile Include="Events\ApplicationShouldCloseWithoutWarningEvent.cs" />
+    <Compile Include="Events\Configuration\GroupConfigurationChangedEvent.cs" />
+    <Compile Include="Events\Configuration\SortConfigurationChangedEvent.cs" />
+    <Compile Include="Events\Filter\FilterEvent.cs" />
+    <Compile Include="Events\Filter\SearchModeChangedEvent.cs" />
+    <Compile Include="Events\InterCommData\ScriptOpenData.cs" />
+    <Compile Include="Events\InterCommData\MaskSelectedData.cs" />
+    <Compile Include="Events\InterCommData\ReportAddedEditedData.cs" />
+    <Compile Include="Events\Itur\IturAddEvent.cs" />
+    <Compile Include="Events\Itur\ItursAddedEvent.cs" />
+    <Compile Include="Events\Location\LocationAddedEvent.cs" />
+    <Compile Include="Events\Location\LocationAddEvent.cs" />
+    <Compile Include="Events\Location\LocationEditedEvent.cs" />
+    <Compile Include="Events\ModalWindowChangeTitleEvent.cs" />
+    <Compile Include="Events\ModalWindowCloseEvent.cs" />
+    <Compile Include="Events\PopupWindowCloseEvent.cs" />
+    <Compile Include="Events\ProcessInventorChangedEvent.cs" />
+    <Compile Include="Events\SpecialKeyEvent.cs" />
+    <Compile Include="Events\WindowTitleChangeEvent.cs" />
+    <Compile Include="Services\UICommandService\enIconSize.cs" />
+    <Compile Include="Services\UICommandService\enUICommand.cs" />
+    <Compile Include="Services\UICommandService\IUICommandIconRepository.cs" />
+    <Compile Include="Services\UICommandService\UICommandIconRepository.cs" />
+    <Compile Include="Services\UICommandService\UICommandRepository.cs" />
+    <Compile Include="Services\UICommandService\UICommand.cs" />
+    <Compile Include="Services\UICommandService\UICommandTitleRepository.cs" />
+    <Compile Include="Extensions\HierarchicalExtensions.cs" />
+    <Compile Include="Extensions\ImageExtensions.cs" />
+    <Compile Include="Helpers\ColorParser.cs" />
+    <Compile Include="Helpers\CommaDashStringParser.cs" />
+    <Compile Include="Helpers\Icons.cs" />
+    <Compile Include="Helpers\Actions\MessageBoxAction.cs" />
+    <Compile Include="Helpers\Actions\MessageBoxNotification.cs" />
+    <Compile Include="Helpers\Actions\MessageBoxYesNoAction.cs" />
+    <Compile Include="Helpers\Actions\MessageBoxYesNoNotification.cs" />
+    <Compile Include="Helpers\ModalWindowLauncher.cs" />
+    <Compile Include="Helpers\CursorWait.cs" />
+    <Compile Include="Helpers\Actions\OpenFileDialogAction.cs" />
+    <Compile Include="Helpers\Actions\OpenFileDialogNotification.cs" />
+    <Compile Include="Helpers\Actions\OpenFolderDialogAction.cs" />
+    <Compile Include="Helpers\Actions\OpenFolderDialogNotification.cs" />
+    <Compile Include="Helpers\Actions\SaveFileDialogAction.cs" />
+    <Compile Include="Helpers\Actions\SaveFileDialogNotification.cs" />
+    <Compile Include="Helpers\Utils\Utils.cs" />
+    <Compile Include="Helpers\Utils\UtilsConvert.cs" />
+    <Compile Include="Helpers\Utils\UtilsExport.cs" />
+    <Compile Include="Helpers\Utils\UtilsImage.cs" />
+    <Compile Include="Helpers\Utils\UtilsLogging.cs" />
+    <Compile Include="Helpers\Utils\UtilsMisc.cs" />
+    <Compile Include="Helpers\Utils\UtilsNavigate.cs" />
+    <Compile Include="Helpers\Utils\UtilsPath.cs" />
+    <Compile Include="Helpers\Utils\UtilsPopup.cs" />
+    <Compile Include="Helpers\Utils\UtilsStatus.cs" />
+    <Compile Include="Helpers\VisualTreeHelpers.cs" />
+    <Compile Include="Interfaces\Adapters\IExportErpModuleInfo.cs" />
+    <Compile Include="Interfaces\Adapters\IExportPdaModuleInfo.cs" />
+    <Compile Include="Interfaces\Adapters\IImportPdaAdapter.cs" />
+    <Compile Include="Interfaces\IChildWindowViewModel.cs" />
+    <Compile Include="Constants\NavigationSettings.cs" />
+    <Compile Include="Constants\RegionNames.cs" />
+    <Compile Include="Interfaces\Adapters\IImportModuleInfo.cs" />
+    <Compile Include="Interfaces\IIniFileParser.cs" />
+    <Compile Include="Interfaces\IInnerContent.cs" />
+    <Compile Include="Interfaces\IModalWindowRequest.cs" />
+    <Compile Include="Interfaces\INavigationRepository.cs" />
+    <Compile Include="Interfaces\IApplicationVersion.cs" />
+    <Compile Include="Interfaces\ISearchFieldViewModel.cs" />
+    <Compile Include="Interfaces\ISearchGridViewModel.cs" />
+    <Compile Include="Misc\PopupExt\PopupExtFilter.cs" />
+    <Compile Include="Misc\PopupExt\PopupExtSearch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Ini\IIniFileInventor.cs" />
+    <Compile Include="Services\Ini\IniFileData.cs" />
+    <Compile Include="Services\Ini\IniFileInventor.cs" />
+    <Compile Include="Services\Ini\IniFileInventorData.cs" />
+    <Compile Include="Services\Ini\IniFileParser.cs" />
+    <Compile Include="Services\Navigation\Data\ExportLogViewData.cs" />
+    <Compile Include="Services\Navigation\Data\InventProductDetailsData.cs" />
+    <Compile Include="Services\Navigation\Data\InventProductListData.cs" />
+    <Compile Include="Services\Navigation\Data\SearchData\BranchSearchData.cs" />
+    <Compile Include="Services\Navigation\Data\SearchData\CustomerSearchData.cs" />
+    <Compile Include="Services\Navigation\Data\SearchData\InventorSearchData.cs" />
+    <Compile Include="Services\Navigation\Data\SearchData\InventProductSearchData.cs" />
+    <Compile Include="Services\Navigation\NavigationRepository.cs" />
+    <Compile Include="State\GlobalState.cs" />
+    <Compile Include="UserSettings\Common\CommonElement.cs" />
+    <Compile Include="UserSettings\Common\CommonSection.cs" />
+    <Compile Include="UserSettings\Common\enLanguage.cs" />
+    <Compile Include="UserSettings\LogType\LogTypeElement.cs" />
+    <Compile Include="UserSettings\LogType\LogTypeElementCollection.cs" />
+    <Compile Include="UserSettings\LogType\LogTypeSection.cs" />
+    <Compile Include="UserSettings\StatusGroup\StatusGroupSection.cs" />
+    <Compile Include="UserSettings\StatusGroup\StatusGroupElementCollection.cs" />
+    <Compile Include="UserSettings\StatusGroup\StatusGroupElement.cs" />
+    <Compile Include="UserSettings\IUserSettingsManager.cs" />
+    <Compile Include="UserSettings\MainWindowSettings.cs" />
+    <Compile Include="UserSettings\Region\RegionElement.cs" />
+    <Compile Include="UserSettings\Region\RegionSection.cs" />
+    <Compile Include="UserSettings\Status\StatusElement.cs" />
+    <Compile Include="UserSettings\Status\StatusElementCollection.cs" />
+    <Compile Include="UserSettings\Status\StatusSection.cs" />
+    <Compile Include="UserSettings\UserSettingsHelpers.cs" />
+    <Compile Include="UserSettings\UserSettingsManager.cs" />
+    <Compile Include="ViewModel\Adapters\Export\ExportClearCommandInfo.cs" />
+    <Compile Include="ViewModel\Adapters\Export\ExportCommandInfo.cs" />
+    <Compile Include="ViewModel\Adapters\Export\ExportErpCommandInfo.cs" />
+    <Compile Include="ViewModel\Adapters\Export\ExportErpModuleBaseViewModel.cs" />
+    <Compile Include="ViewModel\Adapters\Export\ExportModuleBaseViewModel.cs" />
+    <Compile Include="ViewModel\Adapters\Import\ImportClearCommandInfo.cs" />
+    <Compile Include="ViewModel\Adapters\Import\ImportCommandInfo.cs" />
+    <Compile Include="ViewModel\Adapters\Import\ImportFromPdaCommandInfo.cs" />
+    <Compile Include="ViewModel\AdapterTemplate\AdapterFileWatcher.cs" />
+    <Compile Include="ViewModel\AdapterTemplate\TemplateAdapterOneFileViewModel.cs" />
+    <Compile Include="ViewModel\AdapterTemplate\TemplateAdapterThreeFilesViewModel.cs" />
+    <Compile Include="ViewModel\AdapterTemplate\TemplateAdapterTwoFilesViewModel.cs" />
+    <Compile Include="ViewModel\BottomViewModel.cs" />
+    <Compile Include="ViewModel\CBIContextBaseViewModel.cs" />
+    <Compile Include="ViewModel\Adapters\Export\ExportPdaModuleBaseViewModel.cs" />
+    <Compile Include="ViewModel\Adapters\FileLogInfo.cs" />
+    <Compile Include="ViewModel\Adapters\Import\ImportModuleBaseViewModel.cs" />
+    <Compile Include="ViewModel\AdapterTemplate\TemplateAdapterFileFolderViewModel.cs" />
+    <Compile Include="ViewModel\Adapters\ModuleBaseViewModel.cs" />
+    <Compile Include="ViewModel\CBIState.cs" />
+    <Compile Include="ViewModel\ExportPda\ExportPdaSettingsControlViewModel.cs" />
+    <Compile Include="ViewModel\ExportPda\ExportPdaSettingsItemViewModel.cs" />
+    <Compile Include="ViewModel\Filter\Data\BranchFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\CommonFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\CustomerFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\IFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\InventorFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\InventProductFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\InventProductSimpleFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\InventProductSumFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\IturAdvancedFilterData.cs" />
+    <Compile Include="ViewModel\Filter\Data\IturFilterData.cs" />
+    <Compile Include="ViewModel\Filter\FilterViewModel.cs" />
+    <Compile Include="ViewModel\Filter\Sorting\enSortDirection.cs" />
+    <Compile Include="ViewModel\Filter\Sorting\SortItem.cs" />
+    <Compile Include="ViewModel\Filter\Sorting\SortViewModel.cs" />
+    <Compile Include="ViewModel\Misc\EncodingItemViewModel.cs" />
+    <Compile Include="ViewModel\Misc\ItemFindViewModel.cs" />
+    <Compile Include="ViewModel\NavigationAwareViewModel.cs" />
+    <Compile Include="Constants\ViewNames.cs" />
+    <Compile Include="Constants\WindowTitles.cs" />
+    <Compile Include="ViewModel\Script\ScriptOpenBaseViewModel.cs" />
+    <Compile Include="ViewModel\Script\ScriptSaveBaseViewModel.cs" />
+    <Compile Include="View\Adapter\AdapterFileFolderView.xaml.cs">
+      <DependentUpon>AdapterFileFolderView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adapter\AdapterOneFileView.xaml.cs">
+      <DependentUpon>AdapterOneFileView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Adapter\AdapterTwoFilesView.xaml.cs">
+      <DependentUpon>AdapterTwoFilesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\BottomView.xaml.cs">
+      <DependentUpon>BottomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ExportPda\ExportPdaSettingsControlView.xaml.cs">
+      <DependentUpon>ExportPdaSettingsControlView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Filter\FilterView.xaml.cs">
+      <DependentUpon>FilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\Filter\SortView.xaml.cs">
+      <DependentUpon>SortView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ScreenBaseView.cs" />
+    <Compile Include="View\SearchView\SearchFilterView.xaml.cs">
+      <DependentUpon>SearchFilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\VerticalLine.xaml.cs">
+      <DependentUpon>VerticalLine.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\Adapter\AdaptersMaskView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CommonResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\ModalWindowShell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ExportPda\ExportPdaMerkavaAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\ExportPda\ExportPdaProgramTypeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Filter\FilterTemplateAddEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Filter\FilterTemplateView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PopupView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\Adapter\AdapterFileFolderView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Adapter\AdapterOneFileView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Adapter\AdapterTwoFilesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\BottomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ExportPda\ExportPdaSettingsControlView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Filter\FilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\Filter\SortView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SearchView\SearchFilterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\VerticalLine.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Docs\ModalWindow.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Count4U.CustomControls\Count4U.CustomControls.csproj">
+      <Project>{d20ac0d3-74fb-489c-977c-5712e022eb2b}</Project>
+      <Name>Count4U.CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Localization\Count4U.Localization.csproj">
+      <Project>{c1716c1b-995a-481b-8853-1b984f75be45}</Project>
+      <Name>Count4U.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Media\Count4U.Media.csproj">
+      <Project>{201020e5-adf0-4e0c-9287-2a7f5e6e6080}</Project>
+      <Name>Count4U.Media</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.Common\Count4U.Model.Common.csproj">
+      <Project>{5e70d036-3982-4d9f-95ca-197e616d7f59}</Project>
+      <Name>Count4U.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ExportImport\Count4U.Model.ExportImport.csproj">
+      <Project>{a511450d-26cb-4d17-92b1-4c9a331b5290}</Project>
+      <Name>Count4U.Model.ExportImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ServiceContract\Count4U.Model.ServiceContract.csproj">
+      <Project>{6c200172-9847-40e4-ae97-ec50bbf4d0a4}</Project>
+      <Name>Count4U.Model.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model\Count4U.Model.csproj">
+      <Project>{a3145385-051f-4ffa-9dcb-3014da552419}</Project>
+      <Name>Count4U.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Count4UDBModel.Store" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BarcodeWithoutProduct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Value" Type="nvarchar" MaxLength="100" />
+          <Property Name="Makat" Type="nvarchar" MaxLength="100" />
+          <Property Name="Barcode" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'CatalogConfig' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CatalogConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="CustomerCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="BranchCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="InventorCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Count4UDBIni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ver" Type="nvarchar" MaxLength="10" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeviceCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="datetime" />
+          <Property Name="LicenseDate" Type="datetime" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="DocumentHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Approve" Type="bit" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="IturCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkerGUID" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusDocHeaderCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusDocHeaderBit" Type="int" />
+          <Property Name="DocumentCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SessionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusInventProductBit" Type="int" />
+          <Property Name="StatusApproveBit" Type="int" />
+          <Property Name="Num" Type="int" />
+          <Property Name="DocNum" Type="int" />
+          <Property Name="Restore" Type="nvarchar" MaxLength="100" />
+          <Property Name="RestoreBit" Type="bit" />
+          <Property Name="QuantityEdit" Type="float" />
+          <Property Name="Total" Type="bigint" />
+          <Property Name="FromTime" Type="datetime" />
+          <Property Name="ToTime" Type="datetime" />
+          <Property Name="TicksTimeSpan" Type="bigint" />
+          <Property Name="PeriodFromTo" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FamilyCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="50" />
+          <Property Name="Size" Type="nvarchar" MaxLength="50" />
+          <Property Name="Extra1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Extra2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="FieldLink">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DomainType" Type="nvarchar" MaxLength="50" />
+          <Property Name="TableName" Type="nvarchar" MaxLength="50" />
+          <Property Name="PropertyNameInDomainType" Type="nvarchar" MaxLength="50" />
+          <Property Name="FieldNameInTable" Type="nvarchar" MaxLength="50" />
+          <Property Name="NumStringInRecord" Type="int" />
+          <Property Name="Editor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Validator" Type="nvarchar" MaxLength="100" />
+          <Property Name="CodeLocalizationEditorLable" Type="nvarchar" MaxLength="50" />
+          <Property Name="DefaultEditorLable" Type="nvarchar" MaxLength="50" />
+          <Property Name="NN" Type="int" />
+          <Property Name="InGrid" Type="bit" />
+          <Property Name="InEdit" Type="bit" />
+          <Property Name="InAdd" Type="bit" />
+          <Property Name="ViewName" Type="nvarchar" MaxLength="100" />
+          <Property Name="EditorTemplate" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="InputType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InventorConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InventorDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="CustomerCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="250" />
+          <Property Name="BranchCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="BranchName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsDirty" Type="bit" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="StatusInventorID" Type="bigint" />
+          <Property Name="StatusInventorCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="DBPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="InventorCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="TypeObject" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="InventProduct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Barcode" Type="nvarchar" MaxLength="300" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="PartialPackage" Type="bit" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShelfCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="100" />
+          <Property Name="StatusInventProductCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusInventProductBit" Type="int" />
+          <Property Name="DocumentHeaderCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="300" />
+          <Property Name="Makat" Type="nvarchar" MaxLength="300" />
+          <Property Name="InputTypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Num" Type="bigint" />
+          <Property Name="QuantityOriginal" Type="float" />
+          <Property Name="QuantityDifference" Type="float" />
+          <Property Name="DocumentCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IturCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="FromCatalogType" Type="int" />
+          <Property Name="SectionNum" Type="int" />
+          <Property Name="IPNum" Type="int" />
+          <Property Name="TypeMakat" Type="nvarchar" MaxLength="10" />
+          <Property Name="ImputTypeCodeFromPDA" Type="nvarchar" MaxLength="50" />
+          <Property Name="DocNum" Type="bigint" />
+          <Property Name="SessionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SessionNum" Type="bigint" />
+          <Property Name="SectionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectionName" Type="nvarchar" MaxLength="100" />
+          <Property Name="PriceBuy" Type="float" />
+          <Property Name="PriceSale" Type="float" />
+          <Property Name="QuantityEdit" Type="float" />
+          <Property Name="IPValueFloat1" Type="float" />
+          <Property Name="IPValueFloat2" Type="float" />
+          <Property Name="IPValueFloat3" Type="float" />
+          <Property Name="IPValueFloat4" Type="float" />
+          <Property Name="IPValueFloat5" Type="float" />
+          <Property Name="IPValueInt1" Type="int" />
+          <Property Name="IPValueInt2" Type="int" />
+          <Property Name="IPValueInt3" Type="int" />
+          <Property Name="IPValueBit1" Type="bit" />
+          <Property Name="IPValueBit2" Type="bit" />
+          <Property Name="QuantityInPackEdit" Type="int" />
+          <Property Name="IPValueStr1" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr2" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr3" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr4" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr5" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr6" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr7" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr8" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr9" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr10" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueInt4" Type="int" />
+          <Property Name="IPValueInt5" Type="int" />
+          <Property Name="IPValueBit3" Type="bit" />
+          <Property Name="IPValueBit4" Type="bit" />
+          <Property Name="IPValueBit5" Type="bit" />
+          <Property Name="WorkerID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupplierCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="ERPIturCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="IPValueStr11" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr12" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr13" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr14" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr15" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr16" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr17" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr18" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr19" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr20" Type="nvarchar" MaxLength="100" />
+          <Property Name="UnityCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tag1" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tag2" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tag3" Type="nvarchar" MaxLength="100" />
+          <Property Name="QuantityWithoutPackEdit" Type="float" />
+          <Property Name="ValueBuyDifference" Type="float" />
+          <Property Name="ValueBuyEdit" Type="float" />
+          <Property Name="ValueBuyQriginal" Type="float" />
+          <Property Name="ValueBuyWithoutPackEdit" Type="float" />
+          <Property Name="ValueBuyInPackEdit" Type="float" />
+          <Property Name="ValueSaleDifference" Type="float" />
+          <Property Name="ValueSaleEdit" Type="float" />
+          <Property Name="ValueSaleQriginal" Type="float" />
+          <Property Name="ValueSaleWithoutPackEdit" Type="float" />
+          <Property Name="ValueSaleInPackEdit" Type="float" />
+        </EntityType>
+        <EntityType Name="Itur">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="InitialQuantityMakatExpected" Type="float" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Approve" Type="bit" />
+          <Property Name="StatusIturCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="Publishe" Type="bit" />
+          <Property Name="StatusIturBit" Type="int" />
+          <Property Name="Number" Type="int" Nullable="false" />
+          <Property Name="NumberPrefix" Type="nvarchar" MaxLength="50" />
+          <Property Name="NumberSufix" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusIturGroupBit" Type="int" />
+          <Property Name="StatusDocHeaderBit" Type="int" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+          <Property Name="IturCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ERPIturCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="Restore" Type="nvarchar" MaxLength="100" />
+          <Property Name="RestoreBit" Type="bit" />
+          <Property Name="UnitPlanCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="TotalItem" Type="float" />
+          <Property Name="SumQuantityEdit" Type="float" />
+          <Property Name="DiffQuantityEdit" Type="float" />
+          <Property Name="Width" Type="int" />
+          <Property Name="Height" Type="int" />
+          <Property Name="IncludeInFacing" Type="bit" />
+          <Property Name="ShelfCount" Type="int" />
+          <Property Name="ShelfInItur" Type="int" />
+          <Property Name="PlaceCount" Type="int" />
+          <Property Name="PlaceInItur" Type="int" />
+          <Property Name="Supplier1PlaceCount" Type="int" />
+          <Property Name="Supplier2PlaceCount" Type="int" />
+          <Property Name="Supplier3PlaceCount" Type="int" />
+          <Property Name="Supplier4PlaceCount" Type="int" />
+          <Property Name="Supplier5PlaceCount" Type="int" />
+          <Property Name="SupplierOtherPlaceCount" Type="int" />
+          <Property Name="UnitPlaceWidth" Type="int" />
+          <Property Name="Area" Type="float" />
+          <Property Name="AreaCount" Type="float" />
+          <Property Name="Level1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name1" Type="nvarchar" MaxLength="250" />
+          <Property Name="Name2" Type="nvarchar" MaxLength="250" />
+          <Property Name="Name3" Type="nvarchar" MaxLength="250" />
+          <Property Name="Name4" Type="nvarchar" MaxLength="250" />
+          <Property Name="NodeType" Type="int" />
+          <Property Name="LevelNum" Type="int" />
+          <Property Name="Total" Type="int" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="500" />
+          <Property Name="InvStatus" Type="int" />
+          <Property Name="ParentIturCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="BackgroundColor" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="IturAnalyzes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Itur_Disabled" Type="bit" />
+          <Property Name="Itur_Publishe" Type="bit" />
+          <Property Name="Itur_StatusIturBit" Type="int" />
+          <Property Name="Itur_Number" Type="int" Nullable="false" />
+          <Property Name="Itur_NumberPrefix" Type="nvarchar" MaxLength="50" />
+          <Property Name="Itur_NumberSufix" Type="nvarchar" MaxLength="50" />
+          <Property Name="Itur_LocationCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Itur_StatusIturGroupBit" Type="int" />
+          <Property Name="Itur_StatusDocHeaderBit" Type="int" />
+          <Property Name="Doc_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Doc_Approve" Type="bit" />
+          <Property Name="Doc_WorkerGUID" Type="nvarchar" MaxLength="50" />
+          <Property Name="Doc_StatusDocHeaderBit" Type="int" />
+          <Property Name="Doc_StatusInventProductBit" Type="int" />
+          <Property Name="Doc_StatusApproveBit" Type="int" />
+          <Property Name="PDA_StatusInventProductBit" Type="int" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DocumentHeaderCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="BarcodeOriginal" Type="nvarchar" MaxLength="100" />
+          <Property Name="MakatOriginal" Type="nvarchar" MaxLength="100" />
+          <Property Name="PriceString" Type="nvarchar" MaxLength="50" />
+          <Property Name="PriceBuy" Type="float" />
+          <Property Name="PriceSale" Type="float" />
+          <Property Name="PriceExtra" Type="float" />
+          <Property Name="DocumentCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IturCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectionName" Type="nvarchar" MaxLength="50" />
+          <Property Name="ERPType" Type="int" />
+          <Property Name="FromCatalogType" Type="int" />
+          <Property Name="TypeCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="SectionNum" Type="int" />
+          <Property Name="ValueBuyDifference" Type="float" />
+          <Property Name="QuantityDifference" Type="float" />
+          <Property Name="ValueBuyEdit" Type="float" />
+          <Property Name="QuantityEdit" Type="float" />
+          <Property Name="ValueBuyQriginal" Type="float" />
+          <Property Name="QuantityOriginal" Type="float" />
+          <Property Name="Barcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Makat" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProductName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShelfCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="TypeMakat" Type="nvarchar" MaxLength="10" />
+          <Property Name="InputTypeCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPNum" Type="int" />
+          <Property Name="DocNum" Type="int" />
+          <Property Name="PDA_ID" Type="bigint" />
+          <Property Name="Count" Type="int" />
+          <Property Name="ValueChar" Type="nvarchar" MaxLength="100" />
+          <Property Name="ValueInt" Type="int" />
+          <Property Name="ValueFloat" Type="float" />
+          <Property Name="IsResulte" Type="bit" />
+          <Property Name="ResultCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResulteDescription" Type="nvarchar" MaxLength="100" />
+          <Property Name="IsUpdateERP" Type="bit" />
+          <Property Name="ImputTypeCodeFromPDA" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResulteValue" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuantityOriginalERP" Type="float" />
+          <Property Name="ValueOriginalERP" Type="float" />
+          <Property Name="QuantityDifferenceOriginalERP" Type="float" />
+          <Property Name="ValueDifferenceOriginalERP" Type="float" />
+          <Property Name="SupplierCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LocationName" Type="nvarchar" MaxLength="100" />
+          <Property Name="IturName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SessionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SessionNum" Type="int" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="10" />
+          <Property Name="ERPIturCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountInParentPack" Type="int" />
+          <Property Name="BalanceQuantityPartialERP" Type="int" />
+          <Property Name="QuantityInPackEdit" Type="int" />
+          <Property Name="IPValueStr1" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr2" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr3" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr4" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr5" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr6" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr7" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr8" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr9" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr10" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueFloat1" Type="float" />
+          <Property Name="IPValueFloat2" Type="float" />
+          <Property Name="IPValueFloat3" Type="float" />
+          <Property Name="IPValueFloat4" Type="float" />
+          <Property Name="IPValueFloat5" Type="float" />
+          <Property Name="IPValueInt1" Type="int" />
+          <Property Name="IPValueInt2" Type="int" />
+          <Property Name="IPValueInt3" Type="int" />
+          <Property Name="IPValueInt4" Type="int" />
+          <Property Name="IPValueInt5" Type="int" />
+          <Property Name="IPValueBit1" Type="bit" />
+          <Property Name="IPValueBit2" Type="bit" />
+          <Property Name="IPValueBit3" Type="bit" />
+          <Property Name="IPValueBit4" Type="bit" />
+          <Property Name="IPValueBit5" Type="bit" />
+          <Property Name="Price" Type="float" />
+          <Property Name="WorkerID" Type="nvarchar" MaxLength="50" />
+          <Property Name="WorkerName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Total" Type="bigint" />
+          <Property Name="FromTime" Type="datetime" />
+          <Property Name="ToTime" Type="datetime" />
+          <Property Name="TicksTimeSpan" Type="bigint" />
+          <Property Name="PeriodFromTo" Type="nvarchar" MaxLength="100" />
+          <Property Name="FamilyCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="FamilyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FamilyType" Type="nvarchar" MaxLength="50" />
+          <Property Name="FamilySize" Type="nvarchar" MaxLength="50" />
+          <Property Name="FamilyExtra1" Type="nvarchar" MaxLength="50" />
+          <Property Name="FamilyExtra2" Type="nvarchar" MaxLength="50" />
+          <Property Name="UnitTypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="InventorCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="InventorName" Type="nvarchar" MaxLength="100" />
+          <Property Name="BranchCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="BranchName" Type="nvarchar" MaxLength="100" />
+          <Property Name="BranchERPCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="InventorDate" Type="datetime" />
+          <Property Name="IturCodeExpected" Type="nvarchar" MaxLength="50" />
+          <Property Name="IturCodeDiffer" Type="bit" />
+          <Property Name="IPValueStr11" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr12" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr13" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr14" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr15" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr16" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr17" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr18" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr19" Type="nvarchar" MaxLength="100" />
+          <Property Name="IPValueStr20" Type="nvarchar" MaxLength="100" />
+          <Property Name="SubSessionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SessionName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SubSessionName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="BackgroundColor" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Restore" Type="nvarchar" MaxLength="100" />
+          <Property Name="RestoreBit" Type="bit" />
+          <Property Name="ParentLocationCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level4" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name1" Type="nvarchar" MaxLength="250" />
+          <Property Name="Name2" Type="nvarchar" MaxLength="250" />
+          <Property Name="Name3" Type="nvarchar" MaxLength="250" />
+          <Property Name="Name4" Type="nvarchar" MaxLength="250" />
+          <Property Name="NodeType" Type="int" />
+          <Property Name="LevelNum" Type="int" />
+          <Property Name="Total" Type="int" />
+          <Property Name="DateModified" Type="datetime" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="100" />
+          <Property Name="InvStatus" Type="int" Nullable="false" />
+          <Property Name="Disabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Makat" Type="nvarchar" MaxLength="300" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="PriceSale" Type="float" Nullable="false" />
+          <Property Name="PriceBuy" Type="float" Nullable="false" />
+          <Property Name="Importance" Type="bigint" />
+          <Property Name="MakatERP" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountMin" Type="bigint" />
+          <Property Name="CountMax" Type="bigint" />
+          <Property Name="PriceString" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PriceExtra" Type="float" />
+          <Property Name="Family" Type="nvarchar" MaxLength="50" />
+          <Property Name="BalanceQuantityERP" Type="float" />
+          <Property Name="UnitTypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupplierCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="InputTypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="ModifyDate" Type="datetime" />
+          <Property Name="Code" Type="nvarchar" MaxLength="300" />
+          <Property Name="Barcode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="4000" />
+          <Property Name="ParserBag" Type="nvarchar" MaxLength="500" />
+          <Property Name="ParentMakat" Type="nvarchar" MaxLength="300" />
+          <Property Name="MakatOriginal" Type="nvarchar" MaxLength="300" />
+          <Property Name="FromCatalogType" Type="int" />
+          <Property Name="IsUpdateERP" Type="bit" />
+          <Property Name="CountInParentPack" Type="int" />
+          <Property Name="BalanceQuantityPartialERP" Type="int" />
+          <Property Name="FamilyCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IturCodeExpected" Type="nvarchar" MaxLength="50" />
+          <Property Name="SectionName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SubSectionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SubSectionName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ItemType" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PropertyStr">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="PropertyStrCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DomainObject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PropertyStrToObject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PropertyStrCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ObjectCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DomainObject" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResulteValue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="ValueTypeCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ColGroupCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="RowGroupCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ColIndex" Type="int" />
+          <Property Name="RowIndex" Type="int" />
+          <Property Name="ColCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="RowCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Value" Type="nvarchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="ValueInt" Type="int" />
+          <Property Name="ValueStr" Type="nvarchar" MaxLength="100" />
+          <Property Name="ValueFloat" Type="float" />
+          <Property Name="ValueBit" Type="bit" />
+        </EntityType>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="SectionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParentSectionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PDAID" Type="nvarchar" MaxLength="100" />
+          <Property Name="PDADate" Type="datetime" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="WorkerGUID" Type="nvarchar" MaxLength="50" />
+          <Property Name="SessionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CountItem" Type="int" />
+          <Property Name="CountDocument" Type="int" />
+          <Property Name="CountItur" Type="int" />
+          <Property Name="SumQuantityEdit" Type="float" />
+        </EntityType>
+        <EntityType Name="Shelf">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ShelfPartCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="IturCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupplierCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ShelfCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SupplierName" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDataTime" Type="datetime" />
+          <Property Name="ShelfNum" Type="int" />
+          <Property Name="Width" Type="float" />
+          <Property Name="Height" Type="float" />
+          <Property Name="Area" Type="float" />
+        </EntityType>
+        <EntityType Name="StatusDocHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bit" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusInventorConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bit" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusInventProduct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bit" Type="int" />
+        </EntityType>
+        <EntityType Name="StatusItur">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Bit" Type="int" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="SupplierCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="PlaceCount" Type="int" />
+          <Property Name="Value" Type="float" />
+          <Property Name="IturCount" Type="int" />
+          <Property Name="SupplierLevel" Type="int" />
+          <Property Name="Area" Type="float" />
+          <Property Name="PercentArea" Type="float" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="UnitPlan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnitPlanCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="50" />
+          <Property Name="LayerCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ObjectCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Container" Type="bit" />
+          <Property Name="Visible" Type="bit" />
+          <Property Name="ParentCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartX" Type="float" />
+          <Property Name="StartY" Type="float" />
+          <Property Name="Height" Type="float" />
+          <Property Name="Width" Type="float" />
+          <Property Name="Zoom" Type="int" />
+          <Property Name="Rotate" Type="int" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusUnitPlanBit" Type="int" />
+          <Property Name="StatusGroupUnitPlanBit" Type="int" />
+          <Property Name="Lock" Type="bit" />
+          <Property Name="ZIndex" Type="int" />
+          <Property Name="FontSize" Type="int" />
+          <Property Name="Picture" Type="nvarchar" MaxLength="100" />
+          <Property Name="LocationCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Color" Type="nvarchar" MaxLength="100" />
+          <Property Name="Font" Type="nvarchar" MaxLength="100" />
+          <Property Name="Value" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tooltip" Type="nvarchar" MaxLength="100" />
+          <Property Name="Title" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="UnitPlanValue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UnitPlanCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="UnitPlanStatusBit" Type="int" />
+          <Property Name="UnitPalnGroupStatusBit" Type="int" />
+          <Property Name="TotalItur" Type="int" />
+          <Property Name="DoneItur" Type="int" />
+          <Property Name="Done" Type="int" />
+          <Property Name="TotalItem" Type="float" />
+          <Property Name="SumQuantityEdit" Type="float" />
+          <Property Name="DiffQuantityEdit" Type="float" />
+          <Property Name="StatusUnitPlanBit" Type="int" />
+          <Property Name="StatusGroupUnitPlanBit" Type="int" />
+        </EntityType>
+        <EntityType Name="UnitType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="UnitTypeCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="Count4UDBModelStoreContainer">
+          <EntitySet Name="BarcodeWithoutProduct" EntityType="Self.BarcodeWithoutProduct" store:Type="Tables" />
+          <EntitySet Name="Count4UDBIni" EntityType="Self.Count4UDBIni" store:Type="Tables" />
+          <EntitySet Name="Device" EntityType="Self.Device" store:Type="Tables" />
+          <EntitySet Name="DocumentHeader" EntityType="Self.DocumentHeader" store:Type="Tables" />
+          <EntitySet Name="Family" EntityType="Self.Family" store:Type="Tables" />
+          <EntitySet Name="FieldLink" EntityType="Self.FieldLink" store:Type="Tables" />
+          <EntitySet Name="InputType" EntityType="Self.InputType" store:Type="Tables" />
+          <EntitySet Name="InventorConfig" EntityType="Self.InventorConfig" store:Type="Tables" />
+          <EntitySet Name="InventProduct" EntityType="Self.InventProduct" store:Type="Tables" />
+          <EntitySet Name="Itur" EntityType="Self.Itur" store:Type="Tables" />
+          <EntitySet Name="IturAnalyzes" EntityType="Self.IturAnalyzes" store:Type="Tables" />
+          <EntitySet Name="Location" EntityType="Self.Location" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" store:Type="Tables" />
+          <EntitySet Name="PropertyStr" EntityType="Self.PropertyStr" store:Type="Tables" />
+          <EntitySet Name="PropertyStrToObject" EntityType="Self.PropertyStrToObject" store:Type="Tables" />
+          <EntitySet Name="ResulteValue" EntityType="Self.ResulteValue" store:Type="Tables" />
+          <EntitySet Name="Section" EntityType="Self.Section" store:Type="Tables" />
+          <EntitySet Name="Session" EntityType="Self.Session" store:Type="Tables" />
+          <EntitySet Name="Shelf" EntityType="Self.Shelf" store:Type="Tables" />
+          <EntitySet Name="StatusDocHeader" EntityType="Self.StatusDocHeader" store:Type="Tables" />
+          <EntitySet Name="StatusInventorConfig" EntityType="Self.StatusInventorConfig" store:Type="Tables" />
+          <EntitySet Name="StatusInventProduct" EntityType="Self.StatusInventProduct" store:Type="Tables" />
+          <EntitySet Name="StatusItur" EntityType="Self.StatusItur" store:Type="Tables" />
+          <EntitySet Name="Supplier" EntityType="Self.Supplier" store:Type="Tables" />
+          <EntitySet Name="Type" EntityType="Self.Type" store:Type="Tables" />
+          <EntitySet Name="UnitPlan" EntityType="Self.UnitPlan" store:Type="Tables" />
+          <EntitySet Name="UnitPlanValue" EntityType="Self.UnitPlanValue" store:Type="Tables" />
+          <EntitySet Name="UnitType" EntityType="Self.UnitType" store:Type="Tables" />
+          <EntitySet Name="CatalogConfig" EntityType="Self.CatalogConfig" store:Type="Tables">
+            <DefiningQuery>SELECT 
+    [CatalogConfig].[ID] AS [ID], 
+    [CatalogConfig].[CreateDate] AS [CreateDate], 
+    [CatalogConfig].[ModifyDate] AS [ModifyDate], 
+    [CatalogConfig].[Description] AS [Description], 
+    [CatalogConfig].[CustomerCode] AS [CustomerCode], 
+    [CatalogConfig].[BranchCode] AS [BranchCode], 
+    [CatalogConfig].[InventorCode] AS [InventorCode], 
+    [CatalogConfig].[Tag] AS [Tag]
+    FROM [CatalogConfig] AS [CatalogConfig]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Count4UDBModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="Count4UDB" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="BarcodeWithoutProducts" EntityType="Count4UDBModel.BarcodeWithoutProduct" />
+          <EntitySet Name="CatalogConfigs" EntityType="Count4UDBModel.CatalogConfig" />
+          <EntitySet Name="FieldLinks" EntityType="Count4UDBModel.FieldLink" />
+          <EntitySet Name="InputTypes" EntityType="Count4UDBModel.InputType" />
+          <EntitySet Name="InventorConfigs" EntityType="Count4UDBModel.InventorConfig" />
+          <EntitySet Name="InventProducts" EntityType="Count4UDBModel.InventProduct" />
+          <EntitySet Name="Iturs" EntityType="Count4UDBModel.Itur" />
+          <EntitySet Name="Locations" EntityType="Count4UDBModel.Location" />
+          <EntitySet Name="ResulteValues" EntityType="Count4UDBModel.ResulteValue" />
+          <EntitySet Name="Sections" EntityType="Count4UDBModel.Section" />
+          <EntitySet Name="Sessions" EntityType="Count4UDBModel.Session" />
+          <EntitySet Name="StatusDocHeaders" EntityType="Count4UDBModel.StatusDocHeader" />
+          <EntitySet Name="StatusInventorConfigs" EntityType="Count4UDBModel.StatusInventorConfig" />
+          <EntitySet Name="StatusInventProducts" EntityType="Count4UDBModel.StatusInventProduct" />
+          <EntitySet Name="StatusIturs" EntityType="Count4UDBModel.StatusItur" />
+          <EntitySet Name="Suppliers" EntityType="Count4UDBModel.Supplier" />
+          <EntitySet Name="Types" EntityType="Count4UDBModel.Type" />
+          <EntitySet Name="UnitTypes" EntityType="Count4UDBModel.UnitType" />
+          <EntitySet Name="Count4UDBIni" EntityType="Count4UDBModel.Count4UDBIni" />
+          <EntitySet Name="Family" EntityType="Count4UDBModel.Family" />
+          <EntitySet Name="IturAnalyzes" EntityType="Count4UDBModel.IturAnalyzes" />
+          <EntitySet Name="UnitPlan" EntityType="Count4UDBModel.UnitPlan" />
+          <EntitySet Name="UnitPlanValue" EntityType="Count4UDBModel.UnitPlanValue" />
+          <EntitySet Name="DocumentHeaders" EntityType="Count4UDBModel.DocumentHeader" />
+          <EntitySet Name="Products" EntityType="Count4UDBModel.Product" />
+          <EntitySet Name="Shelf" EntityType="Count4UDBModel.Shelf" />
+          <EntitySet Name="Devices" EntityType="Count4UDBModel.Device" />
+          <EntitySet Name="PropertyStrs" EntityType="Count4UDBModel.PropertyStr" />
+          <EntitySet Name="PropertyStrToObjects" EntityType="Count4UDBModel.PropertyStrToObject" />
+        </EntityContainer>
+        <EntityType Name="BarcodeWithoutProduct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Value" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Makat" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Barcode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="CatalogConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="CustomerCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BranchCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="InventorCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Tag" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="FieldLink">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="DomainType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="TableName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="PropertyNameInDomainType" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="FieldNameInTable" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NumStringInRecord" Type="Int32" />
+          <Property Name="Editor" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Validator" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CodeLocalizationEditorLable" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DefaultEditorLable" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NN" Type="Int32" />
+          <Property Name="InGrid" Type="Boolean" />
+          <Property Name="InEdit" Type="Boolean" />
+          <Property Name="InAdd" Type="Boolean" />
+          <Property Type="String" Name="ViewName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="EditorTemplate" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="InputType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="InventorConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="InventorDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="CustomerCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="BranchCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BranchName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IsDirty" Type="Boolean" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="StatusInventorID" Type="Int64" />
+          <Property Name="StatusInventorCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DBPath" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="InventorCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TypeObject" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="InventProduct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Barcode" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="PartialPackage" Type="Boolean" />
+          <Property Name="QuantityOriginal" Type="Double" />
+          <Property Name="SerialNumber" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ShelfCode" Type="String" MaxLength="10" Unicode="true" FixedLength="false" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="ProductName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="StatusInventProductCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StatusInventProductBit" Type="Int32" />
+          <Property Name="DocumentHeaderCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="Makat" Type="String" MaxLength="300" Unicode="true" FixedLength="false" />
+          <Property Name="InputTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ImputTypeCodeFromPDA" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="DocNum" Type="Int64" />
+          <Property Name="SessionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SessionNum" Type="Int64" />
+          <Property Name="SectionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SectionName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PriceBuy" Type="Double" />
+          <Property Name="PriceSale" Type="Double" />
+          <Property Name="QuantityEdit" Type="Double" />
+          <Property Name="IPValueFloat1" Type="Double" />
+          <Property Name="IPValueFloat2" Type="Double" />
+          <Property Name="IPValueFloat3" Type="Double" />
+          <Property Name="IPValueFloat4" Type="Double" />
+          <Property Name="IPValueFloat5" Type="Double" />
+          <Property Name="IPValueInt1" Type="Int32" />
+          <Property Name="IPValueInt2" Type="Int32" />
+          <Property Name="IPValueInt3" Type="Int32" />
+          <Property Name="IPValueBit1" Type="Boolean" />
+          <Property Name="IPValueBit2" Type="Boolean" />
+          <Property Name="QuantityInPackEdit" Type="Int32" />
+          <Property Name="IPValueStr1" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IPValueStr2" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IPValueStr3" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IPValueStr4" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IPValueStr5" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IPValueStr6" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IPValueStr7" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IPValueStr8" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IPValueStr9" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IPValueStr10" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="IPValueInt4" Type="Int32" />
+          <Property Name="IPValueInt5" Type="Int32" />
+          <Property Name="IPValueBit3" Type="Boolean" />
+          <Property Name="IPValueBit4" Type="Boolean" />
+          <Property Name="IPValueBit5" Type="Boolean" />
+          <Property Type="Int64" Name="Num" />
+          <Property Type="String" Name="DocumentCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IturCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FromCatalogType" />
+          <Property Type="Int32" Name="SectionNum" />
+          <Property Type="Int32" Name="IPNum" />
+          <Property Type="String" Name="TypeMakat" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WorkerID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="QuantityDifference" />
+          <Property Type="String" Name="SupplierCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItemStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ERPIturCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr11" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr12" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr13" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr14" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr15" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr16" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr17" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr18" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr19" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr20" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UnityCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tag1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tag2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Tag3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="QuantityWithoutPackEdit" Type="Double" />
+          <Property Name="ValueBuyDifference" Type="Double" />
+          <Property Name="ValueBuyEdit" Type="Double" />
+          <Property Name="ValueBuyQriginal" Type="Double" />
+          <Property Name="ValueBuyWithoutPackEdit" Type="Double" />
+          <Property Name="ValueBuyInPackEdit" Type="Double" />
+          <Property Name="ValueSaleDifference" Type="Double" />
+          <Property Name="ValueSaleEdit" Type="Double" />
+          <Property Name="ValueSaleQriginal" Type="Double" />
+          <Property Name="ValueSaleWithoutPackEdit" Type="Double" />
+          <Property Name="ValueSaleInPackEdit" Type="Double" />
+        </EntityType>
+        <EntityType Name="Itur">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="InitialQuantityMakatExpected" Type="Double" />
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Approve" Type="Boolean" />
+          <Property Name="StatusIturCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifyDate" Type="DateTime" Precision="3" />
+          <Property Name="Publishe" Type="Boolean" />
+          <Property Name="StatusIturBit" Type="Int32" />
+          <Property Name="Number" Type="Int32" Nullable="false" />
+          <Property Name="NumberPrefix" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NumberSufix" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="LocationCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="StatusIturGroupBit" Type="Int32" />
+          <Property Name="StatusDocHeaderBit" Type="Int32" />
+          <Property Name="ERPIturCode" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Restore" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="RestoreBit" Type="Boolean" />
+          <Property Type="Boolean" Name="Disabled" Nullable="false" />
+          <Property Type="String" Name="IturCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UnitPlanCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="TotalItem" />
+          <Property Type="Double" Name="SumQuantityEdit" />
+          <Property Type="Double" Name="DiffQuantityEdit" />
+          <Property Type="Int32" Name="Width" />
+          <Property Type="Int32" Name="Height" />
+          <Property Type="Boolean" Name="IncludeInFacing" />
+          <Property Type="Int32" Name="ShelfCount" />
+          <Property Type="Int32" Name="ShelfInItur" />
+          <Property Type="Int32" Name="PlaceCount" />
+          <Property Type="Int32" Name="PlaceInItur" />
+          <Property Type="Int32" Name="Supplier1PlaceCount" />
+          <Property Type="Int32" Name="Supplier2PlaceCount" />
+          <Property Type="Int32" Name="Supplier3PlaceCount" />
+          <Property Type="Int32" Name="Supplier4PlaceCount" />
+          <Property Type="Int32" Name="Supplier5PlaceCount" />
+          <Property Type="Int32" Name="SupplierOtherPlaceCount" />
+          <Property Type="Int32" Name="UnitPlaceWidth" />
+          <Property Type="Double" Name="Area" />
+          <Property Type="Double" Name="AreaCount" />
+          <Property Name="Level1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level4" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name1" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Name2" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Name3" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Name4" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NodeType" Type="Int32" />
+          <Property Name="LevelNum" Type="Int32" />
+          <Property Name="Total" Type="Int32" />
+          <Property Name="Tag" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="InvStatus" Type="Int32" />
+          <Property Name="ParentIturCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="BackgroundColor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Location">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="BackgroundColor" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Restore" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="RestoreBit" Type="Boolean" />
+          <Property Type="String" Name="ParentLocationCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Level1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Level2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Level3" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Level4" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name1" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name2" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name3" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name4" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="NodeType" />
+          <Property Type="Int32" Name="LevelNum" />
+          <Property Type="Int32" Name="Total" />
+          <Property Type="DateTime" Name="DateModified" Precision="3" />
+          <Property Type="String" Name="Tag" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="InvStatus" Type="Int32" Nullable="false" />
+          <Property Name="Disabled" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResulteValue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Code" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ValueTypeCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ColGroupCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="RowGroupCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ColIndex" Type="Int32" />
+          <Property Name="RowIndex" Type="Int32" />
+          <Property Name="ColCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="RowCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Value" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ValueInt" Type="Int32" />
+          <Property Name="ValueStr" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ValueFloat" Type="Double" />
+          <Property Name="ValueBit" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Section">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="SectionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ParentSectionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeCode" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Session">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="PDAID" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PDADate" Type="DateTime" Precision="3" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="WorkerGUID" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SessionCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CountItem" Type="Int32" />
+          <Property Name="CountDocument" Type="Int32" />
+          <Property Name="CountItur" Type="Int32" />
+          <Property Type="Double" Name="SumQuantityEdit" />
+        </EntityType>
+        <EntityType Name="StatusDocHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Bit" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusInventorConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Bit" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="StatusInventProduct">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Bit" Type="Int32" />
+        </EntityType>
+        <EntityType Name="StatusItur">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Bit" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="SupplierCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Type="Int32" Name="PlaceCount" />
+          <Property Type="Double" Name="Value" />
+          <Property Type="Int32" Name="IturCount" />
+          <Property Type="Int32" Name="SupplierLevel" />
+          <Property Type="Double" Name="Area" />
+          <Property Type="Double" Name="PercentArea" />
+        </EntityType>
+        <EntityType Name="Type">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="UnitType">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Name" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="UnitTypeCode" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Count4UDBIni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Ver" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Code" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="FamilyCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Type" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Size" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Extra1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Extra2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="IturAnalyzes">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Boolean" Name="Itur_Disabled" />
+          <Property Type="Boolean" Name="Itur_Publishe" />
+          <Property Type="Int32" Name="Itur_StatusIturBit" />
+          <Property Type="Int32" Name="Itur_Number" Nullable="false" />
+          <Property Type="String" Name="Itur_NumberPrefix" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Itur_NumberSufix" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Itur_LocationCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Itur_StatusIturGroupBit" />
+          <Property Type="Int32" Name="Itur_StatusDocHeaderBit" />
+          <Property Type="String" Name="Doc_Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Doc_Approve" />
+          <Property Type="String" Name="Doc_WorkerGUID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Doc_StatusDocHeaderBit" />
+          <Property Type="Int32" Name="Doc_StatusInventProductBit" />
+          <Property Type="Int32" Name="Doc_StatusApproveBit" />
+          <Property Type="Int32" Name="PDA_StatusInventProductBit" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LocationCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DocumentHeaderCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BarcodeOriginal" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MakatOriginal" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PriceString" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="PriceBuy" />
+          <Property Type="Double" Name="PriceSale" />
+          <Property Type="Double" Name="PriceExtra" />
+          <Property Type="String" Name="DocumentCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IturCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SectionCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SectionName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ERPType" />
+          <Property Type="Int32" Name="FromCatalogType" />
+          <Property Type="String" Name="TypeCode" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SectionNum" />
+          <Property Type="Double" Name="ValueBuyDifference" />
+          <Property Type="Double" Name="QuantityDifference" />
+          <Property Type="Double" Name="ValueBuyEdit" />
+          <Property Type="Double" Name="QuantityEdit" />
+          <Property Type="Double" Name="ValueBuyQriginal" />
+          <Property Type="Double" Name="QuantityOriginal" />
+          <Property Type="String" Name="Barcode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Makat" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProductName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+          <Property Type="String" Name="SerialNumber" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ShelfCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeMakat" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InputTypeCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="IPNum" />
+          <Property Type="Int32" Name="DocNum" />
+          <Property Type="Int64" Name="PDA_ID" />
+          <Property Type="Int32" Name="Count" />
+          <Property Type="String" Name="ValueChar" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ValueInt" />
+          <Property Type="Double" Name="ValueFloat" />
+          <Property Type="Boolean" Name="IsResulte" />
+          <Property Type="String" Name="ResultCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ResulteDescription" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IsUpdateERP" />
+          <Property Type="String" Name="ImputTypeCodeFromPDA" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ResulteValue" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="QuantityOriginalERP" />
+          <Property Type="Double" Name="ValueOriginalERP" />
+          <Property Type="Double" Name="QuantityDifferenceOriginalERP" />
+          <Property Type="Double" Name="ValueDifferenceOriginalERP" />
+          <Property Type="String" Name="SupplierCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LocationName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IturName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SessionCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="SessionNum" />
+          <Property Type="String" Name="Currency" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ERPIturCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="CountInParentPack" />
+          <Property Type="Int32" Name="BalanceQuantityPartialERP" />
+          <Property Type="Int32" Name="QuantityInPackEdit" />
+          <Property Type="String" Name="IPValueStr1" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IPValueStr2" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IPValueStr3" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IPValueStr4" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IPValueStr5" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IPValueStr6" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IPValueStr7" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IPValueStr8" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IPValueStr9" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IPValueStr10" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="IPValueFloat1" />
+          <Property Type="Double" Name="IPValueFloat2" />
+          <Property Type="Double" Name="IPValueFloat3" />
+          <Property Type="Double" Name="IPValueFloat4" />
+          <Property Type="Double" Name="IPValueFloat5" />
+          <Property Type="Int32" Name="IPValueInt1" />
+          <Property Type="Int32" Name="IPValueInt2" />
+          <Property Type="Int32" Name="IPValueInt3" />
+          <Property Type="Int32" Name="IPValueInt4" />
+          <Property Type="Int32" Name="IPValueInt5" />
+          <Property Type="Boolean" Name="IPValueBit1" />
+          <Property Type="Boolean" Name="IPValueBit2" />
+          <Property Type="Boolean" Name="IPValueBit3" />
+          <Property Type="Boolean" Name="IPValueBit4" />
+          <Property Type="Boolean" Name="IPValueBit5" />
+          <Property Type="Double" Name="Price" />
+          <Property Type="String" Name="WorkerID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WorkerName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="Total" />
+          <Property Type="DateTime" Name="FromTime" Precision="3" />
+          <Property Type="DateTime" Name="ToTime" Precision="3" />
+          <Property Type="Int64" Name="TicksTimeSpan" />
+          <Property Type="String" Name="PeriodFromTo" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FamilyCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FamilyName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FamilyType" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FamilySize" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FamilyExtra1" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FamilyExtra2" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UnitTypeCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InventorCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BranchCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InventorName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BranchName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BranchERPCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="InventorDate" Precision="3" />
+          <Property Type="String" Name="IturCodeExpected" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IturCodeDiffer" />
+          <Property Name="IPValueStr11" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr12" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr13" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr14" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr15" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr16" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr17" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr18" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr19" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IPValueStr20" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SubSessionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SessionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SubSessionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UnitPlan">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UnitPlanCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LayerCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ObjectCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Container" />
+          <Property Type="Boolean" Name="Visible" />
+          <Property Type="String" Name="ParentCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="StartX" />
+          <Property Type="Double" Name="StartY" />
+          <Property Type="Double" Name="Height" />
+          <Property Type="Double" Name="Width" />
+          <Property Type="Int32" Name="Zoom" />
+          <Property Type="Int32" Name="Rotate" />
+          <Property Type="String" Name="Tag" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="StatusUnitPlanBit" />
+          <Property Type="Int32" Name="StatusGroupUnitPlanBit" />
+          <Property Type="Boolean" Name="Lock" />
+          <Property Type="Int32" Name="ZIndex" />
+          <Property Type="String" Name="Picture" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LocationCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FontSize" />
+          <Property Type="String" Name="Color" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Font" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Value" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tooltip" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Title" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="UnitPlanValue">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="UnitPlanCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="TotalItur" />
+          <Property Type="Int32" Name="DoneItur" />
+          <Property Type="Int32" Name="Done" />
+          <Property Type="Double" Name="TotalItem" />
+          <Property Type="Double" Name="SumQuantityEdit" />
+          <Property Type="Double" Name="DiffQuantityEdit" />
+          <Property Type="Int32" Name="StatusUnitPlanBit" />
+          <Property Type="Int32" Name="StatusGroupUnitPlanBit" />
+          <Property Type="Int32" Name="UnitPlanStatusBit" />
+          <Property Type="Int32" Name="UnitPalnGroupStatusBit" />
+        </EntityType>
+        <EntityType Name="DocumentHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Approve" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+          <Property Type="String" Name="IturCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WorkerGUID" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="StatusDocHeaderCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="StatusDocHeaderBit" />
+          <Property Type="String" Name="DocumentCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SessionCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="StatusInventProductBit" />
+          <Property Type="Int32" Name="StatusApproveBit" />
+          <Property Type="Int32" Name="Num" />
+          <Property Type="Int32" Name="DocNum" />
+          <Property Type="String" Name="Restore" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="RestoreBit" />
+          <Property Type="Double" Name="QuantityEdit" />
+          <Property Type="Int64" Name="Total" />
+          <Property Type="DateTime" Name="FromTime" Precision="3" />
+          <Property Type="DateTime" Name="ToTime" Precision="3" />
+          <Property Type="Int64" Name="TicksTimeSpan" />
+          <Property Type="String" Name="PeriodFromTo" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="String" Name="Makat" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="PriceSale" Nullable="false" />
+          <Property Type="Double" Name="PriceBuy" Nullable="false" />
+          <Property Type="Int64" Name="Importance" />
+          <Property Type="String" Name="MakatERP" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="CountMin" />
+          <Property Type="Int64" Name="CountMax" />
+          <Property Type="String" Name="PriceString" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="Double" Name="PriceExtra" />
+          <Property Type="String" Name="Family" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Double" Name="BalanceQuantityERP" />
+          <Property Type="String" Name="UnitTypeCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SectionCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="InputTypeCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDate" Precision="3" />
+          <Property Type="DateTime" Name="ModifyDate" Precision="3" />
+          <Property Type="String" Name="Code" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Barcode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tag" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ParserBag" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ParentMakat" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MakatOriginal" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FromCatalogType" />
+          <Property Type="Boolean" Name="IsUpdateERP" />
+          <Property Type="Int32" Name="CountInParentPack" />
+          <Property Type="Int32" Name="BalanceQuantityPartialERP" />
+          <Property Type="String" Name="FamilyCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="IturCodeExpected" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SectionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SubSectionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubSectionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SupplierName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ItemType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Shelf">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="IturCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ShelfCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="SupplierName" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreateDataTime" Precision="3" />
+          <Property Type="String" Name="ShelfPartCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="ShelfNum" />
+          <Property Type="Double" Name="Width" />
+          <Property Type="Double" Name="Height" />
+          <Property Type="Double" Name="Area" />
+        </EntityType>
+        <EntityType Name="Device">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="DeviceCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="DateCreated" Precision="3" />
+          <Property Type="DateTime" Name="LicenseDate" Precision="3" />
+          <Property Type="String" Name="Description" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PropertyStr">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="TypeCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PropertyStrCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DomainObject" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Code" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PropertyStrToObject">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Type="String" Name="PropertyStrCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ObjectCode" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DomainObject" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Count4UDBModelStoreContainer" CdmEntityContainer="Count4UDB">
+          <EntitySetMapping Name="BarcodeWithoutProducts">
+            <EntityTypeMapping TypeName="Count4UDBModel.BarcodeWithoutProduct">
+              <MappingFragment StoreEntitySet="BarcodeWithoutProduct">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Makat" ColumnName="Makat" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CatalogConfigs">
+            <EntityTypeMapping TypeName="Count4UDBModel.CatalogConfig">
+              <MappingFragment StoreEntitySet="CatalogConfig">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="InventorCode" ColumnName="InventorCode" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FieldLinks">
+            <EntityTypeMapping TypeName="Count4UDBModel.FieldLink">
+              <MappingFragment StoreEntitySet="FieldLink">
+                <ScalarProperty Name="EditorTemplate" ColumnName="EditorTemplate" />
+                <ScalarProperty Name="ViewName" ColumnName="ViewName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="DomainType" ColumnName="DomainType" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="PropertyNameInDomainType" ColumnName="PropertyNameInDomainType" />
+                <ScalarProperty Name="FieldNameInTable" ColumnName="FieldNameInTable" />
+                <ScalarProperty Name="NumStringInRecord" ColumnName="NumStringInRecord" />
+                <ScalarProperty Name="Editor" ColumnName="Editor" />
+                <ScalarProperty Name="Validator" ColumnName="Validator" />
+                <ScalarProperty Name="CodeLocalizationEditorLable" ColumnName="CodeLocalizationEditorLable" />
+                <ScalarProperty Name="DefaultEditorLable" ColumnName="DefaultEditorLable" />
+                <ScalarProperty Name="NN" ColumnName="NN" />
+                <ScalarProperty Name="InGrid" ColumnName="InGrid" />
+                <ScalarProperty Name="InEdit" ColumnName="InEdit" />
+                <ScalarProperty Name="InAdd" ColumnName="InAdd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InputTypes">
+            <EntityTypeMapping TypeName="Count4UDBModel.InputType">
+              <MappingFragment StoreEntitySet="InputType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventorConfigs">
+            <EntityTypeMapping TypeName="Count4UDBModel.InventorConfig">
+              <MappingFragment StoreEntitySet="InventorConfig">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="InventorDate" ColumnName="InventorDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="IsDirty" ColumnName="IsDirty" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="StatusInventorID" ColumnName="StatusInventorID" />
+                <ScalarProperty Name="StatusInventorCode" ColumnName="StatusInventorCode" />
+                <ScalarProperty Name="DBPath" ColumnName="DBPath" />
+                <ScalarProperty Name="InventorCode" ColumnName="InventorCode" />
+                <ScalarProperty Name="TypeObject" ColumnName="TypeObject" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InventProducts">
+            <EntityTypeMapping TypeName="Count4UDBModel.InventProduct">
+              <MappingFragment StoreEntitySet="InventProduct">
+                <ScalarProperty Name="ValueSaleInPackEdit" ColumnName="ValueSaleInPackEdit" />
+                <ScalarProperty Name="ValueSaleWithoutPackEdit" ColumnName="ValueSaleWithoutPackEdit" />
+                <ScalarProperty Name="ValueSaleQriginal" ColumnName="ValueSaleQriginal" />
+                <ScalarProperty Name="ValueSaleEdit" ColumnName="ValueSaleEdit" />
+                <ScalarProperty Name="ValueSaleDifference" ColumnName="ValueSaleDifference" />
+                <ScalarProperty Name="ValueBuyInPackEdit" ColumnName="ValueBuyInPackEdit" />
+                <ScalarProperty Name="ValueBuyWithoutPackEdit" ColumnName="ValueBuyWithoutPackEdit" />
+                <ScalarProperty Name="ValueBuyQriginal" ColumnName="ValueBuyQriginal" />
+                <ScalarProperty Name="ValueBuyEdit" ColumnName="ValueBuyEdit" />
+                <ScalarProperty Name="ValueBuyDifference" ColumnName="ValueBuyDifference" />
+                <ScalarProperty Name="QuantityWithoutPackEdit" ColumnName="QuantityWithoutPackEdit" />
+                <ScalarProperty Name="Tag3" ColumnName="Tag3" />
+                <ScalarProperty Name="Tag2" ColumnName="Tag2" />
+                <ScalarProperty Name="Tag1" ColumnName="Tag1" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+                <ScalarProperty Name="UnityCode" ColumnName="UnityCode" />
+                <ScalarProperty Name="IPValueStr20" ColumnName="IPValueStr20" />
+                <ScalarProperty Name="IPValueStr19" ColumnName="IPValueStr19" />
+                <ScalarProperty Name="IPValueStr18" ColumnName="IPValueStr18" />
+                <ScalarProperty Name="IPValueStr17" ColumnName="IPValueStr17" />
+                <ScalarProperty Name="IPValueStr16" ColumnName="IPValueStr16" />
+                <ScalarProperty Name="IPValueStr15" ColumnName="IPValueStr15" />
+                <ScalarProperty Name="IPValueStr14" ColumnName="IPValueStr14" />
+                <ScalarProperty Name="IPValueStr13" ColumnName="IPValueStr13" />
+                <ScalarProperty Name="IPValueStr12" ColumnName="IPValueStr12" />
+                <ScalarProperty Name="IPValueStr11" ColumnName="IPValueStr11" />
+                <ScalarProperty Name="ERPIturCode" ColumnName="ERPIturCode" />
+                <ScalarProperty Name="ItemStatus" ColumnName="ItemStatus" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="QuantityDifference" ColumnName="QuantityDifference" />
+                <ScalarProperty Name="WorkerID" ColumnName="WorkerID" />
+                <ScalarProperty Name="TypeMakat" ColumnName="TypeMakat" />
+                <ScalarProperty Name="IPNum" ColumnName="IPNum" />
+                <ScalarProperty Name="SectionNum" ColumnName="SectionNum" />
+                <ScalarProperty Name="FromCatalogType" ColumnName="FromCatalogType" />
+                <ScalarProperty Name="IturCode" ColumnName="IturCode" />
+                <ScalarProperty Name="DocumentCode" ColumnName="DocumentCode" />
+                <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="PartialPackage" ColumnName="PartialPackage" />
+                <ScalarProperty Name="QuantityOriginal" ColumnName="QuantityOriginal" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="ShelfCode" ColumnName="ShelfCode" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="StatusInventProductCode" ColumnName="StatusInventProductCode" />
+                <ScalarProperty Name="StatusInventProductBit" ColumnName="StatusInventProductBit" />
+                <ScalarProperty Name="DocumentHeaderCode" ColumnName="DocumentHeaderCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Makat" ColumnName="Makat" />
+                <ScalarProperty Name="InputTypeCode" ColumnName="InputTypeCode" />
+                <ScalarProperty Name="ImputTypeCodeFromPDA" ColumnName="ImputTypeCodeFromPDA" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+                <ScalarProperty Name="SessionNum" ColumnName="SessionNum" />
+                <ScalarProperty Name="SectionCode" ColumnName="SectionCode" />
+                <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+                <ScalarProperty Name="PriceBuy" ColumnName="PriceBuy" />
+                <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
+                <ScalarProperty Name="QuantityEdit" ColumnName="QuantityEdit" />
+                <ScalarProperty Name="IPValueFloat1" ColumnName="IPValueFloat1" />
+                <ScalarProperty Name="IPValueFloat2" ColumnName="IPValueFloat2" />
+                <ScalarProperty Name="IPValueFloat3" ColumnName="IPValueFloat3" />
+                <ScalarProperty Name="IPValueFloat4" ColumnName="IPValueFloat4" />
+                <ScalarProperty Name="IPValueFloat5" ColumnName="IPValueFloat5" />
+                <ScalarProperty Name="IPValueInt1" ColumnName="IPValueInt1" />
+                <ScalarProperty Name="IPValueInt2" ColumnName="IPValueInt2" />
+                <ScalarProperty Name="IPValueInt3" ColumnName="IPValueInt3" />
+                <ScalarProperty Name="IPValueBit1" ColumnName="IPValueBit1" />
+                <ScalarProperty Name="IPValueBit2" ColumnName="IPValueBit2" />
+                <ScalarProperty Name="QuantityInPackEdit" ColumnName="QuantityInPackEdit" />
+                <ScalarProperty Name="IPValueStr1" ColumnName="IPValueStr1" />
+                <ScalarProperty Name="IPValueStr2" ColumnName="IPValueStr2" />
+                <ScalarProperty Name="IPValueStr3" ColumnName="IPValueStr3" />
+                <ScalarProperty Name="IPValueStr4" ColumnName="IPValueStr4" />
+                <ScalarProperty Name="IPValueStr5" ColumnName="IPValueStr5" />
+                <ScalarProperty Name="IPValueStr6" ColumnName="IPValueStr6" />
+                <ScalarProperty Name="IPValueStr7" ColumnName="IPValueStr7" />
+                <ScalarProperty Name="IPValueStr8" ColumnName="IPValueStr8" />
+                <ScalarProperty Name="IPValueStr9" ColumnName="IPValueStr9" />
+                <ScalarProperty Name="IPValueStr10" ColumnName="IPValueStr10" />
+                <ScalarProperty Name="IPValueInt4" ColumnName="IPValueInt4" />
+                <ScalarProperty Name="IPValueInt5" ColumnName="IPValueInt5" />
+                <ScalarProperty Name="IPValueBit3" ColumnName="IPValueBit3" />
+                <ScalarProperty Name="IPValueBit4" ColumnName="IPValueBit4" />
+                <ScalarProperty Name="IPValueBit5" ColumnName="IPValueBit5" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Iturs">
+            <EntityTypeMapping TypeName="Count4UDBModel.Itur">
+              <MappingFragment StoreEntitySet="Itur">
+                <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+                <ScalarProperty Name="BackgroundColor" ColumnName="BackgroundColor" />
+                <ScalarProperty Name="ParentIturCode" ColumnName="ParentIturCode" />
+                <ScalarProperty Name="InvStatus" ColumnName="InvStatus" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="LevelNum" ColumnName="LevelNum" />
+                <ScalarProperty Name="NodeType" ColumnName="NodeType" />
+                <ScalarProperty Name="Name4" ColumnName="Name4" />
+                <ScalarProperty Name="Name3" ColumnName="Name3" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="Name1" ColumnName="Name1" />
+                <ScalarProperty Name="Level4" ColumnName="Level4" />
+                <ScalarProperty Name="Level3" ColumnName="Level3" />
+                <ScalarProperty Name="Level2" ColumnName="Level2" />
+                <ScalarProperty Name="Level1" ColumnName="Level1" />
+                <ScalarProperty Name="AreaCount" ColumnName="AreaCount" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="UnitPlaceWidth" ColumnName="UnitPlaceWidth" />
+                <ScalarProperty Name="SupplierOtherPlaceCount" ColumnName="SupplierOtherPlaceCount" />
+                <ScalarProperty Name="Supplier5PlaceCount" ColumnName="Supplier5PlaceCount" />
+                <ScalarProperty Name="Supplier4PlaceCount" ColumnName="Supplier4PlaceCount" />
+                <ScalarProperty Name="Supplier3PlaceCount" ColumnName="Supplier3PlaceCount" />
+                <ScalarProperty Name="Supplier2PlaceCount" ColumnName="Supplier2PlaceCount" />
+                <ScalarProperty Name="Supplier1PlaceCount" ColumnName="Supplier1PlaceCount" />
+                <ScalarProperty Name="PlaceInItur" ColumnName="PlaceInItur" />
+                <ScalarProperty Name="PlaceCount" ColumnName="PlaceCount" />
+                <ScalarProperty Name="ShelfInItur" ColumnName="ShelfInItur" />
+                <ScalarProperty Name="ShelfCount" ColumnName="ShelfCount" />
+                <ScalarProperty Name="IncludeInFacing" ColumnName="IncludeInFacing" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="DiffQuantityEdit" ColumnName="DiffQuantityEdit" />
+                <ScalarProperty Name="SumQuantityEdit" ColumnName="SumQuantityEdit" />
+                <ScalarProperty Name="TotalItem" ColumnName="TotalItem" />
+                <ScalarProperty Name="UnitPlanCode" ColumnName="UnitPlanCode" />
+                <ScalarProperty Name="IturCode" ColumnName="IturCode" />
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="InitialQuantityMakatExpected" ColumnName="InitialQuantityMakatExpected" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Approve" ColumnName="Approve" />
+                <ScalarProperty Name="StatusIturCode" ColumnName="StatusIturCode" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="Publishe" ColumnName="Publishe" />
+                <ScalarProperty Name="StatusIturBit" ColumnName="StatusIturBit" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="NumberPrefix" ColumnName="NumberPrefix" />
+                <ScalarProperty Name="NumberSufix" ColumnName="NumberSufix" />
+                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+                <ScalarProperty Name="StatusIturGroupBit" ColumnName="StatusIturGroupBit" />
+                <ScalarProperty Name="StatusDocHeaderBit" ColumnName="StatusDocHeaderBit" />
+                <ScalarProperty Name="ERPIturCode" ColumnName="ERPIturCode" />
+                <ScalarProperty Name="Restore" ColumnName="Restore" />
+                <ScalarProperty Name="RestoreBit" ColumnName="RestoreBit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Locations">
+            <EntityTypeMapping TypeName="Count4UDBModel.Location">
+              <MappingFragment StoreEntitySet="Location">
+                <ScalarProperty Name="Disabled" ColumnName="Disabled" />
+                <ScalarProperty Name="InvStatus" ColumnName="InvStatus" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="LevelNum" ColumnName="LevelNum" />
+                <ScalarProperty Name="NodeType" ColumnName="NodeType" />
+                <ScalarProperty Name="Name4" ColumnName="Name4" />
+                <ScalarProperty Name="Name3" ColumnName="Name3" />
+                <ScalarProperty Name="Name2" ColumnName="Name2" />
+                <ScalarProperty Name="Name1" ColumnName="Name1" />
+                <ScalarProperty Name="Level4" ColumnName="Level4" />
+                <ScalarProperty Name="Level3" ColumnName="Level3" />
+                <ScalarProperty Name="Level2" ColumnName="Level2" />
+                <ScalarProperty Name="Level1" ColumnName="Level1" />
+                <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+                <ScalarProperty Name="ParentLocationCode" ColumnName="ParentLocationCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="BackgroundColor" ColumnName="BackgroundColor" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Restore" ColumnName="Restore" />
+                <ScalarProperty Name="RestoreBit" ColumnName="RestoreBit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResulteValues">
+            <EntityTypeMapping TypeName="Count4UDBModel.ResulteValue">
+              <MappingFragment StoreEntitySet="ResulteValue">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ValueTypeCode" ColumnName="ValueTypeCode" />
+                <ScalarProperty Name="ColGroupCode" ColumnName="ColGroupCode" />
+                <ScalarProperty Name="RowGroupCode" ColumnName="RowGroupCode" />
+                <ScalarProperty Name="ColIndex" ColumnName="ColIndex" />
+                <ScalarProperty Name="RowIndex" ColumnName="RowIndex" />
+                <ScalarProperty Name="ColCode" ColumnName="ColCode" />
+                <ScalarProperty Name="RowCode" ColumnName="RowCode" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ValueInt" ColumnName="ValueInt" />
+                <ScalarProperty Name="ValueStr" ColumnName="ValueStr" />
+                <ScalarProperty Name="ValueFloat" ColumnName="ValueFloat" />
+                <ScalarProperty Name="ValueBit" ColumnName="ValueBit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sections">
+            <EntityTypeMapping TypeName="Count4UDBModel.Section">
+              <MappingFragment StoreEntitySet="Section">
+                <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SectionCode" ColumnName="SectionCode" />
+				  <ScalarProperty Name="ParentSectionCode" ColumnName="ParentSectionCode" />
+				  <ScalarProperty Name="Tag" ColumnName="Tag" />
+			  </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sessions">
+            <EntityTypeMapping TypeName="Count4UDBModel.Session">
+              <MappingFragment StoreEntitySet="Session">
+                <ScalarProperty Name="SumQuantityEdit" ColumnName="SumQuantityEdit" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PDAID" ColumnName="PDAID" />
+                <ScalarProperty Name="PDADate" ColumnName="PDADate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="WorkerGUID" ColumnName="WorkerGUID" />
+                <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+                <ScalarProperty Name="CountItem" ColumnName="CountItem" />
+                <ScalarProperty Name="CountDocument" ColumnName="CountDocument" />
+                <ScalarProperty Name="CountItur" ColumnName="CountItur" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusDocHeaders">
+            <EntityTypeMapping TypeName="Count4UDBModel.StatusDocHeader">
+              <MappingFragment StoreEntitySet="StatusDocHeader">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Bit" ColumnName="Bit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusInventorConfigs">
+            <EntityTypeMapping TypeName="Count4UDBModel.StatusInventorConfig">
+              <MappingFragment StoreEntitySet="StatusInventorConfig">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Bit" ColumnName="Bit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusInventProducts">
+            <EntityTypeMapping TypeName="Count4UDBModel.StatusInventProduct">
+              <MappingFragment StoreEntitySet="StatusInventProduct">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Bit" ColumnName="Bit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusIturs">
+            <EntityTypeMapping TypeName="Count4UDBModel.StatusItur">
+              <MappingFragment StoreEntitySet="StatusItur">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Bit" ColumnName="Bit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="Count4UDBModel.Supplier">
+              <MappingFragment StoreEntitySet="Supplier">
+                <ScalarProperty Name="PercentArea" ColumnName="PercentArea" />
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="SupplierLevel" ColumnName="SupplierLevel" />
+                <ScalarProperty Name="IturCount" ColumnName="IturCount" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="PlaceCount" ColumnName="PlaceCount" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Types">
+            <EntityTypeMapping TypeName="Count4UDBModel.Type">
+              <MappingFragment StoreEntitySet="Type">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnitTypes">
+            <EntityTypeMapping TypeName="Count4UDBModel.UnitType">
+              <MappingFragment StoreEntitySet="UnitType">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UnitTypeCode" ColumnName="UnitTypeCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Count4UDBIni">
+            <EntityTypeMapping TypeName="Count4UDBModel.Count4UDBIni">
+              <MappingFragment StoreEntitySet="Count4UDBIni">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Ver" ColumnName="Ver" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Family">
+            <EntityTypeMapping TypeName="Count4UDBModel.Family">
+              <MappingFragment StoreEntitySet="Family">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Extra2" ColumnName="Extra2" />
+                <ScalarProperty Name="Extra1" ColumnName="Extra1" />
+                <ScalarProperty Name="Size" ColumnName="Size" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FamilyCode" ColumnName="FamilyCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IturAnalyzes">
+            <EntityTypeMapping TypeName="Count4UDBModel.IturAnalyzes">
+              <MappingFragment StoreEntitySet="IturAnalyzes">
+                <ScalarProperty Name="SubSessionName" ColumnName="SubSessionName" />
+                <ScalarProperty Name="SessionName" ColumnName="SessionName" />
+                <ScalarProperty Name="SubSessionCode" ColumnName="SubSessionCode" />
+                <ScalarProperty Name="IPValueStr20" ColumnName="IPValueStr20" />
+                <ScalarProperty Name="IPValueStr19" ColumnName="IPValueStr19" />
+                <ScalarProperty Name="IPValueStr18" ColumnName="IPValueStr18" />
+                <ScalarProperty Name="IPValueStr17" ColumnName="IPValueStr17" />
+                <ScalarProperty Name="IPValueStr16" ColumnName="IPValueStr16" />
+                <ScalarProperty Name="IPValueStr15" ColumnName="IPValueStr15" />
+                <ScalarProperty Name="IPValueStr14" ColumnName="IPValueStr14" />
+                <ScalarProperty Name="IPValueStr13" ColumnName="IPValueStr13" />
+                <ScalarProperty Name="IPValueStr12" ColumnName="IPValueStr12" />
+                <ScalarProperty Name="IPValueStr11" ColumnName="IPValueStr11" />
+                <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+                <ScalarProperty Name="IturCodeDiffer" ColumnName="IturCodeDiffer" />
+                <ScalarProperty Name="IturCodeExpected" ColumnName="IturCodeExpected" />
+                <ScalarProperty Name="InventorDate" ColumnName="InventorDate" />
+                <ScalarProperty Name="BranchERPCode" ColumnName="BranchERPCode" />
+                <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+                <ScalarProperty Name="InventorName" ColumnName="InventorName" />
+                <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+                <ScalarProperty Name="InventorCode" ColumnName="InventorCode" />
+                <ScalarProperty Name="UnitTypeCode" ColumnName="UnitTypeCode" />
+                <ScalarProperty Name="FamilyExtra2" ColumnName="FamilyExtra2" />
+                <ScalarProperty Name="FamilyExtra1" ColumnName="FamilyExtra1" />
+                <ScalarProperty Name="FamilySize" ColumnName="FamilySize" />
+                <ScalarProperty Name="FamilyType" ColumnName="FamilyType" />
+                <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
+                <ScalarProperty Name="FamilyCode" ColumnName="FamilyCode" />
+                <ScalarProperty Name="PeriodFromTo" ColumnName="PeriodFromTo" />
+                <ScalarProperty Name="TicksTimeSpan" ColumnName="TicksTimeSpan" />
+                <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="WorkerName" ColumnName="WorkerName" />
+                <ScalarProperty Name="WorkerID" ColumnName="WorkerID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="IPValueBit5" ColumnName="IPValueBit5" />
+                <ScalarProperty Name="IPValueBit4" ColumnName="IPValueBit4" />
+                <ScalarProperty Name="IPValueBit3" ColumnName="IPValueBit3" />
+                <ScalarProperty Name="IPValueBit2" ColumnName="IPValueBit2" />
+                <ScalarProperty Name="IPValueBit1" ColumnName="IPValueBit1" />
+                <ScalarProperty Name="IPValueInt5" ColumnName="IPValueInt5" />
+                <ScalarProperty Name="IPValueInt4" ColumnName="IPValueInt4" />
+                <ScalarProperty Name="IPValueInt3" ColumnName="IPValueInt3" />
+                <ScalarProperty Name="IPValueInt2" ColumnName="IPValueInt2" />
+                <ScalarProperty Name="IPValueInt1" ColumnName="IPValueInt1" />
+                <ScalarProperty Name="IPValueFloat5" ColumnName="IPValueFloat5" />
+                <ScalarProperty Name="IPValueFloat4" ColumnName="IPValueFloat4" />
+                <ScalarProperty Name="IPValueFloat3" ColumnName="IPValueFloat3" />
+                <ScalarProperty Name="IPValueFloat2" ColumnName="IPValueFloat2" />
+                <ScalarProperty Name="IPValueFloat1" ColumnName="IPValueFloat1" />
+                <ScalarProperty Name="IPValueStr10" ColumnName="IPValueStr10" />
+                <ScalarProperty Name="IPValueStr9" ColumnName="IPValueStr9" />
+                <ScalarProperty Name="IPValueStr8" ColumnName="IPValueStr8" />
+                <ScalarProperty Name="IPValueStr7" ColumnName="IPValueStr7" />
+                <ScalarProperty Name="IPValueStr6" ColumnName="IPValueStr6" />
+                <ScalarProperty Name="IPValueStr5" ColumnName="IPValueStr5" />
+                <ScalarProperty Name="IPValueStr4" ColumnName="IPValueStr4" />
+                <ScalarProperty Name="IPValueStr3" ColumnName="IPValueStr3" />
+                <ScalarProperty Name="IPValueStr2" ColumnName="IPValueStr2" />
+                <ScalarProperty Name="IPValueStr1" ColumnName="IPValueStr1" />
+                <ScalarProperty Name="QuantityInPackEdit" ColumnName="QuantityInPackEdit" />
+                <ScalarProperty Name="BalanceQuantityPartialERP" ColumnName="BalanceQuantityPartialERP" />
+                <ScalarProperty Name="CountInParentPack" ColumnName="CountInParentPack" />
+                <ScalarProperty Name="ERPIturCode" ColumnName="ERPIturCode" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="SessionNum" ColumnName="SessionNum" />
+                <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+                <ScalarProperty Name="IturName" ColumnName="IturName" />
+                <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="ValueDifferenceOriginalERP" ColumnName="ValueDifferenceOriginalERP" />
+                <ScalarProperty Name="QuantityDifferenceOriginalERP" ColumnName="QuantityDifferenceOriginalERP" />
+                <ScalarProperty Name="ValueOriginalERP" ColumnName="ValueOriginalERP" />
+                <ScalarProperty Name="QuantityOriginalERP" ColumnName="QuantityOriginalERP" />
+                <ScalarProperty Name="ResulteValue" ColumnName="ResulteValue" />
+                <ScalarProperty Name="ImputTypeCodeFromPDA" ColumnName="ImputTypeCodeFromPDA" />
+                <ScalarProperty Name="IsUpdateERP" ColumnName="IsUpdateERP" />
+                <ScalarProperty Name="ResulteDescription" ColumnName="ResulteDescription" />
+                <ScalarProperty Name="ResultCode" ColumnName="ResultCode" />
+                <ScalarProperty Name="IsResulte" ColumnName="IsResulte" />
+                <ScalarProperty Name="ValueFloat" ColumnName="ValueFloat" />
+                <ScalarProperty Name="ValueInt" ColumnName="ValueInt" />
+                <ScalarProperty Name="ValueChar" ColumnName="ValueChar" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+                <ScalarProperty Name="PDA_ID" ColumnName="PDA_ID" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="IPNum" ColumnName="IPNum" />
+                <ScalarProperty Name="InputTypeCode" ColumnName="InputTypeCode" />
+                <ScalarProperty Name="TypeMakat" ColumnName="TypeMakat" />
+                <ScalarProperty Name="ShelfCode" ColumnName="ShelfCode" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="Makat" ColumnName="Makat" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="QuantityOriginal" ColumnName="QuantityOriginal" />
+                <ScalarProperty Name="ValueBuyQriginal" ColumnName="ValueBuyQriginal" />
+                <ScalarProperty Name="QuantityEdit" ColumnName="QuantityEdit" />
+                <ScalarProperty Name="ValueBuyEdit" ColumnName="ValueBuyEdit" />
+                <ScalarProperty Name="QuantityDifference" ColumnName="QuantityDifference" />
+                <ScalarProperty Name="ValueBuyDifference" ColumnName="ValueBuyDifference" />
+                <ScalarProperty Name="SectionNum" ColumnName="SectionNum" />
+                <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+                <ScalarProperty Name="FromCatalogType" ColumnName="FromCatalogType" />
+                <ScalarProperty Name="ERPType" ColumnName="ERPType" />
+                <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+                <ScalarProperty Name="SectionCode" ColumnName="SectionCode" />
+                <ScalarProperty Name="IturCode" ColumnName="IturCode" />
+                <ScalarProperty Name="DocumentCode" ColumnName="DocumentCode" />
+                <ScalarProperty Name="PriceExtra" ColumnName="PriceExtra" />
+                <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
+                <ScalarProperty Name="PriceBuy" ColumnName="PriceBuy" />
+                <ScalarProperty Name="PriceString" ColumnName="PriceString" />
+                <ScalarProperty Name="MakatOriginal" ColumnName="MakatOriginal" />
+                <ScalarProperty Name="BarcodeOriginal" ColumnName="BarcodeOriginal" />
+                <ScalarProperty Name="DocumentHeaderCode" ColumnName="DocumentHeaderCode" />
+                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="PDA_StatusInventProductBit" ColumnName="PDA_StatusInventProductBit" />
+                <ScalarProperty Name="Doc_StatusApproveBit" ColumnName="Doc_StatusApproveBit" />
+                <ScalarProperty Name="Doc_StatusInventProductBit" ColumnName="Doc_StatusInventProductBit" />
+                <ScalarProperty Name="Doc_StatusDocHeaderBit" ColumnName="Doc_StatusDocHeaderBit" />
+                <ScalarProperty Name="Doc_WorkerGUID" ColumnName="Doc_WorkerGUID" />
+                <ScalarProperty Name="Doc_Approve" ColumnName="Doc_Approve" />
+                <ScalarProperty Name="Doc_Name" ColumnName="Doc_Name" />
+                <ScalarProperty Name="Itur_StatusDocHeaderBit" ColumnName="Itur_StatusDocHeaderBit" />
+                <ScalarProperty Name="Itur_StatusIturGroupBit" ColumnName="Itur_StatusIturGroupBit" />
+                <ScalarProperty Name="Itur_LocationCode" ColumnName="Itur_LocationCode" />
+                <ScalarProperty Name="Itur_NumberSufix" ColumnName="Itur_NumberSufix" />
+                <ScalarProperty Name="Itur_NumberPrefix" ColumnName="Itur_NumberPrefix" />
+                <ScalarProperty Name="Itur_Number" ColumnName="Itur_Number" />
+                <ScalarProperty Name="Itur_StatusIturBit" ColumnName="Itur_StatusIturBit" />
+                <ScalarProperty Name="Itur_Publishe" ColumnName="Itur_Publishe" />
+                <ScalarProperty Name="Itur_Disabled" ColumnName="Itur_Disabled" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnitPlan">
+            <EntityTypeMapping TypeName="Count4UDBModel.UnitPlan">
+              <MappingFragment StoreEntitySet="UnitPlan">
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Tooltip" ColumnName="Tooltip" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+                <ScalarProperty Name="Font" ColumnName="Font" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="FontSize" ColumnName="FontSize" />
+                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+                <ScalarProperty Name="Picture" ColumnName="Picture" />
+                <ScalarProperty Name="ZIndex" ColumnName="ZIndex" />
+                <ScalarProperty Name="Lock" ColumnName="Lock" />
+                <ScalarProperty Name="StatusGroupUnitPlanBit" ColumnName="StatusGroupUnitPlanBit" />
+                <ScalarProperty Name="StatusUnitPlanBit" ColumnName="StatusUnitPlanBit" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Rotate" ColumnName="Rotate" />
+                <ScalarProperty Name="Zoom" ColumnName="Zoom" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="StartY" ColumnName="StartY" />
+                <ScalarProperty Name="StartX" ColumnName="StartX" />
+                <ScalarProperty Name="ParentCode" ColumnName="ParentCode" />
+                <ScalarProperty Name="Visible" ColumnName="Visible" />
+                <ScalarProperty Name="Container" ColumnName="Container" />
+                <ScalarProperty Name="ObjectCode" ColumnName="ObjectCode" />
+                <ScalarProperty Name="LayerCode" ColumnName="LayerCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UnitPlanCode" ColumnName="UnitPlanCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UnitPlanValue">
+            <EntityTypeMapping TypeName="Count4UDBModel.UnitPlanValue">
+              <MappingFragment StoreEntitySet="UnitPlanValue">
+                <ScalarProperty Name="UnitPalnGroupStatusBit" ColumnName="UnitPalnGroupStatusBit" />
+                <ScalarProperty Name="UnitPlanStatusBit" ColumnName="UnitPlanStatusBit" />
+                <ScalarProperty Name="StatusGroupUnitPlanBit" ColumnName="StatusGroupUnitPlanBit" />
+                <ScalarProperty Name="StatusUnitPlanBit" ColumnName="StatusUnitPlanBit" />
+                <ScalarProperty Name="DiffQuantityEdit" ColumnName="DiffQuantityEdit" />
+                <ScalarProperty Name="SumQuantityEdit" ColumnName="SumQuantityEdit" />
+                <ScalarProperty Name="TotalItem" ColumnName="TotalItem" />
+                <ScalarProperty Name="Done" ColumnName="Done" />
+                <ScalarProperty Name="DoneItur" ColumnName="DoneItur" />
+                <ScalarProperty Name="TotalItur" ColumnName="TotalItur" />
+                <ScalarProperty Name="UnitPlanCode" ColumnName="UnitPlanCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DocumentHeaders">
+            <EntityTypeMapping TypeName="Count4UDBModel.DocumentHeader">
+              <MappingFragment StoreEntitySet="DocumentHeader">
+                <ScalarProperty Name="PeriodFromTo" ColumnName="PeriodFromTo" />
+                <ScalarProperty Name="TicksTimeSpan" ColumnName="TicksTimeSpan" />
+                <ScalarProperty Name="ToTime" ColumnName="ToTime" />
+                <ScalarProperty Name="FromTime" ColumnName="FromTime" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="QuantityEdit" ColumnName="QuantityEdit" />
+                <ScalarProperty Name="RestoreBit" ColumnName="RestoreBit" />
+                <ScalarProperty Name="Restore" ColumnName="Restore" />
+                <ScalarProperty Name="DocNum" ColumnName="DocNum" />
+                <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="StatusApproveBit" ColumnName="StatusApproveBit" />
+                <ScalarProperty Name="StatusInventProductBit" ColumnName="StatusInventProductBit" />
+                <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+                <ScalarProperty Name="DocumentCode" ColumnName="DocumentCode" />
+                <ScalarProperty Name="StatusDocHeaderBit" ColumnName="StatusDocHeaderBit" />
+                <ScalarProperty Name="StatusDocHeaderCode" ColumnName="StatusDocHeaderCode" />
+                <ScalarProperty Name="WorkerGUID" ColumnName="WorkerGUID" />
+                <ScalarProperty Name="IturCode" ColumnName="IturCode" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Approve" ColumnName="Approve" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="Count4UDBModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="SubSectionName" ColumnName="SubSectionName" />
+                <ScalarProperty Name="SubSectionCode" ColumnName="SubSectionCode" />
+                <ScalarProperty Name="SectionName" ColumnName="SectionName" />
+                <ScalarProperty Name="IturCodeExpected" ColumnName="IturCodeExpected" />
+                <ScalarProperty Name="FamilyCode" ColumnName="FamilyCode" />
+                <ScalarProperty Name="BalanceQuantityPartialERP" ColumnName="BalanceQuantityPartialERP" />
+                <ScalarProperty Name="CountInParentPack" ColumnName="CountInParentPack" />
+                <ScalarProperty Name="IsUpdateERP" ColumnName="IsUpdateERP" />
+                <ScalarProperty Name="FromCatalogType" ColumnName="FromCatalogType" />
+                <ScalarProperty Name="MakatOriginal" ColumnName="MakatOriginal" />
+                <ScalarProperty Name="ParentMakat" ColumnName="ParentMakat" />
+                <ScalarProperty Name="ParserBag" ColumnName="ParserBag" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ModifyDate" ColumnName="ModifyDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+                <ScalarProperty Name="InputTypeCode" ColumnName="InputTypeCode" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="SectionCode" ColumnName="SectionCode" />
+                <ScalarProperty Name="UnitTypeCode" ColumnName="UnitTypeCode" />
+                <ScalarProperty Name="BalanceQuantityERP" ColumnName="BalanceQuantityERP" />
+                <ScalarProperty Name="Family" ColumnName="Family" />
+                <ScalarProperty Name="PriceExtra" ColumnName="PriceExtra" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PriceString" ColumnName="PriceString" />
+                <ScalarProperty Name="CountMax" ColumnName="CountMax" />
+                <ScalarProperty Name="CountMin" ColumnName="CountMin" />
+                <ScalarProperty Name="MakatERP" ColumnName="MakatERP" />
+                <ScalarProperty Name="Importance" ColumnName="Importance" />
+                <ScalarProperty Name="PriceBuy" ColumnName="PriceBuy" />
+                <ScalarProperty Name="PriceSale" ColumnName="PriceSale" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Makat" ColumnName="Makat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Shelf">
+            <EntityTypeMapping TypeName="Count4UDBModel.Shelf">
+              <MappingFragment StoreEntitySet="Shelf">
+                <ScalarProperty Name="Area" ColumnName="Area" />
+                <ScalarProperty Name="Height" ColumnName="Height" />
+                <ScalarProperty Name="Width" ColumnName="Width" />
+                <ScalarProperty Name="ShelfNum" ColumnName="ShelfNum" />
+                <ScalarProperty Name="ShelfPartCode" ColumnName="ShelfPartCode" />
+                <ScalarProperty Name="CreateDataTime" ColumnName="CreateDataTime" />
+                <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+                <ScalarProperty Name="ShelfCode" ColumnName="ShelfCode" />
+                <ScalarProperty Name="SupplierCode" ColumnName="SupplierCode" />
+                <ScalarProperty Name="IturCode" ColumnName="IturCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Devices">
+            <EntityTypeMapping TypeName="Count4UDBModel.Device">
+              <MappingFragment StoreEntitySet="Device">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LicenseDate" ColumnName="LicenseDate" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="DeviceCode" ColumnName="DeviceCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyStrs">
+            <EntityTypeMapping TypeName="Count4UDBModel.PropertyStr">
+              <MappingFragment StoreEntitySet="PropertyStr">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="DomainObject" ColumnName="DomainObject" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PropertyStrCode" ColumnName="PropertyStrCode" />
+                <ScalarProperty Name="TypeCode" ColumnName="TypeCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PropertyStrToObjects">
+            <EntityTypeMapping TypeName="Count4UDBModel.PropertyStrToObject">
+              <MappingFragment StoreEntitySet="PropertyStrToObject">
+                <ScalarProperty Name="DomainObject" ColumnName="DomainObject" />
+                <ScalarProperty Name="ObjectCode" ColumnName="ObjectCode" />
+                <ScalarProperty Name="PropertyStrCode" ColumnName="PropertyStrCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer>
+    <edmx:Connection>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <edmx:DesignerInfoPropertySet>
+        <edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <edmx:DesignerProperty Name="EnablePluralization" Value="False" />
+        <edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <edmx:DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </edmx:DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams />
+  </edmx:Designer>
+</edmx:Edmx>

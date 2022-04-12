@@ -1,0 +1,933 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProcessDBModel.Store" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AnalyticDBIni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ver" Type="nvarchar" MaxLength="10" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="CurrentInventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Uid" Type="nvarchar" MaxLength="250" />
+          <Property Name="SerialNumberLocal" Type="nvarchar" MaxLength="250" />
+          <Property Name="ItemCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SerialNumberSupplier" Type="nvarchar" MaxLength="250" />
+          <Property Name="Quantity" Type="nvarchar" MaxLength="50" />
+          <Property Name="PropertyStr1" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr2" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr3" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr4" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr5" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr6" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr7" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr8" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr9" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr10" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr11" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr12" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr13" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr14" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr15" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr16" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr17" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr18" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr19" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr20" Type="nvarchar" MaxLength="100" />
+          <Property Name="LocationCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="DateModified" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemStatus" Type="nvarchar" MaxLength="250" />
+          <Property Name="ItemType" Type="nvarchar" MaxLength="250" />
+          <Property Name="UnitTypeCode" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="CurrentInventoryAdvanced">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Uid" Type="nvarchar" MaxLength="250" />
+          <Property Name="SerialNumberLocal" Type="nvarchar" MaxLength="250" />
+          <Property Name="ItemCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="DomainObject" Type="nvarchar" MaxLength="50" />
+          <Property Name="Table" Type="nvarchar" MaxLength="50" />
+          <Property Name="Adapter" Type="nvarchar" MaxLength="50" />
+          <Property Name="SerialNumberSupplier" Type="nvarchar" MaxLength="250" />
+          <Property Name="Quantity" Type="nvarchar" MaxLength="50" />
+          <Property Name="QuantityDouble" Type="float" />
+          <Property Name="PropertyStr1" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr1Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr1Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr2" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr2Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr2Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr3" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr3Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr3Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr4" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr4Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr4Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr5" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr5Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr5Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr6" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr6Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr6Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr7" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr7Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr7Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr8" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr8Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr8Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr9" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr9Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr9Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr10" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr10Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr10Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr11" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr11Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr11Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr12" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr12Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr12Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr13" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr13Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr13Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr14" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr14Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr14Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr15" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr15Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr15Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr16" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr16Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr16Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr17" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr17Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr17Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr18" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr18Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr18Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr19" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr19Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr19Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr20" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr20Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr20Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion1" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion2" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion3" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion4" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion5" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion6" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion7" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion8" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion9" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion10" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion11" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion12" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion13" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion14" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion15" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion16" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion17" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion18" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion19" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion20" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion21" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion22" Type="nvarchar" MaxLength="100" />
+          <Property Name="LocationCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="LocationDescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="LocationLevel1Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationLevel1Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="LocationLevel2Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationLevel2Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="LocationLevel3Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationLevel3Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="LocationLevel4Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationLevel4Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="LocationInvStatus" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationNodeType" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationLevelNum" Type="nvarchar" MaxLength="50" />
+          <Property Name="LocationTotal" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateModified" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemStatus" Type="nvarchar" MaxLength="250" />
+          <Property Name="ItemType" Type="nvarchar" MaxLength="250" />
+          <Property Name="UnitTypeCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="CatalogItemCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatalogItemName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CatalogItemType" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatalogFamilyCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatalogFamilyName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CatalogSectionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatalogSectionName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CatalogSubSectionCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatalogSubSectionName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CatalogPriceBuy" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatalogPriceSell" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatalogSupplierCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatalogSupplierName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CatalogUnitTypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CatalogDescription" Type="nvarchar" MaxLength="100" />
+          <Property Name="TemporaryOldUid" Type="nvarchar" MaxLength="250" />
+          <Property Name="TemporaryNewUid" Type="nvarchar" MaxLength="250" />
+          <Property Name="TemporaryOldSerialNumber" Type="nvarchar" MaxLength="250" />
+          <Property Name="TemporaryOldItemCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="TemporaryOldLocationCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="TemporaryOldKey" Type="nvarchar" MaxLength="250" />
+          <Property Name="TemporaryNewSerialNumber" Type="nvarchar" MaxLength="250" />
+          <Property Name="TemporaryNewItemCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="TemporaryNewLocationCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="TemporaryNewKey" Type="nvarchar" MaxLength="250" />
+          <Property Name="TemporaryDateModified" Type="nvarchar" MaxLength="50" />
+          <Property Name="TemporaryOperation" Type="nvarchar" MaxLength="50" />
+          <Property Name="TemporaryDevice" Type="nvarchar" MaxLength="50" />
+          <Property Name="TemporaryDbFileName" Type="nvarchar" MaxLength="50" />
+          <Property Name="IturCode" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="PreviousInventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Uid" Type="nvarchar" MaxLength="250" />
+          <Property Name="SerialNumberLocal" Type="nvarchar" MaxLength="250" />
+          <Property Name="ItemCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="SerialNumberSupplier" Type="nvarchar" MaxLength="250" />
+          <Property Name="Quantity" Type="nvarchar" MaxLength="50" />
+          <Property Name="PropertyStr1" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr2" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr3" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr4" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr5" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr6" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr7" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr8" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr9" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr10" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr11" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr12" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr13" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr14" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr15" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr16" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr17" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr18" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr19" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropertyStr20" Type="nvarchar" MaxLength="100" />
+          <Property Name="LocationCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="DateModified" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateCreated" Type="nvarchar" MaxLength="50" />
+          <Property Name="PropExtenstion1" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion2" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion3" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion4" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion5" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion6" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion7" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion8" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion9" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion10" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion11" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion12" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion13" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion14" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion15" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion16" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion17" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion18" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion19" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion20" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion21" Type="nvarchar" MaxLength="100" />
+          <Property Name="PropExtenstion22" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TemplateInventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Uid" Type="nvarchar" MaxLength="250" />
+          <Property Name="Level1Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level2Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level3Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level4Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="ItemCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="QuantityExpected" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="250" />
+          <Property Name="Domain" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TemporaryInventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="50" />
+          <Property Name="Domain" Type="nvarchar" MaxLength="50" />
+          <Property Name="OldUid" Type="nvarchar" MaxLength="250" />
+          <Property Name="NewUid" Type="nvarchar" MaxLength="250" />
+          <Property Name="OldSerialNumber" Type="nvarchar" MaxLength="250" />
+          <Property Name="OldItemCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="OldLocationCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="OldProductCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="OldKey" Type="nvarchar" MaxLength="250" />
+          <Property Name="NewSerialNumber" Type="nvarchar" MaxLength="250" />
+          <Property Name="NewItemCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="NewLocationCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="NewProductCode" Type="nvarchar" MaxLength="250" />
+          <Property Name="NewKey" Type="nvarchar" MaxLength="250" />
+          <Property Name="DateModified" Type="nvarchar" MaxLength="50" />
+          <Property Name="Device" Type="nvarchar" MaxLength="50" />
+          <Property Name="DbFileName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="250" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityContainer Name="ProcessDBModelStoreContainer">
+          <EntitySet Name="AnalyticDBIni" EntityType="Self.AnalyticDBIni" store:Type="Tables" />
+          <EntitySet Name="CurrentInventory" EntityType="Self.CurrentInventory" store:Type="Tables" />
+          <EntitySet Name="CurrentInventoryAdvanced" EntityType="Self.CurrentInventoryAdvanced" store:Type="Tables" />
+          <EntitySet Name="PreviousInventory" EntityType="Self.PreviousInventory" store:Type="Tables" />
+          <EntitySet Name="TemplateInventory" EntityType="Self.TemplateInventory" store:Type="Tables" />
+          <EntitySet Name="TemporaryInventory" EntityType="Self.TemporaryInventory" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AnalyticDBModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="AnalyticDB" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="AnalyticDBIni" EntityType="AnalyticDBModel.AnalyticDBIni" />
+          <EntitySet Name="CurrentInventory" EntityType="AnalyticDBModel.CurrentInventory" />
+          <EntitySet Name="CurrentInventoryAdvanced" EntityType="AnalyticDBModel.CurrentInventoryAdvanced" />
+          <EntitySet Name="PreviousInventory" EntityType="AnalyticDBModel.PreviousInventory" />
+          <EntitySet Name="TemplateInventory" EntityType="AnalyticDBModel.TemplateInventory" />
+          <EntitySet Name="TemporaryInventory" EntityType="AnalyticDBModel.TemporaryInventory" />
+	       </EntityContainer>
+        <EntityType Name="AnalyticDBIni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ver" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CurrentInventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Uid" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumberLocal" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ItemCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumberSupplier" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr6" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr7" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr8" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr9" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr10" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr11" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr12" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr13" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr14" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr15" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr16" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr17" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr18" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr19" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr20" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LocationCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DateModified" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItemStatus" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ItemType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UnitTypeCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CurrentInventoryAdvanced">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Uid" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumberLocal" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ItemCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DomainObject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Table" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Adapter" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumberSupplier" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QuantityDouble" Type="Double" />
+          <Property Name="PropertyStr1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr1Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr1Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr2Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr2Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr3Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr3Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr4Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr4Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr5Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr5Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr6" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr6Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr6Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr7" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr7Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr7Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr8" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr8Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr8Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr9" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr9Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr9Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr10" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr10Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr10Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr11" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr11Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr11Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr12" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr12Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr12Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr13" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr13Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr13Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr14" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr14Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr14Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr15" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr15Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr15Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr16" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr16Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr16Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr17" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr17Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr17Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr18" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr18Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr18Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr19" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr19Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr19Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr20" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr20Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr20Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion6" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion7" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion8" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion9" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion10" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion11" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion12" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion13" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion14" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion15" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion16" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion17" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion18" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion19" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion20" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion21" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion22" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LocationCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="LocationDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="LocationLevel1Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationLevel1Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="LocationLevel2Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationLevel2Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="LocationLevel3Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationLevel3Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="LocationLevel4Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationLevel4Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="LocationInvStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationNodeType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationLevelNum" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LocationTotal" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateModified" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItemStatus" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ItemType" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="UnitTypeCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogItemCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogItemName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogItemType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogFamilyCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogFamilyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogSectionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogSectionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogSubSectionCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogSubSectionName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogPriceBuy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogPriceSell" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogSupplierCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogSupplierName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogUnitTypeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CatalogDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryOldUid" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryNewUid" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryOldSerialNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryOldItemCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryOldLocationCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryOldKey" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryNewSerialNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryNewItemCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryNewLocationCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryNewKey" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryDateModified" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryOperation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryDevice" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TemporaryDbFileName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IturCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PreviousInventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Uid" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumberLocal" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="ItemCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumberSupplier" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Quantity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr6" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr7" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr8" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr9" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr10" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr11" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr12" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr13" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr14" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr15" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr16" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr17" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr18" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr19" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropertyStr20" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LocationCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DateModified" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateCreated" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion3" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion4" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion5" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion6" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion7" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion8" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion9" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion10" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion11" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion12" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion13" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion14" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion15" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion16" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion17" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion18" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion19" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion20" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion21" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PropExtenstion22" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TemplateInventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Uid" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Level1Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level2Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level3Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level4Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ItemCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="QuantityExpected" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Domain" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TemporaryInventory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Domain" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OldUid" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NewUid" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OldSerialNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OldItemCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OldLocationCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OldProductCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="OldKey" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NewSerialNumber" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NewItemCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NewLocationCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NewProductCode" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="NewKey" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="DateModified" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Device" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DbFileName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProcessDBModelStoreContainer" CdmEntityContainer="AnalyticDB">
+          <EntitySetMapping Name="AnalyticDBIni">
+            <EntityTypeMapping TypeName="AnalyticDBModel.AnalyticDBIni">
+              <MappingFragment StoreEntitySet="AnalyticDBIni">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Ver" ColumnName="Ver" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurrentInventory">
+            <EntityTypeMapping TypeName="AnalyticDBModel.CurrentInventory">
+              <MappingFragment StoreEntitySet="CurrentInventory">
+                <ScalarProperty Name="UnitTypeCode" ColumnName="UnitTypeCode" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="ItemStatus" ColumnName="ItemStatus" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+                <ScalarProperty Name="PropertyStr20" ColumnName="PropertyStr20" />
+                <ScalarProperty Name="PropertyStr19" ColumnName="PropertyStr19" />
+                <ScalarProperty Name="PropertyStr18" ColumnName="PropertyStr18" />
+                <ScalarProperty Name="PropertyStr17" ColumnName="PropertyStr17" />
+                <ScalarProperty Name="PropertyStr16" ColumnName="PropertyStr16" />
+                <ScalarProperty Name="PropertyStr15" ColumnName="PropertyStr15" />
+                <ScalarProperty Name="PropertyStr14" ColumnName="PropertyStr14" />
+                <ScalarProperty Name="PropertyStr13" ColumnName="PropertyStr13" />
+                <ScalarProperty Name="PropertyStr12" ColumnName="PropertyStr12" />
+                <ScalarProperty Name="PropertyStr11" ColumnName="PropertyStr11" />
+                <ScalarProperty Name="PropertyStr10" ColumnName="PropertyStr10" />
+                <ScalarProperty Name="PropertyStr9" ColumnName="PropertyStr9" />
+                <ScalarProperty Name="PropertyStr8" ColumnName="PropertyStr8" />
+                <ScalarProperty Name="PropertyStr7" ColumnName="PropertyStr7" />
+                <ScalarProperty Name="PropertyStr6" ColumnName="PropertyStr6" />
+                <ScalarProperty Name="PropertyStr5" ColumnName="PropertyStr5" />
+                <ScalarProperty Name="PropertyStr4" ColumnName="PropertyStr4" />
+                <ScalarProperty Name="PropertyStr3" ColumnName="PropertyStr3" />
+                <ScalarProperty Name="PropertyStr2" ColumnName="PropertyStr2" />
+                <ScalarProperty Name="PropertyStr1" ColumnName="PropertyStr1" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="SerialNumberSupplier" ColumnName="SerialNumberSupplier" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="SerialNumberLocal" ColumnName="SerialNumberLocal" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CurrentInventoryAdvanced">
+            <EntityTypeMapping TypeName="AnalyticDBModel.CurrentInventoryAdvanced">
+              <MappingFragment StoreEntitySet="CurrentInventoryAdvanced">
+                <ScalarProperty Name="IturCode" ColumnName="IturCode" />
+                <ScalarProperty Name="TemporaryDbFileName" ColumnName="TemporaryDbFileName" />
+                <ScalarProperty Name="TemporaryDevice" ColumnName="TemporaryDevice" />
+                <ScalarProperty Name="TemporaryOperation" ColumnName="TemporaryOperation" />
+                <ScalarProperty Name="TemporaryDateModified" ColumnName="TemporaryDateModified" />
+                <ScalarProperty Name="TemporaryNewKey" ColumnName="TemporaryNewKey" />
+                <ScalarProperty Name="TemporaryNewLocationCode" ColumnName="TemporaryNewLocationCode" />
+                <ScalarProperty Name="TemporaryNewItemCode" ColumnName="TemporaryNewItemCode" />
+                <ScalarProperty Name="TemporaryNewSerialNumber" ColumnName="TemporaryNewSerialNumber" />
+                <ScalarProperty Name="TemporaryOldKey" ColumnName="TemporaryOldKey" />
+                <ScalarProperty Name="TemporaryOldLocationCode" ColumnName="TemporaryOldLocationCode" />
+                <ScalarProperty Name="TemporaryOldItemCode" ColumnName="TemporaryOldItemCode" />
+                <ScalarProperty Name="TemporaryOldSerialNumber" ColumnName="TemporaryOldSerialNumber" />
+                <ScalarProperty Name="TemporaryNewUid" ColumnName="TemporaryNewUid" />
+                <ScalarProperty Name="TemporaryOldUid" ColumnName="TemporaryOldUid" />
+                <ScalarProperty Name="CatalogDescription" ColumnName="CatalogDescription" />
+                <ScalarProperty Name="CatalogUnitTypeCode" ColumnName="CatalogUnitTypeCode" />
+                <ScalarProperty Name="CatalogSupplierName" ColumnName="CatalogSupplierName" />
+                <ScalarProperty Name="CatalogSupplierCode" ColumnName="CatalogSupplierCode" />
+                <ScalarProperty Name="CatalogPriceSell" ColumnName="CatalogPriceSell" />
+                <ScalarProperty Name="CatalogPriceBuy" ColumnName="CatalogPriceBuy" />
+                <ScalarProperty Name="CatalogSubSectionName" ColumnName="CatalogSubSectionName" />
+                <ScalarProperty Name="CatalogSubSectionCode" ColumnName="CatalogSubSectionCode" />
+                <ScalarProperty Name="CatalogSectionName" ColumnName="CatalogSectionName" />
+                <ScalarProperty Name="CatalogSectionCode" ColumnName="CatalogSectionCode" />
+                <ScalarProperty Name="CatalogFamilyName" ColumnName="CatalogFamilyName" />
+                <ScalarProperty Name="CatalogFamilyCode" ColumnName="CatalogFamilyCode" />
+                <ScalarProperty Name="CatalogItemType" ColumnName="CatalogItemType" />
+                <ScalarProperty Name="CatalogItemName" ColumnName="CatalogItemName" />
+                <ScalarProperty Name="CatalogItemCode" ColumnName="CatalogItemCode" />
+                <ScalarProperty Name="UnitTypeCode" ColumnName="UnitTypeCode" />
+                <ScalarProperty Name="ItemType" ColumnName="ItemType" />
+                <ScalarProperty Name="ItemStatus" ColumnName="ItemStatus" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="LocationTotal" ColumnName="LocationTotal" />
+                <ScalarProperty Name="LocationLevelNum" ColumnName="LocationLevelNum" />
+                <ScalarProperty Name="LocationNodeType" ColumnName="LocationNodeType" />
+                <ScalarProperty Name="LocationInvStatus" ColumnName="LocationInvStatus" />
+                <ScalarProperty Name="LocationLevel4Name" ColumnName="LocationLevel4Name" />
+                <ScalarProperty Name="LocationLevel4Code" ColumnName="LocationLevel4Code" />
+                <ScalarProperty Name="LocationLevel3Name" ColumnName="LocationLevel3Name" />
+                <ScalarProperty Name="LocationLevel3Code" ColumnName="LocationLevel3Code" />
+                <ScalarProperty Name="LocationLevel2Name" ColumnName="LocationLevel2Name" />
+                <ScalarProperty Name="LocationLevel2Code" ColumnName="LocationLevel2Code" />
+                <ScalarProperty Name="LocationLevel1Name" ColumnName="LocationLevel1Name" />
+                <ScalarProperty Name="LocationLevel1Code" ColumnName="LocationLevel1Code" />
+                <ScalarProperty Name="LocationDescription" ColumnName="LocationDescription" />
+                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+                <ScalarProperty Name="PropExtenstion22" ColumnName="PropExtenstion22" />
+                <ScalarProperty Name="PropExtenstion21" ColumnName="PropExtenstion21" />
+                <ScalarProperty Name="PropExtenstion20" ColumnName="PropExtenstion20" />
+                <ScalarProperty Name="PropExtenstion19" ColumnName="PropExtenstion19" />
+                <ScalarProperty Name="PropExtenstion18" ColumnName="PropExtenstion18" />
+                <ScalarProperty Name="PropExtenstion17" ColumnName="PropExtenstion17" />
+                <ScalarProperty Name="PropExtenstion16" ColumnName="PropExtenstion16" />
+                <ScalarProperty Name="PropExtenstion15" ColumnName="PropExtenstion15" />
+                <ScalarProperty Name="PropExtenstion14" ColumnName="PropExtenstion14" />
+                <ScalarProperty Name="PropExtenstion13" ColumnName="PropExtenstion13" />
+                <ScalarProperty Name="PropExtenstion12" ColumnName="PropExtenstion12" />
+                <ScalarProperty Name="PropExtenstion11" ColumnName="PropExtenstion11" />
+                <ScalarProperty Name="PropExtenstion10" ColumnName="PropExtenstion10" />
+                <ScalarProperty Name="PropExtenstion9" ColumnName="PropExtenstion9" />
+                <ScalarProperty Name="PropExtenstion8" ColumnName="PropExtenstion8" />
+                <ScalarProperty Name="PropExtenstion7" ColumnName="PropExtenstion7" />
+                <ScalarProperty Name="PropExtenstion6" ColumnName="PropExtenstion6" />
+                <ScalarProperty Name="PropExtenstion5" ColumnName="PropExtenstion5" />
+                <ScalarProperty Name="PropExtenstion4" ColumnName="PropExtenstion4" />
+                <ScalarProperty Name="PropExtenstion3" ColumnName="PropExtenstion3" />
+                <ScalarProperty Name="PropExtenstion2" ColumnName="PropExtenstion2" />
+                <ScalarProperty Name="PropExtenstion1" ColumnName="PropExtenstion1" />
+                <ScalarProperty Name="PropertyStr20Name" ColumnName="PropertyStr20Name" />
+                <ScalarProperty Name="PropertyStr20Code" ColumnName="PropertyStr20Code" />
+                <ScalarProperty Name="PropertyStr20" ColumnName="PropertyStr20" />
+                <ScalarProperty Name="PropertyStr19Name" ColumnName="PropertyStr19Name" />
+                <ScalarProperty Name="PropertyStr19Code" ColumnName="PropertyStr19Code" />
+                <ScalarProperty Name="PropertyStr19" ColumnName="PropertyStr19" />
+                <ScalarProperty Name="PropertyStr18Name" ColumnName="PropertyStr18Name" />
+                <ScalarProperty Name="PropertyStr18Code" ColumnName="PropertyStr18Code" />
+                <ScalarProperty Name="PropertyStr18" ColumnName="PropertyStr18" />
+                <ScalarProperty Name="PropertyStr17Name" ColumnName="PropertyStr17Name" />
+                <ScalarProperty Name="PropertyStr17Code" ColumnName="PropertyStr17Code" />
+                <ScalarProperty Name="PropertyStr17" ColumnName="PropertyStr17" />
+                <ScalarProperty Name="PropertyStr16Name" ColumnName="PropertyStr16Name" />
+                <ScalarProperty Name="PropertyStr16Code" ColumnName="PropertyStr16Code" />
+                <ScalarProperty Name="PropertyStr16" ColumnName="PropertyStr16" />
+                <ScalarProperty Name="PropertyStr15Name" ColumnName="PropertyStr15Name" />
+                <ScalarProperty Name="PropertyStr15Code" ColumnName="PropertyStr15Code" />
+                <ScalarProperty Name="PropertyStr15" ColumnName="PropertyStr15" />
+                <ScalarProperty Name="PropertyStr14Name" ColumnName="PropertyStr14Name" />
+                <ScalarProperty Name="PropertyStr14Code" ColumnName="PropertyStr14Code" />
+                <ScalarProperty Name="PropertyStr14" ColumnName="PropertyStr14" />
+                <ScalarProperty Name="PropertyStr13Name" ColumnName="PropertyStr13Name" />
+                <ScalarProperty Name="PropertyStr13Code" ColumnName="PropertyStr13Code" />
+                <ScalarProperty Name="PropertyStr13" ColumnName="PropertyStr13" />
+                <ScalarProperty Name="PropertyStr12Name" ColumnName="PropertyStr12Name" />
+                <ScalarProperty Name="PropertyStr12Code" ColumnName="PropertyStr12Code" />
+                <ScalarProperty Name="PropertyStr12" ColumnName="PropertyStr12" />
+                <ScalarProperty Name="PropertyStr11Name" ColumnName="PropertyStr11Name" />
+                <ScalarProperty Name="PropertyStr11Code" ColumnName="PropertyStr11Code" />
+                <ScalarProperty Name="PropertyStr11" ColumnName="PropertyStr11" />
+                <ScalarProperty Name="PropertyStr10Name" ColumnName="PropertyStr10Name" />
+                <ScalarProperty Name="PropertyStr10Code" ColumnName="PropertyStr10Code" />
+                <ScalarProperty Name="PropertyStr10" ColumnName="PropertyStr10" />
+                <ScalarProperty Name="PropertyStr9Name" ColumnName="PropertyStr9Name" />
+                <ScalarProperty Name="PropertyStr9Code" ColumnName="PropertyStr9Code" />
+                <ScalarProperty Name="PropertyStr9" ColumnName="PropertyStr9" />
+                <ScalarProperty Name="PropertyStr8Name" ColumnName="PropertyStr8Name" />
+                <ScalarProperty Name="PropertyStr8Code" ColumnName="PropertyStr8Code" />
+                <ScalarProperty Name="PropertyStr8" ColumnName="PropertyStr8" />
+                <ScalarProperty Name="PropertyStr7Name" ColumnName="PropertyStr7Name" />
+                <ScalarProperty Name="PropertyStr7Code" ColumnName="PropertyStr7Code" />
+                <ScalarProperty Name="PropertyStr7" ColumnName="PropertyStr7" />
+                <ScalarProperty Name="PropertyStr6Name" ColumnName="PropertyStr6Name" />
+                <ScalarProperty Name="PropertyStr6Code" ColumnName="PropertyStr6Code" />
+                <ScalarProperty Name="PropertyStr6" ColumnName="PropertyStr6" />
+                <ScalarProperty Name="PropertyStr5Name" ColumnName="PropertyStr5Name" />
+                <ScalarProperty Name="PropertyStr5Code" ColumnName="PropertyStr5Code" />
+                <ScalarProperty Name="PropertyStr5" ColumnName="PropertyStr5" />
+                <ScalarProperty Name="PropertyStr4Name" ColumnName="PropertyStr4Name" />
+                <ScalarProperty Name="PropertyStr4Code" ColumnName="PropertyStr4Code" />
+                <ScalarProperty Name="PropertyStr4" ColumnName="PropertyStr4" />
+                <ScalarProperty Name="PropertyStr3Name" ColumnName="PropertyStr3Name" />
+                <ScalarProperty Name="PropertyStr3Code" ColumnName="PropertyStr3Code" />
+                <ScalarProperty Name="PropertyStr3" ColumnName="PropertyStr3" />
+                <ScalarProperty Name="PropertyStr2Name" ColumnName="PropertyStr2Name" />
+                <ScalarProperty Name="PropertyStr2Code" ColumnName="PropertyStr2Code" />
+                <ScalarProperty Name="PropertyStr2" ColumnName="PropertyStr2" />
+                <ScalarProperty Name="PropertyStr1Name" ColumnName="PropertyStr1Name" />
+                <ScalarProperty Name="PropertyStr1Code" ColumnName="PropertyStr1Code" />
+                <ScalarProperty Name="PropertyStr1" ColumnName="PropertyStr1" />
+                <ScalarProperty Name="QuantityDouble" ColumnName="QuantityDouble" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="SerialNumberSupplier" ColumnName="SerialNumberSupplier" />
+                <ScalarProperty Name="Adapter" ColumnName="Adapter" />
+                <ScalarProperty Name="Table" ColumnName="Table" />
+                <ScalarProperty Name="DomainObject" ColumnName="DomainObject" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="SerialNumberLocal" ColumnName="SerialNumberLocal" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PreviousInventory">
+            <EntityTypeMapping TypeName="AnalyticDBModel.PreviousInventory">
+              <MappingFragment StoreEntitySet="PreviousInventory">
+                <ScalarProperty Name="PropExtenstion22" ColumnName="PropExtenstion22" />
+                <ScalarProperty Name="PropExtenstion21" ColumnName="PropExtenstion21" />
+                <ScalarProperty Name="PropExtenstion20" ColumnName="PropExtenstion20" />
+                <ScalarProperty Name="PropExtenstion19" ColumnName="PropExtenstion19" />
+                <ScalarProperty Name="PropExtenstion18" ColumnName="PropExtenstion18" />
+                <ScalarProperty Name="PropExtenstion17" ColumnName="PropExtenstion17" />
+                <ScalarProperty Name="PropExtenstion16" ColumnName="PropExtenstion16" />
+                <ScalarProperty Name="PropExtenstion15" ColumnName="PropExtenstion15" />
+                <ScalarProperty Name="PropExtenstion14" ColumnName="PropExtenstion14" />
+                <ScalarProperty Name="PropExtenstion13" ColumnName="PropExtenstion13" />
+                <ScalarProperty Name="PropExtenstion12" ColumnName="PropExtenstion12" />
+                <ScalarProperty Name="PropExtenstion11" ColumnName="PropExtenstion11" />
+                <ScalarProperty Name="PropExtenstion10" ColumnName="PropExtenstion10" />
+                <ScalarProperty Name="PropExtenstion9" ColumnName="PropExtenstion9" />
+                <ScalarProperty Name="PropExtenstion8" ColumnName="PropExtenstion8" />
+                <ScalarProperty Name="PropExtenstion7" ColumnName="PropExtenstion7" />
+                <ScalarProperty Name="PropExtenstion6" ColumnName="PropExtenstion6" />
+                <ScalarProperty Name="PropExtenstion5" ColumnName="PropExtenstion5" />
+                <ScalarProperty Name="PropExtenstion4" ColumnName="PropExtenstion4" />
+                <ScalarProperty Name="PropExtenstion3" ColumnName="PropExtenstion3" />
+                <ScalarProperty Name="PropExtenstion2" ColumnName="PropExtenstion2" />
+                <ScalarProperty Name="PropExtenstion1" ColumnName="PropExtenstion1" />
+                <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+                <ScalarProperty Name="PropertyStr20" ColumnName="PropertyStr20" />
+                <ScalarProperty Name="PropertyStr19" ColumnName="PropertyStr19" />
+                <ScalarProperty Name="PropertyStr18" ColumnName="PropertyStr18" />
+                <ScalarProperty Name="PropertyStr17" ColumnName="PropertyStr17" />
+                <ScalarProperty Name="PropertyStr16" ColumnName="PropertyStr16" />
+                <ScalarProperty Name="PropertyStr15" ColumnName="PropertyStr15" />
+                <ScalarProperty Name="PropertyStr14" ColumnName="PropertyStr14" />
+                <ScalarProperty Name="PropertyStr13" ColumnName="PropertyStr13" />
+                <ScalarProperty Name="PropertyStr12" ColumnName="PropertyStr12" />
+                <ScalarProperty Name="PropertyStr11" ColumnName="PropertyStr11" />
+                <ScalarProperty Name="PropertyStr10" ColumnName="PropertyStr10" />
+                <ScalarProperty Name="PropertyStr9" ColumnName="PropertyStr9" />
+                <ScalarProperty Name="PropertyStr8" ColumnName="PropertyStr8" />
+                <ScalarProperty Name="PropertyStr7" ColumnName="PropertyStr7" />
+                <ScalarProperty Name="PropertyStr6" ColumnName="PropertyStr6" />
+                <ScalarProperty Name="PropertyStr5" ColumnName="PropertyStr5" />
+                <ScalarProperty Name="PropertyStr4" ColumnName="PropertyStr4" />
+                <ScalarProperty Name="PropertyStr3" ColumnName="PropertyStr3" />
+                <ScalarProperty Name="PropertyStr2" ColumnName="PropertyStr2" />
+                <ScalarProperty Name="PropertyStr1" ColumnName="PropertyStr1" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="SerialNumberSupplier" ColumnName="SerialNumberSupplier" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="SerialNumberLocal" ColumnName="SerialNumberLocal" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TemplateInventory">
+            <EntityTypeMapping TypeName="AnalyticDBModel.TemplateInventory">
+              <MappingFragment StoreEntitySet="TemplateInventory">
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="QuantityExpected" ColumnName="QuantityExpected" />
+                <ScalarProperty Name="ItemCode" ColumnName="ItemCode" />
+                <ScalarProperty Name="Level4Code" ColumnName="Level4Code" />
+                <ScalarProperty Name="Level3Code" ColumnName="Level3Code" />
+                <ScalarProperty Name="Level2Code" ColumnName="Level2Code" />
+                <ScalarProperty Name="Level1Code" ColumnName="Level1Code" />
+                <ScalarProperty Name="Uid" ColumnName="Uid" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TemporaryInventory">
+            <EntityTypeMapping TypeName="AnalyticDBModel.TemporaryInventory">
+              <MappingFragment StoreEntitySet="TemporaryInventory">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="DbFileName" ColumnName="DbFileName" />
+                <ScalarProperty Name="Device" ColumnName="Device" />
+                <ScalarProperty Name="DateModified" ColumnName="DateModified" />
+                <ScalarProperty Name="NewKey" ColumnName="NewKey" />
+                <ScalarProperty Name="NewProductCode" ColumnName="NewProductCode" />
+                <ScalarProperty Name="NewLocationCode" ColumnName="NewLocationCode" />
+                <ScalarProperty Name="NewItemCode" ColumnName="NewItemCode" />
+                <ScalarProperty Name="NewSerialNumber" ColumnName="NewSerialNumber" />
+                <ScalarProperty Name="OldKey" ColumnName="OldKey" />
+                <ScalarProperty Name="OldProductCode" ColumnName="OldProductCode" />
+                <ScalarProperty Name="OldLocationCode" ColumnName="OldLocationCode" />
+                <ScalarProperty Name="OldItemCode" ColumnName="OldItemCode" />
+                <ScalarProperty Name="OldSerialNumber" ColumnName="OldSerialNumber" />
+                <ScalarProperty Name="NewUid" ColumnName="NewUid" />
+                <ScalarProperty Name="OldUid" ColumnName="OldUid" />
+                <ScalarProperty Name="Domain" ColumnName="Domain" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+	<edmx:Designer>
+		<edmx:Connection>
+			<edmx:DesignerInfoPropertySet>
+				<edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+			</edmx:DesignerInfoPropertySet>
+		</edmx:Connection>
+		<edmx:Options>
+			<edmx:DesignerInfoPropertySet>
+				<edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+				<edmx:DesignerProperty Name="EnablePluralization" Value="True" />
+				<edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+				<edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+				<edmx:DesignerProperty Name="UseLegacyProvider" Value="False" />
+			</edmx:DesignerInfoPropertySet>
+		</edmx:Options>
+		<!-- Diagram content (shape and connector positions) -->
+		<edmx:Diagrams>
+      <edmx:Diagram DiagramId="626963cb29724c39bf7933dfb56d8b6a" Name="Diagram1" ZoomLevel="64">
+        <edmx:EntityTypeShape EntityType="AnalyticDBModel.AnalyticDBIni" Width="1.5" PointX="0.5" PointY="0.75" />
+        <edmx:EntityTypeShape EntityType="AnalyticDBModel.CurrentInventory" Width="1.5" PointX="4.5" PointY="0.625" />
+        <edmx:EntityTypeShape EntityType="AnalyticDBModel.CurrentInventoryAdvanced" Width="1.5" PointX="6.375" PointY="0.625" />
+        <edmx:EntityTypeShape EntityType="AnalyticDBModel.PreviousInventory" Width="1.5" PointX="2.5" PointY="0.625" />
+        <edmx:EntityTypeShape EntityType="AnalyticDBModel.TemplateInventory" Width="1.5" PointX="8.75" PointY="0.5" />
+        <edmx:EntityTypeShape EntityType="AnalyticDBModel.TemporaryInventory" Width="1.5" PointX="8.75" PointY="3.875" />
+      </edmx:Diagram>
+    </edmx:Diagrams>
+	</edmx:Designer>
+</edmx:Edmx>

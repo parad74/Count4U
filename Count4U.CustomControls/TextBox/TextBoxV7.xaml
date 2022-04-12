@@ -1,0 +1,79 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:TextBox="clr-namespace:Count4U.CustomControls.TextBox">
+    <LinearGradientBrush x:Key="TextBoxBorder" EndPoint="0,1" MappingMode="Absolute" StartPoint="0,0">
+        <GradientStop Color="#BBBBBB" Offset="0.0"/>
+        <GradientStop Color="#676767" Offset="1"/>
+    </LinearGradientBrush>
+    <!-- Resource dictionary entries should be defined here. -->
+    <Style BasedOn="{StaticResource {x:Type TextBox}}" TargetType="{x:Type TextBox:TextBoxV7}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource TextBoxBorder}"	/>
+<!--        <Setter Property="BorderThickness" Value="1"/>-->
+        <Setter Property="Padding" Value="1"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"></Setter>
+        <!--        <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>-->
+        <!--        <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>-->
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox:TextBoxV7}">
+                    <Border Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" CornerRadius="2" Background="White">
+                        <ScrollViewer x:Name="PART_ContentHost" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Stretch"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                        </Trigger>
+
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="BorderBrush" TargetName="Bd">
+                                <Setter.Value>
+                                    <LinearGradientBrush  EndPoint="0,1" MappingMode="Absolute" StartPoint="0,0">
+                                        <GradientStop Color="#666666" Offset="0.0"/>
+                                        <GradientStop Color="#666666" Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="BorderThickness" TargetName="Bd" Value="1.5"></Setter>
+                        </Trigger>                                            
+
+                        <Trigger Property="IsNecessary" Value="True">
+                            <Setter Property="Background" TargetName="Bd" Value="#FFFFDF" />
+                            <Setter Property="BorderBrush" Value="#E8C54A" />
+                        </Trigger>
+
+                        <Trigger Property="Validation.HasError" Value="True">
+                            <Setter Property="Background" TargetName="Bd" Value="#FFF0F0" />
+                            <Setter Property="BorderBrush" Value="#FF9F9F" />
+                        </Trigger>
+
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="Validation.ErrorTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <DockPanel LastChildFill="True">
+                        <TextBlock DockPanel.Dock="Bottom" FontSize="11" FontWeight="Bold" VerticalAlignment="Center"
+													 Text="{Binding ElementName=adornerPlaceholder, Path=AdornedElement.(Validation.Errors)[0].ErrorContent}"
+													 TextWrapping="Wrap"
+                                                     Foreground="#FFD86363"
+													 Background="#FFF4DCDC"
+													 MaxWidth="{Binding ElementName=adornerPlaceholder, Path=ActualWidth}"
+										        />
+
+                        <AdornedElementPlaceholder Name="adornerPlaceholder">
+                        </AdornedElementPlaceholder>
+
+                    </DockPanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

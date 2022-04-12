@@ -1,0 +1,66 @@
+﻿<lib:DrawingRectangle x:Class="Count4U.Planogram.View.PlanObjects.PlanObjectDecorator"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:lib="clr-namespace:Count4U.Planogram.Lib"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid x:Name="grid">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Thumb/Thumb.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+
+                <!--            #FFCC99-->
+                <SolidColorBrush x:Key="thumbColor" Color="#40BBDB"></SolidColorBrush>
+            </ResourceDictionary>
+
+        </Grid.Resources>
+
+<!--        Cursor="SizeNWSE"-->
+        <Thumb x:Name="thumbLeftTop"
+               Width="5" 
+               Height="5" 
+               Margin="-5 -5 0 0"
+               Background="{StaticResource thumbColor}"
+              
+               Style="{StaticResource PlanogramThumbStyle}"
+               VerticalAlignment="Top"                
+               HorizontalAlignment="Left"/>
+
+<!--        Cursor="SizeNESW"-->
+        <Thumb x:Name="thumbRightTop" 
+               Width="5"
+               Height="5"              
+               Margin="0 -5 -5 0"
+               Background="{StaticResource thumbColor}"
+               
+               Style="{StaticResource PlanogramThumbStyle}"
+               VerticalAlignment="Top" 
+               HorizontalAlignment="Right"/>
+
+<!--        Cursor="SizeNWSE"-->
+        <Thumb x:Name="thumbRightBottom" 
+               Width="5" 
+               Height="5" 
+               
+               Margin="0 0 -5 -5"
+               Background="{StaticResource thumbColor}"
+               Style="{StaticResource PlanogramThumbStyle}"
+               VerticalAlignment="Bottom" 
+               HorizontalAlignment="Right"/>
+
+<!--        Cursor="SizeNESW"-->
+        <Thumb x:Name="thumbLeftBottom"
+               Width="5"
+               Height="5" 
+               
+               Margin="-5 0 0 -5"
+               Background="{StaticResource thumbColor}"
+               Style="{StaticResource PlanogramThumbStyle}"
+               VerticalAlignment="Bottom" 
+               HorizontalAlignment="Left"/>
+    </Grid>
+</lib:DrawingRectangle>

@@ -1,0 +1,1268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A3145385-051F-4FFA-9DCB-3014DA552419}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Count4U.Model</RootNamespace>
+    <AssemblyName>Count4U.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Devart.Data, Version=5.0.1450.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Devart.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Devart.Data.SQLite, Version=5.5.658.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Devart.Data.SQLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Devart.Data.SQLite.Design, Version=5.5.658.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Devart.Data.SQLite.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Devart.Data.SQLite.Vs, Version=5.5.658.0, Culture=neutral, PublicKeyToken=09af7300eec23701, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Devart.Data.SQLite.Vs.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.PrivateDeployment.6.2.0.1\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ErikEJ.SqlCe40, Version=2.1.6.14, Culture=neutral, PublicKeyToken=03b0b5a60fec3719, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErikEJ.SqlCeBulkCopy.2.1.6.15\lib\net40\ErikEJ.SqlCe40.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\Lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\Lib\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\Lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="ReactiveProperty.NET40">
+      <HintPath>..\Lib\ReactiveProperty.NET40.dll</HintPath>
+    </Reference>
+    <Reference Include="Salient.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=03b0b5a60fec3719, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErikEJ.SqlCeBulkCopy.2.1.6.15\lib\net40\Salient.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SQLite.Designer">
+      <HintPath>..\Lib\SQLite.Designer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SQLite, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.101.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.PrivateDeployment.6.2.0.1\lib\net45\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Reactive">
+      <HintPath>..\Lib\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Providers">
+      <HintPath>..\Lib\System.Reactive.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>..\Lib\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Data\AnalyticDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AnalyticDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\AuditDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AuditDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\CodeBasedDatabaseConfiguration.cs" />
+    <Compile Include="App_Data\Count4UDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Count4UDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\MainDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\Model10.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model10.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\Model5.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model5.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\Model6.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model6.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\Model7.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model7.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\Model8.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model8.tt</DependentUpon>
+    </Compile>
+    <Compile Include="App_Data\ProcessDB.Designer.cs">
+      <DependentUpon>ProcessDB.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Audit\AuditConfig\AuditConfigEFRepository.cs" />
+    <Compile Include="Audit\AuditConfig\AuditConfigs.cs" />
+    <Compile Include="Audit\ContextCBI\ContextCBIRepository.cs" />
+    <Compile Include="Audit\InventorMask\InventorMaskEFRepository.cs" />
+    <Compile Include="Audit\Inventor\InventorEFRepository.cs" />
+    <Compile Include="Audit\MappingEF\AuditConfigMapper.cs" />
+    <Compile Include="Audit\MappingEF\AuditProcessJobMapper.cs" />
+    <Compile Include="Audit\MappingEF\TemporaryAuditProcessJobMapper.cs" />
+    <Compile Include="Audit\MappingEF\InventorMaskMapper.cs" />
+    <Compile Include="Audit\MappingEF\InventorMapper.cs" />
+    <Compile Include="Audit\MappingEF\StatusAuditConfigMapper.cs" />
+    <Compile Include="Audit\MappingEF\StatusInventorMapper.cs" />
+    <Compile Include="Audit\Mapping\AuditConfigMapper.cs" />
+    <Compile Include="Audit\Mapping\InventorMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Audit\StatusAuditConfig\StatusAuditConfigEFRepository.cs" />
+    <Compile Include="Audit\StatusInventor\StatusInventorEFRepository.cs" />
+    <Compile Include="BaseADORepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="CollectionOf.cs" />
+    <Compile Include="CollectionPagingOf.cs" />
+    <Compile Include="ConnectionADO.cs" />
+    <Compile Include="ConnectionDB.cs" />
+    <Compile Include="BaseEFDbSetRepository.cs" />
+    <Compile Include="Count4Mobile\BuildingConfig\BuildingConfigs.cs" />
+    <Compile Include="Count4Mobile\BuildingConfig\BuildingConfig.cs" />
+    <Compile Include="Count4Mobile\BuildingConfig\BuildingConfigEFRepository.cs" />
+    <Compile Include="Count4Mobile\Catalog\Catalogs.cs" />
+    <Compile Include="Count4Mobile\Catalog\Catalog.cs" />
+    <Compile Include="Count4Mobile\CurrentInventoryAdvanced\CurrentInventoryAdvanced.cs" />
+    <Compile Include="Count4Mobile\CurrentInventoryAdvanced\CurrentInventoryAdvancedDictionary.cs" />
+    <Compile Include="Count4Mobile\CurrentInventoryAdvanced\CurrentInventoryAdvanceds.cs" />
+    <Compile Include="Count4Mobile\CurrentInventory\CurrentInventory.cs" />
+    <Compile Include="Count4Mobile\CurrentInventory\CurrentInventoryDictionary.cs" />
+    <Compile Include="Count4Mobile\CurrentInventory\CurrentInventorys.cs" />
+    <Compile Include="Count4Mobile\CurrentInventory\CurrentInventoryEFRepository.cs" />
+    <Compile Include="Count4Mobile\TemplateInventory\TemplateInventoryEFRepository.cs" />
+    <Compile Include="Count4Mobile\MappingEF\TemporaryInventoryMapper.cs" />
+    <Compile Include="Count4Mobile\MappingEF\TemplateInventoryMapper.cs" />
+    <Compile Include="Count4Mobile\MappingEF\PreviousInventoryMapper.cs" />
+    <Compile Include="Count4Mobile\MappingEF\CurrentInventoryAdvancedMapper.cs" />
+    <Compile Include="Count4Mobile\MappingEF\CurrentInventoryMapper.cs" />
+    <Compile Include="Count4Mobile\PreviousInventory\PreviousInventory.cs" />
+    <Compile Include="Count4Mobile\PreviousInventory\PreviousInventorys.cs" />
+    <Compile Include="Count4Mobile\PropertyDecorator\PropertyDecorator.cs" />
+    <Compile Include="Count4Mobile\PropertyDecorator\PropertyDecorators.cs" />
+    <Compile Include="Count4Mobile\CurrentInventoryAdvanced\CurrentInventoryAdvancedEFRepository.cs" />
+    <Compile Include="Count4Mobile\LocationMobile\LocationMobiles.cs" />
+    <Compile Include="Count4Mobile\LocationMobile\LocationMobile.cs" />
+    <Compile Include="Count4Mobile\PreviousInventory\PreviousInventoryEFRepository.cs" />
+    <Compile Include="Count4Mobile\PropertyStr10\PropertyStr10.cs" />
+    <Compile Include="Count4Mobile\PropertyStr10\PropertyStr10List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr11\PropertyStr11.cs" />
+    <Compile Include="Count4Mobile\PropertyStr11\PropertyStr11List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr12\PropertyStr12.cs" />
+    <Compile Include="Count4Mobile\PropertyStr12\PropertyStr12List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr13\PropertyStr13.cs" />
+    <Compile Include="Count4Mobile\PropertyStr13\PropertyStr13List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr14\PropertyStr14.cs" />
+    <Compile Include="Count4Mobile\PropertyStr14\PropertyStr14List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr15\PropertyStr15.cs" />
+    <Compile Include="Count4Mobile\PropertyStr15\PropertyStr15List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr16\PropertyStr16.cs" />
+    <Compile Include="Count4Mobile\PropertyStr16\PropertyStr16List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr17\PropertyStr17.cs" />
+    <Compile Include="Count4Mobile\PropertyStr17\PropertyStr17List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr18\PropertyStr18.cs" />
+    <Compile Include="Count4Mobile\PropertyStr18\PropertyStr18List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr19\PropertyStr19.cs" />
+    <Compile Include="Count4Mobile\PropertyStr19\PropertyStr19List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr1\PropertyStr1List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr1\PropertyStr1.cs" />
+    <Compile Include="Count4Mobile\PropertyStr20\PropertyStr20List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr20\PropertyStr20.cs" />
+    <Compile Include="Count4Mobile\PropertyStr2\PropertyStr2List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr2\PropertyStr2.cs" />
+    <Compile Include="Count4Mobile\PropertyStr3\PropertyStr3List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr3\PropertyStr3.cs" />
+    <Compile Include="Count4Mobile\PropertyStr4\PropertyStr4List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr4\PropertyStr4.cs" />
+    <Compile Include="Count4Mobile\PropertyStr5\PropertyStr5List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr5\PropertyStr5.cs" />
+    <Compile Include="Count4Mobile\PropertyStr6\PropertyStr6List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr6\PropertyStr6.cs" />
+    <Compile Include="Count4Mobile\PropertyStr7\PropertyStr7List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr7\PropertyStr7.cs" />
+    <Compile Include="Count4Mobile\PropertyStr8\PropertyStr8List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr8\PropertyStr8.cs" />
+    <Compile Include="Count4Mobile\PropertyStr9\PropertyStr9List.cs" />
+    <Compile Include="Count4Mobile\PropertyStr9\PropertyStr9.cs" />
+    <Compile Include="Count4Mobile\TemplateInventory\TemplateInventory.cs" />
+    <Compile Include="Count4Mobile\TemplateInventory\TemplateInventorys.cs" />
+    <Compile Include="Count4Mobile\TemporaryInventory\TemporaryInventory.cs" />
+    <Compile Include="Count4Mobile\TemporaryInventory\TemporaryInventoryEFRepository.cs" />
+    <Compile Include="Count4Mobile\TemporaryInventory\TemporaryInventorys.cs" />
+    <Compile Include="Count4U\AlterTable\AlterTableADORepository.cs" />
+    <Compile Include="Count4U\CatalogConfig\ToConfigStatic.cs" />
+    <Compile Include="Count4U\Device\Device.cs" />
+    <Compile Include="Count4U\Device\DeviceEFRepository.cs" />
+    <Compile Include="Count4U\Device\Devices.cs" />
+    <Compile Include="Count4U\Device\DeviceString.cs" />
+    <Compile Include="Count4U\FamilyAnalyzes\FamilyAnalyzes.cs" />
+    <Compile Include="Count4U\FamilyAnalyzes\FamilyAnalyzesCollection.cs" />
+    <Compile Include="Count4U\Family\Family.cs" />
+    <Compile Include="Count4U\Family\FamilyEFRepository.cs" />
+    <Compile Include="Count4U\Family\Familys.cs" />
+    <Compile Include="Count4U\Family\FamilyString.cs" />
+    <Compile Include="Count4U\FieldLink\FieldLink.cs" />
+    <Compile Include="Count4U\FieldLink\FieldLinkEFRepository.cs" />
+    <Compile Include="Count4U\FieldLink\FieldLinkEnum.cs" />
+    <Compile Include="Count4U\FieldLink\FieldLinkMapper.cs" />
+    <Compile Include="Count4U\FieldLink\FieldLinkRepository.cs" />
+    <Compile Include="Count4U\FieldLink\FieldLinks.cs" />
+    <Compile Include="Count4U\IturAnalyzes\IturAnalyzesSimpleCollection.cs" />
+    <Compile Include="Count4U\IturAnalyzes\IturAnalyzesSimple.cs" />
+    <Compile Include="Count4U\IturAnalyzes\DomainContextEnum.cs" />
+    <Compile Include="Count4U\IturAnalyzes\IturAnalyzes.cs" />
+    <Compile Include="Count4U\IturAnalyzes\IturAnalyzesCollection.cs" />
+    <Compile Include="Count4U\IturAnalyzes\IturAnalyzesEFRepository.cs" />
+    <Compile Include="Count4U\Itur\IturEFRepository.cs" />
+    <Compile Include="Count4U\Log\LogMessageOperation.cs" />
+    <Compile Include="Count4U\Log\LogMessages.cs" />
+    <Compile Include="Count4U\Log\LogMessage.cs" />
+    <Compile Include="Count4U\MappingEF\BarcodeMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\CatalogConfigMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\DeviceMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\DocumentHeaderMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\FamilyMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\InputTypeMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\InventorConfigMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\InventProductMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\IturAnalyzesMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\IturMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\LocationMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\ProductMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\PropertyStrMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\PropertyStrToObjectMapper.cs" />
+    <Compile Include="Count4U\MappingEF\ResulteValueMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\SectionMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\SessionMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\ShelfMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\StatusDocHeaderMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\StatusInventorConfigMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\StatusInventProductMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\StatusIturMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\SupplierMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\TypeMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\UnitPlanMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\UnitPlanValueMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\MappingEF\UnitTypeMapper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Count4U\Mask\Mask.cs" />
+    <Compile Include="Count4U\Mask\Masks.cs" />
+    <Compile Include="Count4U\Mask\MaskTemplate\MaskRecord.cs" />
+    <Compile Include="Count4U\Mask\MaskTemplate\MaskTemplate.cs" />
+    <Compile Include="Count4U\Mask\MaskTemplate\MaskTemplateEnum.cs" />
+    <Compile Include="Count4U\Mask\MaskTemplate\MaskTemplateRepository.cs" />
+    <Compile Include="Count4U\Mask\MaskTemplate\MaskTemplats.cs" />
+    <Compile Include="Count4U\Product\BaseProduct.cs" />
+    <Compile Include="Count4U\Product\ProductTagSimple.cs" />
+    <Compile Include="Count4U\PropertyStrToObject\PropertyStrToObject.cs" />
+    <Compile Include="Count4U\PropertyStrToObject\PropertyStrToObjectEFRepository.cs" />
+    <Compile Include="Count4U\PropertyStrToObject\PropertyStrToObjects.cs" />
+    <Compile Include="Count4U\PropertyStr\PropertyStr.cs" />
+    <Compile Include="Count4U\PropertyStr\PropertyStrEFRepository.cs" />
+    <Compile Include="Count4U\PropertyStr\PropertyStrs.cs" />
+    <Compile Include="Count4U\Report\ReportRepository.cs" />
+    <Compile Include="Count4U\ResulteValue\ResulteValue.cs" />
+    <Compile Include="Count4U\ResulteValue\ResulteValueEFRepository.cs" />
+    <Compile Include="Count4U\ResulteValue\ResulteValues.cs" />
+    <Compile Include="Count4U\ResulteValue\ResulteValueTokenObservable.cs" />
+    <Compile Include="Count4U\ResulteValue\ResulteValueTokenObserver.cs" />
+    <Compile Include="Count4U\Section\SectionString.cs" />
+    <Compile Include="Count4U\Shelf\Shelf.cs" />
+    <Compile Include="Count4U\Shelf\ShelfEFRepository.cs" />
+    <Compile Include="Count4U\Shelf\Shelfs.cs" />
+    <Compile Include="Count4U\Shelf\ShelfString.cs" />
+    <Compile Include="Count4U\StatusIturGroup\StatusIturGroup.cs" />
+    <Compile Include="Count4U\StatusIturGroup\StatusIturGroupRepository.cs" />
+    <Compile Include="Count4U\StatusIturGroup\StatusIturGroups.cs" />
+    <Compile Include="Count4U\DocumentHeader\DocumentHeaderString.cs" />
+    <Compile Include="Count4U\Makat\MakatOperation.cs" />
+    <Compile Include="Count4U\Makat\ProductMakat.cs" />
+    <Compile Include="Count4U\Makat\TypeMakatEnum.cs" />
+    <Compile Include="Count4U\Product\Products.cs" />
+    <Compile Include="Count4U\Supplier\SupplierString.cs" />
+    <Compile Include="Count4U\Translation\IPropertyTranslation.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslation.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationBranch.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationCustomer.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationFamily.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationInventor.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationInventProduct.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationItem.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationItur.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationIturAnalyzes.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationLocation.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationProduct.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationSection.cs" />
+    <Compile Include="Count4U\Translation\PropertyTranslationSupplier.cs" />
+    <Compile Include="Count4U\Translation\TypedReflection.cs" />
+    <Compile Include="Count4U\UnitPlanValue\UnitPlanValueEFRepository.cs" />
+    <Compile Include="Count4U\UnitPlanValue\UnitPlanValue.cs" />
+    <Compile Include="Count4U\UnitPlanValue\UnitPlanValues.cs" />
+    <Compile Include="Count4U\UnitPlan\UnitPlanString.cs" />
+    <Compile Include="Count4U\UnitPlan\UnitPlanEFRepository.cs" />
+    <Compile Include="Count4U\UnitPlan\UnitPlan.cs" />
+    <Compile Include="Count4U\UnitPlan\UnitPlans.cs" />
+    <Compile Include="Count4U\Validate\Bit2List.cs" />
+    <Compile Include="Count4U\Validate\ProcessValidate.cs" />
+    <Compile Include="Count4U\Validate\PropertyStrValidate.cs" />
+    <Compile Include="Count4U\Validate\ShelfValidate.cs" />
+    <Compile Include="Count4U\Validate\FamilyValidate.cs" />
+    <Compile Include="Count4U\Validate\UnitPlanValidate.cs" />
+    <Compile Include="Count4U\Validate\DocumentHeaderValidate.cs" />
+    <Compile Include="Count4U\Validate\InputTypeValidate.cs" />
+    <Compile Include="Count4U\Validate\InventProductValidate.cs" />
+    <Compile Include="Count4U\Validate\IturValidate.cs" />
+    <Compile Include="Count4U\Validate\LocationValidate.cs" />
+    <Compile Include="Count4U\Validate\ProductValidate.cs" />
+    <Compile Include="Count4U\Validate\SectionValidate.cs" />
+    <Compile Include="Count4U\Validate\SessionValidate.cs" />
+    <Compile Include="Count4U\Validate\StatusDocHeaderValidate.cs" />
+    <Compile Include="Count4U\Validate\StatusInventorConfigValidate.cs" />
+    <Compile Include="Count4U\Validate\StatusInventProductValidate.cs" />
+    <Compile Include="Count4U\Validate\StatusIturValidate.cs" />
+    <Compile Include="Count4U\Validate\SupplierValidate.cs" />
+    <Compile Include="Count4U\Validate\TypeValidate.cs" />
+    <Compile Include="Interface\Analytic\ICurrentInventoryRepository.cs" />
+    <Compile Include="Interface\Analytic\ITemplateInventoryRepository.cs" />
+    <Compile Include="Interface\Analytic\ITemporaryInventoryRepository.cs" />
+    <Compile Include="Interface\Analytic\IPreviousInventoryRepository.cs" />
+    <Compile Include="Interface\Analytic\ICurrentInventoryAdvancedRepository.cs" />
+    <Compile Include="Interface\Audit\IAuditConfigRepository.cs" />
+    <Compile Include="Interface\Audit\IContextCBIRepository.cs" />
+    <Compile Include="Interface\Audit\IInventorRepository.cs" />
+    <Compile Include="Interface\Audit\IStatusAuditConfigRepository.cs" />
+    <Compile Include="Interface\Audit\IStatusInventorRepository.cs" />
+    <Compile Include="Interface\Count4U\ICurrentInventoryAdvancedSourceRepository.cs" />
+    <Compile Include="Interface\Count4U\IUnitTypeRepository.cs" />
+    <Compile Include="Interface\Count4U\IDeviceRepository.cs" />
+    <Compile Include="Interface\Count4U\IPropertyStrRepository.cs" />
+    <Compile Include="Interface\Count4U\IPropertyStrToObjectRepository.cs" />
+    <Compile Include="Interface\Count4U\IShelfRepository.cs" />
+    <Compile Include="Interface\Count4U\IFamilyRepository.cs" />
+    <Compile Include="Interface\Count4U\IIturAnalyzesCaseSourceRepository.cs" />
+    <Compile Include="Interface\Count4U\IIturAnalyzesSourceRepository.cs" />
+    <Compile Include="Interface\Count4U\IFieldLinkRepository.cs" />
+    <Compile Include="Interface\Count4U\IIturAnalyzesRepository.cs" />
+    <Compile Include="Interface\Count4U\IResulteValueRepository.cs" />
+    <Compile Include="Interface\Count4U\IUnitPlanRepository.cs" />
+    <Compile Include="Interface\Count4U\IUnitPlanValueRepository.cs" />
+    <Compile Include="Interface\IMaskTemplateRepository.cs" />
+    <Compile Include="Interface\IMaskRepository.cs" />
+    <Compile Include="Interface\ISQLScriptRepository.cs" />
+    <Compile Include="Interface\Count4U\IStatusIturGroupRepository.cs" />
+    <Compile Include="Count4U\InventProduct\InventProductString.cs" />
+    <Compile Include="Count4U\InventProduct\InventProductSimpleString.cs" />
+    <Compile Include="Count4U\Location\LocationString.cs" />
+    <Compile Include="Count4U\Product\ProductSimpleString.cs" />
+    <Compile Include="Count4U\Session\SessionString.cs" />
+    <Compile Include="DbSettings.cs" />
+    <Compile Include="FileSystem.cs" />
+    <Compile Include="Interface\IDbSettings.cs" />
+    <Compile Include="Interface\IAlterADOProvider.cs" />
+    <Compile Include="Interface\IZip.cs" />
+    <Compile Include="Interface\Main\IBranchRepository.cs" />
+    <Compile Include="Interface\Main\ICustomerConfigRepository.cs" />
+    <Compile Include="Interface\Main\ICustomerReportRepository.cs" />
+    <Compile Include="Interface\Main\ICustomerRepository.cs" />
+    <Compile Include="Interface\Main\IImportAdapterRepository.cs" />
+    <Compile Include="Interface\ProcessC4U\ITemporaryMainProcessJobRepository.cs" />
+    <Compile Include="Interface\ProcessC4U\IMainProcessJobRepository.cs" />
+    <Compile Include="Interface\ProcessC4U\IProcessRepository.cs" />
+    <Compile Include="Interface\ProcessC4U\IPortRepository.cs" />
+    <Compile Include="Main\BranchMask\BranchMaskEFRepository.cs" />
+    <Compile Include="Main\Branch\BranchString.cs" />
+    <Compile Include="Main\CustomerConfig\CustomerConfigEFRepository.cs" />
+    <Compile Include="Main\CustomerMask\CustomerMaskEFRepository.cs" />
+    <Compile Include="Main\CustomerReport\CustomerReportEFRepository.cs" />
+    <Compile Include="Main\Customer\CustomerString.cs" />
+    <Compile Include="Main\ImportAdapter\ImportAdapterEFRepository.cs" />
+    <Compile Include="Main\MapptingEF\BranchMaskMapper.cs" />
+    <Compile Include="Main\MapptingEF\ImportAdapterMapper.cs" />
+    <Compile Include="Main\MapptingEF\CustomerMaskMapper.cs" />
+    <Compile Include="Main\Validate\BranchValidate.cs" />
+    <Compile Include="Main\Validate\CommonValidate.cs" />
+    <Compile Include="Main\Validate\CustomerValidate.cs" />
+    <Compile Include="Main\Validate\InventorValidate.cs" />
+    <Compile Include="ProcessC4U\MappingEF\ProcessMapper.cs" />
+    <Compile Include="ProcessC4U\MappingEF\PortMapper.cs" />
+    <Compile Include="ProcessC4U\MappingEF\MainProcessJobMapper.cs" />
+    <Compile Include="ProcessC4U\MappingEF\TemporaryMainProcessJobMapper.cs" />
+    <Compile Include="ProcessC4U\Port\PortEFRepository.cs" />
+    <Compile Include="ProcessC4U\Port\Port.cs" />
+    <Compile Include="ProcessC4U\Port\Ports.cs" />
+    <Compile Include="ProcessC4U\ProcessJob\TemporaryMainProcessJobEFRepository.cs" />
+    <Compile Include="ProcessC4U\ProcessJob\MainProcessJobEFRepository.cs" />
+    <Compile Include="ProcessC4U\ProcessJob\ProcessJob.cs" />
+    <Compile Include="ProcessC4U\ProcessJob\ProcessJobs.cs" />
+    <Compile Include="ProcessC4U\ProcessPort\ProcessPort.cs" />
+    <Compile Include="ProcessC4U\ProcessPort\ProcessPorts.cs" />
+    <Compile Include="ProcessC4U\Process\ProcessEFRepository.cs" />
+    <Compile Include="ProcessC4U\Process\Process.cs" />
+    <Compile Include="ProcessC4U\Process\Processes.cs" />
+    <Compile Include="SQLScript\DBName.cs" />
+    <Compile Include="SQLScript\SQLScript.cs" />
+    <Compile Include="SQLScript\SQLScriptRepository.cs" />
+    <Compile Include="SQLScript\SQLScripts.cs" />
+    <Compile Include="Count4U\AccessParent\AccessParentChild.cs" />
+    <Compile Include="Count4U\Barcode\Barcode.cs" />
+    <Compile Include="Count4U\Barcode\BarcodeEFRepository.cs" />
+    <Compile Include="Count4U\Barcode\Barcodes.cs" />
+    <Compile Include="Count4U\AccessParent\AccessParentChilds.cs" />
+    <Compile Include="BaseEFRepository.cs" />
+    <Compile Include="Count4U\CatalogConfig\CatalogConfig.cs" />
+    <Compile Include="Count4U\CatalogConfig\CatalogConfigEFRepository.cs" />
+    <Compile Include="Count4U\CatalogConfig\CatalogConfigs.cs" />
+    <Compile Include="Count4U\InventorConfig\InventorConfigEFRepository.cs" />
+    <Compile Include="Count4U\InventProduct\InventProductSimple.cs" />
+    <Compile Include="Count4U\Log\LogImport.cs" />
+    <Compile Include="Count4U\Makat\MakatEFRepository.cs" />
+    <Compile Include="Interface\Count4U\IMakatRepository.cs" />
+    <Compile Include="Count4U\Product\Product.cs" />
+    <Compile Include="Count4U\Product\ProductEFRepository.cs" />
+    <Compile Include="Count4U\Product\ProductRepository.cs" />
+    <Compile Include="Count4U\Product\ProductSimples.cs" />
+    <Compile Include="Count4U\DocumentHeader\DocumentHeaderEFRepository.cs" />
+    <Compile Include="Count4U\InventProduct\InventProductEFRepository.cs" />
+    <Compile Include="Count4U\Location\LocationEFRepository.cs" />
+    <Compile Include="Count4U\Mapping\BarcodeMapper.cs" />
+    <Compile Include="Count4U\Mapping\DocumentHeaderMapper.cs" />
+    <Compile Include="Count4U\Mapping\InventProductMapper.cs" />
+    <Compile Include="Count4U\Mapping\IturMapper.cs" />
+    <Compile Include="Count4U\Mapping\LocationMapper.cs" />
+    <Compile Include="Count4U\Mapping\ProductMapper.cs" />
+    <Compile Include="Count4U\Product\ProductSimple.cs" />
+    <Compile Include="Count4U\Section\SectionEFRepository.cs" />
+    <Compile Include="Count4U\Session\SessionEFRepository.cs" />
+    <Compile Include="Count4U\StatusDocHeader\StatusDocHeaderEFRepository.cs" />
+    <Compile Include="Audit\Mapping\StatusAuditConfigMapper.cs" />
+    <Compile Include="Audit\Mapping\StatusInventorMapper.cs" />
+    <Compile Include="Count4U\InputType\InputType.cs" />
+    <Compile Include="Count4U\InputType\InputTypeEFRepository.cs" />
+    <Compile Include="Count4U\InputType\InputTypeRepository.cs" />
+    <Compile Include="Count4U\InputType\InputTypes.cs" />
+    <Compile Include="Count4U\StatusInventorConfig\StatusInventorConfigEFRepository.cs" />
+    <Compile Include="Interface\IConnectionADO.cs" />
+    <Compile Include="Interface\Count4U\ICatalogConfigRepository.cs" />
+    <Compile Include="Interface\Count4U\ICatalogConfig.cs" />
+    <Compile Include="Interface\Count4U\IStatusInventorConfigRepository.cs" />
+    <Compile Include="Count4U\StatusInventorConfig\StatusInventorConfig.cs" />
+    <Compile Include="Count4U\StatusInventorConfig\StatusInventorConfigRepository.cs" />
+    <Compile Include="Count4U\StatusInventorConfig\StatusInventorConfigs.cs" />
+    <Compile Include="Interface\Count4U\IStatusInventorConfig.cs" />
+    <Compile Include="Interface\ILog.cs" />
+    <Compile Include="Main\Branch\BranchEFRepository.cs" />
+    <Compile Include="Main\Customer\CustomerEFRepository.cs" />
+    <Compile Include="Main\MapptingEF\BranchMapper.cs" />
+    <Compile Include="Main\MapptingEF\CustomerConfigMapper.cs" />
+    <Compile Include="Main\MapptingEF\CustomerMapper.cs" />
+    <Compile Include="Main\MapptingEF\CustomerReportMapper.cs" />
+    <Compile Include="Main\Mapping\BranchMapper.cs" />
+    <Compile Include="Count4U\Mapping\InventorConfigMapper.cs" />
+    <Compile Include="Main\Mapping\CustomerReportMapper.cs" />
+    <Compile Include="Main\Mapping\CustomerConfigMapper.cs" />
+    <Compile Include="Main\Mapping\CustomerMapper.cs" />
+    <Compile Include="Audit\StatusInventor\StatusInventorRepository.cs" />
+    <Compile Include="Count4U\InventProduct\InventProducts.cs" />
+    <Compile Include="Count4U\InventProduct\InventProduct.cs" />
+    <Compile Include="Count4U\DocumentHeader\DocumentHeaders.cs" />
+    <Compile Include="Count4U\Location\Locations.cs" />
+    <Compile Include="Count4U\Section\Sections.cs" />
+    <Compile Include="Count4U\Session\Sessions.cs" />
+    <Compile Include="Count4U\StatusDocHeader\StatusDocHeaders.cs" />
+    <Compile Include="Count4U\StatusInventProduct\StatusInventProductEFRepository.cs" />
+    <Compile Include="Count4U\StatusInventProduct\StatusInventProducts.cs" />
+    <Compile Include="Count4U\StatusItur\StatusIturEFRepository.cs" />
+    <Compile Include="Count4U\StatusItur\StatusIturs.cs" />
+    <Compile Include="Count4U\Supplier\SupplierEFRepository.cs" />
+    <Compile Include="Count4U\Supplier\Suppliers.cs" />
+    <Compile Include="Count4U\Type\TypeEFRepository.cs" />
+    <Compile Include="Count4U\Type\Types.cs" />
+    <Compile Include="Count4U\UnitType\UnitTypeEFRepository.cs" />
+    <Compile Include="Count4U\UnitType\UnitTypes.cs" />
+    <Compile Include="Count4U\DocumentHeader\DocumentHeader.cs" />
+    <Compile Include="Count4U\AccessParent\AccessParentChildRepository.cs" />
+    <Compile Include="Count4U\Barcode\BarcodeRepository.cs" />
+    <Compile Include="Count4U\DocumentHeader\DocumentHeaderRepository.cs" />
+    <Compile Include="DomainObjects.cs" />
+    <Compile Include="Interface\IConnectionDB.cs" />
+    <Compile Include="Interface\Count4U\IStatusInventProductRepository.cs" />
+    <Compile Include="Interface\Count4U\IStatusInventProduct.cs" />
+    <Compile Include="Interface\Count4U\IInventorConfigRepository.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Audit\AuditConfig\AuditConfigRepository.cs" />
+    <Compile Include="Count4U\InventProduct\InventProductRepository.cs" />
+    <Compile Include="Count4U\Itur\IturRepository.cs" />
+    <Compile Include="Count4U\Location\LocationRepository.cs" />
+    <Compile Include="Count4U\Section\SectionRepository.cs" />
+    <Compile Include="Count4U\Session\SessionRepository.cs" />
+    <Compile Include="Count4U\StatusDocHeader\StatusDocHeaderRepository.cs" />
+    <Compile Include="Audit\StatusAuditConfig\StatusAuditConfigRepository.cs" />
+    <Compile Include="Count4U\StatusItur\StatusIturRepository.cs" />
+    <Compile Include="Count4U\Supplier\SupplierRepository.cs" />
+    <Compile Include="Count4U\Type\TypeRepository.cs" />
+    <Compile Include="Count4U\UnitType\UnitTypeRepository.cs" />
+    <Compile Include="Count4U\Location\Location.cs" />
+    <Compile Include="Count4U\Section\Section.cs" />
+    <Compile Include="Count4U\Session\Session.cs" />
+    <Compile Include="Count4U\StatusDocHeader\StatusDocHeader.cs" />
+    <Compile Include="Count4U\StatusInventProduct\StatusInventProduct.cs" />
+    <Compile Include="Count4U\StatusItur\StatusItur.cs" />
+    <Compile Include="Count4U\Supplier\Supplier.cs" />
+    <Compile Include="Count4U\Type\Type.cs" />
+    <Compile Include="Count4U\UnitType\UnitType.cs" />
+    <Compile Include="Interface\Count4U\IInventProductRepository.cs" />
+    <Compile Include="Interface\Count4U\IInventProduct.cs" />
+    <Compile Include="Interface\Count4U\IAccessParentChildRepository.cs" />
+    <Compile Include="Interface\Count4U\IBarcodeRepository.cs" />
+    <Compile Include="Interface\Count4U\IDocumentHeaderRepository.cs" />
+    <Compile Include="Interface\Count4U\IInputTypeRepository.cs" />
+    <Compile Include="Interface\Count4U\IIturRepository.cs" />
+    <Compile Include="Interface\Count4U\ILocationRepository.cs" />
+    <Compile Include="Interface\Count4U\IProductRepository.cs" />
+    <Compile Include="Interface\Count4U\ISectionRepository.cs" />
+    <Compile Include="Interface\Count4U\ISessionRepository.cs" />
+    <Compile Include="Interface\Count4U\IStatusDocHeaderRepository.cs" />
+    <Compile Include="Interface\Count4U\IStatusIturRepository.cs" />
+    <Compile Include="Interface\Count4U\ISupplierRepository.cs" />
+    <Compile Include="Interface\Count4U\ITypeRepository.cs" />
+    <Compile Include="Interface\Count4U\IBuildingConfigRepository.cs" />
+    <Compile Include="Interface\Count4U\IType.cs" />
+    <Compile Include="Interface\Count4U\IUnitType.cs" />
+    <Compile Include="Interface\Count4U\ISupplier.cs" />
+    <Compile Include="Interface\Count4U\IStatusItur.cs" />
+    <Compile Include="Interface\Count4U\IStatusDocHeader.cs" />
+    <Compile Include="Interface\Count4U\ISection.cs" />
+    <Compile Include="Interface\Count4U\ISession.cs" />
+    <Compile Include="Interface\Count4U\IProduct.cs" />
+    <Compile Include="Interface\Count4U\ILocation.cs" />
+    <Compile Include="Interface\Count4U\IItur.cs" />
+    <Compile Include="Interface\Count4U\IInventorConfig.cs" />
+    <Compile Include="Interface\Count4U\IInputType.cs" />
+    <Compile Include="Interface\Count4U\IDocumentHeader.cs" />
+    <Compile Include="Interface\Count4U\IBarcode.cs" />
+    <Compile Include="Interface\Count4U\IAccessParentChild.cs" />
+    <Compile Include="Main\Branch\BranchRepository.cs" />
+    <Compile Include="Main\CustomerReport\CustomerReportRepository.cs" />
+    <Compile Include="Main\Customer\CustomerRepository.cs" />
+    <Compile Include="DBModuleInit.cs" />
+    <Compile Include="Audit\Inventor\InventorRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="Transfer\Zip.cs" />
+    <Compile Include="Transfer\ZipPackInfo.cs" />
+    <Compile Include="Transfer\ZipRelativePath.cs" />
+    <Compile Include="Transfer\ZipRootFolder.cs" />
+    <Compile Include="Transfer\ZipRootFolderInfo.cs" />
+    <Compile Include="Transfer\ZipUnpackInfoItem.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.4.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 4.0 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="App_Data\ProcessDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ProcessDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <EntityDeploy Include="App_Data\AuditDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AuditDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App_Data\AuditDB.edmx.diagram">
+      <DependentUpon>AuditDB.edmx</DependentUpon>
+      <SubType>Designer</SubType>
+    </None>
+    <EntityDeploy Include="App_Data\MainDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>MainDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <EntityDeploy Include="App_Data\Count4UDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Count4UDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="App_Data\Count4MobileDbTemplete.db3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="App_Data\AnalyticDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>AnalyticDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App_Data\Count4UDB.edmx.diagram">
+      <DependentUpon>Count4UDB.edmx</DependentUpon>
+    </None>
+    <None Include="App_Data\MainDB.edmx.diagram">
+      <DependentUpon>MainDB.edmx</DependentUpon>
+    </None>
+    <None Include="ImportData\Branch\BranchCode1_1\catalog.dat" />
+    <None Include="ImportData\Branch\BranchCode1_1\hamarot.dat" />
+    <None Include="ImportData\Branch\BranchCode1_1\items.csv" />
+    <None Include="ImportData\Branch\BranchCode1_2\catalog.dat" />
+    <None Include="ImportData\Branch\BranchCode1_2\hamarot.dat" />
+    <None Include="ImportData\Branch\BranchCode1_2\items.csv" />
+    <None Include="ImportData\Branch\BranchCode1_3\catalog.dat" />
+    <None Include="ImportData\Branch\BranchCode1_3\hamarot.dat" />
+    <None Include="ImportData\Branch\BranchCode1_3\items.csv" />
+    <None Include="ImportData\Branch\BranchCode2_1\catalog.dat" />
+    <None Include="ImportData\Branch\BranchCode2_1\hamarot.dat" />
+    <None Include="ImportData\Branch\BranchCode2_1\items.csv" />
+    <None Include="ImportData\Branch\BranchCode2_2\catalog.dat" />
+    <None Include="ImportData\Branch\BranchCode2_2\hamarot.dat" />
+    <None Include="ImportData\Branch\BranchCode2_2\items.csv" />
+    <None Include="ImportData\Branch\c72d7c96-f450-414e-9040-a8cbe315452d\catalog.dat" />
+    <None Include="ImportData\Branch\c72d7c96-f450-414e-9040-a8cbe315452d\hamarot.dat" />
+    <None Include="ImportData\Branch\c72d7c96-f450-414e-9040-a8cbe315452d\items.csv" />
+    <None Include="ImportData\Customer\a0ab472d-28e6-4c94-8087-eb3b2bd75fee\catalog.dat" />
+    <None Include="ImportData\Customer\a0ab472d-28e6-4c94-8087-eb3b2bd75fee\hamarot.dat" />
+    <None Include="ImportData\Customer\a0ab472d-28e6-4c94-8087-eb3b2bd75fee\items.csv" />
+    <None Include="ImportData\Customer\CustomerCode1\catalog.dat" />
+    <None Include="ImportData\Customer\CustomerCode1\hamarot.dat" />
+    <None Include="ImportData\Customer\CustomerCode1\items.csv" />
+    <None Include="ImportData\Customer\CustomerCode2\catalog.dat" />
+    <None Include="ImportData\Customer\CustomerCode2\hamarot.dat" />
+    <None Include="ImportData\Customer\CustomerCode2\items.csv" />
+    <None Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\catalog.dat" />
+    <None Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\hamarot.dat" />
+    <None Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\items.csv" />
+    <None Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\catalog.dat" />
+    <None Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\hamarot.dat" />
+    <None Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\items.csv" />
+    <None Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\catalog.dat" />
+    <None Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\hamarot.dat" />
+    <None Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\items.csv" />
+    <None Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\catalog.dat" />
+    <None Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\hamarot.dat" />
+    <None Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\items.csv" />
+    <None Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\catalog.dat" />
+    <None Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\hamarot.dat" />
+    <None Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\items.csv" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\DataSources\Count4U.Model.App_Data.AuditDB.datasource" />
+    <None Include="Properties\DataSources\Count4U.Model.App_Data.Count4UDB.datasource" />
+    <None Include="Properties\DataSources\Count4U.Model.App_Data.MainDB.datasource" />
+    <None Include="Properties\DataSources\Count4U.Model.Count4U.Devices.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="adapterlink.txt" />
+    <Content Include="amd64\sqlceca40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="amd64\sqlcecompact40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="amd64\sqlceer40EN.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="amd64\sqlceme40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="amd64\sqlceqp40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="amd64\sqlcese40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="App_Data\Model10.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model10.cs</LastGenOutput>
+      <DependentUpon>AnalyticDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Model5.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model5.cs</LastGenOutput>
+      <DependentUpon>ProcessDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Model6.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model6.cs</LastGenOutput>
+      <DependentUpon>MainDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Model7.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model7.cs</LastGenOutput>
+      <DependentUpon>AuditDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="App_Data\Model8.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model8.cs</LastGenOutput>
+      <DependentUpon>Count4UDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="op.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ImportData\Branch\BranchCode1_1\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_1\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_1\ImportIturTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_1\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_1\ImportLocationTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_1\items.asp" />
+    <Content Include="ImportData\Branch\BranchCode1_2\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_2\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_2\ImportIturTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_2\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_2\ImportLocationTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_2\items.asp" />
+    <Content Include="ImportData\Branch\BranchCode1_3\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_3\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_3\ImportIturTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_3\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_3\ImportLocationTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode1_3\items.asp" />
+    <Content Include="ImportData\Branch\BranchCode2_1\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode2_1\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode2_1\ImportIturTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode2_1\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode2_1\ImportLocationTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode2_1\items.asp" />
+    <Content Include="ImportData\Branch\BranchCode2_2\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode2_2\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode2_2\ImportIturTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode2_2\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode2_2\ImportLocationTest.txt" />
+    <Content Include="ImportData\Branch\BranchCode2_2\items.asp" />
+    <Content Include="ImportData\Branch\c72d7c96-f450-414e-9040-a8cbe315452d\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Branch\c72d7c96-f450-414e-9040-a8cbe315452d\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Branch\c72d7c96-f450-414e-9040-a8cbe315452d\ImportIturTest.txt" />
+    <Content Include="ImportData\Branch\c72d7c96-f450-414e-9040-a8cbe315452d\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Branch\c72d7c96-f450-414e-9040-a8cbe315452d\ImportLocationTest.txt" />
+    <Content Include="ImportData\Branch\c72d7c96-f450-414e-9040-a8cbe315452d\items.asp" />
+    <Content Include="ImportData\Customer\a0ab472d-28e6-4c94-8087-eb3b2bd75fee\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Customer\a0ab472d-28e6-4c94-8087-eb3b2bd75fee\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Customer\a0ab472d-28e6-4c94-8087-eb3b2bd75fee\ImportIturTest.txt" />
+    <Content Include="ImportData\Customer\a0ab472d-28e6-4c94-8087-eb3b2bd75fee\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Customer\a0ab472d-28e6-4c94-8087-eb3b2bd75fee\ImportLocationTest.txt" />
+    <Content Include="ImportData\Customer\a0ab472d-28e6-4c94-8087-eb3b2bd75fee\items.asp" />
+    <Content Include="ImportData\Customer\CustomerCode1\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Customer\CustomerCode1\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Customer\CustomerCode1\ImportIturTest.txt" />
+    <Content Include="ImportData\Customer\CustomerCode1\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Customer\CustomerCode1\ImportLocationTest.txt" />
+    <Content Include="ImportData\Customer\CustomerCode1\items.asp" />
+    <Content Include="ImportData\Customer\CustomerCode2\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Customer\CustomerCode2\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Customer\CustomerCode2\ImportIturTest.txt" />
+    <Content Include="ImportData\Customer\CustomerCode2\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Customer\CustomerCode2\ImportLocationTest.txt" />
+    <Content Include="ImportData\Customer\CustomerCode2\items.asp" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\ImportIturTest.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\ImportLocationTest.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170001_3107211317.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170004_3107212130.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170004_3107223046.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170005_3107211317.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170005_3107211500.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170006_3107211442.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170007_3107211535.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170008_3107211442.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170009_3107211442.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170010_3107211535.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170011_3107211442.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170012_3107211441.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170013_3107211441.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170014_3107211440.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170015_3107211440.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170016_3107211440.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170017_3107211441.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170018_3107211443.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170019_3107211535.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170020_3107211442.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170021_3107233028.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170021_3107233134.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170022_0108002821.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170022_3107234053.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170023_3107233807.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170024_3107234807.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170025_3107234805.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170027_3107234806.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170028_3107234806.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170029_0108000226.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170031_0108000227.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170032_0108000227.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170033_3107234807.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170034_3107234806.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170035_0108000227.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170036_0108000226.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\inData\29170050_0108000228.txt" />
+    <Content Include="ImportData\Inventor\1e37942d-3868-4181-aabb-9b2782ac854d\items.asp" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\ImportIturTest.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\ImportLocationTest.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170001_3107211317.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170004_3107212130.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170004_3107223046.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170005_3107211317.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170005_3107211500.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170006_3107211442.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170007_3107211535.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170008_3107211442.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170009_3107211442.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170010_3107211535.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170011_3107211442.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170012_3107211441.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170013_3107211441.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170014_3107211440.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170015_3107211440.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170016_3107211440.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170017_3107211441.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170018_3107211443.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170019_3107211535.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170020_3107211442.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170021_3107233028.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170021_3107233134.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170022_0108002821.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170022_3107234053.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170023_3107233807.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170024_3107234807.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170025_3107234805.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170027_3107234806.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170028_3107234806.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170029_0108000226.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170031_0108000227.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170032_0108000227.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170033_3107234807.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170034_3107234806.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170035_0108000227.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170036_0108000226.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\inData\29170050_0108000228.txt" />
+    <Content Include="ImportData\Inventor\2b588315-4b14-4709-bac9-55f5e303721b\items.asp" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\ImportIturTest.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\ImportLocationTest.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170001_3107211317.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170004_3107212130.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170004_3107223046.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170005_3107211317.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170005_3107211500.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170006_3107211442.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170007_3107211535.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170008_3107211442.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170009_3107211442.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170010_3107211535.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170011_3107211442.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170012_3107211441.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170013_3107211441.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170014_3107211440.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170015_3107211440.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170016_3107211440.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170017_3107211441.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170018_3107211443.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170019_3107211535.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170020_3107211442.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170021_3107233028.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170021_3107233134.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170022_0108002821.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170022_3107234053.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170023_3107233807.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170024_3107234807.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170025_3107234805.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170027_3107234806.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170028_3107234806.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170029_0108000226.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170031_0108000227.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170032_0108000227.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170033_3107234807.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170034_3107234806.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170035_0108000227.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170036_0108000226.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\inData\29170050_0108000228.txt" />
+    <Content Include="ImportData\Inventor\7d2733e9-7342-436f-b65a-b5c1a647dcce\items.asp" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\ImportIturTest.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\ImportLocationTest.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170001_3107211317.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170004_3107212130.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170004_3107223046.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170005_3107211317.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170005_3107211500.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170006_3107211442.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170007_3107211535.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170008_3107211442.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170009_3107211442.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170010_3107211535.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170011_3107211442.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170012_3107211441.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170013_3107211441.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170014_3107211440.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170015_3107211440.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170016_3107211440.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170017_3107211441.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170018_3107211443.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170019_3107211535.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170020_3107211442.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170021_3107233028.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170021_3107233134.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170022_0108002821.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170022_3107234053.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170023_3107233807.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170024_3107234807.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170025_3107234805.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170027_3107234806.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170028_3107234806.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170029_0108000226.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170031_0108000227.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170032_0108000227.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170033_3107234807.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170034_3107234806.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170035_0108000227.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170036_0108000226.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\inData\29170050_0108000228.txt" />
+    <Content Include="ImportData\Inventor\94dbe765-e79f-46c9-858d-5a8e7623f780\items.asp" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\ImportIturBitTest.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\ImportIturDocTest.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\ImportIturTest.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\ImportLocationBitTest.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\ImportLocationTest.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170001_3107211317.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170004_3107212130.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170004_3107223046.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170005_3107211317.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170005_3107211500.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170006_3107211442.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170007_3107211535.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170008_3107211442.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170009_3107211442.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170010_3107211535.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170011_3107211442.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170012_3107211441.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170013_3107211441.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170014_3107211440.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170015_3107211440.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170016_3107211440.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170017_3107211441.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170018_3107211443.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170019_3107211535.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170020_3107211442.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170021_3107233028.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170021_3107233134.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170022_0108002821.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170022_3107234053.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170023_3107233807.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170024_3107234807.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170025_3107234805.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170027_3107234806.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170028_3107234806.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170029_0108000226.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170031_0108000227.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170032_0108000227.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170033_3107234807.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170034_3107234806.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170035_0108000227.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170036_0108000226.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\inData\29170050_0108000228.txt" />
+    <Content Include="ImportData\Inventor\d8c547d3-af9c-4e82-ba35-3d242dd31e0e\items.asp" />
+    <Content Include="x86\sqlceca40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\sqlcecompact40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\sqlceer40EN.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\sqlceme40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\sqlceqp40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="x86\sqlcese40.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\Branch\" />
+    <Folder Include="App_Data\Customer\" />
+    <Folder Include="App_Data\Inventor\" />
+    <Folder Include="App_Data\Process\" />
+    <Folder Include="App_Data\SetupDb\" />
+    <Folder Include="Count4U\DBFileUtils\" />
+    <Folder Include="ExportToPDA\Process\" />
+    <Folder Include="Interface\Count4Mobile\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Count4U.Localization\Count4U.Localization.csproj">
+      <Project>{c1716c1b-995a-481b-8853-1b984f75be45}</Project>
+      <Name>Count4U.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.Common\Count4U.Model.Common.csproj">
+      <Project>{5e70d036-3982-4d9f-95ca-197e616d7f59}</Project>
+      <Name>Count4U.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ServiceContract\Count4U.Model.ServiceContract.csproj">
+      <Project>{6c200172-9847-40e4-ae97-ec50bbf4d0a4}</Project>
+      <Name>Count4U.Model.ServiceContract</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>IF NOT EXIST $(SolutionDir)Count4U\$(OutDir)ImportModules ( mkdir $(SolutionDir)Count4U\$(OutDir)ImportModules )
+copy $(SolutionDir)$(ProjectName)\adapterlink.txt $(SolutionDir)Count4U\$(OutDir)ImportModules\
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

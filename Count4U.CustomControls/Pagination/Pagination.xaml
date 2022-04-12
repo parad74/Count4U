@@ -1,0 +1,250 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:Pagination="clr-namespace:Count4U.CustomControls.Pagination"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" >
+
+    <Style TargetType="{x:Type Pagination:Pagination}">
+        <Style.Setters>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Pagination:Pagination}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.Resources>
+                                <SolidColorBrush x:Key="pagArrowEnabledColor" Color="#292929" />
+
+                                <!--								<SolidColorBrush x:Key="pagArrowDisabledColor" Color="#434343" />-->
+                                <SolidColorBrush x:Key="pagArrowDisabledColor" Color="Gray" />
+                            </Grid.Resources>
+
+                            <Button Name="PART_ButtonFirst" Grid.Column="0" Height="25" Margin="5,0,2,0" FocusVisualStyle="{x:Null}" >
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Grid Background="Transparent">
+                                            <Path	Name="path1"
+												HorizontalAlignment="Left"
+												VerticalAlignment="Center"
+												Height="17"
+												Width="10"
+												Stretch="Fill"
+												Opacity="1"
+												Data="M 314.8372802734375,157 C314.8372802734375,157 311.4227294921875,163.88134765625 311.4227294921875,163.88134765625 311.4227294921875,163.88134765625 315,171 315,171 315,171 310,163.8955078125 310,163.8955078125 310,163.8955078125 314.8372802734375,157 314.8372802734375,157 z"
+												Fill="{StaticResource pagArrowEnabledColor}" />
+
+                                            <Path Name="path2"
+												Margin="4,0,0,0"
+												HorizontalAlignment="Left"
+												VerticalAlignment="Center"
+												Height="17"
+												Width="10"
+												Stretch="Fill"
+												Opacity="1"
+												Data="M 310.8372802734375,157 C310.8372802734375,157 307.4227294921875,163.88134765625 307.4227294921875,163.88134765625 307.4227294921875,163.88134765625 311,171 311,171 311,171 306,163.8955078125 306,163.8955078125 306,163.8955078125 310.8372802734375,157 310.8372802734375,157 z"
+												Fill="{StaticResource pagArrowEnabledColor}" />
+
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="path1" Property="Fill" Value="{StaticResource pagArrowDisabledColor}" />
+                                                <Setter TargetName="path2" Property="Fill" Value="{StaticResource pagArrowDisabledColor}" />
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Cursor" Value="Hand" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+
+                            <Button Name="PART_ButtonPrevious" Grid.Column="1" Height="25"  Margin="2,0,2,0" FocusVisualStyle="{x:Null}" >
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Grid Background="Transparent">
+                                            <Path		Name="path"
+											HorizontalAlignment="Center"
+											VerticalAlignment="Center"
+											Height="17"
+											Width="10"
+											Stretch="Fill"
+											Opacity="1"
+											Data="M 330.8372802734375,157 C330.8372802734375,157 327.4227294921875,163.88134765625 327.4227294921875,163.88134765625 327.4227294921875,163.88134765625 331,171 331,171 331,171 326,163.8955078125 326,163.8955078125 326,163.8955078125 330.8372802734375,157 330.8372802734375,157 z"
+											Fill="{StaticResource pagArrowEnabledColor}" />
+                                        </Grid>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="path" Property="Fill" Value="{StaticResource pagArrowDisabledColor}" />
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Cursor" Value="Hand" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+
+                            <ListBox Name="PART_ListBox" Grid.Column="2" Margin="5,0,5,0"
+											 Background="Transparent" BorderThickness="0" BorderBrush="Transparent" FocusVisualStyle="{x:Null}">
+
+                                <ListBox.Resources>
+                                    <Style x:Key="pageTextBlock" TargetType="{x:Type TextBlock}" >
+                                        <Setter Property="Foreground" Value="#405500" />
+                                        <Setter Property="FontFamily" Value="Tahoma" />
+                                        <Setter Property="FontSize" Value="12" />
+                                        <Setter Property="HorizontalAlignment" Value="Center" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                    </Style>
+
+                                    <DataTemplate DataType="{x:Type Pagination:PaginationDots}">
+                                        <Border Background="Transparent" BorderBrush="Transparent" 
+														BorderThickness="0" MinHeight="17" MinWidth="20" Margin="1,0,1,0"
+														VerticalAlignment="Center" HorizontalAlignment="Center">
+                                            <TextBlock Text="{Binding Path=Data}" Background="Transparent" Style="{StaticResource pageTextBlock}" />
+                                        </Border>
+                                    </DataTemplate>
+
+                                    <DataTemplate DataType="{x:Type Pagination:PaginationCurrentPage}">
+                                        <Border Background="White" BorderBrush="#405500" BorderThickness="1" MinHeight="17" MinWidth="20" Margin="1,0,1,0">
+                                            <TextBlock Text="{Binding Path=Data}" Background="White" Style="{StaticResource pageTextBlock}"/>
+                                        </Border>
+                                    </DataTemplate>
+
+                                    <DataTemplate DataType="{x:Type Pagination:PaginationPage}">
+                                        <Border Background="Transparent" BorderBrush="Transparent" BorderThickness="0" MinHeight="17" MinWidth="20" Margin="1,0,1,0">
+                                            <TextBlock Text="{Binding Path=Data}" Background="Transparent" VerticalAlignment="Center" HorizontalAlignment="Center" >
+												<i:Interaction.Triggers>
+													<i:EventTrigger EventName="MouseLeftButtonDown">
+														<i:InvokeCommandAction Command="{Binding PageCommand}" CommandParameter="{Binding Path=Data}"/>
+													</i:EventTrigger>
+												</i:Interaction.Triggers>
+											
+											<TextBlock.Style>
+												<Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource pageTextBlock}">
+													<Style.Triggers>
+														<Trigger Property="IsMouseOver" Value="True">
+															<Setter Property="Cursor" Value="Hand" />
+														</Trigger>
+													</Style.Triggers>
+												</Style>
+											</TextBlock.Style>
+                                            </TextBlock>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.Resources>
+
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <StackPanel Orientation="Horizontal"></StackPanel>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListBoxItem}">
+                                        <Style.Resources>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                                        </Style.Resources>
+                                        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+
+
+                            </ListBox>
+
+                            <Button Name="PART_ButtonNext" Grid.Column="3" Height="25" Margin="2,0,2,0" FocusVisualStyle="{x:Null}" >
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Grid Background="Transparent">
+                                            <Path		Name="path"
+											HorizontalAlignment="Center"
+											VerticalAlignment="Center"
+											Height="17"
+											Width="10"
+											Stretch="Fill"
+											Opacity="1"
+											Data="M 520.1627197265625,157 C520.1627197265625,157 523.5772705078125,163.88134765625 523.5772705078125,163.88134765625 523.5772705078125,163.88134765625 520,171 520,171 520,171 525,163.8955078125 525,163.8955078125 525,163.8955078125 520.1627197265625,157 520.1627197265625,157 z"
+											Fill="{StaticResource pagArrowEnabledColor}" />
+                                        </Grid>
+
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="path" Property="Fill" Value="{StaticResource pagArrowDisabledColor}" />
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Cursor" Value="Hand" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+
+                            <Button Name="PART_ButtonLast" Grid.Column="4" Height="25" Margin="5,0,2,0" FocusVisualStyle="{x:Null}" >
+                                <Button.Template>
+                                    <ControlTemplate>
+                                        <Grid Background="Transparent">
+                                            <Path	Name="path1"
+												HorizontalAlignment="Left"
+												VerticalAlignment="Center"
+												Height="17"
+												Width="10"
+												Stretch="Fill"
+												Opacity="1"
+												Data="M 536.1627197265625,157 C536.1627197265625,157 539.5772705078125,163.88134765625 539.5772705078125,163.88134765625 539.5772705078125,163.88134765625 536,171 536,171 536,171 541,163.8955078125 541,163.8955078125 541,163.8955078125 536.1627197265625,157 536.1627197265625,157 z"
+												Fill="{StaticResource pagArrowEnabledColor}" />
+
+                                            <Path Name="path2"
+												Margin="4,0,0,0"
+												HorizontalAlignment="Left"
+												VerticalAlignment="Center"
+												Height="17"
+												Width="10"
+												Stretch="Fill"
+												Opacity="1"
+												Data="M 540.1627197265625,157 C540.1627197265625,157 543.5772705078125,163.88134765625 543.5772705078125,163.88134765625 543.5772705078125,163.88134765625 540,171 540,171 540,171 545,163.8955078125 545,163.8955078125 545,163.8955078125 540.1627197265625,157 540.1627197265625,157 z"
+												Fill="{StaticResource pagArrowEnabledColor}" />
+
+                                        </Grid>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsEnabled" Value="False">
+                                                <Setter TargetName="path1" Property="Fill" Value="{StaticResource pagArrowDisabledColor}" />
+                                                <Setter TargetName="path2" Property="Fill" Value="{StaticResource pagArrowDisabledColor}" />
+                                            </Trigger>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Cursor" Value="Hand" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
+
+
+                            <Grid Grid.Column="5" HorizontalAlignment="Right" Margin="2,0,10,0" VerticalAlignment="Stretch" >
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock x:Name="PART_TextBlockPortion" Grid.Column="0" VerticalAlignment="Center" 
+                                           FontFamily="Tahoma" FontSize="14" FontWeight="Black" Foreground="#3F5400" />
+
+                                <TextBlock x:Name="PART_TextBlockTotal"   Grid.Column="1"   
+                                           Margin="5,0,0,0"  VerticalAlignment="Center" FontFamily="Tahoma" FontSize="12" Foreground="#3F5400" />
+                            </Grid>
+
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+</ResourceDictionary>

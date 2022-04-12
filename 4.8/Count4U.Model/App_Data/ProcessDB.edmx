@@ -1,0 +1,531 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ProcessDBModel.Store" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MainProcessJob">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProcessJobCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="SyncCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="PoolCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ParentProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="FirstProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="NextProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="PrevProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="DomainType" Type="nvarchar" MaxLength="50" />
+          <Property Name="NN" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="JobTypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobServiceCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="GetDate" Type="datetime" />
+          <Property Name="ResentDate" Type="datetime" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="FinishDate" Type="datetime" />
+          <Property Name="ClosedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="Owner" Type="nvarchar" MaxLength="100" />
+          <Property Name="Device" Type="nvarchar" MaxLength="50" />
+          <Property Name="DbFileName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag1" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag2" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag3" Type="nvarchar" MaxLength="500" />
+          <Property Name="TagIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="TagHost" Type="nvarchar" MaxLength="50" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="50" />
+          <Property Name="OperationResult" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContextCBI" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentAuditConfigCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentCBIObjectType" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentCBIObjectCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentCustomerCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentBranchCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentInventorCode" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Port">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PortCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="IP" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="250" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="StatusCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag1" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag2" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag3" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="Process">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="SyncCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="DBPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="Manager" Type="nvarchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Title" Type="nvarchar" MaxLength="250" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="StatusCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag1" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag2" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag3" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="ProcessDBIni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ver" Type="nvarchar" MaxLength="10" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ProcessPort">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProcessPortCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="PortCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Name" Type="nvarchar" MaxLength="15" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="StatusCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag1" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag2" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag3" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="TemporaryMainProcessJob">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProcessJobCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="SyncCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="PoolCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ParentProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="FirstProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="NextProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="PrevProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="LastProcessCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="DomainType" Type="nvarchar" MaxLength="50" />
+          <Property Name="NN" Type="int" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="JobTypeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobServiceCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="GetDate" Type="datetime" />
+          <Property Name="ResentDate" Type="datetime" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="FinishDate" Type="datetime" />
+          <Property Name="ClosedDate" Type="datetime" />
+          <Property Name="ModifiedDate" Type="datetime" />
+          <Property Name="Owner" Type="nvarchar" MaxLength="100" />
+          <Property Name="Device" Type="nvarchar" MaxLength="50" />
+          <Property Name="DbFileName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag1" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag2" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag3" Type="nvarchar" MaxLength="500" />
+          <Property Name="TagIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="TagHost" Type="nvarchar" MaxLength="50" />
+          <Property Name="Operation" Type="nvarchar" MaxLength="50" />
+          <Property Name="OperationResult" Type="nvarchar" MaxLength="50" />
+          <Property Name="ContextCBI" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentAuditConfigCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentCBIObjectType" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentCBIObjectCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentCustomerCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentBranchCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="CurrentInventorCode" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityContainer Name="ProcessDBModelStoreContainer">
+          <EntitySet Name="MainProcessJob" EntityType="Self.MainProcessJob" store:Type="Tables" />
+          <EntitySet Name="Port" EntityType="Self.Port" store:Type="Tables" />
+          <EntitySet Name="Process" EntityType="Self.Process" store:Type="Tables" />
+          <EntitySet Name="ProcessDBIni" EntityType="Self.ProcessDBIni" store:Type="Tables" />
+          <EntitySet Name="ProcessPort" EntityType="Self.ProcessPort" store:Type="Tables" />
+          <EntitySet Name="TemporaryMainProcessJob" EntityType="Self.TemporaryMainProcessJob" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProcessDBModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+        <EntityContainer Name="ProcessDB" annotation:LazyLoadingEnabled="true" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+          <EntitySet Name="Port" EntityType="ProcessDBModel.Port" />
+          <EntitySet Name="Process" EntityType="ProcessDBModel.Process" />
+          <EntitySet Name="ProcessDBIni" EntityType="ProcessDBModel.ProcessDBIni" />
+          <EntitySet Name="MainProcessJob" EntityType="ProcessDBModel.MainProcessJob" />
+          <EntitySet Name="TemporaryMainProcessJob" EntityType="ProcessDBModel.TemporaryMainProcessJob" />
+          <EntitySet Name="ProcessPort" EntityType="ProcessDBModel.ProcessPort" />
+	       </EntityContainer>
+        <EntityType Name="Port">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="PortCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="IP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Process">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SyncCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DBPath" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="Manager" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProcessDBIni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="Ver" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MainProcessJob">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SyncCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PoolCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ParentProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FirstProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NextProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PrevProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DomainType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NN" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="JobTypeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobServiceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="GetDate" Type="DateTime" Precision="3" />
+          <Property Name="ResentDate" Type="DateTime" Precision="3" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="FinishDate" Type="DateTime" Precision="3" />
+          <Property Name="ClosedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Owner" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Device" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DbFileName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TagIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TagHost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OperationResult" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContextCBI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentAuditConfigCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentCBIObjectType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentCBIObjectCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentCustomerCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentBranchCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentInventorCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessJobCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TemporaryMainProcessJob">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SyncCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PoolCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ParentProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="FirstProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NextProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PrevProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LastProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DomainType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NN" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="JobTypeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobServiceCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="GetDate" Type="DateTime" Precision="3" />
+          <Property Name="ResentDate" Type="DateTime" Precision="3" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="FinishDate" Type="DateTime" Precision="3" />
+          <Property Name="ClosedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <Property Name="Owner" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Device" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DbFileName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TagIP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TagHost" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Operation" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OperationResult" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ContextCBI" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentAuditConfigCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentCBIObjectType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentCBIObjectCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentCustomerCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentBranchCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CurrentInventorCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessJobCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProcessPort">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" />
+          <Property Name="ProcessPortCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="ProcessCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PortCode" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="StatusCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Tag" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag2" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Tag3" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProcessDBModelStoreContainer" CdmEntityContainer="ProcessDB">
+          <EntitySetMapping Name="Port">
+            <EntityTypeMapping TypeName="ProcessDBModel.Port">
+              <MappingFragment StoreEntitySet="Port">
+                <ScalarProperty Name="Tag3" ColumnName="Tag3" />
+                <ScalarProperty Name="Tag2" ColumnName="Tag2" />
+                <ScalarProperty Name="Tag1" ColumnName="Tag1" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="IP" ColumnName="IP" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="PortCode" ColumnName="PortCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Process">
+            <EntityTypeMapping TypeName="ProcessDBModel.Process">
+              <MappingFragment StoreEntitySet="Process">
+                <ScalarProperty Name="Tag3" ColumnName="Tag3" />
+                <ScalarProperty Name="Tag2" ColumnName="Tag2" />
+                <ScalarProperty Name="Tag1" ColumnName="Tag1" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="DBPath" ColumnName="DBPath" />
+                <ScalarProperty Name="SyncCode" ColumnName="SyncCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ProcessCode" ColumnName="ProcessCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcessDBIni">
+            <EntityTypeMapping TypeName="ProcessDBModel.ProcessDBIni">
+              <MappingFragment StoreEntitySet="ProcessDBIni">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Ver" ColumnName="Ver" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MainProcessJob">
+            <EntityTypeMapping TypeName="ProcessDBModel.MainProcessJob">
+              <MappingFragment StoreEntitySet="MainProcessJob">
+                <ScalarProperty Name="ProcessJobCode" ColumnName="ProcessJobCode" />
+                <ScalarProperty Name="CurrentInventorCode" ColumnName="CurrentInventorCode" />
+                <ScalarProperty Name="CurrentBranchCode" ColumnName="CurrentBranchCode" />
+                <ScalarProperty Name="CurrentCustomerCode" ColumnName="CurrentCustomerCode" />
+                <ScalarProperty Name="CurrentCBIObjectCode" ColumnName="CurrentCBIObjectCode" />
+                <ScalarProperty Name="CurrentCBIObjectType" ColumnName="CurrentCBIObjectType" />
+                <ScalarProperty Name="CurrentAuditConfigCode" ColumnName="CurrentAuditConfigCode" />
+                <ScalarProperty Name="ContextCBI" ColumnName="ContextCBI" />
+                <ScalarProperty Name="OperationResult" ColumnName="OperationResult" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="TagHost" ColumnName="TagHost" />
+                <ScalarProperty Name="TagIP" ColumnName="TagIP" />
+                <ScalarProperty Name="Tag3" ColumnName="Tag3" />
+                <ScalarProperty Name="Tag2" ColumnName="Tag2" />
+                <ScalarProperty Name="Tag1" ColumnName="Tag1" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="DbFileName" ColumnName="DbFileName" />
+                <ScalarProperty Name="Device" ColumnName="Device" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ClosedDate" ColumnName="ClosedDate" />
+                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="ResentDate" ColumnName="ResentDate" />
+                <ScalarProperty Name="GetDate" ColumnName="GetDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="JobServiceCode" ColumnName="JobServiceCode" />
+                <ScalarProperty Name="JobTypeCode" ColumnName="JobTypeCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="NN" ColumnName="NN" />
+                <ScalarProperty Name="DomainType" ColumnName="DomainType" />
+                <ScalarProperty Name="LastProcessCode" ColumnName="LastProcessCode" />
+                <ScalarProperty Name="PrevProcessCode" ColumnName="PrevProcessCode" />
+                <ScalarProperty Name="NextProcessCode" ColumnName="NextProcessCode" />
+                <ScalarProperty Name="FirstProcessCode" ColumnName="FirstProcessCode" />
+                <ScalarProperty Name="ParentProcessCode" ColumnName="ParentProcessCode" />
+                <ScalarProperty Name="PoolCode" ColumnName="PoolCode" />
+                <ScalarProperty Name="SyncCode" ColumnName="SyncCode" />
+                <ScalarProperty Name="ProcessCode" ColumnName="ProcessCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TemporaryMainProcessJob">
+            <EntityTypeMapping TypeName="ProcessDBModel.TemporaryMainProcessJob">
+              <MappingFragment StoreEntitySet="TemporaryMainProcessJob">
+                <ScalarProperty Name="ProcessJobCode" ColumnName="ProcessJobCode" />
+                <ScalarProperty Name="CurrentInventorCode" ColumnName="CurrentInventorCode" />
+                <ScalarProperty Name="CurrentBranchCode" ColumnName="CurrentBranchCode" />
+                <ScalarProperty Name="CurrentCustomerCode" ColumnName="CurrentCustomerCode" />
+                <ScalarProperty Name="CurrentCBIObjectCode" ColumnName="CurrentCBIObjectCode" />
+                <ScalarProperty Name="CurrentCBIObjectType" ColumnName="CurrentCBIObjectType" />
+                <ScalarProperty Name="CurrentAuditConfigCode" ColumnName="CurrentAuditConfigCode" />
+                <ScalarProperty Name="ContextCBI" ColumnName="ContextCBI" />
+                <ScalarProperty Name="OperationResult" ColumnName="OperationResult" />
+                <ScalarProperty Name="Operation" ColumnName="Operation" />
+                <ScalarProperty Name="TagHost" ColumnName="TagHost" />
+                <ScalarProperty Name="TagIP" ColumnName="TagIP" />
+                <ScalarProperty Name="Tag3" ColumnName="Tag3" />
+                <ScalarProperty Name="Tag2" ColumnName="Tag2" />
+                <ScalarProperty Name="Tag1" ColumnName="Tag1" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="DbFileName" ColumnName="DbFileName" />
+                <ScalarProperty Name="Device" ColumnName="Device" />
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+                <ScalarProperty Name="ClosedDate" ColumnName="ClosedDate" />
+                <ScalarProperty Name="FinishDate" ColumnName="FinishDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="ResentDate" ColumnName="ResentDate" />
+                <ScalarProperty Name="GetDate" ColumnName="GetDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="JobServiceCode" ColumnName="JobServiceCode" />
+                <ScalarProperty Name="JobTypeCode" ColumnName="JobTypeCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="NN" ColumnName="NN" />
+                <ScalarProperty Name="DomainType" ColumnName="DomainType" />
+                <ScalarProperty Name="LastProcessCode" ColumnName="LastProcessCode" />
+                <ScalarProperty Name="PrevProcessCode" ColumnName="PrevProcessCode" />
+                <ScalarProperty Name="NextProcessCode" ColumnName="NextProcessCode" />
+                <ScalarProperty Name="FirstProcessCode" ColumnName="FirstProcessCode" />
+                <ScalarProperty Name="ParentProcessCode" ColumnName="ParentProcessCode" />
+                <ScalarProperty Name="PoolCode" ColumnName="PoolCode" />
+                <ScalarProperty Name="SyncCode" ColumnName="SyncCode" />
+                <ScalarProperty Name="ProcessCode" ColumnName="ProcessCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProcessPort">
+            <EntityTypeMapping TypeName="ProcessDBModel.ProcessPort">
+              <MappingFragment StoreEntitySet="ProcessPort">
+                <ScalarProperty Name="Tag3" ColumnName="Tag3" />
+                <ScalarProperty Name="Tag2" ColumnName="Tag2" />
+                <ScalarProperty Name="Tag1" ColumnName="Tag1" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="StatusCode" ColumnName="StatusCode" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="PortCode" ColumnName="PortCode" />
+                <ScalarProperty Name="ProcessCode" ColumnName="ProcessCode" />
+                <ScalarProperty Name="ProcessPortCode" ColumnName="ProcessPortCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+	<edmx:Designer>
+		<edmx:Connection>
+			<edmx:DesignerInfoPropertySet>
+				<edmx:DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+			</edmx:DesignerInfoPropertySet>
+		</edmx:Connection>
+		<edmx:Options>
+			<edmx:DesignerInfoPropertySet>
+				<edmx:DesignerProperty Name="ValidateOnBuild" Value="true" />
+				<edmx:DesignerProperty Name="EnablePluralization" Value="False" />
+				<edmx:DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+				<edmx:DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+				<edmx:DesignerProperty Name="UseLegacyProvider" Value="True" />
+			</edmx:DesignerInfoPropertySet>
+		</edmx:Options>
+		<!-- Diagram content (shape and connector positions) -->
+		<edmx:Diagrams>
+      <edmx:Diagram DiagramId="626963cb29724c39bf7933dfb56d8b6a" Name="Diagram1">
+        <edmx:EntityTypeShape EntityType="ProcessDBModel.Port" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ProcessDBModel.Process" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ProcessDBModel.ProcessDBIni" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <edmx:EntityTypeShape EntityType="ProcessDBModel.MainProcessJob" Width="1.5" PointX="6.875" PointY="2.75" />
+        <edmx:EntityTypeShape EntityType="ProcessDBModel.TemporaryMainProcessJob" Width="1.5" PointX="8.625" PointY="2.625" />
+        <edmx:EntityTypeShape EntityType="ProcessDBModel.ProcessPort" Width="1.5" PointX="4.75" PointY="3" />
+      </edmx:Diagram>
+    </edmx:Diagrams>
+	</edmx:Designer>
+</edmx:Edmx>

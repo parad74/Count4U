@@ -1,0 +1,633 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{109FE983-8308-4F5C-9365-7149FBC9E294}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Count4U.ImportCatalogKitAdapter</RootNamespace>
+    <AssemblyName>Count4U.ImportCatalogKitAdapter</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AS400AmericanEagle\ImportCatalogAS400AmericanEagleView.xaml.cs">
+      <DependentUpon>ImportCatalogAS400AmericanEagleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400AmericanEagle\ImportCatalogAS400AmericanEagleViewModel.cs" />
+    <Compile Include="AS400Honigman\ImportCatalogAS400HonigmanAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogAS400HonigmanAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Honigman\ImportCatalogAS400HonigmanAdapterViewModel.cs" />
+    <Compile Include="AS400Jafora\ImportCatalogAS400JaforaView.xaml.cs">
+      <DependentUpon>ImportCatalogAS400JaforaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Jafora\ImportCatalogAS400JaforaViewModel.cs" />
+    <Compile Include="AS400April\ImportCatalogAS400AprilView.xaml.cs">
+      <DependentUpon>ImportCatalogAS400AprilView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400April\ImportCatalogAS400AprilViewModel.cs" />
+    <Compile Include="NativExportErp\ImportCatalogNativExportErpAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogNativExportErpAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativExportErp\ImportCatalogNativExportErpAdapterViewModel.cs" />
+    <Compile Include="Nesher\ImportCatalogNesherView.xaml.cs">
+      <DependentUpon>ImportCatalogNesherView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Nesher\ImportCatalogNesherViewModel.cs" />
+    <Compile Include="BazanCsv\ImportCatalogBazanCsvView.xaml.cs">
+      <DependentUpon>ImportCatalogBazanCsvView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="BazanCsv\ImportCatalogBazanCsvViewModel.cs" />
+    <Compile Include="AS400Mango\ImportCatalogAS400MangoView.xaml.cs">
+      <DependentUpon>ImportCatalogAS400MangoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Mango\ImportCatalogAS400MangoViewModel.cs" />
+    <Compile Include="ClalitXslx\ImportCatalogClalitXslxView.xaml.cs">
+      <DependentUpon>ImportCatalogClalitXslxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ClalitXslx\ImportCatalogClalitXslxViewModel.cs" />
+    <Compile Include="AS400Mega\ImportCatalogAS400MegaView.xaml.cs">
+      <DependentUpon>ImportCatalogAS400MegaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Mega\ImportCatalogAS400MegaViewModel.cs" />
+    <Compile Include="AS400Hamashbir\ImportCatalogAS400HamashbirAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogAS400HamashbirAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Hamashbir\ImportCatalogAS400HamashbirAdapterViewModel.cs" />
+    <Compile Include="AS400Ho\ImportCatalogAS400HoAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogAS400HoAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AS400Ho\ImportCatalogAS400HoAdapterViewModel.cs" />
+    <Compile Include="Autosoft\ImportCatalogAutosoftView.xaml.cs">
+      <DependentUpon>ImportCatalogAutosoftView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Autosoft\ImportCatalogAutosoftViewModel.cs" />
+    <Compile Include="YtungXlsx\ImportCatalogYtungXlsxAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogYtungXlsxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="YtungXlsx\ImportCatalogYtungXlsxAdapterViewModel.cs" />
+    <Compile Include="GazitGlobalXlsx\ImportCatalogGazitGlobalXlsxAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogGazitGlobalXlsxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GazitGlobalXlsx\ImportCatalogGazitGlobalXlsxAdapterViewModel.cs" />
+    <Compile Include="NativPlusLadpc\ImportCatalogNativPlusLadpcAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogNativPlusLadpcAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativPlusLadpc\ImportCatalogNativPlusLadpcAdapterViewModel.cs" />
+    <Compile Include="GazitLeeCooper\ImportCatalogGazitLeeCooperView.xaml.cs">
+      <DependentUpon>ImportCatalogGazitLeeCooperView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GazitLeeCooper\ImportCatalogGazitLeeCooperViewModel.cs" />
+    <Compile Include="OrenMutagim\ImportCatalogOrenMutagimView.xaml.cs">
+      <DependentUpon>ImportCatalogOrenMutagimView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrenMutagim\ImportCatalogOrenMutagimViewModel.cs" />
+    <Compile Include="ShalevetCsv\ImportCatalogShalevetCsvView.xaml.cs">
+      <DependentUpon>ImportCatalogShalevetCsvView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ShalevetCsv\ImportCatalogShalevetCsvViewModel.cs" />
+    <Compile Include="PrioritytEsteeLouderXslx\ImportCatalogPrioritytEsteeLouderXslxView.xaml.cs">
+      <DependentUpon>ImportCatalogPrioritytEsteeLouderXslxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrioritytEsteeLouderXslx\ImportCatalogPrioritytEsteeLouderXslxViewModel.cs" />
+    <Compile Include="GazitAlufHaSportXlsx\ImportCatalogGazitAlufHaSportXlsxAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogGazitAlufHaSportXlsxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GazitAlufHaSportXlsx\ImportCatalogGazitAlufHaSportXlsxAdapterViewModel.cs" />
+    <Compile Include="H_M\New\ImportCatalogH_M_NewView.xaml.cs">
+      <DependentUpon>ImportCatalogH_M_NewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="H_M\New\ImportCatalogH_M_NewViewModel.cs" />
+    <Compile Include="NativPlusXslx\ImportCatalogNativPlusXslxView.xaml.cs">
+      <DependentUpon>ImportCatalogNativPlusXslxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativPlusXslx\ImportCatalogNativPlusXslxViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrioritySweetGirlXlsx\ImportCatalogPrioritySweetGirlXlsxAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogPrioritySweetGirlXlsxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PrioritySweetGirlXlsx\ImportCatalogPrioritySweetGirlXlsxAdapterViewModel.cs" />
+    <Compile Include="PriorityAldo\ImportCatalogPriorityAldoView.xaml.cs">
+      <DependentUpon>ImportCatalogPriorityAldoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PriorityAldo\ImportCatalogPriorityAldoViewModel.cs" />
+    <Compile Include="NativXslx\ImportCatalogNativXslxView.xaml.cs">
+      <DependentUpon>ImportCatalogNativXslxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NativXslx\ImportCatalogNativXslxViewModel.cs" />
+    <Compile Include="GazitVerifoneSteimaztzky\ImportCatalogGazitVerifoneSteimaztzkyAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogGazitVerifoneSteimaztzkyAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GazitVerifoneSteimaztzky\ImportCatalogGazitVerifoneSteimaztzkyAdapterViewModel.cs" />
+    <Compile Include="Made4Net\ImportCatalogMade4NetView.xaml.cs">
+      <DependentUpon>ImportCatalogMade4NetView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Made4Net\ImportCatalogMade4NetViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MerkavaSqliteXslx\ImportCatalogMerkavaSqliteXslxView.xaml.cs">
+      <DependentUpon>ImportCatalogMerkavaSqliteXslxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MerkavaSqliteXslx\ImportCatalogMerkavaSqliteXslxViewModel.cs" />
+    <Compile Include="MerkavaXslx\ImportCatalogMerkavaXslxView.xaml.cs">
+      <DependentUpon>ImportCatalogMerkavaXslxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MerkavaXslx\ImportCatalogMerkavaXslxViewModel.cs" />
+    <Compile Include="NikeInt\ImportCatalogNikeIntView.xaml.cs">
+      <DependentUpon>ImportCatalogNikeIntView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NikeInt\ImportCatalogNikeIntViewModel.cs" />
+    <Compile Include="Otech\ImportCatalogOtechView.xaml.cs">
+      <DependentUpon>ImportCatalogOtechView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Otech\ImportCatalogOtechViewModel.cs" />
+    <Compile Include="PriorityCastro\ImportCatalogPriorityCastroView.xaml.cs">
+      <DependentUpon>ImportCatalogPriorityCastroView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PriorityCastro\ImportCatalogPriorityCastroViewModel.cs" />
+    <Compile Include="Sapb1Xslx\ImportCatalogSapb1XslxAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogSapb1XslxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sapb1Xslx\ImportCatalogSapb1XslxAdapterViewModel.cs" />
+    <Compile Include="Sapb1Zometsfarim\ImportCatalogSapb1ZometsfarimAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogSapb1ZometsfarimAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Sapb1Zometsfarim\ImportCatalogSapb1ZometsfarimAdapterViewModel.cs" />
+    <Compile Include="TafnitMatrix\ImportCatalogTafnitMatrixView.xaml.cs">
+      <DependentUpon>ImportCatalogTafnitMatrixView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TafnitMatrix\ImportCatalogTafnitMatrixViewModel.cs" />
+    <Compile Include="FRSVisionMirkam\ImportCatalogFRSVisionMirkamView.xaml.cs">
+      <DependentUpon>ImportCatalogFRSVisionMirkamView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FRSVisionMirkam\ImportCatalogFRSVisionMirkamViewModel.cs" />
+    <Compile Include="Hash\ImportCatalogHashView.xaml.cs">
+      <DependentUpon>ImportCatalogHashView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Hash\ImportCatalogHashViewModel.cs" />
+    <Compile Include="MPL\ImportCatalogMPLAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogMPLAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MPL\ImportCatalogMPLAdapterViewModel.cs" />
+    <Compile Include="PriorityKedsShowRoom\ImportCatalogPriorityKedsShowRoomView.xaml.cs">
+      <DependentUpon>ImportCatalogPriorityKedsShowRoomView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PriorityKedsShowRoom\ImportCatalogPriorityKedsShowRoomViewModel.cs" />
+    <Compile Include="H_M\ImportCatalogH_MView.xaml.cs">
+      <DependentUpon>ImportCatalogH_MView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="H_M\ImportCatalogH_MViewModel.cs" />
+    <Compile Include="NimrodAviv\ImportCatalogNimrodAvivView.xaml.cs">
+      <DependentUpon>ImportCatalogNimrodAvivView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NimrodAviv\ImportCatalogNimrodAvivViewModel.cs" />
+    <Compile Include="One1\ImportCatalogOne1View.xaml.cs">
+      <DependentUpon>ImportCatalogOne1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="One1\ImportCatalogOne1ViewModel.cs" />
+    <Compile Include="LadyComfort\ImportCatalogLadyComfortView.xaml.cs">
+      <DependentUpon>ImportCatalogLadyComfortView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LadyComfort\ImportCatalogLadyComfortViewModel.cs" />
+    <Compile Include="MikiKupot\ImportCatalogMikiKupotView.xaml.cs">
+      <DependentUpon>ImportCatalogMikiKupotView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MikiKupot\ImportCatalogMikiKupotViewModel.cs" />
+    <Compile Include="MaccabiPharmSAP\ImportCatalogMaccabiPharmSAPView.xaml.cs">
+      <DependentUpon>ImportCatalogMaccabiPharmSAPView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MaccabiPharmSAP\ImportCatalogMaccabiPharmSAPViewModel.cs" />
+    <Compile Include="ImportCatalogKitModuleInit.cs" />
+    <Compile Include="Nibit\ImportCatalogNibitView.xaml.cs">
+      <DependentUpon>ImportCatalogNibitView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Nibit\ImportCatalogNibitViewModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OrenOriginals\ImportCatalogOrenOriginalsView.xaml.cs">
+      <DependentUpon>ImportCatalogOrenOriginalsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="OrenOriginals\ImportCatalogOrenOriginalsViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RetalixNext\ImportCatalogRetalixNextView.xaml.cs">
+      <DependentUpon>ImportCatalogRetalixNextView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RetalixNext\ImportCatalogRetalixNextViewModel.cs" />
+    <Compile Include="WarehouseXslx\ImportCatalogWarehouseXslxView.xaml.cs">
+      <DependentUpon>ImportCatalogWarehouseXslxView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseXslx\ImportCatalogWarehouseXslxViewModel.cs" />
+    <Compile Include="YesXlsx\ImportCatalogYesXlsxAdapterView.xaml.cs">
+      <DependentUpon>ImportCatalogYesXlsxAdapterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="YesXlsx\ImportCatalogYesXlsxAdapterViewModel.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="AS400AmericanEagle\Count4U.ImportCatalogAS400AmericanEagleAdapter.ini" />
+    <None Include="AS400Honigman\Count4U.ImportCatalogAS400HonigmanAdapter.ini" />
+    <None Include="AS400Jafora\Count4U.ImportCatalogAS400JaforaAdapter.ini" />
+    <None Include="AS400April\Count4U.ImportCatalogAS400AprilAdapter.ini" />
+    <None Include="NativExportErp\Count4U.ImportCatalogNativExportErpAdapter.ini" />
+    <None Include="Nesher\Count4U.ImportCatalogNesherAdapter.ini" />
+    <None Include="BazanCsv\Count4U.ImportCatalogBazanCsvAdapter.ini" />
+    <None Include="AS400Mango\Count4U.ImportCatalogAS400MangoAdapter.ini" />
+    <None Include="ClalitXslx\Count4U.ImportCatalogClalitXslxAdapter.ini" />
+    <None Include="AS400Mega\Count4U.ImportCatalogAS400MegaAdapter.ini" />
+    <None Include="AS400Hamashbir\Count4U.ImportCatalogAS400HamashbirAdapter.ini" />
+    <None Include="AS400Ho\Count4U.ImportCatalogAS400HoAdapter.ini" />
+    <None Include="Autosoft\Count4U.ImportCatalogAutosoftAdapter.ini" />
+    <None Include="YtungXlsx\Count4U.ImportCatalogYtungXlsxAdapter.ini" />
+    <None Include="GazitGlobalXlsx\Count4U.ImportCatalogGazitGlobalXlsxAdapter.ini" />
+    <None Include="NativPlusLadpc\Count4U.ImportCatalogNativPlusLadpcAdapter.ini" />
+    <None Include="GazitLeeCooper\Count4U.ImportCatalogGazitLeeCooperAdapter.ini" />
+    <None Include="OrenMutagim\Count4U.ImportCatalogOrenMutagimAdapter.ini" />
+    <None Include="packages.config" />
+    <None Include="ShalevetCsv\Count4U.ImportCatalogShalevetCsvAdapter.ini" />
+    <None Include="PrioritytEsteeLouderXslx\Count4U.ImportCatalogPrioritytEsteeLouderXslxAdapter.ini" />
+    <None Include="GazitAlufHaSportXlsx\Count4U.ImportCatalogGazitAlufHaSportXlsxAdapter.ini" />
+    <None Include="H_M\New\Count4U.ImportCatalogH_M_NewAdapter.ini" />
+    <None Include="NativPlusXslx\Count4U.ImportCatalogNativPlusXslxAdapter.ini" />
+    <None Include="PrioritySweetGirlXlsx\Count4U.ImportCatalogPrioritySweetGirlXlsxAdapter.ini" />
+    <None Include="PriorityAldo\Count4U.ImportCatalogPriorityAldoAdapter.ini" />
+    <None Include="NativXslx\Count4U.ImportCatalogNativXslxAdapter.ini" />
+    <None Include="GazitVerifoneSteimaztzky\Count4U.ImportCatalogGazitVerifoneSteimaztzkyAdapter.ini" />
+    <None Include="Made4Net\Count4U.ImportCatalogMade4NetAdapter.ini" />
+    <None Include="MerkavaSqliteXslx\Count4U.ImportCatalogMerkavaSqliteXslxAdapter.ini" />
+    <None Include="MerkavaXslx\Count4U.ImportCatalogMerkavaXslxAdapter.ini" />
+    <None Include="NikeInt\Count4U.ImportCatalogNikeIntAdapter.ini" />
+    <None Include="Otech\Count4U.ImportCatalogOtechAdapter.ini" />
+    <None Include="PriorityCastro\Count4U.ImportCatalogPriorityCastroAdapter.ini" />
+    <None Include="Sapb1Xslx\Count4U.ImportCatalogSapb1XslxAdapter.ini" />
+    <None Include="Sapb1Zometsfarim\Count4U.ImportCatalogSapb1ZometsfarimAdapter.ini" />
+    <None Include="TafnitMatrix\Count4U.ImportCatalogTafnitMatrixAdapter.ini" />
+    <None Include="FRSVisionMirkam\Count4U.ImportCatalogFRSVisionMirkamAdapter.ini" />
+    <None Include="Hash\Count4U.ImportCatalogHashAdapter.ini" />
+    <None Include="MPL\Count4U.ImportCatalogMPLAdapter.ini" />
+    <None Include="PriorityKedsShowRoom\Count4U.ImportCatalogPriorityKedsShowRoomAdapter.ini" />
+    <None Include="H_M\Count4U.ImportCatalogH_MAdapter.ini" />
+    <None Include="NimrodAviv\Count4U.ImportCatalogNimrodAvivAdapter.ini" />
+    <None Include="One1\Count4U.ImportCatalogOne1Adapter.ini" />
+    <None Include="LadyComfort\Count4U.ImportCatalogLadyComfortAdapter.ini" />
+    <None Include="MikiKupot\Count4U.ImportCatalogMikiKupotAdapter.ini" />
+    <None Include="MaccabiPharmSAP\Count4U.ImportCatalogMaccabiPharmSAPAdapter.ini" />
+    <None Include="Nibit\Count4U.ImportCatalogNibitAdapter.ini" />
+    <None Include="OrenOriginals\Count4U.ImportCatalogOrenOriginalsAdapter.ini" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="RetalixNext\Count4U.ImportCatalogRetalixNextAdapter.ini" />
+    <None Include="WarehouseXslx\Count4U.ImportCatalogWarehouseXslxAdapter.ini" />
+    <None Include="YesXlsx\Count4U.ImportCatalogYesXlsxAdapter.ini" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="AS400AmericanEagle\ImportCatalogAS400AmericanEagleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Honigman\ImportCatalogAS400HonigmanAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Jafora\ImportCatalogAS400JaforaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400April\ImportCatalogAS400AprilView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NativExportErp\ImportCatalogNativExportErpAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Nesher\ImportCatalogNesherView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="BazanCsv\ImportCatalogBazanCsvView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Mango\ImportCatalogAS400MangoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ClalitXslx\ImportCatalogClalitXslxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Mega\ImportCatalogAS400MegaView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Hamashbir\ImportCatalogAS400HamashbirAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="AS400Ho\ImportCatalogAS400HoAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Autosoft\ImportCatalogAutosoftView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="YtungXlsx\ImportCatalogYtungXlsxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GazitGlobalXlsx\ImportCatalogGazitGlobalXlsxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NativPlusLadpc\ImportCatalogNativPlusLadpcAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GazitLeeCooper\ImportCatalogGazitLeeCooperView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="OrenMutagim\ImportCatalogOrenMutagimView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="ShalevetCsv\ImportCatalogShalevetCsvView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PrioritytEsteeLouderXslx\ImportCatalogPrioritytEsteeLouderXslxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GazitAlufHaSportXlsx\ImportCatalogGazitAlufHaSportXlsxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="H_M\New\ImportCatalogH_M_NewView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NativPlusXslx\ImportCatalogNativPlusXslxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PrioritySweetGirlXlsx\ImportCatalogPrioritySweetGirlXlsxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PriorityAldo\ImportCatalogPriorityAldoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NativXslx\ImportCatalogNativXslxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="GazitVerifoneSteimaztzky\ImportCatalogGazitVerifoneSteimaztzkyAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Made4Net\ImportCatalogMade4NetView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MerkavaSqliteXslx\ImportCatalogMerkavaSqliteXslxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MerkavaXslx\ImportCatalogMerkavaXslxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NikeInt\ImportCatalogNikeIntView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Otech\ImportCatalogOtechView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PriorityCastro\ImportCatalogPriorityCastroView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sapb1Xslx\ImportCatalogSapb1XslxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Sapb1Zometsfarim\ImportCatalogSapb1ZometsfarimAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TafnitMatrix\ImportCatalogTafnitMatrixView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="FRSVisionMirkam\ImportCatalogFRSVisionMirkamView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Hash\ImportCatalogHashView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MPL\ImportCatalogMPLAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="PriorityKedsShowRoom\ImportCatalogPriorityKedsShowRoomView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="H_M\ImportCatalogH_MView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="NimrodAviv\ImportCatalogNimrodAvivView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="One1\ImportCatalogOne1View.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LadyComfort\ImportCatalogLadyComfortView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MikiKupot\ImportCatalogMikiKupotView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MaccabiPharmSAP\ImportCatalogMaccabiPharmSAPView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Nibit\ImportCatalogNibitView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="OrenOriginals\ImportCatalogOrenOriginalsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="RetalixNext\ImportCatalogRetalixNextView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WarehouseXslx\ImportCatalogWarehouseXslxView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="YesXlsx\ImportCatalogYesXlsxAdapterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Count4U.Common\Count4U.Common.csproj">
+      <Project>{ea11d75f-fdb9-410d-9f9b-5d055b4377b8}</Project>
+      <Name>Count4U.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.CustomControls\Count4U.CustomControls.csproj">
+      <Project>{d20ac0d3-74fb-489c-977c-5712e022eb2b}</Project>
+      <Name>Count4U.CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Localization\Count4U.Localization.csproj">
+      <Project>{c1716c1b-995a-481b-8853-1b984f75be45}</Project>
+      <Name>Count4U.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.Common\Count4U.Model.Common.csproj">
+      <Project>{5e70d036-3982-4d9f-95ca-197e616d7f59}</Project>
+      <Name>Count4U.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ExportImport\Count4U.Model.ExportImport.csproj">
+      <Project>{a511450d-26cb-4d17-92b1-4c9a331b5290}</Project>
+      <Name>Count4U.Model.ExportImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ServiceContract\Count4U.Model.ServiceContract.csproj">
+      <Project>{6c200172-9847-40e4-ae97-ec50bbf4d0a4}</Project>
+      <Name>Count4U.Model.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model\Count4U.Model.csproj">
+      <Project>{a3145385-051f-4ffa-9dcb-3014da552419}</Project>
+      <Name>Count4U.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>IF NOT EXIST $(SolutionDir)Count4U\$(OutDir)ImportModules ( mkdir $(SolutionDir)Count4U\$(OutDir)ImportModules )
+
+copy $(SolutionDir)Count4U.ImportCatalogKitAdapter\$(OutDir)Count4U.ImportCatalogKitAdapter.dll $(SolutionDir)Count4U\$(OutDir)ImportModules\
+copy $(SolutionDir)Count4U.ImportCatalogKitAdapter\$(OutDir)Count4U.ImportCatalogKitAdapter.pdb $(SolutionDir)Count4U\$(OutDir)ImportModules\
+copy $(SolutionDir)Count4U.ImportCatalogKitAdapter\RetalixNext\Count4U.ImportCatalogRetalixNextAdapter.ini $(SolutionDir)Count4U\$(OutDir)ImportModules\</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

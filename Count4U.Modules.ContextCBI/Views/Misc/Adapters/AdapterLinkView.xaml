@@ -1,0 +1,204 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.Misc.Adapters.AdapterLinkView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+              xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" 
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Interactivity.InteractionRequest;assembly=Microsoft.Practices.Prism.Interactivity"
+             xmlns:Helpers="clr-namespace:Count4U.Common.Helpers;assembly=Count4U.Common"
+             xmlns:actions="clr-namespace:Count4U.Common.Helpers.Actions;assembly=Count4U.Common" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common,ProcessorArchitecture=MSIL;component/CommonResources.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <i:Interaction.Triggers>
+            <prism:InteractionRequestTrigger SourceObject="{Binding YesNoRequest}">
+                <actions:MessageBoxYesNoAction />
+            </prism:InteractionRequestTrigger>
+        </i:Interaction.Triggers>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="Gray" Background="{StaticResource backForwardLineBrush}"  BorderThickness="1" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <ContentControl  x:Name="backForward" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0" />
+                </Grid>
+
+                <Grid Grid.Column="1"     Margin="15,0,0,0">
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="0,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="1,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <ImageButton:ImageButton Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                               ToolTip="{Binding Path=DeleteCommand.Title}"
+					Command="{Binding Path=DeleteCommand}" 
+					ImageSource="{Binding Path=DeleteCommand.Icon}"
+                       							
+                                             
+                                             Width="32" Height="32">
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton Margin="46,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                              ToolTip="{Binding Path=ScriptOpenCommand.Title}"
+					Command="{Binding Path=ScriptOpenCommand}" 
+					ImageSource="{Binding Path=ScriptOpenCommand.Icon}"
+                                             
+                                          >
+                    </ImageButton:ImageButton>
+
+                    <ImageButton:ImageButton Margin="82,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                              ToolTip="{Binding Path=ScriptSaveCommand.Title}"
+					Command="{Binding Path=ScriptSaveCommand}" 
+					ImageSource="{Binding Path=ScriptSaveCommand.Icon}"
+                                             
+                                             
+                                             >
+                    </ImageButton:ImageButton>
+
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="120,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="121,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <ImageButton:ImageButton Margin="126,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                            ToolTip="{Binding Path=RestoreLinksCommand.Title}"
+                        					Command="{Binding Path=RestoreLinksCommand}" 
+					                        ImageSource="{Binding Path=RestoreLinksCommand.Icon}"
+                                            x:Name="btnRepair"
+                                             >
+                    </ImageButton:ImageButton>
+
+                </Grid>
+            </Grid>
+        </Border>
+
+        <TextBlock Grid.Row="1" Margin="5,5,0,5" VerticalAlignment="Center" Text="{x:Static Localization:Resources.Domain_Adapter}" />
+
+        <Grid Grid.Row="2">
+
+            <DataGrid Margin="0,0,0,0" 
+					  Background="Transparent"
+					  BorderBrush="Transparent" BorderThickness="0"
+					  ItemsSource="{Binding Path=Items}" 										
+                      VirtualizingStackPanel.VirtualizationMode="Standard"  
+				      SelectionMode="Single"
+					  SelectedItem="{Binding Path=SelectedItem}"                      
+							>
+                <DataGrid.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.MergedDictionaries>
+                            <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/MdiThemes/Theme1.xaml"/>
+                        </ResourceDictionary.MergedDictionaries>
+                    </ResourceDictionary>
+                </DataGrid.Resources>
+
+                <DataGrid.CellStyle>
+                    <Style TargetType="{x:Type DataGridCell}" BasedOn="{StaticResource {x:Type DataGridCell}}">
+                        <Style.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding Path=IsAdapterExistInFs}" Value="False" />
+                                    <Condition Binding="{Binding RelativeSource={RelativeSource Mode=Self},Path=IsSelected}"                                               
+                                               Value="False" />
+                                </MultiDataTrigger.Conditions>
+                                <MultiDataTrigger.Setters>
+                                    <Setter Property="Background" Value="LightPink" />
+                                    <Setter Property="ToolTip" Value="{x:Static Localization:Resources.View_AdapterLink_tbAdapterMissed}"
+                                            />
+                                </MultiDataTrigger.Setters>
+                            </MultiDataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </DataGrid.CellStyle>
+
+                <DataGrid.Columns>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_AdapterLink_columnName}"
+                                            Width="*" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Name, Mode=OneWay}" HorizontalAlignment="Left" Margin="2,0,0,0" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_AdapterLink_columnAdapterCode}"
+                                            Width="*" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=AdapterCode, Mode=OneWay}" HorizontalAlignment="Left" Margin="2,0,0,0" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_AdapterLink_columnDomainType}"
+                                            Width="*" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=DomainType, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_AdapterLink_columnDescription}"
+                                            Width="*" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Description, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_AdapterLink_columnCode}"
+                                            Width="*" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Code, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,107 @@
+﻿<UserControl x:Class="Count4U.Common.View.Filter.FilterTemplateAddEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:Behaviours="clr-namespace:Count4U.Common.Behaviours"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+        <Style x:Key="textBoxErrorStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel LastChildFill="True">
+                            <TextBlock DockPanel.Dock="Bottom" 
+								FontSize="11" 
+								FontWeight="Bold" 
+								VerticalAlignment="Center"
+								Text="{Binding AdornedElement.(Validation.Errors)[0].ErrorContent, ElementName=adornerPlaceholder}"
+								TextWrapping="Wrap"
+								   Foreground="#FFD86363"
+								 Background="#FFF4DCDC"
+								MaxWidth="{Binding ActualWidth, ElementName=adornerPlaceholder}"                                   
+										        />
+
+                            <AdornedElementPlaceholder x:Name="adornerPlaceholder"/>
+
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid>
+
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Height="21" 
+                   HorizontalAlignment="Left" Margin="10,12,0,0" 
+                   Text="{x:Static Localization:Resources.View_FilterTemplateAddEdit_tbDisplayName}"
+                   VerticalAlignment="Top" />
+
+        <TextBox Height="23" 
+                 Margin="110,12,10,0" Name="txtDisplayName" 
+				 Style="{StaticResource textBoxErrorStyle}" 
+				VerticalAlignment="Top" 
+                 MaxLength="75" TabIndex="1">
+
+            <i:Interaction.Behaviors>
+                <Behaviours:TextChangedDelayedBehavior IsTimerEnabled="True" />
+            </i:Interaction.Behaviors>
+
+            <Binding IsAsync="False" Path="DisplayName" UpdateSourceTrigger="Explicit">
+                <Binding.ValidationRules>
+                    <DataErrorValidationRule />
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
+
+        <TextBlock Height="21" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,49,0,0" 
+        	       Text="{x:Static Localization:Resources.View_FilterTemplateAddEdit_tbFileName}"
+        	       VerticalAlignment="Top" />
+
+        <TextBox Height="23" Margin="110,49,10,0" 
+        	Style="{StaticResource textBoxErrorStyle}" 
+        	VerticalAlignment="Top" MaxLength="25" TabIndex="2">
+
+            <i:Interaction.Behaviors>
+                <Behaviours:TextChangedDelayedBehavior IsTimerEnabled="True" />
+            </i:Interaction.Behaviors>
+
+            <Binding IsAsync="False" Path="FileName" UpdateSourceTrigger="Explicit">
+                <Binding.ValidationRules>
+                    <DataErrorValidationRule />
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
+
+        <Grid Grid.Row="1" Background="#FF7EAFE5">
+            <Button Content="{x:Static Localization:Resources.Command_OK}"
+                    Height="23" HorizontalAlignment="Right" Margin="0,0,94,0" Name="button1" VerticalAlignment="Center" Width="75" Command="{Binding Path=OkCommand}" />
+
+            <Button Content="{x:Static Localization:Resources.Command_Cancel}"
+                    Height="23" IsCancel="True"
+							HorizontalAlignment="Right" Margin="0,0,10,0" Name="button2" VerticalAlignment="Center" Width="75" Command="{Binding Path=CancelCommand}"/>
+
+        </Grid>              
+
+    </Grid>
+</UserControl>

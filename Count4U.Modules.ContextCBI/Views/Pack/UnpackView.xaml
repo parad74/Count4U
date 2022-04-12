@@ -1,0 +1,372 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.Pack.UnpackView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:Behaviours="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+             xmlns:textBox="clr-namespace:Count4U.CustomControls.TextBox;assembly=Count4U.CustomControls"
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Interactivity.InteractionRequest;assembly=Microsoft.Practices.Prism.Interactivity"
+             xmlns:actions="clr-namespace:Count4U.Common.Helpers.Actions;assembly=Count4U.Common"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="700">
+
+    <Grid x:Name="gridTopLevel">
+        <Grid.Resources>
+
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common,ProcessorArchitecture=MSIL;component/CommonResources.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Buttons/ButtonThemeV7.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Modules.ContextCBI,ProcessorArchitecture=MSIL;component/Views/Pack/PackCommonResources.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+
+                <BooleanToVisibilityConverter x:Key="boolToVis"></BooleanToVisibilityConverter>
+            </ResourceDictionary>
+
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="{StaticResource backForwardLineBorderBrush}" Background="{StaticResource backForwardLineBrush}"  BorderThickness="1">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <ContentControl Grid.Column="0" x:Name="backForward" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"
+												 />
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="10,0,0,0">
+
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="0,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="1,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                </Grid>
+
+                <Grid Grid.Column="2">
+
+
+
+                </Grid>
+
+            </Grid>
+        </Border>
+        <!--BROWSE-->
+        <Grid Grid.Row="1">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="95"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="1.5*"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <TextBlock Height="21" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBlock1" 
+                       Text="{x:Static Localization:Resources.View_Unpack_tbInputArchive}"
+                       VerticalAlignment="Top" Width="266" />
+
+                    <textBox:TextBoxV7 x:Name="txtInputArchive"
+                               Height="23" 
+                               HorizontalAlignment="Left" 
+                               Margin="10,39,0,0"  
+							   VerticalAlignment="Top" 
+                               Width="530" >
+                        <TextBox.Text>
+                            <Binding Path="Path" UpdateSourceTrigger="Explicit" IsAsync="False" >
+                                <Binding.ValidationRules>
+                                    <DataErrorValidationRule></DataErrorValidationRule>
+                                </Binding.ValidationRules>
+                            </Binding>
+                        </TextBox.Text>
+
+                    </textBox:TextBoxV7>
+
+                    <Button Content="{x:Static Localization:Resources.Command_Browse}"
+                    Style="{StaticResource ButtonStyleV7_2}"
+                    Height="23" HorizontalAlignment="Left" 
+                    Margin="550,39,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="90" 
+					Command="{Binding Path=BrowseCommand}"/>
+
+                    <TextBlock 
+                        
+                        HorizontalAlignment="Left"
+                        Margin="10,73,0,0" 
+                        TextWrapping="Wrap" 
+                        Text="{Binding Path=WarningText}"
+                        VerticalAlignment="Top" 
+                        Height="26" 
+                        FontSize="14"
+                        Foreground="LightCoral"
+                        Visibility="Visible"
+                        Width="830"/>
+
+                </Grid>
+                <!--OVERWRITE-->
+                <Grid Grid.Row="1">
+
+                    <TextBlock HorizontalAlignment="Left"
+                               Margin="10,12,0,0" 
+                               TextWrapping="Wrap" 
+                               Text="{x:Static Localization:Resources.View_Unapck_tbFilesToOverwrite}"
+                               VerticalAlignment="Top" 
+                               Height="22"
+                               Width="680" FontSize="13"/>
+
+                    <DataGrid 
+				          ItemsSource="{Binding Path=ItemsOverwriteView}" 							          
+                          VirtualizingStackPanel.VirtualizationMode="Standard"  
+				          SelectionMode="Extended"
+                          BorderBrush="Transparent"
+                          BorderThickness="0"          
+                          CanUserSortColumns="False"
+                          Margin="0,35,0,5"                               
+				      >
+                        <DataGrid.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/MdiThemes/Theme1.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </DataGrid.Resources>
+
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn                                      
+                                        Width="*" 
+                                        MinWidth="75" >                                
+                                <DataGridTemplateColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource DataGridColumnHeaderStyleTheme1}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                    </Style>
+                                </DataGridTemplateColumn.HeaderStyle>
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid >
+                                            <TextBlock Text="{x:Static Localization:Resources.View_Unpack_columnFile}" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center"></TextBlock>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="25"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+                                            <Image 
+                                            Grid.Column="0"
+                                            Source="{Binding Path=Image}" 
+                                            Width="16" 
+                                            Height="16"
+                                            VerticalAlignment="Center" 
+                                            Margin="3,0,5,0"/>
+
+                                            <TextBlock 
+                                            Grid.Column="1"
+                                            Text="{Binding Path=Path, Mode=OneWay}" 
+                                            HorizontalAlignment="Left" />
+
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn
+                                Width="100"
+                                Header="{x:Static Localization:Resources.View_Unpack_columnOverwrite}"
+                                >
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <CheckBox 
+                                            IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type DataGrid}}, Path=DataContext.IsAllOverwrite}"
+                                            Content="{x:Static Localization:Resources.View_Unpack_columnOverwrite}">                                            
+                                        </CheckBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding Path=IsOverwrite, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                  VerticalAlignment="Center" 
+                                                  HorizontalAlignment="Center"></CheckBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                    <Grid VerticalAlignment="Bottom">
+                        <Border Height="0.5" BorderThickness="0.5" BorderBrush="#FFCC00" Opacity="0.8"></Border>
+                        <Border Margin="0,1,0,0" Height="1" BorderThickness="0.5" BorderBrush="#FFE991" Opacity="0.8"></Border>
+                    </Grid>
+
+                </Grid>
+                <!--UNPACK-->
+                <Grid Grid.Row="2">
+
+                    <TextBlock HorizontalAlignment="Left"
+                               Margin="10,10,0,0" 
+                               TextWrapping="Wrap" 
+                               Text="{x:Static Localization:Resources.View_Unpack_tbFilesResult}"
+                               VerticalAlignment="Top" 
+                               Height="20"
+                               Width="412" FontSize="13"/>
+
+                    <DataGrid 
+				          ItemsSource="{Binding Path=ItemsView}" 			
+				          Name="dataGridUnpack"
+                          VirtualizingStackPanel.VirtualizationMode="Standard"  
+				          SelectionMode="Extended"
+                          BorderBrush="Transparent"
+                          BorderThickness="0" 
+                          CanUserSortColumns="False"
+                          Margin="0,52,0,5"
+				    >
+                        <DataGrid.Resources>
+                            <ResourceDictionary>
+                                <ResourceDictionary.MergedDictionaries>
+                                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/MdiThemes/Theme4.xaml"/>
+                                </ResourceDictionary.MergedDictionaries>
+                            </ResourceDictionary>
+                        </DataGrid.Resources>
+
+                        <DataGrid.Columns>
+
+                            <DataGridTemplateColumn 
+                                        Width="*" MinWidth="75" >
+                                <DataGridTemplateColumn.HeaderStyle>
+                                    <Style TargetType="{x:Type DataGridColumnHeader}" BasedOn="{StaticResource DataGridColumnHeaderStyleTheme4}">
+                                        <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                    </Style>
+                                </DataGridTemplateColumn.HeaderStyle>
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <Grid >
+                                            <TextBlock Text="{x:Static Localization:Resources.View_Unpack_columnFile}" HorizontalAlignment="Left" Margin="100,0,0,0" VerticalAlignment="Center"></TextBlock>
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="25"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image 
+                                            Grid.Column="0"
+                                            Source="{Binding Path=Image}" 
+                                            Width="16" 
+                                                Height="16"
+                                            VerticalAlignment="Center" 
+                                            Margin="3,0,5,0"/>
+
+                                            <TextBlock 
+                                            Grid.Column="1"
+                                            Text="{Binding Path=Path, Mode=OneWay}" 
+                                            HorizontalAlignment="Left" />
+                                        </Grid>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                     <Grid VerticalAlignment="Bottom">
+                        <Border Height="0.5" BorderThickness="0.5" BorderBrush="#D3FE52" Opacity="0.8"></Border>
+                        <Border Margin="0,1,0,0" Height="1" BorderThickness="0.5" BorderBrush="#99CC01" Opacity="0.8"></Border>
+                    </Grid>
+
+                    <CheckBox Content="{x:Static Localization:Resources.View_Unpack_chkOverwriteImportData}" 
+                              HorizontalAlignment="Right" 
+                              Margin="0,3,10,0" 
+                              Visibility="{Binding Path=OverwriteImportIsVisible, Converter={StaticResource boolToVis}}"
+                              IsChecked="{Binding Path=OverwriteImportIsChecked}"
+                              VerticalAlignment="Top"/>
+
+                    <CheckBox Content="{x:Static Localization:Resources.View_Unpack_chkOverwriteIndata}" 
+                              HorizontalAlignment="Right"
+                              Margin="0,19,10,0"
+                              Visibility="{Binding Path=OverwriteInDataIsVisible, Converter={StaticResource boolToVis}}"
+                              IsChecked="{Binding Path=OverwriteInDataIsChecked}"
+                              VerticalAlignment="Top"/>
+
+                    <CheckBox Content="{x:Static Localization:Resources.View_Unpack_chkOverwriteConfig}" 
+                              HorizontalAlignment="Right"
+                              Margin="0,35,10,0"
+                              Visibility="{Binding Path=OverwriteConfigIsVisible, Converter={StaticResource boolToVis}}"
+                              IsChecked="{Binding Path=OverwriteConfigIsChecked}"
+                              VerticalAlignment="Top"/>
+
+                    <CheckBox Content="{x:Static Localization:Resources.View_Unpack_chkOverwriteProfile}" 
+                              HorizontalAlignment="Right"
+                              Margin="0,35,10,0"
+                              Visibility="{Binding Path=OverwriteProfileIsVisible, Converter={StaticResource boolToVis}}"
+                              IsChecked="{Binding Path=OverwriteProfileIsChecked}"
+                              VerticalAlignment="Top"/>
+                </Grid>
+
+                <!--START-->
+
+                <Grid Grid.Row="3" Background="#A7C1D6" Margin="0,10,0,0">
+                    <Button                 
+                    Content="{x:Static Localization:Resources.Command_Unpack}"
+                    Height="30" 
+                    HorizontalAlignment="Left" 
+                    Margin="10,5,0,5"                 
+                    VerticalAlignment="Center" 
+                    Width="127"
+                    Style="{StaticResource ButtonStyleV7}"
+				    Command="{Binding Path=UnpackCommand}"/>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+
+        <xctk:BusyIndicator IsBusy="{Binding Path=IsBusy}" 
+                                  Grid.RowSpan="2"
+                                  BusyContent="{x:Static Localization:Resources.View_Unpack_busyContent}"
+                				  BusyContentTemplate="{StaticResource busyTemplate}"
+                                  x:Name="busyIndicator">
+
+            <xctk:BusyIndicator.ProgressBarStyle>
+                <Style TargetType="ProgressBar">
+                    <Setter Property="Visibility" Value="Collapsed"/>
+                </Style>
+            </xctk:BusyIndicator.ProgressBarStyle>
+        </xctk:BusyIndicator>
+
+    </Grid>
+</UserControl>

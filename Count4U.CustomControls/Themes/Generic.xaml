@@ -1,0 +1,17 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    >
+	
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="/Count4U.CustomControls;component/Pagination/Pagination.xaml" />
+		<ResourceDictionary Source="/Count4U.CustomControls;component/RoundImageButton/RoundImageButton.xaml" />
+        <ResourceDictionary Source="/Count4U.CustomControls;component/ImageButton/ImageButton.xaml" />
+        <ResourceDictionary Source="/Count4U.CustomControls;component/ImageButtonCursor/ImageButtonCursor.xaml" />
+        <ResourceDictionary Source="/Count4U.CustomControls;component/ImageButtonHyperlink/ImageButtonHyperlink.xaml" />
+        <ResourceDictionary Source="/Count4U.CustomControls;component/TextBox/TextBoxV7.xaml" />
+        <ResourceDictionary Source="/Count4U.CustomControls;component/RenameTreeViewControl/RenameTreeView.xaml" />
+        <ResourceDictionary Source="/Count4U.CustomControls;component/RenameTreeViewControl/RenameTreeViewItem.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

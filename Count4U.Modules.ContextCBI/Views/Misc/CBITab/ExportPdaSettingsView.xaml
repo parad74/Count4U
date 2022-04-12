@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.Misc.CBITab.ExportPdaSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:cal="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+              xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" 
+             xmlns:Common="clr-namespace:Count4U.Common;assembly=Count4U.Common" mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Combobox/ComboboxThemeV7.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+ 
+        <Grid Margin="0,0,0,0">
+
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="boolToVis" />
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />           
+        </Grid.RowDefinitions>
+
+        <TextBlock Height="25" 
+                   HorizontalAlignment="Left" Margin="0" 
+                   Text="{x:Static Localization:Resources.View_ExportPdaSettings_tbDefaultAdapter}"
+                   VerticalAlignment="Top" 
+                   Width="124" />
+
+        <ComboBox DisplayMemberPath="Title" Height="25" IsEnabled="{Binding Path=IsEditable}" 
+                          ItemsSource="{Binding Path=ItemsExportPda}" 
+                          Margin="160,0,0,0"
+                          Style="{StaticResource ComboBoxStyleV7}"
+                          SelectedItem="{Binding Path=SelectedExportPda}" 
+                          VerticalAlignment="Top" 
+                  Width="220" 
+                  HorizontalAlignment="Left" />
+
+        <TextBlock Margin="390,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Visibility="{Binding Path=IsShowConfig, Converter={StaticResource boolToVis}}">
+                        <Hyperlink Command="{Binding Path=ShowConfigCommand}" CommandParameter="{Binding Path=SelectedExportPda}">
+			              <Run Text="{Binding Path=ShowConfigCommand.Title}"/>
+                         </Hyperlink>
+        </TextBlock>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,35,0,5" Grid.RowSpan="3">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+
+              <ContentControl Grid.Row="0" x:Name="exportPdaAdapter" Margin="0,20,0,0"  
+               Visibility="{Binding Path=IsExportPdaVisibility, Converter={StaticResource boolToVis}}"
+                 />
+              <ContentControl Grid.Row="1" x:Name="programTypeControl" Margin="0,20,0,0"  
+                Visibility="{Binding Path=IsProgramTypeVisibility, Converter={StaticResource boolToVis}}"
+                 />
+                <ContentControl Grid.Row="2" x:Name="exportControl" Margin="0,0,0,0" 
+                            Visibility="{Binding Path=IsExportSettingsVisibility, Converter={StaticResource boolToVis}}"                
+                />
+            </Grid>
+            </ScrollViewer >
+     
+    </Grid>
+</UserControl>

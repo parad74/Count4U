@@ -1,0 +1,74 @@
+﻿<UserControl x:Class="Count4U.Common.View.BottomView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:TextBox="clr-namespace:Count4U.CustomControls.TextBox;assembly=Count4U.CustomControls"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Expander/ExpanderSmall.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Expander IsExpanded="{Binding Path=IsExpanded}" Grid.Row="2" HorizontalAlignment="Stretch" Style="{StaticResource SmallExpanderStyle}" Margin="0,0,0,0">
+
+        <Grid Background="#DDDDDD">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="70" />
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <TextBlock Height="20" HorizontalAlignment="Left" 
+                           Margin="10,1,0,0" 
+                           Text="{x:Static Localization:Resources.Constant_Code}"
+                           VerticalAlignment="Top" Opacity="1" 
+                  />
+
+                <TextBox:TextBoxV7 Height="22" Text="{Binding Path=ProcessCode, Mode=OneWay}" 
+                         Margin="50,0,0,0" 
+                         VerticalAlignment="Top" IsReadOnly="True" Opacity="1" ToolTip="{Binding Path=Code}"                                
+                         HorizontalAlignment="Left" Width="299"    
+                         IsNecessary="True"
+                         />
+
+                <TextBox:TextBoxV7 Height="22" Text="{Binding Path=VerDB, Mode=OneWay}" 
+                         Margin="350,0,0,0" 
+                         VerticalAlignment="Top" IsReadOnly="True" Opacity="1" ToolTip="{Binding Path=VerDB}"                                
+                         HorizontalAlignment="Left" Width="50"    
+                         IsNecessary="True"
+                         />
+                <TextBlock Height="20" HorizontalAlignment="Left" 
+                           Margin="10,23,0,0" 
+                           Text="{x:Static Localization:Resources.Constant_Path}"
+                           VerticalAlignment="Top" 
+                           Opacity="1" 
+                           />
+
+                <TextBox:TextBoxV7 Height="22" Text="{Binding Path=Path, Mode=OneWay}" 
+                         ToolTip="{Binding Path=Path}"
+                         IsReadOnly="True" 
+                         Margin="50,23,0,0" 
+                         VerticalAlignment="Top"                                
+                         Opacity="1" 
+                         HorizontalAlignment="Left" 
+                         Width="350"                          
+                         IsNecessary="True"
+                         />
+        </Grid>
+            
+            <TextBlock Grid.Column="1" Height="20" HorizontalAlignment="Right" 
+                           Margin="10,1,10,0" 
+                           Text="{Binding Path=OfficeOrLaptop, Mode=OneWay}" 
+                           VerticalAlignment="Bottom" Opacity="90" Foreground="Gray"
+             />
+        </Grid>
+        
+    </Expander>
+</UserControl>

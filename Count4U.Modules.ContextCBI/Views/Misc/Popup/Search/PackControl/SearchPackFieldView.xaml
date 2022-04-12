@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.Misc.Popup.Search.PackControl.SearchPackFieldView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:TextBox="clr-namespace:Count4U.CustomControls.TextBox;assembly=Count4U.CustomControls"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <TextBlock Height="20" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,6,0,0"
+                   Text="{x:Static Localization:Resources.View_SearchPackField_tbCode}"
+                   VerticalAlignment="Top" />
+
+        <TextBox:TextBoxV7 Height="23" 
+                           Margin="10,27,10,0" 
+                           Name="txtCode" 
+                           VerticalAlignment="Top" 
+                         Text="{Binding Path=Code, UpdateSourceTrigger=PropertyChanged}" 
+                           MaxLength="100" 
+                   />
+        <TextBlock Height="20" 
+        	HorizontalAlignment="Left" 
+        	Margin="10,58,0,0"
+        	Text="{x:Static Localization:Resources.View_SearchPackField_tbName}"
+        	VerticalAlignment="Top" />
+
+        <TextBox:TextBoxV7 
+            Height="23" 
+            Margin="10,79,10,0"             
+            VerticalAlignment="Top" 
+        	Text="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}" 
+            MaxLength="100" 
+            />
+
+
+        <TextBlock Height="20" HorizontalAlignment="Left" Margin="10,114,0,0" Name="textBlock3" 
+                   Text="{x:Static Localization:Resources.View_SearchPackField_tbDateFrom}"
+                   VerticalAlignment="Top" />
+
+        <DatePicker Height="23" 
+                    Margin="10,135,10,0" 
+                    VerticalAlignment="Top" 
+                    SelectedDate="{Binding Path=From}" 
+                    />
+
+        <TextBlock Height="20" HorizontalAlignment="Left" Margin="10,164,0,0" Name="textBlock4" 
+                   Text="{x:Static Localization:Resources.View_SearchPackFiled_tbDateTo}"
+                   VerticalAlignment="Top" />
+
+        <DatePicker Height="23" Margin="10,185,10,0" VerticalAlignment="Top" 
+                         SelectedDate="{Binding Path=To}" />
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.Misc.Script.CBIScriptOpenView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Interactivity.InteractionRequest;assembly=Microsoft.Practices.Prism.Interactivity"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:Helpers="clr-namespace:Count4U.Common.Helpers;assembly=Count4U.Common"
+             xmlns:my="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+              xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" 
+             xmlns:actions="clr-namespace:Count4U.Common.Helpers.Actions;assembly=Count4U.Common"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <i:Interaction.Triggers>
+            <prism:InteractionRequestTrigger SourceObject="{Binding FileChooseDilogRequest}">
+                <actions:OpenFileDialogAction />
+            </prism:InteractionRequestTrigger>
+
+        </i:Interaction.Triggers>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,11,0,0" Name="textBlock1" 
+                   Text="{x:Static Localization:Resources.View_ScriptSaveOpen_tbPathToInput}"
+                   VerticalAlignment="Top" Width="181" />
+
+        <TextBox Height="25" Margin="10,40,80,0" Name="textBox1" VerticalAlignment="Top"  Style="{StaticResource textBoxErrorStyle}">
+            <i:Interaction.Behaviors>
+                <my:TextChangedDelayedBehavior  IsTimerEnabled="True"/>
+            </i:Interaction.Behaviors>
+
+            <Binding IsAsync="False" Path="Path" UpdateSourceTrigger="Explicit">
+                <Binding.ValidationRules>
+                    <DataErrorValidationRule />
+                </Binding.ValidationRules>
+            </Binding>
+
+        </TextBox>
+
+        <Button Content="{x:Static Localization:Resources.Command_Browse}"
+                Height="23" Margin="0,41,10,0" VerticalAlignment="Top" Command="{Binding Path=BrowseCommand}" HorizontalAlignment="Right" Width="65" />
+
+        <CheckBox Content="{x:Static Localization:Resources.View_ScriptSaveOpen_tbClearRelations}"
+                  Height="16" HorizontalAlignment="Left" Margin="10,77,0,0" Name="checkBox1" VerticalAlignment="Top"
+                  IsChecked="{Binding Path=IsClear}"/>
+
+        <Grid Grid.Row="1" Background="#FF7EAFE5">
+            <Button Content="{x:Static Localization:Resources.Command_Run}"
+                    Height="23" HorizontalAlignment="Right" Margin="0,0,94,0" VerticalAlignment="Center" Width="75" Command="{Binding Path=RunCommand}" />
+
+            <Button Content="{x:Static Localization:Resources.Command_Close}"
+                    Height="23" IsCancel="True"
+					HorizontalAlignment="Right" Margin="0,0,10,0" Name="button2" VerticalAlignment="Center" Width="75" Command="{Binding Path=CancelCommand}"/>
+
+        </Grid>
+        <TextBlock Height="19" HorizontalAlignment="Left" Margin="10,105,0,0" 
+                   Text="{x:Static Localization:Resources.View_ScriptSaveOpen_tbLog}"
+                   VerticalAlignment="Top" Width="187" />
+        
+        <TextBox Margin="10,125,10,10" Name="textBox2" Text="{Binding Path=Log}" IsReadOnly="True" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto">
+
+        </TextBox>
+
+        <xctk:BusyIndicator Grid.RowSpan="2" IsBusy="{Binding Path=IsBusy}" 
+                                  BusyContent="{x:Static Localization:Resources.View_ScriptSaveOpen_busyContent}"
+                                  >
+
+        </xctk:BusyIndicator>
+
+    </Grid>
+</UserControl>

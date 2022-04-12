@@ -1,0 +1,306 @@
+﻿<UserControl x:Class="Count4U.Planogram.View.PlanCanvasView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                                      xmlns:lib="clr-namespace:Count4U.Planogram.Lib"
+             xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:converters="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:dragDrop="clr-namespace:Count4U.Common.View.DragDrop;assembly=Count4U.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid Background="Transparent">
+        <Grid.Resources>
+
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Combobox/Combobox.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Buttons/ButtonThemeV7.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/Expander/Expander3.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+
+                <converters:BooleanInvertConverter x:Key="booleanInvert" />
+                <BooleanToVisibilityConverter x:Key="boolToVis"></BooleanToVisibilityConverter>
+            </ResourceDictionary>
+
+        </Grid.Resources>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <!--            <ColumnDefinition Width="Auto"/>-->
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Column="0" Width="40" Margin="0,0,0,0" Background="#686868" Grid.RowSpan="1">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+            
+            <ItemsControl 
+                Grid.Row="0" 
+                ItemsSource="{Binding Path=Tools}"               
+                HorizontalAlignment="Center">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel></WrapPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <ToggleButton 
+                            x:Name="btnZoom"
+                             Margin="0,5,0,0"
+                             Width="30"
+                             Height="30" 
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Center"
+                             IsChecked="{Binding Path=IsChecked}"
+                             ToolTip="{Binding Path=Title}"
+                             >
+                            <Image Source="{Binding Path=Image}" Width="20" Height="20"></Image>
+                        </ToggleButton>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <ItemsControl Grid.Row="1" 
+                          ItemsSource="{Binding Path=Pictures}" 
+                          Margin="0,10,0,0"
+                          HorizontalAlignment="Stretch"
+                          dragDrop:DragDrop.IsDragSource="True"
+                          dragDrop:DragDrop.DragHandler="{Binding}"
+                          >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Vertical"></StackPanel>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Image                            
+                             Margin="0,5,0,0"                             
+                             Source="{Binding Path=Path}"
+                             >
+                            
+                        </Image>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+        </Grid>
+
+        <ScrollViewer Name="scrollViewer" Grid.Column="1" VerticalScrollBarVisibility="Visible" HorizontalScrollBarVisibility="Visible" Background="Transparent" FocusVisualStyle="{x:Null}">
+            <!--            Background="LightGray"-->
+            <Grid x:Name="grid" RenderTransformOrigin="0.5,0.5" Background="LightGray" FocusVisualStyle="{x:Null}">
+                <Grid.LayoutTransform>
+                    <TransformGroup>
+                        <ScaleTransform x:Name="scaleTransform"/>
+                    </TransformGroup>
+                </Grid.LayoutTransform>
+
+                <Grid.ContextMenu>
+                    <ContextMenu x:Name="contextMenu">
+
+                        <MenuItem 
+                            Header="{x:Static Localization:Resources.ViewModel_PlanCanvas_mnuAlign}"
+                            >
+                            <MenuItem.Items>
+
+                                <MenuItem 
+                                    Header="{x:Static Localization:Resources.Command_AlignLeft}"
+                                    Command="{Binding Path=AlignLeftCommand}"
+                                />
+
+                                <MenuItem 
+                                    Header="{x:Static Localization:Resources.Command_AlignRight}"
+                                    Command="{Binding Path=AlignRightCommand}"
+                                />
+
+                                <MenuItem 
+                                    Header="{x:Static Localization:Resources.Command_AlignTop}"
+                                    Command="{Binding Path=AlignTopCommand}"
+                                />
+
+                                <MenuItem 
+                                    Header="{x:Static Localization:Resources.Command_AlignBottom}"
+                                    Command="{Binding Path=AlignBottomCommand}"
+                                />
+
+                                <MenuItem 
+                                    Header="{Binding Path=AlignSameWidthCommand.Title}"
+                                    Command="{Binding Path=AlignSameWidthCommand}"
+                                />
+
+                                <MenuItem 
+                                    Header="{Binding Path=AlignSameHeightCommand.Title}"
+                                    Command="{Binding Path=AlignSameHeightCommand}"
+                                />
+                            </MenuItem.Items>
+                        </MenuItem>
+
+                        <MenuItem 
+                            Header="{x:Static Localization:Resources.View_PlanCavas_mnuArrange}"
+                            >
+                            <MenuItem.Items>
+
+                                <MenuItem 
+                                    Header="{Binding Path=BringForwardCommand.Title}"
+                                    Command="{Binding Path=BringForwardCommand}"
+                                />
+
+                                <MenuItem 
+                                    Header="{Binding Path=SendBackwardCommand.Title}"
+                                  Command="{Binding Path=SendBackwardCommand}"
+                                />
+
+                            </MenuItem.Items>
+                        </MenuItem>
+
+                        <CheckBox 
+                                VerticalAlignment="Center"
+                                IsThreeState="False"
+                                IsChecked="{Binding Path=IsLocked}" 
+                                IsEnabled="{Binding Path=IsLockedEnabled}"
+                                Content="{x:Static Localization:Resources.View_PlanCanvas_mnuLocked}"
+                                >
+
+                        </CheckBox>
+
+                        <Separator></Separator>
+
+                        <MenuItem 
+                            Header="{x:Static Localization:Resources.Command_Info}"
+                            Command="{Binding Path=InfoCommand}"
+                            Visibility="{Binding Path=IsVisibleIturCommands, Converter={StaticResource boolToVis}}"
+                            />
+
+                        <MenuItem 
+                              Header="{x:Static Localization:Resources.View_PlanCanvas_mnuIturAdd}"
+                              Command="{Binding Path=IturAddCommand}"
+                              Visibility="{Binding Path=IsVisibleIturCommands, Converter={StaticResource boolToVis}}"
+                            />                                              
+
+                        <MenuItem 
+                              Header="{x:Static Localization:Resources.View_PlanCanvas_mnuIturDelete}"
+                              Command="{Binding Path=IturDeleteCommand}"
+                               Visibility="{Binding Path=IsVisibleIturCommands, Converter={StaticResource boolToVis}}"
+                            />
+
+                        <MenuItem 
+                              Header="{x:Static Localization:Resources.View_PlanCanvas_mnuIturClear}"
+                              Command="{Binding Path=IturClearCommand}"
+                               Visibility="{Binding Path=IsVisibleIturCommands, Converter={StaticResource boolToVis}}"
+                            />
+
+                        <MenuItem 
+                              Header="{x:Static Localization:Resources.PlanCanvas_mnuAssignLocation}"
+                              Command="{Binding Path=LocationAssignCommand}"
+                              Visibility="{Binding Path=IsVisibleLocationCommands, Converter={StaticResource boolToVis}}"
+                            />
+
+                        <MenuItem 
+                              Header="{x:Static Localization:Resources.PlanCanvas_mnuAssignText}"
+                              Command="{Binding Path=TextAssignCommand}"
+                              Visibility="{Binding Path=IsVisibleTextCommands, Converter={StaticResource boolToVis}}"
+                            />
+
+                        <MenuItem 
+                              Header="{x:Static Localization:Resources.PlanCanvas_mnuAssignPicture}"
+                              Command="{Binding Path=PictureAssignCommand}"
+                              Visibility="{Binding Path=IsVisiblePictureCommands, Converter={StaticResource boolToVis}}"
+                            />
+
+                        <MenuItem 
+                            Header="{x:Static Localization:Resources.Command_Clone}"
+                            Command="{Binding Path=CloneCommand}"                            
+                            />
+
+                        <MenuItem 
+                            Header="{x:Static Localization:Resources.Command_Delete}"
+                            Command="{Binding Path=DeleteCommand}"
+                            />
+
+                    </ContextMenu>
+                </Grid.ContextMenu>
+
+            </Grid>
+
+        </ScrollViewer>
+
+        <!--        <GridSplitter VerticalAlignment="Stretch" Width="2" HorizontalAlignment="Center" Grid.RowSpan="2" Background="Gray" Grid.Column="2"></GridSplitter>-->
+        <!--        Background="#686868"-->
+        <Grid Grid.Column="2"  Background="#686868" Grid.RowSpan="2">
+            <Expander ExpandDirection="Right" IsExpanded="True" Style="{StaticResource ExpanderStyle3}" Margin="5,0,0,0">
+                <Grid Width="165">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <ContentControl Grid.Row="0" x:Name="contentProperties" Margin="-15, 5, 10, 5" />
+                    <ContentControl Grid.Row="1" x:Name="contentTree"       Margin="-15, 10, 10, 5" />
+                </Grid>
+            </Expander>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Height="30" Background="LightGray">
+
+            <ComboBox Width="85" 
+                      Height="19"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="140,0,10,0"
+                      IsEditable="True"
+                      IsReadOnly="True"
+                      IsTextSearchEnabled="False"
+                      ItemsSource="{Binding Path=ScaleItems}"
+                      SelectedItem="{Binding Path=ScaleSelectedItem}"
+                      Text="{Binding Path=ScaleText}"
+                      DisplayMemberPath="Text"
+                      Style="{StaticResource CustomComboBoxStyle}"
+                      />
+
+            <Button   Width="85" 
+                      Height="19"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Center"
+                      Margin="50,0,0,0"
+                      Content="{Binding Path=SizeText}"
+                      Command="{Binding Path=SizeChangeCommand}"
+                      Style="{StaticResource ButtonStyleV7_2}" 
+                      />
+
+            <Button   Width="85" 
+                      Height="21"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Center"                      
+                      Margin="0,0,100,0"
+                      Content="{x:Static Localization:Resources.Command_Save}"
+                      Command="{Binding Path=SaveCommand}"
+                      Style="{StaticResource ButtonStyleV7}" 
+                      />
+
+            <Button   Width="85" 
+                      Height="21"
+                      HorizontalAlignment="Right"
+                      VerticalAlignment="Center"                      
+                      Margin="0,0,10,0"
+                      Content="{x:Static Localization:Resources.Command_Cancel}"
+                      Command="{Binding Path=CancelCommand}"
+                      Style="{StaticResource ButtonStyleV7_2}" 
+                      />
+        </Grid>
+    </Grid>
+</UserControl>

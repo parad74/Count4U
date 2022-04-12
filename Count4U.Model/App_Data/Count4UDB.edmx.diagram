@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="c576094c12154d35a1fe9c6af3747961" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="Count4UDBModel.BarcodeWithoutProduct" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.CatalogConfig" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.FieldLink" Width="2.5" PointX="0.625" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.InputType" Width="1.5" PointX="3.5" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.InventorConfig" Width="2.75" PointX="4" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.InventProduct" Width="3.5" PointX="15.625" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.Itur" Width="2.625" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.Location" Width="1.5" PointX="5.125" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.ResulteValue" Width="1.5" PointX="14" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.Section" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.Session" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.StatusDocHeader" Width="1.5" PointX="12" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.StatusInventorConfig" Width="1.5" PointX="10.75" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.StatusInventProduct" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.StatusItur" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.Supplier" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.Type" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.UnitType" Width="1.5" PointX="13.5" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Count4UDBModel.Count4UDBIni" Width="1.5" PointX="11.957087986151263" PointY="15.240881196801031" />
+        <EntityTypeShape EntityType="Count4UDBModel.Family" Width="1.5" PointX="6.066297940009413" PointY="19.048311704326565" />
+        <EntityTypeShape EntityType="Count4UDBModel.IturAnalyzes" Width="3.5" PointX="3" PointY="33" />
+        <EntityTypeShape EntityType="Count4UDBModel.UnitPlan" Width="2.75" PointX="8.625" PointY="33.625" />
+        <EntityTypeShape EntityType="Count4UDBModel.UnitPlanValue" Width="1.5" PointX="11.25" PointY="0.5" />
+        <EntityTypeShape EntityType="Count4UDBModel.DocumentHeader" Width="2" PointX="1.625" PointY="24" />
+        <EntityTypeShape EntityType="Count4UDBModel.Product" Width="1.5" PointX="13.75" PointY="11.875" />
+        <EntityTypeShape EntityType="Count4UDBModel.Shelf" Width="1.5" PointX="3.5" PointY="3.625" />
+        <EntityTypeShape EntityType="Count4UDBModel.Device" Width="1.5" PointX="12" PointY="8.5" />
+        <EntityTypeShape EntityType="Count4UDBModel.PropertyStr" Width="1.5" PointX="6.875" PointY="0.875" />
+        <EntityTypeShape EntityType="Count4UDBModel.PropertyStrToObject" Width="1.5" PointX="2.5301715855161526" PointY="20.269939134023122" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

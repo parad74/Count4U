@@ -1,0 +1,297 @@
+﻿<UserControl x:Class="Count4U.Modules.Audit.Views.Export.UploadToPdaView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:interactionRequest="http://www.codeplex.com/prism"
+             xmlns:actions="clr-namespace:Count4U.Common.Helpers.Actions;assembly=Count4U.Common"
+             xmlns:imageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             xmlns:uiCommandService="clr-namespace:Count4U.Common.Services.UICommandService;assembly=Count4U.Common"
+             xmlns:imageButtonCursor="clr-namespace:Count4U.CustomControls.ImageButtonCursor;assembly=Count4U.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Buttons/ButtonThemeV7.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+
+                <BooleanToVisibilityConverter x:Key="boolToVis" />
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <i:Interaction.Triggers>
+
+            <interactionRequest:InteractionRequestTrigger SourceObject="{Binding OpenFolderRequest}">
+                <actions:OpenFolderDialogAction />
+            </interactionRequest:InteractionRequestTrigger>
+
+        </i:Interaction.Triggers>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="38" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,8,0,0" Name="textBlock1" 
+                   Text="{x:Static Localization:Resources.View_UploadToPda_tbExportPath}"
+                   VerticalAlignment="Top" Width="184" />
+
+            <TextBox 
+                Height="22" 
+                Margin="10,33,115,0" 
+                VerticalAlignment="Top" 
+                IsReadOnly="False" 
+                Text="{Binding Path=Path, UpdateSourceTrigger=PropertyChanged}"
+                 />
+
+            <imageButtonCursor:ImageButtonCursor    Margin="0,30,86,0"
+                                                    HorizontalAlignment="Right" 
+                                                    ImageSource="{x:Static uiCommandService:UICommandIconRepository.OpenFolder}"
+                                                    Command="{Binding Path=OpenCommand}"
+                                                    ImageWidth="20" ImageHeight="20">
+            </imageButtonCursor:ImageButtonCursor>
+
+            <Button Content="{x:Static Localization:Resources.View_ExportLog_btnBrowse}"
+                Height="23" 
+                HorizontalAlignment="Right" 
+                Margin="0,32,5,0" 
+                VerticalAlignment="Top"
+                Width="75"                
+                Style="{StaticResource ButtonStyleV7_2}" 
+                Command="{Binding Path=BrowseCommand}"/>
+        </Grid>
+
+        <Grid Grid.Row="1">
+            <Grid>
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="85" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="95"  />
+                </Grid.ColumnDefinitions>
+
+             <Grid Grid.Column="0">
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" 
+                   Text="{x:Static Localization:Resources.View_UploadToPda_tbUpload}"
+                   VerticalAlignment="Top" Width="65" />
+                </Grid>
+                
+                <Grid Grid.Column="1">
+                 <ProgressBar 
+                Margin="0,0,20,0" 
+                Height="17"
+                VerticalAlignment="Center" 
+                HorizontalAlignment="Stretch"
+                Value="{Binding Path=ProcessValue}"
+                Visibility="{Binding Path=IsProgressBarVisible, Converter={StaticResource boolToVis}}"
+                 />
+                </Grid>
+                
+                <Grid Grid.Column="2">
+                    <Button Content="{Binding Path=ExecButtonText}"
+                Height="25" 
+                HorizontalAlignment="Right" 
+                Margin="10,8,6,0" 
+                VerticalAlignment="Top" 
+                Width="75"                 
+                Style="{StaticResource ButtonStyleV7}" 
+                Command="{Binding Path=UploadCommand}"/>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0,5,0,0">
+
+            <DataGrid 
+				  ItemsSource="{Binding Path=Items}" 			
+				  Name="dataGrid"
+                  VirtualizingStackPanel.VirtualizationMode="Standard"  
+				  SelectionMode="Extended"
+                  BorderBrush="Transparent"
+                  BorderThickness="0"
+				>
+                <DataGrid.Resources>
+                    <ResourceDictionary>
+                        <ResourceDictionary.MergedDictionaries>
+                            <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/MdiThemes/Theme2.xaml"/>
+                        </ResourceDictionary.MergedDictionaries>
+                    </ResourceDictionary>
+                </DataGrid.Resources>
+
+                <DataGrid.Columns>
+
+                    <DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <CheckBox Margin="3,0,3,0" 
+                                 IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, 
+                                    Path=DataContext.IsChecked, 
+                                    UpdateSourceTrigger=PropertyChanged, 
+                                    Mode=TwoWay}"
+                                  IsEnabled="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, 
+                                    Path=DataContext.IsCheckedEnabled, 
+                                    UpdateSourceTrigger=PropertyChanged
+                                    }"
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.HeaderTemplate>
+
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox 
+                                    IsChecked="{Binding Path=IsChecked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                    IsEnabled="{Binding Path=IsCheckedEnabled}"
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center"></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_UploadToPda_columnPort}"
+                                        Width="*" MinWidth="75" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="16" Height="16" Margin="3,2,3,2" Source="{Binding Path=Image}"></Image>
+
+                                    <TextBlock Text="{Binding Path=Port, Mode=OneWay}" HorizontalAlignment="Center" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_UploadToPda_columnDevice}"
+                                        Width="*" MinWidth="75" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Device, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_UploadToPda_columnFile}"
+                                        Width="1.5*" MinWidth="75" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=File, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_UploadToPda_columnNumber}"
+                                        Width="*" MinWidth="75" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Number, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_UploadToPda_columnValue}"
+                                        Width="1.5*" MinWidth="75" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Value, Mode=OneWay}" HorizontalAlignment="Center" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_UploadToPda_columnProcess}"
+                                        Width="2*" MinWidth="75" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Grid>
+
+                                    <ProgressBar 
+                                        Value="{Binding Path=Progress}" 
+                                        HorizontalAlignment="Stretch" 
+                                        VerticalAlignment="Center" 
+                                        Visibility="{Binding Path=IsShowProgressBar, Converter={StaticResource boolToVis}}"
+                                        Height="15" />
+
+                                </Grid>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                    <DataGridTemplateColumn Header=""
+                                        Width="50" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <imageButton:ImageButton 
+                                        
+                                        Command="{Binding Path=OkCancelCommand}"
+                                        Visibility="{Binding Path=ButtonVisible, Converter={StaticResource boolToVis}}"
+                                        IsEnabled="{Binding Path=ButtonEnabled}"
+                                        Margin="0,0,0,0" 
+                                        HorizontalAlignment="Center" 
+                                        VerticalAlignment="Center" 
+                                        ImageWidth="16" 
+                                        ImageHeight="16" 
+                                        CenterX="8" 
+                                        ImageSource="{Binding Path=ButtonImage}"
+                                        CenterY="8">
+
+                                </imageButton:ImageButton>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+
+                </DataGrid.Columns>
+
+
+            </DataGrid>
+        </Grid>
+
+        <Grid Grid.Row="3">
+            <TextBlock 
+               Text="{Binding Path=QuantityCheckedString}" 
+                Margin="10,3,0,3"
+                Visibility="{Binding Path=QuantityCheckedTextBlockVisible, Converter={StaticResource boolToVis}}"
+                >
+                
+            </TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="4" Background="{StaticResource bottomLineColor}">
+
+            <Button 
+                Content="{x:Static Localization:Resources.View_UploadToPda_btnRefresh}"
+                Height="23" 
+                HorizontalAlignment="Left" 
+                Margin="10,0,10,0" 
+                VerticalAlignment="Center" 
+                Width="115" 
+                Command="{Binding Path=RefreshCommand}" 
+                Style="{StaticResource ButtonStyleV7_2}" 
+                 />
+
+            <Button 
+                Content="{x:Static Localization:Resources.Command_Close}"
+                Height="23" 
+                HorizontalAlignment="Right" 
+                Margin="0,0,10,0" 
+                VerticalAlignment="Center" 
+                Width="115" 
+                Command="{Binding Path=CloseCommand}" 
+                Style="{StaticResource ButtonStyleV7_2}" 
+                IsCancel="True" />
+
+        </Grid>
+
+    </Grid>
+</UserControl>

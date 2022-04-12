@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="Count4U.Modules.Audit.Views.InventProduct.InventProductCloneView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:Behaviours="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid >
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+
+                <BooleanToVisibilityConverter x:Key="boolToVis" />
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Height="23" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,14,0,0" 
+                   Name="textBlock1" 
+                   Text="{x:Static Localization:Resources.View_InventProductAddEdit_tbMakat}"
+                   VerticalAlignment="Top" Width="175" FontSize="14" />
+
+        <TextBox Height="23" 
+                 Margin="200,14,10,0" 
+                 Name="txtMakat" 
+                 VerticalAlignment="Top" 
+                 IsReadOnly="True" 
+                 FlowDirection="LeftToRight"
+                 Style="{StaticResource textBoxErrorStyle}"
+                 Text="{Binding Path=Makat}"
+                 MaxLength="50">            
+        </TextBox>
+
+        <TextBlock Height="23" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,45,0,0" 
+                   Name="textBlock7" 
+                   Text="{x:Static Localization:Resources.View_InventProductClone_Quantity}"
+                   VerticalAlignment="Top"                    
+                   Width="175" FontSize="14" />
+
+        <TextBox Height="23"
+                 Margin="200,45,10,0" 
+                 MaxLength="100" 
+                 Name="txtQuantity"                  
+                 Style="{StaticResource textBoxErrorStyle}" 
+                 VerticalAlignment="Top"
+                 IsReadOnly="False" 
+                 FlowDirection="LeftToRight">
+            <i:Interaction.Behaviors>
+                <Behaviours:TextChangedDelayedBehavior  IsTimerEnabled="true"/>
+            </i:Interaction.Behaviors>
+            <Binding IsAsync="False" Path="Quantity" UpdateSourceTrigger="Explicit">
+                <Binding.ValidationRules>
+                    <DataErrorValidationRule />
+                </Binding.ValidationRules>
+            </Binding>
+        </TextBox>
+
+        <TextBlock Height="23" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,78,0,0"
+                   Name="textBlock4" 
+                   Text="{x:Static Localization:Resources.View_InventProductClone_QuantityBefore}"
+                   VerticalAlignment="Top" Width="175" FontSize="14" />
+
+        <TextBox x:Name="txtQuantityBefore" Height="23"
+                 Margin="200,77,10,0"                 
+                 VerticalAlignment="Top" 
+                 Style="{StaticResource textBoxErrorStyle}" 
+                 MaxLength="10"
+                 HorizontalAlignment="Stretch"
+                 IsReadOnly="True"
+                 FlowDirection="LeftToRight"
+                 Text="{Binding Path=QuantityBefore}"
+                 >                 
+        </TextBox>
+
+        <TextBlock Height="23" 
+        	HorizontalAlignment="Left" 
+        	Margin="10,110,0,0"
+        	x:Name="textBlock4_Copy" 
+        	Text="{x:Static Localization:Resources.View_InventProductClone_QuantityAfter}"
+        	VerticalAlignment="Top"      
+            FontWeight="Bold"
+            Width="175" FontSize="14" />
+
+        <TextBox x:Name="txtQuantityAfter" 
+            Height="23"
+        	Margin="200,109,10,0"        	
+        	VerticalAlignment="Top" 
+        	Style="{StaticResource textBoxErrorStyle}" 
+        	MaxLength="10"          
+        	HorizontalAlignment="Stretch"
+            IsReadOnly="True"
+            FontWeight="Bold"
+            FlowDirection="LeftToRight"
+            Text="{Binding Path=QuantityAfter}"     
+                 >
+
+        </TextBox>
+
+        <Grid Grid.Row="1" Background="#FF7EAFE5">
+
+            <Button Content="{x:Static Localization:Resources.Command_OK}"
+                    Height="23" 
+                    HorizontalAlignment="Right" 
+                    Margin="0,0,91,0" 
+                    Name="button1" 
+                    VerticalAlignment="Center"
+                    Width="75"
+                    IsDefault="True"
+                    Command="{Binding Path=OkCommand}" />
+
+            <Button Content="{x:Static Localization:Resources.Command_Cancel}"
+                    Height="23" 
+                    IsCancel="False"
+					HorizontalAlignment="Right" 
+                    Margin="0,0,10,0"                              
+                    VerticalAlignment="Center"
+                    Width="75" Command="{Binding Path=CancelCommand}"/>
+
+        </Grid>
+
+       
+
+    </Grid>
+</UserControl>

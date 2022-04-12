@@ -1,0 +1,176 @@
+﻿<UserControl x:Class="Count4U.Common.View.PopupView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="500">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Background="Transparent">
+
+        <Path 
+              x:Name="bdTriangle"
+              Data="M102, 0.5 L203,102 L0.500000,102 z" 
+              Fill="#EEEEEE" 
+              HorizontalAlignment="Left"               
+              Stretch="Fill" 
+              Stroke="Gray" 
+              StrokeThickness="1"
+              VerticalAlignment="Top" 
+              Width="26" 
+              Height="13"               
+              Panel.ZIndex="1" Margin="100,0,0,0" />
+
+        <Border 
+                x:Name="bdShield"
+                Width="22" 
+                Height="2" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                BorderBrush="#EEEEEE" 
+                Background="#EEEEEE"
+                BorderThickness="2"
+                Margin="102,11,0,0"
+                Panel.ZIndex="9999">
+        </Border>
+
+        <Border BorderThickness="1" 
+                BorderBrush="Gray" 
+                HorizontalAlignment="Stretch" 
+                VerticalAlignment="Stretch"
+                Margin="5,11,5,5"
+                CornerRadius="0"
+                Panel.ZIndex="1">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="4" Color="#EEEEEE" />
+            </Border.Effect>
+
+            <Grid Background="#EEEEEE" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border x:Name="border" BorderThickness="1" BorderBrush="#CDD0D1" Background="#CDD0D1" Margin="4" Panel.ZIndex="1">
+                    <Grid>
+                        <TextBlock x:FieldModifier="public" 
+                                   x:Name="tbTitle"                                    
+                                   HorizontalAlignment="Left" 
+                                   VerticalAlignment="Center" 
+                                   Foreground="White"
+                                   Margin="5,0,0,0" FontSize="14" ></TextBlock>
+
+                        <Control HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,3,0" x:Name="pathClose">
+                            <Control.Template>
+                                <ControlTemplate>
+
+                                    <Path Name="path"		                    
+		                    HorizontalAlignment="Center"
+		                    VerticalAlignment="Center"
+		                    Height="15"
+		                    Width="15"
+		                    Stretch="Fill"
+		                    Opacity="1"
+		                    Data="M 12.29156494140625,8.872100830078125 C12.29156494140625,8.872100830078125 10.4193115234375,6.9998779296875 10.4193115234375,6.9998779296875 10.4193115234375,6.9998779296875 12.29180908203125,5.12744140625 12.29180908203125,5.12744140625 13.23590087890625,4.18328857421875 13.23590087890625,2.65325927734375 12.2911376953125,1.70849609375 11.3468017578125,0.76416015625 9.8167724609375,0.76416015625 8.87261962890625,1.708282470703125 8.87261962890625,1.708282470703125 7.00018310546875,3.58074951171875 7.00018310546875,3.58074951171875 7.00018310546875,3.58074951171875 5.1275634765625,1.70806884765625 5.1275634765625,1.70806884765625 4.1832275390625,0.76373291015625 2.65277099609375,0.76416015625 1.7086181640625,1.708282470703125 0.76446533203125,2.65240478515625 0.7640380859375,4.182861328125 1.70843505859375,5.127197265625 1.70843505859375,5.127197265625 3.5810546875,6.9998779296875 3.5810546875,6.9998779296875 3.5810546875,6.9998779296875 1.7086181640625,8.872314453125 1.7086181640625,8.872314453125 0.76446533203125,9.81646728515625 0.763427734375,11.3475341796875 1.707763671875,12.2918701171875 2.65252685546875,13.23663330078125 4.18359375,13.235595703125 5.12774658203125,12.29144287109375 5.12774658203125,12.29144287109375 7.00018310546875,10.41900634765625 7.00018310546875,10.41900634765625 7.00018310546875,10.41900634765625 8.8724365234375,12.291259765625 8.8724365234375,12.291259765625 9.81719970703125,13.23602294921875 11.34765625,13.235595703125 12.29180908203125,12.29144287109375 13.23590087890625,11.347320556640625 13.236328125,9.816864013671875 12.29156494140625,8.872100830078125 z"
+		                    Stroke="#ffffff"
+		                    StrokeThickness="1"
+		                    Fill="#c0c0c0">
+
+                                    </Path>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Trigger.Setters>
+                                                <Setter Property="Fill" Value="#ffffff" TargetName="path" />
+                                            </Trigger.Setters>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+
+                                </ControlTemplate>
+                            </Control.Template>
+
+
+                        </Control>
+
+                        <Control HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,23,0" x:Name="pathReset">
+                            <Control.Template>
+                                <ControlTemplate>
+                                    
+                                    <Path Name="path"		                    
+		                    HorizontalAlignment="Center"
+		                    VerticalAlignment="Center"
+		                    Height="15"
+		                    Width="15"
+		                    Stretch="Fill"
+		                    Opacity="1"
+		                    Data="M 7.4996795654296875,1 C3.91046142578125,1 1,3.91046142578125 1,7.5001068115234375 1,11.089752197265625 3.91046142578125,14 7.4996795654296875,14 11.089340209960938,14 14,11.089752197265625 14,7.5001068115234375 14,3.91046142578125 11.089340209960938,1 7.4996795654296875,1 zM 11.74786376953125,8.193572998046875 C11.74786376953125,8.314163208007812 11.650283813476562,8.4117431640625 11.529708862304688,8.4117431640625 11.529708862304688,8.4117431640625 3.5197296142578125,8.4117431640625 3.5197296142578125,8.4117431640625 3.399139404296875,8.4117431640625 3.30157470703125,8.314163208007812 3.30157470703125,8.193572998046875 3.30157470703125,8.193572998046875 3.30157470703125,6.8319854736328125 3.30157470703125,6.8319854736328125 3.30157470703125,6.711395263671875 3.399139404296875,6.61383056640625 3.5197296142578125,6.61383056640625 3.5197296142578125,6.61383056640625 11.529708862304688,6.61383056640625 11.529708862304688,6.61383056640625 11.650283813476562,6.61383056640625 11.74786376953125,6.711395263671875 11.74786376953125,6.8319854736328125 11.74786376953125,6.8319854736328125 11.74786376953125,8.193572998046875 11.74786376953125,8.193572998046875 z"
+		                    Stroke="#ffffff"
+		                    StrokeThickness="1"
+		                    Fill="#c0c0c0">
+
+                                    </Path>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Trigger.Setters>
+                                                <Setter Property="Fill" Value="#ffffff" TargetName="path" />
+                                            </Trigger.Setters>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+                                    
+                                </ControlTemplate>
+                            </Control.Template>
+
+                           
+                        </Control>
+
+                        <Control HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,4,41,0" x:Name="pathApply">
+                            <Control.Template>
+                                <ControlTemplate>
+
+                                    <Path Name="path"		                    
+		                    HorizontalAlignment="Center"
+		                    VerticalAlignment="Center"
+		                    Height="15"
+		                    Width="15"
+		                    Stretch="Fill"
+		                    Opacity="1"
+		                   	Data="M 6.809722900390625,13.736907958984375 C6.809722900390625,13.736907958984375 14.865768432617188,1.3050537109375 14.865768432617188,1.3050537109375 15.089614868164062,0.960418701171875 15.027069091796875,0.8982086181640625 14.72607421875,1.16754150390625 14.72607421875,1.16754150390625 7.0638427734375,8.031219482421875 7.0638427734375,8.031219482421875 6.7638397216796875,8.300735473632812 6.217041015625,8.399810791015625 5.8498382568359375,8.250411987304688 5.8498382568359375,8.250411987304688 1.364990234375,6.436920166015625 1.364990234375,6.436920166015625 0.9981231689453125,6.2882080078125 0.889373779296875,6.4426116943359375 1.12353515625,6.7789764404296875 1.12353515625,6.7789764404296875 5.9765472412109375,13.751556396484375 5.9765472412109375,13.751556396484375 6.2110443115234375,14.088623046875 6.5862274169921875,14.08172607421875 6.809722900390625,13.736907958984375 z"
+		                    Stroke="#ffffff"
+		                    StrokeThickness="1"
+		                    Fill="#c0c0c0">
+
+                                    </Path>
+
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Trigger.Setters>
+                                                <Setter Property="Fill" Value="#ffffff" TargetName="path" />
+                                            </Trigger.Setters>
+                                        </Trigger>
+                                    </ControlTemplate.Triggers>
+
+                                </ControlTemplate>
+                            </Control.Template>
+
+
+                        </Control>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="1" x:FieldModifier="public" x:Name="gridContent">
+                    <ContentControl x:FieldModifier="public" x:Name="content" />
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

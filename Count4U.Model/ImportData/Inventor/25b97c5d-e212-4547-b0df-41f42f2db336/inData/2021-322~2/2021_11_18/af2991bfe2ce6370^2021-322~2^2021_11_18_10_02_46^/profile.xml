@@ -1,0 +1,815 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Profile>
+    <InventoryProcessInformation>
+        <Customer name="NextLine" code="900"/>
+        <Branch name="" code="900-001"/>
+        <Inventory code="25b97c5d-e212-4547-b0df-41f42f2db336" created_date="2021/11/15"/>
+    </InventoryProcessInformation>
+    <InventoryProcessConfiguration>
+        <InventoryProcessMode>
+            <AssertModeEnabled>true</AssertModeEnabled>
+            <StockModeEnabled>false</StockModeEnabled>
+        </InventoryProcessMode>
+    </InventoryProcessConfiguration>
+    <!--  RFID or Barcode  -->
+    <!--
+        UI configuration for Inventory List (LocationDetails) screen.
+        Note: To add new property use id as field name from Inventory class.
+        Also, if property is a member of class that Inventory class contains reference on, you have to
+        use id as ClassName.Field name. f.e. Catalog.ItemName
+    -->
+    <ScannerType>Barcode</ScannerType>
+    <LocationInventoryListScreenConfiguration>
+        <AddNewInventoryEnabled>true</AddNewInventoryEnabled>
+        <TemplateInventoriesEnabled>false</TemplateInventoriesEnabled>
+        <SignatureToVerifyClosureOfLocationRequired>true</SignatureToVerifyClosureOfLocationRequired>
+        <AddNewInventoryOfflineEnabled>false</AddNewInventoryOfflineEnabled>
+    </LocationInventoryListScreenConfiguration>
+    <InventoryListDefaultUIConfiguration>
+        <ShowInventoryImageIndicator>false</ShowInventoryImageIndicator>
+        <InventoryItemsProperties>
+            <InventoryItemDisplayProperty id="Catalog.ItemName" itemtype="SN:Q">
+                <Title en="Item Name" he="תיאור פריט"/>
+                <invalid>false</invalid>
+                <id>1</id>
+            </InventoryItemDisplayProperty>
+            <InventoryItemDisplayProperty id="Catalog.ItemCode" itemtype="SN:Q">
+                <Title en="Item Code" he="קוד פריט"/>
+                <invalid>false</invalid>
+                <id>2</id>
+            </InventoryItemDisplayProperty>
+            <InventoryItemDisplayProperty id="Quantity" itemtype="SN:Q">
+                <Title en="Quantity" he="כמות"/>
+                <invalid>false</invalid>
+                <id>3</id>
+            </InventoryItemDisplayProperty>
+            <InventoryItemDisplayProperty id="SerialNumberLocal" itemtype="SN">
+                <Title en="SN local" he="סריאלי מקומי"/>
+                <invalid>false</invalid>
+                <id>4</id>
+            </InventoryItemDisplayProperty>
+            <InventoryItemDisplayProperty id="PropertyStr3" itemtype="SN:Q">
+                <Title en="For Customer" he="ציוד עבור"/>
+                <invalid>false</invalid>
+                <id>5</id>
+            </InventoryItemDisplayProperty>
+            <InventoryItemDisplayProperty id="PropertyStr6" itemtype="SN:Q">
+                <Title en="Remarks" he="הערות"/>
+                <invalid>false</invalid>
+                <id>6</id>
+            </InventoryItemDisplayProperty>
+            <InventoryItemDisplayProperty id="PropertyStr11" itemtype="SN">
+                <Title en="Date" he="תאריך"/>
+                <invalid>false</invalid>
+                <id>7</id>
+            </InventoryItemDisplayProperty>
+        </InventoryItemsProperties>
+    </InventoryListDefaultUIConfiguration>
+    <DatabaseSettings>
+        <UIDKey>SerialNumberLocal|ItemCode|LocationCode|SerialNumberSupplier</UIDKey>
+        <CurrentInventoryDeviceIdProperty>PropertyStr19</CurrentInventoryDeviceIdProperty>
+        <CurrentInventoryUserNameProperty>PropertyStr18</CurrentInventoryUserNameProperty>
+        <ClearInventoryDataAfterUpload>false</ClearInventoryDataAfterUpload>
+        <CurrentInventoryDeviceNameProperty>PropertyStr17</CurrentInventoryDeviceNameProperty>
+    </DatabaseSettings>
+    <Forms>
+        <Form id="ItemDetails">
+            <Field>
+                <DataSource fieldname="ItemCode" keyboard_type="keyboard: 1" tablename="CurrentInventory"/>
+                <DataTarget fieldname="ItemCode" tablename="CurrentInventory"/>
+                <Details default="" id="ItemCode" itemtype="SN:Q" mandatory="True" type="Textbox" typeview="TextBox" viewonly="False" camera_barcode_scanner_enable="False" negative_value_enable="False"/>
+                <Titles>
+                    <Title en="Item Code" he="קוד פריט"/>
+                    <Description en="Item Code"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>1</id>
+            </Field>
+            <Field>
+                <DataSource fieldname="ItemCode" keyboard_type="keyboard: 1" tablename="Catalog" fieldnametoshow="ItemName"/>
+                <DataTarget fieldname="ItemCode" tablename="CurrentInventory"/>
+                <Details default="" id="ItemName" itemtype="SN:Q" mandatory="True" type="Textbox" typeview="TextBox" viewonly="False" camera_barcode_scanner_enable="False" negative_value_enable="False"/>
+                <Titles>
+                    <Title en="Item Name" he="תיאור פריט"/>
+                    <Description en="Item Name"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>2</id>
+            </Field>
+            <Field>
+                <Actions/>
+                <DataSource fieldname="PropStr5Code" fieldnametoshow="PropStr5Name" keyboard_type="keyboard: 1" tablename="PropertyStr5List"/>
+                <DataTarget fieldname="PropertyStr10" tablename=""/>
+                <Details add_enable="true" clear_enable="true" default="" id="PropertyStr10" itemtype="SN" mandatory="false" type="Search list" typeview="SearchList" viewonly="false"/>
+                <Titles>
+                    <Title en="Specification" he="מידע נוסף"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>3</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <SelectInFocus>true</SelectInFocus>
+                </Actions>
+                <DataSource fieldname="Quantity" keyboard_type="keyboard: 4" tablename="CurrentInventory"/>
+                <DataTarget fieldname="Quantity" tablename="CurrentInventory"/>
+                <Details default="0" id="Quantity" itemtype="SN:Q" mandatory="true" type="Textbox" typeview="TextBox" viewonly="false" camera_barcode_scanner_enable="False" negative_value_enable="true" zero_value_enable="true"/>
+                <Titles>
+                    <Title en="Quantity" he="כמות"/>
+                    <Description en="Quantity"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>4</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <AutoGenerateCode>true</AutoGenerateCode>
+                    <SelectInFocus>true</SelectInFocus>
+                </Actions>
+                <DataSource fieldname="SerialNumberLocal" keyboard_type="keyboard: 1" tablename="CurrentInventory"/>
+                <DataTarget fieldname="SerialNumberLocal" tablename="CurrentInventory"/>
+                <Details default="" id="SerialNumberLocal" itemtype="SN" mandatory="true" type="Textbox" typeview="TextBox" viewonly="false" camera_barcode_scanner_enable="true" add_enable="false"/>
+                <Titles>
+                    <Title en="Serial number local" he="סיריאלי מקומי"/>
+                    <Description en="Serial number local"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>5</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <SelectInFocus>true</SelectInFocus>
+                </Actions>
+                <DataSource fieldname="SerialNumberSupplier" keyboard_type="keyboard: 1" tablename="CurrentInventory"/>
+                <DataTarget fieldname="SerialNumberSupplier" tablename="CurrentInventory"/>
+                <Details default="" id="SerialNumberSupplier" itemtype="SN" mandatory="false" type="Textbox" typeview="TextBox" viewonly="false" camera_barcode_scanner_enable="true"/>
+                <Titles>
+                    <Title en="SN Supplier" he="סיריאלי יצרן"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>6</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <SelectInFocus>true</SelectInFocus>
+                    <EnabledFilters>
+                        <EnabledFiler>
+                            <Enabled fieldcondition="ItemCode"/>
+                            <Filter type="Start with characters" value="\bNetstick.*" valueToReg="Netstick"/>
+                        </EnabledFiler>
+                        <EnabledFiler>
+                            <Enabled fieldcondition="ItemCode"/>
+                            <Filter type="Start with characters" value="\bPDA.*" valueToReg="PDA"/>
+                        </EnabledFiler>
+                        <EnabledFiler>
+                            <Enabled fieldcondition="ItemCode"/>
+                            <Filter value="\bTAB.*" type="Start with characters" valueToReg="TAB"/>
+                        </EnabledFiler>
+                        <EnabledFiler>
+                            <Enabled fieldcondition="ItemCode"/>
+                            <Filter value="\bSim_Card.*" type="Start with characters" valueToReg="Sim_Card"/>
+                        </EnabledFiler>
+                        <EnabledFiler>
+                            <Enabled fieldcondition="ItemCode"/>
+                            <Filter value="\bDell.*" type="Start with characters" valueToReg="Dell"/>
+                        </EnabledFiler>
+                        <EnabledFiler>
+                            <Enabled fieldcondition="ItemCode"/>
+                            <Filter value="\bLenovo.*" type="Start with characters" valueToReg="Lenovo"/>
+                        </EnabledFiler>
+                        <EnabledFiler>
+                            <Enabled fieldcondition="ItemCode"/>
+                            <Filter value="\bAP.*" type="Start with characters" valueToReg="AP"/>
+                        </EnabledFiler>
+                        <EnabledFiler>
+                            <Enabled fieldcondition="ItemCode"/>
+                            <Filter value="\bGALAXY.*" type="Start with characters" valueToReg="GALAXY"/>
+                        </EnabledFiler>
+                    </EnabledFilters>
+                </Actions>
+                <DataSource fieldname="PropertyStr2" keyboard_type="keyboard: 3" tablename="CurrentInventory"/>
+                <DataTarget fieldname="PropertyStr2" tablename="CurrentInventory"/>
+                <Details default="" id="PropertyStr2" itemtype="SN" mandatory="false" type="Textbox" typeview="TextBox" viewonly="false" camera_barcode_scanner_enable="true" negative_value_enable="false" zero_value_enable="false"/>
+                <Titles>
+                    <Title en="Sim Card Number" he="מספר כרטיס סים"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>7</id>
+            </Field>
+            <Field>
+                <Actions/>
+                <DataSource fieldname="PropStr2Code" fieldnametoshow="PropStr2Name" keyboard_type="keyboard: 1" tablename="PropertyStr2List"/>
+                <DataTarget fieldname="PropertyStr1" tablename=""/>
+                <Details add_enable="true" clear_enable="true" default="" id="PropertyStr1" itemtype="SN:Q" mandatory="false" type="Search list" typeview="SearchList" viewonly="false"/>
+                <Titles>
+                    <Title en="ManagerName" he="שם מקבל הציוד"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>8</id>
+            </Field>
+            <Field>
+                <Actions/>
+                <DataSource fieldname="PropStr2Code" fieldnametoshow="PropStr2Name" keyboard_type="keyboard: 1" tablename="PropertyStr2List"/>
+                <DataTarget fieldname="PropertyStr3" tablename="CurrentInventory"/>
+                <Details add_enable="true" clear_enable="true" default="" id="PropertyStr3" itemtype="SN:Q" mandatory="false" type="Search list" typeview="SearchList" viewonly="false"/>
+                <Titles>
+                    <Title en="For Customer/Manager" he="עבור לקוח/מנהל"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>9</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <SelectInFocus>true</SelectInFocus>
+                    <EnabledFilters>
+                        <EnabledFiler>
+                            <Enabled fieldcondition="ItemCode"/>
+                            <Filter type="Start with characters" value="\bDell.*" valueToReg="Dell"/>
+                        </EnabledFiler>
+                        <EnabledFiler>
+                            <Enabled fieldcondition="ItemCode"/>
+                            <Filter value="\bLenovo.*" type="Start with characters" valueToReg="Lenovo"/>
+                        </EnabledFiler>
+                    </EnabledFilters>
+                </Actions>
+                <DataSource fieldname="PropertyStr5" keyboard_type="keyboard: 1" tablename="CurrentInventory"/>
+                <DataTarget fieldname="PropertyStr5" tablename="CurrentInventory"/>
+                <Details default="" id="PropertyStr5" itemtype="SN" mandatory="false" type="Textbox" typeview="TextBox" viewonly="false" camera_barcode_scanner_enable="true"/>
+                <Titles>
+                    <Title en="WWAN Card" he="רכיב WWAN"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>10</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <EnabledFilters/>
+                    <SelectInFocus>true</SelectInFocus>
+                </Actions>
+                <DataSource fieldname="PropertyStr6" keyboard_type="keyboard: 1" tablename="CurrentInventory"/>
+                <DataTarget fieldname="PropertyStr6" tablename="CurrentInventory"/>
+                <Details default="" id="PropertyStr6" itemtype="SN:Q" mandatory="false" type="Textbox" typeview="TextBox" viewonly="false" camera_barcode_scanner_enable="False" negative_value_enable="False"/>
+                <Titles>
+                    <Title en="Remarks" he="הערות"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>11</id>
+            </Field>
+            <Field>
+                <Actions/>
+                <DataSource fieldname="PropStr4Code" fieldnametoshow="PropStr4Name" keyboard_type="keyboard: 1" tablename="PropertyStr4List"/>
+                <DataTarget fieldname="PropertyStr7" tablename=""/>
+                <Details add_enable="true" clear_enable="true" default="" id="PropertyStr7" itemtype="SN:Q" mandatory="false" type="Search list" typeview="SearchList" viewonly="false"/>
+                <Titles>
+                    <Title en="Remarks2" he="הערה נוספת"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>12</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <SelectInFocus>true</SelectInFocus>
+                </Actions>
+                <DataSource fieldname="PropertyStr9" keyboard_type="keyboard: 1" tablename="CurrentInventory"/>
+                <DataTarget fieldname="PropertyStr9" tablename="CurrentInventory"/>
+                <Details default="" id="PropertyStr9" itemtype="SN" mandatory="false" type="Textbox" typeview="TextBox" viewonly="false" camera_barcode_scanner_enable="false"/>
+                <Titles>
+                    <Title en="Device History" he="היסטוריית מכשיר"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>13</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <SelectInFocus>true</SelectInFocus>
+                </Actions>
+                <DataSource fieldname="PropertyStr11" keyboard_type="keyboard: 5" tablename="CurrentInventory"/>
+                <DataTarget fieldname="PropertyStr11" tablename="CurrentInventory"/>
+                <Details default="" id="PropertyStr11" itemtype="SN" mandatory="false" type="Textbox" typeview="TextBox" viewonly="false" camera_barcode_scanner_enable="false"/>
+                <Titles>
+                    <Title en="Purchase Date" he="תאריך רכישה"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>14</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <EnabledFilters>
+                        <EnabledFiler>
+                            <Enabled fieldcondition="ItemCode"/>
+                            <Filter type="Start with characters" value="\bAP.*" valueToReg="AP"/>
+                        </EnabledFiler>
+                    </EnabledFilters>
+                </Actions>
+                <DataSource fieldname="PropertyStr8" tablename="CurrentInventory"/>
+                <DataTarget fieldname="PropertyStr8" tablename="CurrentInventory"/>
+                <Details default="false" id="PropertyStr8" itemtype="SN" type="Checkbox" typeview="CheckBox" viewonly="false"/>
+                <Titles>
+                    <Title en="Checkbox" he="תיבת סימון"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>15</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <SelectInFocus>true</SelectInFocus>
+                    <Validations>
+                        <Validation reg="^.{2,}$" en="Warning" he="אורך תווים חייב להיות גדול מ-2" type="Min length" privateValue="2" validation_type="warning"/>
+                        <Validation reg="^.{0,10}$" en="Error" he="חייב להיות קטן מ-10 תווים." type="Max length" privateValue="10" validation_type="error"/>
+                    </Validations>
+                </Actions>
+                <DataSource fieldname="PropertyStr12" keyboard_type="keyboard: 1" tablename="CurrentInventory"/>
+                <DataTarget fieldname="PropertyStr12" tablename="CurrentInventory"/>
+                <Details default="" id="PropertyStr12" itemtype="SN" mandatory="true" type="Textbox" typeview="TextBox" viewonly="false" camera_barcode_scanner_enable="true"/>
+                <Titles>
+                    <Title en="TextField" he="תיבת טקסט"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>16</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <Validations/>
+                </Actions>
+                <DataSource fieldname="PropStr6Code" fieldnametoshow="PropStr6Name" keyboard_type="keyboard: 2" tablename="PropertyStr6List"/>
+                <DataTarget fieldname="PropertyStr13" tablename="CurrentInventory"/>
+                <Details add_enable="true" clear_enable="true" default="" id="PropertyStr13" itemtype="SN" mandatory="false" type="Search list" typeview="SearchList" viewonly="false"/>
+                <Titles>
+                    <Title en="Search" he="רשימת נפתחת"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>17</id>
+            </Field>
+            <Field>
+                <Actions/>
+                <DataSource fieldname="PropertyStr20" tablename="CurrentInventory"/>
+                <DataTarget fieldname="PropertyStr20" tablename="CurrentInventory"/>
+                <Details id="PropertyStr20" itemtype="SN" mandatory="false" type="Image" typeview="Image" viewonly="false"/>
+                <Titles>
+                    <Title en="Image" he="תמונה"/>
+                </Titles>
+                <invalid>false</invalid>
+                <id>18</id>
+            </Field>
+            <KeepAllFieldsOnItemCodeChange>false</KeepAllFieldsOnItemCodeChange>
+        </Form>
+    </Forms>
+    <Search>
+        <SearchByScannerScreenConfiguration>
+            <AddNewInventoryEnabled>true</AddNewInventoryEnabled>
+            <CameraBarcodeScannerEnabled>true</CameraBarcodeScannerEnabled>
+            <NavigateBackEnabled>true</NavigateBackEnabled>
+            <SearchByProperties>
+                <SearchByProperty id="SerialNumberLocal">
+                    <Title en="SN local" he="סיראלי חקלאות"/>
+                    <id>1</id>
+                </SearchByProperty>
+                <SearchByProperty id="SerialNumberSupplier">
+                    <Title en="SN supplier" he="סיראלי יצרן"/>
+                    <id>2</id>
+                </SearchByProperty>
+                <SearchByProperty id="PropertyStr3">
+                    <id>3</id>
+                </SearchByProperty>
+            </SearchByProperties>
+            <SearchByScannerResultListDisplayProperties>
+                <SearchDisplayProperty id="Catalog.ItemName">
+                    <Title en="Item Name" he="תיאור פריט"/>
+                    <invalid>false</invalid>
+                    <id>1</id>
+                </SearchDisplayProperty>
+                <SearchDisplayProperty id="Catalog.ItemCode">
+                    <Title en="Item Code" he="קוד פריט"/>
+                    <id>2</id>
+                    <invalid>false</invalid>
+                </SearchDisplayProperty>
+                <SearchDisplayProperty id="SerialNumberLocal">
+                    <Title en="SN local" he="סיראלי מקומי"/>
+                    <id>3</id>
+                    <invalid>false</invalid>
+                </SearchDisplayProperty>
+                <SearchDisplayProperty id="PropertyStr3" he="שייך ל">
+                    <id>4</id>
+                    <Title en="For Customer" he="עבור"/>
+                    <invalid>false</invalid>
+                </SearchDisplayProperty>
+                <SearchDisplayProperty id="PropertyStr6">
+                    <id>5</id>
+                    <Title en="Remarks" he="הערות"/>
+                    <invalid>false</invalid>
+                </SearchDisplayProperty>
+                <SearchDisplayProperty id="Quantity">
+                    <id>6</id>
+                    <Title en="Quantity" he="כמות"/>
+                    <invalid>false</invalid>
+                </SearchDisplayProperty>
+            </SearchByScannerResultListDisplayProperties>
+        </SearchByScannerScreenConfiguration>
+        <SearchInCatalogScreenConfiguration>
+            <AddNewItemIntoCatalogEnabled>true</AddNewItemIntoCatalogEnabled>
+            <CameraBarcodeScannerEnabled>true</CameraBarcodeScannerEnabled>
+            <SearchInCatalogResultListsDisplayProperties>
+                <SearchInCatalogByItemCodeResultListDisplayProperties>
+                    <SearchDisplayProperty id="ItemName">
+                        <Title en="Item Name" he="תיאור פריט"/>
+                        <invalid>false</invalid>
+                        <id>1</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="ItemCode">
+                        <Title en="Item Code" he="קוד פריט"/>
+                        <invalid>false</invalid>
+                        <id>2</id>
+                    </SearchDisplayProperty>
+                </SearchInCatalogByItemCodeResultListDisplayProperties>
+                <SearchInCatalogByItemNameResultListDisplayProperties>
+                    <SearchDisplayProperty id="ItemName">
+                        <Title en="Item Name" he="תיאור פריט"/>
+                        <invalid>false</invalid>
+                        <id>1</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="ItemCode">
+                        <Title en="Item Code" he="קוד פריט"/>
+                        <invalid>false</invalid>
+                        <id>2</id>
+                    </SearchDisplayProperty>
+                </SearchInCatalogByItemNameResultListDisplayProperties>
+                <SearchInCatalogByItemCodeOrNameResultListDisplayProperties>
+                    <SearchDisplayProperty id="Catalog.ItemName">
+                        <Title en="Item Name" he="תיאור פריט"/>
+                        <invalid>false</invalid>
+                        <id>1</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="ItemCode">
+                        <Title en="Item Code" he="קוד פריט"/>
+                        <invalid>false</invalid>
+                        <id>2</id>
+                    </SearchDisplayProperty>
+                </SearchInCatalogByItemCodeOrNameResultListDisplayProperties>
+            </SearchInCatalogResultListsDisplayProperties>
+        </SearchInCatalogScreenConfiguration>
+        <SearchInLocationScreenConfiguration>
+            <CameraBarcodeScannerEnabled>true</CameraBarcodeScannerEnabled>
+            <SearchInLocationResultListsDisplayProperties>
+                <SearchInLocationByItemSerialResultListDisplayProperties>
+                    <SearchDisplayProperty id="Catalog.ItemName">
+                        <Title en="Item Name" he="תיאור פריט"/>
+                        <invalid>false</invalid>
+                        <id>1</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="Catalog.ItemCode">
+                        <Title en="Item Code" he="קוד פריט"/>
+                        <invalid>false</invalid>
+                        <id>2</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="SerialNumberLocal">
+                        <Title en="SN local" he="סריאלי מקומי"/>
+                        <invalid>false</invalid>
+                        <id>3</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="PropertyStr3" he="שם עובד">
+                        <Title en="Employee Name" he="עבור"/>
+                        <invalid>false</invalid>
+                        <id>4</id>
+                    </SearchDisplayProperty>
+                </SearchInLocationByItemSerialResultListDisplayProperties>
+                <SearchInLocationByItemCodeResultListDisplayProperties>
+                    <SearchDisplayProperty id="Catalog.ItemName">
+                        <Title en="Item Name" he="תיאור פריט"/>
+                        <invalid>false</invalid>
+                        <id>1</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="Catalog.ItemCode">
+                        <Title en="Item Code" he="קוד פריט"/>
+                        <invalid>false</invalid>
+                        <id>2</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="SerialNumberLocal">
+                        <Title en="SN local" he="סריאלי מקומי"/>
+                        <invalid>false</invalid>
+                        <id>3</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="PropertyStr3" he="שם עובד">
+                        <Title en="Employee Name" he="עבור"/>
+                        <invalid>false</invalid>
+                        <id>4</id>
+                    </SearchDisplayProperty>
+                </SearchInLocationByItemCodeResultListDisplayProperties>
+                <SearchInLocationByItemNameResultListDisplayProperties>
+                    <SearchDisplayProperty id="Catalog.ItemName">
+                        <Title en="Item Name" he="תיאור פריט"/>
+                        <invalid>false</invalid>
+                        <id>1</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="Catalog.ItemCode">
+                        <Title en="Item Code" he="קוד פריט"/>
+                        <invalid>false</invalid>
+                        <id>2</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="SerialNumberLocal">
+                        <Title en="SN local" he="סריאלי מקומי"/>
+                        <invalid>false</invalid>
+                        <id>3</id>
+                    </SearchDisplayProperty>
+                    <SearchDisplayProperty id="PropertyStr3" he="שם עובד">
+                        <Title en="Employee Name" he="עבור"/>
+                        <invalid>false</invalid>
+                        <id>4</id>
+                    </SearchDisplayProperty>
+                </SearchInLocationByItemNameResultListDisplayProperties>
+            </SearchInLocationResultListsDisplayProperties>
+            <AddNewItemIntoCatalogEnabled>true</AddNewItemIntoCatalogEnabled>
+        </SearchInLocationScreenConfiguration>
+        <IgnoreChar></IgnoreChar>
+    </Search>
+    <ScreensConfiguration>
+        <AddNewLocationScreen>
+            <ScreenEnabled>true</ScreenEnabled>
+            <ScreenEnabledOffline>false</ScreenEnabledOffline>
+        </AddNewLocationScreen>
+        <ItemCodeSummaryScreen>
+            <ScreenEnabled>true</ScreenEnabled>
+        </ItemCodeSummaryScreen>
+        <MoveInventoriesScreen>
+            <InventoryMoveSearchProperty id="SerialNumberLocal">
+                <Title en="SNLocal" he="סיראלי מקומי"/>
+            </InventoryMoveSearchProperty>
+            <ScreenEnabled>true</ScreenEnabled>
+        </MoveInventoriesScreen>
+        <AddQInventoryItemsInFastWayScreen>
+            <CameraBarcodeScannerEnabled>true</CameraBarcodeScannerEnabled>
+            <ScreenEnabled>true</ScreenEnabled>
+        </AddQInventoryItemsInFastWayScreen>
+        <AddSNInventoryItemsInFastWayScreen>
+            <CameraBarcodeScannerEnabled>false</CameraBarcodeScannerEnabled>
+            <DefaultValues>
+                <DefaultItemCode>PDA_HT682</DefaultItemCode>
+                <DefaultQuantity>1</DefaultQuantity>
+            </DefaultValues>
+            <ScreenEnabled>true</ScreenEnabled>
+        </AddSNInventoryItemsInFastWayScreen>
+        <WarehouseScreenRFID>
+            <ScreenEnabled>false</ScreenEnabled>
+            <WarehouseScreenRFIDConnectionBeforeOpenRequired>false</WarehouseScreenRFIDConnectionBeforeOpenRequired>
+        </WarehouseScreenRFID>
+        <AssertInventoryScreen>
+            <InventoryWizard>true</InventoryWizard>
+            <CameraBarcodeScannerEnabled>true</CameraBarcodeScannerEnabled>
+        </AssertInventoryScreen>
+    </ScreensConfiguration>
+    <InventoryImage>
+        <InventoryImageEnabled>true</InventoryImageEnabled>
+        <ImageQuality>80</ImageQuality>
+        <InventoryImagePropertyId>PropertyStr20</InventoryImagePropertyId>
+    </InventoryImage>
+    <PrinterSettings>
+        <ZebraPrinter>
+            <PrintingFormats>
+                <PrintingFormat name="דגם + מקומי">
+                    <Format>^XA
+^cw7,e:ARIELBD^FS
+^CW8,e:ARIEL^FS
+^SZ2^JMA
+^MCY^PMN
+^PW480
+~JSN
+^JZY
+^PR2
+^BY2
+^MD28
+^FO000,040 ^A7N,80,65 ^FB480,1,,C ^FDVAR1^FS
+^FO001,040 ^A7N,80,65 ^FB480,1,,C ^FDVAR1^FS
+^FO002,040 ^A7N,80,65 ^FB480,1,,C ^FDVAR1^FS
+^FO000,125 ^A7N,45,45 ^FB480,1,,C ^FDVAR2^FS
+^FO000,180 ^A8N,38,45 ^FB480,1,,C ^FDןיילטסקנ סקמייד סוב^FS
+^FO000,225 ^A8N,33,35 ^FB480,1,,C ^FD052-8882998^FS
+^FO180,260 ^BQN,2,6 ^FDLA,VAR1^FS
+^PQ1
+^XZ</Format>
+                    <FieldsMapping>
+                        <FieldMapping name="VAR1" dateFormat="dd-MM-yyyy" inventoryPropertyId="SerialNumberLocal">
+                            <id>1</id>
+                            <invalid>false</invalid>
+                        </FieldMapping>
+                        <FieldMapping name="VAR2" dateFormat="dd-MM-yyyy" inventoryPropertyId="ItemCode">
+                            <id>2</id>
+                            <invalid>false</invalid>
+                        </FieldMapping>
+                    </FieldsMapping>
+                    <id>1</id>
+                    <invalid>false</invalid>
+                </PrintingFormat>
+                <PrintingFormat name="דגם + מקומי + סריאלי">
+                    <Format>^XA
+^cw7,e:ARIELBD^FS
+^CW8,e:ARIEL^FS
+^SZ2^JMA
+^MCY^PMN
+^PW480
+~JSN
+^JZY
+^PR2
+^BY2
+^MD28
+^FO000,040 ^A7N,70,55 ^FB480,1,,C ^FDVAR1^FS
+^FO001,040 ^A7N,70,55 ^FB480,1,,C ^FDVAR1^FS
+^FO002,040 ^A7N,70,55 ^FB480,1,,C ^FDVAR1^FS
+^FO000,110 ^A7N,42,37 ^FB480,1,,C ^FDVAR2^FS
+^FO000,160 ^A7N,34,33 ^FB480,1,,C ^FDVAR3^FS
+^FO000,200 ^A8N,33,40 ^FB480,1,,C ^FDןיילטסקנ סקמייד סוב^FS
+^FO000,240 ^A8N,28,30 ^FB480,1,,C ^FD052-8882998^FS
+^FO180,270 ^BQN,2,6 ^FDLA,VAR1^FS
+^PQ2
+^XZ</Format>
+                    <FieldsMapping>
+                        <FieldMapping name="VAR1" dateFormat="dd-MM-yyyy" inventoryPropertyId="SerialNumberLocal">
+                            <id>1</id>
+                            <invalid>false</invalid>
+                        </FieldMapping>
+                        <FieldMapping name="VAR2" inventoryPropertyId="ItemCode" reverseValue="true">
+                            <id>2</id>
+                            <invalid>false</invalid>
+                        </FieldMapping>
+                        <FieldMapping name="VAR3" inventoryPropertyId="SerialNumberSupplier">
+                            <id>3</id>
+                            <invalid>false</invalid>
+                        </FieldMapping>
+                    </FieldsMapping>
+                    <id>2</id>
+                    <invalid>false</invalid>
+                </PrintingFormat>
+                <PrintingFormat name="מסופונים">
+                    <Format>^XA
+^CW7,E:ARIELBD^FS
+^CW6,E:ARIEL^FS
+^SZ2^JMA
+^MCY^PMN
+^PW240
+~JSN
+^JZY
+^PR1
+^BY2
+^MD30
+^FO160,008 ^BQN,2,3 ^FDLA,VAR1^FS
+^FO005,018 ^A7N,30,30 ^FB160,1,,C ^FDVAR1^FS
+^FO005,058 ^A6N,22,21 ^FB160,1,,C ^FDVAR2^FS
+^PQ1
+^XZ</Format>
+                    <FieldsMapping>
+                        <FieldMapping name="VAR1" dateFormat="dd-MM-yyyy" inventoryPropertyId="SerialNumberLocal">
+                            <id>1</id>
+                            <invalid>false</invalid>
+                        </FieldMapping>
+                        <FieldMapping name="VAR2" inventoryPropertyId="SerialNumberSupplier" reverseValue="true">
+                            <id>2</id>
+                            <invalid>false</invalid>
+                        </FieldMapping>
+                    </FieldsMapping>
+                    <id>3</id>
+                    <invalid>false</invalid>
+                </PrintingFormat>
+                <PrintingFormat name="HT682 יצרן">
+                    <Format>^XA
+^CW7,E:ARIELBD^FS
+^CW6,E:ARIEL^FS
+^SZ2^JMA
+^MCY^PMN
+^PW240
+~JSN
+^JZY
+^PR1
+^BY2
+^MD30
+^FO160,008 ^BQN,2,3 ^FDLA,VAR1^FS
+^FO005,018 ^A7N,25,23 ^FB160,1,,C ^FDHT682^FS
+^FO005,056 ^A7N,24,23 ^FB160,1,,C ^FDVAR1^FS
+^PQ1
+^XZ</Format>
+                    <FieldsMapping>
+                        <FieldMapping name="VAR1" inventoryPropertyId="SerialNumberSupplier">
+                            <id>1</id>
+                            <invalid>false</invalid>
+                        </FieldMapping>
+                    </FieldsMapping>
+                    <id>4</id>
+                    <invalid>false</invalid>
+                </PrintingFormat>
+                <PrintingFormat name="מסופונים קטן">
+                    <Format>^XA
+^CW7,E:ARIELBD^FS
+^CW6,E:ARIEL^FS
+^SZ2^JMA
+^MCY^PMN
+^PW240
+~JSN
+^JZY
+^PR1
+^BY2
+^MD30
+^FO160,008 ^BQN,2,3 ^FDLA,VAR1^FS
+^FO005,018 ^A7N,30,30 ^FB160,1,,C ^FDVAR1^FS
+^FO005,058 ^A6N,21,18 ^FB160,1,,C ^FDVAR2^FS
+^PQ1
+^XZ</Format>
+                    <FieldsMapping>
+                        <FieldMapping name="VAR1" dateFormat="dd-MM-yyyy" inventoryPropertyId="SerialNumberLocal">
+                            <id>1</id>
+                            <invalid>false</invalid>
+                        </FieldMapping>
+                        <FieldMapping name="VAR2" inventoryPropertyId="SerialNumberSupplier" reverseValue="true">
+                            <id>2</id>
+                            <invalid>false</invalid>
+                        </FieldMapping>
+                    </FieldsMapping>
+                    <id>5</id>
+                    <invalid>false</invalid>
+                </PrintingFormat>
+            </PrintingFormats>
+        </ZebraPrinter>
+    </PrinterSettings>
+    <RFID>
+        <QCodeType>0</QCodeType>
+        <RFIDCommands>
+            <RFIDCommand command="READ HEX(2:0,12),STR(3:0,16) REPORT=EVENT" type="rfid_read"/>
+            <RFIDCommand command="READ STOP" type="rfid_read_stop"/>
+            <RFIDCommand command="WR STR(3:0,16)=%s WHERE TAGID=%s" type="rfid_write"/>
+            <RFIDCommand command="ATTRIBUTE FIELDSTRENGTH=27dB" type="rfid_adjust_reader_strength"/>
+            <RFIDCommand command="FACDFLT" type="rfid_reset_to_default"/>
+        </RFIDCommands>
+        <RFIDTagWritten>PropertyStr4</RFIDTagWritten>
+        <SNCodeType>1</SNCodeType>
+    </RFID>
+    <FastStockInventoryItemsConfiguration>
+        <DefaultAutomaticQuantity>1</DefaultAutomaticQuantity>
+        <EditFormSettings>
+            <Field>
+                <DataSource fieldname="ItemCode" keyboard_type="keyboard: 1" tablename="CurrentInventory"/>
+                <DataTarget fieldname="ItemCode" tablename="CurrentInventory"/>
+                <Details default="" id="ItemCode" itemtype="SN:Q" mandatory="True" type="Textbox" typeview="TextBox" viewonly="True" negative_value_enable="False"/>
+                <Titles>
+                    <Title en="Item Code" he="קוד פריט"/>
+                    <Description en="Item Code"/>
+                </Titles>
+                <invalid>true</invalid>
+                <id>1</id>
+            </Field>
+            <Field>
+                <DataSource fieldname="ItemCode" keyboard_type="keyboard: 1" tablename="Catalog" fieldnametoshow="ItemName"/>
+                <DataTarget fieldname="ItemCode" tablename="CurrentInventory"/>
+                <Details default="" id="ItemName" itemtype="SN:Q" mandatory="True" type="Textbox" typeview="TextBox" viewonly="True" negative_value_enable="False"/>
+                <Titles>
+                    <Title en="Item Name" he="תיאור פריט"/>
+                    <Description en="Item Name"/>
+                </Titles>
+                <invalid>true</invalid>
+                <id>2</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <Validations>
+                        <Validation en="Please enter Quantity" reg="^[1-9]\d*$"/>
+                    </Validations>
+                    <SelectInFocus>true</SelectInFocus>
+                </Actions>
+                <DataSource fieldname="Quantity" keyboard_type="keyboard: 3" tablename="CurrentInventory"/>
+                <DataTarget fieldname="Quantity" tablename="CurrentInventory"/>
+                <Details default="1" id="Quantity" itemtype="SN:Q" mandatory="True" type="Textbox" typeview="TextBox" viewonly="False" negative_value_enable="False"/>
+                <Titles>
+                    <Title en="Quantity" he="כמות"/>
+                    <Description en="Quantity"/>
+                </Titles>
+                <invalid>true</invalid>
+                <id>3</id>
+            </Field>
+            <Field>
+                <Actions>
+                    <AutoGenerateCode>false</AutoGenerateCode>
+                    <Validations>
+                        <Validation en="Please enter Serial number local" reg="(.{0,250}$)"/>
+                    </Validations>
+                </Actions>
+                <DataSource fieldname="SerialNumberLocal" keyboard_type="keyboard: 1" tablename="CurrentInventory"/>
+                <DataTarget fieldname="SerialNumberLocal" tablename="CurrentInventory"/>
+                <Details default="" id="SerialNumberLocal" itemtype="SN" mandatory="True" type="Textbox" typeview="TextBox" viewonly="False" add_enable="false" negative_value_enable="False"/>
+                <Titles>
+                    <Title en="Serial number local" he="סריאלי קשת"/>
+                    <Description en="Serial number local"/>
+                </Titles>
+                <invalid>true</invalid>
+                <id>4</id>
+            </Field>
+        </EditFormSettings>
+        <AddDefaultQuantityMode>Auto</AddDefaultQuantityMode>
+        <InsertNotExistInCatalogItems>true</InsertNotExistInCatalogItems>
+        <InsertDetailsForNotExistInCatalogItems>false</InsertDetailsForNotExistInCatalogItems>
+        <CaseSensitiveItemCode>true</CaseSensitiveItemCode>
+        <CameraBarcodeScannerStockLocation>false</CameraBarcodeScannerStockLocation>
+        <CameraBarcodeScannerStockInventory>false</CameraBarcodeScannerStockInventory>
+        <ChangeQuantityMode>false</ChangeQuantityMode>
+    </FastStockInventoryItemsConfiguration>
+    <BarcodeManipulations>
+    </BarcodeManipulations>
+    <Version>1</Version>
+    <NetworkType>bluetooth</NetworkType>
+    <RfidType>rfid8500</RfidType>
+    <Customer name="" code=""/>
+</Profile>

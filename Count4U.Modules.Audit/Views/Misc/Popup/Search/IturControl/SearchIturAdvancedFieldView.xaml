@@ -1,0 +1,351 @@
+﻿<UserControl x:Class="Count4U.Modules.Audit.Views.Misc.Popup.Search.IturControl.SearchIturAdvancedFieldView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:Behaviours="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:Converters1="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:TextBox="clr-namespace:Count4U.CustomControls.TextBox;assembly=Count4U.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="650" d:DesignWidth="650">
+
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Buttons/ButtonThemeV7.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Combobox/ComboboxThemeV7.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Expander/Expander2.xaml"/>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.Common,ProcessorArchitecture=MSIL;component/CommonResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters1:StringToBrushConverter x:Key="locationToBrush" />
+            <Converters1:BoolToVisiblityConverter x:Key="boolToVisConv" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">
+        <Grid Background="#EEEEEE">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <ContentControl x:Name="sortControl" Grid.Row="0" Margin="10,10,10,0"/>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,10,0,0" Name="textBlock1"
+                           Text="{x:Static Localization:Resources.View_IturFilter_tbItur}"
+                           VerticalAlignment="Top" />
+
+                <TextBox:TextBoxV7 Height="23" Margin="36,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="90"
+                         Text="{Binding Path=IturFilterText, UpdateSourceTrigger=PropertyChanged}"
+                         Name="txtIturFilter"                         
+                         />
+
+                <ComboBox Height="23" HorizontalAlignment="Left" Margin="130,10,0,0" Name="comboBox1" VerticalAlignment="Top" Width="90" 
+                          ItemsSource="{Binding Path=IturFilterItems}"
+                          SelectedItem="{Binding Path=IturFilterSelected}"
+                          DisplayMemberPath="Text"
+                          Style="{StaticResource ComboBoxStyleV7}"
+                          />
+
+                <Expander Grid.Row="1" ExpandDirection="Down" Style="{StaticResource ExpanderStyle2}" Margin="0,5,0,0" IsExpanded="{Binding Path=IsLocationExpanded}">
+                    <Expander.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="chkIsLocationEnabled" 
+                                      Content="{x:Static Localization:Resources.View_IturFilter_chkLocation}"
+                                      IsChecked="{Binding Path=DataContext.IsFilterByLocation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                                                  RelativeSource={RelativeSource AncestorType={x:Type Expander}}}"/>
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.Content>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                                            <!--                                <RowDefinition Height="20" />-->
+                            </Grid.RowDefinitions>
+                            <CheckBox  Grid.Row="0" 
+                              Content="{x:Static Localization:Resources.View_LocationFilter_chkedAllLocations}"
+                               Height="16" 
+                               HorizontalAlignment="Left" 
+                              IsChecked="{Binding Path=IsCheckedLocations}" 
+                              IsEnabled="{Binding Path=IsFilterByLocation, Mode=OneWay}"
+                             Margin="5,5,5,5" VerticalAlignment="Top" />
+                            
+                            <ListBox Grid.Row="0" 
+                                     ItemsSource="{Binding LocationItems}" 
+                                     ScrollViewer.VerticalScrollBarVisibility="Auto"
+						             ScrollViewer.HorizontalScrollBarVisibility="Disabled"		
+                                     BorderBrush="Transparent" 
+                                     BorderThickness="0"
+                                     IsEnabled="{Binding Path=IsFilterByLocation, Mode=OneWay}"
+                                     Margin="5,25,5,5">
+
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListBoxItem}">
+                                        <Style.Resources>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                                        </Style.Resources>
+
+                                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Grid>
+
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="Auto" />
+                                                <ColumnDefinition Width="Auto" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <CheckBox Grid.Column="0"
+                                                      IsChecked="{Binding IsChecked}" 
+                                                      Margin="1" 
+                                                      HorizontalAlignment="Left"
+											          VerticalAlignment="Center"
+											          >
+                                                <TextBlock Text="{Binding Name, Mode=OneWay}" FontSize="12" FontWeight="Bold" />
+                                            </CheckBox>
+
+                                                        <!--                                            <Button -->
+                                                        <!--                                                    Margin="2,0,2,0"-->
+                                                        <!--                                                    Grid.Column="1"-->
+                                                        <!--                                                    Style="{StaticResource buttonImageStyle16}" -->
+                                                        <!--                                                    HorizontalAlignment="Center" -->
+                                                        <!--                                                    VerticalAlignment="Center" -->
+                                                        <!--										            Command="{Binding Path=DataContext.AddUnknownLocationCommand, RelativeSource={RelativeSource AncestorType={x:Type ListBox}}}"-->
+                                                        <!--										            CommandParameter="{Binding Path=.}">-->
+                                                        <!--                                                <Image -->
+                                                        <!--									                Source="/Count4U.Media;component/Icons/add_small.png" Width="16" Height="16" -->
+                                                        <!--									                Visibility="{Binding Path=IsAddVisible, Converter={StaticResource boolToVisConv}}"/>-->
+                                                        <!--                                            </Button>-->
+
+                                            <Rectangle 
+                                                       Margin="2,0,5,0"
+                                                       Width="16" Height="16" Grid.Column="2" 
+                                                       VerticalAlignment="Center" 
+                                                       HorizontalAlignment="Center"
+                                                       Fill="{Binding Path=LocationColor, Converter={StaticResource locationToBrush}}" 
+                                                       Stroke="Black" StrokeThickness="0.5"
+                                                       />
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                                                                <!--                            <TextBlock Grid.Row="1" Height="19" -->
+                                                                <!--                                       Margin="5,1,1,5" -->
+                                                                <!--                                       VerticalAlignment="Top" -->
+                                                                <!--                                       HorizontalAlignment="Left" -->
+                                                                <!--                                       Width="50">-->
+                                                                <!--                                -->
+                                                                <!--			                            <Hyperlink Command="{Binding Path=ViewLocationCommand}">-->
+                                                                <!--				                            <Run Text="{x:Static Localization:Resources.View_LocationListDetail_tbViewAll}"/>-->
+                                                                <!--			                            </Hyperlink>-->
+                                                                <!---->
+                                                                <!--                            </TextBlock>-->
+
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+
+                <Expander Grid.Row="2" ExpandDirection="Down" Style="{StaticResource ExpanderStyle2}" Margin="0,5,0,0" 
+                          IsExpanded="{Binding Path=IsStatusExpanded}" >
+                    <Expander.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="chkIsStatusEnabled" 
+                                      Content="{x:Static Localization:Resources.View_IturFilter_chkGroupStatus}"
+                                      IsChecked="{Binding Path=DataContext.IsFilterByStatus, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                                                  RelativeSource={RelativeSource AncestorType={x:Type Expander}}}"/>
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.Content>
+                        <Grid IsEnabled="{Binding Path=IsFilterByStatus}">
+                            <CheckBox  Grid.Row="0" 
+                              Content="{x:Static Localization:Resources.View_LocationFilter_chkedAllLocations}"
+                               Height="16" 
+                               HorizontalAlignment="Left" 
+                              IsChecked="{Binding Path=IsCheckedStatus}" 
+                              IsEnabled="{Binding Path=IsFilterByStatus, Mode=OneWay}"
+                             Margin="5,5,5,5" VerticalAlignment="Top" />
+                            <ListBox Margin="5,25,5,5"
+                                 ItemsSource="{Binding StatusItems}" 
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+						         ScrollViewer.HorizontalScrollBarVisibility="Disabled"                                 
+                                 BorderBrush="Transparent" BorderThickness="0"                                
+						         IsEnabled="{Binding ElementName=chkFilter, Path=IsChecked}">
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListBoxItem}">
+                                        <Style.Resources>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                                        </Style.Resources>
+
+                                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                                <ListBox.ItemTemplate>
+
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"  />
+                                                <ColumnDefinition Width="Auto"  />
+                                            </Grid.ColumnDefinitions>
+
+                                            <CheckBox Grid.Column="0" IsChecked="{Binding IsChecked}" Margin="1">
+                                                <TextBlock Text="{Binding Name, Mode=OneWay}" FontSize="12" FontWeight="Bold" />
+                                            </CheckBox>
+
+                                            <Rectangle Width="16" Height="16" Grid.Column="2"  Margin="2,0,5,0"
+                                                       VerticalAlignment="Center" HorizontalAlignment="Center"
+                                                       Fill="{Binding Path=BackgroundColor, Converter={StaticResource locationToBrush}}" 
+                                                       Stroke="Black" StrokeThickness="0.5"
+                                                       />
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+                
+                <!--// ========== Tag ==============-->
+                <Expander Grid.Row="3" ExpandDirection="Down" Style="{StaticResource ExpanderStyle2}" Margin="0,5,0,0" 
+                          IsExpanded="{Binding Path=IsTagExpanded}" >
+                    <Expander.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="chkIsTagEnabled" 
+                                      Content="{x:Static Localization:Resources.View_IturFilter_chkGroupTag}"
+                                      IsChecked="{Binding Path=DataContext.IsFilterByTag, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                                                  RelativeSource={RelativeSource AncestorType={x:Type Expander}}}"/>
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.Content>
+                        <Grid IsEnabled="{Binding Path=IsFilterByTag}">
+                            <CheckBox  Grid.Row="0" 
+                              Content="{x:Static Localization:Resources.View_LocationFilter_chkedAllLocations}"
+                               Height="16" 
+                               HorizontalAlignment="Left" 
+                              IsChecked="{Binding Path=IsCheckedTag}" 
+                              IsEnabled="{Binding Path=IsFilterByTag, Mode=OneWay}"
+                             Margin="5,5,5,5" VerticalAlignment="Top" />
+                            <ListBox Margin="5,25,5,5"
+                                 ItemsSource="{Binding TagItems}" 
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto"
+						         ScrollViewer.HorizontalScrollBarVisibility="Disabled"                                 
+                                 BorderBrush="Transparent" BorderThickness="0"                                
+						         IsEnabled="{Binding ElementName=chkFilter, Path=IsChecked}">
+                                <ListBox.ItemContainerStyle>
+                                    <Style TargetType="{x:Type ListBoxItem}">
+                                        <Style.Resources>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+                                            <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+                                        </Style.Resources>
+
+                                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                    </Style>
+                                </ListBox.ItemContainerStyle>
+                                <ListBox.ItemTemplate>
+
+                                    <DataTemplate>
+                                        <Grid>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"  />
+                                                <ColumnDefinition Width="Auto"  />
+                                            </Grid.ColumnDefinitions>
+
+                                            <CheckBox Grid.Column="0" IsChecked="{Binding IsChecked}" Margin="1">
+                                                <TextBlock Text="{Binding Name, Mode=OneWay}" FontSize="12" FontWeight="Bold" />
+                                            </CheckBox>
+                            
+                                        </Grid>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+
+                <!--//============== InventProduct ========-->
+                <Expander Grid.Row="4" ExpandDirection="Down" Style="{StaticResource ExpanderStyle2}" Margin="0,5,0,0" IsExpanded="{Binding Path=IsInventProductExpanded}">
+                    <Expander.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox  x:Name="chkIsInventProductEnabled" 
+                                       Content="{x:Static Localization:Resources.View_IturFilter_chkInventProducts}"
+                                       IsChecked="{Binding Path=DataContext.IsFilterByInventProduct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                                                  RelativeSource={RelativeSource AncestorType={x:Type Expander}}}"/>
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.Content>
+                        <Grid IsEnabled="{Binding Path=IsFilterByInventProduct}">
+                            <TextBlock Height="22" HorizontalAlignment="Left" 
+                                       Margin="5,7,0,0" 
+                                       Text="{x:Static Localization:Resources.View_IturListDetails_tbMakat}"
+                                       VerticalAlignment="Top" 
+                                       Width="60" />
+
+                            <TextBox:TextBoxV7 Height="23" 
+                                     Name="txtMakat"
+                                     HorizontalAlignment="Stretch"
+                                     Margin="123,6,10,0" 
+                                     VerticalAlignment="Top" 
+                                     MaxLength="50"
+                                     IsEnabled="{Binding Path=IsFilterByInventProduct}"                                      
+                                     Text="{Binding Path=FilterMakat, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                            </TextBox:TextBoxV7>
+
+                            <TextBlock Height="23" HorizontalAlignment="Left" 
+                                       Margin="5,37,0,0" 
+                                       Text="{x:Static Localization:Resources.View_IturListDetails_tbCodeInputFromPda}"
+                                       VerticalAlignment="Top" Width="125"
+                                       />
+
+                            <TextBox:TextBoxV7 Height="23" 
+                                     HorizontalAlignment="Stretch"
+                                     Margin="123,36,10,0" 
+                                     VerticalAlignment="Top" 
+                                     MaxLength="50"
+                                     Name="txtBarcode"                                      
+                                     IsEnabled="{Binding Path=IsFilterByInventProduct}"                                      
+                                     Text="{Binding Path=FilterBarcode, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                            </TextBox:TextBoxV7>
+
+                            <TextBlock Height="23" HorizontalAlignment="Left" 
+                                       Margin="5,67,0,0"
+                                       Text="{x:Static Localization:Resources.View_IturListDetails_tbProductName}"
+                                       VerticalAlignment="Top" 
+                                       Width="91" />
+
+                            <TextBox:TextBoxV7 Height="23" HorizontalAlignment="Stretch" Margin="123,68,10,0" 
+                                     VerticalAlignment="Top"
+                                     Name="txtName"
+                                     MaxLength="50"                                     
+                                     IsEnabled="{Binding Path=IsFilterByInventProduct}"                                      
+                                     Text="{Binding Path=FilterProductName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                            </TextBox:TextBoxV7>
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+
+            </Grid>
+
+        </Grid>
+    </ScrollViewer>
+</UserControl>

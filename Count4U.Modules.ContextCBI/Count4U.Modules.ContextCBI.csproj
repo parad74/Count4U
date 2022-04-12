@@ -1,0 +1,1113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A09EAA43-3E41-4379-9A19-4B633829C1A2}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Count4U.Modules.ContextCBI</RootNamespace>
+    <AssemblyName>Count4U.Modules.ContextCBI</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.WinForms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive, Version=1.0.10621.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\Lib\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Zen.Barcode.Core, Version=3.1.0.0, Culture=neutral, PublicKeyToken=b5ae55aa76d2d9de, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ContextCBIModuleInit.cs" />
+    <Compile Include="Controllers\ContextCBIController.cs" />
+    <Compile Include="Events\Adapter\ComplexAdapterEvent.cs" />
+    <Compile Include="Events\Adapter\ComplexAdapterRecountProductEvent.cs" />
+    <Compile Include="Events\Adapter\ComplexAdapterRecountInventProductEvent.cs" />
+    <Compile Include="Events\Branch\BranchAddedEvent.cs" />
+    <Compile Include="Events\Branch\BranchAddEvent.cs" />
+    <Compile Include="Events\Branch\BranchEditedEvent.cs" />
+    <Compile Include="Events\Branch\BranchEditEvent.cs" />
+    <Compile Include="Events\Branch\BranchViewEvent.cs" />
+    <Compile Include="Events\Customer\CustomerEditSettingsEvent.cs" />
+    <Compile Include="Events\Customer\CustomerAddEvent.cs" />
+    <Compile Include="Events\Customer\CustomerAddedEvent.cs" />
+    <Compile Include="Events\Customer\CustomerEditedEvent.cs" />
+    <Compile Include="Events\Customer\CustomerEditEvent.cs" />
+    <Compile Include="Events\Customer\CustomerViewEvent.cs" />
+    <Compile Include="Events\Inventor\InventorInventorsRefreshEvent.cs" />
+    <Compile Include="Events\Inventor\InventorEditSettingsEvent.cs" />
+    <Compile Include="Events\Inventor\InventorAddedEvent.cs" />
+    <Compile Include="Events\Inventor\InventorAddEvent.cs" />
+    <Compile Include="Events\Inventor\InventorStatusChangedEvent.cs" />
+    <Compile Include="Events\Inventor\InventorStatusChangeEvent.cs" />
+    <Compile Include="Events\Inventor\InventorEditedEvent.cs" />
+    <Compile Include="Events\Inventor\InventorEditEvent.cs" />
+    <Compile Include="Events\Inventor\InventorSelectedEvent.cs" />
+    <Compile Include="Events\Customer\CustomerSelectedEvent.cs" />
+    <Compile Include="Events\Branch\BranchSelectedEvent.cs" />
+    <Compile Include="Events\Inventor\InventorViewEvent.cs" />
+    <Compile Include="Events\Misc\ImportExportAdapterChangedEvent.cs" />
+    <Compile Include="Events\Misc\MdiFilterChangedEvent.cs" />
+    <Compile Include="Events\Misc\MdiFilterRecalculateEvent.cs" />
+    <Compile Include="Events\Misc\ObjectPropertiesViewEvent.cs" />
+    <Compile Include="Events\ParsingMask\MaskAddedEditedEvent.cs" />
+    <Compile Include="Events\ParsingMask\MaskAddEditEvent.cs" />
+    <Compile Include="Events\ParsingMask\MaskTemplateAddedEditedEvent.cs" />
+    <Compile Include="Events\ParsingMask\MaskTemplateAddEditEvent.cs" />
+    <Compile Include="Interfaces\IMdiChild.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewModels\BackForwardViewModel.cs" />
+    <Compile Include="ViewModels\Branch\BranchAddViewModel.cs" />
+    <Compile Include="ViewModels\Branch\BranchChooseViewModel.cs" />
+    <Compile Include="ViewModels\Branch\BranchDashboardFullViewModel.cs" />
+    <Compile Include="ViewModels\Branch\BranchEditViewModel.cs" />
+    <Compile Include="ViewModels\Branch\BranchFormViewModel.cs" />
+    <Compile Include="ViewModels\Branch\BranchItemViewModel.cs" />
+    <Compile Include="ViewModels\Branch\BranchPostData.cs" />
+    <Compile Include="ViewModels\Branch\BranchPostViewModel.cs" />
+    <Compile Include="ViewModels\Branch\BranchSimpleItemViewModel.cs" />
+    <Compile Include="ViewModels\Customer\CustomerPostData.cs" />
+    <Compile Include="ViewModels\Customer\CustomerPostViewModel.cs" />
+    <Compile Include="ViewModels\Customer\CustomerSimpleItemViewModel.cs" />
+    <Compile Include="ViewModels\Customer\CustomerEditOptionsViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\FamilyMdi\FamilyDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\DomainObjectMdi\BranchDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\DomainObjectMdi\CustomerDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\DomainObjectMdi\HomeDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\DomainObjectMdi\InventorDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\InventProduct\InventProductPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\InventProduct\InventProductSimplePartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\InventProduct\InventProductSumPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\PlanogramMdi\PlanogramPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\SectionMdi\SectionDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\StatisticMdi\StatisticDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\SupplierMdi\SupplierDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\FromFtpViewModel.cs" />
+    <Compile Include="ViewModels\Inventor\ChangeStatus\ReportPrintItemViewModel.cs" />
+    <Compile Include="ViewModels\Inventor\InventorEditOptionsViewModel.cs" />
+    <Compile Include="ViewModels\Inventor\InventorPostData.cs" />
+    <Compile Include="ViewModels\Inventor\InventorPostViewModel.cs" />
+    <Compile Include="ViewModels\Inventor\ChangeStatus\SendDataOffice.cs" />
+    <Compile Include="ViewModels\ContextCBIChooseViewModelCommon.cs" />
+    <Compile Include="ViewModels\Customer\CustomerChooseViewModel.cs" />
+    <Compile Include="ViewModels\Customer\CustomerDashboardFullViewModel.cs" />
+    <Compile Include="ViewModels\Customer\CustomerEditViewModel.cs" />
+    <Compile Include="ViewModels\Customer\CustomerFormViewModel.cs" />
+    <Compile Include="ViewModels\Customer\CustomerItemViewModel.cs" />
+    <Compile Include="ViewModels\Customer\CustomerAddViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\CatalogInfoForCBIDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\FromPdaMdi\FromPdaDashboardItem.cs" />
+    <Compile Include="ViewModels\DashboardItems\FromPdaMdi\FromPdaDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\IturimDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\LastBranchesMdi\BranchesDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\LastBranchesMdi\LastBranchesDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\InventorStatusDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\Last inventorsMdi\LastInventorsListItem.cs" />
+    <Compile Include="ViewModels\DashboardItems\LastBranchesMdi\LastBranchesListItem.cs" />
+    <Compile Include="ViewModels\DashboardItems\LastCustomersMdi\LastCustomersListItem.cs" />
+    <Compile Include="ViewModels\DashboardItems\LastCustomersMdi\LastCustomersDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\Last inventorsMdi\LastInventorsDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\LocationDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\MenuMdi\BranchDashboardMenuBuilder.cs" />
+    <Compile Include="ViewModels\DashboardItems\MenuMdi\CustomerDashboardMenuBuilder.cs" />
+    <Compile Include="ViewModels\DashboardItems\MenuMdi\InventorDashboardMenuBuilder.cs" />
+    <Compile Include="ViewModels\DashboardItems\MenuMdi\HomeDashboardMenuBuilder.cs" />
+    <Compile Include="ViewModels\DashboardItems\MenuMdi\MenuDashboardCommandViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\MenuMdi\MenuDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\ReportsMdi\ReportsDashboardPartViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\ReportsMdi\ReportTreeItemRootViewModel.cs" />
+    <Compile Include="ViewModels\DashboardItems\ReportsMdi\ReportTreeItemViewModel.cs" />
+    <Compile Include="ViewModels\Inventor\InventorAddViewModel.cs" />
+    <Compile Include="ViewModels\Inventor\InventorChooseViewModel.cs" />
+    <Compile Include="ViewModels\Inventor\InventorDashboardFullViewModel.cs" />
+    <Compile Include="ViewModels\Inventor\InventorEditViewModel.cs" />
+    <Compile Include="ViewModels\Inventor\InventorFormViewModel.cs" />
+    <Compile Include="ViewModels\Inventor\InventorItemViewModel.cs" />
+    <Compile Include="ViewModels\HomeDashboardViewModel.cs" />
+    <Compile Include="ViewModels\Items\FromFtpItemViewModel.cs" />
+    <Compile Include="ViewModels\Items\UploadToPdaItemViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Adapters\AdaperLinkScriptSaveViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Adapters\AdapterLinkItemViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Adapters\AdapterLinkScriptOpenViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Adapters\AdapterLinkViewModel.cs" />
+    <Compile Include="ViewModels\Misc\CBIObjectPropertiesViewModel.cs" />
+    <Compile Include="ViewModels\Misc\CBITab\AdditionalSettingsSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Misc\CBITab\ConfigAdapterSettingViewModel.cs" />
+    <Compile Include="ViewModels\Misc\CBITab\DynamicColumnSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Misc\CBITab\ExportErpSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Misc\CBITab\ExportPdaSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Misc\CBITab\ImportFoldersViewModel.cs" />
+    <Compile Include="ViewModels\Misc\CBITab\Items\DynamicColumnSettingsItem.cs" />
+    <Compile Include="ViewModels\Misc\CBITab\AutoGenerateResultSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Misc\CBITab\Items\PriceTypeItemViewModel.cs" />
+    <Compile Include="ViewModels\Misc\CBITab\UpdateAdaptersViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\MdiFilter\Items\MdiFilterItem.cs" />
+    <Compile Include="ViewModels\Misc\Popup\MdiFilter\Items\MdiFilterItemViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\MdiFilter\Items\MenuFilterItem.cs" />
+    <Compile Include="ViewModels\Misc\Popup\MdiFilter\Items\MenuFilterItemViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\MdiFilter\MdiFilterState.cs" />
+    <Compile Include="ViewModels\Misc\Popup\MdiFilter\MdiFilterViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\BranchControl\SearchBranchFieldViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\BranchControl\SearchBranchViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\CustomerControl\SearchCustomerFieldViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\CustomerControl\SearchCustomerViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventorControl\SearchInventorFieldViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventorControl\SearchInventorViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\PackControl\SearchPackFieldViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\SearchViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\SpeedLink\SpeedLinkItemViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\SpeedLink\SpeedLinkViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Script\CBIScriptOpenViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Script\CBIScriptSaveViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Script\enCBIScriptMode.cs" />
+    <Compile Include="ViewModels\Pack\PackBaseItemViewModel.cs" />
+    <Compile Include="ViewModels\Pack\PackIcons.cs" />
+    <Compile Include="ViewModels\Pack\PackItemViewModel.cs" />
+    <Compile Include="ViewModels\Pack\PackViewModel.cs" />
+    <Compile Include="ViewModels\Pack\Unpack\EntryComparer.cs" />
+    <Compile Include="ViewModels\Pack\Unpack\UnpackBaseItem.cs" />
+    <Compile Include="ViewModels\Pack\Unpack\UnpackItem.cs" />
+    <Compile Include="ViewModels\Pack\Unpack\UnpackOverwriteItem.cs" />
+    <Compile Include="ViewModels\Pack\Unpack\UnpackViewModel.cs" />
+    <Compile Include="ViewModels\ParsingMask\MaskAddEditViewModel.cs" />
+    <Compile Include="ViewModels\ParsingMask\MaskItemViewModel.cs" />
+    <Compile Include="ViewModels\ParsingMask\MaskListViewModel.cs" />
+    <Compile Include="ViewModels\ParsingMask\MaskSelectItemViewModel.cs" />
+    <Compile Include="ViewModels\ParsingMask\MaskSelectUtils.cs" />
+    <Compile Include="ViewModels\ParsingMask\MaskSelectViewModel.cs" />
+    <Compile Include="ViewModels\ParsingMask\MaskTemplateAddEditViewModel.cs" />
+    <Compile Include="ViewModels\ParsingMask\Script\MaskScriptOpenViewModel.cs" />
+    <Compile Include="ViewModels\ParsingMask\Script\MaskScriptSaveViewModel.cs" />
+    <Compile Include="ViewModels\Settings\ConfigurationSetAddViewModel.cs" />
+    <Compile Include="ViewModels\Settings\Items\ConfigurationSetItemViewModel.cs" />
+    <Compile Include="ViewModels\Settings\Items\ExeptionFileNotDeleteItemViewModel.cs" />
+    <Compile Include="ViewModels\Settings\Items\CurrencyItemViewModel.cs" />
+    <Compile Include="ViewModels\Settings\Items\LanguageItemViewModel.cs" />
+    <Compile Include="ViewModels\Settings\Items\ReportRepositoryItemViewModel.cs" />
+    <Compile Include="ViewModels\Settings\PathSettings\PathSettingsItemViewModel.cs" />
+    <Compile Include="ViewModels\Settings\StatusGroupColorItemViewModel.cs" />
+    <Compile Include="ViewModels\Settings\PathSettings\PathSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Settings\StatusColorItemViewModel.cs" />
+    <Compile Include="ViewModels\Settings\UserSettingsViewModel.cs" />
+    <Compile Include="ViewModels\Strip\StripEmptyViewModel.cs" />
+    <Compile Include="ViewModels\Strip\StripInventorViewModel.cs" />
+    <Compile Include="ViewModels\Strip\StripBaseViewModel.cs" />
+    <Compile Include="ViewModels\Strip\StripBranchViewModel.cs" />
+    <Compile Include="ViewModels\Strip\StripCustomerViewModel.cs" />
+    <Compile Include="ViewModels\Strip\StripHomeViewModel.cs" />
+    <Compile Include="ViewModels\Strip\StripMainViewModel.cs" />
+    <Compile Include="ViewModels\Strip\StripViewModel.cs" />
+    <Compile Include="ViewModels\ToFtpViewModel.cs" />
+    <Compile Include="ViewModels\Zip\ProcessExclusionRules.cs" />
+    <Compile Include="ViewModels\Zip\Items\ProcessItemViewModel.cs" />
+    <Compile Include="ViewModels\Zip\ZipExclusionRules.cs" />
+    <Compile Include="ViewModels\Zip\Items\ZipExportItemViewModel.cs" />
+    <Compile Include="ViewModels\Zip\ZipExportViewModel.cs" />
+    <Compile Include="ViewModels\Zip\Items\ZipImportItemViewModel.cs" />
+    <Compile Include="ViewModels\Zip\ZipImportViewModel.cs" />
+    <Compile Include="ViewModels\Zip\Items\ZipItemViewModel.cs" />
+    <Compile Include="Views\BackForwardView.xaml.cs">
+      <DependentUpon>BackForwardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Branch\BranchChooseView.xaml.cs">
+      <DependentUpon>BranchChooseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Branch\BranchAddView.xaml.cs">
+      <DependentUpon>BranchAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Branch\BranchCommon.xaml.cs">
+      <DependentUpon>BranchCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Branch\BranchDashboardFullView.xaml.cs">
+      <DependentUpon>BranchDashboardFullView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Branch\BranchEditView.xaml.cs">
+      <DependentUpon>BranchEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Branch\BranchFormView.xaml.cs">
+      <DependentUpon>BranchFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Branch\BranchPostView.xaml.cs">
+      <DependentUpon>BranchPostView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerChooseView.xaml.cs">
+      <DependentUpon>CustomerChooseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerCommon.xaml.cs">
+      <DependentUpon>CustomerCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerDashboardFullView.xaml.cs">
+      <DependentUpon>CustomerDashboardFullView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerEditView.xaml.cs">
+      <DependentUpon>CustomerEditView.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerAddView.xaml.cs">
+      <DependentUpon>CustomerAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerFormView.xaml.cs">
+      <DependentUpon>CustomerFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerGroundView.xaml.cs">
+      <DependentUpon>CustomerGroundView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerPostView.xaml.cs">
+      <DependentUpon>CustomerPostView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Customer\CustomerEditOptionsView.xaml.cs">
+      <DependentUpon>CustomerEditOptionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FromFtpView.xaml.cs">
+      <DependentUpon>FromFtpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\CBITab\AutoGenerateResultSettingsView.xaml.cs">
+      <DependentUpon>AutoGenerateResultSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\BranchMdi\BranchesDashboardPartView.xaml.cs">
+      <DependentUpon>BranchesDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\BranchMdi\LastBranchesDashboardPartView.xaml.cs">
+      <DependentUpon>LastBranchesDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\CatalogInfoForCBIDashboardPartView.xaml.cs">
+      <DependentUpon>CatalogInfoForCBIDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\DashboardManager\MdiManager.cs" />
+    <Compile Include="Views\DashboardItems\DashboardManager\MdiRegion.cs" />
+    <Compile Include="Views\DashboardItems\DashboardManager\MdiRegionLayout.cs" />
+    <Compile Include="Views\DashboardItems\DashboardManager\MdiRegionLayoutCollection.cs" />
+    <Compile Include="Views\DashboardItems\DomainObjectMdi\BranchDashboardPartView.xaml.cs">
+      <DependentUpon>BranchDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\DomainObjectMdi\CustomerDashboardPartView.xaml.cs">
+      <DependentUpon>CustomerDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\DomainObjectMdi\HomeDashboardPartView.xaml.cs">
+      <DependentUpon>HomeDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\DomainObjectMdi\InventorDashboardPartView.xaml.cs">
+      <DependentUpon>InventorDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\Family\FamilyDashboardPartView.xaml.cs">
+      <DependentUpon>FamilyDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\FromPdaDashboardPartView.xaml.cs">
+      <DependentUpon>FromPdaDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\InventorStatusDashboardPartView.xaml.cs">
+      <DependentUpon>InventorStatusDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\InventProductMdi\InventProductPartView.xaml.cs">
+      <DependentUpon>InventProductPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\InventProductMdi\InventProductSimplePartView.xaml.cs">
+      <DependentUpon>InventProductSimplePartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\InventProductMdi\InventProductSumPartView.xaml.cs">
+      <DependentUpon>InventProductSumPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\IturimDashboardPartView.xaml.cs">
+      <DependentUpon>IturimDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\LastCustomersDashboardPartView.xaml.cs">
+      <DependentUpon>LastCustomersDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\LastInventorsDashboardPartView.xaml.cs">
+      <DependentUpon>LastInventorsDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\LocationDashboardPartView.xaml.cs">
+      <DependentUpon>LocationDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\MenuDashboardPartView.xaml.cs">
+      <DependentUpon>MenuDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\PdaDashboardPartView.xaml.cs">
+      <DependentUpon>PdaDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\PlanogramMdi\PlanogramPartView.xaml.cs">
+      <DependentUpon>PlanogramPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\ReportsDashboardPartView.xaml.cs">
+      <DependentUpon>ReportsDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\SectionMdi\SectionDashboardPartView.xaml.cs">
+      <DependentUpon>SectionDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\SectionMdi\SupplierDashboardPartView.xaml.cs">
+      <DependentUpon>SupplierDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DashboardItems\StatisticMdi\StatisticDashboardPartView.xaml.cs">
+      <DependentUpon>StatisticDashboardPartView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Helpers.cs" />
+    <Compile Include="Views\Inventor\InventorOptionsCommon.xaml.cs">
+      <DependentUpon>InventorOptionsCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventor\InventorEditOptionsView.xaml.cs">
+      <DependentUpon>InventorEditOptionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventor\InventorAddView.xaml.cs">
+      <DependentUpon>InventorAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventor\InventorChangeStatusView.xaml.cs">
+      <DependentUpon>InventorChangeStatusView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Inventor\ChangeStatus\InventorChangeStatusViewModel.cs" />
+    <Compile Include="Views\Inventor\InventorChooseView.xaml.cs">
+      <DependentUpon>InventorChooseView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventor\InventorCommon.xaml.cs">
+      <DependentUpon>InventorCommon.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventor\InventorDashboardFullView.xaml.cs">
+      <DependentUpon>InventorDashboardFullView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventor\InventorEditView.xaml.cs">
+      <DependentUpon>InventorEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventor\InventorFormView.xaml.cs">
+      <DependentUpon>InventorFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeDashboardView.xaml.cs">
+      <DependentUpon>HomeDashboardView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inventor\InventorPostView.xaml.cs">
+      <DependentUpon>InventorPostView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Adapters\AdaperLinkScriptSaveView.xaml.cs">
+      <DependentUpon>AdaperLinkScriptSaveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Adapters\AdapterLinkScriptOpenView.xaml.cs">
+      <DependentUpon>AdapterLinkScriptOpenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Adapters\AdapterLinkView.xaml.cs">
+      <DependentUpon>AdapterLinkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\CBIObjectPropertiesView.xaml.cs">
+      <DependentUpon>CBIObjectPropertiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\CBITab\AdditionalSettingsSettingsView.xaml.cs">
+      <DependentUpon>AdditionalSettingsSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\CBITab\ConfigAdapterSettingView.xaml.cs">
+      <DependentUpon>ConfigAdapterSettingView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\CBITab\DynamicColumnSettingsView.xaml.cs">
+      <DependentUpon>DynamicColumnSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\CBITab\ExportErpSettingsView.xaml.cs">
+      <DependentUpon>ExportErpSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\CBITab\ExportPdaSettingsView.xaml.cs">
+      <DependentUpon>ExportPdaSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\CBITab\ImportFoldersView.xaml.cs">
+      <DependentUpon>ImportFoldersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\CBITab\UpdateAdaptersView.xaml.cs">
+      <DependentUpon>UpdateAdaptersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Dashboard\DashboardBaseView.cs" />
+    <Compile Include="Views\Misc\Popup\MdiFilterView.xaml.cs">
+      <DependentUpon>MdiFilterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\BranchControl\SearchBranchFieldView.xaml.cs">
+      <DependentUpon>SearchBranchFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\BranchControl\SearchBranchView.xaml.cs">
+      <DependentUpon>SearchBranchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\CustomerControl\SearchCustomerFieldView.xaml.cs">
+      <DependentUpon>SearchCustomerFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\CustomerControl\SearchCustomerView.xaml.cs">
+      <DependentUpon>SearchCustomerView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\CustomerControl\SearchViewCustomerField.xaml.cs">
+      <DependentUpon>SearchViewCustomerField.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventorControl\SearchInventorFieldView.xaml.cs">
+      <DependentUpon>SearchInventorFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventorControl\SearchInventorView.xaml.cs">
+      <DependentUpon>SearchInventorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\PackControl\SearchPackFieldView.xaml.cs">
+      <DependentUpon>SearchPackFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\SearchView.xaml.cs">
+      <DependentUpon>SearchView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\SpeedLink\SpeedLinkView.xaml.cs">
+      <DependentUpon>SpeedLinkView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Script\CBIScriptOpenView.xaml.cs">
+      <DependentUpon>CBIScriptOpenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Script\CBIScriptSaveView.xaml.cs">
+      <DependentUpon>CBIScriptSaveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pack\PackView.xaml.cs">
+      <DependentUpon>PackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Pack\UnpackView.xaml.cs">
+      <DependentUpon>UnpackView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParsingMask\MaskAddEditView.xaml.cs">
+      <DependentUpon>MaskAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParsingMask\MaskListView.xaml.cs">
+      <DependentUpon>MaskListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParsingMask\MaskSelectTemplateSelector.cs" />
+    <Compile Include="Views\ParsingMask\MaskSelectView.xaml.cs">
+      <DependentUpon>MaskSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParsingMask\MaskTemplateAddEditView.xaml.cs">
+      <DependentUpon>MaskTemplateAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParsingMask\Script\MaskScriptOpenView.xaml.cs">
+      <DependentUpon>MaskScriptOpenView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ParsingMask\Script\MaskScriptSaveView.xaml.cs">
+      <DependentUpon>MaskScriptSaveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Process\ProcessAddEditView.xaml.cs">
+      <DependentUpon>ProcessAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Process\ProcessAddEditViewModel.cs" />
+    <Compile Include="Views\Process\ProcessZipView.xaml.cs">
+      <DependentUpon>ProcessZipView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Process\ProcessZipViewModel.cs" />
+    <Compile Include="Views\Process\ProcessAddEditGridView.xaml.cs">
+      <DependentUpon>ProcessAddEditGridView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Process\ProcessAddEditGridViewModel.cs" />
+    <Compile Include="Views\Settings\ConfigurationSetAddView.xaml.cs">
+      <DependentUpon>ConfigurationSetAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\PathSettingsView.xaml.cs">
+      <DependentUpon>PathSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\UserSettingsView.xaml.cs">
+      <DependentUpon>UserSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Strip\StripView.xaml.cs">
+      <DependentUpon>StripView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ToFtpView.xaml.cs">
+      <DependentUpon>ToFtpView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Zip\ZipExportView.xaml.cs">
+      <DependentUpon>ZipExportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Zip\ZipImportView.xaml.cs">
+      <DependentUpon>ZipImportView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xml\Config\ViewModelConfigRepository.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Count4U.Model.Count4U.Itur.datasource" />
+    <None Include="Properties\DataSources\Count4U.Model.Count4U.Location.datasource" />
+    <None Include="Properties\DataSources\Count4U.Model.Count4U.Product.datasource" />
+    <None Include="Properties\DataSources\Count4U.Model.Count4U.ProductSimple.datasource" />
+    <None Include="Properties\DataSources\Count4U.Model.SQLScript.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\BackForwardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Branch\BranchChooseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Branch\BranchAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Branch\BranchCommon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Branch\BranchDashboardFullView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Branch\BranchEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Branch\BranchFormView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Branch\BranchPostView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Customer\CustomerChooseView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Customer\CustomerCommon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Customer\CustomerDashboardFullView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Customer\CustomerEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Customer\CustomerAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Customer\CustomerFormView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Customer\CustomerGroundView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Customer\CustomerPostView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Customer\CustomerEditOptionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\FromFtpView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\CBITab\AutoGenerateResultSettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DashboardItems\BranchMdi\BranchesDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\BranchMdi\LastBranchesDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\CatalogInfoForCBIDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\DomainObjectMdi\BranchDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\DomainObjectMdi\CustomerDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\DomainObjectMdi\HomeDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\DomainObjectMdi\InventorDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\Family\FamilyDashboardPartView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DashboardItems\FromPdaDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\InventorStatusDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\InventProductMdi\InventProductPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\InventProductMdi\InventProductSimplePartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\InventProductMdi\InventProductSumPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\IturimDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\LastCustomersDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\LastInventorsDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\LocationDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\MenuDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\PdaDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\PlanogramMdi\PlanogramPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\ReportsDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\SectionMdi\SectionDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\SectionMdi\SupplierDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DashboardItems\StatisticMdi\StatisticDashboardPartView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Inventor\InventorOptionsCommon.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Inventor\InventorEditOptionsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Inventor\InventorAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Inventor\InventorChangeStatusView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Inventor\InventorChooseView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Inventor\InventorCommon.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Inventor\InventorDashboardFullView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Inventor\InventorEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Inventor\InventorFormView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\HomeDashboardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Inventor\InventorPostView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Adapters\AdaperLinkScriptSaveView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Adapters\AdapterLinkScriptOpenView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Adapters\AdapterLinkView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\CBIObjectPropertiesView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\CBITab\AdditionalSettingsSettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\CBITab\ConfigAdapterSettingView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\CBITab\DynamicColumnSettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\CBITab\ExportErpSettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\CBITab\ExportPdaSettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\CBITab\ImportFoldersView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\CBITab\UpdateAdaptersView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\MdiFilterView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\BranchControl\SearchBranchFieldView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\BranchControl\SearchBranchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\CustomerControl\SearchCustomerFieldView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\CustomerControl\SearchCustomerView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\CustomerControl\SearchViewCustomerField.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventorControl\SearchInventorFieldView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventorControl\SearchInventorView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\PackControl\SearchPackFieldView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\SearchView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\SpeedLink\SpeedLinkView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Script\CBIScriptOpenView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Script\CBIScriptSaveView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Pack\PackCommonResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pack\PackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Pack\UnpackView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParsingMask\MaskAddEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ParsingMask\MaskListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParsingMask\MaskSelectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParsingMask\MaskTemplateAddEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParsingMask\Script\MaskScriptOpenView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ParsingMask\Script\MaskScriptSaveView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Process\ProcessAddEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Process\ProcessZipView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Process\ProcessAddEditGridView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\ConfigurationSetAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\PathSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Settings\UserSettingsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Strip\StripView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ToFtpView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Zip\Common.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Zip\ZipExportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Zip\ZipImportView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\WPF.MDI\WPF.MDI\WPF.MDI.csproj">
+      <Project>{be1ed569-5e0b-4df0-8964-33ad2aae4c4a}</Project>
+      <Name>WPF.MDI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Common.Web\Count4U.Common.Web.csproj">
+      <Project>{6bd02894-6ebe-40f1-b5a4-70e5141b2540}</Project>
+      <Name>Count4U.Common.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Common\Count4U.Common.csproj">
+      <Project>{EA11D75F-FDB9-410D-9F9B-5D055B4377B8}</Project>
+      <Name>Count4U.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Configuration\Count4U.Configuration.csproj">
+      <Project>{005bb7bf-e7b8-40b2-87f1-540d2b627588}</Project>
+      <Name>Count4U.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.CustomControls\Count4U.CustomControls.csproj">
+      <Project>{D20AC0D3-74FB-489C-977C-5712E022EB2B}</Project>
+      <Name>Count4U.CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.GenerationReport\Count4U.GenerationReport.csproj">
+      <Project>{83008678-0C79-4E48-BC3D-D9B4580DF56A}</Project>
+      <Name>Count4U.GenerationReport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Localization\Count4U.Localization.csproj">
+      <Project>{C1716C1B-995A-481B-8853-1B984F75BE45}</Project>
+      <Name>Count4U.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Media\Count4U.Media.csproj">
+      <Project>{201020E5-ADF0-4E0C-9287-2A7F5E6E6080}</Project>
+      <Name>Count4U.Media</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.Common\Count4U.Model.Common.csproj">
+      <Project>{5E70D036-3982-4D9F-95CA-197E616D7F59}</Project>
+      <Name>Count4U.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ExportImport\Count4U.Model.ExportImport.csproj">
+      <Project>{A511450D-26CB-4D17-92B1-4C9A331B5290}</Project>
+      <Name>Count4U.Model.ExportImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ServiceContract\Count4U.Model.ServiceContract.csproj">
+      <Project>{6c200172-9847-40e4-ae97-ec50bbf4d0a4}</Project>
+      <Name>Count4U.Model.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model\Count4U.Model.csproj">
+      <Project>{A3145385-051F-4FFA-9DCB-3014DA552419}</Project>
+      <Name>Count4U.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converter\" />
+    <Folder Include="Views\DashboardItems\Converters\" />
+    <Folder Include="Views\DashboardItems\SupplierMdi\" />
+    <Folder Include="Views\Export\" />
+    <Folder Include="Views\Report\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

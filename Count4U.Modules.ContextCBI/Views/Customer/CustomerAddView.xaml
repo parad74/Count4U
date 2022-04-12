@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.CustomerAddView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Customer="clr-namespace:Count4U.Modules.ContextCBI.Views.Customer"
+             xmlns:Views="clr-namespace:Count4U.Modules.ContextCBI.Views"
+             xmlns:cal="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+             xmlns:Common="clr-namespace:Count4U.Common;assembly=Count4U.Common"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Interactivity.InteractionRequest;assembly=Microsoft.Practices.Prism.Interactivity"
+              xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" 
+             xmlns:Helpers="clr-namespace:Count4U.Common.Helpers;assembly=Count4U.Common"
+             xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             xmlns:Converters="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:imageButtonHyperlink="clr-namespace:Count4U.CustomControls.ImageButtonHyperlink;assembly=Count4U.CustomControls"
+             xmlns:imageButtonCursor="clr-namespace:Count4U.CustomControls.ImageButtonCursor;assembly=Count4U.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="750" d:DesignWidth="600" 
+             >
+
+        <Customer:CustomerCommon x:Name="common" />
+
+</UserControl>

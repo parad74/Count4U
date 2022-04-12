@@ -1,0 +1,357 @@
+﻿<UserControl x:Class="Count4U.Modules.Audit.Views.Misc.Popup.Search.InventProductControl.Advanced.Grid.SearchInventProductAdvancedGridSimpleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:Pagination="clr-namespace:Count4U.CustomControls.Pagination;assembly=Count4U.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Background="White" Margin="4">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="23" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="#555555" BorderThickness="1" Background="#999999" Margin="5,3,3,0">
+            <Grid>
+                <TextBlock Text="{x:Static Localization:Resources.Domain_InventProductAnalyze}"
+                           HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,4,0,6" />
+
+                <Pagination:Pagination Margin="150,0,0,0" VerticalAlignment="Center"
+									   PageSize="{Binding Path=PageSize, Mode=TwoWay}" 
+									   PageCurrent="{Binding Path=PageCurrent, Mode=TwoWay}" 
+									   ItemsTotal="{Binding Path=ItemsTotal, Mode=TwoWay}"
+                                       Background="{StaticResource vertLineBrush}"
+                                       />
+            </Grid>
+        </Border>
+
+<!--        ScrollViewer.CanContentScroll="False"-->
+        <DataGrid Grid.Row="1" 				 
+				  Name="dataGrid"
+                  Margin="5,0,1,0" 
+                  ItemsSource="{Binding Path=List}" 
+				  SelectedItem="{Binding Path=ChooseCurrent}"                  
+				  Background="Transparent"
+				  BorderBrush="Transparent" 
+                  BorderThickness="0"                  
+                  IsReadOnly="True"
+                  CanUserResizeColumns="True"
+                  VirtualizingStackPanel.VirtualizationMode="Standard"                    
+				  SelectionMode="Single"                  
+				>
+            <DataGrid.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/MdiThemes/Theme3.xaml"/>
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </DataGrid.Resources>
+
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn 
+                    x:Name="columnLocationName"
+                    Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnLocationName}"
+                    Width="*" 
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=LocationName, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnIturCode}"
+                                        Width="*" 
+                                        x:Name="columnIturCode"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=IturCode, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnIturERPCode}"
+                                        Width="*" 
+                                        x:Name="columnIturERPCode"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=IturERPCode, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnIturDisabled}"
+                                        Width="*" 
+                                        x:Name="columnIturDisabled"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <CheckBox IsChecked="{Binding Path=IturDisabled, Mode=OneWay}" HorizontalAlignment="Center" IsEnabled="False"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnIturStatusGroupBit}"
+                                        Width="*" 
+                                        x:Name="columnIturStatusGroupBit"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=IturStatusGroupBit, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnIturNumberPrefix}"
+                                        Width="*" 
+                                        x:Name="columnIturNumberPrefix"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=IturNumberPrefix, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnIturNumberSuffix}"
+                                        Width="*" 
+                                        x:Name="columnIturNumberSuffix"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=IturNumberSuffix, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnDocNum}"
+                                        Width="*" 
+                                        x:Name="columnDocNum"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=DocNum, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnIPNum}"
+                                        Width="*" 
+                                        x:Name="columnIPNum"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=IpNum, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnInputTypeCode}"
+                                        Width="*" 
+                                        x:Name="columnInputTypeCode"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=InputTypeCode, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnQuantityDifference}"
+                                        Width="*" 
+                                        x:Name="columnQuantityDifference"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=QuantityDifference, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnQuantityEdit}"
+                                        Width="*" 
+                                        x:Name="columnQuantityEdit"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=QuanitytEdit, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnValueBuyDifference}"
+                                        Width="*" 
+                                        x:Name="columnValueBuyDifference"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ValueBuyDifference, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnValueBuyEdit}"
+                                        Width="*" 
+                                        x:Name="columnValueBuyEdit"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ValueBuyEdit, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnPDA_StatusInventProductBit}"
+                                        Width="*" 
+                                        x:Name="columnPDA_StatusInventProductBit"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=PdaStatusInventProductBit, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnTypeMakat}"
+                                        Width="*" 
+                                        x:Name="columnTypeMakat"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=TypeMakat, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnMakat}"
+                                        Width="*" 
+                                        x:Name="columnMakat"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Makat, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnBarcode}"
+                                        Width="*" 
+                                        x:Name="columnBarcode"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Barcode, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnPriceBuy}"
+                                        Width="*" 
+                                        x:Name="columnPriceBuy"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=PriceBuy, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnPriceSale}"
+                                        Width="*" 
+                                        x:Name="columnPriceSale"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=PriceSale, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnProductName}"
+                                        Width="*" 
+                                        x:Name="columnProductName"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=ProductName, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnSupplierName}"
+                                        Width="*" 
+                                        x:Name="columnSupplierName"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=SupplierName, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_SearchInventProductAdvancedGridSimple_columnSectionName}"
+                                        Width="*" 
+                                        x:Name="columnSectionName"
+                                        >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=SectionName, Mode=OneWay}" HorizontalAlignment="Left" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+        <Border Grid.Row="2" BorderBrush="#999999" BorderThickness="1" Background="#D3D3D3" Margin="5,0,3,3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Text="{Binding Path=TotalString}" 
+                           Grid.Column="0"
+                           VerticalAlignment="Center" 
+                           HorizontalAlignment="Left"
+                           Margin="12, 0, 0,0" 
+                           ToolTip="{Binding Path=TotalStringTooltip, UpdateSourceTrigger=PropertyChanged}"/>
+
+                <TextBlock Text="{Binding Path=TotalSumString}" 
+                           VerticalAlignment="Center" 
+                           Grid.Column="1"                           
+                           HorizontalAlignment="Left"                         
+                           Margin="12, 0, 0,0" 
+                           />
+
+                <TextBlock HorizontalAlignment="Right"
+                           Grid.Column="2"
+                           Margin="0,0,15,0"
+                           VerticalAlignment="Center" >
+			            <Hyperlink Command="{Binding Path=MoreCommand}" >
+                            <Run Text="{x:Static Localization:Resources.Command_More}" />
+                        </Hyperlink>
+                </TextBlock>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

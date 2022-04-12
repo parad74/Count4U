@@ -1,0 +1,178 @@
+﻿<Window x:Class="Count4U.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:cal="http://www.codeplex.com/CompositeWPF" 
+	xmlns:Common="clr-namespace:Count4U.Common;assembly=Count4U.Common"
+	xmlns:extToolkit="http://schemas.microsoft.com/winfx/2006/xaml/presentation/toolkit/extended"
+    xmlns:Strip="clr-namespace:Count4U.Modules.ContextCBI.ViewModels.Strip;assembly=Count4U.Modules.ContextCBI"
+    Title="Count4U" 
+	Width="1000" 		
+	Height="800" 	
+    WindowStyle="None"
+    AllowsTransparency="False"
+    ResizeMode="CanResizeWithGrip"
+    Background="Transparent"
+	WindowStartupLocation="CenterScreen" 
+    SnapsToDevicePixels="True"
+    Icon="Icon.ico" WindowState="Maximized"	
+		>
+<!--   -->
+<!--    AllowsTransparency="False"-->
+<!--    Background="Transparent"    -->
+<!--	ResizeMode="CanResizeWithGrip"-->
+    <!--    Background="Transparent"-->
+    <!--    WindowStyle="None"-->
+    <!--    AllowsTransparency="True"-->
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <SolidColorBrush x:Key="pathFill" Color="#999999" />
+            <SolidColorBrush x:Key="pathStroke" Color="#999999" />
+            <SolidColorBrush x:Key="pathFillOver" Color="LightGray" />
+            <SolidColorBrush x:Key="pathStrokeOver" Color="LightGray" />
+
+            <LinearGradientBrush x:Key="grayBrush" EndPoint="0.995,0.481" MappingMode="RelativeToBoundingBox" StartPoint="0.004,0.489">
+                <GradientStop Color="#FF999999" Offset="0.5"/>
+                <GradientStop Color="#FF595959"/>
+                <GradientStop Color="#FF595959" Offset="1"/>
+            </LinearGradientBrush>
+
+            <ImageBrush x:Key="imageBrush" ImageSource="/Count4U.Media;component/Background/wood.png" 
+					TileMode="Tile" Stretch="None" Viewport="0,0 564, 252" ViewportUnits="Absolute" />
+
+            <!--		TileMode="Tile" Stretch="None" Viewport="0,0 0.2,0.2" ViewportUnits="RelativeToBoundingBox"-->
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Border Background="White" BorderThickness="0" BorderBrush="#333333" CornerRadius="7"  >
+        <!--		BorderBrush="#FF99CCFF"-->
+        <Border  BorderThickness="3" CornerRadius="0" BorderBrush="#333333">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+<!--Background="#25272E"-->
+                <Grid Name="gridUpper" Grid.Row="0" Background="#25272E">
+
+                    <Control Name="pathClose"
+                             Style="{StaticResource closePathStyle}"
+                             HorizontalAlignment="Right"                              
+                             Margin="0,10,6,0"                              
+                             VerticalAlignment="Top"
+                             Background="{StaticResource pathFillOver}"
+                             Foreground="{StaticResource pathFill}"
+                             >                        
+                    </Control>
+
+                    <Control 
+                        Name="pathMax"
+                        Margin="0,10,26,0"
+                        Width="25" Height="35"
+                        HorizontalAlignment="Right" 						
+						VerticalAlignment="Top" 
+                        >
+                        <Control.Template>
+                            <ControlTemplate TargetType="Control">
+                                <Grid Name="grid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
+                                    <Path 
+                                            Name="path"                                		
+					                        VerticalAlignment="Center" 
+                                            HorizontalAlignment="Center" 
+					                        Height="13"
+						                    Width="13"
+                                            Stretch="Fill"
+                                            Opacity="1"
+					                        
+                                            Fill="Transparent"
+                                            Stroke="{StaticResource pathStroke}"
+                                            StrokeThickness="3.5"
+                                            Data="M 942,47 C942,44.79083251953125 943.7908325195312,43 946,43 946,43 952,43 952,43 954.2091674804688,43 956,44.79083251953125 956,47 956,47 956,52 956,52 956,54.20916748046875 954.2091674804688,56 952,56 952,56 946,56 946,56 943.7908325195312,56 942,54.20916748046875 942,52 942,52 942,47 942,47 z"
+                                />
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="path" Property="Stroke" Value="{StaticResource pathStrokeOver}" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Control.Template>
+                    </Control>
+
+                    <Control Name="pathMin"
+                             Width="25" Height="35"
+                             Margin="0,10,46,0"
+                             VerticalAlignment="Top"
+                             HorizontalAlignment="Right">
+                        <Control.Template>
+                            <ControlTemplate TargetType="Control">
+                                <Grid Name="grid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Transparent">
+                                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                                        <Path 
+                                            Name="path"                                		
+					                        VerticalAlignment="Center"  
+					                        Width="14" 
+					                        Height="4.5"  	
+                                            Stretch="Fill"
+					                        HorizontalAlignment="Center" 
+					                        Margin="0,8,0,0" 
+                                            Fill="{StaticResource pathFill}"
+                                            Stroke="{StaticResource pathStroke}"
+                                            Data="M 927.461669921875,53.984619140625 C929.646728515625,53.984619140625 931.417236328125,54.214111328125 931.417236328125,52.027587890625 931.417236328125,49.842041015625 929.646728515625,50.071533203125 927.461669921875,50.071533203125 927.461669921875,50.071533203125 920.881591796875,50.071533203125 920.881591796875,50.071533203125 918.696533203125,50.071533203125 916.923583984375,49.842041015625 916.923583984375,52.027587890625 916.923583984375,54.214111328125 918.696533203125,53.984619140625 920.881591796875,53.984619140625 920.881591796875,53.984619140625 927.461669921875,53.984619140625 927.461669921875,53.984619140625 z"
+                                />
+                                    </Grid>
+                                </Grid>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="path" Property="Fill" Value="{StaticResource pathFillOver}" />
+                                        <Setter TargetName="path" Property="Stroke" Value="{StaticResource pathStrokeOver}" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Control.Template>
+                    </Control>
+
+                    <ContentControl VerticalAlignment="Stretch" cal:RegionManager.RegionName="{x:Static Common:RegionNames.ApplicationStrip}" Margin="180,7,100,5"></ContentControl>
+                    
+                    <!-- program name -->
+<!--                    <Path -->
+<!--                        x:Name="programNamePath"-->
+<!--                        FlowDirection="LeftToRight"-->
+<!--					    SnapsToDevicePixels="True"-->
+<!--					    Data="M11.415235,7.6040688 C12.265052,7.6040688 13.028933,7.6518116 13.706876,7.7472973 C14.384819,7.842783 15.034117,7.9764614 15.65477,8.1483345 C16.141743,8.291563 16.671686,8.4873066 17.244596,8.7355671 C17.817507,8.9838295 18.280609,9.1986713 18.633904,9.3800907 L18.633904,14.464669 L18.089638,14.464669 C17.831829,14.235505 17.507179,13.960985 17.11569,13.64111 C16.724201,13.321236 16.280197,13.008524 15.783675,12.702971 C15.287153,12.397419 14.740501,12.137222 14.14372,11.92238 C13.546938,11.707541 12.923898,11.600119 12.2746,11.600119 C11.501171,11.600119 10.792194,11.721861 10.147671,11.965347 C9.5031471,12.208834 8.8896561,12.631357 8.3071976,13.232912 C7.772481,13.777177 7.3356371,14.512411 6.9966655,15.438616 C6.6576934,16.36482 6.4882073,17.458124 6.4882073,18.718527 C6.4882073,20.045769 6.6648545,21.160557 7.0181494,22.062889 C7.3714437,22.965223 7.8345461,23.693296 8.4074564,24.24711 C8.9612694,24.781826 9.5795345,25.168541 10.262253,25.407253 C10.944971,25.645966 11.625301,25.765322 12.303246,25.765322 C13.009834,25.765322 13.683004,25.648354 14.322754,25.414413 C14.962503,25.180477 15.501993,24.92028 15.941225,24.633823 C16.418648,24.337822 16.838783,24.037043 17.201628,23.731491 C17.56447,23.425938 17.87957,23.153807 18.146929,22.915094 L18.633904,22.915094 L18.633904,27.928057 C18.242414,28.10948 17.78886,28.31716 17.273241,28.551098 C16.757622,28.785036 16.22768,28.983168 15.683415,29.145493 C15.015019,29.34601 14.389593,29.498787 13.807135,29.603819 C13.224676,29.708853 12.422602,29.76137 11.400912,29.76137 C8.2021637,29.76137 5.662262,28.794584 3.7812073,26.861012 C1.9001521,24.927441 0.95962453,22.208504 0.95962447,18.704205 C0.95962453,15.324035 1.9025391,12.628969 3.7883687,10.619009 C5.6741972,8.6090488 8.216486,7.6040688 11.415235,7.6040688 z M28.631981,16.355272 C28.183201,16.355274 27.77739,16.4245 27.414547,16.562952 C27.051702,16.701405 26.717506,16.966377 26.411953,17.357864 C26.125498,17.730257 25.896334,18.241102 25.724461,18.8904 C25.552589,19.5397 25.466652,20.356094 25.466652,21.339592 C25.466652,22.323086 25.547813,23.118 25.710138,23.724329 C25.872463,24.33066 26.082531,24.815247 26.34034,25.178089 C26.607697,25.55048 26.941895,25.822613 27.342934,25.994486 C27.743969,26.166359 28.187975,26.252296 28.67495,26.252295 C29.075985,26.252296 29.484184,26.166359 29.899544,25.994486 C30.314903,25.822613 30.646713,25.564804 30.894976,25.221058 C31.190979,24.810471 31.415369,24.316338 31.568146,23.738651 C31.720921,23.160969 31.797308,22.36128 31.79731,21.339592 C31.797308,20.384741 31.718533,19.589828 31.560984,18.954853 C31.403433,18.319878 31.186205,17.81142 30.909298,17.429478 C30.613295,17.028442 30.279097,16.749147 29.906706,16.591599 C29.534313,16.434048 29.109406,16.355274 28.631981,16.355272 z M28.631981,12.760262 C31.267366,12.760262 33.310745,13.521755 34.762119,15.044741 C36.213493,16.567726 36.939178,18.656462 36.939178,21.310946 C36.939178,23.955881 36.215881,26.039841 34.769279,27.562828 C33.322681,29.085814 31.276917,29.847307 28.631981,29.847307 C26.006142,29.847307 23.965149,29.085814 22.509003,27.562828 C21.052856,26.039841 20.324783,23.955881 20.324783,21.310946 C20.324783,18.637365 21.052856,16.543856 22.509003,15.030417 C23.965149,13.516981 26.006142,12.760262 28.631981,12.760262 z M39.473679,13.261557 L44.515289,13.261557 L44.515289,21.23933 C44.515289,22.070051 44.536774,22.747995 44.579742,23.273163 C44.622707,23.79833 44.725357,24.242336 44.88768,24.605179 C45.040455,24.939377 45.276779,25.192411 45.596657,25.364285 C45.916531,25.536158 46.362923,25.622095 46.935833,25.622093 C47.289127,25.622095 47.706875,25.536158 48.189075,25.364285 C48.671272,25.192411 49.117668,24.958473 49.528252,24.66247 L49.528252,13.261557 L54.541214,13.261557 L54.541214,29.34601 L49.528252,29.34601 L49.528252,27.569988 C48.65934,28.295675 47.862038,28.847101 47.136353,29.224266 C46.410667,29.601433 45.546524,29.790016 44.543934,29.790016 C42.949333,29.790016 41.705643,29.286331 40.812855,28.278965 C39.920071,27.271599 39.473679,25.755774 39.473679,23.731491 z M68.376534,12.817553 C70.018875,12.817553 71.274498,13.335558 72.143417,14.371571 C73.012329,15.407584 73.446785,16.909086 73.446785,18.876076 L73.446785,29.34601 L68.405174,29.34601 L68.405174,21.368237 C68.405174,20.718937 68.378922,20.072027 68.326401,19.427502 C68.27388,18.782978 68.17601,18.307941 68.032784,18.002388 C67.860909,17.639545 67.612648,17.379349 67.288002,17.221798 C66.963348,17.064249 66.528893,16.985474 65.984634,16.985474 C65.574043,16.985474 65.158684,17.061863 64.738548,17.214638 C64.31842,17.367414 63.869637,17.610901 63.392212,17.945099 L63.392212,29.34601 L58.37925,29.34601 L58.37925,13.261557 L63.392212,13.261557 L63.392212,15.037579 C64.213387,14.340538 65.013069,13.796274 65.791275,13.404785 C66.569473,13.013296 67.431229,12.817553 68.376534,12.817553 z M77.456688,8.6639538 L82.469658,8.6639538 L82.469658,13.261557 L87.296425,13.261557 L87.296425,16.75631 L82.469658,16.75631 L82.469658,22.456766 C82.46965,23.020126 82.474426,23.511875 82.483978,23.932009 C82.493523,24.352142 82.569916,24.729309 82.713142,25.063507 C82.846817,25.397705 83.083145,25.662676 83.422119,25.858419 C83.761093,26.054165 84.255226,26.152037 84.904526,26.152037 C85.171883,26.152037 85.522789,26.094746 85.957245,25.980164 C86.391701,25.865582 86.69487,25.760548 86.866737,25.665062 L87.296425,25.665062 L87.296425,29.202784 C86.752159,29.34601 86.174469,29.458204 85.56337,29.539368 C84.952263,29.620529 84.202705,29.66111 83.314697,29.66111 C81.271317,29.66111 79.784134,29.240976 78.853157,28.400709 C77.92218,27.56044 77.456688,26.185455 77.456688,24.275755 L77.456688,16.75631 L75.537445,16.75631 L75.537445,13.261557 L77.456688,13.261557 z M97.452591,13.275881 L92.052917,20.537518 L97.452591,20.537518 z M97.280724,8.0194302 L102.62311,8.0194302 L102.62311,20.537518 L105.50198,20.537518 L105.50198,24.376015 L102.62311,24.376015 L102.62311,29.403301 L97.452591,29.403301 L97.452591,24.376015 L88.07119,24.376015 L88.07119,20.394289 z M108.00826,8.0194302 L113.36497,8.0194302 L113.36497,21.325268 C113.36497,22.805286 113.64426,23.908138 114.20285,24.633823 C114.76144,25.35951 115.67093,25.722353 116.93134,25.722353 C118.16309,25.722353 119.06781,25.373833 119.64549,24.676792 C120.22318,23.979752 120.51202,22.862577 120.51202,21.325268 L120.51202,8.0194302 L125.86873,8.0194302 L125.86873,21.626045 C125.86873,24.251884 125.11679,26.269005 123.6129,27.67741 C122.10901,29.085814 119.88182,29.790016 116.93134,29.790016 C114.06678,29.790016 111.86346,29.09775 110.32138,27.713217 C108.7793,26.328684 108.00826,24.304401 108.00826,21.640369 z" 								-->
+<!--					    Fill="Black" -->
+<!--					    HorizontalAlignment="Left" -->
+<!--					    Margin="27,9,0,0" -->
+<!--					    RenderTransformOrigin="0.5,0.5" -->
+<!--					    Stretch="Fill" -->
+<!--					    VerticalAlignment="Top" -->
+<!--					    Height="20"-->
+<!--					    Width="110" -->
+<!--					    Stroke="#FF999999" -->
+<!--					    StrokeThickness="1.2">-->
+<!--                        <Path.Effect>-->
+<!--                            <DropShadowEffect RenderingBias="Quality"  ShadowDepth="0" Opacity="1" Color="#FF999999" BlurRadius="15" />-->
+<!--                        </Path.Effect>-->
+<!--                    </Path>-->
+                    <!-- program version -->
+                    
+                    <TextBlock FontFamily="Tahoma" FontWeight="Bold" FontSize="10" Width="85" Background="Transparent"
+							   Text="v. 1.0.1.2" Foreground="#999999" Margin="46,35,0,0" HorizontalAlignment="Left" Height="19" 
+                               VerticalAlignment="Top" Name="tbVersion" />
+                    
+                    <Image Source="/Count4U.Media;component/Icons/app_name.png" Width="138" Height="63" Margin="9,-9,0,0" HorizontalAlignment="Left" 
+                           VerticalAlignment="Top" Stretch="Fill" RenderOptions.BitmapScalingMode="NearestNeighbor"/>
+                </Grid>
+
+                <ContentControl Grid.Row="1" cal:RegionManager.RegionName="{x:Static Common:RegionNames.ApplicationWindow}" />
+
+                <ContentControl Grid.Row="2" cal:RegionManager.RegionName="{x:Static Common:RegionNames.ApplicationBottom}" />
+            </Grid>
+        </Border>
+    </Border>
+</Window>

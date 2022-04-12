@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{7D2AE23A-E672-412C-A524-CCFD9E2719F3}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Count4U.Planogram</RootNamespace>
+    <AssemblyName>Count4U.Planogram</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Xceed.Wpf.Toolkit, Version=1.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Lib\DrawingCanvas.cs" />
+    <Compile Include="Lib\Infrastructure\DrawingCanvasCommandResult.cs" />
+    <Compile Include="Lib\Infrastructure\DrawingInfo.cs" />
+    <Compile Include="Lib\DrawingRectangle.cs" />
+    <Compile Include="Lib\Enums\enCommand.cs" />
+    <Compile Include="Lib\Enums\enPlanObjectType.cs" />
+    <Compile Include="Lib\Enums\enSelectionMode.cs" />
+    <Compile Include="Lib\DrawingObject.cs" />
+    <Compile Include="Lib\Helpers.cs" />
+    <Compile Include="Lib\PlanObject.cs" />
+    <Compile Include="Lib\Tools\ToolPicture.cs" />
+    <Compile Include="Lib\Tools\ToolText.cs" />
+    <Compile Include="ViewModel\Items\PlanPictureInfo.cs" />
+    <Compile Include="ViewModel\Items\PlanPictureItemViewModel.cs" />
+    <Compile Include="ViewModel\Items\PlanPictureToolItemViewModel.cs" />
+    <Compile Include="ViewModel\PlanPictureAssignViewModel.cs" />
+    <Compile Include="ViewModel\Items\PlanTextInfo.cs" />
+    <Compile Include="ViewModel\PlanTextAssignViewModel.cs" />
+    <Compile Include="View\PlanPictureAssignView.xaml.cs">
+      <DependentUpon>PlanPictureAssignView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanObjects\PlanPicture.xaml.cs">
+      <DependentUpon>PlanPicture.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanTextAssignView.xaml.cs">
+      <DependentUpon>PlanTextAssignView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanObjects\PlanText.xaml.cs">
+      <DependentUpon>PlanText.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanObjects\PlanSpecialObject.cs" />
+    <Compile Include="Lib\Scrolling.cs" />
+    <Compile Include="Lib\Tools\Tool.cs" />
+    <Compile Include="Lib\Tools\ToolHand.cs" />
+    <Compile Include="Lib\Tools\ToolLocation.cs" />
+    <Compile Include="Lib\Tools\ToolPointer.cs" />
+    <Compile Include="Lib\Enums\enToolType.cs" />
+    <Compile Include="Lib\Tools\ToolRectangle.cs" />
+    <Compile Include="Lib\Tools\ToolShelf.cs" />
+    <Compile Include="Lib\Tools\ToolWall.cs" />
+    <Compile Include="Lib\Tools\ToolWindow.cs" />
+    <Compile Include="Lib\Tools\ToolZoom.cs" />
+    <Compile Include="PlanogramModeInit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewModel\Items\CanvasToolItemViewModel.cs" />
+    <Compile Include="ViewModel\Items\IturPlanItem.cs" />
+    <Compile Include="ViewModel\Items\PlanAssignedLocations.cs" />
+    <Compile Include="ViewModel\Items\PlanInfo.cs" />
+    <Compile Include="ViewModel\Items\PlanInfoItem.cs" />
+    <Compile Include="ViewModel\Items\PlanInfoItemViewModel.cs" />
+    <Compile Include="ViewModel\Items\PlanLocationItemViewModel.cs" />
+    <Compile Include="ViewModel\Items\PlanTreeItemViewModel.cs" />
+    <Compile Include="ViewModel\Items\ScaleItemViewModel.cs" />
+    <Compile Include="ViewModel\Items\UnitPlanItemViewModel.cs" />
+    <Compile Include="ViewModel\PlanAddEditDeleteViewModel.cs" />
+    <Compile Include="ViewModel\PlanBasementViewModel.cs" />
+    <Compile Include="ViewModel\PlanCanvasViewModel.cs" />
+    <Compile Include="ViewModel\PlanInfoViewModel.cs" />
+    <Compile Include="ViewModel\PlanIturAddViewModel.cs" />
+    <Compile Include="ViewModel\PlanLocationAssignViewModel.cs" />
+    <Compile Include="ViewModel\PlanPropertiesViewModel.cs" />
+    <Compile Include="ViewModel\PlanSizeChangeViewModel.cs" />
+    <Compile Include="ViewModel\PlanTreeViewModel.cs" />
+    <Compile Include="View\PlanAddEditDeleteView.xaml.cs">
+      <DependentUpon>PlanAddEditDeleteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanBasementView.xaml.cs">
+      <DependentUpon>PlanBasementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanCanvasView.xaml.cs">
+      <DependentUpon>PlanCanvasView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanInfoView.xaml.cs">
+      <DependentUpon>PlanInfoView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanIturAddView.xaml.cs">
+      <DependentUpon>PlanIturAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanLocationAssignView.xaml.cs">
+      <DependentUpon>PlanLocationAssignView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanObjects\PlanLocation.xaml.cs">
+      <DependentUpon>PlanLocation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanObjects\PlanObjectDecorator.xaml.cs">
+      <DependentUpon>PlanObjectDecorator.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanObjects\PlanShelf.xaml.cs">
+      <DependentUpon>PlanShelf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanObjects\PlanWall.xaml.cs">
+      <DependentUpon>PlanWall.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanObjects\PlanWindow.xaml.cs">
+      <DependentUpon>PlanWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanPropertiesView.xaml.cs">
+      <DependentUpon>PlanPropertiesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanSizeChangeView.xaml.cs">
+      <DependentUpon>PlanSizeChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\PlanTreeView.xaml.cs">
+      <DependentUpon>PlanTreeView.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="View\PlanPictureAssignView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PlanObjects\PlanPicture.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PlanTextAssignView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PlanAddEditDeleteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanBasementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanCanvasView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanInfoView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanIturAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanLocationAssignView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanObjects\PlanText.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PlanObjects\PlanLocation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\PlanObjects\PlanObjectDecorator.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanObjects\PlanShelf.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanObjects\PlanWall.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanObjects\PlanWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanPropertiesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanSizeChangeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\PlanTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Count4U.Common\Count4U.Common.csproj">
+      <Project>{ea11d75f-fdb9-410d-9f9b-5d055b4377b8}</Project>
+      <Name>Count4U.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.CustomControls\Count4U.CustomControls.csproj">
+      <Project>{d20ac0d3-74fb-489c-977c-5712e022eb2b}</Project>
+      <Name>Count4U.CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Localization\Count4U.Localization.csproj">
+      <Project>{c1716c1b-995a-481b-8853-1b984f75be45}</Project>
+      <Name>Count4U.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Media\Count4U.Media.csproj">
+      <Project>{201020e5-adf0-4e0c-9287-2a7f5e6e6080}</Project>
+      <Name>Count4U.Media</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.Common\Count4U.Model.Common.csproj">
+      <Project>{5e70d036-3982-4d9f-95ca-197e616d7f59}</Project>
+      <Name>Count4U.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ServiceContract\Count4U.Model.ServiceContract.csproj">
+      <Project>{6c200172-9847-40e4-ae97-ec50bbf4d0a4}</Project>
+      <Name>Count4U.Model.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model\Count4U.Model.csproj">
+      <Project>{a3145385-051f-4ffa-9dcb-3014da552419}</Project>
+      <Name>Count4U.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

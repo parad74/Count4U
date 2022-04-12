@@ -1,0 +1,89 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.DashboardItems.MenuDashboardPartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+              xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:dragDrop="clr-namespace:Count4U.Common.View.DragDrop;assembly=Count4U.Common"
+             xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" ContextMenu="{x:Null}">
+
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="boolToVis"></BooleanToVisibilityConverter>
+        <converters:ColorToBrushConverter x:Key="colorToBrush" />
+    </UserControl.Resources>
+    <!--    dd:DragDrop.DropHandler="{Binding}" -->
+    <!--                            dd:DragDrop.DragHandler="{Binding}"-->
+    <!--<ScrollViewer VerticalScrollBarVisibility="Hidden">-->
+    <Grid Background="White">
+            <ItemsControl  ItemsSource="{Binding Path=Commands}" 
+                           dragDrop:DragDrop.IsDragSource="True"
+                           dragDrop:DragDrop.IsDropTarget="True"
+                           dragDrop:DragDrop.DragHandler="{Binding}"
+                           dragDrop:DragDrop.DropHandler="{Binding}"
+                           >
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <WrapPanel />
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemContainerStyle>
+                    <Style TargetType="{x:Type FrameworkElement}">
+                        <Setter Property="Visibility" Value="{Binding Path=IsVisible, Converter={StaticResource boolToVis}}"></Setter>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+                <!--                Background="{Binding Path=BackgroundColor, Converter={StaticResource colorToBrush}}"-->
+                <!--                                Visibility="{Binding Path=IsVisible, Converter=boolToVis}"-->
+                <ItemsControl.ItemTemplate>
+
+                 
+                    <DataTemplate>
+                        <Border Width="64" 
+                                Height="64" 
+                                BorderBrush="LightGray" 
+                                BorderThickness="1"                                 
+                                Margin="4,2,4,2"
+                                ToolTip="{Binding Path=Command.Title}">
+                            
+                            <Grid Background="{Binding Path=BackgroundColor, Converter={StaticResource colorToBrush}}">
+
+                            <ImageButton:ImageButton Margin="0,0,0,0"
+                                             HorizontalAlignment="Center" 
+                                             VerticalAlignment="Center" 								           
+                                             ToolTip="{Binding Path=Command.Title}"
+					                         Command="{Binding Path=Command}" 
+					                         ImageSource="{Binding Path=Image}"
+                                             ImageWidth="48" 
+                                             ImageHeight="48" 
+                                             CenterX="24" 
+                                             CenterY="24"
+                                             ScaleX="1.05"
+                                             ScaleY="1.05"
+                                             >
+                                </ImageButton:ImageButton>
+
+<!--                                <TextBlock -->
+<!--                                    VerticalAlignment="Center" -->
+<!--                                    HorizontalAlignment="Center" -->
+<!--                                    Background="Transparent"-->
+<!--                                    TextWrapping="Wrap">-->
+<!--								        <Hyperlink Command="{Binding Path=Command}">										-->
+<!--                                            <Run Text="{Binding Path=Command.Title}" />-->
+<!--								        </Hyperlink>-->
+<!--                                </TextBlock>-->
+                            </Grid>
+                        </Border>
+
+                      
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
+
+        </Grid>
+
+    <!--</ScrollViewer>-->
+</UserControl>

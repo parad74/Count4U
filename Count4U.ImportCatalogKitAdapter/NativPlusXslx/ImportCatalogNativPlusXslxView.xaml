@@ -1,0 +1,196 @@
+﻿<UserControl x:Class="Count4U.ImportCatalogKitAdapter.NativPlusXslx.ImportCatalogNativPlusXslxView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Interactivity.InteractionRequest;assembly=Microsoft.Practices.Prism.Interactivity"
+             xmlns:Helpers="clr-namespace:Count4U.Common.Helpers;assembly=Count4U.Common"
+             xmlns:my="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+             xmlns:cal="clr-namespace:Microsoft.Practices.Prism.Regions;assembly=Microsoft.Practices.Prism"
+             xmlns:Adapter="clr-namespace:Count4U.Common.View.Adapter;assembly=Count4U.Common"
+             xmlns:ImageButtonCursor="clr-namespace:Count4U.CustomControls.ImageButtonCursor;assembly=Count4U.CustomControls"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="Auto"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Adapter:AdapterOneFileView x:Name="control" />
+             </Grid>
+            
+            <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="37"></RowDefinition>
+            <RowDefinition Height="37"></RowDefinition>
+            <RowDefinition Height="37"></RowDefinition>
+            <RowDefinition Height="37"></RowDefinition>
+            <!--<RowDefinition Height="40"></RowDefinition>
+            <RowDefinition Height="40"></RowDefinition>-->
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>         
+     
+     
+        <CheckBox Grid.Row="1" Grid.Column="0"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportCatalog}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportCatalog}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+        <CheckBox Grid.Row="2" Grid.Column="0"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportLocations}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportLocation}" 
+                  Margin="10,10,0,10" Width="170"  />
+        
+        <CheckBox Grid.Row="3" Grid.Column="0"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportBuildingConfig}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportBuildingConfig}" 
+                  Margin="10,10,0,10" Width="170"  />
+        <CheckBox Grid.Row="4" Grid.Column="0"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPreviousInventory}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPreviousInventory}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+
+                <CheckBox Grid.Row="1" Grid.Column="1"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPropertyStr1List}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPropertyStr1List}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+        <CheckBox Grid.Row="2" Grid.Column="1"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPropertyStr2List}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPropertyStr2List}" 
+                  Margin="10,10,0,10" Width="170"  />
+        <CheckBox Grid.Row="3" Grid.Column="1"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPropertyStr3List}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPropertyStr3List}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+                <CheckBox Grid.Row="4" Grid.Column="1"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPropertyStr4List}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPropertyStr4List}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+
+                <!--  Column="2" -->
+        <CheckBox Grid.Row="1" Grid.Column="2"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPropertyStr5List}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPropertyStr5List}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+        <CheckBox Grid.Row="2" Grid.Column="2"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPropertyStr6List}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPropertyStr6List}" 
+                  Margin="10,10,0,10" Width="170"  />
+        <CheckBox Grid.Row="3" Grid.Column="2"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPropertyStr7List}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPropertyStr7List}" 
+                  Margin="10,10,0,10" Width="170"  />
+                
+        <CheckBox Grid.Row="4" Grid.Column="2"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPropertyStr8List}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPropertyStr8List}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+                <!--  Column="3" -->
+                <CheckBox Grid.Row="1" Grid.Column="3"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPropertyStr9List}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPropertyStr9List}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+                <CheckBox Grid.Row="2" Grid.Column="3"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPropertyStr10List}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPropertyStr10List}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+                <CheckBox Grid.Row="3" Grid.Column="3"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportTemplateInventory}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportTemplateInventory}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+                <CheckBox Grid.Row="4" Grid.Column="3"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportPropertyDecorator}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportPropertyDecorator}" 
+                  Margin="10,10,0,10" Width="170"  />
+                
+                <CheckBox Grid.Row="1" Grid.Column="4"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportProfile}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=ImportProfile}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+                <CheckBox Grid.Row="4" Grid.Column="4"
+                  Content="{x:Static Localization:Resources.View_ImportAdapter_chkImportSelectAllPropertyStrList}"
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  VerticalAlignment="Bottom"
+                  IsChecked="{Binding Path=SelectAll}" 
+                  Margin="10,10,0,10" Width="170"  />
+
+                <!--BuildingConfig-->
+    </Grid>
+    </Grid>
+    </Grid>
+</UserControl>

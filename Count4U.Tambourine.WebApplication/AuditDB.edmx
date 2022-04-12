@@ -1,0 +1,513 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AuditDBModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.4.0" ProviderManifestToken="4.0" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="AuditDBModelStoreContainer">
+          <EntitySet Name="AuditConfig" EntityType="AuditDBModel.Store.AuditConfig" store:Type="Tables" />
+          <EntitySet Name="AuditDBIni" EntityType="AuditDBModel.Store.AuditDBIni" store:Type="Tables" />
+          <EntitySet Name="AuditReport" EntityType="AuditDBModel.Store.AuditReport" store:Type="Tables" />
+          <EntitySet Name="Inventor" EntityType="AuditDBModel.Store.Inventor" store:Type="Tables" />
+          <EntitySet Name="InventorMask" EntityType="AuditDBModel.Store.InventorMask" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="AuditDBModel.Store.Status" store:Type="Tables" />
+          <EntitySet Name="StatusAudit" EntityType="AuditDBModel.Store.StatusAudit" store:Type="Tables" />
+          <EntitySet Name="StatusAuditConfig" EntityType="AuditDBModel.Store.StatusAuditConfig" store:Type="Tables" />
+          <EntitySet Name="StatusInventor" EntityType="AuditDBModel.Store.StatusInventor" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="AuditConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InventorDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="CustomerCode" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="CustomerName" Type="nvarchar" MaxLength="250" />
+          <Property Name="BranchCode" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="BranchName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="InventorCode" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="InventorName" Type="nvarchar" MaxLength="100" />
+          <Property Name="StatusAuditConfig" Type="nvarchar" MaxLength="100" />
+          <Property Name="StatusInventorCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="DBPath" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="AuditDBIni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Ver" Type="nvarchar" MaxLength="10" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="AuditReport">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="DomainContext" Type="nvarchar" MaxLength="100" />
+          <Property Name="TypeDS" Type="nvarchar" MaxLength="100" />
+          <Property Name="Path" Type="nvarchar" MaxLength="250" />
+          <Property Name="FileName" Type="nvarchar" MaxLength="100" />
+          <Property Name="DomainType" Type="nvarchar" MaxLength="100" />
+          <Property Name="Tag" Type="nvarchar" MaxLength="250" />
+          <Property Name="Menu" Type="bit" />
+          <Property Name="MenuCaption" Type="nvarchar" MaxLength="100" />
+          <Property Name="Print" Type="bit" />
+          <Property Name="NN" Type="int" />
+          <Property Name="MenuCaptionLocalizationCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="IturAdvancedSearchMenu" Type="bit" />
+          <Property Name="InventProductAdvancedSearchMenu" Type="bit" />
+          <Property Name="InventProductSumAdvancedSearchMenu" Type="bit" />
+          <Property Name="CustomerSearchMenu" Type="bit" />
+          <Property Name="BranchSearchMenu" Type="bit" />
+          <Property Name="InventorSearchMenu" Type="bit" />
+          <Property Name="AuditConfigSearchMenu" Type="bit" />
+          <Property Name="IturSearchMenu" Type="bit" />
+          <Property Name="InventProductSearchMenu" Type="bit" />
+          <Property Name="LocationSearchMenu" Type="bit" />
+          <Property Name="ProductSearchMenu" Type="bit" />
+          <Property Name="CodeReport" Type="nvarchar" MaxLength="50" />
+          <Property Name="Landscape" Type="bit" />
+          <Property Name="SupplierSearchMenu" Type="bit" />
+          <Property Name="SectionSearchMenu" Type="bit" />
+          <Property Name="ItursPopupMenu" Type="bit" />
+          <Property Name="IturPopupMenu" Type="bit" />
+          <Property Name="DocumentHeaderPopupMenu" Type="bit" />
+          <Property Name="ItursListPopupMenu" Type="bit" />
+        </EntityType>
+        <EntityType Name="Inventor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code " Type="nvarchar" MaxLength="100" />
+          <Property Name="CustomerCode " Type="nvarchar" MaxLength="100" />
+          <Property Name="BranchCode " Type="nvarchar" MaxLength="100" />
+          <Property Name="CreateDate " Type="datetime" />
+          <Property Name="Description " Type="nvarchar" MaxLength="500" />
+          <Property Name="InventorDate " Type="datetime" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="StatusInventorCode " Type="nvarchar" MaxLength="100" />
+          <Property Name="DBPath" Type="nvarchar" MaxLength="250" />
+          <Property Name="ImportCatalogAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportIturAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportLocationAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportCatalogParms" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImportIturParms" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImportLocationParms" Type="nvarchar" MaxLength="500" />
+          <Property Name="ImportSectionAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="UpdateCatalogAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportPDAProviderCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="Restore" Type="nvarchar" MaxLength="100" />
+          <Property Name="RestoreBit" Type="bit" />
+          <Property Name="CompleteDate" Type="datetime" />
+          <Property Name="Manager" Type="nvarchar" MaxLength="100" />
+          <Property Name="ExportERPAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ImportSupplierAdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="PriceCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReportContext" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReportDS" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReportName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ReportPath" Type="nvarchar" MaxLength="100" />
+          <Property Name="Print" Type="bit" />
+          <Property Name="PDAType" Type="nvarchar" MaxLength="100" />
+          <Property Name="MaintenanceType" Type="nvarchar" MaxLength="100" />
+          <Property Name="ProgramType" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="InventorMask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="nvarchar" MaxLength="100" />
+          <Property Name="AdapterCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="FileCode" Type="nvarchar" MaxLength="100" />
+          <Property Name="BarcodeMask" Type="nvarchar" MaxLength="100" />
+          <Property Name="MakadMask" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" MaxLength="15" />
+        </EntityType>
+        <EntityType Name="StatusAudit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code " Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Name " Type="nvarchar" MaxLength="100" />
+          <Property Name="Description " Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="StatusAuditConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code " Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Name " Type="nvarchar" MaxLength="100" />
+          <Property Name="Description " Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="StatusInventor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code " Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Name " Type="nvarchar" MaxLength="100" />
+          <Property Name="Description " Type="nvarchar" MaxLength="500" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AuditDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="AuditDB" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AuditConfig" EntityType="AuditDBModel.AuditConfig" />
+          <EntitySet Name="Inventor" EntityType="AuditDBModel.Inventor" />
+          <EntitySet Name="StatusInventor" EntityType="AuditDBModel.StatusInventor" />
+          <EntitySet Name="StatusAuditConfig" EntityType="AuditDBModel.StatusAuditConfig" />
+          <EntitySet Name="InventorMask" EntityType="AuditDBModel.InventorMask" />
+          <EntitySet Name="Status" EntityType="AuditDBModel.Status" />
+          <EntitySet Name="StatusAudit" EntityType="AuditDBModel.StatusAudit" />
+          <EntitySet Name="AuditDBIni" EntityType="AuditDBModel.AuditDBIni" />
+          <EntitySet Name="AuditReport" EntityType="AuditDBModel.AuditReport" />
+        </EntityContainer>
+        <EntityType Name="AuditConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="InventorDate" Type="DateTime" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="CustomerCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="CustomerName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="BranchCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="BranchName" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Name="Code" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="StatusInventorCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="InventorCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" Nullable="false" />
+          <Property Name="InventorName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="StatusAuditConfig" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DBPath" Type="String" MaxLength="250" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Inventor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CustomerCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="BranchCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="InventorDate" Type="DateTime" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="StatusInventorCode" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="DBPath" Type="String"  MaxLength="250" Unicode="true" FixedLength="false" />
+          <Property Type="String" Name="ImportCatalogAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportIturAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportLocationAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportCatalogParms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportIturParms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportLocationParms" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportSectionAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="UpdateCatalogAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportPDAProviderCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Restore" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="RestoreBit" />
+          <Property Type="DateTime" Name="CompleteDate" Nullable="false" />
+          <Property Type="String" Name="Manager" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ExportERPAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ImportSupplierAdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="PriceCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportContext" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportDS" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ReportPath" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Print" />
+          <Property Type="String" Name="PDAType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MaintenanceType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="ProgramType" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="StatusInventor">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="StatusAuditConfig">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Name" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="InventorMask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="AdapterCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FileCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="BarcodeMask" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="MakadMask" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" MaxLength="15" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="StatusAudit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code_" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Name_" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description_" MaxLength="500" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AuditDBIni">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Ver" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Code" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AuditReport">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Type="Int64" Name="ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DomainContext" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="TypeDS" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Path" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="FileName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="DomainType" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Tag" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Menu" />
+          <Property Type="String" Name="MenuCaption" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Print" />
+          <Property Type="Int32" Name="NN" />
+          <Property Type="String" Name="MenuCaptionLocalizationCode" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="IturAdvancedSearchMenu" />
+          <Property Type="Boolean" Name="InventProductAdvancedSearchMenu" />
+          <Property Type="Boolean" Name="InventProductSumAdvancedSearchMenu" />
+          <Property Type="Boolean" Name="CustomerSearchMenu" />
+          <Property Type="Boolean" Name="BranchSearchMenu" />
+          <Property Type="Boolean" Name="InventorSearchMenu" />
+          <Property Type="Boolean" Name="AuditConfigSearchMenu" />
+          <Property Type="Boolean" Name="IturSearchMenu" />
+          <Property Type="Boolean" Name="InventProductSearchMenu" />
+          <Property Type="Boolean" Name="LocationSearchMenu" />
+          <Property Type="Boolean" Name="ProductSearchMenu" />
+          <Property Type="String" Name="CodeReport" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="Landscape" />
+          <Property Type="Boolean" Name="SupplierSearchMenu" />
+          <Property Type="Boolean" Name="SectionSearchMenu" />
+          <Property Type="Boolean" Name="ItursPopupMenu" />
+          <Property Type="Boolean" Name="IturPopupMenu" />
+          <Property Type="Boolean" Name="DocumentHeaderPopupMenu" />
+          <Property Type="Boolean" Name="ItursListPopupMenu" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AuditDBModelStoreContainer" CdmEntityContainer="AuditDB">
+          <EntitySetMapping Name="AuditConfig"><EntityTypeMapping TypeName="AuditDBModel.AuditConfig"><MappingFragment StoreEntitySet="AuditConfig">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="InventorDate" ColumnName="InventorDate" />
+            <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+            <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+            <ScalarProperty Name="BranchCode" ColumnName="BranchCode" />
+            <ScalarProperty Name="BranchName" ColumnName="BranchName" />
+            <ScalarProperty Name="Code" ColumnName="Code" />
+            <ScalarProperty Name="StatusInventorCode" ColumnName="StatusInventorCode" />
+            <ScalarProperty Name="InventorCode" ColumnName="InventorCode" />
+            <ScalarProperty Name="InventorName" ColumnName="InventorName" />
+            <ScalarProperty Name="StatusAuditConfig" ColumnName="StatusAuditConfig" />
+            <ScalarProperty Name="DBPath" ColumnName="DBPath" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Inventor"><EntityTypeMapping TypeName="AuditDBModel.Inventor"><MappingFragment StoreEntitySet="Inventor">
+            <ScalarProperty Name="ProgramType" ColumnName="ProgramType" />
+                <ScalarProperty Name="MaintenanceType" ColumnName="MaintenanceType" />
+                <ScalarProperty Name="PDAType" ColumnName="PDAType" />
+                <ScalarProperty Name="Print" ColumnName="Print" />
+                <ScalarProperty Name="ReportPath" ColumnName="ReportPath" />
+                <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+                <ScalarProperty Name="ReportDS" ColumnName="ReportDS" />
+                <ScalarProperty Name="ReportContext" ColumnName="ReportContext" />
+                <ScalarProperty Name="PriceCode" ColumnName="PriceCode" />
+                <ScalarProperty Name="ImportSupplierAdapterCode" ColumnName="ImportSupplierAdapterCode" />
+                <ScalarProperty Name="ExportERPAdapterCode" ColumnName="ExportERPAdapterCode" />
+                <ScalarProperty Name="Manager" ColumnName="Manager" />
+                <ScalarProperty Name="CompleteDate" ColumnName="CompleteDate" />
+                <ScalarProperty Name="RestoreBit" ColumnName="RestoreBit" />
+                <ScalarProperty Name="Restore" ColumnName="Restore" />
+                <ScalarProperty Name="ImportPDAProviderCode" ColumnName="ImportPDAProviderCode" />
+                <ScalarProperty Name="UpdateCatalogAdapterCode" ColumnName="UpdateCatalogAdapterCode" />
+                <ScalarProperty Name="ImportSectionAdapterCode" ColumnName="ImportSectionAdapterCode" />
+                <ScalarProperty Name="ImportLocationParms" ColumnName="ImportLocationParms" />
+                <ScalarProperty Name="ImportIturParms" ColumnName="ImportIturParms" />
+                <ScalarProperty Name="ImportCatalogParms" ColumnName="ImportCatalogParms" />
+                <ScalarProperty Name="ImportLocationAdapterCode" ColumnName="ImportLocationAdapterCode" />
+                <ScalarProperty Name="ImportIturAdapterCode" ColumnName="ImportIturAdapterCode" />
+                <ScalarProperty Name="ImportCatalogAdapterCode" ColumnName="ImportCatalogAdapterCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Code" ColumnName="Code " />
+            <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode " />
+            <ScalarProperty Name="BranchCode" ColumnName="BranchCode " />
+            <ScalarProperty Name="CreateDate" ColumnName="CreateDate " />
+            <ScalarProperty Name="Description" ColumnName="Description " />
+            <ScalarProperty Name="InventorDate" ColumnName="InventorDate " />
+            <ScalarProperty Name="Name" ColumnName="Name" />
+            <ScalarProperty Name="StatusInventorCode" ColumnName="StatusInventorCode " />
+			 <ScalarProperty Name="DBPath" ColumnName="DBPath" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="StatusInventor"><EntityTypeMapping TypeName="AuditDBModel.StatusInventor"><MappingFragment StoreEntitySet="StatusInventor">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Code" ColumnName="Code " />
+            <ScalarProperty Name="Name" ColumnName="Name " />
+            <ScalarProperty Name="Description" ColumnName="Description " />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="StatusAuditConfig"><EntityTypeMapping TypeName="AuditDBModel.StatusAuditConfig"><MappingFragment StoreEntitySet="StatusAuditConfig">
+            <ScalarProperty Name="ID" ColumnName="ID" />
+            <ScalarProperty Name="Code" ColumnName="Code " />
+            <ScalarProperty Name="Name" ColumnName="Name " />
+            <ScalarProperty Name="Description" ColumnName="Description " />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="InventorMask">
+            <EntityTypeMapping TypeName="AuditDBModel.InventorMask">
+              <MappingFragment StoreEntitySet="InventorMask">
+                <ScalarProperty Name="MakadMask" ColumnName="MakadMask" />
+                <ScalarProperty Name="BarcodeMask" ColumnName="BarcodeMask" />
+                <ScalarProperty Name="FileCode" ColumnName="FileCode" />
+                <ScalarProperty Name="AdapterCode" ColumnName="AdapterCode" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="AuditDBModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="StatusAudit">
+            <EntityTypeMapping TypeName="AuditDBModel.StatusAudit">
+              <MappingFragment StoreEntitySet="StatusAudit">
+                <ScalarProperty Name="Description_" ColumnName="Description " />
+                <ScalarProperty Name="Name_" ColumnName="Name " />
+                <ScalarProperty Name="Code_" ColumnName="Code " />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditDBIni">
+            <EntityTypeMapping TypeName="AuditDBModel.AuditDBIni">
+              <MappingFragment StoreEntitySet="AuditDBIni">
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Ver" ColumnName="Ver" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AuditReport">
+            <EntityTypeMapping TypeName="AuditDBModel.AuditReport">
+              <MappingFragment StoreEntitySet="AuditReport">
+                <ScalarProperty Name="ItursListPopupMenu" ColumnName="ItursListPopupMenu" />
+                <ScalarProperty Name="DocumentHeaderPopupMenu" ColumnName="DocumentHeaderPopupMenu" />
+                <ScalarProperty Name="IturPopupMenu" ColumnName="IturPopupMenu" />
+                <ScalarProperty Name="ItursPopupMenu" ColumnName="ItursPopupMenu" />
+                <ScalarProperty Name="SectionSearchMenu" ColumnName="SectionSearchMenu" />
+                <ScalarProperty Name="SupplierSearchMenu" ColumnName="SupplierSearchMenu" />
+                <ScalarProperty Name="Landscape" ColumnName="Landscape" />
+                <ScalarProperty Name="CodeReport" ColumnName="CodeReport" />
+                <ScalarProperty Name="ProductSearchMenu" ColumnName="ProductSearchMenu" />
+                <ScalarProperty Name="LocationSearchMenu" ColumnName="LocationSearchMenu" />
+                <ScalarProperty Name="InventProductSearchMenu" ColumnName="InventProductSearchMenu" />
+                <ScalarProperty Name="IturSearchMenu" ColumnName="IturSearchMenu" />
+                <ScalarProperty Name="AuditConfigSearchMenu" ColumnName="AuditConfigSearchMenu" />
+                <ScalarProperty Name="InventorSearchMenu" ColumnName="InventorSearchMenu" />
+                <ScalarProperty Name="BranchSearchMenu" ColumnName="BranchSearchMenu" />
+                <ScalarProperty Name="CustomerSearchMenu" ColumnName="CustomerSearchMenu" />
+                <ScalarProperty Name="InventProductSumAdvancedSearchMenu" ColumnName="InventProductSumAdvancedSearchMenu" />
+                <ScalarProperty Name="InventProductAdvancedSearchMenu" ColumnName="InventProductAdvancedSearchMenu" />
+                <ScalarProperty Name="IturAdvancedSearchMenu" ColumnName="IturAdvancedSearchMenu" />
+                <ScalarProperty Name="MenuCaptionLocalizationCode" ColumnName="MenuCaptionLocalizationCode" />
+                <ScalarProperty Name="NN" ColumnName="NN" />
+                <ScalarProperty Name="Print" ColumnName="Print" />
+                <ScalarProperty Name="MenuCaption" ColumnName="MenuCaption" />
+                <ScalarProperty Name="Menu" ColumnName="Menu" />
+                <ScalarProperty Name="Tag" ColumnName="Tag" />
+                <ScalarProperty Name="DomainType" ColumnName="DomainType" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Path" ColumnName="Path" />
+                <ScalarProperty Name="TypeDS" ColumnName="TypeDS" />
+                <ScalarProperty Name="DomainContext" ColumnName="DomainContext" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="AuditDB" ZoomLevel="95">
+        <EntityTypeShape EntityType="AuditDBModel.AuditConfig" Width="2.875" PointX="0.75" PointY="0.75" Height="3.7109993489583326" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuditDBModel.Inventor" Width="3" PointX="4.375" PointY="0.5" Height="5.057109375" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuditDBModel.StatusInventor" Width="1.5" PointX="8.875" PointY="4.375" Height="1.7879850260416657" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuditDBModel.StatusAuditConfig" Width="1.5" PointX="1.75" PointY="5.625" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="AuditDBModel.InventorMask" Width="1.5" PointX="8.75" PointY="6.375" Height="2.1725878906249996" />
+        <EntityTypeShape EntityType="AuditDBModel.Status" Width="1.5" PointX="8.75" PointY="0.75" Height="1.4033821614583326" />
+        <EntityTypeShape EntityType="AuditDBModel.StatusAudit" Width="1.5" PointX="0.75" PointY="8.75" Height="1.7879850260416674" />
+        <EntityTypeShape EntityType="AuditDBModel.AuditDBIni" Width="1.5" PointX="3.375" PointY="8.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="AuditDBModel.AuditReport" Width="1.5" PointX="5.375" PointY="8.75" Height="2.5571907552083317" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

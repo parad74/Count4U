@@ -1,0 +1,356 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.Pack.PackView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             xmlns:treeListView="clr-namespace:Count4U.CustomControls.TreeListView;assembly=Count4U.CustomControls"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:uiCommandService="clr-namespace:Count4U.Common.Services.UICommandService;assembly=Count4U.Common"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid>
+        <Grid.Resources>
+
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common,ProcessorArchitecture=MSIL;component/CommonResources.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Buttons/ButtonThemeV7.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Modules.ContextCBI,ProcessorArchitecture=MSIL;component/Views/Pack/PackCommonResources.xaml"/>
+
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/TreeListView/TreeListView.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/TreeListView/TreeListViewColumnTemplate.xaml" />
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/TreeListView/TreeListViewItem.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+
+                <BooleanToVisibilityConverter x:Key="boolToVis"></BooleanToVisibilityConverter>
+            </ResourceDictionary>
+
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" BorderBrush="{StaticResource backForwardLineBorderBrush}" Background="{StaticResource backForwardLineBrush}"  BorderThickness="1">
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <ContentControl Grid.Column="0" x:Name="backForward" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"
+												 />
+                </Grid>
+
+                <Grid Grid.Column="1" Margin="10,0,0,0">
+
+                    <Path
+						Style="{StaticResource verticalLinePart1}"
+						Margin="0,5,0,0" 
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                    <Path
+						Style="{StaticResource verticalLinePart2}"
+						Margin="1,5,0,0"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					/>
+
+                </Grid>
+
+                <Grid Grid.Column="2">
+
+                    <ImageButton:ImageButton Margin="10,0,0,00" HorizontalAlignment="Left" VerticalAlignment="Center" 
+								             Name="btnFilter"                                             
+                                             ToolTip="{x:Static Localization:Resources.Command_Filter}"					                         
+                                             ImageWidth="24" ImageHeight="24" CenterX="12" CenterY="12">
+                        <ImageButton:ImageButton.Style>
+                            <Style TargetType="{x:Type ImageButton:ImageButton}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding Path=IsFilterAnyField}" Value="True">
+                                        <DataTrigger.Setters>
+                                            <Setter Property="ImageSource" Value="{x:Static uiCommandService:UICommandIconRepository.FilterState2}" />
+                                        </DataTrigger.Setters>
+                                    </DataTrigger>
+
+                                    <DataTrigger Binding="{Binding Path=IsFilterAnyField}" Value="False">
+                                        <DataTrigger.Setters>
+                                            <Setter Property="ImageSource" Value="{x:Static uiCommandService:UICommandIconRepository.FilterState1}" />
+                                        </DataTrigger.Setters>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </ImageButton:ImageButton.Style>
+                    </ImageButton:ImageButton>
+
+                </Grid>
+
+            </Grid>
+        </Border>
+
+        <Grid Grid.Row="1">
+
+            <TextBlock Height="23" 
+                       HorizontalAlignment="Left" 
+                       Margin="10,10,0,0" 
+                       Name="textBlock1" 
+                       Text="{x:Static Localization:Resources.View_Pack_tbSelectObjects}"
+                       VerticalAlignment="Top" Width="201" />
+
+            <CheckBox 
+                Margin="10,10,150,10"
+                Content="{x:Static Localization:Resources.View_Pack_tbSelectAllInvestorOnly}"
+                HorizontalAlignment="Right"
+                IsChecked="{Binding Path=SelectAllInventor}"
+                VerticalAlignment="Top"></CheckBox>
+            
+            <CheckBox 
+                Margin="10,10,10,10"
+                Content="{x:Static Localization:Resources.View_Pack_tbExpandTree}"
+                HorizontalAlignment="Right"
+                IsChecked="{Binding Path=IsExpandTree}"
+                VerticalAlignment="Top"></CheckBox>
+            
+
+            <!--            <TreeView Margin="10,39,10,53" -->
+            <!--                      ItemsSource="{Binding Path=Items}" -->
+            <!--                      ItemTemplate="{StaticResource packItemDataTemplate}"-->
+            <!--                      x:Name="tree"-->
+            <!--                      >-->
+            <!--                <TreeView.ItemContainerStyle>-->
+            <!--                    <Style TargetType="{x:Type TreeViewItem}">-->
+            <!--                        <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded, Mode=TwoWay}"></Setter>-->
+            <!--                        <Setter Property="VerticalContentAlignment" Value="Center" />-->
+            <!--                        <Setter Property="ToolTip" Value="{Binding Path=Tooltip}" />-->
+            <!--                        <Setter Property="Visibility" Value="{Binding Path=IsVisible, Converter={StaticResource boolToVis}}"></Setter>-->
+            <!--                    </Style>-->
+            <!--                </TreeView.ItemContainerStyle>-->
+            <!--            </TreeView>-->
+
+            <treeListView:TreeListView Margin="10,39,10,53" 
+                      ItemsSource="{Binding Path=Items}" 
+                      ItemTemplate="{StaticResource packItemDataTemplate}"
+                      x:Name="tree"
+                      >
+                <TreeView.ItemContainerStyle>
+                    <Style TargetType="{x:Type treeListView:TreeListViewItem}" BasedOn="{StaticResource {x:Type treeListView:TreeListViewItem}}">
+                        <Setter Property="IsExpanded" Value="{Binding Path=IsExpanded, Mode=TwoWay}"></Setter>
+                        <Setter Property="VerticalContentAlignment" Value="Center" />
+                        <Setter Property="ToolTip" Value="{Binding Path=Tooltip}" />
+                        <Setter Property="IsSelected" Value="{Binding Path=IsSelected, Mode=TwoWay}"></Setter>
+                        <Setter Property="Visibility" Value="{Binding Path=IsVisible, Converter={StaticResource boolToVis}}"></Setter>
+                    </Style>
+                </TreeView.ItemContainerStyle>
+
+                <treeListView:TreeListView.Columns>
+                    <GridViewColumn x:Name="gvcFieldName" Width="500" Header="" CellTemplate="{StaticResource TreeListViewColumnTemplate}" />
+                    <!--======== Import folder =======-->
+                    <GridViewColumn Width="140">
+                                    
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <TextBlock HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center" 
+                                               Margin="2,1,2,1"
+                                               Text="{x:Static Localization:Resources.View_Pack_columnCatalogFiles}"
+                                               Grid.Row="0"
+                                               >                                        
+                                    </TextBlock>
+                                    
+                                    <CheckBox Grid.Row="1"
+                                              Content="{x:Static Localization:Resources.View_Pack_chkAutoCheck}"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Margin="2,2,2,1"
+                                              IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.AutoCheckCatalogFiles}"
+                                              >
+                                        
+                                    </CheckBox>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+                        
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding Path=ImportFolderIsChecked, Mode=TwoWay}"                                          
+                                          Visibility="{Binding Path=ImportFolderIsVisible, Converter={StaticResource boolToVis}}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center" 
+                                          
+                                          ></CheckBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                    <!--======== End Import folder =======-->
+
+                    <!--========  InData folder =======-->
+                    <GridViewColumn Width="140" >                                
+
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center" 
+                                               Margin="2,1,2,1"
+                                               Text="{x:Static Localization:Resources.View_Pack_columnInDataFiles}"
+                                               Grid.Row="0"
+                                               >
+                                    </TextBlock>
+
+                                    <CheckBox Grid.Row="1"
+                                              Content="{x:Static Localization:Resources.View_Pack_chkAutoCheck}"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Margin="2,2,2,1"
+                                              IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.AutoCheckInDataFiles}"                                              
+                                              >
+
+                                    </CheckBox>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+
+                        <GridViewColumn.CellTemplate>
+                        <DataTemplate>
+                                <CheckBox IsChecked="{Binding Path=ImportFolderInDataIsChecked}"                                          
+                                          Visibility="{Binding Path=ImportFolderInDataIsVisible, Converter={StaticResource boolToVis}}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"></CheckBox>
+                        </DataTemplate>
+                    </GridViewColumn.CellTemplate>
+                </GridViewColumn>
+                    <!--======== End InData folder =======-->
+
+                    <!--======== Config folder=======-->
+
+                    <GridViewColumn Width="140" >
+
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center" 
+                                               Margin="2,1,2,1"
+                                               Text="{x:Static Localization:Resources.View_Pack_columnConfigFiles}"
+                                               Grid.Row="0"
+                                               >
+                                    </TextBlock>
+
+                                    <CheckBox Grid.Row="1"
+                                              Content="{x:Static Localization:Resources.View_Pack_chkAutoCheck}"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Margin="2,2,2,1"
+                                              IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.AutoCheckConfigFiles}"                                              
+                                              >
+
+                                    </CheckBox>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding Path=ImportFolderConfigIsChecked}"                                          
+                                          Visibility="{Binding Path=ImportFolderConfigIsVisible, Converter={StaticResource boolToVis}}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"></CheckBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <!--========End Config folder =======-->
+                    
+                    <!--======== Profile folder=======-->
+
+                    <GridViewColumn Width="140" >
+
+                        <GridViewColumn.HeaderTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                        <RowDefinition Height="Auto"></RowDefinition>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock HorizontalAlignment="Center" 
+                                               VerticalAlignment="Center" 
+                                               Margin="2,1,2,1"
+                                               Text="{x:Static Localization:Resources.View_Pack_columnProfileFiles}"
+                                               Grid.Row="0"
+                                               >
+                                    </TextBlock>
+
+                                    <CheckBox Grid.Row="1"
+                                              Content="{x:Static Localization:Resources.View_Pack_chkAutoCheck}"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"
+                                              Margin="2,2,2,1"
+                                              IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.AutoCheckProfileFiles}"                                              
+                                              >
+
+                                    </CheckBox>
+                                </Grid>
+                            </DataTemplate>
+                        </GridViewColumn.HeaderTemplate>
+
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding Path=ImportFolderProfileIsChecked}"                                          
+                                          Visibility="{Binding Path=ImportFolderInDataIsVisible, Converter={StaticResource boolToVis}}"
+                                          HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"></CheckBox>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                    <!--========End Profile folder =======-->
+
+                </treeListView:TreeListView.Columns>
+            </treeListView:TreeListView>
+
+            <Button Content="{x:Static Localization:Resources.Command_Pack}"
+                Height="33" 
+                HorizontalAlignment="Left" 
+                Margin="10,0,0,10"                 
+                VerticalAlignment="Bottom" 
+                Width="127"
+                Style="{StaticResource ButtonStyleV7}"
+				Command="{Binding Path=PackCommand}"/>
+
+            <xctk:BusyIndicator IsBusy="{Binding Path=IsBusy}" 
+                                      BusyContent="{x:Static Localization:Resources.View_Pack_busyContent}"
+									  BusyContentTemplate="{StaticResource busyTemplate}">
+
+                <xctk:BusyIndicator.ProgressBarStyle>
+                    <Style TargetType="ProgressBar">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                    </Style>
+                </xctk:BusyIndicator.ProgressBarStyle>
+            </xctk:BusyIndicator>
+        </Grid>
+
+    </Grid>
+</UserControl>

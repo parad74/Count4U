@@ -1,0 +1,14 @@
+﻿body {
+}
+
+#container {
+    background-color: azure;
+    width: 800px;
+    height: 800px;
+    margin: 20px 20px 20px 20px;
+}
+
+canvas {
+    border: medium double black;
+    margin: 4px;
+}

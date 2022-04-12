@@ -1,0 +1,681 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{83008678-0C79-4E48-BC3D-D9B4580DF56A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Count4U.Report</RootNamespace>
+    <AssemblyName>Count4U.Report</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServerCompact, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.6.2.0\lib\net45\EntityFramework.SqlServerCompact.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ErikEJ.SqlCe40, Version=2.1.6.14, Culture=neutral, PublicKeyToken=03b0b5a60fec3719, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErikEJ.SqlCeBulkCopy.2.1.6.15\lib\net40\ErikEJ.SqlCe40.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\Lib\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.Design.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLog">
+      <HintPath>..\Lib\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Salient.Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=03b0b5a60fec3719, processorArchitecture=MSIL">
+      <HintPath>..\packages\ErikEJ.SqlCeBulkCopy.2.1.6.15\lib\net40\Salient.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.1, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.SqlServerCompact.PrivateDeployment.6.2.0.1\lib\net45\System.Data.SqlServerCe.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\Lib\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Zen.Barcode.Core">
+      <HintPath>..\Lib\Zen.Barcode.Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Enum\FilterAndSortEnum.cs" />
+    <Compile Include="ExportProvider\PrintReportProvider.cs" />
+    <Compile Include="ExportProvider\SaveReportProvider.cs" />
+    <Compile Include="Interface\IReportInfoRepository.cs" />
+    <Compile Include="Interface\IReportIniRepository.cs" />
+    <Compile Include="Interface\IGenerateReportRepository.cs" />
+    <Compile Include="Interface\IReportPrintProvider.cs" />
+    <Compile Include="Interface\IContextReportRepository.cs" />
+    <Compile Include="Interface\IReportSaveProvider.cs" />
+    <Compile Include="Interface\IReportRepository.cs" />
+    <Compile Include="Interface\IScriptReportRepository.cs" />
+    <Compile Include="MapptingEF\ReportMapper.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ReportIni\ReportInfoRepository.cs" />
+    <Compile Include="ReportIni\ReportInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReportIni\ReportIniRepository.cs" />
+    <Compile Include="ReportModuleInit.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\Report.cs" />
+    <Compile Include="Report\ReportEFRepository.cs" />
+    <Compile Include="Report\ReportEnum.cs" />
+    <Compile Include="Report\Reports.cs" />
+    <Compile Include="Repository\ContextReport\ContextReport.cs" />
+    <Compile Include="Repository\ContextReport\ContextReports.cs" />
+    <Compile Include="Repository\ContextReport\ContextReportRepository.cs" />
+    <Compile Include="Repository\Generate\GenerateReportArgs.cs" />
+    <Compile Include="Repository\Generate\GenerateReportRepository.cs" />
+    <Compile Include="Repository\Script\ScriptReportRepository.cs" />
+    <Compile Include="Services\ImportPdaPrintQueue.cs" />
+    <Compile Include="Services\PrintQueueItem.cs" />
+    <Compile Include="ViewModels\BaseReportTemplateViewModel.cs" />
+    <Compile Include="ViewModels\ExportPda\ExportPdaExtraSettingsViewModel.cs" />
+    <Compile Include="ViewModels\ReportAddEditViewModel.cs" />
+    <Compile Include="ViewModels\ReportButton\ColorArray.cs" />
+    <Compile Include="ViewModels\ReportButton\MenuTagItemViewModel.cs" />
+    <Compile Include="ViewModels\ReportButton\ReportButtonViewModel.cs" />
+    <Compile Include="ViewModels\ReportFavoritesViewModel.cs" />
+    <Compile Include="ViewModels\ReportItemViewModel.cs" />
+    <Compile Include="ViewModels\Script\ReportScriptSaveViewModel.cs" />
+    <Compile Include="ViewModels\Script\ReportScriptOpenViewModel.cs" />
+    <Compile Include="ViewModels\ReportTemplateViewModel.cs" />
+    <Compile Include="Views\ExportPda\ExportPdaExtraSettingsView.xaml.cs">
+      <DependentUpon>ExportPdaExtraSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportAddEditView.xaml.cs">
+      <DependentUpon>ReportAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportFavoritesView.xaml.cs">
+      <DependentUpon>ReportFavoritesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportNameConverter.cs" />
+    <Compile Include="Views\Script\ReportScriptSaveView.xaml.cs">
+      <DependentUpon>ReportScriptSaveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Script\ReportScriptView.xaml.cs">
+      <DependentUpon>ReportScriptView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportsWinForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ReportsWinForm.Designer.cs">
+      <DependentUpon>ReportsWinForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReportTemplateView.xaml.cs">
+      <DependentUpon>ReportTemplateView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ReportTemplate\en\AuditConfig\Rep-AC1-01-AuditConfigDetaile.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Branch\Rep-BR1-01-BranchDetaile.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Catalog\PR1-01-Catalog_Detailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Catalog\PR1-01p-Catalog_Detailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\ContextReport1.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Context\ContextReport.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Customer\Rep-C1-01-CustomerDetaile.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\DeviceWorker\Rep-DW1-13p-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\DeviceWorker\Rep-DW1-12dp-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\DeviceWorker\Rep-DW1-12sp-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\DeviceWorker\Rep-DW1-11p-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\DeviceWorker\Rep-DW1-11-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\DeviceWorker\Rep-DW1-12-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Device\Rep-DV1-103-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\DeviceWorker\Rep-DW1-02-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\DeviceWorker\Rep-DW1-01-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\DeviceWorker\Rep-DW1-03-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Doc\Rep-DH1-02-DocumentsStatistic.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Doc\DocumentStatus.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Family\Rep_FM1-01-FamilyDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Inventor\Rep-I1-01-InventorDetaile.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-17-Iturs_Summary_Report_BranchXXX_Supplier.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-22f-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-29p-Total_Inventory_SummaryPartial_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-12f_Family_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-27p-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-05-DetailedBySection_Report_BranchXXX.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-23p-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-25p-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-32p-JAFORA_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-07-Supplier_Summary_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-22s-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-24-Iturs_Summary_Report_BranchXXX_With_Sections_Ext.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-03-Iturs_Summary_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-04-Iturs_Summary_Report_BranchXXX_With_Departments-Sections.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-01-Iturs_Corporative_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-02-DetailedBySection_Report_BranchXXX.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-12-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-22p-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-22-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\Sum\Rep-IS1-14-Summary_Report_BranchXXX_Sections.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-53ps-Inventory_Detailed_Report_XXX_WithDateTime.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-90cd-Count_Report_Day_NOWDATE.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-58bi-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-54sn10-Inventory_Itur_Makat_SN_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-58dt-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-86-Report_CountMakatByItur6_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-58qp-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-83-Inventory_Summary_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-62np-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-62n-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-81p-Documents_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-54cd-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-53pt-Inventory_Detailed_Report_XXX_WithDateTime.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Rep-IT2-07-Document_Report_With_Partial_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-56nc-Inventory_Not_Exist_In_Catalog_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-54sn-Inventory_Itur_Makat_SN_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-63s-Detailed_Report_BranchXXX.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-63v-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-54b-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-54i-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-54m-Inventory_Detailed_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Doc\AddIn\Simple\Rep-DH3-03-Document_Report_XXX_YYY_ZZZ.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-58b-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\AddIn\ExcludeLocation\Rep-IS1-85L-Not_Exist_In_All_Others_Location_XXX_NOWDATE.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-63q-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-92L-Count_Report_Location.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-93-Report_Without_SN_Supplier_NOWDATE_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-94-Report_ModifyDate_NOWDATE_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-90c-Count_Report_Day_NOWDATE.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-82p-Documents_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-90-Count_Report_Day_NOWDATE.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-92-Count_Report_Itur.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-82L-Documents_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Rep-IT2-53p-Inventory_Detailed_Report_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-69p-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-69-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-59-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-59p-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-80L-Documents_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-58p-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-58-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Rep-IT2-04-LadyComfort_Itur_Family_Report_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Rep-IT2-06-PriorityKedsShowRoom_Itur_Family_Report_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-65p-Sfira_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-80-Documents_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-64p-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-57p-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-57-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-56-Inventory_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-64-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-75p-Lady_Comfort_Itur_Family_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Rep-IT2-05-Made4Net_Report_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-55-Summary_Report_Family_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-53-Inventory_Detailed_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-77-Location_Family_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-77L-Location_Family_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-74p-Inventory_Detailed_Itur_Family_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Rep-IT2-03-Documents_Family_Report_Sum_Quantity_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-70-Documents_Family_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Doc\AddIn\Simple\Document_Report_Sum_Quantity_XXX_YYY_ZZZ.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Rep-IT2-02-Document_Report_Sum_Quantity_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-60-Documents_Report__Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-54p-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-54-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-50-Summary_Documents_Report__BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-51-Summary_Report_Iturs_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Rep-IT2-01-Document_Report_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Doc\PDA\Rep-IP4-01-Detailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-62b-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-52-Summary_Report_Locations_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-53p-Inventory_Detailed_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Doc\AddIn\Simple\Document_Report_XXX_YYY_ZZZ.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-62-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\Doc\DocDocumentReport.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Itur\IturDocumentReport.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Iturs\Rep-IS1-95-Report_CompareQuntetyByIturMakatDoc_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Itur\Rep-IT1-02-IturPlain_VVV.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Itur\Rep-IT1-03-IturBarcodes_VVV.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Itur\Rep-IT1-01-IturDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Location\ImportLocation.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Location\Rep-L1-02-TagLocationDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Location\Rep-L1-01-LocationDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Location\Rep-L1-03-TagLocationCount.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\PDA\Rep-IP1-05-InventProductSumByItur.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\PDA\Rep-IP1-04-InventProductProperty.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\PDA\Rep-IP1-03-InventProductCompare.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\PDA\Rep-IP1-02-InventProductCompare.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\PDA\Rep-IP1-01-InventProductDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Section\Rep-SK1-01-SectionDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Supplier\Rep-SP1-03-IturSupplierDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Supplier\Rep-SP1-02-SupplierIturDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\en\Supplier\Rep-SP1-01-SupplierDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\AuditConfig\Rep-AC1-01-AuditConfigDetaile.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Branch\Rep-BR1-01-BranchDetaile.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Catalog\PR1-01-Catalog_Detailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Catalog\PR1-01p-Catalog_Detailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\ContextReport1.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Context\ContextReport.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Customer\Rep-C1-01-CustomerDetaile.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\DeviceWorker\Rep-DW1-01-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\DeviceWorker\Rep-DW1-02-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\DeviceWorker\Rep-DW1-03-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\DeviceWorker\Rep-DW1-11-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\DeviceWorker\Rep-DW1-11p-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\DeviceWorker\Rep-DW1-12dp-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\DeviceWorker\Rep-DW1-12sp-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\DeviceWorker\Rep-DW1-13-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\DeviceWorker\Rep-DW1-13p-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Device\Rep-DV1-01-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Device\Rep-DV1-02-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Device\Rep-DV1-03-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Device\Rep-DV1-103-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Doc\DocumentStatus.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Doc\Rep-DH1-02-DocumentsStatistic.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Family\Rep_FM1-01-FamilyDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Inventor\Rep-I1-01-InventorDetaile.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\ExcludeLocation\Rep-IS1-85L-Not_Exist_In_All_Others_Location_XXX_NOWDATE.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-17-Iturs_Summary_Report_BranchXXX_Supplier.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-22f-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-29p-Total_Inventory_SummaryPartial_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-12f_Family_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-27p-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-05-DetailedBySection_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-23p-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-07-Supplier_Summary_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-22s-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-24-Iturs_Summary_Report_BranchXXX_With_Sections_Ext.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-02-DetailedBySection_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-12-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-01-Iturs_Corporative_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-03-Iturs_Summary_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-04-Iturs_Summary_Report_BranchXXX_With_Departments-Sections.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-22p-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-22-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-14-Summary_Report_BranchXXX_Sections.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-25p-Total_Inventory_Summary_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\AddIn\Sum\Rep-IS1-32p-JAFORA_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-53ps-Inventory_Detailed_Report_XXX_WithDateTime.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-58bi-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-54sn10-Inventory_Itur_Makat_SN_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-58dt-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-58qp-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-62np-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-62n-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-81p-Documents_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-53pt-Inventory_Detailed_Report_XXX_WithDateTime.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Rep-IT2-07-Document_Report_With_Partial_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-54cd-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-54sn-Inventory_Itur_Makat_SN_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-56nc-Inventory_Not_Exist_In_Catalog_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-63s-Detailed_Report_BranchXXX.rdlc">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-63v-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-54b-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Doc\AddIn\Simple\Rep-DH3-03-Document_Report_XXX_YYY_ZZZ.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-54m-Inventory_Detailed_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-54i-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-58b-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-63q-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-83-Inventory_Summary_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-86-Report_CountMakatByItur6_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-90c-Count_Report_Day_NOWDATE.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-82p-Documents_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-90cd-Count_Report_Day_NOWDATE.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-92-Count_Report_Itur.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-82L-Documents_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Rep-IT2-53p-Inventory_Detailed_Report_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-69-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-69p-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-58p-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Rep-IT2-06-PriorityKedsShowRoom_Itur_Family_Report_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-57p-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-57-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Rep-IT2-05-Made4Net_Report_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Rep-IT2-04-LadyComfort_Itur_Family_Report_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-53-Inventory_Detailed_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Rep-IT2-03-Documents_Family_Report_Sum_Quantity_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-56-Inventory_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-58-Inventory_Makat_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-59-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-59p-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-64-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-64p-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-65p-Sfira_DD_MM_YY_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-70-Documents_Family_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-60-Documents_Report__Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Rep-IT2-02-Document_Report_Sum_Quantity_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Doc\AddIn\Simple\Document_Report_Sum_Quantity_XXX_YYY_ZZZ.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-54p-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Doc\PDA\Rep-IP4-01-Detailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Rep-IT2-01-Document_Report_XXX_YYY.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-50-Summary_Documents_Report__BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-51-Summary_Report_Iturs_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-54-Inventory_Detailed_Itur_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-55-Summary_Report_Family_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-62b-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-52-Summary_Report_Locations_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-53p-Inventory_Detailed_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-62-Detailed_Report_BranchXXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Doc\AddIn\Simple\Document_Report_XXX_YYY_ZZZ.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\Doc\DocDocumentReport.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Itur\IturDocumentReport.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-74p-Inventory_Detailed_Itur_Family_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-75p-Lady_Comfort_Itur_Family_Report_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-77-Location_Family_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-77L-Location_Family_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-80-Documents_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-80L-Documents_Report_Sum_Quantity_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-90-Count_Report_Day_NOWDATE.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-92L-Count_Report_Location.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-93-Report_Without_SN_Supplier_NOWDATE_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-94-Report_ModifyDate_NOWDATE_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Iturs\Rep-IS1-95-Report_CompareQuntetyByIturMakatDoc_XXX.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Itur\Rep-IT1-01-IturDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Itur\Rep-IT1-02-IturPlain_VVV.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Itur\Rep-IT1-03-IturBarcodes_VVV.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Location\ImportLocation.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Location\Rep-L1-01-LocationDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Location\Rep-L1-02-TagLocationDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Location\Rep-L1-03-TagLocationCount.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\PDA\Rep-IP1-01-InventProductDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\PDA\Rep-IP1-02-InventProductCompare.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\PDA\Rep-IP1-03-InventProductCompare.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\PDA\Rep-IP1-04-InventProductProperty.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\PDA\Rep-IP1-05-InventProductSumByItur.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Section\Rep-SK1-01-SectionDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Supplier\Rep-SP1-01-SupplierDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Supplier\Rep-SP1-02-SupplierIturDetailed.rdlc" />
+    <EmbeddedResource Include="ReportTemplate\he\Supplier\Rep-SP1-03-IturSupplierDetailed.rdlc" />
+    <EmbeddedResource Include="Views\ReportsWinForm.resx">
+      <DependentUpon>ReportsWinForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Count4U.Common\Count4U.Common.csproj">
+      <Project>{EA11D75F-FDB9-410D-9F9B-5D055B4377B8}</Project>
+      <Name>Count4U.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.CustomControls\Count4U.CustomControls.csproj">
+      <Project>{D20AC0D3-74FB-489C-977C-5712E022EB2B}</Project>
+      <Name>Count4U.CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Localization\Count4U.Localization.csproj">
+      <Project>{C1716C1B-995A-481B-8853-1B984F75BE45}</Project>
+      <Name>Count4U.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.Common\Count4U.Model.Common.csproj">
+      <Project>{5E70D036-3982-4D9F-95CA-197E616D7F59}</Project>
+      <Name>Count4U.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ExportImport\Count4U.Model.ExportImport.csproj">
+      <Project>{A511450D-26CB-4D17-92B1-4C9A331B5290}</Project>
+      <Name>Count4U.Model.ExportImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ServiceContract\Count4U.Model.ServiceContract.csproj">
+      <Project>{6c200172-9847-40e4-ae97-ec50bbf4d0a4}</Project>
+      <Name>Count4U.Model.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model\Count4U.Model.csproj">
+      <Project>{A3145385-051F-4FFA-9DCB-3014DA552419}</Project>
+      <Name>Count4U.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\ExportPda\ExportPdaExtraSettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ReportAddEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReportFavoritesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Script\ReportScriptSaveView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Script\ReportScriptView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReportTemplateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="ReportIni\ContextMenuReport.ini" />
+    <None Include="ReportIni\PrintReport.ini" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.GenerationReport.ContextReport.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.Device.datasource">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.Family.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.Shelf.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.BranchFilterData.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.CustomerFilterData.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.InventorFilterData.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.InventProductSimpleFilterData.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.IturAdvancedFilterData.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.IturFilterData.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.LocationFilterData.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.ProductFilterData.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.SectionFilterData.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.SupplierFilterData.datasource" />
+    <EmbeddedResource Include="ReportTemplate\en\DeviceWorker\Rep-DW1-13-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <None Include="ReportTemplate\en\Device\Rep-DV1-01-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <None Include="ReportTemplate\en\Device\Rep-DV1-02-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <None Include="ReportTemplate\en\Device\Rep-DV1-03-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.BranchFilterData.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.CustomerFilterData.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.InventorFilterData.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.InventProductFilterData.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.InventProductFilterData.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Common.ViewModel.Filter.Data.InventProductSumFilterData.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ReportIni\ExportReport.ini" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Audit.AuditConfig.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Audit.Inventor.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.DocumentHeader.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.InventProduct.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.Itur.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.IturAnalyzes.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.Location.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.Product.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.Section.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.Session.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Count4U.Supplier.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Main.Branch.datasource" />
+    <None Include="ReportTemplate\en\DataSources\Count4U.Model.Main.Customer.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.InventProductSimpleFilterData.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.InventProductSumFilterData.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.IturAdvancedFilterData.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.IturFilterData.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.LocationFilterData.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.ProductFilterData.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.SectionFilterData.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Common.ViewModel.Filter.Data.SupplierFilterData.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.GenerationReport.ContextReport.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Audit.AuditConfig.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Audit.Inventor.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.Device.datasource">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.DocumentHeader.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.Family.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.InventProduct.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.Itur.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.IturAnalyzes.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.Location.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.Product.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.Section.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.Session.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.Shelf.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Count4U.Supplier.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Main.Branch.datasource" />
+    <None Include="ReportTemplate\he\DataSources\Count4U.Model.Main.Customer.datasource" />
+    <EmbeddedResource Include="ReportTemplate\he\DeviceWorker\Rep-DW1-12-DeviceStatistic_DD_MM_YY_XXX.rdlc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+    <Folder Include="ReportTemplate\en\Catalog\AddIn\" />
+    <Folder Include="ReportTemplate\en\Doc\AddIn\" />
+    <Folder Include="ReportTemplate\en\Doc\PDA\AddIn\" />
+    <Folder Include="ReportTemplate\en\Iturs\AddIn\WorkerSession\" />
+    <Folder Include="ReportTemplate\en\Iturs\Itur\AddIn\" />
+    <Folder Include="ReportTemplate\en\Iturs\Itur\Doc\PDA\AddIn\" />
+    <Folder Include="ReportTemplate\en\Itur\AddIn\" />
+    <Folder Include="ReportTemplate\en\PDA\AddIn\" />
+    <Folder Include="ReportTemplate\en\XlsxTemplate\Clalit\" />
+    <Folder Include="ReportTemplate\en\XlsxTemplate\Merkava\" />
+    <Folder Include="ReportTemplate\he\Branch\PDA\AddIn\" />
+    <Folder Include="ReportTemplate\he\Catalog\AddIn\" />
+    <Folder Include="ReportTemplate\he\Doc\AddIn\" />
+    <Folder Include="ReportTemplate\he\Doc\PDA\AddIn\" />
+    <Folder Include="ReportTemplate\he\Iturs\Itur\AddIn\" />
+    <Folder Include="ReportTemplate\he\Iturs\Itur\Doc\PDA\AddIn\" />
+    <Folder Include="ReportTemplate\he\Itur\AddIn\" />
+    <Folder Include="ReportTemplate\he\PDA\AddIn\" />
+    <Folder Include="ReportTemplate\he\XlsxTemplate\Clalit\" />
+    <Folder Include="ReportTemplate\he\XlsxTemplate\Merkava\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReportTemplate\ReportLinkScript\AuditReportLinkScript.txt" />
+    <Content Include="ReportTemplate\ReportLinkScript\MainReportLinkScript27032022.txt" />
+    <Content Include="ReportTemplate\ReportLinkScript\MainReportLinkScript.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(ProjectDir)ReportIni\ExportReport.ini  $(SolutionDir)Count4U\$(OutDir)
+copy $(ProjectDir)ReportIni\PrintReport.ini  $(SolutionDir)Count4U\$(OutDir)
+copy $(ProjectDir)ReportIni\ContextMenuReport.ini  $(SolutionDir)Count4U\$(OutDir)
+
+
+    if not exist "$(TargetDir)x86" md "$(TargetDir)x86"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\x86\*.*" "$(TargetDir)x86"
+    if not exist "$(TargetDir)amd64" md "$(TargetDir)amd64"
+    xcopy /s /y "$(SolutionDir)packages\Microsoft.SqlServer.Compact.4.0.8876.1\NativeBinaries\amd64\*.*" "$(TargetDir)amd64"</PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

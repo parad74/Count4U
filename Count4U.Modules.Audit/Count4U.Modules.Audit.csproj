@@ -1,0 +1,910 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BF74955A-3599-4E98-9DBF-7C581EBF74CD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Count4U.Modules.Audit</RootNamespace>
+    <AssemblyName>Count4U.Modules.Audit</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\Lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\Lib\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Prism.Interactivity">
+      <HintPath>..\Lib\Microsoft.Practices.Prism.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\Lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity">
+      <HintPath>..\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.Design.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=2.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="ReactiveProperty.NET40, Version=0.3.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\ReactiveProperty.NET40.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Reactive">
+      <HintPath>..\Lib\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading">
+      <HintPath>..\Lib\System.Reactive.Windows.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls.DataVisualization.Toolkit">
+      <HintPath>..\Lib\System.Windows.Controls.DataVisualization.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xceed.Wpf.Toolkit, Version=1.9.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AuditModuleInit.cs" />
+    <Compile Include="Controllers\AuditController.cs" />
+    <Compile Include="Events\Device\DeviceAddedEditedEvent.cs" />
+    <Compile Include="Events\Device\DeviceWorkerNameEditEvent.cs" />
+    <Compile Include="Events\Device\DeviceAddEditEvent.cs" />
+    <Compile Include="Events\DocumentHeader\DocumentHeaderAddedEditedEvent.cs" />
+    <Compile Include="Events\DocumentHeader\DocumentHeaderAddEditEvent.cs" />
+    <Compile Include="Events\InventProduct\InventProductEditEvent.cs" />
+    <Compile Include="Events\InventProduct\InventProductAddedEvent.cs" />
+    <Compile Include="Events\InventProduct\InventProductAddEvent.cs" />
+    <Compile Include="Events\InventProduct\InventProductEditedEvent.cs" />
+    <Compile Include="Events\Itur\IturDeletedEvent.cs" />
+    <Compile Include="Events\Itur\IturDeleteWithItemsEvent.cs" />
+    <Compile Include="Events\Itur\IturTagChangedEvent.cs" />
+    <Compile Include="Events\Itur\IturTagChangeEvent.cs" />
+    <Compile Include="Events\Itur\ShowShelfEvent.cs" />
+    <Compile Include="Events\Itur\IturPrefixChangedEvent.cs" />
+    <Compile Include="Events\Itur\IturPrefixChangeEvent.cs" />
+    <Compile Include="Events\Itur\IturNameChangedEvent.cs" />
+    <Compile Include="Events\Itur\IturNameChangeEvent.cs" />
+    <Compile Include="Events\Itur\IturEditedEvent.cs" />
+    <Compile Include="Events\Itur\IturEditEvent.cs" />
+    <Compile Include="Events\Itur\IturLocationChangedEvent.cs" />
+    <Compile Include="Events\Itur\IturLocationChangeEvent.cs" />
+    <Compile Include="Events\Itur\IturStatusChangedEvent.cs" />
+    <Compile Include="Events\Itur\IturStatusChangeEvent.cs" />
+    <Compile Include="Events\Itur\IturStateChangedEvent.cs" />
+    <Compile Include="Events\Itur\IturStateChangeEvent.cs" />
+    <Compile Include="Events\Location\LocationTagChangedEvent.cs" />
+    <Compile Include="Events\Location\LocationTagChangeEvent.cs" />
+    <Compile Include="Events\Location\LocationSelectedEvent.cs" />
+    <Compile Include="Events\Product\ProductAddedEditedEvent.cs" />
+    <Compile Include="Events\Product\ProductAddEditEvent.cs" />
+    <Compile Include="Events\Section\SectionSelectedEvent.cs" />
+    <Compile Include="Events\Section\SectionTagChangedEvent.cs" />
+    <Compile Include="Events\Section\SectionTagChangeEvent.cs" />
+    <Compile Include="Events\Status\StatusGroupSelectedEvent.cs" />
+    <Compile Include="Events\Status\StatusSelectedEvent.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\Catalog\CatalogFormViewModel.cs" />
+    <Compile Include="ViewModels\Catalog\ProductAddEditViewModel.cs" />
+    <Compile Include="ViewModels\Catalog\ProductItemViewModel.cs" />
+    <Compile Include="ViewModels\Device\DeviceFormWorkerViewModel.cs" />
+    <Compile Include="ViewModels\Device\DeviceFormViewModel.cs" />
+    <Compile Include="ViewModels\Device\DeviceItemViewModel.cs" />
+    <Compile Include="ViewModels\Device\DeviceAddEditViewModel.cs" />
+    <Compile Include="ViewModels\Export\ExportPdaWithModulesViewModel.cs" />
+    <Compile Include="ViewModels\Family\FamilyAddEditDeleteViewModel.cs" />
+    <Compile Include="ViewModels\Family\FamilyAddEditViewModel.cs" />
+    <Compile Include="ViewModels\Family\FamilyItemViewModel.cs" />
+    <Compile Include="ViewModels\DocumentHeader\DocumentHeaderAddEditViewModel.cs" />
+    <Compile Include="ViewModels\DocumentHeader\DocumentHeaderItemViewModel.cs" />
+    <Compile Include="ViewModels\DocumentHeader\DocumentHeaderCloneViewModel.cs" />
+    <Compile Include="ViewModels\ErpExpected\ErpExpectedStep1ViewModel.cs" />
+    <Compile Include="ViewModels\Export\BasePdaViewModel.cs" />
+    <Compile Include="ViewModels\Export\DownloadBaseFromPdaViewModel.cs" />
+    <Compile Include="ViewModels\Export\ExportErpWithModulesViewModel.cs" />
+    <Compile Include="ViewModels\Export\ExportWithModulesBaseViewModel.cs" />
+    <Compile Include="ViewModels\Export\UPloadBaseToPdaViewModel.cs" />
+    <Compile Include="ViewModels\Import\ComplexOperationViewModel.cs" />
+    <Compile Include="ViewModels\Import\ImportFromPdaViewModel.cs" />
+    <Compile Include="ViewModels\Import\ImportWithModulesBaseViewModel.cs" />
+    <Compile Include="ViewModels\Import\ImportWithModulesViewModel.cs" />
+    <Compile Include="ViewModels\InventProduct\InventProductCloneViewModel.cs" />
+    <Compile Include="ViewModels\InventProduct\InventProductItemViewModel.cs" />
+    <Compile Include="ViewModels\InventProduct\InventProductIturInfoItem.cs" />
+    <Compile Include="ViewModels\InventProduct\InventProductListDetailsViewModel.cs" />
+    <Compile Include="ViewModels\InventProduct\InventProductListSimpleViewModel.cs" />
+    <Compile Include="ViewModels\InventProduct\InventProductListSumViewModel.cs" />
+    <Compile Include="ViewModels\InventProduct\InventProductUtils.cs" />
+    <Compile Include="ViewModels\InventProduct\InventProductViewModel.cs" />
+    <Compile Include="ViewModels\Itur\LocationItursChangeViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturSelectDissableViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturDeleteViewModel.cs" />
+    <Compile Include="ViewModels\Itur\Grouping\IturItemGroupTag.cs" />
+    <Compile Include="ViewModels\Itur\SingleItem\TagItemViewModel.cs" />
+    <Compile Include="ViewModels\Misc\ConfigEditAndSaveViewModel.cs" />
+    <Compile Include="ViewModels\PropertyStr\InventProductPropertyStrItemViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturTagChangeViewModel.cs" />
+    <Compile Include="ViewModels\Itur\ShowShelfViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturPrefixChangeViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturNameChangeViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturSelectViewModel.cs" />
+    <Compile Include="ViewModels\Itur\ProgressItem\ProgressItemViewModel.cs" />
+    <Compile Include="ViewModels\Location\TagSelectViewModel.cs" />
+    <Compile Include="ViewModels\Location\LocationTagChangeViewModel.cs" />
+    <Compile Include="ViewModels\Location\LocationCodeSelectViewModel.cs" />
+    <Compile Include="ViewModels\Location\LocationMultiAddViewModel.cs" />
+    <Compile Include="ViewModels\Location\LocationListViewModelBuilder.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\FamilyControl\SearchFamilyFieldViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\FamilyControl\SearchFamilyViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventProductControl\Advanced\Field\SearchInventProductAdvancedFieldSimpleViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventProductControl\Advanced\Field\SearchInventProductAdvancedFieldSumViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventProductControl\Advanced\Field\SectionItem2ViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventProductControl\Advanced\Grid\Items\InventProductAdvancedItemSimpleViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventProductControl\Advanced\Grid\Items\InventProductAdvancedItemSumViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventProductControl\Advanced\Grid\SearchInventProductAdvancedGridSimpleViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventProductControl\Advanced\Grid\SearchInventProductAdvancedGridSumViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventProductControl\Advanced\SearchInventProductAdvancedFieldViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventProductControl\Advanced\SearchInventProductAdvancedViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventProductControl\SearchInventProductFieldViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\InventProductControl\SearchInventProductViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\IturControl\SearchIturAdvancedViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\IturControl\SearchIturAdvancedFieldViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturStateChangeViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\IturControl\SearchIturFieldViewModel.cs" />
+    <Compile Include="ViewModels\Itur\SingleItem\IturItemViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturEditViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturimAddEditDeleteViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturAddViewModel.cs" />
+    <Compile Include="ViewModels\Itur\Grouping\IturItemGroupEmpty.cs" />
+    <Compile Include="ViewModels\Itur\Grouping\IturItemGroupLocation.cs" />
+    <Compile Include="ViewModels\Itur\Grouping\IturItemGroupStatus.cs" />
+    <Compile Include="ViewModels\Itur\SingleItem\IturDashboardItemViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturListDetailsViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturLocationChangeViewModel.cs" />
+    <Compile Include="ViewModels\Itur\IturStatusChangeViewModel.cs" />
+    <Compile Include="ViewModels\Location\LocationAddEditDeleteViewModel.cs" />
+    <Compile Include="ViewModels\Location\LocationItemViewModel.cs" />
+    <Compile Include="ViewModels\Location\LocationAddEditViewModel.cs" />
+    <Compile Include="ViewModels\InventProduct\InventProductAddEditViewModel.cs" />
+    <Compile Include="ViewModels\Misc\ExportLogViewModel.cs" />
+    <Compile Include="ViewModels\Misc\LogViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\IturControl\SearchIturViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\LocationControl\SearchLocationFieldViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\LocationControl\SearchLocationViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\ProductControl\SearchProductFieldViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\ProductControl\SearchProductViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\SectionControl\SearchSectionFieldViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\SectionControl\SearchSectionViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\SupplierControl\SearchSupplierFieldViewModel.cs" />
+    <Compile Include="ViewModels\Misc\Popup\Search\SupplierControl\SearchSupplierViewModel.cs" />
+    <Compile Include="ViewModels\Reports\ReportsViewModel.cs" />
+    <Compile Include="ViewModels\Section\SectionTagChangeViewModel.cs" />
+    <Compile Include="ViewModels\Section\SectionAddEditDeleteViewModel.cs" />
+    <Compile Include="ViewModels\Section\SectionAddEditViewModel.cs" />
+    <Compile Include="ViewModels\Section\SectionItemViewModel.cs" />
+    <Compile Include="ViewModels\Section\SectionListViewModelBuilder.cs" />
+    <Compile Include="ViewModels\Shelf\ShelfItemViewModel.cs" />
+    <Compile Include="ViewModels\Status\StatusGroupItemViewModel.cs" />
+    <Compile Include="ViewModels\Supplier\SupplierAddEditDeleteViewModel.cs" />
+    <Compile Include="ViewModels\Supplier\SupplierAddEditViewModel.cs" />
+    <Compile Include="ViewModels\Supplier\SupplierItemViewModel.cs" />
+    <Compile Include="ViewModels\Utils\ExportImportWithoutGui.cs" />
+    <Compile Include="Views\Catalog\CatalogFormView.xaml.cs">
+      <DependentUpon>CatalogFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Catalog\ProductAddEditView.xaml.cs">
+      <DependentUpon>ProductAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Device\DeviceWorkerFormView.xaml.cs">
+      <DependentUpon>DeviceWorkerFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Device\DeviceFormView.xaml.cs">
+      <DependentUpon>DeviceFormView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Device\DeviceAddEditView.xaml.cs">
+      <DependentUpon>DeviceAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Family\FamilyAddEditDeleteView.xaml.cs">
+      <DependentUpon>FamilyAddEditDeleteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Family\FamilyAddEditView.xaml.cs">
+      <DependentUpon>FamilyAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentHeader\DocumentHeaderCloneView.xaml.cs">
+      <DependentUpon>DocumentHeaderCloneView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ErpExpected\ErpExpectedStep1View.xaml.cs">
+      <DependentUpon>ErpExpectedStep1View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ErpExpected\ErpExpectedStep2View.xaml.cs">
+      <DependentUpon>ErpExpectedStep2View.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Export\DownloadFromPDAView.xaml.cs">
+      <DependentUpon>DownloadFromPDAView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Export\ExportErpWithModulesView.xaml.cs">
+      <DependentUpon>ExportErpWithModulesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Export\ExportPdaWithModulesView.xaml.cs">
+      <DependentUpon>ExportPdaWithModulesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Export\UploadToPdaView.xaml.cs">
+      <DependentUpon>UploadToPdaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ComplexOperationView.xaml.cs">
+      <DependentUpon>ComplexOperationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportFromPdaView.xaml.cs">
+      <DependentUpon>ImportFromPdaView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DocumentHeader\DocumentHeaderAddEditView.xaml.cs">
+      <DependentUpon>DocumentHeaderAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Import\ImportWithModulesView.xaml.cs">
+      <DependentUpon>ImportWithModulesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventProduct\InventProductCloneView.xaml.cs">
+      <DependentUpon>InventProductCloneView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventProduct\InventProductListSimpleView.xaml.cs">
+      <DependentUpon>InventProductListSimpleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventProduct\InventProductListSumView.xaml.cs">
+      <DependentUpon>InventProductListSumView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventProduct\InventProductView.xaml.cs">
+      <DependentUpon>InventProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\Converter\SearchValueToVisiblityConverter.cs" />
+    <Compile Include="Views\Itur\LocationItursChangeView.xaml.cs">
+      <DependentUpon>LocationItursChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturSelectDissableView.xaml.cs">
+      <DependentUpon>IturSelectDissableView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturDeleteView.xaml.cs">
+      <DependentUpon>IturDeleteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturTagChangeView.xaml.cs">
+      <DependentUpon>IturTagChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\ShowShelfView.xaml.cs">
+      <DependentUpon>ShowShelfView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturLocationChangeView.xaml.cs">
+      <DependentUpon>IturLocationChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturEditView.xaml.cs">
+      <DependentUpon>IturEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturNameChangeView.xaml.cs">
+      <DependentUpon>IturNameChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturSelectView.xaml.cs">
+      <DependentUpon>IturSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Location\TagSelectView.xaml.cs">
+      <DependentUpon>TagSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Location\LocationTagChangeView.xaml.cs">
+      <DependentUpon>LocationTagChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Location\LocationCodeSelectView.xaml.cs">
+      <DependentUpon>LocationCodeSelectView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Location\LocationMultiAddView.xaml.cs">
+      <DependentUpon>LocationMultiAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\ConfigEditAndSaveView.xaml.cs">
+      <DependentUpon>ConfigEditAndSaveView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\FamilyControl\SearchFamilyFieldView.xaml.cs">
+      <DependentUpon>SearchFamilyFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\FamilyControl\SearchFamilyView.xaml.cs">
+      <DependentUpon>SearchFamilyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventProductControl\Advanced\SearchInventProductAdvancedAggregateView.xaml.cs">
+      <DependentUpon>SearchInventProductAdvancedAggregateView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventProductControl\Advanced\SearchInventProductAdvancedAggregateFieldView.xaml.cs">
+      <DependentUpon>SearchInventProductAdvancedAggregateFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventProductControl\Advanced\Field\SearchInventProductAdvancedFieldSimpleView.xaml.cs">
+      <DependentUpon>SearchInventProductAdvancedFieldSimpleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventProductControl\Advanced\Field\SearchInventProductAdvancedFieldSumView.xaml.cs">
+      <DependentUpon>SearchInventProductAdvancedFieldSumView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventProductControl\Advanced\Grid\SearchInventProductAdvancedGridSimpleView.xaml.cs">
+      <DependentUpon>SearchInventProductAdvancedGridSimpleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventProductControl\Advanced\Grid\SearchInventProductAdvancedGridSumView.xaml.cs">
+      <DependentUpon>SearchInventProductAdvancedGridSumView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventProductControl\Advanced\SearchInventProductAdvancedFieldView.xaml.cs">
+      <DependentUpon>SearchInventProductAdvancedFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventProductControl\Advanced\SearchInventProductAdvancedView.xaml.cs">
+      <DependentUpon>SearchInventProductAdvancedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventProductControl\SearchInventProductFieldView.xaml.cs">
+      <DependentUpon>SearchInventProductFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\InventProductControl\SearchInventProductView.xaml.cs">
+      <DependentUpon>SearchInventProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\IturControl\SearchIturAdvancedFieldView.xaml.cs">
+      <DependentUpon>SearchIturAdvancedFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturPrefixChangeView.xaml.cs">
+      <DependentUpon>IturPrefixChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturStateChangeView.xaml.cs">
+      <DependentUpon>IturStateChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturStatusChangeView.xaml.cs">
+      <DependentUpon>IturStatusChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\IturControl\SearchIturAdvancedView.xaml.cs">
+      <DependentUpon>SearchIturAdvancedView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\IturControl\SearchIturFieldView.xaml.cs">
+      <DependentUpon>SearchIturFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Location\LocationAddEditDeleteView.xaml.cs">
+      <DependentUpon>LocationAddEditDeleteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventProduct\InventProductAddEditView.xaml.cs">
+      <DependentUpon>InventProductAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturAddView.xaml.cs">
+      <DependentUpon>IturAddView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\InventProduct\InventProductListDetailsView.xaml.cs">
+      <DependentUpon>InventProductListDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturimAddEditDeleteView.xaml.cs">
+      <DependentUpon>IturimAddEditDeleteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Itur\IturListDetailsView.xaml.cs">
+      <DependentUpon>IturListDetailsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Location\LocationAddEditView.xaml.cs">
+      <DependentUpon>LocationAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\ExportLogView.xaml.cs">
+      <DependentUpon>ExportLogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\LogView.xaml.cs">
+      <DependentUpon>LogView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\IturControl\SearchIturView.xaml.cs">
+      <DependentUpon>SearchIturView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\LocationControl\SearchLocationFieldView.xaml.cs">
+      <DependentUpon>SearchLocationFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\LocationControl\SearchLocationView.xaml.cs">
+      <DependentUpon>SearchLocationView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\ProductControl\SearchProductFieldView.xaml.cs">
+      <DependentUpon>SearchProductFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\ProductControl\SearchProductView.xaml.cs">
+      <DependentUpon>SearchProductView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\SectionControl\SearchSectionFieldView.xaml.cs">
+      <DependentUpon>SearchSectionFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\SectionControl\SearchSectionView.xaml.cs">
+      <DependentUpon>SearchSectionView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\SupplierControl\SearchSupplierFieldView.xaml.cs">
+      <DependentUpon>SearchSupplierFieldView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Misc\Popup\Search\SupplierControl\SearchSupplierView.xaml.cs">
+      <DependentUpon>SearchSupplierView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Reports\ReportsView.xaml.cs">
+      <DependentUpon>ReportsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Section\SectionTagChangeView.xaml.cs">
+      <DependentUpon>SectionTagChangeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Section\SectionAddEditDeleteView.xaml.cs">
+      <DependentUpon>SectionAddEditDeleteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Section\SectionAddEditView.xaml.cs">
+      <DependentUpon>SectionAddEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Supplier\SupplierAddEditDeleteView.xaml.cs">
+      <DependentUpon>SupplierAddEditDeleteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Supplier\SupplierAddEditView.xaml.cs">
+      <DependentUpon>SupplierAddEditView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Count4U.Common.Web\Count4U.Common.Web.csproj">
+      <Project>{6bd02894-6ebe-40f1-b5a4-70e5141b2540}</Project>
+      <Name>Count4U.Common.Web</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Common\Count4U.Common.csproj">
+      <Project>{ea11d75f-fdb9-410d-9f9b-5d055b4377b8}</Project>
+      <Name>Count4U.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Configuration\Count4U.Configuration.csproj">
+      <Project>{005bb7bf-e7b8-40b2-87f1-540d2b627588}</Project>
+      <Name>Count4U.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.CustomControls\Count4U.CustomControls.csproj">
+      <Project>{D20AC0D3-74FB-489C-977C-5712E022EB2B}</Project>
+      <Name>Count4U.CustomControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.GenerationReport\Count4U.GenerationReport.csproj">
+      <Project>{83008678-0C79-4E48-BC3D-D9B4580DF56A}</Project>
+      <Name>Count4U.GenerationReport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Localization\Count4U.Localization.csproj">
+      <Project>{C1716C1B-995A-481B-8853-1B984F75BE45}</Project>
+      <Name>Count4U.Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.Common\Count4U.Model.Common.csproj">
+      <Project>{5E70D036-3982-4D9F-95CA-197E616D7F59}</Project>
+      <Name>Count4U.Model.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ExportImport\Count4U.Model.ExportImport.csproj">
+      <Project>{A511450D-26CB-4D17-92B1-4C9A331B5290}</Project>
+      <Name>Count4U.Model.ExportImport</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model.ServiceContract\Count4U.Model.ServiceContract.csproj">
+      <Project>{6c200172-9847-40e4-ae97-ec50bbf4d0a4}</Project>
+      <Name>Count4U.Model.ServiceContract</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Model\Count4U.Model.csproj">
+      <Project>{A3145385-051F-4FFA-9DCB-3014DA552419}</Project>
+      <Name>Count4U.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Count4U.Modules.ContextCBI\Count4U.Modules.ContextCBI.csproj">
+      <Project>{a09eaa43-3e41-4379-9a19-4b633829c1a2}</Project>
+      <Name>Count4U.Modules.ContextCBI</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Converters\" />
+    <Folder Include="ViewModels\Dashboard\" />
+    <Folder Include="ViewModels\Product\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\Catalog\CatalogFormView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Catalog\ProductAddEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Common\Resources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Device\DeviceWorkerFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Device\DeviceFormView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Device\DeviceAddEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Family\FamilyAddEditDeleteView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Family\FamilyAddEditView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DocumentHeader\DocumentHeaderCloneView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ErpExpected\ErpExpectedStep1View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ErpExpected\ErpExpectedStep2View.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Export\DownloadFromPDAView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Export\ExportErpWithModulesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Export\ExportPdaWithModulesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Export\UploadToPdaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Import\ComplexOperationView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Import\ImportFromPdaView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DocumentHeader\DocumentHeaderAddEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Import\ImportWithModulesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventProduct\InventProductCloneView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventProduct\InventProductListSimpleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventProduct\InventProductListSumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventProduct\InventProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Itur\LocationItursChangeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Itur\IturSelectDissableView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Itur\IturDeleteView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Itur\IturTagChangeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Itur\ShowShelfView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Itur\IturLocationChangeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Itur\IturEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Itur\IturNameChangeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Itur\IturSelectView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Location\TagSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Location\LocationTagChangeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Location\LocationCodeSelectView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Location\LocationMultiAddView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\ConfigEditAndSaveView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\FamilyControl\SearchFamilyFieldView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\FamilyControl\SearchFamilyView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventProductControl\Advanced\SearchInventProductAdvancedAggregateView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventProductControl\Advanced\SearchInventProductAdvancedAggregateFieldView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventProductControl\Advanced\Field\SearchInventProductAdvancedFieldSimpleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventProductControl\Advanced\Field\SearchInventProductAdvancedFieldSumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventProductControl\Advanced\Grid\SearchInventProductAdvancedGridSimpleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventProductControl\Advanced\Grid\SearchInventProductAdvancedGridSumView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventProductControl\Advanced\SearchInventProductAdvancedFieldView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventProductControl\Advanced\SearchInventProductAdvancedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventProductControl\SearchInventProductFieldView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\InventProductControl\SearchInventProductView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\IturControl\SearchIturAdvancedFieldView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Itur\IturPrefixChangeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Itur\IturStateChangeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Itur\IturStatusChangeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\IturControl\SearchIturAdvancedView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\IturControl\SearchIturFieldView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Location\LocationAddEditDeleteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventProduct\InventProductAddEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Itur\IturAddView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\InventProduct\InventProductListDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Itur\IturimAddEditDeleteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Itur\IturListDetailsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Location\LocationAddEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\ExportLogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\LogView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\IturControl\SearchIturView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\LocationControl\SearchLocationFieldView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\LocationControl\SearchLocationView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\ProductControl\SearchProductFieldView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\ProductControl\SearchProductView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\SectionControl\SearchSectionFieldView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\SectionControl\SearchSectionView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\SupplierControl\SearchSupplierFieldView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Misc\Popup\Search\SupplierControl\SearchSupplierView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Reports\ReportsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Section\SectionTagChangeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Section\SectionAddEditDeleteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Section\SectionAddEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Supplier\SupplierAddEditDeleteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Supplier\SupplierAddEditView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets" Condition="Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Baseclass.Contrib.Nuget.Output.2.4.3\build\Baseclass.Contrib.Nuget.Output.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

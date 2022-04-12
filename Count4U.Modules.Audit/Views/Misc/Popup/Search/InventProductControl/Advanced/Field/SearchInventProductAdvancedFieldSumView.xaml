@@ -1,0 +1,662 @@
+﻿<UserControl x:Class="Count4U.Modules.Audit.Views.Misc.Popup.Search.InventProductControl.Advanced.SearchInventProductAdvancedFieldSumView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:Behaviours="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+             xmlns:Converters1="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:textBox="clr-namespace:Count4U.CustomControls.TextBox;assembly=Count4U.CustomControls"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="500">
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary
+                    Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Buttons/ButtonThemeV7.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Combobox/ComboboxThemeV7.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Expander/Expander2.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml" />
+                <ResourceDictionary
+                    Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/ToggleButton/ToggleButtonV7.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters1:StringToBrushConverter x:Key="locationToBrush" />
+            <Converters1:BoolToVisiblityConverter x:Key="boolToVisConv" />
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <!--            Sort-->
+
+                <ContentControl x:Name="sortControl" Grid.Row="0" Margin="5,0,0,0"/>
+
+                <Expander Grid.Row="1" 
+                      ExpandDirection="Down"
+                      Style="{StaticResource ExpanderStyle2}"
+                      Margin="0,5,0,0"
+                      IsExpanded="{Binding Path=IsInventProductExpanded}"
+                      >
+                    <Expander.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="chkIsInventProductEnabled"
+                                  Content="{x:Static Localization:Resources.Domain_InventProduct}"
+                                  IsChecked="{Binding Path=DataContext.IsFilterByInventProduct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                                                  RelativeSource={RelativeSource AncestorType={x:Type Expander}}}" />
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.Content>
+                        <Grid IsEnabled="{Binding Path=IsFilterByInventProduct, Mode=OneWay}" >
+
+                            <!--                        1-->
+
+                            <TextBlock HorizontalAlignment="Left"
+                                   Margin="5,7,0,0" 
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbQuantityEdit}"
+                                   VerticalAlignment="Top" 
+                                   Height="17"
+                                   Width="150" />
+
+                            <ComboBox HorizontalAlignment="Left" 
+                                  VerticalAlignment="Top" 
+                                  Width="40"
+                                  Height="20"
+                                  ItemsSource="{Binding Path=EqualityItems}"
+                                  SelectedItem="{Binding Path=InventProductQuantityEditEquality}"
+                                  Margin="160,7,0,0" />
+
+                            <TextBox Height="20" 
+                                 Margin="200,7,30,0" 
+                                 TextWrapping="Wrap" 
+                                 Text="{Binding Path=InventProductQuantityEdit, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" />
+
+                            <ToggleButton Width="20" 
+                                      Height="20"
+                                      Margin="0,7,5,0"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Top"   
+                                      IsChecked="{Binding Path=InventProductQuantityEditIsAbsolute}"
+                                      Content="{StaticResource gridAbsolute}"
+                                       Style="{StaticResource ToggleButtonStyle_V7}"
+                                      />
+
+                            <!--2-->
+
+                            <TextBlock HorizontalAlignment="Left"
+                                   Margin="5,31,0,0" 
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbQuantityDifference}"
+                                   VerticalAlignment="Top" 
+                                   Height="17" 
+                                   Width="150" />
+
+                            <ComboBox HorizontalAlignment="Left" 
+                                  VerticalAlignment="Top" 
+                                  ItemsSource="{Binding Path=EqualityItems}"
+                                  SelectedItem="{Binding Path=InventProductQuantityDifferenceEquality}"
+                                  Width="40" 
+                                  Height="20"
+                                  Margin="160,31,0,0" />
+
+                            <TextBox Height="20" 
+                                 Margin="200,31,30,0"                                  
+                                 TextWrapping="Wrap"
+                                 Text="{Binding Path=InventProductQuantityDifference, UpdateSourceTrigger=PropertyChanged}" 
+                                 VerticalAlignment="Top" />
+
+                            <ToggleButton Width="20" 
+                                      Height="20"
+                                      Margin="0,31,5,0"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Top"   
+                                      IsChecked="{Binding Path=InventProductQuantityDifferenceIsAbsolute}"
+                                      Content="{StaticResource gridAbsolute}"
+                                       Style="{StaticResource ToggleButtonStyle_V7}"
+                                      />
+
+                            <!--3-->
+                            <TextBlock HorizontalAlignment="Left"
+                                   Margin="5,81,0,0" 
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbValueBuyDifference}"
+                                   VerticalAlignment="Top"
+                                   Height="17"
+                                   Width="150" />
+
+                            <ComboBox HorizontalAlignment="Left" 
+                                  VerticalAlignment="Top" 
+                                  Width="40"
+                                  Height="20"
+                                  ItemsSource="{Binding Path=EqualityItems}"
+                                  SelectedItem="{Binding Path=InventProductValueBuyDifferenceEquality}"
+                                  Margin="160,81,0,0" />
+
+                            <TextBox Height="20" 
+                                 Margin="200,81,30,0" 
+                                 TextWrapping="Wrap"
+                                 Text="{Binding Path=InventProductValueBuyDifference, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top"
+                                 />
+
+                            <ToggleButton Width="20" 
+                                      Height="20"
+                                      Margin="0,81,5,0"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Top"   
+                                      IsChecked="{Binding Path=InventProductValueBuyDifferenceIsAbsolute}"
+                                      Content="{StaticResource gridAbsolute}"
+                                       Style="{StaticResource ToggleButtonStyle_V7}"
+                                      />
+
+                            <!--4-->
+                            <TextBlock HorizontalAlignment="Left" 
+                                   Margin="5,56,0,0" 
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbValueBuyEdit}"
+                                   VerticalAlignment="Top" 
+                                   Height="17"
+                                   Width="150" />
+
+                            <ComboBox HorizontalAlignment="Left"
+                                  VerticalAlignment="Top" 
+                                  Width="40" 
+                                  Height="20"
+                                  Margin="160,56,0,0" 
+                                  ItemsSource="{Binding Path=EqualityItems}"
+                                  SelectedItem="{Binding Path=InventProductValueBuyEditEquality}"
+                                  />
+
+                            <TextBox Height="20" 
+                                 Margin="200,56,30,0" 
+                                 TextWrapping="Wrap"
+                                 Text="{Binding Path=InventProductValueBuyEdit, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" />
+
+                            <ToggleButton Width="20" 
+                                      Height="20"
+                                      Margin="0,56,5,0"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Top"   
+                                      IsChecked="{Binding Path=InventProductValueBuyEditIsAbsolute}"
+                                      Content="{StaticResource gridAbsolute}"
+                                       Style="{StaticResource ToggleButtonStyle_V7}"
+                                      />
+
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+
+                <Expander Grid.Row="2" 
+                      ExpandDirection="Down" 
+                      Style="{StaticResource ExpanderStyle2}" 
+                      Margin="0,5,0,0"
+                      IsExpanded="{Binding Path=IsProductExpanded}"
+                      Header="{x:Static Localization:Resources.Domain_Product}">
+                    <Expander.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="chkIsProductEnabled"
+                                  Content="{x:Static Localization:Resources.Domain_Product}"
+                                  IsChecked="{Binding Path=DataContext.IsFilterByProduct, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                                                  RelativeSource={RelativeSource AncestorType={x:Type Expander}}}" />
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.Content>
+                        <Grid IsEnabled="{Binding Path=IsFilterByProduct, Mode=OneWay}" >
+
+                            <TextBlock HorizontalAlignment="Left" 
+                                   Margin="5,10,0,0" 
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbMakat}"
+                                   VerticalAlignment="Top"
+                                   Height="17" 
+                                   Width="120" />
+
+                            <TextBox Height="20" 
+                                 Margin="160,10,5,0"
+                                 TextWrapping="Wrap" 
+                                 Text="{Binding Path=ProductMakat, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" />
+
+                            <!--                        0-->
+                            <TextBlock HorizontalAlignment="Left" 
+                        	Margin="5,36,0,0" 
+                        	TextWrapping="Wrap"
+                        	Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbQuantityDifferenceOriginalERP}" 
+                        	VerticalAlignment="Top"
+                        	Height="17" 
+                        	Width="155" />
+
+                            <ComboBox HorizontalAlignment="Left" 
+                        	VerticalAlignment="Top"
+                        	Width="40" 
+                        	Height="20"
+                        	ItemsSource="{Binding Path=EqualityItems}"
+                        	SelectedItem="{Binding Path=ProductQuantityDifferenceOriginalERPEquality}"
+                        	Margin="160,36,0,0" />
+                            <!--!!!-->
+                            <TextBox Height="20" 
+                        	Margin="200,36,30,0" 
+                        	TextWrapping="Wrap" 
+                        	Text="{Binding Path=ProductQuantityDifferenceOriginalERP, UpdateSourceTrigger=PropertyChanged}"
+                        	VerticalAlignment="Top" />
+
+                            <ToggleButton Width="20" 
+                                      Height="20"
+                                      Margin="0,36,5,0"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Top"   
+                                      IsChecked="{Binding Path=ProductQuantityDifferenceOriginalERPIsAbsolute}"
+                                      Content="{StaticResource gridAbsolute}"
+                                       Style="{StaticResource ToggleButtonStyle_V7}"
+                                      />
+
+                            <!--zzz-->
+                            <TextBlock HorizontalAlignment="Left"
+                        	Margin="5,61,0,0"
+                        	TextWrapping="Wrap"
+                        	Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbValueDifferenceOriginalERP}"
+                        	VerticalAlignment="Top" 
+                        	Height="17" 
+                        	Width="130" />
+
+                            <ComboBox HorizontalAlignment="Left"
+                        	VerticalAlignment="Top" 
+                        	Width="40" 
+                        	Height="20"
+                        	ItemsSource="{Binding Path=EqualityItems}"
+                        	SelectedItem="{Binding Path=ProductValueDifferenceOriginalERPEquality}"
+                        	Margin="160,61,0,0" />
+
+                            <TextBox Height="20"
+                        	Margin="200,61,30,0" 
+                        	TextWrapping="Wrap" 
+                        	Text="{Binding Path=ProductValueDifferenceOriginalERP, UpdateSourceTrigger=PropertyChanged}"
+                        	VerticalAlignment="Top" />
+
+                            <ToggleButton Width="20" 
+                                      Height="20"
+                                      Margin="0,61,5,0"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Top"   
+                                      IsChecked="{Binding Path=ProductValueDifferenceOriginalERPIsAbsolute}"
+                                      Content="{StaticResource gridAbsolute}"
+                                       Style="{StaticResource ToggleButtonStyle_V7}"
+                                      />
+
+                            <!--                      1-->
+                            <TextBlock HorizontalAlignment="Left" 
+                                   Margin="5,85,0,0" 
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbPriceBuy}" 
+                                   VerticalAlignment="Top"
+                                   Height="17" 
+                                   Width="130" />
+
+                            <ComboBox HorizontalAlignment="Left" 
+                                  VerticalAlignment="Top"
+                                  Width="40" 
+                                  Height="20"
+                                  ItemsSource="{Binding Path=EqualityItems}"
+                                  SelectedItem="{Binding Path=ProductPriceBuyEquality}"
+                                  Margin="160,85,0,0" />
+
+                            <TextBox Height="20" 
+                                 Margin="200,85,30,0" 
+                                 TextWrapping="Wrap" 
+                                 Text="{Binding Path=ProductPriceBuy, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" />
+
+                            <ToggleButton Width="20" 
+                                      Height="20"
+                                      Margin="0,85,5,0"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Top"   
+                                      IsChecked="{Binding Path=ProductPriceBuyIsAbsolute}"
+                                      Content="{StaticResource gridAbsolute}"
+                                       Style="{StaticResource ToggleButtonStyle_V7}"
+                                      />
+
+                            <!--                        2-->
+                            <TextBlock HorizontalAlignment="Left"
+                                   Margin="5,110,0,0"
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbPriceSale}"
+                                   VerticalAlignment="Top" 
+                                   Height="17" 
+                                   Width="130" />
+
+                            <ComboBox HorizontalAlignment="Left"
+                                  VerticalAlignment="Top" 
+                                  Width="40" 
+                                  Height="20"
+                                  ItemsSource="{Binding Path=EqualityItems}"
+                                  SelectedItem="{Binding Path=ProductPriceSaleEquality}"
+                                  Margin="160,110,0,0" />
+
+                            <TextBox Height="20"
+                                 Margin="200,110,30,0" 
+                                 TextWrapping="Wrap" 
+                                 Text="{Binding Path=ProductPriceSale, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" />
+
+                            <ToggleButton Width="20" 
+                                      Height="20"
+                                      Margin="0,110,5,0"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Top"   
+                                      IsChecked="{Binding Path=ProductPriceSaleIsAbsolute}"
+                                      Content="{StaticResource gridAbsolute}"
+                                       Style="{StaticResource ToggleButtonStyle_V7}"
+                                      />
+
+                            <!--                        3-->
+                            <TextBlock HorizontalAlignment="Left"
+                                   Margin="5,135,0,0"
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbQuantityOriginalERP}"
+                                   VerticalAlignment="Top" 
+                                   Height="17" 
+                                   Width="130" />
+
+                            <ComboBox HorizontalAlignment="Left"
+                                  VerticalAlignment="Top" 
+                                  Width="40" 
+                                  Height="20"
+                                  ItemsSource="{Binding Path=EqualityItems}"
+                                  SelectedItem="{Binding Path=ProductQuantityOriginalERPEquality}"
+                                  Margin="160,135,0,0" />
+
+                            <TextBox Height="20"
+                                 Margin="200,135,30,0" 
+                                 TextWrapping="Wrap" 
+                                 Text="{Binding Path=ProductQuantityOriginalERP, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" />
+
+                            <ToggleButton Width="20" 
+                                      Height="20"
+                                      Margin="0,135,5,0"
+                                      HorizontalAlignment="Right"
+                                      VerticalAlignment="Top"   
+                                      IsChecked="{Binding Path=ProductQuantityOriginalERPIsAbsolute}"
+                                      Content="{StaticResource gridAbsolute}"
+                                       Style="{StaticResource ToggleButtonStyle_V7}"
+                                      />
+                            <!--                        4-->
+                            <TextBlock HorizontalAlignment="Left" 
+                                   Margin="5,160,0,0" 
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbProductName}"
+                                   VerticalAlignment="Top" 
+                                   Height="17" 
+                                   Width="130" />
+
+                            <TextBox Height="21" 
+                                 Margin="160,160,5,0" 
+                                 TextWrapping="Wrap" 
+                                 Text="{Binding Path=ProductName, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" />
+
+
+
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+
+                <Expander Grid.Row="3"
+                      ExpandDirection="Down" 
+                      Style="{StaticResource ExpanderStyle2}" 
+                      Margin="0,5,0,0"
+                      IsExpanded="{Binding Path=IsSupplierExpanded}">
+                    <Expander.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="chkIsSupplierEnabled"
+                                  Content="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_expSupplier}"
+                                  IsChecked="{Binding Path=DataContext.IsFilterBySupplier, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                                                  RelativeSource={RelativeSource AncestorType={x:Type Expander}}}" />
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.Content>
+                        <Grid IsEnabled="{Binding Path=IsFilterBySupplier, Mode=OneWay}">
+
+                            <TextBlock HorizontalAlignment="Left" 
+                                   Margin="5,10,0,0" 
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbSupplierCode}"
+                                   VerticalAlignment="Top" 
+                                   Height="17" 
+                                   Width="150" />
+
+                            <TextBox Height="20" Margin="160,10,5,0"
+                                 TextWrapping="Wrap"
+                                 Text="{Binding Path=SupplierCode, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" />
+
+                            <TextBlock HorizontalAlignment="Left" 
+                        	Margin="5,34,0,0" 
+                        	TextWrapping="Wrap"
+                        	Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbSupplierName}"
+                        	VerticalAlignment="Top" 
+                        	Height="16" 
+                        	Width="150" />
+
+                            <TextBox Height="20" Margin="160,34,5,0"
+                        	TextWrapping="Wrap"
+                        	Text="{Binding SupplierName, UpdateSourceTrigger=PropertyChanged}"
+                        	VerticalAlignment="Top" />
+
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+
+                <Expander Grid.Row="4"
+                      ExpandDirection="Down" 
+                      Style="{StaticResource ExpanderStyle2}" 
+                      Margin="0,5,0,0"
+                      IsExpanded="{Binding Path=IsFilterExpanded}">
+                    <Expander.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="chkIsFilterEnabled"
+                                  Content="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_expFamily}"
+                                  IsChecked="{Binding Path=DataContext.IsFilterByFamily, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                                                  RelativeSource={RelativeSource AncestorType={x:Type Expander}}}" />
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.Content>
+                        <Grid IsEnabled="{Binding Path=IsFilterByFamily, Mode=OneWay}">
+
+                            <TextBlock HorizontalAlignment="Left" 
+                                   Margin="5,10,0,0" 
+                                   TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbFamilyCode}"
+                                   VerticalAlignment="Top" 
+                                   Height="17" 
+                                   Width="150" />
+
+                            <TextBox Height="20" Margin="160,10,5,0"
+                                 TextWrapping="Wrap"
+                                 Text="{Binding Path=FamilyCode, UpdateSourceTrigger=PropertyChanged}"
+                                 VerticalAlignment="Top" />
+
+                            <TextBlock HorizontalAlignment="Left" 
+                        	Margin="5,34,0,0" 
+                        	TextWrapping="Wrap"
+                        	Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbFamilyName}"
+                        	VerticalAlignment="Top" 
+                        	Height="16" 
+                        	Width="150" />
+
+                            <TextBox Height="20" Margin="160,34,5,0"
+                        	TextWrapping="Wrap"
+                        	Text="{Binding SupplierName, UpdateSourceTrigger=PropertyChanged}"
+                        	VerticalAlignment="Top" />
+
+                        </Grid>
+                    </Expander.Content>
+                </Expander>
+
+                <Expander Grid.Row="5"
+                      ExpandDirection="Down" 
+                      Style="{StaticResource ExpanderStyle2}" 
+                      Margin="0,5,0,0"
+                      IsExpanded="{Binding Path=IsSectionExpanded}" 
+                      Height="300"
+                      Header="{x:Static Localization:Resources.Domain_Section}">
+                    <Expander.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox x:Name="chkIsSectionEnabled"
+                                  Content="{x:Static Localization:Resources.Domain_Section}"
+                                  IsChecked="{Binding Path=DataContext.IsFilterBySection, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged,
+                                                  RelativeSource={RelativeSource AncestorType={x:Type Expander}}}" />
+                        </DataTemplate>
+                    </Expander.HeaderTemplate>
+                    <Expander.Content>
+                        <!--<ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Hidden">-->
+                            <Grid IsEnabled="{Binding Path=IsFilterBySection, Mode=OneWay}">
+
+
+                                <!--///////-->
+
+                                <TextBlock HorizontalAlignment="Left" 
+                                   Margin="10,5,0,0" 
+                                    TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedField_tbCode}"
+                                   VerticalAlignment="Top" 
+                                   Height="17" 
+                                   Width="100" />
+
+                                <textBox:TextBoxV7 Grid.Column="0"
+                 Height="20" 
+                 TextWrapping="Wrap"                  
+                 VerticalAlignment="Top" 
+                  Margin="160,5,5,0" 
+                 >
+                                    <TextBox.Text>
+                                        <Binding Path="FindBySectionCode" UpdateSourceTrigger="Explicit" IsAsync="False" >
+                                        </Binding>
+                                    </TextBox.Text>
+                                    <i:Interaction.Behaviors>
+                                        <Behaviours:TextChangedDelayedBehavior  IsTimerEnabled="True" />
+                                    </i:Interaction.Behaviors>
+
+                                </textBox:TextBoxV7>
+
+                                <TextBlock HorizontalAlignment="Left" 
+                                   Margin="10,30,0,0" 
+                                    TextWrapping="Wrap"
+                                   Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedField_tbTag}"
+                                   VerticalAlignment="Top" 
+                                   Height="17" 
+                                   Width="100" />
+
+                                <textBox:TextBoxV7 Grid.Column="0"
+                      Height="20" 
+                 TextWrapping="Wrap"                  
+                 VerticalAlignment="Top"                                      
+                 Margin="160,32,5,0" 
+                 >
+                                    <TextBox.Text>
+                                        <Binding Path="FindBySectionTag" UpdateSourceTrigger="Explicit" IsAsync="False" >
+                                        </Binding>
+                                    </TextBox.Text>
+                                    <i:Interaction.Behaviors>
+                                        <Behaviours:TextChangedDelayedBehavior  IsTimerEnabled="True" />
+                                    </i:Interaction.Behaviors>
+                                </textBox:TextBoxV7>
+                                <!--//////-->
+
+                                <CheckBox  Grid.Row="0" 
+                              Content="{x:Static Localization:Resources.View_LocationFilter_chkedAllLocations}"
+                               Height="16" 
+                               HorizontalAlignment="Left" 
+                              IsChecked="{Binding Path=IsCheckedSections}" 
+                              IsEnabled="{Binding Path=IsFilterBySection, Mode=OneWay}"
+                             Margin="5,55,5,5" VerticalAlignment="Top" />
+                                
+                                <ListBox Grid.Row="0" 
+                                 ItemsSource="{Binding Path=SectionItems}"
+                                 ScrollViewer.VerticalScrollBarVisibility="Auto" 
+                                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                                 BorderBrush="Transparent" 
+                                 BorderThickness="0"
+                                 MinHeight="10"
+                                 Margin="5,75,5,5">
+
+                                    <ListBox.ItemContainerStyle>
+                                        <Style TargetType="{x:Type ListBoxItem}">
+                                            <Style.Resources>
+                                                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}"
+                                                         Color="Transparent" />
+                                                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}"
+                                                         Color="Transparent" />
+                                            </Style.Resources>
+
+                                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                                        </Style>
+                                    </ListBox.ItemContainerStyle>
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+
+                                                <CheckBox Grid.Column="0" 
+                                                  IsChecked="{Binding Path=IsChecked}" 
+                                                  Margin="1"
+                                                  HorizontalAlignment="Left" 
+                                                  VerticalAlignment="Center">
+
+                                                    <TextBlock Text="{Binding Path=Name, Mode=OneWay}" 
+                                                       FontSize="12"
+                                                       FontWeight="Bold" />
+                                                </CheckBox>
+
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+
+                            </Grid>
+                        <!--</ScrollViewer>-->
+                    </Expander.Content>
+                </Expander>
+            </Grid>
+        </ScrollViewer>
+
+        <Grid Grid.Row="1">
+
+            <TextBlock VerticalAlignment="Bottom" 
+                           HorizontalAlignment="Stretch"
+                           Text="{x:Static Localization:Resources.View_SearchInventProductAdvancedFieldSimple_tbBuilding}"
+                           Visibility="{Binding Path=IsBuildingTable, Converter={StaticResource boolToVisConv}}" 
+                           Margin="10, 0, 10, 25" />
+
+            <ProgressBar IsIndeterminate="True" 
+                             Visibility="{Binding Path=IsBuildingTable, Converter={StaticResource boolToVisConv}}" 
+                             Height="15" 
+                             VerticalAlignment="Bottom" 
+                             HorizontalAlignment="Stretch" 
+                             Margin="10, 0, 10, 3" />
+
+        </Grid>
+    </Grid>
+</UserControl>

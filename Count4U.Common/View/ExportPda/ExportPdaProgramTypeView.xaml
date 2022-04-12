@@ -1,0 +1,138 @@
+﻿<UserControl x:Class="Count4U.Common.View.ExportPda.ExportPdaProgramTypeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:ImageButtonCursor="clr-namespace:Count4U.CustomControls.ImageButtonCursor;assembly=Count4U.CustomControls"
+             xmlns:uiCommandService="clr-namespace:Count4U.Common.Services.UICommandService"
+             xmlns:Behaviours="clr-namespace:Count4U.Common.Behaviours"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="800">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/Expander/Expander2.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/Buttons/ButtonThemeV7.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/Combobox/ComboboxThemeV7.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+                <BooleanToVisibilityConverter x:Key="boolToVis" />
+            </ResourceDictionary>
+        </Grid.Resources>
+        
+
+
+        <Expander 
+            Grid.Row="0" 
+            IsExpanded="True" 
+            ExpandDirection="Down" 
+            Style="{StaticResource ExpanderStyle2}"                         
+            Header="{x:Static Localization:Resources.View_ExportPdaProgramType_expProgramType}">
+            <Grid>
+                <!--=============== PdaType ========  -->
+
+                <TextBlock Height="19" 
+                           HorizontalAlignment="Left" 
+                           Margin="10,10,0,0"                            
+                           Text="{x:Static Localization:Resources.View_ExportPdaProgramType_tbPdaType}"
+                           VerticalAlignment="Top"
+                           Width="118" />
+
+                <ComboBox Style="{StaticResource ComboBoxStyleV7}"
+                  Height="21" 
+                  HorizontalAlignment="Left" 
+                  Margin="170,10,0,0"                  
+                  VerticalAlignment="Top"
+                  Width="220" 
+                  SelectedItem="{Binding Path=PdaType}"
+                  ItemsSource="{Binding Path=PdaTypeItems}" 
+                  IsEnabled="{Binding Path=IsEditable}"
+                  DisplayMemberPath="Key"
+                  HorizontalContentAlignment="Right" />
+
+
+                <ImageButtonCursor:ImageButtonCursor ToolTip="{x:Static Localization:Resources.Command_OpenInExplorer}"
+                                                     Width="24" Height="24"
+                                                     Command="{Binding Path=PdaTypeOpenCommand}"									                
+                                                     ImageSource="{x:Static uiCommandService:UICommandIconRepository.OpenFolder}"
+                                                     ImageWidth="20" 
+                                                     ImageHeight="20" 
+                                                     Margin="395,8,0,0" 
+                                                     HorizontalAlignment="Left" 
+                                                     VerticalAlignment="Top" >
+                </ImageButtonCursor:ImageButtonCursor>
+
+                <!--=============== ProgramType ========  -->
+
+                <TextBlock Height="19" 
+                           HorizontalAlignment="Left" 
+                           Margin="10,37,0,0" 
+                           Text="{x:Static Localization:Resources.View_ExportPdaProgramType_tbProgramType}"
+                           VerticalAlignment="Top" 
+                           Width="118" />
+
+                <ComboBox Style="{StaticResource ComboBoxStyleV7}"
+                  Height="21" 
+                  HorizontalAlignment="Left" 
+                  Margin="170,37,0,0" 
+                  VerticalAlignment="Top" 
+                  Width="220" 
+                  SelectedItem="{Binding Path=ProgramType}"                  
+                  ItemsSource="{Binding Path=ProgramTypeItems}" 
+                  IsEnabled="{Binding Path=IsEditable}"
+                  DisplayMemberPath="Key"                          
+                  HorizontalContentAlignment="Right" />
+
+                <ImageButtonCursor:ImageButtonCursor ToolTip="{x:Static Localization:Resources.Command_OpenInExplorer}"
+                                                     Width="24"
+                                                     Command="{Binding Path=ProgramTypeOpenCommand}"									                
+                                                     ImageSource="{x:Static uiCommandService:UICommandIconRepository.OpenFolder}"
+                                                     ImageWidth="20" 
+                                                     ImageHeight="20" 
+                                                     Margin="395,35,0,0" 
+                                                     HorizontalAlignment="Left" Height="24" VerticalAlignment="Top" />
+
+                <!--=============== MaintenanceType ========  -->
+                  <TextBlock Height="19" 
+                           HorizontalAlignment="Left" 
+                           Margin="10,64,0,0" 
+                           Text="{x:Static Localization:Resources.View_ExportPdaProgramType_tbMaintenanceType}"
+                           Visibility="{Binding Path=IsHT360Visible, Converter={StaticResource boolToVis}}"
+                           VerticalAlignment="Top" 
+                           Width="118" />
+
+                <ComboBox Style="{StaticResource ComboBoxStyleV7}"
+                    Height="21" 
+                    HorizontalAlignment="Left"
+                    Margin="170,64,0,0" 
+                    VerticalAlignment="Top" 
+                    Width="220" 
+                    SelectedItem="{Binding Path=MaintenanceType}"
+                    ItemsSource="{Binding Path=MaintenanceTypeItems}" 
+                    IsEnabled="{Binding Path=IsEditable}"  
+                    Visibility="{Binding Path=IsHT360Visible, Converter={StaticResource boolToVis}}"
+                    DisplayMemberPath="Key"
+                    HorizontalContentAlignment="Right" />
+
+                <ImageButtonCursor:ImageButtonCursor ToolTip="{x:Static Localization:Resources.Command_OpenInExplorer}"
+                                                     Width="24" Height="24"
+                                                     Command="{Binding Path=MaintenanceTypeOpenCommand}"									                
+                                                     ImageSource="{x:Static uiCommandService:UICommandIconRepository.OpenFolder}"
+                                                     ImageWidth="20" 
+                                                     ImageHeight="20" 
+                                                     Margin="395,62,0,0" 
+                                                     HorizontalAlignment="Left" 
+                                                     Visibility="{Binding Path=IsHT360Visible, Converter={StaticResource boolToVis}}"
+                                                     VerticalAlignment="Top" >
+                </ImageButtonCursor:ImageButtonCursor>
+
+                
+                
+    
+            </Grid>
+        </Expander>
+    </Grid>
+</UserControl>

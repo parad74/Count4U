@@ -1,0 +1,171 @@
+﻿<UserControl x:Class="Count4U.Planogram.View.PlanPropertiesView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:converters="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <Grid>
+        <Grid.Resources>
+
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Combobox/Combobox.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+
+                <converters:BooleanInvertConverter x:Key="booleanInvert" />
+            </ResourceDictionary>
+
+        </Grid.Resources>
+
+        <TextBlock 
+                Text="X" 
+                VerticalAlignment="Top" 
+                HorizontalAlignment="Left" 
+                Margin="0,28,0,0"
+                />
+
+        <TextBox 
+                     x:Name="txtSelectedX"
+                     Height="21" 
+                     Margin="0,48,0,0" 
+                     TextWrapping="Wrap"                      
+                     VerticalAlignment="Top" 
+                     IsReadOnly="{Binding Path=CanEditDimensions, Converter={StaticResource booleanInvert}}"                                          
+                     MaxLength="10"
+                     Style="{StaticResource textBoxErrorStyle}">
+            <TextBox.Text>
+                <Binding Path="SelectedX" UpdateSourceTrigger="Explicit" IsAsync="False" >
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBlock 
+            	Text="Y" 
+            	VerticalAlignment="Top" 
+            	HorizontalAlignment="Left"                 
+            	Margin="0,78,0,0"
+                />
+
+        <TextBox x:Name="txtSelectedY" 
+                    Height="21" 
+                    Margin="0,98,0,0" 
+            	    TextWrapping="Wrap"             	
+            	    VerticalAlignment="Top" 
+                    IsReadOnly="{Binding Path=CanEditDimensions, Converter={StaticResource booleanInvert}}"                                         
+                    MaxLength="10"
+                    Style="{StaticResource textBoxErrorStyle}">
+            <TextBox.Text>
+                <Binding Path="SelectedY" UpdateSourceTrigger="Explicit" IsAsync="False" >
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBlock 
+            	Text="{x:Static Localization:Resources.View_PlanCanvas_tbWidth}" 
+            	VerticalAlignment="Top" 
+            	HorizontalAlignment="Left" 
+            	Margin="0,128,0,0"
+                />
+
+        <TextBox x:Name="txtSelectedWidth"
+                        Height="21" 
+                        Margin="0,148,0,0" 
+            	        TextWrapping="Wrap"             	        
+            	        VerticalAlignment="Top" 
+                        IsReadOnly="{Binding Path=CanEditDimensions, Converter={StaticResource booleanInvert}}"           
+                        MaxLength="10"                        
+                        Style="{StaticResource textBoxErrorStyle}">
+            <TextBox.Text>
+                <Binding Path="SelectedWidth" UpdateSourceTrigger="Explicit" IsAsync="False" >
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBlock 
+            	Text="{x:Static Localization:Resources.View_PlanCanvas_tbHeight}" 
+            	VerticalAlignment="Top" 
+            	HorizontalAlignment="Left" 
+            	Margin="0,178,0,0"
+                
+                />
+
+        <TextBox x:Name="txtSelectedHeight"
+                            Height="21" 
+                            Margin="0,198,0,0" 
+            	            TextWrapping="Wrap" 
+            	            VerticalAlignment="Top" 
+                            IsReadOnly="{Binding Path=CanEditDimensions, Converter={StaticResource booleanInvert}}"                                       
+                            MaxLength="10"
+                            Style="{StaticResource textBoxErrorStyle}">
+            <TextBox.Text>
+                <Binding Path="SelectedHeight" UpdateSourceTrigger="Explicit" IsAsync="False" >
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBlock 
+                    	Text="{x:Static Localization:Resources.View_PlanCanvas_tbAngle}" 
+                    	VerticalAlignment="Top" 
+                    	HorizontalAlignment="Left" 
+                    	Margin="0,228,0,0"
+                
+                />
+        <TextBox x:Name="txtSelectedAngle" 
+                        Height="21" 
+                        Margin="0,248,0,0" 
+                    	TextWrapping="Wrap"                     	
+                    	VerticalAlignment="Top" 
+                        IsReadOnly="{Binding Path=CanEditDimensions, Converter={StaticResource booleanInvert}}"                                   
+                        MaxLength="10"
+                        Style="{StaticResource textBoxErrorStyle}">
+            <TextBox.Text>
+                <Binding Path="SelectedAngle" UpdateSourceTrigger="Explicit" IsAsync="False" >
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+
+        <TextBlock 
+                    	Text="{x:Static Localization:Resources.View_PlanCanvas_tbName}" 
+                    	VerticalAlignment="Top" 
+                    	HorizontalAlignment="Left" 
+                    	Margin="0,278,0,0"
+                
+                />
+
+        <TextBox x:Name="txtSelectedName" 
+                        Height="21" 
+                        Margin="0,298,0,0" 
+                    	TextWrapping="Wrap"                     	
+                    	VerticalAlignment="Top" 
+                        IsReadOnly="{Binding Path=CanEditName, Converter={StaticResource booleanInvert}}"                                   
+                        MaxLength="25"
+                        Style="{StaticResource textBoxErrorStyle}">
+            <TextBox.Text>
+                <Binding Path="SelectedName" UpdateSourceTrigger="PropertyChanged" IsAsync="False" >
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+    </Grid>
+</UserControl>

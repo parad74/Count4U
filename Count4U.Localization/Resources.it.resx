@@ -1,0 +1,3726 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Bit_Branch_CodeEmpty" xml:space="preserve">
+    <value>Code can not be empty</value>
+    <comment>Code can not be empty</comment>
+  </data>
+  <data name="Bit_Branch_CodeErpEmpty" xml:space="preserve">
+    <value>Code ERP can not be empty</value>
+    <comment>Code ERP can not be empty</comment>
+  </data>
+  <data name="Bit_Branch_CodeErpFormat" xml:space="preserve">
+    <value>Unacceptable symbols</value>
+    <comment>Unacceptable symbols</comment>
+  </data>
+  <data name="Bit_Branch_CodeFormat" xml:space="preserve">
+    <value>Unacceptable symbols</value>
+    <comment>Unacceptable symbols</comment>
+  </data>
+  <data name="Bit_Branch_CodeLength" xml:space="preserve">
+    <value>Code length must be in range between 3 and 10</value>
+    <comment>Code length must be in range between 3 and 10</comment>
+  </data>
+  <data name="Bit_Branch_CodeLocalEmpty" xml:space="preserve">
+    <value>Code Local can not be empty</value>
+    <comment>Code Local can not be empty</comment>
+  </data>
+  <data name="Bit_Branch_CodeLocalFormat" xml:space="preserve">
+    <value>Unacceptable symbols</value>
+    <comment>Unacceptable symbols</comment>
+  </data>
+  <data name="Bit_Branch_CodeUnique" xml:space="preserve">
+    <value>Branch with such code already exists</value>
+    <comment>Branch with such code already exists</comment>
+  </data>
+  <data name="Bit_Branch_ContactPersonFormat" xml:space="preserve">
+    <value>Unacceptable symbols</value>
+    <comment>Unacceptable symbols</comment>
+  </data>
+  <data name="Bit_Customer_CodeEmpty" xml:space="preserve">
+    <value>Code can not be empty"</value>
+    <comment>Code can not be empty"</comment>
+  </data>
+  <data name="Bit_Customer_CodeFormat" xml:space="preserve">
+    <value>Unacceptable symbols</value>
+    <comment>Unacceptable symbols</comment>
+  </data>
+  <data name="Bit_Customer_CodeLength" xml:space="preserve">
+    <value>Code length must be in range between 3 and 10</value>
+    <comment>Code length must be in range between 3 and 10</comment>
+  </data>
+  <data name="Bit_Customer_CodeUnique" xml:space="preserve">
+    <value>Customer with such code already exists</value>
+    <comment>Customer with such code already exists</comment>
+  </data>
+  <data name="Bit_Customer_ContactPersonFormat" xml:space="preserve">
+    <value>Unacceptable symbols</value>
+    <comment>Unacceptable symbols</comment>
+  </data>
+  <data name="Bit_Customer_PicFileInvalid" xml:space="preserve">
+    <value>File is not valid image</value>
+    <comment>File is not valid image</comment>
+  </data>
+  <data name="Bit_Customer_PicFileMissed" xml:space="preserve">
+    <value>File doesn't exist</value>
+    <comment>File doesn't exist</comment>
+  </data>
+  <data name="Bit_FKCodeIsEmpty_BarcodeOrMakatIsEmpty" xml:space="preserve">
+    <value>Barcode or Makat Is Empty</value>
+    <comment>Barcode or Makat Is Empty</comment>
+  </data>
+  <data name="Bit_FKCodeIsEmpty_BarcodeOrMakatIsNotExistsInCatalog" xml:space="preserve">
+    <value>Barcode or Makat Is Not Exists In Catalog </value>
+    <comment>Barcode or Makat Is Not Exists In Catalog </comment>
+  </data>
+  <data name="Bit_FKCodeIsEmpty_DocumentCode" xml:space="preserve">
+    <value>DocumentCode Is Empty</value>
+    <comment>DocumentCode Is Empty</comment>
+  </data>
+  <data name="Bit_FKCodeIsEmpty_General" xml:space="preserve">
+    <value>FK Code Is Empty</value>
+    <comment>FK Code Is Empty</comment>
+  </data>
+  <data name="Bit_FKCodeIsEmpty_IturCode" xml:space="preserve">
+    <value>IturCode Is Empty</value>
+    <comment>IturCode Is Empty</comment>
+  </data>
+  <data name="Bit_FKCodeIsEmpty_LocationCode" xml:space="preserve">
+    <value>LocationCode Is Empty</value>
+    <comment>LocationCode Is Empty</comment>
+  </data>
+  <data name="Bit_InvalidFormat_General" xml:space="preserve">
+    <value>Invalid Format</value>
+    <comment>Invalid Format</comment>
+  </data>
+  <data name="Bit_InvalidValue_Code" xml:space="preserve">
+    <value>Invalid Code Value</value>
+    <comment>Invalid Code Value</comment>
+  </data>
+  <data name="Bit_InvalidValue_DocumentCode" xml:space="preserve">
+    <value>Invalid DocumentCode Value</value>
+    <comment>Invalid DocumentCode Value</comment>
+  </data>
+  <data name="Bit_InvalidValue_Email" xml:space="preserve">
+    <value>Invalid Email Value</value>
+    <comment>Invalid Email Value</comment>
+  </data>
+  <data name="Bit_InvalidValue_Fax" xml:space="preserve">
+    <value>Invalid Fax Value</value>
+    <comment>Invalid Fax Value</comment>
+  </data>
+  <data name="Bit_InvalidValue_General" xml:space="preserve">
+    <value>Invalid Value</value>
+    <comment>Invalid Value</comment>
+  </data>
+  <data name="Bit_InvalidValue_Name" xml:space="preserve">
+    <value>Invalid Name Value</value>
+    <comment>Invalid Name Value</comment>
+  </data>
+  <data name="Bit_InvalidValue_Phone" xml:space="preserve">
+    <value>Invalid Phone Value</value>
+    <comment>Invalid Phone Value</comment>
+  </data>
+  <data name="Bit_InvalidValue_Prefix" xml:space="preserve">
+    <value>Invalid Prefix Value. {0} Prefix can not be Empty. {1} It Is Expected Numeric String {2} 4 characters maximum</value>
+    <comment>Invalid Prefix Value. {0} Prefix can not be Empty. {1} It Is Expected Numeric String {2} 4 characters maximum</comment>
+  </data>
+  <data name="Bit_InventProduct_MakatFormat" xml:space="preserve">
+    <value>Unacceptable symbols</value>
+    <comment>Unacceptable symbols</comment>
+  </data>
+  <data name="Bit_InventProduct_MakatIsEmpty" xml:space="preserve">
+    <value>Can not be empty</value>
+    <comment>Can not be empty</comment>
+  </data>
+  <data name="Bit_InventProduct_QuantityEditFormat" xml:space="preserve">
+    <value>QuantityEditFormat</value>
+    <comment>QuantityEditFormat</comment>
+  </data>
+  <data name="Bit_InventProduct_QuantityOriginalFormat" xml:space="preserve">
+    <value>QuantityOriginalFormat</value>
+    <comment>QuantityOriginalFormat</comment>
+  </data>
+  <data name="Bit_IsEmpty_Barcode" xml:space="preserve">
+    <value>Barcode can not be Empty</value>
+    <comment>Barcode can not be Empty</comment>
+  </data>
+  <data name="Bit_IsEmpty_Code" xml:space="preserve">
+    <value>Code can not be Empty</value>
+    <comment>Code can not be Empty</comment>
+  </data>
+  <data name="Bit_IsEmpty_DocumentCode" xml:space="preserve">
+    <value>DocumentCode can not be Empty</value>
+    <comment>DocumentCode can not be Empty</comment>
+  </data>
+  <data name="Bit_IsEmpty_General" xml:space="preserve">
+    <value>Code can not be Empty</value>
+    <comment>Code can not be Empty</comment>
+  </data>
+  <data name="Bit_IsEmpty_Makat" xml:space="preserve">
+    <value>Makat can not be Empty</value>
+    <comment>Makat can not be Empty</comment>
+  </data>
+  <data name="Bit_IsEmpty_Name" xml:space="preserve">
+    <value>Name can not be Empty</value>
+    <comment>Name can not be Empty</comment>
+  </data>
+  <data name="Bit_IsEmpty_Number" xml:space="preserve">
+    <value>Number can not be Empty</value>
+    <comment>Number can not be Empty</comment>
+  </data>
+  <data name="Bit_IsEmpty_Prefix" xml:space="preserve">
+    <value>Prefix or Suffix  can not be Empty</value>
+    <comment>Prefix or Suffix can not be Empty</comment>
+  </data>
+  <data name="Bit_Location_CodeEmpty" xml:space="preserve">
+    <value>Name can not be empty</value>
+    <comment>Name can not be empty</comment>
+  </data>
+  <data name="Bit_Location_CodeExist" xml:space="preserve">
+    <value>Location with such code already exists</value>
+    <comment>Location with such code already exists</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_Error" xml:space="preserve">
+    <value>Error</value>
+    <comment>Error</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_ErrorDB" xml:space="preserve">
+    <value>ErrorDB</value>
+    <comment>ErrorDB</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_Fatal" xml:space="preserve">
+    <value>Fatal</value>
+    <comment>Fatal</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_Trace" xml:space="preserve">
+    <value>Trace</value>
+    <comment>Trace</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_TraceParser" xml:space="preserve">
+    <value>TraceParser</value>
+    <comment>TraceParser</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_TraceParserResult" xml:space="preserve">
+    <value>TraceParserResult</value>
+    <comment>TraceParserResult</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_TraceProvider" xml:space="preserve">
+    <value>TraceProvider</value>
+    <comment>TraceProvider</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_TraceProviderResult" xml:space="preserve">
+    <value>TraceProviderResult</value>
+    <comment>TraceProviderResult</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_TraceRepository" xml:space="preserve">
+    <value>TraceRepository</value>
+    <comment>TraceRepository</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_TraceRepositoryResult" xml:space="preserve">
+    <value>TraceRepositoryResult</value>
+    <comment>TraceRepositoryResult</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_Warning" xml:space="preserve">
+    <value>Warning</value>
+    <comment>Warning</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_WarningParser" xml:space="preserve">
+    <value>WarningParser</value>
+    <comment>WarningParser</comment>
+  </data>
+  <data name="Bit_MessageTypeCaption_WarningRepository" xml:space="preserve">
+    <value>WarningRepository</value>
+    <comment>WarningRepository</comment>
+  </data>
+  <data name="Bit_NoError_General" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Bit_Product_MakatFormat" xml:space="preserve">
+    <value>Unacceptable symbols</value>
+    <comment>Unacceptable symbols</comment>
+  </data>
+  <data name="Bit_Product_MakatIsEmpty" xml:space="preserve">
+    <value>Can not be empty</value>
+    <comment>Can not be empty</comment>
+  </data>
+  <data name="Bit_Product_MakatIsNotUnique" xml:space="preserve">
+    <value>Makat is not unique</value>
+    <comment>Makat is not unique</comment>
+  </data>
+  <data name="Bit_Product_PriceBuyFormat" xml:space="preserve">
+    <value>Incorrect format</value>
+    <comment>Incorrect format</comment>
+  </data>
+  <data name="Bit_Product_PriceSaleFormat" xml:space="preserve">
+    <value>Incorrect format</value>
+    <comment>Incorrect format</comment>
+  </data>
+  <data name="Bit_SameCodeExist_Document" xml:space="preserve">
+    <value>Document with the Same DocumentCode Exist in DB</value>
+    <comment>Document with the Same DocumentCode Exist in DB</comment>
+  </data>
+  <data name="Bit_SameCodeExist_General" xml:space="preserve">
+    <value>Object with the Same Code Exist in DB</value>
+    <comment>Object with the Same Code Exist in DB</comment>
+  </data>
+  <data name="Bit_SameCodeExist_Itur" xml:space="preserve">
+    <value>Itur with the Same Code Exist in DB</value>
+    <comment>Itur with the Same Code Exist in DB</comment>
+  </data>
+  <data name="Bit_SameCodeExist_Location" xml:space="preserve">
+    <value>Location with the Same Code Exist in DB</value>
+    <comment>Location with the Same Code Exist in DB</comment>
+  </data>
+  <data name="Bit_SameCodeExist_ProductBarcode" xml:space="preserve">
+    <value>Product with the Same Barcode Exist in DB</value>
+    <comment>Product with the Same Barcode Exist in DB</comment>
+  </data>
+  <data name="Bit_SameCodeExist_ProductMakat" xml:space="preserve">
+    <value>Product with the Same Makat Exist in DB</value>
+    <comment>Product with the Same Makat Exist in DB</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_BarcodeExistInDB" xml:space="preserve">
+    <value>Same Barcode [{0}] Exist in DB</value>
+    <comment>Same Barcode [{0}] Exist in DB</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_BarcodeIsEmpty" xml:space="preserve">
+    <value>Barcode : [{0}] Is Empty</value>
+    <comment>Barcode : [{0}] Is Empty</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_BarcodeNotExistInDB" xml:space="preserve">
+    <value>Barcode [{0}] Exist in Data Row, but Not Exist in Catalog as Barcode</value>
+    <comment>Barcode [{0}] Exist in Data Row, but Not Exist in Catalog as Barcode</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_DocumentCodeExistInDB" xml:space="preserve">
+    <value>Document with Same Code [{0}] Exist in DB</value>
+    <comment>Document with Same Code [{0}] Exist in DB</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_Error" xml:space="preserve">
+    <value>Parser Error : </value>
+    <comment>Parser Error : </comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_FileIsEmpty" xml:space="preserve">
+    <value>File : [{0}] Is Empty or Is not Exist</value>
+    <comment>File : [{0}] Is Empty or Is not Exist</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_FileIsNotExist" xml:space="preserve">
+    <value>File : [{0}] Is not Exist</value>
+    <comment>File : [{0}] Is not Exist</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_IturCodeExistInDB" xml:space="preserve">
+    <value>Itur with Same Code [{0}] Exist in DB</value>
+    <comment>Itur with Same Code [{0}] Exist in DB</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_IturCodeNotExistInDB" xml:space="preserve">
+    <value>IturCode [{0}] Exist in Data Row, but Not Exist in Itur as Code</value>
+    <comment>IturCode [{0}] Exist in Data Row, but Not Exist in Itur as Code</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_LocationCodeExistInDB" xml:space="preserve">
+    <value>Location with Same Code [{0}] Exist in DB</value>
+    <comment>Location with Same Code [{0}] Exist in DB</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_LocationCodeNotExistInDB" xml:space="preserve">
+    <value>LocationCode [{0}] Exist in Data Row, but Not Exist in Location as Code</value>
+    <comment>LocationCode [{0}] Exist in Data Row, but Not Exist in Location as Code</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_MakatAndBarcodeNotExistInDB" xml:space="preserve">
+    <value>Barcode (or Makat) [{0}] Exist in Data Row, but Not Exist in Catalog</value>
+    <comment>Barcode (or Makat) [{0}] Exist in Data Row, but Not Exist in Catalog</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_MakatExistInDB" xml:space="preserve">
+    <value>Same Makat [{0}] Exist in DB</value>
+    <comment>Same Makat [{0}] Exist in DB</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_MakatIsEmpty" xml:space="preserve">
+    <value>Makat : [{0}] Is Empty</value>
+    <comment>Makat : [{0}] Is Empty</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_MakatNotExistInDB" xml:space="preserve">
+    <value>Makat [{0}] Exist in Data Row, but Not Exist in Catalog as Makat</value>
+    <comment>Makat [{0}] Exist in Data Row, but Not Exist in Catalog as Makat</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_NoExpectedLengthString" xml:space="preserve">
+    <value>Length of Input String does not match the Expected Length : [{0}]</value>
+    <comment>Length of Input String does not match the Expected Length : [{0}]</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_NoExpectedMarker" xml:space="preserve">
+    <value>Data Row no Expected Marker : [{0}]</value>
+    <comment>Data Row no Expected Marker : [{0}]</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_NoHeaderLine" xml:space="preserve">
+    <value>There Is no Header Line or not the Marker Header in the First Line of File :  [{0}]</value>
+    <comment>There Is no Header Line or not the Marker Header in the First Line of File :  [{0}]</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_NoMatchNumberSubstrings" xml:space="preserve">
+    <value>Does not Match the Number of Substrings in the Data Row with the Expected :  [{0}]</value>
+    <comment>Does not Match the Number of Substrings in the Data Row with the Expected :  [{0}]</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_NoOneDataRow" xml:space="preserve">
+    <value>There Is no One Data Row in File : [{0}]</value>
+    <comment>There Is no One Data Row in File : [{0}]</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_ParentMakatIsEmpty" xml:space="preserve">
+    <value>Parent Makat : [{0}] Is Empty</value>
+    <comment>Parent Makat : [{0}] Is Empty</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_SessionCodeExistInDB" xml:space="preserve">
+    <value>Session with Same Code [{0}] Exist in DB</value>
+    <comment>Session with Same Code [{0}] Exist in DB</comment>
+  </data>
+  <data name="Bit_ValidateErrorMessage_Warning" xml:space="preserve">
+    <value>Parser Warning : </value>
+    <comment>Parser Warning : </comment>
+  </data>
+  <data name="Command_Add" xml:space="preserve">
+    <value>Add</value>
+    <comment>Add</comment>
+  </data>
+  <data name="Command_Browse" xml:space="preserve">
+    <value>Browse</value>
+    <comment>Browse</comment>
+  </data>
+  <data name="Command_Cancel" xml:space="preserve">
+    <value>Cancel</value>
+    <comment>Cancel</comment>
+  </data>
+  <data name="Command_Clear" xml:space="preserve">
+    <value>Clear</value>
+    <comment>Clear</comment>
+  </data>
+  <data name="Command_Close" xml:space="preserve">
+    <value>Close</value>
+    <comment>Close</comment>
+  </data>
+  <data name="Command_Delete" xml:space="preserve">
+    <value>Delete</value>
+    <comment>Delete</comment>
+  </data>
+  <data name="Command_Edit" xml:space="preserve">
+    <value>Edit</value>
+    <comment>Edit</comment>
+  </data>
+  <data name="Command_Export" xml:space="preserve">
+    <value>Export</value>
+    <comment>Export</comment>
+  </data>
+  <data name="Command_Filter" xml:space="preserve">
+    <value>Filter</value>
+    <comment>Filter</comment>
+  </data>
+  <data name="Command_Find" xml:space="preserve">
+    <value>Find</value>
+    <comment>Find</comment>
+  </data>
+  <data name="Command_Import" xml:space="preserve">
+    <value>Import</value>
+    <comment>Import</comment>
+  </data>
+  <data name="Command_More" xml:space="preserve">
+    <value>More...</value>
+    <comment>More...</comment>
+  </data>
+  <data name="Command_OK" xml:space="preserve">
+    <value>Ok</value>
+    <comment>Ok</comment>
+  </data>
+  <data name="Command_OpenInExplorer" xml:space="preserve">
+    <value>Open in explorer</value>
+    <comment>Open in explorer</comment>
+  </data>
+  <data name="Command_OpenScript" xml:space="preserve">
+    <value>Open script</value>
+    <comment>Open script</comment>
+  </data>
+  <data name="Command_RefreshStatus" xml:space="preserve">
+    <value>Refresh status</value>
+    <comment>Refresh status</comment>
+  </data>
+  <data name="Command_RepairFromDb" xml:space="preserve">
+    <value>Repair from DB</value>
+    <comment>Repair from DB</comment>
+  </data>
+  <data name="Command_Report" xml:space="preserve">
+    <value>Report</value>
+    <comment>Report</comment>
+  </data>
+  <data name="Command_ResetErrorStatus" xml:space="preserve">
+    <value>Reset error status</value>
+    <comment>Reset error status</comment>
+  </data>
+  <data name="Command_Run" xml:space="preserve">
+    <value>Run</value>
+    <comment>Run</comment>
+  </data>
+  <data name="Command_SaveScript" xml:space="preserve">
+    <value>Save script</value>
+    <comment>Save script</comment>
+  </data>
+  <data name="Command_SetAsDefault" xml:space="preserve">
+    <value>Set as default</value>
+    <comment>Set as default</comment>
+  </data>
+  <data name="Command_Validate" xml:space="preserve">
+    <value>Validate</value>
+    <comment>Validate</comment>
+  </data>
+  <data name="Command_ViewLog" xml:space="preserve">
+    <value>View Log</value>
+    <comment>View Log</comment>
+  </data>
+  <data name="Constant_Barcode" xml:space="preserve">
+    <value>Barcode</value>
+    <comment>Barcode</comment>
+  </data>
+  <data name="Constant_Code" xml:space="preserve">
+    <value>Code:</value>
+    <comment>Code:</comment>
+  </data>
+  <data name="Constant_ERP" xml:space="preserve">
+    <value>ERP</value>
+    <comment>ERP</comment>
+  </data>
+  <data name="Constant_Makat" xml:space="preserve">
+    <value>Makat</value>
+    <comment>Makat</comment>
+  </data>
+  <data name="Constant_Number" xml:space="preserve">
+    <value>Number</value>
+    <comment>Number</comment>
+  </data>
+  <data name="Constant_Path" xml:space="preserve">
+    <value>Path:</value>
+    <comment>Path:</comment>
+  </data>
+  <data name="Constant_Product" xml:space="preserve">
+    <value>Product</value>
+    <comment>Product</comment>
+  </data>
+  <data name="Control_Pagination_Of" xml:space="preserve">
+    <value>of {0}</value>
+    <comment>of {0}</comment>
+  </data>
+  <data name="Domain_Branch" xml:space="preserve">
+    <value>Branch</value>
+    <comment>Branch</comment>
+  </data>
+  <data name="Domain_Customer" xml:space="preserve">
+    <value>Customer</value>
+    <comment>Customer</comment>
+  </data>
+  <data name="Domain_Inventor" xml:space="preserve">
+    <value>Inventor</value>
+    <comment>Inventor</comment>
+  </data>
+  <data name="Domain_Itur" xml:space="preserve">
+    <value>Itur</value>
+    <comment>Itur</comment>
+  </data>
+  <data name="Err_ConnectionDBException" xml:space="preserve">
+    <value> Connection Error </value>
+    <comment> Connection Error </comment>
+  </data>
+  <data name="Log_Error1001" xml:space="preserve">
+    <value>In  ProductParserList {0} - Is Not Exists</value>
+    <comment>In  ProductParserList {0} - Is Not Exists</comment>
+  </data>
+  <data name="Log_Error1003" xml:space="preserve">
+    <value>In  InventProductSimpleParserList {0} - Is Not Exists</value>
+    <comment>In  InventProductSimpleParserList {0} - Is Not Exists</comment>
+  </data>
+  <data name="Log_Error1004" xml:space="preserve">
+    <value>Try Delete File  [{0}]</value>
+    <comment>Try Delete File  [{0}]</comment>
+  </data>
+  <data name="Log_Error1005" xml:space="preserve">
+    <value>File Path  Is Empty</value>
+    <comment>File Path  Is Empty</comment>
+  </data>
+  <data name="Log_Error1007" xml:space="preserve">
+    <value>In  IturParserList {0} - Is Not Exists</value>
+    <comment>In  IturParserList {0} - Is Not Exists</comment>
+  </data>
+  <data name="Log_Error1009" xml:space="preserve">
+    <value>In  LocationParserList {0} - Is Not Exists</value>
+    <comment>In  LocationParserList {0} - Is Not Exists</comment>
+  </data>
+  <data name="Log_Error1010" xml:space="preserve">
+    <value>In  {0} {1} - Is Not Exists</value>
+    <comment>In  {0} {1} - Is Not Exists</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_BarcodeExistInDB" xml:space="preserve">
+    <value>Same Barcode [ {0} ] Exist in DB</value>
+    <comment>Same Barcode [ {0} ] Exist in DB</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_BarcodeIsEmpty" xml:space="preserve">
+    <value>Barcode : [ {0} ] Is Empty</value>
+    <comment>Barcode : [ {0} ] Is Empty</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_BarcodeNotExistInDB" xml:space="preserve">
+    <value>Barcode [ {0} ] Exist in Data Row, but Not Exist in Catalog as Barcode</value>
+    <comment>Barcode [ {0} ] Exist in Data Row, but Not Exist in Catalog as Barcode</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_DocumentCodeExistInDB" xml:space="preserve">
+    <value>Document with Same Code [ {0} ] Exist in DB</value>
+    <comment>Document with Same Code [ {0} ] Exist in DB</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_Error" xml:space="preserve">
+    <value>Parser Error : </value>
+    <comment>Parser Error : </comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_FileIsEmpty" xml:space="preserve">
+    <value>File : [ {0} ] Is Empty or Is not Exist</value>
+    <comment>File : [ {0} ] Is Empty or Is not Exist</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_FileIsNotExist" xml:space="preserve">
+    <value>File : [ {0} ] Is not Exist</value>
+    <comment>File : [ {0} ] Is not Exist</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_IturCodeExistInDB" xml:space="preserve">
+    <value>Itur with Same Code [ {0} ] Exist in DB</value>
+    <comment>Itur with Same Code [ {0} ] Exist in DB</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_IturCodeNotExistInDB" xml:space="preserve">
+    <value>IturCode [ {0} ] Exist in Data Row, but Not Exist in Itur as Code</value>
+    <comment>IturCode [ {0} ] Exist in Data Row, but Not Exist in Itur as Code</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_LocationCodeExistInDB" xml:space="preserve">
+    <value>Location with Same Code [ {0} ] Exist in DB</value>
+    <comment>Location with Same Code [ {0} ] Exist in DB</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_LocationCodeNotExistInDB" xml:space="preserve">
+    <value>LocationCode [ {0} ] Exist in Data Row, but Not Exist in Location as Code</value>
+    <comment>LocationCode [ {0} ] Exist in Data Row, but Not Exist in Location as Code</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_MakatAndBarcodeNotExistInDB" xml:space="preserve">
+    <value>Barcode (or Makat) [ {0} ] Exist in Data Row, but Not Exist in Catalog</value>
+    <comment>Barcode (or Makat) [ {0} ] Exist in Data Row, but Not Exist in Catalog</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_MakatExistInDB" xml:space="preserve">
+    <value>Same Makat [ {0} ] Exist in DB</value>
+    <comment>Same Makat [ {0} ] Exist in DB</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_MakatIsEmpty" xml:space="preserve">
+    <value>Makat : [ {0} ] Is Empty</value>
+    <comment>Makat : [ {0} ] Is Empty</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_MakatNotExistInDB" xml:space="preserve">
+    <value>Makat [ {0} ] Exist in Data Row, but Not Exist in Catalog as Makat</value>
+    <comment>Makat [ {0} ] Exist in Data Row, but Not Exist in Catalog as Makat</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_NoExpectedLengthString" xml:space="preserve">
+    <value>Length of Input String does not match the Expected Length : [ {0} ]</value>
+    <comment>Length of Input String does not match the Expected Length : [ {0} ]</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_NoExpectedMarker" xml:space="preserve">
+    <value>Data Row no Expected Marker : [ {0} ]</value>
+    <comment>Data Row no Expected Marker : [ {0} ]</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_NoHeaderLine" xml:space="preserve">
+    <value>There Is no Header Line or not the Marker Header in the First Line of File :  [ {0} ]</value>
+    <comment>There Is no Header Line or not the Marker Header in the First Line of File :  [ {0} ]</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_NoMatchNumberSubstrings" xml:space="preserve">
+    <value>Does not Match the Number of Substrings in the Data Row with the Expected :  [ {0} ]</value>
+    <comment>Does not Match the Number of Substrings in the Data Row with the Expected :  [ {0} ]</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_NoOneDataRow" xml:space="preserve">
+    <value>There Is no One Data Row in File : [ {0} ]</value>
+    <comment>There Is no One Data Row in File : [ {0} ]</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_ParentMakatIsEmpty" xml:space="preserve">
+    <value>Parent Makat : [ {0} ] Is Empty</value>
+    <comment>Parent Makat : [ {0} ] Is Empty</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_SessionCodeExistInDB" xml:space="preserve">
+    <value>Session with Same Code [ {0} ] Exist in DB</value>
+    <comment>Session with Same Code [ {0} ] Exist in DB</comment>
+  </data>
+  <data name="Log_ParserFileErrorMessage_Warning" xml:space="preserve">
+    <value>Parser Warning : </value>
+    <comment>Parser Warning : </comment>
+  </data>
+  <data name="Log_TraceParser1001" xml:space="preserve">
+    <value>Parser Error And Message : </value>
+    <comment>Parser Error And Message : </comment>
+  </data>
+  <data name="Log_TraceProvider1101" xml:space="preserve">
+    <value>[{0}] is [{1}]</value>
+    <comment>[{0}] is [{1}]</comment>
+  </data>
+  <data name="Log_TraceProvider1102" xml:space="preserve">
+    <value>From  [{0}]</value>
+    <comment>From  [{0}]</comment>
+  </data>
+  <data name="Log_TraceProvider1103" xml:space="preserve">
+    <value>Import Option - [{0}]</value>
+    <comment>Import Option - [{0}]</comment>
+  </data>
+  <data name="Log_TraceRepository1001" xml:space="preserve">
+    <value>Start process: Clear Table [{0}] Via ADO.NET</value>
+    <comment>Start process: Clear Table [{0}] Via ADO.NET</comment>
+  </data>
+  <data name="Log_TraceRepository1005" xml:space="preserve">
+    <value>Start process: Select Ver DB [{0}]  Via ADO.NET</value>
+    <comment>Start process: Select Ver DB [{0}]  Via ADO.NET</comment>
+  </data>
+  <data name="Log_TraceRepository1006" xml:space="preserve">
+    <value>End process: Select Ver DB</value>
+    <comment>End process: Select Ver DB</comment>
+  </data>
+  <data name="Log_TraceRepository1015" xml:space="preserve">
+    <value>Export to [{0}] is [{1}]</value>
+    <comment>Export to [{0}] is [{1}]</comment>
+  </data>
+  <data name="Log_TraceRepository1040" xml:space="preserve">
+    <value>[{0}] is [{1}]</value>
+    <comment>[{0}] is [{1}]</comment>
+  </data>
+  <data name="Log_TraceRepository1045" xml:space="preserve">
+    <value>Clear [{0}]</value>
+    <comment>Clear [{0}]</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1001" xml:space="preserve">
+    <value>subFolder : [{0}]</value>
+    <comment>subFolder : [{0}]</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1002" xml:space="preserve">
+    <value>fileDB : [{0}]</value>
+    <comment>fileDB : [{0}]</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1003" xml:space="preserve">
+    <value>Sql : [{0}]</value>
+    <comment>Sql : [{0}]</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult10031" xml:space="preserve">
+    <value>[{0}] in DB [{1}]</value>
+    <comment>[{0}] in DB [{1}]</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1004" xml:space="preserve">
+    <value>Start Commit process </value>
+    <comment>Start Commit process </comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1005" xml:space="preserve">
+    <value>End Commit process</value>
+    <comment>End Commit process</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1006" xml:space="preserve">
+    <value>[{0}] in DB {1}\\{2}</value>
+    <comment>[{0}] in DB {1}\\{2}</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1007" xml:space="preserve">
+    <value>End process Clear </value>
+    <comment>End process Clear </comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1008" xml:space="preserve">
+    <value>Start Process: Copy Table [{0}] Via BulkCopy</value>
+    <comment>Start Process: Copy Table [{0}] Via BulkCopy</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1009" xml:space="preserve">
+    <value>From DB [{0}] To DB [{1}] </value>
+    <comment>From DB [{0}] To DB [{1}] </comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1011" xml:space="preserve">
+    <value>Add {0} {1} in DB [{2}]</value>
+    <comment>Add {0} {1} in DB [{2}]</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1015" xml:space="preserve">
+    <value>Clear [{0}] Via ADO.NET</value>
+    <comment>Clear [{0}] Via ADO.NET</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1016" xml:space="preserve">
+    <value>Start Write to File [{0}] </value>
+    <comment>Start Write to File [{0}] </comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1020" xml:space="preserve">
+    <value>Start Fill [{0}]</value>
+    <comment>Start Fill [{0}]</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1021" xml:space="preserve">
+    <value>End Fill[{0}]</value>
+    <comment>End Fill[{0}]</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1035" xml:space="preserve">
+    <value>Start process: Commit Data To DB [{0}] </value>
+    <comment>Start process: Commit Data To DB [{0}] </comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1036" xml:space="preserve">
+    <value>End process: Commit Data To DB [{0}] </value>
+    <comment>End process: Commit Data To DB [{0}] </comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1050" xml:space="preserve">
+    <value>Parser Error And Message : </value>
+    <comment>Parser Error And Message : </comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1055" xml:space="preserve">
+    <value>Copy Table [{0}] Via BulkCopy</value>
+    <comment>Copy Table [{0}] Via BulkCopy</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1056" xml:space="preserve">
+    <value>Delete File  [{0}]</value>
+    <comment>Delete File  [{0}]</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1057" xml:space="preserve">
+    <value>Cancel Write to File [{0}] </value>
+    <comment>Cancel Write to File [{0}] </comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1058" xml:space="preserve">
+    <value>Write to File [{0}] </value>
+    <comment>Write to File [{0}] </comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1059" xml:space="preserve">
+    <value>Cancel Insert [{0}] in DB [{1}] from file [{2}]</value>
+    <comment>Cancel Insert [{0}] in DB [{1}] from file [{2}]</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1061" xml:space="preserve">
+    <value>Source Table [{0}] in DB [{1}] {2} have [{3}] Row</value>
+    <comment>Source Table [{0}] in DB [{1}] {2} have [{3}] Row</comment>
+  </data>
+  <data name="Log_TraceRepositoryResult1062" xml:space="preserve">
+    <value>Destination Table [{0}] in DB [{1}] {2} after Copy, have [{3}] Row</value>
+    <comment>Destination Table [{0}] in DB [{1}] {2} after Copy, have [{3}] Row</comment>
+  </data>
+  <data name="Mdi_AllBranches" xml:space="preserve">
+    <value>Branches</value>
+    <comment>Branches</comment>
+  </data>
+  <data name="Mdi_CatalogInfoForBranch" xml:space="preserve">
+    <value>Catalog Info for Branch</value>
+    <comment>Catalog Info for Branch</comment>
+  </data>
+  <data name="Mdi_CatalogInfoForCustomer" xml:space="preserve">
+    <value>Catalog Info for Customer</value>
+    <comment>Catalog Info for Customer</comment>
+  </data>
+  <data name="Mdi_CatalogInfoForInventor" xml:space="preserve">
+    <value>Catalog Info for Inventor</value>
+    <comment>Catalog Info for Inventor</comment>
+  </data>
+  <data name="Mdi_GetFromPdaLog" xml:space="preserve">
+    <value>Get from PDA Log</value>
+    <comment>Get from PDA Log</comment>
+  </data>
+  <data name="Mdi_InventorStatus" xml:space="preserve">
+    <value>Inventor Status</value>
+    <comment>Inventor Status</comment>
+  </data>
+  <data name="Mdi_Iturim" xml:space="preserve">
+    <value>Iturim</value>
+    <comment>Iturim</comment>
+  </data>
+  <data name="Mdi_LastBraches" xml:space="preserve">
+    <value>Last Branches Used In Inventory</value>
+    <comment>Last Branches Used In Inventory</comment>
+  </data>
+  <data name="Mdi_LastBrachesForCustomer" xml:space="preserve">
+    <value>Last Branches For Customer Used In Inventory</value>
+    <comment>Last Branches For Customer Used In Inventory</comment>
+  </data>
+  <data name="Mdi_LastCustomers" xml:space="preserve">
+    <value>Last Customers Used In Inventory</value>
+    <comment>Last Customers Used In Inventory</comment>
+  </data>
+  <data name="Mdi_LastCustomersBuild" xml:space="preserve">
+    <value>Last Customers Build</value>
+    <comment>Last Customers Build</comment>
+  </data>
+  <data name="Mdi_LastInventors" xml:space="preserve">
+    <value>Last Inventors</value>
+    <comment>Last Inventors</comment>
+  </data>
+  <data name="Mdi_LastInventorsForBranch" xml:space="preserve">
+    <value>Last Inventors for Branch</value>
+    <comment>Last Inventors for Branch</comment>
+  </data>
+  <data name="Mdi_LastInventorsForCustomer" xml:space="preserve">
+    <value>Last Inventors for Customer</value>
+    <comment>Last Inventors for Customer</comment>
+  </data>
+  <data name="Mdi_Location" xml:space="preserve">
+    <value>Location</value>
+    <comment>Location</comment>
+  </data>
+  <data name="Mdi_Menu" xml:space="preserve">
+    <value>Menu</value>
+    <comment>Menu</comment>
+  </data>
+  <data name="Mdi_PdaSendData" xml:space="preserve">
+    <value>PDA Send Data</value>
+    <comment>PDA Send Data</comment>
+  </data>
+  <data name="Mdi_Reports" xml:space="preserve">
+    <value>Reports</value>
+    <comment>Reports</comment>
+  </data>
+  <data name="Mdi_Section" xml:space="preserve">
+    <value>Section</value>
+    <comment>Section</comment>
+  </data>
+  <data name="Menu_Name_Adapters" xml:space="preserve">
+    <value>Adapters</value>
+    <comment>Adapters</comment>
+  </data>
+  <data name="Menu_Name_AddBranch" xml:space="preserve">
+    <value>Add Branch</value>
+    <comment>Add Branch</comment>
+  </data>
+  <data name="Menu_Name_AddCustomer" xml:space="preserve">
+    <value>Add Customer</value>
+    <comment>Add Customer</comment>
+  </data>
+  <data name="Menu_Name_AddInventor" xml:space="preserve">
+    <value>Add Inventor</value>
+    <comment>Add Inventor</comment>
+  </data>
+  <data name="Menu_Name_AddItem" xml:space="preserve">
+    <value>Add Item</value>
+    <comment>Add Item</comment>
+  </data>
+  <data name="Menu_Name_Catalog" xml:space="preserve">
+    <value>Catalog</value>
+    <comment>Catalog</comment>
+  </data>
+  <data name="Menu_Name_ChangeCatalog" xml:space="preserve">
+    <value>Change Catalog</value>
+    <comment>Change Catalog</comment>
+  </data>
+  <data name="Menu_Name_EditBranch" xml:space="preserve">
+    <value>Edit Branch</value>
+    <comment>Edit Branch</comment>
+  </data>
+  <data name="Menu_Name_EditCustomer" xml:space="preserve">
+    <value>Edit Customer</value>
+    <comment>Edit Customer</comment>
+  </data>
+  <data name="Menu_Name_EditInventor" xml:space="preserve">
+    <value>Edit Inventor</value>
+    <comment>Edit Inventor</comment>
+  </data>
+  <data name="Menu_Name_ERPExpected" xml:space="preserve">
+    <value>ERP Expected</value>
+    <comment>ERP Expected</comment>
+  </data>
+  <data name="Menu_Name_ExportERP" xml:space="preserve">
+    <value>ExportERP</value>
+    <comment>ExportERP</comment>
+  </data>
+  <data name="Menu_Name_ExportPDA" xml:space="preserve">
+    <value>ExportPDA</value>
+    <comment>ExportPDA</comment>
+  </data>
+  <data name="Menu_Name_GetFromPDA" xml:space="preserve">
+    <value>Get From PDA</value>
+    <comment>Get From PDA</comment>
+  </data>
+  <data name="Menu_Name_Iturim" xml:space="preserve">
+    <value>Iturim</value>
+    <comment>Iturim</comment>
+  </data>
+  <data name="Menu_Name_Location" xml:space="preserve">
+    <value>Location</value>
+    <comment>Location</comment>
+  </data>
+  <data name="Menu_Name_Properties" xml:space="preserve">
+    <value>Properties</value>
+    <comment>Properties</comment>
+  </data>
+  <data name="Menu_Name_ReportFavorites" xml:space="preserve">
+    <value>Reports Favorites</value>
+    <comment>Reports Favorites</comment>
+  </data>
+  <data name="Menu_Name_SaveZipInventor" xml:space="preserve">
+    <value>Save/Zip Inventor</value>
+    <comment>Save/Zip Inventor</comment>
+  </data>
+  <data name="Menu_Name_SearchBranch" xml:space="preserve">
+    <value>Search Branch</value>
+    <comment>Search Branch</comment>
+  </data>
+  <data name="Menu_Name_SearchCustomer" xml:space="preserve">
+    <value>Search Customer</value>
+    <comment>Search Customer</comment>
+  </data>
+  <data name="Menu_Name_SearchInventor" xml:space="preserve">
+    <value>Search Inventor</value>
+    <comment>Search Inventor</comment>
+  </data>
+  <data name="Menu_Name_SendDataInMail" xml:space="preserve">
+    <value>Send Data In Mail</value>
+    <comment>Send Data In Mail</comment>
+  </data>
+  <data name="Menu_Name_StartWizard" xml:space="preserve">
+    <value>Wizard Create Inventor</value>
+    <comment>Wizard Create Inventor</comment>
+  </data>
+  <data name="Message_ReportMissedInFileSystem" xml:space="preserve">
+    <value>Report file doesn't exist in file system</value>
+    <comment>Report file doesn't exist in file system</comment>
+  </data>
+  <data name="Msg_Add_Another_Branch" xml:space="preserve">
+    <value>New branch successfully saved. Add another one?</value>
+    <comment>New branch successfully saved. Add another one?</comment>
+  </data>
+  <data name="Msg_Add_Another_Customer" xml:space="preserve">
+    <value>New customer successfully saved. Add another one?</value>
+    <comment>New customer successfully saved. Add another one?</comment>
+  </data>
+  <data name="Msg_BackupDb" xml:space="preserve">
+    <value>Backuping db files...</value>
+    <comment>Backuping db files...</comment>
+  </data>
+  <data name="Msg_Branch_Sdf_File_Missed" xml:space="preserve">
+    <value>{0} file is missed. Application will create new one. Inherit database file from customer?</value>
+    <comment>{0} file is missed. Application will create new one. Inherit database file from customer?</comment>
+  </data>
+  <data name="Msg_CheckingDb" xml:space="preserve">
+    <value>Checking imported databases for consistency</value>
+    <comment>Checking imported databases for consistency</comment>
+  </data>
+  <data name="Msg_Clear_Export_ERP" xml:space="preserve">
+    <value>Do you really want to clear?</value>
+    <comment>Do you really want to clear?</comment>
+  </data>
+  <data name="Msg_Clear_Export_PDA" xml:space="preserve">
+    <value>Do you really want to clear?</value>
+    <comment>Do you really want to clear?</comment>
+  </data>
+  <data name="Msg_Clear_Import" xml:space="preserve">
+    <value>Do you really want to clear?</value>
+    <comment>Do you really want to clear?</comment>
+  </data>
+  <data name="Msg_Clear_Import_Directory" xml:space="preserve">
+    <value>You are about to clear {0}. Are you sure?</value>
+    <comment>You are about to clear {0}. Are you sure?</comment>
+  </data>
+  <data name="Msg_Close_Application" xml:space="preserve">
+    <value>Are you sure want close application?</value>
+    <comment>Are you sure want close application?</comment>
+  </data>
+  <data name="Msg_Common_Error_Occured" xml:space="preserve">
+    <value>An error has occured. Description is available in the log file.</value>
+    <comment>An error has occured. Description is available in the log file.</comment>
+  </data>
+  <data name="Msg_ConfigurationSetExist" xml:space="preserve">
+    <value>Configuration set with such name already exists</value>
+    <comment>Configuration set with such name already exists</comment>
+  </data>
+  <data name="Msg_Customer_Sdf_File_Missed" xml:space="preserve">
+    <value>{0} file is missed. Application will create new one.</value>
+    <comment>{0} file is missed. Application will create new one.</comment>
+  </data>
+  <data name="Msg_Default_Adapter_Unaccessible" xml:space="preserve">
+    <value>Your default adapter is unaccessible due to licensing permissions. Fallback adapter selected.</value>
+    <comment>Your default adapter is unaccessible due to licensing permissions. Fallback adapter selected.</comment>
+  </data>
+  <data name="Msg_Delete_Adapter_Link" xml:space="preserve">
+    <value>Are you sure you want to delete adapter link?</value>
+    <comment>Are you sure you want to delete adapter link?</comment>
+  </data>
+  <data name="Msg_Delete_Branch" xml:space="preserve">
+    <value>Are you sure want delete {0} ?</value>
+    <comment>Are you sure want delete {0} ?</comment>
+  </data>
+  <data name="Msg_Delete_Customer" xml:space="preserve">
+    <value>Are you sure want delete {0} ?</value>
+    <comment>Are you sure want delete {0} ?</comment>
+  </data>
+  <data name="Msg_Delete_Document_Header" xml:space="preserve">
+    <value>Are you sure you want to delete document header: {0} ?</value>
+    <comment>Are you sure you want to delete document header: {0} ?</comment>
+  </data>
+  <data name="Msg_Delete_Inventor" xml:space="preserve">
+    <value>Are you sure want delete {0} ?</value>
+    <comment>Are you sure want delete {0} ?</comment>
+  </data>
+  <data name="Msg_Delete_Invent_Product" xml:space="preserve">
+    <value>Are you sure you want to delete {0} {1} {2}?</value>
+    <comment>Are you sure you want to delete {0} {1} {2}?</comment>
+  </data>
+  <data name="Msg_Delete_Itur" xml:space="preserve">
+    <value>Are you sure you want to delete itur(s): {0} ?</value>
+    <comment>Are you sure you want to delete itur(s): {0} ?</comment>
+  </data>
+  <data name="Msg_Delete_Location" xml:space="preserve">
+    <value>Are you sure you want to delete location(s): {0} ?</value>
+    <comment>Are you sure you want to delete location(s): {0} ?</comment>
+  </data>
+  <data name="Msg_Delete_Parsing_Mask" xml:space="preserve">
+    <value>Are you sure want to delete masks for {0} adapter?</value>
+    <comment>Are you sure want to delete masks for {0} adapter?</comment>
+  </data>
+  <data name="Msg_Delete_Product" xml:space="preserve">
+    <value>Are you sure you want to delete product(s): {0} ?</value>
+    <comment>Are you sure you want to delete product(s): {0} ?</comment>
+  </data>
+  <data name="Msg_Delete_Report" xml:space="preserve">
+    <value>Are you sure want to delete report {0}\{1} ?</value>
+    <comment>Are you sure want to delete report {0}\{1} ?</comment>
+  </data>
+  <data name="Msg_Delete_Section" xml:space="preserve">
+    <value>Are you sure want to delete section {0} ?</value>
+    <comment>Are you sure want to delete section {0} ?</comment>
+  </data>
+  <data name="Msg_Incorrect_File_Format" xml:space="preserve">
+    <value>Incorrect file format</value>
+    <comment>Incorrect file format</comment>
+  </data>
+  <data name="Msg_Migrate_Db_Done" xml:space="preserve">
+    <value>Database scheme updated from version {0} to {1}{2}Backup path: {3}</value>
+    <comment>Database scheme updated from version {0} to {1}{2}Backup path: {3}</comment>
+  </data>
+  <data name="Msg_Migrate_Db_Done2" xml:space="preserve">
+    <value>Database scheme updated.</value>
+    <comment>Database scheme updated.</comment>
+  </data>
+  <data name="Msg_Migrate_Db_Error" xml:space="preserve">
+    <value>Error while preparing db: {0}</value>
+    <comment>Error while preparing db: {0}</comment>
+  </data>
+  <data name="Msg_Migrate_Db_Error_Rollback" xml:space="preserve">
+    <value>Database migration error has occured. Please contact administrator.{0}Database files will be rolled back to initial state.</value>
+    <comment>Database migration error has occured. Please contact administrator.{0}Database files will be rolled back to initial state.</comment>
+  </data>
+  <data name="Msg_Migrate_Db_Error_Version" xml:space="preserve">
+    <value>Your program version is older than database files.</value>
+    <comment>Your program version is older than database files.</comment>
+  </data>
+  <data name="Msg_NotValidFileName" xml:space="preserve">
+    <value>File name is not valid</value>
+    <comment>File name is not valid</comment>
+  </data>
+  <data name="Msg_PrepareDatabase" xml:space="preserve">
+    <value>Preparing database for first use...</value>
+    <comment>Preparing database for first use...</comment>
+  </data>
+  <data name="Msg_Recalculate_Itur_Status" xml:space="preserve">
+    <value>Recalculation of itur statuses can take a lot of time. Do you want to proceed?</value>
+    <comment>Recalculation of itur statuses can take a lot of time. Do you want to proceed?</comment>
+  </data>
+  <data name="Msg_Rollback" xml:space="preserve">
+    <value>Rolling back changes</value>
+    <comment>Rolling back changes</comment>
+  </data>
+  <data name="Msg_Unhandled_Exception" xml:space="preserve">
+    <value>Unhandled exception occured.</value>
+    <comment>Unhandled exception occured.</comment>
+  </data>
+  <data name="Msg_UpdateDbScheme" xml:space="preserve">
+    <value>Updating db scheme...</value>
+    <comment>Updating db scheme...</comment>
+  </data>
+  <data name="Msg_Zip_Changes_Apply_After_Restart" xml:space="preserve">
+    <value>Adapters changes will apply after application restart.</value>
+    <comment>Adapters changes will apply after application restart.</comment>
+  </data>
+  <data name="Status_ConvertDataErrorMessage_CodeIsEmpty" xml:space="preserve">
+    <value>Code Is Empty in Data Row [{0}] </value>
+    <comment>Code Is Empty in Data Row [{0}] </comment>
+  </data>
+  <data name="Status_ConvertDataErrorMessage_FKCodeIsEmpty" xml:space="preserve">
+    <value>FK Code Is Empty in Data Row [{0}] </value>
+    <comment>FK Code Is Empty in Data Row [{0}] </comment>
+  </data>
+  <data name="Status_ConvertDataErrorMessage_InvalidValue" xml:space="preserve">
+    <value>Invalid Value in Data Row [{0}]</value>
+    <comment>Invalid Value in Data Row [{0}]</comment>
+  </data>
+  <data name="Status_ConvertDataErrorMessage_SameCodeExist" xml:space="preserve">
+    <value>Object with the Same Code [{0}] Exist in DB</value>
+    <comment>Object with the Same Code [{0}] Exist in DB</comment>
+  </data>
+  <data name="Status_DocumentStatusTitle_None" xml:space="preserve">
+    <value>None</value>
+    <comment>None</comment>
+  </data>
+  <data name="Status_DocumentStatusTitle_NoOneDoc" xml:space="preserve">
+    <value>No One Document</value>
+    <comment>No One Document</comment>
+  </data>
+  <data name="Status_DocumentStatusTitle_OneDocIsApprove" xml:space="preserve">
+    <value>One Document Is Approve</value>
+    <comment>One Document Is Approve</comment>
+  </data>
+  <data name="Status_DocumentStatusTitle_OneDocIsNotApprove" xml:space="preserve">
+    <value>One Document Is Not Approve</value>
+    <comment>One Document Is Not Approve</comment>
+  </data>
+  <data name="Status_DocumentStatusTitle_SomeDocIsApprove" xml:space="preserve">
+    <value>Some Documents And This Is Approve</value>
+    <comment>Some Documents And This Is Approve</comment>
+  </data>
+  <data name="Status_DocumentStatusTitle_SomeDocsIsNotApprove" xml:space="preserve">
+    <value>Some Documents And This Is Not Approve</value>
+    <comment>Some Documents And This Is Not Approve</comment>
+  </data>
+  <data name="Status_IturStatusGroupTitle_AllDocsIsApprove" xml:space="preserve">
+    <value>All Docs Are Approve</value>
+    <comment>All Docs Are Approve</comment>
+  </data>
+  <data name="Status_IturStatusGroupTitle_DisableAndNoOneDoc" xml:space="preserve">
+    <value>Disable And No One Doc</value>
+    <comment>Disable And No One Doc</comment>
+  </data>
+  <data name="Status_IturStatusGroupTitle_DisableWithDocs" xml:space="preserve">
+    <value>Disable With Docs</value>
+    <comment>Disable With Docs</comment>
+  </data>
+  <data name="Status_IturStatusGroupTitle_Empty" xml:space="preserve">
+    <value>Empty</value>
+    <comment>Empty</comment>
+  </data>
+  <data name="Status_IturStatusGroupTitle_Error" xml:space="preserve">
+    <value>Error</value>
+    <comment>Error</comment>
+  </data>
+  <data name="Status_IturStatusGroupTitle_NotApprove" xml:space="preserve">
+    <value>Not Approve</value>
+    <comment>Not Approve</comment>
+  </data>
+  <data name="Status_IturStatusGroupTitle_OneDocIsApprove" xml:space="preserve">
+    <value>One Doc Is Approve</value>
+    <comment>One Doc Is Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_AllDocIsApprove" xml:space="preserve">
+    <value>Some of Documents Is Approve</value>
+    <comment>Some of Documents Is Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_AnyDocIsNotApprove" xml:space="preserve">
+    <value>Some of Documents Is Not Approve</value>
+    <comment>Some of Documents Is Not Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_DisableAndAllDocIsApprove" xml:space="preserve">
+    <value>Disable And Some of Documents Is Approve</value>
+    <comment>Disable And Some of Documents Is Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_DisableAndAnyDocIsNotApprove" xml:space="preserve">
+    <value>Disable And Some of Documents Is Not Approve</value>
+    <comment>Disable And Some of Documents Is Not Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_DisableAndNoOneDoc" xml:space="preserve">
+    <value>Disable And No One Document</value>
+    <comment>Disable And No One Document</comment>
+  </data>
+  <data name="Status_IturStatusTitle_DisableAndOneDocIsApprove" xml:space="preserve">
+    <value>Disable And One Document Is Approve</value>
+    <comment>Disable And One Document Is Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_DisableAndOneDocIsNotApprove" xml:space="preserve">
+    <value>Disable And One Document Is Not Approve</value>
+    <comment>Disable And One Document Is Not Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_DisableAndSomeDocIsApprove" xml:space="preserve">
+    <value>Disable And Some of Documents Is Approve</value>
+    <comment>Disable And Some of Documents Is Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_DisableAndSomeDocIsNotApprove" xml:space="preserve">
+    <value>Disable And Some of Documents Is Not Approve</value>
+    <comment>Disable And Some of Documents Is Not Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_None" xml:space="preserve">
+    <value>None</value>
+    <comment>None</comment>
+  </data>
+  <data name="Status_IturStatusTitle_NoOneDoc" xml:space="preserve">
+    <value>No One Document</value>
+    <comment>No One Document</comment>
+  </data>
+  <data name="Status_IturStatusTitle_OneDocIsApprove" xml:space="preserve">
+    <value>One Document Is Approve</value>
+    <comment>One Document Is Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_OneDocIsNotApprove" xml:space="preserve">
+    <value>One Document Is Not Approve</value>
+    <comment>One Document Is Not Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_SomeDocIsApprove" xml:space="preserve">
+    <value>Some of Documents Is Approve</value>
+    <comment>Some of Documents Is Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_SomeDocIsNotApprove" xml:space="preserve">
+    <value>Some of Documents Is Not Approve</value>
+    <comment>Some of Documents Is Not Approve</comment>
+  </data>
+  <data name="Status_IturStatusTitle_WarningConvert" xml:space="preserve">
+    <value>Error</value>
+    <comment>Error</comment>
+  </data>
+  <data name="String" xml:space="preserve">
+    <value />
+  </data>
+  <data name="Validation_Files_Cant_Equal" xml:space="preserve">
+    <value>Files can't be equal</value>
+    <comment>Files can't be equal</comment>
+  </data>
+  <data name="Validation_File_Not_Exist" xml:space="preserve">
+    <value>File doesn't exist</value>
+    <comment>File doesn't exist</comment>
+  </data>
+  <data name="Validation_Not_Valid_Directory" xml:space="preserve">
+    <value>Not valid directory</value>
+    <comment>Not valid directory</comment>
+  </data>
+  <data name="Validation_Not_Valid_File" xml:space="preserve">
+    <value>Not valid file</value>
+    <comment>Not valid file</comment>
+  </data>
+  <data name="Validation_Not_Valid_Path" xml:space="preserve">
+    <value>Path is not valid</value>
+    <comment>Path is not valid</comment>
+  </data>
+  <data name="ViewModel_BranchChoose_FilterCodeErp" xml:space="preserve">
+    <value>Code ERP</value>
+    <comment>Code ERP</comment>
+  </data>
+  <data name="ViewModel_BranchChoose_FilterCodeLocal" xml:space="preserve">
+    <value>Code local</value>
+    <comment>Code local</comment>
+  </data>
+  <data name="ViewModel_BranchChoose_FilterLocation" xml:space="preserve">
+    <value>Address</value>
+    <comment>Address</comment>
+  </data>
+  <data name="ViewModel_BranchChoose_FilterName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="ViewModel_BranchChoose_FilterPhone" xml:space="preserve">
+    <value>Phone</value>
+    <comment>Phone</comment>
+  </data>
+  <data name="ViewModel_BranchesDashboardPart_TotalBranches" xml:space="preserve">
+    <value>Total {0} branches</value>
+    <comment>Total {0} branches</comment>
+  </data>
+  <data name="ViewModel_CatalogForm_Barcode" xml:space="preserve">
+    <value>Barcode</value>
+    <comment>Barcode</comment>
+  </data>
+  <data name="ViewModel_CatalogForm_Makat" xml:space="preserve">
+    <value>Makat</value>
+    <comment>Makat</comment>
+  </data>
+  <data name="ViewModel_CatalogForm_PriceBuy" xml:space="preserve">
+    <value>Price Buy</value>
+    <comment>Price Buy</comment>
+  </data>
+  <data name="ViewModel_CatalogForm_PriceSale" xml:space="preserve">
+    <value>Price Sale</value>
+    <comment>Price Sale</comment>
+  </data>
+  <data name="ViewModel_CatalogForm_ProductName" xml:space="preserve">
+    <value>Product Name</value>
+    <comment>Product Name</comment>
+  </data>
+  <data name="ViewModel_CatalogInfoForCBIPart_LastChanges" xml:space="preserve">
+    <value>Last Changes: {0}</value>
+    <comment>Last Changes: {0}</comment>
+  </data>
+  <data name="ViewModel_CatalogInfoForCBIPart_TotalItemCodes" xml:space="preserve">
+    <value>Total Item Codes (makat): {0}</value>
+    <comment>Total Item Codes (makat): {0}</comment>
+  </data>
+  <data name="ViewModel_CatalogInfoForCBIPart_TotalItems" xml:space="preserve">
+    <value>Total Items: {0}</value>
+    <comment>Total Items: {0}</comment>
+  </data>
+  <data name="ViewModel_ContextCBIChoose_All" xml:space="preserve">
+    <value>[All]</value>
+    <comment>[All]</comment>
+  </data>
+  <data name="ViewModel_CustomerChoose_FilterAddress" xml:space="preserve">
+    <value>Address</value>
+    <comment>Address</comment>
+  </data>
+  <data name="ViewModel_CustomerChoose_FilterName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="ViewModel_CustomerChoose_FilterPhone" xml:space="preserve">
+    <value>Phone</value>
+    <comment>Phone</comment>
+  </data>
+  <data name="ViewModel_DocumentHeaderItem_Itur" xml:space="preserve">
+    <value>ITUR {0}-{1}</value>
+    <comment>ITUR {0}-{1}</comment>
+  </data>
+  <data name="ViewModel_ExportPdaSettingsControl_NoLookupFile" xml:space="preserve">
+    <value>No Lookup File</value>
+    <comment>No Lookup File</comment>
+  </data>
+  <data name="ViewModel_ExportPdaSettingsControl_OnlyProductCode" xml:space="preserve">
+    <value>Only Product Code (Barcode or Makat)</value>
+    <comment>Only Product Code (Barcode or Makat)</comment>
+  </data>
+  <data name="ViewModel_ExportPdaSettingsControl_ProductCodeName" xml:space="preserve">
+    <value>Product Code &amp; Name</value>
+    <comment>Product Code &amp; Name</comment>
+  </data>
+  <data name="ViewModel_ExportPdaSettingsControl_ValidIntegerRequired" xml:space="preserve">
+    <value>Valid positive integer required</value>
+    <comment>Valid positive integer required</comment>
+  </data>
+  <data name="ViewModel_ImportWithModulesBase_ImportProgress" xml:space="preserve">
+    <value>Import progress: </value>
+    <comment>Import progress: </comment>
+  </data>
+  <data name="ViewModel_ImportWithModulesBase_Step" xml:space="preserve">
+    <value>Step: {0}/{1}</value>
+    <comment>Step: {0}/{1}</comment>
+  </data>
+  <data name="ViewModel_InventorForm_InventorExist" xml:space="preserve">
+    <value>Inventor with such code already exists</value>
+    <comment>Inventor with such code already exists</comment>
+  </data>
+  <data name="ViewModel_InventorStatusChange_Status" xml:space="preserve">
+    <value>Status: {0}</value>
+    <comment>Status: {0}</comment>
+  </data>
+  <data name="ViewModel_InventProductItem_QuantityEdit" xml:space="preserve">
+    <value>Value must be positive and non null</value>
+    <comment>Value must be positive and non null</comment>
+  </data>
+  <data name="ViewModel_InventProductListDetails_Location" xml:space="preserve">
+    <value>Location name: </value>
+    <comment>Location name: </comment>
+  </data>
+  <data name="ViewModel_InventProductListDetails_NumberPrefix" xml:space="preserve">
+    <value>Number prefix: </value>
+    <comment>Number prefix: </comment>
+  </data>
+  <data name="ViewModel_InventProductListDetails_NumberSuffix" xml:space="preserve">
+    <value>Number suffix: </value>
+    <comment>Number suffix: </comment>
+  </data>
+  <data name="ViewModel_InventProductListDetails_StatusBit" xml:space="preserve">
+    <value>Status bit: </value>
+    <comment>Status bit: </comment>
+  </data>
+  <data name="ViewModel_InventProductListDetails_StatusDocHeaderBit" xml:space="preserve">
+    <value>Status doc header bit: </value>
+    <comment>Status doc header bit: </comment>
+  </data>
+  <data name="ViewModel_InventProductListDetails_StatusGroupBit" xml:space="preserve">
+    <value>Status group bit: </value>
+    <comment>Status group bit: </comment>
+  </data>
+  <data name="ViewModel_InventProductListDetails_TotalItems" xml:space="preserve">
+    <value>Total Items:</value>
+    <comment>Total Items:</comment>
+  </data>
+  <data name="ViewModel_IturAddEditDelete_AlreadyExist" xml:space="preserve">
+    <value>Following itur(s) already exist: {0}</value>
+    <comment>Following itur(s) already exist: {0}</comment>
+  </data>
+  <data name="ViewModel_IturAddEditDelete_FilterDate" xml:space="preserve">
+    <value>Date</value>
+    <comment>Date</comment>
+  </data>
+  <data name="ViewModel_IturAddEditDelete_FilterLocation" xml:space="preserve">
+    <value>Location</value>
+    <comment>Location</comment>
+  </data>
+  <data name="ViewModel_IturAddEditDelete_FilterNumber" xml:space="preserve">
+    <value>Number</value>
+    <comment>Number</comment>
+  </data>
+  <data name="ViewModel_IturAddEditDelete_FilterStatus" xml:space="preserve">
+    <value>Status</value>
+    <comment>Status</comment>
+  </data>
+  <data name="ViewModel_IturAdd_Expression" xml:space="preserve">
+    <value>Expression is not valid{0} Format example: {1} 1,2,45-60</value>
+    <comment>Expression is not valid{0} Format example: {1} 1,2,45-60</comment>
+  </data>
+  <data name="ViewModel_IturListDetails_GroupLocation" xml:space="preserve">
+    <value>Location</value>
+    <comment>Location</comment>
+  </data>
+  <data name="ViewModel_IturListDetails_GroupStatus" xml:space="preserve">
+    <value>Status group</value>
+    <comment>Status group</comment>
+  </data>
+  <data name="ViewModel_IturListDetails_SortLocation" xml:space="preserve">
+    <value>Location</value>
+    <comment>Location</comment>
+  </data>
+  <data name="ViewModel_IturListDetails_SortNumber" xml:space="preserve">
+    <value>Number</value>
+    <comment>Number</comment>
+  </data>
+  <data name="ViewModel_IturListDetails_SortStatusGroup" xml:space="preserve">
+    <value>Status group</value>
+    <comment>Status group</comment>
+  </data>
+  <data name="ViewModel_LastCustomersDashboardPart_TotalCustomers" xml:space="preserve">
+    <value>Total {0} customers</value>
+    <comment>Total {0} customers</comment>
+  </data>
+  <data name="ViewModel_MaskAddEdit_NotValidMask" xml:space="preserve">
+    <value>Not valid mask</value>
+    <comment>Not valid mask</comment>
+  </data>
+  <data name="ViewModel_SectionAddEdit_CodeFormat" xml:space="preserve">
+    <value>Code must consist of alphanumeric characters</value>
+    <comment>Code must consist of alphanumeric characters</comment>
+  </data>
+  <data name="ViewModel_UserSettings_LoggingSetConfigurable" xml:space="preserve">
+    <value>Configurable</value>
+    <comment>Configurable</comment>
+  </data>
+  <data name="ViewModel_UserSettings_LoggingSetDebug" xml:space="preserve">
+    <value>Debug</value>
+    <comment>Debug</comment>
+  </data>
+  <data name="ViewModel_UserSettings_LoggingSetInfo" xml:space="preserve">
+    <value>Info</value>
+    <comment>Info</comment>
+  </data>
+  <data name="ViewModel_UserSettings_LoggingSetSimple" xml:space="preserve">
+    <value>Simple</value>
+    <comment>Simple</comment>
+  </data>
+  <data name="ViewModel_ZipExport_Checking" xml:space="preserve">
+    <value>Checking...</value>
+    <comment>Checking...</comment>
+  </data>
+  <data name="ViewModel_ZipExport_Packing" xml:space="preserve">
+    <value>Packing:</value>
+    <comment>Packing:</comment>
+  </data>
+  <data name="ViewModel_ZipImport_FileNotCount4UZip" xml:space="preserve">
+    <value>File is not Count4U zip archive</value>
+    <comment>File is not Count4U zip archive</comment>
+  </data>
+  <data name="ViewModel_ZipImport_FileNotExist" xml:space="preserve">
+    <value>File doesn't exist in filesystem</value>
+    <comment>File doesn't exist in filesystem</comment>
+  </data>
+  <data name="ViewModel_ZipImport_FileNotZip" xml:space="preserve">
+    <value>File is not zip archive</value>
+    <comment>File is not zip archive</comment>
+  </data>
+  <data name="ViewModel_ZipImport_Unpacking" xml:space="preserve">
+    <value>Unpacking:</value>
+    <comment>Unpacking:</comment>
+  </data>
+  <data name="View_AdapterLink_btnDeleteLink" xml:space="preserve">
+    <value>Delete link</value>
+    <comment>Delete link</comment>
+  </data>
+  <data name="View_AdapterLink_columnAdapterCode" xml:space="preserve">
+    <value>Adapter Code</value>
+    <comment>Adapter Code</comment>
+  </data>
+  <data name="View_AdapterLink_columnCode" xml:space="preserve">
+    <value>Code</value>
+    <comment>Code</comment>
+  </data>
+  <data name="View_AdapterLink_columnDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_AdapterLink_columnDomainType" xml:space="preserve">
+    <value>Domain type</value>
+    <comment>Domain type</comment>
+  </data>
+  <data name="View_AdapterLink_columnName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="View_AdapterLink_tbAdapterMissed" xml:space="preserve">
+    <value>Adapter doesn't exist in file system</value>
+    <comment>Adapter doesn't exist in file system</comment>
+  </data>
+  <data name="View_AdaptersMask_btnSetAsDefault" xml:space="preserve">
+    <value>Set as default</value>
+    <comment>Set as default</comment>
+  </data>
+  <data name="View_AdaptersMask_grpGetMasksFrom" xml:space="preserve">
+    <value>Get masks from:</value>
+    <comment>Get masks from:</comment>
+  </data>
+  <data name="View_AdaptersMask_radioBranch" xml:space="preserve">
+    <value>Branch</value>
+    <comment>Branch</comment>
+  </data>
+  <data name="View_AdaptersMask_radioCustomer" xml:space="preserve">
+    <value>Customer</value>
+    <comment>Customer</comment>
+  </data>
+  <data name="View_AdaptersMask_radioInventor" xml:space="preserve">
+    <value>Inventor</value>
+    <comment>Inventor</comment>
+  </data>
+  <data name="View_AdaptersMask_tbBarcodeMask" xml:space="preserve">
+    <value>BarcodeMask</value>
+    <comment>BarcodeMask</comment>
+  </data>
+  <data name="View_AdaptersMask_tbMakatMask" xml:space="preserve">
+    <value>MakatMask</value>
+    <comment>MakatMask</comment>
+  </data>
+  <data name="View_BranchAdd_chkAddOtherBranch" xml:space="preserve">
+    <value>Add other branch on save</value>
+    <comment>Add other branch on save</comment>
+  </data>
+  <data name="View_BranchAdd_chkClearFields" xml:space="preserve">
+    <value>Clear fields on save</value>
+    <comment>Clear fields on save</comment>
+  </data>
+  <data name="View_BranchAdd_chkInheritData" xml:space="preserve">
+    <value>Inherit data from customer</value>
+    <comment>Inherit data from customer</comment>
+  </data>
+  <data name="View_BranchAdd_tbCreateNewBranch" xml:space="preserve">
+    <value>Create new branch</value>
+    <comment>Create new branch</comment>
+  </data>
+  <data name="View_BranchAdd_tbCurrentCustomer" xml:space="preserve">
+    <value>Current customer:</value>
+    <comment>Current customer:</comment>
+  </data>
+  <data name="View_BranchAdd_tiDefaultImportAdapters" xml:space="preserve">
+    <value>Default import adapters</value>
+    <comment>Default import adapters</comment>
+  </data>
+  <data name="View_BranchAdd_tiGeneral" xml:space="preserve">
+    <value>General</value>
+    <comment>General</comment>
+  </data>
+  <data name="View_BranchChoose_bntCreateNewBranch" xml:space="preserve">
+    <value>Create new branch</value>
+    <comment>Create new branch</comment>
+  </data>
+  <data name="View_BranchChoose_btnNext" xml:space="preserve">
+    <value>Next &gt; select inventor</value>
+    <comment>Next &gt; select inventor</comment>
+  </data>
+  <data name="View_BranchChoose_btnOpenDashboard" xml:space="preserve">
+    <value>Open branch dashboard</value>
+    <comment>Open branch dashboard</comment>
+  </data>
+  <data name="View_BranchChoose_btnPrev" xml:space="preserve">
+    <value>Select customer &lt; Previous</value>
+    <comment>Select customer &lt; Previous</comment>
+  </data>
+  <data name="View_BranchChoose_columnAddress" xml:space="preserve">
+    <value>Address</value>
+    <comment>Address</comment>
+  </data>
+  <data name="View_BranchChoose_columnCodeErp" xml:space="preserve">
+    <value>CodeErp</value>
+    <comment>CodeErp</comment>
+  </data>
+  <data name="View_BranchChoose_columnCodeLocal" xml:space="preserve">
+    <value>CodeLocal</value>
+    <comment>CodeLocal</comment>
+  </data>
+  <data name="View_BranchChoose_columnContactPerson" xml:space="preserve">
+    <value>ContactPerson</value>
+    <comment>ContactPerson</comment>
+  </data>
+  <data name="View_BranchChoose_columnCustomerCode" xml:space="preserve">
+    <value>Customer code</value>
+    <comment>Customer code</comment>
+  </data>
+  <data name="View_BranchChoose_columnCustomerName" xml:space="preserve">
+    <value>Customer name</value>
+    <comment>Customer name</comment>
+  </data>
+  <data name="View_BranchChoose_columnDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_BranchChoose_columnFax" xml:space="preserve">
+    <value>Fax</value>
+    <comment>Fax</comment>
+  </data>
+  <data name="View_BranchChoose_columnMail" xml:space="preserve">
+    <value>Mail</value>
+    <comment>Mail</comment>
+  </data>
+  <data name="View_BranchChoose_columnName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="View_BranchChoose_columnPhone" xml:space="preserve">
+    <value>Phone</value>
+    <comment>Phone</comment>
+  </data>
+  <data name="View_BranchChoose_tbBy" xml:space="preserve">
+    <value>by</value>
+    <comment>by</comment>
+  </data>
+  <data name="View_BranchEdit_tbCurrentCustomer" xml:space="preserve">
+    <value>Current customer:</value>
+    <comment>Current customer:</comment>
+  </data>
+  <data name="View_BranchEdit_tiDefaultImportAdapters" xml:space="preserve">
+    <value>Default import adapters</value>
+    <comment>Default import adapters</comment>
+  </data>
+  <data name="View_BranchEdit_tiGeneral" xml:space="preserve">
+    <value>General</value>
+    <comment>General</comment>
+  </data>
+  <data name="View_BranchesDashboardPart_columnCode" xml:space="preserve">
+    <value>Code</value>
+    <comment>Code</comment>
+  </data>
+  <data name="View_BranchesDashboardPart_columnName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="View_BranchForm_btnClear" xml:space="preserve">
+    <value>Clear</value>
+    <comment>Clear</comment>
+  </data>
+  <data name="View_BranchForm_btnCopyInfoFromCustomer" xml:space="preserve">
+    <value>Copy info from customer</value>
+    <comment>Copy info from customer</comment>
+  </data>
+  <data name="View_BranchForm_btnGenerateNew" xml:space="preserve">
+    <value>Generate new</value>
+    <comment>Generate new</comment>
+  </data>
+  <data name="View_BranchForm_tbAddress" xml:space="preserve">
+    <value>Address</value>
+    <comment>Address</comment>
+  </data>
+  <data name="View_BranchForm_tbBranchName" xml:space="preserve">
+    <value>Branch name</value>
+    <comment>Branch name</comment>
+  </data>
+  <data name="View_BranchForm_tbCode" xml:space="preserve">
+    <value>Code</value>
+    <comment>Code</comment>
+  </data>
+  <data name="View_BranchForm_tbCodeErp" xml:space="preserve">
+    <value>Code ERP</value>
+    <comment>Code ERP</comment>
+  </data>
+  <data name="View_BranchForm_tbCodeLocal" xml:space="preserve">
+    <value>Code local</value>
+    <comment>Code local</comment>
+  </data>
+  <data name="View_BranchForm_tbContactPerson" xml:space="preserve">
+    <value>Contact person</value>
+    <comment>Contact person</comment>
+  </data>
+  <data name="View_BranchForm_tbContinuationAddress" xml:space="preserve">
+    <value>Continuation address</value>
+    <comment>Continuation address</comment>
+  </data>
+  <data name="View_BranchForm_tbDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_BranchForm_tbFAX" xml:space="preserve">
+    <value>FAX</value>
+    <comment>FAX</comment>
+  </data>
+  <data name="View_BranchForm_tbMail" xml:space="preserve">
+    <value>Mail</value>
+    <comment>Mail</comment>
+  </data>
+  <data name="View_BranchForm_tbPhone" xml:space="preserve">
+    <value>Phone</value>
+    <comment>Phone</comment>
+  </data>
+  <data name="View_CatalogForm_BarcodeOriginal" xml:space="preserve">
+    <value>Barcode Original</value>
+    <comment>Barcode Original</comment>
+  </data>
+  <data name="View_CatalogForm_columnBalanceQuantityERP" xml:space="preserve">
+    <value>BalanceQuantityERP</value>
+    <comment>BalanceQuantityERP</comment>
+  </data>
+  <data name="View_CatalogForm_columnBarcode" xml:space="preserve">
+    <value>Barcode</value>
+    <comment>Barcode</comment>
+  </data>
+  <data name="View_CatalogForm_columnCountInParentPack" xml:space="preserve">
+    <value>Count in Parent Pack</value>
+    <comment>Count in Parent Pack</comment>
+  </data>
+  <data name="View_CatalogForm_columnInputTypeCode" xml:space="preserve">
+    <value>Input Type Code</value>
+    <comment>Input Type Code</comment>
+  </data>
+  <data name="View_CatalogForm_columnMakat" xml:space="preserve">
+    <value>Makat</value>
+    <comment>Makat</comment>
+  </data>
+  <data name="View_CatalogForm_columnMakatOriginal" xml:space="preserve">
+    <value>Makat original</value>
+    <comment>Makat original</comment>
+  </data>
+  <data name="View_CatalogForm_columnModifyDate" xml:space="preserve">
+    <value>ModifyDate</value>
+    <comment>ModifyDate</comment>
+  </data>
+  <data name="View_CatalogForm_columnName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="View_CatalogForm_columnParentMakat" xml:space="preserve">
+    <value>Parent Makat</value>
+    <comment>Parent Makat</comment>
+  </data>
+  <data name="View_CatalogForm_columnPriceBuy" xml:space="preserve">
+    <value>Price Buy</value>
+    <comment>Price Buy</comment>
+  </data>
+  <data name="View_CatalogForm_columnPriceExtra" xml:space="preserve">
+    <value>Price Extra</value>
+    <comment>Price Extra</comment>
+  </data>
+  <data name="View_CatalogForm_columnPriceSale" xml:space="preserve">
+    <value>Price Sale</value>
+    <comment>Price Sale</comment>
+  </data>
+  <data name="View_CatalogForm_columnSectionCode" xml:space="preserve">
+    <value>Section Code</value>
+    <comment>Section Code</comment>
+  </data>
+  <data name="View_CatalogForm_columnSupplierCode" xml:space="preserve">
+    <value>Supplier Code</value>
+    <comment>Supplier Code</comment>
+  </data>
+  <data name="View_CatalogForm_columnTypeCode" xml:space="preserve">
+    <value>Type Code</value>
+    <comment>Type Code</comment>
+  </data>
+  <data name="View_CatalogForm_tblSearch" xml:space="preserve">
+    <value>Search</value>
+    <comment>Search</comment>
+  </data>
+  <data name="View_CatalogInfoForCBI_tbEditMask" xml:space="preserve">
+    <value>Edit Mask</value>
+    <comment>Edit Mask</comment>
+  </data>
+  <data name="View_CBIObjectProperties_tbCode" xml:space="preserve">
+    <value>Code:</value>
+    <comment>Code:</comment>
+  </data>
+  <data name="View_CBIObjectProperties_tbCopyToClipboard" xml:space="preserve">
+    <value>Copy to clipboard</value>
+    <comment>Copy to clipboard</comment>
+  </data>
+  <data name="View_CBIObjectProperties_tbCreateDate" xml:space="preserve">
+    <value>Create date:</value>
+    <comment>Create date:</comment>
+  </data>
+  <data name="View_CBIObjectProperties_tbDatabasePath" xml:space="preserve">
+    <value>Database path:</value>
+    <comment>Database path:</comment>
+  </data>
+  <data name="View_CBIObjectProperties_tbExportToPdaPath" xml:space="preserve">
+    <value>Export to PDA path:</value>
+    <comment>Export to PDA path:</comment>
+  </data>
+  <data name="View_CBIObjectProperties_tbImportPath" xml:space="preserve">
+    <value>Import path:</value>
+    <comment>Import path:</comment>
+  </data>
+  <data name="View_CBIObjectProperties_tbInventorDate" xml:space="preserve">
+    <value>Inventor date:</value>
+    <comment>Inventor date:</comment>
+  </data>
+  <data name="View_CBIObjectProperties_tbInventorStatus" xml:space="preserve">
+    <value>Inventor status:</value>
+    <comment>Inventor status:</comment>
+  </data>
+  <data name="View_CBIObjectProperties_tbOpenInExplorer" xml:space="preserve">
+    <value>Open in explorer</value>
+    <comment>Open in explorer</comment>
+  </data>
+  <data name="View_CommonImportExport_chkWriteToLog" xml:space="preserve">
+    <value>Also write log to file</value>
+    <comment>Also write log to file</comment>
+  </data>
+  <data name="View_CommonInventProduct_chkOnlyWithError" xml:space="preserve">
+    <value>Only invent products with error</value>
+    <comment>Only invent products with error</comment>
+  </data>
+  <data name="View_CommonInventProduct_columnCreateDate" xml:space="preserve">
+    <value>Create Date</value>
+    <comment>Create Date</comment>
+  </data>
+  <data name="View_CommonInventProduct_columnDocument" xml:space="preserve">
+    <value>Document</value>
+    <comment>Document</comment>
+  </data>
+  <data name="View_CommonInventProduct_columnInputType" xml:space="preserve">
+    <value>Input Type</value>
+    <comment>Input Type</comment>
+  </data>
+  <data name="View_CommonInventProduct_columnMakat" xml:space="preserve">
+    <value>Makat</value>
+    <comment>Makat</comment>
+  </data>
+  <data name="View_CommonInventProduct_columnNum" xml:space="preserve">
+    <value>Num</value>
+    <comment>Num</comment>
+  </data>
+  <data name="View_CommonInventProduct_columnOriginalCode" xml:space="preserve">
+    <value>Original Code From PDA</value>
+    <comment>Original Code From PDA</comment>
+  </data>
+  <data name="View_CommonInventProduct_columnProductName" xml:space="preserve">
+    <value>Product Name</value>
+    <comment>Product Name</comment>
+  </data>
+  <data name="View_CommonInventProduct_columnQuantityEdit" xml:space="preserve">
+    <value>QuantityEdit</value>
+    <comment>QuantityEdit</comment>
+  </data>
+  <data name="View_CommonInventProduct_columnStatusBit" xml:space="preserve">
+    <value>Status bit</value>
+    <comment>Status bit</comment>
+  </data>
+  <data name="View_ConfigurationSetAdd" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="View_CustomerAdd_chkAddOtherOnSave" xml:space="preserve">
+    <value>Add other customer on save</value>
+    <comment>Add other customer on save</comment>
+  </data>
+  <data name="View_CustomerAdd_chkClearFieldsOnSave" xml:space="preserve">
+    <value>Clear fields on save</value>
+    <comment>Clear fields on save</comment>
+  </data>
+  <data name="View_CustomerAdd_tbCreateNewCustomer" xml:space="preserve">
+    <value>Create new customer</value>
+    <comment>Create new customer</comment>
+  </data>
+  <data name="View_CustomerAdd_tiExportAdapters" xml:space="preserve">
+    <value>Export adapters</value>
+    <comment>Export adapters</comment>
+  </data>
+  <data name="View_CustomerAdd_tiGeneral" xml:space="preserve">
+    <value>General</value>
+    <comment>General</comment>
+  </data>
+  <data name="View_CustomerAdd_tiImportAdapters" xml:space="preserve">
+    <value>Import adapters</value>
+    <comment>Import adapters</comment>
+  </data>
+  <data name="View_CustomerChoose_btnCreateNew" xml:space="preserve">
+    <value>Create new customer</value>
+    <comment>Create new customer</comment>
+  </data>
+  <data name="View_CustomerChoose_btnNext" xml:space="preserve">
+    <value>Next &gt; select branch</value>
+    <comment>Next &gt; select branch</comment>
+  </data>
+  <data name="View_CustomerChoose_btnOpenDashboard" xml:space="preserve">
+    <value>Open customer dashboard</value>
+    <comment>Open customer dashboard</comment>
+  </data>
+  <data name="View_CustomerChoose_columnAddress" xml:space="preserve">
+    <value>Address</value>
+    <comment>Address</comment>
+  </data>
+  <data name="View_CustomerChoose_columnContactPerson" xml:space="preserve">
+    <value>Contact Person</value>
+    <comment>Contact Person</comment>
+  </data>
+  <data name="View_CustomerChoose_columnDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_CustomerChoose_columnFax" xml:space="preserve">
+    <value>Fax</value>
+    <comment>Fax</comment>
+  </data>
+  <data name="View_CustomerChoose_columnLogo" xml:space="preserve">
+    <value>Logo</value>
+    <comment>Logo</comment>
+  </data>
+  <data name="View_CustomerChoose_columnMail" xml:space="preserve">
+    <value>Mail</value>
+    <comment>Mail</comment>
+  </data>
+  <data name="View_CustomerChoose_columnName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="View_CustomerChoose_columnPhone" xml:space="preserve">
+    <value>Phone</value>
+    <comment>Phone</comment>
+  </data>
+  <data name="View_CustomerChoose_tbBy" xml:space="preserve">
+    <value>by</value>
+    <comment>by</comment>
+  </data>
+  <data name="View_CustomerEdit_tiExportAdapters" xml:space="preserve">
+    <value>Export adapters</value>
+    <comment>Export adapters</comment>
+  </data>
+  <data name="View_CustomerEdit_tiImportAdapters" xml:space="preserve">
+    <value>Import adapters</value>
+    <comment>Import adapters</comment>
+  </data>
+  <data name="View_CustomerForm_btnGenerateNew" xml:space="preserve">
+    <value>Generate new</value>
+    <comment>Generate new</comment>
+  </data>
+  <data name="View_CustomerForm_tbAddress" xml:space="preserve">
+    <value>Address</value>
+    <comment>Address</comment>
+  </data>
+  <data name="View_CustomerForm_tbCode" xml:space="preserve">
+    <value>Code</value>
+    <comment>Code</comment>
+  </data>
+  <data name="View_CustomerForm_tbContactPerson" xml:space="preserve">
+    <value>Contact person</value>
+    <comment>Contact person</comment>
+  </data>
+  <data name="View_CustomerForm_tbContinuationAddress" xml:space="preserve">
+    <value>Continuation address</value>
+    <comment>Continuation address</comment>
+  </data>
+  <data name="View_CustomerForm_tbCustomerName" xml:space="preserve">
+    <value>Customer name</value>
+    <comment>Customer name</comment>
+  </data>
+  <data name="View_CustomerForm_tbDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_CustomerForm_tbFAX" xml:space="preserve">
+    <value>FAX</value>
+    <comment>FAX</comment>
+  </data>
+  <data name="View_CustomerForm_tbLogo" xml:space="preserve">
+    <value>Logo</value>
+    <comment>Logo</comment>
+  </data>
+  <data name="View_CustomerForm_tbMail" xml:space="preserve">
+    <value>Mail</value>
+    <comment>Mail</comment>
+  </data>
+  <data name="View_CustomerForm_tbPhone" xml:space="preserve">
+    <value>Phone</value>
+    <comment>Phone</comment>
+  </data>
+  <data name="View_DocumentHeaderAddEdit_chkApprove" xml:space="preserve">
+    <value>Approve</value>
+    <comment>Approve</comment>
+  </data>
+  <data name="View_DocumentHeaderAddEdit_tbDocumentCode" xml:space="preserve">
+    <value>Document code:</value>
+    <comment>Document code:</comment>
+  </data>
+  <data name="View_DocumentHeaderAddEdit_tbIturCode" xml:space="preserve">
+    <value>Itur code:</value>
+    <comment>Itur code:</comment>
+  </data>
+  <data name="View_DocumentHeaderAddEdit_tbName" xml:space="preserve">
+    <value>Name:</value>
+    <comment>Name:</comment>
+  </data>
+  <data name="View_DocumentHeaderAddEdit_tbWorkerGuid" xml:space="preserve">
+    <value>WorkerGUID:</value>
+    <comment>WorkerGUID:</comment>
+  </data>
+  <data name="View_ExportErpwithModules_busyContent" xml:space="preserve">
+    <value>Exporting...</value>
+    <comment>Exporting...</comment>
+  </data>
+  <data name="View_ExportErpwithModules_tbExportAdapter" xml:space="preserve">
+    <value>Export adapter:</value>
+    <comment>Export adapter:</comment>
+  </data>
+  <data name="View_ExportErpwithModules_tbExportProgress" xml:space="preserve">
+    <value>Export progress:</value>
+    <comment>Export progress:</comment>
+  </data>
+  <data name="View_ExportErp_radioMakat" xml:space="preserve">
+    <value>Makat</value>
+    <comment>Makat</comment>
+  </data>
+  <data name="View_ExportErp_radioMakatOriginal" xml:space="preserve">
+    <value>Makat Original</value>
+    <comment>Makat Original</comment>
+  </data>
+  <data name="View_ExportLog_btnOpen" xml:space="preserve">
+    <value>Open</value>
+    <comment>Open</comment>
+  </data>
+  <data name="View_ExportLog_tbExportPath" xml:space="preserve">
+    <value>Export path:</value>
+    <comment>Export path:</comment>
+  </data>
+  <data name="View_ExportPdaExtraSettings_chkAutoPrint" xml:space="preserve">
+    <value>Auto print</value>
+    <comment>Auto print</comment>
+  </data>
+  <data name="View_ExportPdaExtraSettings_tbReportTemplates" xml:space="preserve">
+    <value>Report templates:</value>
+    <comment>Report templates:</comment>
+  </data>
+  <data name="View_ExportPdaSettingsControl_tbClientId" xml:space="preserve">
+    <value>Client id:</value>
+    <comment>Client id:</comment>
+  </data>
+  <data name="View_ExportPdaSettingsControl_tbFileType" xml:space="preserve">
+    <value>File type:</value>
+    <comment>File type:</comment>
+  </data>
+  <data name="View_ExportPdaSettingsControl_tbHash" xml:space="preserve">
+    <value>Hash:</value>
+    <comment>Hash:</comment>
+  </data>
+  <data name="View_ExportPdaSettingsControl_tbMaxCharacters" xml:space="preserve">
+    <value>Max Characters For Name:</value>
+    <comment>Max Characters For Name:</comment>
+  </data>
+  <data name="View_ExportPdaSettingsControl_tbNewItem" xml:space="preserve">
+    <value>New item:</value>
+    <comment>New item:</comment>
+  </data>
+  <data name="View_ExportPdaSettingsControl_tbQType" xml:space="preserve">
+    <value>Q type:</value>
+    <comment>Q type:</comment>
+  </data>
+  <data name="View_ExportPdaSettingsControl_tbUseAlphaKey" xml:space="preserve">
+    <value>Use alpha key:</value>
+    <comment>Use alpha key:</comment>
+  </data>
+  <data name="View_ExportPdaSettings_grpExportToErp" xml:space="preserve">
+    <value>Export to ERP</value>
+    <comment>Export to ERP</comment>
+  </data>
+  <data name="View_ExportPdaSettings_grpExportToPda" xml:space="preserve">
+    <value>Export to PDA</value>
+    <comment>Export to PDA</comment>
+  </data>
+  <data name="View_ExportPdaSettings_grpExtraSettings" xml:space="preserve">
+    <value>Extra settings</value>
+    <comment>Extra settings</comment>
+  </data>
+  <data name="View_ExportPdaSettings_radioMakat" xml:space="preserve">
+    <value>Makat</value>
+    <comment>Makat</comment>
+  </data>
+  <data name="View_ExportPdaSettings_radioMakatOriginal" xml:space="preserve">
+    <value>Makat original</value>
+    <comment>Makat original</comment>
+  </data>
+  <data name="View_ExportPdaSettings_tbDefaultAdapter" xml:space="preserve">
+    <value>Default adapter:</value>
+    <comment>Default adapter:</comment>
+  </data>
+  <data name="View_ExportPdaSettings_tbDefaultAdapter1" xml:space="preserve">
+    <value>Default adapter:</value>
+    <comment>Default adapter:</comment>
+  </data>
+  <data name="View_ExportPdaSettings_tbDescription" xml:space="preserve">
+    <value>Description:</value>
+    <comment>Description:</comment>
+  </data>
+  <data name="View_ExportPdaWithModules_busyContent" xml:space="preserve">
+    <value>Exporting...</value>
+    <comment>Exporting...</comment>
+  </data>
+  <data name="View_ExportPdaWithModules_chkBarcodeWithoutMask" xml:space="preserve">
+    <value>Barcode without mask</value>
+    <comment>Barcode without mask</comment>
+  </data>
+  <data name="View_ExportPdaWithModules_chkMakatWithoutMask" xml:space="preserve">
+    <value>Makat without mask</value>
+    <comment>Makat without mask</comment>
+  </data>
+  <data name="View_ExportPdaWithModules_chkWithoutProductName" xml:space="preserve">
+    <value>Without product name</value>
+    <comment>Without product name</comment>
+  </data>
+  <data name="View_ExportPdaWithModules_tbExportAdapter" xml:space="preserve">
+    <value>Export adapter:</value>
+    <comment>Export adapter:</comment>
+  </data>
+  <data name="View_ExportPdaWithModules_tbExportProgress" xml:space="preserve">
+    <value>Export progress:</value>
+    <comment>Export progress:</comment>
+  </data>
+  <data name="View_ExportPdaWithModules_tpDelete" xml:space="preserve">
+    <value>Delete all export files</value>
+    <comment>Delete all export files</comment>
+  </data>
+  <data name="View_FromPdaDashboardPart_columnDate" xml:space="preserve">
+    <value>Date</value>
+    <comment>Date</comment>
+  </data>
+  <data name="View_FromPdaDashboardPart_columnItur" xml:space="preserve">
+    <value>Itur</value>
+    <comment>Itur</comment>
+  </data>
+  <data name="View_FromPdaDashboardPart_columnTotalItems" xml:space="preserve">
+    <value>Total Items</value>
+    <comment>Total Items</comment>
+  </data>
+  <data name="View_FromPdaDashboardPart_tbGetDataFromPda" xml:space="preserve">
+    <value>Get Data From PDA</value>
+    <comment>Get Data From PDA</comment>
+  </data>
+  <data name="View_HomeDashboard_tiConfig" xml:space="preserve">
+    <value>Config</value>
+    <comment>Config</comment>
+  </data>
+  <data name="View_HomeDashboard_tiExportZip" xml:space="preserve">
+    <value>Export zip file</value>
+    <comment>Export zip file</comment>
+  </data>
+  <data name="View_HomeDashboard_tiHomeDashboard" xml:space="preserve">
+    <value>Home Dashboard</value>
+    <comment>Home Dashboard</comment>
+  </data>
+  <data name="View_HomeDashboard_tiImportZip" xml:space="preserve">
+    <value>Import zip file</value>
+    <comment>Import zip file</comment>
+  </data>
+  <data name="View_HomeDashboard_tiPathSettings" xml:space="preserve">
+    <value>Path settings</value>
+    <comment>Path settings</comment>
+  </data>
+  <data name="View_HomeDashboard_tiSqlScript" xml:space="preserve">
+    <value>Sql script</value>
+    <comment>Sql script</comment>
+  </data>
+  <data name="View_ImportAdapterPath" xml:space="preserve">
+    <value>Path:</value>
+    <comment>Path:</comment>
+  </data>
+  <data name="View_ImportAdapter_radioDirectory" xml:space="preserve">
+    <value>Directory content</value>
+    <comment>Directory content</comment>
+  </data>
+  <data name="View_ImportAdapter_radioFile" xml:space="preserve">
+    <value>Single file</value>
+    <comment>Single file</comment>
+  </data>
+  <data name="View_ImportFolders_grpCatalogs" xml:space="preserve">
+    <value>Catalogs</value>
+    <comment>Catalogs</comment>
+  </data>
+  <data name="View_ImportFolders_grpIturs" xml:space="preserve">
+    <value>Iturs</value>
+    <comment>Iturs</comment>
+  </data>
+  <data name="View_ImportFolders_grpLocations" xml:space="preserve">
+    <value>Locations</value>
+    <comment>Locations</comment>
+  </data>
+  <data name="View_ImportFolders_grpSections" xml:space="preserve">
+    <value>Sections</value>
+    <comment>Sections</comment>
+  </data>
+  <data name="View_ImportFolders_tbAdapter" xml:space="preserve">
+    <value>Adapter:</value>
+    <comment>Adapter:</comment>
+  </data>
+  <data name="View_ImportFolders_tbDescription" xml:space="preserve">
+    <value>Description:</value>
+    <comment>Description:</comment>
+  </data>
+  <data name="View_ImportFromPda_busyContent" xml:space="preserve">
+    <value>Importing...</value>
+    <comment>Importing...</comment>
+  </data>
+  <data name="View_ImportFromPda_tbImportAdapter" xml:space="preserve">
+    <value>Import adapter:</value>
+    <comment>Import adapter:</comment>
+  </data>
+  <data name="View_ImportPosSuperPharmAdapter_chkClearBeforeUpdate" xml:space="preserve">
+    <value>Clear Before Update</value>
+    <comment>Clear Before Update</comment>
+  </data>
+  <data name="View_ImportPosSuperPharmAdapter_chkUpdateOnlyErp" xml:space="preserve">
+    <value>Update Only Erp Quantity</value>
+    <comment>Update Only Erp Quantity</comment>
+  </data>
+  <data name="View_ImportWithModules_chkInvertLetters" xml:space="preserve">
+    <value>Invert letters</value>
+    <comment>Invert letters</comment>
+  </data>
+  <data name="View_ImportWithModules_chkInvertWords" xml:space="preserve">
+    <value>Invert words</value>
+    <comment>Invert words</comment>
+  </data>
+  <data name="View_ImportWithModules_grpDefaultAdapterFrom" xml:space="preserve">
+    <value>Default adapter from:</value>
+    <comment>Default adapter from:</comment>
+  </data>
+  <data name="View_ImportWithModules_radioFile" xml:space="preserve">
+    <value>File</value>
+    <comment>File</comment>
+  </data>
+  <data name="View_ImportWithModules_radioFromBranch" xml:space="preserve">
+    <value>From branch:</value>
+    <comment>From branch:</comment>
+  </data>
+  <data name="View_ImportWithModules_radioFromCustomer" xml:space="preserve">
+    <value>From customer:</value>
+    <comment>From customer:</comment>
+  </data>
+  <data name="View_ImportWithModules_radioFromInventor" xml:space="preserve">
+    <value>From inventor:</value>
+    <comment>From inventor:</comment>
+  </data>
+  <data name="View_ImportWithModules_radioInternalResources" xml:space="preserve">
+    <value>Internal resources</value>
+    <comment>Internal resources</comment>
+  </data>
+  <data name="View_ImportWithModules_tbBranchName" xml:space="preserve">
+    <value>Branch name:</value>
+    <comment>Branch name:</comment>
+  </data>
+  <data name="View_ImportWithModules_tbCustomerName" xml:space="preserve">
+    <value>Customer name:</value>
+    <comment>Customer name:</comment>
+  </data>
+  <data name="View_ImportWithModules_tbEncoding" xml:space="preserve">
+    <value>Encoding:</value>
+    <comment>Encoding:</comment>
+  </data>
+  <data name="View_ImportWithModules_tbImportAdapter" xml:space="preserve">
+    <value>Import adapter:</value>
+    <comment>Import adapter:</comment>
+  </data>
+  <data name="View_ImportWithModules_tbImportFrom" xml:space="preserve">
+    <value>Import from:</value>
+    <comment>Import from:</comment>
+  </data>
+  <data name="View_ImportWithModules_tbInventorName" xml:space="preserve">
+    <value>Inventor name:</value>
+    <comment>Inventor name:</comment>
+  </data>
+  <data name="View_ImportWithModules_tbLogLevel" xml:space="preserve">
+    <value>Logging level</value>
+    <comment>Logging level</comment>
+  </data>
+  <data name="View_InventorAdd_grpChooseAction" xml:space="preserve">
+    <value>Choose action</value>
+    <comment>Choose action</comment>
+  </data>
+  <data name="View_InventorAdd_grpInheritDataFrom" xml:space="preserve">
+    <value>Inherit data from:</value>
+    <comment>Inherit data from:</comment>
+  </data>
+  <data name="View_InventorAdd_tbBranch" xml:space="preserve">
+    <value>Branch:</value>
+    <comment>Branch:</comment>
+  </data>
+  <data name="View_InventorAdd_tbCreateNew" xml:space="preserve">
+    <value>Create new inventor</value>
+    <comment>Create new inventor</comment>
+  </data>
+  <data name="View_InventorAdd_tbCustomer" xml:space="preserve">
+    <value>Customer:</value>
+    <comment>Customer:</comment>
+  </data>
+  <data name="View_InventorAdd_tbSaveOpenInventor" xml:space="preserve">
+    <value>Save inventory, set it as process and open in inventor dashboard</value>
+    <comment>Save inventory, set it as process and open in inventor dashboard</comment>
+  </data>
+  <data name="View_InventorAdd_tbSaveOpenMain" xml:space="preserve">
+    <value>Save inventory, set it as process and open in main dashboard</value>
+    <comment>Save inventory, set it as process and open in main dashboard</comment>
+  </data>
+  <data name="View_InventorAdd_tbSaveReturnHome" xml:space="preserve">
+    <value>Save inventory and return to home dashboard</value>
+    <comment>Save inventory and return to home dashboard</comment>
+  </data>
+  <data name="View_InventorAdd_tbWithoutInheritance" xml:space="preserve">
+    <value>Without inheritance</value>
+    <comment>Without inheritance</comment>
+  </data>
+  <data name="View_InventorAdd_tiDefaultImportAdapters" xml:space="preserve">
+    <value>Default import adapters</value>
+    <comment>Default import adapters</comment>
+  </data>
+  <data name="View_InventorAdd_tiGeneral" xml:space="preserve">
+    <value>General</value>
+    <comment>General</comment>
+  </data>
+  <data name="View_InventorChoose_btnCreateNew" xml:space="preserve">
+    <value>Create new inventor</value>
+    <comment>Create new inventor</comment>
+  </data>
+  <data name="View_InventorChoose_btnOpenCurrentInventor" xml:space="preserve">
+    <value>Open current inventory</value>
+    <comment>Open current inventory</comment>
+  </data>
+  <data name="View_InventorChoose_btnOpenInventorDashboard" xml:space="preserve">
+    <value>Open inventor dashboard</value>
+    <comment>Open inventor dashboard</comment>
+  </data>
+  <data name="View_InventorChoose_btnPrevious" xml:space="preserve">
+    <value>Select branch &lt; Previous</value>
+    <comment>Select branch &lt; Previous</comment>
+  </data>
+  <data name="View_InventorChoose_columnBranchCode" xml:space="preserve">
+    <value>Branch code</value>
+    <comment>Branch code</comment>
+  </data>
+  <data name="View_InventorChoose_columnBranchName" xml:space="preserve">
+    <value>Branch name</value>
+    <comment>Branch name</comment>
+  </data>
+  <data name="View_InventorChoose_columnCreateDate" xml:space="preserve">
+    <value>CreateDate</value>
+    <comment>CreateDate</comment>
+  </data>
+  <data name="View_InventorChoose_columnCustomerCode" xml:space="preserve">
+    <value>Customer code</value>
+    <comment>Customer code</comment>
+  </data>
+  <data name="View_InventorChoose_columnCustomerName" xml:space="preserve">
+    <value>Customer name</value>
+    <comment>Customer name</comment>
+  </data>
+  <data name="View_InventorChoose_columnDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_InventorChoose_columnInventorDate" xml:space="preserve">
+    <value>InventorDate</value>
+    <comment>InventorDate</comment>
+  </data>
+  <data name="View_InventorChoose_tbDateFrom" xml:space="preserve">
+    <value>Date from:</value>
+    <comment>Date from:</comment>
+  </data>
+  <data name="View_InventorChoose_tbDateTo" xml:space="preserve">
+    <value>Date to:</value>
+    <comment>Date to:</comment>
+  </data>
+  <data name="View_InventorEdit_tiDefaultImportAdapters" xml:space="preserve">
+    <value>Default import adapters</value>
+    <comment>Default import adapters</comment>
+  </data>
+  <data name="View_InventorEdit_tiGeneral" xml:space="preserve">
+    <value>General</value>
+    <comment>General</comment>
+  </data>
+  <data name="View_InventorForm_tbCode" xml:space="preserve">
+    <value>Code</value>
+    <comment>Code</comment>
+  </data>
+  <data name="View_InventorForm_tbDescription" xml:space="preserve">
+    <value>Description:</value>
+    <comment>Description:</comment>
+  </data>
+  <data name="View_InventorForm_tbInventorDate" xml:space="preserve">
+    <value>Inventor date:</value>
+    <comment>Inventor date:</comment>
+  </data>
+  <data name="View_InventorForm_tbPathToDb" xml:space="preserve">
+    <value>Path to database file:</value>
+    <comment>Path to database file:</comment>
+  </data>
+  <data name="View_InventorForm_tpCreateDate" xml:space="preserve">
+    <value>Create date:</value>
+    <comment>Create date:</comment>
+  </data>
+  <data name="View_InventorStatusChange_btnPrint" xml:space="preserve">
+    <value>Print</value>
+    <comment>Print</comment>
+  </data>
+  <data name="View_InventorStatusChange_btnSendData" xml:space="preserve">
+    <value>Send data to office</value>
+    <comment>Send data to office</comment>
+  </data>
+  <data name="View_InventorStatusChange_chkDataSent" xml:space="preserve">
+    <value>data is sent to the office</value>
+    <comment>data is sent to the office</comment>
+  </data>
+  <data name="View_InventorStatusChange_chkReportsPrinted" xml:space="preserve">
+    <value>reports are printed</value>
+    <comment>reports are printed</comment>
+  </data>
+  <data name="View_InventorStatusChange_grpPreClosedActions" xml:space="preserve">
+    <value>Pre-closed actions</value>
+    <comment>Pre-closed actions</comment>
+  </data>
+  <data name="View_InventorStatusChange_tbChangeStatus" xml:space="preserve">
+    <value>Change status:</value>
+    <comment>Change status:</comment>
+  </data>
+  <data name="View_InventorStatusChange_tbDescription" xml:space="preserve">
+    <value>Description:</value>
+    <comment>Description:</comment>
+  </data>
+  <data name="View_InventorStatusChange_tbInventor" xml:space="preserve">
+    <value>Inventor:</value>
+    <comment>Inventor:</comment>
+  </data>
+  <data name="View_InventorStatusChange_tbInventorDate" xml:space="preserve">
+    <value>Inventor date:</value>
+    <comment>Inventor date:</comment>
+  </data>
+  <data name="View_InventorStatusChange_tbManager" xml:space="preserve">
+    <value>Manager:</value>
+    <comment>Manager:</comment>
+  </data>
+  <data name="View_InventorStatusDashboardPart_tbChangeStatus" xml:space="preserve">
+    <value>Change Status</value>
+    <comment>Change Status</comment>
+  </data>
+  <data name="View_InventorStatusDashboardPart_tbSetCurrentAsProcess" xml:space="preserve">
+    <value>Set Current As Process</value>
+    <comment>Set Current As Process</comment>
+  </data>
+  <data name="View_InventorStatusDashboardPart_tbShowInventor" xml:space="preserve">
+    <value>Show Inventor</value>
+    <comment>Show Inventor</comment>
+  </data>
+  <data name="View_InventorStatusDashboardPart_tbStatus" xml:space="preserve">
+    <value>Status:</value>
+    <comment>Status:</comment>
+  </data>
+  <data name="View_InventProductAddEdit_btnUndo" xml:space="preserve">
+    <value>Undo</value>
+    <comment>Undo</comment>
+  </data>
+  <data name="View_InventProductAddEdit_tbMakat" xml:space="preserve">
+    <value>Makat:</value>
+    <comment>Makat:</comment>
+  </data>
+  <data name="View_InventProductAddEdit_tbOriginalCode" xml:space="preserve">
+    <value>Original Code from PDA:</value>
+    <comment>Original Code from PDA:</comment>
+  </data>
+  <data name="View_InventProductAddEdit_tbProductName" xml:space="preserve">
+    <value>Product name:</value>
+    <comment>Product name:</comment>
+  </data>
+  <data name="View_InventProductAddEdit_tbQuantityEdit" xml:space="preserve">
+    <value>QuantityEdit:</value>
+    <comment>QuantityEdit:</comment>
+  </data>
+  <data name="View_InventProductAddEdit_tbQuantityOriginal" xml:space="preserve">
+    <value>QuantityOriginal:</value>
+    <comment>QuantityOriginal:</comment>
+  </data>
+  <data name="View_InventProductAddEdit_tbSerialNumber" xml:space="preserve">
+    <value>SerialNumber:</value>
+    <comment>SerialNumber:</comment>
+  </data>
+  <data name="View_InventProductAddEdit_tbStatusBit" xml:space="preserve">
+    <value>Status Bit:</value>
+    <comment>Status Bit:</comment>
+  </data>
+  <data name="View_InventProductListDetails_columnApprove" xml:space="preserve">
+    <value>Approve</value>
+    <comment>Approve</comment>
+  </data>
+  <data name="View_InventProductListDetails_columnCreateDate" xml:space="preserve">
+    <value>CreateDate</value>
+    <comment>CreateDate</comment>
+  </data>
+  <data name="View_InventProductListDetails_columnDocumentCode" xml:space="preserve">
+    <value>DocumentCode</value>
+    <comment>DocumentCode</comment>
+  </data>
+  <data name="View_InventProductListDetails_columnDocumentNumber" xml:space="preserve">
+    <value>Document Number</value>
+    <comment>Document Number</comment>
+  </data>
+  <data name="View_InventProductListDetails_columnIturName" xml:space="preserve">
+    <value>Itur Name</value>
+    <comment>Itur Name</comment>
+  </data>
+  <data name="View_InventProductListDetails_columnTotalItems" xml:space="preserve">
+    <value>Total items</value>
+    <comment>Total items</comment>
+  </data>
+  <data name="View_InventProductListDetails_columnWorkerId" xml:space="preserve">
+    <value>WorkerID</value>
+    <comment>WorkerID</comment>
+  </data>
+  <data name="View_InventProductListDetails_columnWorkerName" xml:space="preserve">
+    <value>Worker Name</value>
+    <comment>Worker Name</comment>
+  </data>
+  <data name="View_InventProductListDetails_tbChangeItur" xml:space="preserve">
+    <value>Change itur</value>
+    <comment>Change itur</comment>
+  </data>
+  <data name="View_InventProductListDetails_tbDocumentHeaders" xml:space="preserve">
+    <value>Document headers</value>
+    <comment>Document headers</comment>
+  </data>
+  <data name="View_InventProductListDetails_tbInventProducts" xml:space="preserve">
+    <value>Invent products</value>
+    <comment>Invent products</comment>
+  </data>
+  <data name="View_InventProductListDetails_tbIturInfo" xml:space="preserve">
+    <value>Itur info:</value>
+    <comment>Itur info:</comment>
+  </data>
+  <data name="View_InventProductListDetails_tbStatusApproveBit" xml:space="preserve">
+    <value>StatusApproveBit</value>
+    <comment>StatusApproveBit</comment>
+  </data>
+  <data name="View_InventProductListDetails_tbStatusDocHeaderBit" xml:space="preserve">
+    <value>StatusDocHeaderBit</value>
+    <comment>StatusDocHeaderBit</comment>
+  </data>
+  <data name="View_InventProductListDetails_tbStatusInventProductBit" xml:space="preserve">
+    <value>StatusInventProductBit</value>
+    <comment>StatusInventProductBit</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnCode" xml:space="preserve">
+    <value>Code</value>
+    <comment>Code</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnCreateDate" xml:space="preserve">
+    <value>Create Date</value>
+    <comment>Create Date</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnDisabled" xml:space="preserve">
+    <value>Disabled</value>
+    <comment>Disabled</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnErpCode" xml:space="preserve">
+    <value>ERP Code</value>
+    <comment>ERP Code</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnLocation" xml:space="preserve">
+    <value>Location</value>
+    <comment>Location</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnModifyDate" xml:space="preserve">
+    <value>Modify Date</value>
+    <comment>Modify Date</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnNumber" xml:space="preserve">
+    <value>Number</value>
+    <comment>Number</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnNumberPrefix" xml:space="preserve">
+    <value>Number Preffix</value>
+    <comment>Number Preffix</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnNumberSufix" xml:space="preserve">
+    <value>Number suffix</value>
+    <comment>Number suffix</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnPublished" xml:space="preserve">
+    <value>Published</value>
+    <comment>Published</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnStatusBit" xml:space="preserve">
+    <value>Status bit</value>
+    <comment>Status bit</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnStatusDocHeaderBit" xml:space="preserve">
+    <value>Status doc header bit</value>
+    <comment>Status doc header bit</comment>
+  </data>
+  <data name="View_IturAddEditDelete_columnStatusGroupBit" xml:space="preserve">
+    <value>Status group bit</value>
+    <comment>Status group bit</comment>
+  </data>
+  <data name="View_IturAddEditDelete_tbChangeState" xml:space="preserve">
+    <value>Change state</value>
+    <comment>Change state</comment>
+  </data>
+  <data name="View_IturAddEditDelete_tpChangeLocation" xml:space="preserve">
+    <value>Change location</value>
+    <comment>Change location</comment>
+  </data>
+  <data name="View_IturAdd_chkDisabled" xml:space="preserve">
+    <value>Disabled</value>
+    <comment>Disabled</comment>
+  </data>
+  <data name="View_IturAdd_tbErpCode" xml:space="preserve">
+    <value>ERP Code</value>
+    <comment>ERP Code</comment>
+  </data>
+  <data name="View_IturAdd_tbLocation" xml:space="preserve">
+    <value>Location</value>
+    <comment>Location</comment>
+  </data>
+  <data name="View_IturAdd_tbNumberPrefix" xml:space="preserve">
+    <value>Number prefix:</value>
+    <comment>Number prefix:</comment>
+  </data>
+  <data name="View_IturAdd_tbNumbers" xml:space="preserve">
+    <value>Number(s):</value>
+    <comment>Number(s):</comment>
+  </data>
+  <data name="View_IturAdd_tbTotalIturs" xml:space="preserve">
+    <value>Total iturs:</value>
+    <comment>Total iturs:</comment>
+  </data>
+  <data name="View_IturEdit_chkDisabled" xml:space="preserve">
+    <value>Disabled</value>
+    <comment>Disabled</comment>
+  </data>
+  <data name="View_IturEdit_tbErpCode" xml:space="preserve">
+    <value>ERP Code</value>
+    <comment>ERP Code</comment>
+  </data>
+  <data name="View_IturEdit_tbNumber" xml:space="preserve">
+    <value>Number:</value>
+    <comment>Number:</comment>
+  </data>
+  <data name="View_IturEdit_tbNumberPrefix" xml:space="preserve">
+    <value>Number Preffix:</value>
+    <comment>Number Preffix:</comment>
+  </data>
+  <data name="View_IturEdit_tbStatus" xml:space="preserve">
+    <value>Status:</value>
+    <comment>Status:</comment>
+  </data>
+  <data name="View_IturListDetails_btnAddEditDelete" xml:space="preserve">
+    <value>Add/Edit/Delete itur</value>
+    <comment>Add/Edit/Delete itur</comment>
+  </data>
+  <data name="View_IturListDetails_btnImportFromPda" xml:space="preserve">
+    <value>Import from PDA</value>
+    <comment>Import from PDA</comment>
+  </data>
+  <data name="View_IturListDetails_btnRefresh" xml:space="preserve">
+    <value>Refresh iturs status</value>
+    <comment>Refresh iturs status</comment>
+  </data>
+  <data name="View_IturListDetails_busyContent" xml:space="preserve">
+    <value>Refreshing itur status</value>
+    <comment>Refreshing itur status</comment>
+  </data>
+  <data name="View_IturListDetails_chkDisabled" xml:space="preserve">
+    <value>Disabled</value>
+    <comment>Disabled</comment>
+  </data>
+  <data name="View_IturListDetails_chkFilterByInventProduct" xml:space="preserve">
+    <value>Filter by invent product</value>
+    <comment>Filter by invent product</comment>
+  </data>
+  <data name="View_IturListDetails_tbCodeInputFromPda" xml:space="preserve">
+    <value>Code input from PDA:</value>
+    <comment>Code input from PDA:</comment>
+  </data>
+  <data name="View_IturListDetails_tbFilters1" xml:space="preserve">
+    <value>Filters #1</value>
+    <comment>Filters #1</comment>
+  </data>
+  <data name="View_IturListDetails_tbFilters2" xml:space="preserve">
+    <value>Filters #2</value>
+    <comment>Filters #2</comment>
+  </data>
+  <data name="View_IturListDetails_tbGroupBy" xml:space="preserve">
+    <value>Group by</value>
+    <comment>Group by</comment>
+  </data>
+  <data name="View_IturListDetails_tbIturim" xml:space="preserve">
+    <value>Iturim</value>
+    <comment>Iturim</comment>
+  </data>
+  <data name="View_IturListDetails_tbIturNumber" xml:space="preserve">
+    <value>Itur number</value>
+    <comment>Itur number</comment>
+  </data>
+  <data name="View_IturListDetails_tbLocation" xml:space="preserve">
+    <value>Location:</value>
+    <comment>Location:</comment>
+  </data>
+  <data name="View_IturListDetails_tbMakat" xml:space="preserve">
+    <value>Makat:</value>
+    <comment>Makat:</comment>
+  </data>
+  <data name="View_IturListDetails_tbOrderBy" xml:space="preserve">
+    <value>Order by</value>
+    <comment>Order by</comment>
+  </data>
+  <data name="View_IturListDetails_tbProductName" xml:space="preserve">
+    <value>Product Name:</value>
+    <comment>Product Name:</comment>
+  </data>
+  <data name="View_IturListDetails_tbProducts" xml:space="preserve">
+    <value>Products</value>
+    <comment>Products</comment>
+  </data>
+  <data name="View_IturListDetails_tbStatusGroup" xml:space="preserve">
+    <value>Status:</value>
+    <comment>Status:</comment>
+  </data>
+  <data name="View_IturListDetails_tbTotal" xml:space="preserve">
+    <value>Total:</value>
+    <comment>Total:</comment>
+  </data>
+  <data name="View_IturLocationChange_tbItur" xml:space="preserve">
+    <value>Iturim:</value>
+    <comment>Iturim:</comment>
+  </data>
+  <data name="View_IturLocationChange_tbLocation" xml:space="preserve">
+    <value>New location:</value>
+    <comment>New location:</comment>
+  </data>
+  <data name="View_IturStateChange_tbDisabled" xml:space="preserve">
+    <value>Disabled:</value>
+    <comment>Disabled:</comment>
+  </data>
+  <data name="View_IturStateChange_tbItur" xml:space="preserve">
+    <value>Iturim:</value>
+    <comment>Iturim:</comment>
+  </data>
+  <data name="View_IturStatusChange_tbItur" xml:space="preserve">
+    <value>Iturim:</value>
+    <comment>Iturim:</comment>
+  </data>
+  <data name="View_IturStatusChange_tbStatus" xml:space="preserve">
+    <value>New status:</value>
+    <comment>New status:</comment>
+  </data>
+  <data name="View_LastInventorsDashboardPart_columnDate" xml:space="preserve">
+    <value>Date</value>
+    <comment>Date</comment>
+  </data>
+  <data name="View_LastInventorsDashboardPart_columnStatus" xml:space="preserve">
+    <value>Status</value>
+    <comment>Status</comment>
+  </data>
+  <data name="View_LocationAddEditDelete_columnColor" xml:space="preserve">
+    <value>Color</value>
+    <comment>Color</comment>
+  </data>
+  <data name="View_LocationAddEditDelete_columnDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_LocationAddEditDelete_columnName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="View_LocationAddEdit_tbColor" xml:space="preserve">
+    <value>Color:</value>
+    <comment>Color:</comment>
+  </data>
+  <data name="View_LocationAddEdit_tbDescription" xml:space="preserve">
+    <value>Description:</value>
+    <comment>Description:</comment>
+  </data>
+  <data name="View_LocationAddEdit_tbName" xml:space="preserve">
+    <value>Name:</value>
+    <comment>Name:</comment>
+  </data>
+  <data name="View_LocationDashboardPart_columnColor" xml:space="preserve">
+    <value>Color</value>
+    <comment>Color</comment>
+  </data>
+  <data name="View_LocationDashboardPart_columnDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_LocationDashboardPart_columnLocation" xml:space="preserve">
+    <value>Location</value>
+    <comment>Location</comment>
+  </data>
+  <data name="View_LocationListDetail_chkFilterByLocations" xml:space="preserve">
+    <value>Filter by locations</value>
+    <comment>Filter by locations</comment>
+  </data>
+  <data name="View_LocationListDetail_tbViewAll" xml:space="preserve">
+    <value>View all</value>
+    <comment>View all</comment>
+  </data>
+  <data name="View_MaskAddEdit_tbAdapter" xml:space="preserve">
+    <value>Adapter</value>
+    <comment>Adapter</comment>
+  </data>
+  <data name="View_MaskAddEdit_tbBarcodeMask" xml:space="preserve">
+    <value>BarcodeMask</value>
+    <comment>BarcodeMask</comment>
+  </data>
+  <data name="View_MaskAddEdit_tbMakatMask" xml:space="preserve">
+    <value>MakatMask</value>
+    <comment>MakatMask</comment>
+  </data>
+  <data name="View_MaskList_columnAdapter" xml:space="preserve">
+    <value>Adapter</value>
+    <comment>Adapter</comment>
+  </data>
+  <data name="View_MaskList_columnBarcodeMask" xml:space="preserve">
+    <value>BarcodeMask</value>
+    <comment>BarcodeMask</comment>
+  </data>
+  <data name="View_MaskList_columnFile" xml:space="preserve">
+    <value>File</value>
+    <comment>File</comment>
+  </data>
+  <data name="View_MaskList_columnMakatMask" xml:space="preserve">
+    <value>MakatMask</value>
+    <comment>MakatMask</comment>
+  </data>
+  <data name="View_MaskSelect_columnMaskTemplate" xml:space="preserve">
+    <value>Mask template</value>
+    <comment>Mask template</comment>
+  </data>
+  <data name="View_MaskSelect_columnResultOfApply" xml:space="preserve">
+    <value>Result of applying mask</value>
+    <comment>Result of applying mask</comment>
+  </data>
+  <data name="View_MaskSelect_columnUseAsResult" xml:space="preserve">
+    <value>Use as result</value>
+    <comment>Use as result</comment>
+  </data>
+  <data name="View_MaskSelect_tbApply" xml:space="preserve">
+    <value>Applying input to list of standard masks</value>
+    <comment>Applying input to list of standard masks</comment>
+  </data>
+  <data name="View_MaskSelect_tbInputString" xml:space="preserve">
+    <value>Input string</value>
+    <comment>Input string</comment>
+  </data>
+  <data name="View_MaskTemplateAddEdit_tbAction" xml:space="preserve">
+    <value>Action</value>
+    <comment>Action</comment>
+  </data>
+  <data name="View_MaskTemplateAddEdit_tbExpression" xml:space="preserve">
+    <value>Expression</value>
+    <comment>Expression</comment>
+  </data>
+  <data name="View_MaskTemplateAddEdit_tbName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="View_Model_CatalogForm_Enter_Valid_Number" xml:space="preserve">
+    <value>Please enter valid number</value>
+    <comment>Please enter valid number</comment>
+  </data>
+  <data name="View_PathSettings_tbDatabaseFolder" xml:space="preserve">
+    <value>Databases folder path:</value>
+    <comment>Databases folder path:</comment>
+  </data>
+  <data name="View_PathSettings_tbImportFolderPath" xml:space="preserve">
+    <value>Import folder path:</value>
+    <comment>Import folder path:</comment>
+  </data>
+  <data name="View_PathSettings_tbOpenInExplorer" xml:space="preserve">
+    <value>Open in explorer</value>
+    <comment>Open in explorer</comment>
+  </data>
+  <data name="View_PathSettings_tbParamsIni" xml:space="preserve">
+    <value>Params.ini/params_ansi.ini path:</value>
+    <comment>Params.ini/params_ansi.ini path:</comment>
+  </data>
+  <data name="View_PathSettings_tbSettingsFolderPath" xml:space="preserve">
+    <value>Settings folder path:</value>
+    <comment>Settings folder path:</comment>
+  </data>
+  <data name="View_PdaDashboardPart_tbSendDataToPda" xml:space="preserve">
+    <value>Send Data To PDA</value>
+    <comment>Send Data To PDA</comment>
+  </data>
+  <data name="View_PdaDashboardPart_tbViewStatus" xml:space="preserve">
+    <value>View Status</value>
+    <comment>View Status</comment>
+  </data>
+  <data name="View_ProductAddEdit_tbMakat" xml:space="preserve">
+    <value>Makat:</value>
+    <comment>Makat:</comment>
+  </data>
+  <data name="View_ProductAddEdit_tbName" xml:space="preserve">
+    <value>Name:</value>
+    <comment>Name:</comment>
+  </data>
+  <data name="View_ProductAddEdit_tbPriceBuy" xml:space="preserve">
+    <value>Price buy:</value>
+    <comment>Price buy:</comment>
+  </data>
+  <data name="View_ProductAddEdit_tbPriceSale" xml:space="preserve">
+    <value>Price sale:</value>
+    <comment>Price sale:</comment>
+  </data>
+  <data name="View_ProductAddEdit_tbPriceString" xml:space="preserve">
+    <value>Price string:</value>
+    <comment>Price string:</comment>
+  </data>
+  <data name="View_ReportAddEdit_FromForm" xml:space="preserve">
+    <value>From form:</value>
+    <comment>From form:</comment>
+  </data>
+  <data name="View_ReportAddEdit_tbDesc" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_ReportAddEdit_tbMenuCaption" xml:space="preserve">
+    <value>Menu Caption</value>
+    <comment>Menu Caption</comment>
+  </data>
+  <data name="View_ReportAddEdit_tbName" xml:space="preserve">
+    <value>Name:</value>
+    <comment>Name:</comment>
+  </data>
+  <data name="View_ReportAddEdit_tbPath" xml:space="preserve">
+    <value>Path</value>
+    <comment>Path</comment>
+  </data>
+  <data name="View_ReportAddEdit_tbReportList" xml:space="preserve">
+    <value>Reports List</value>
+    <comment>Reports List</comment>
+  </data>
+  <data name="View_ReportAddEdit_tbShowInMenu" xml:space="preserve">
+    <value>Show in Menu</value>
+    <comment>Show in Menu</comment>
+  </data>
+  <data name="View_ReportAddEdit_tbTag" xml:space="preserve">
+    <value>Tag</value>
+    <comment>Tag</comment>
+  </data>
+  <data name="View_ReportFavorites_btnOpenScript" xml:space="preserve">
+    <value>Open script</value>
+    <comment>Open script</comment>
+  </data>
+  <data name="View_ReportFavorites_btnSaveScript" xml:space="preserve">
+    <value>Save script</value>
+    <comment>Save script</comment>
+  </data>
+  <data name="View_ReportFavorites_busyContent" xml:space="preserve">
+    <value>Executing script...</value>
+    <comment>Executing script...</comment>
+  </data>
+  <data name="View_ReportFavorites_columnDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_ReportFavorites_columnFileName" xml:space="preserve">
+    <value>File Name</value>
+    <comment>File Name</comment>
+  </data>
+  <data name="View_ReportFavorites_columnMenuCaption" xml:space="preserve">
+    <value>Menu Caption</value>
+    <comment>Menu Caption</comment>
+  </data>
+  <data name="View_ReportFavorites_columnPath" xml:space="preserve">
+    <value>Path</value>
+    <comment>Path</comment>
+  </data>
+  <data name="View_ReportFavorites_columnShowInMenu" xml:space="preserve">
+    <value>Show in Menu</value>
+    <comment>Show in Menu</comment>
+  </data>
+  <data name="View_ReportFavorites_columnTag" xml:space="preserve">
+    <value>Tag</value>
+    <comment>Tag</comment>
+  </data>
+  <data name="View_ReportFavorites_radioCurrentUser" xml:space="preserve">
+    <value>Current user</value>
+    <comment>Current user</comment>
+  </data>
+  <data name="View_ReportFavorites_radioMain" xml:space="preserve">
+    <value>Main</value>
+    <comment>Main</comment>
+  </data>
+  <data name="View_ReportScriptSave_btnBrowse" xml:space="preserve">
+    <value>Browse</value>
+    <comment>Browse</comment>
+  </data>
+  <data name="View_ReportScriptSave_btnClose" xml:space="preserve">
+    <value>Close</value>
+    <comment>Close</comment>
+  </data>
+  <data name="View_ReportScriptSave_btnRun" xml:space="preserve">
+    <value>Run</value>
+    <comment>Run</comment>
+  </data>
+  <data name="View_ReportScriptSave_busyContent" xml:space="preserve">
+    <value>Executing script...</value>
+    <comment>Executing script...</comment>
+  </data>
+  <data name="View_ReportScriptSave_radioCurrentUser" xml:space="preserve">
+    <value>Current user</value>
+    <comment>Current user</comment>
+  </data>
+  <data name="View_ReportScriptSave_radioMain" xml:space="preserve">
+    <value>Main</value>
+    <comment>Main</comment>
+  </data>
+  <data name="View_ReportScriptSave_tbContext" xml:space="preserve">
+    <value>Context:</value>
+    <comment>Context:</comment>
+  </data>
+  <data name="View_ReportScriptSave_tbLog" xml:space="preserve">
+    <value>Log:</value>
+    <comment>Log:</comment>
+  </data>
+  <data name="View_ReportScriptSave_tbPath" xml:space="preserve">
+    <value>Path to output file:</value>
+    <comment>Path to output file:</comment>
+  </data>
+  <data name="View_ReportScript_btnBrowse" xml:space="preserve">
+    <value>Browse</value>
+    <comment>Browse</comment>
+  </data>
+  <data name="View_ReportScript_btnClose" xml:space="preserve">
+    <value>Close</value>
+    <comment>Close</comment>
+  </data>
+  <data name="View_ReportScript_btnRun" xml:space="preserve">
+    <value>Run</value>
+    <comment>Run</comment>
+  </data>
+  <data name="View_ReportScript_busyContent" xml:space="preserve">
+    <value>Executing script...</value>
+    <comment>Executing script...</comment>
+  </data>
+  <data name="View_ReportScript_chkClear" xml:space="preserve">
+    <value>Clear relations table before start</value>
+    <comment>Clear relations table before start</comment>
+  </data>
+  <data name="View_ReportScript_radioCurrentUser" xml:space="preserve">
+    <value>Current user</value>
+    <comment>Current user</comment>
+  </data>
+  <data name="View_ReportScript_radioMain" xml:space="preserve">
+    <value>Main</value>
+    <comment>Main</comment>
+  </data>
+  <data name="View_ReportScript_tbContext" xml:space="preserve">
+    <value>Context:</value>
+    <comment>Context:</comment>
+  </data>
+  <data name="View_ReportScript_tbLog" xml:space="preserve">
+    <value>Log:</value>
+    <comment>Log:</comment>
+  </data>
+  <data name="View_ReportScript_tbPath" xml:space="preserve">
+    <value>Path to input file:</value>
+    <comment>Path to input file:</comment>
+  </data>
+  <data name="View_ReportsDashboardPart_mnuGenerateReport" xml:space="preserve">
+    <value>Generate report</value>
+    <comment>Generate report</comment>
+  </data>
+  <data name="View_ReportTemplate_btnGenerate" xml:space="preserve">
+    <value>Generate</value>
+    <comment>Generate</comment>
+  </data>
+  <data name="View_ReportTemplate_chkAll" xml:space="preserve">
+    <value>All</value>
+    <comment>All</comment>
+  </data>
+  <data name="View_ReportTemplate_chkContext" xml:space="preserve">
+    <value>Context</value>
+    <comment>Context</comment>
+  </data>
+  <data name="View_ReportTemplate_chkCurrentUser" xml:space="preserve">
+    <value>Current user</value>
+    <comment>Current user</comment>
+  </data>
+  <data name="View_ReportTemplate_chkMain" xml:space="preserve">
+    <value>Main</value>
+    <comment>Main</comment>
+  </data>
+  <data name="View_ReportTemplate_chkUseCurrentContext" xml:space="preserve">
+    <value>Use current context's filter</value>
+    <comment>Use current context's filter</comment>
+  </data>
+  <data name="View_ReportTemplate_columnDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_ReportTemplate_columnFileName" xml:space="preserve">
+    <value>File Name</value>
+    <comment>File Name</comment>
+  </data>
+  <data name="View_ReportTemplate_columnMenuCaption" xml:space="preserve">
+    <value>Menu Caption</value>
+    <comment>Menu Caption</comment>
+  </data>
+  <data name="View_ReportTemplate_columnPath" xml:space="preserve">
+    <value>Path</value>
+    <comment>Path</comment>
+  </data>
+  <data name="View_ReportTemplate_columnShowInMenu" xml:space="preserve">
+    <value>Show in Menu</value>
+    <comment>Show in Menu</comment>
+  </data>
+  <data name="View_ReportTemplate_columnTag" xml:space="preserve">
+    <value>Tag</value>
+    <comment>Tag</comment>
+  </data>
+  <data name="View_ScriptSaveOpen_busyContent" xml:space="preserve">
+    <value>Executing script...</value>
+    <comment>Executing script...</comment>
+  </data>
+  <data name="View_ScriptSaveOpen_tbClearRelations" xml:space="preserve">
+    <value>Clear relations table before start</value>
+    <comment>Clear relations table before start</comment>
+  </data>
+  <data name="View_ScriptSaveOpen_tbLog" xml:space="preserve">
+    <value>Log:</value>
+    <comment>Log:</comment>
+  </data>
+  <data name="View_ScriptSaveOpen_tbPathToInput" xml:space="preserve">
+    <value>Path to input file:</value>
+    <comment>Path to input file:</comment>
+  </data>
+  <data name="View_ScriptSaveOpen_tbPathToOutput" xml:space="preserve">
+    <value>Path to output file:</value>
+    <comment>Path to output file:</comment>
+  </data>
+  <data name="View_ScriptSaveOpen_tbUserCurrentContext" xml:space="preserve">
+    <value>Use Current Context Filter</value>
+    <comment>Use Current Context Filter</comment>
+  </data>
+  <data name="View_SectionAddEditDelete_columnCode" xml:space="preserve">
+    <value>Code</value>
+    <comment>Code</comment>
+  </data>
+  <data name="View_SectionAddEditDelete_columnDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_SectionAddEditDelete_columnName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="View_SectionAddEdit_CodeExist" xml:space="preserve">
+    <value>Section with such code already exists</value>
+    <comment>Section with such code already exists</comment>
+  </data>
+  <data name="View_SectionAddEdit_tbCode" xml:space="preserve">
+    <value>Code</value>
+    <comment>Code</comment>
+  </data>
+  <data name="View_SectionAddEdit_tbDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_SectionAddEdit_tbName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="View_SectionDashboardPart_columnCode" xml:space="preserve">
+    <value>Code</value>
+    <comment>Code</comment>
+  </data>
+  <data name="View_SectionDashboardPart_columnDescription" xml:space="preserve">
+    <value>Description</value>
+    <comment>Description</comment>
+  </data>
+  <data name="View_SectionDashboardPart_columnName" xml:space="preserve">
+    <value>Name</value>
+    <comment>Name</comment>
+  </data>
+  <data name="View_SqlScriptSettings_btnLoad" xml:space="preserve">
+    <value>Load</value>
+    <comment>Load</comment>
+  </data>
+  <data name="View_SqlScriptSettings_btnSave" xml:space="preserve">
+    <value>Save</value>
+    <comment>Save</comment>
+  </data>
+  <data name="View_SqlScriptSettings_radioUpdateByDbVersion" xml:space="preserve">
+    <value>Update by DB version</value>
+    <comment>Update by DB version</comment>
+  </data>
+  <data name="View_SqlScriptSettings_radioUpdateDbSetupVersion" xml:space="preserve">
+    <value>Update DB Version for Setup</value>
+    <comment>Update DB Version for Setup</comment>
+  </data>
+  <data name="View_SqlScriptSettings_radioUpdateScript" xml:space="preserve">
+    <value>Update with SQL script</value>
+    <comment>Update with SQL script</comment>
+  </data>
+  <data name="View_SqlScriptSettings_tbDbType" xml:space="preserve">
+    <value>Db type:</value>
+    <comment>Db type:</comment>
+  </data>
+  <data name="View_SqlScriptSettings_tbFromVersion" xml:space="preserve">
+    <value>From version:</value>
+    <comment>From version:</comment>
+  </data>
+  <data name="View_SqlScriptSettings_tbLog" xml:space="preserve">
+    <value>Log:</value>
+    <comment>Log:</comment>
+  </data>
+  <data name="View_SqlScriptSettings_tbRun" xml:space="preserve">
+    <value>Run</value>
+    <comment>Run</comment>
+  </data>
+  <data name="View_SqlScriptSettings_tbSql" xml:space="preserve">
+    <value>Sql:</value>
+    <comment>Sql:</comment>
+  </data>
+  <data name="View_SqlScriptSettings_tbToVersion" xml:space="preserve">
+    <value>To version:</value>
+    <comment>To version:</comment>
+  </data>
+  <data name="View_StatusGroupList_tbFilterByStatusGroups" xml:space="preserve">
+    <value>Filter by status groups:</value>
+    <comment>Filter by status groups:</comment>
+  </data>
+  <data name="View_Strip_tbBranch" xml:space="preserve">
+    <value>branch</value>
+    <comment>branch</comment>
+  </data>
+  <data name="View_Strip_tbCustomer" xml:space="preserve">
+    <value>customer</value>
+    <comment>customer</comment>
+  </data>
+  <data name="View_Strip_tbInventor" xml:space="preserve">
+    <value>inventor</value>
+    <comment>inventor</comment>
+  </data>
+  <data name="View_UserSettings_btnResetToDefault" xml:space="preserve">
+    <value>Reset to default</value>
+    <comment>Reset to default</comment>
+  </data>
+  <data name="View_UserSettings_columnColor" xml:space="preserve">
+    <value>Color</value>
+    <comment>Color</comment>
+  </data>
+  <data name="View_UserSettings_columnStatus" xml:space="preserve">
+    <value>Status</value>
+    <comment>Status</comment>
+  </data>
+  <data name="View_UserSettings_grpIturGroupStatusColor" xml:space="preserve">
+    <value>Itur Group Status Color</value>
+    <comment>Itur Group Status Color</comment>
+  </data>
+  <data name="View_UserSettings_grpIturStatusColor" xml:space="preserve">
+    <value>Itur Status Color</value>
+    <comment>Itur Status Color</comment>
+  </data>
+  <data name="View_UserSettings_grpLoggingMessage" xml:space="preserve">
+    <value>Logging Message Types</value>
+    <comment>Logging Message Types</comment>
+  </data>
+  <data name="View_UserSettings_grpPortionSize" xml:space="preserve">
+    <value>Portion Size</value>
+    <comment>Portion Size</comment>
+  </data>
+  <data name="View_UserSettings_Language" xml:space="preserve">
+    <value>Language:</value>
+    <comment>Language:</comment>
+  </data>
+  <data name="View_UserSettings_tbCustomerBranchInventor" xml:space="preserve">
+    <value>Customer/Branch/Inventor:</value>
+    <comment>Customer/Branch/Inventor:</comment>
+  </data>
+  <data name="View_UserSettings_tbDefaultEncoding" xml:space="preserve">
+    <value>Encoding:</value>
+    <comment>Encoding:</comment>
+  </data>
+  <data name="View_UserSettings_tbDelay" xml:space="preserve">
+    <value>UI controls delay</value>
+    <comment>UI controls delay</comment>
+  </data>
+  <data name="View_UserSettings_tbInventProducts" xml:space="preserve">
+    <value>Invent Products:</value>
+    <comment>Invent Products:</comment>
+  </data>
+  <data name="View_UserSettings_tbItursDashboard" xml:space="preserve">
+    <value>Iturs Dashboard:</value>
+    <comment>Iturs Dashboard:</comment>
+  </data>
+  <data name="View_UserSettings_tbItursList" xml:space="preserve">
+    <value>Iturs List:</value>
+    <comment>Iturs List:</comment>
+  </data>
+  <data name="View_UserSettings_tbLanguage" xml:space="preserve">
+    <value>Language: (applied after restart)</value>
+    <comment>Language: (applied after restart)</comment>
+  </data>
+  <data name="View_UserSettings_tbProducts" xml:space="preserve">
+    <value>Products:</value>
+    <comment>Products:</comment>
+  </data>
+  <data name="View_UserSettings_tbSections" xml:space="preserve">
+    <value>Sections</value>
+    <comment>Sections</comment>
+  </data>
+  <data name="View_UserSettings_tbStatusGroup" xml:space="preserve">
+    <value>Status group</value>
+    <comment>Status group</comment>
+  </data>
+  <data name="View_ZipExport_busyContent" xml:space="preserve">
+    <value>Compressing files into zip archive</value>
+    <comment>Compressing files into zip archive</comment>
+  </data>
+  <data name="View_ZipExport_chkCheckUncheck" xml:space="preserve">
+    <value>Check/uncheck all</value>
+    <comment>Check/uncheck all</comment>
+  </data>
+  <data name="View_ZipExport_tbSelectFiles" xml:space="preserve">
+    <value>Select files to pack into zip archive:</value>
+    <comment>Select files to pack into zip archive:</comment>
+  </data>
+  <data name="View_ZipImport_busyContent" xml:space="preserve">
+    <value>Unpacking</value>
+    <comment>Unpacking</comment>
+  </data>
+  <data name="View_ZipImport_chkCheckUncheck" xml:space="preserve">
+    <value>Check/uncheck all</value>
+    <comment>Check/uncheck all</comment>
+  </data>
+  <data name="View_ZipImport_chkClearImportFolder" xml:space="preserve">
+    <value>Previously clear import data folder</value>
+    <comment>Previously clear import data folder</comment>
+  </data>
+  <data name="View_ZipImport_chkOverwrite" xml:space="preserve">
+    <value>Overwrite existing files</value>
+    <comment>Overwrite existing files</comment>
+  </data>
+  <data name="View_ZipImport_expOptions" xml:space="preserve">
+    <value>Options</value>
+    <comment>Options</comment>
+  </data>
+  <data name="View_ZipImport_tbPathArchive" xml:space="preserve">
+    <value>Path to the archive:</value>
+    <comment>Path to the archive:</comment>
+  </data>
+  <data name="Window_Title_AddItur" xml:space="preserve">
+    <value>Add Itur</value>
+    <comment>Add Itur</comment>
+  </data>
+  <data name="Window_Title_AddMask" xml:space="preserve">
+    <value>Add mask</value>
+    <comment>Add mask</comment>
+  </data>
+  <data name="Window_Title_AddMaskTemplate" xml:space="preserve">
+    <value>Add mask template</value>
+    <comment>Add mask template</comment>
+  </data>
+  <data name="Window_Title_AddReportToFavorites" xml:space="preserve">
+    <value>Add Report To Favorites</value>
+    <comment>Add Report To Favorites</comment>
+  </data>
+  <data name="Window_Title_BranchDashboard" xml:space="preserve">
+    <value>Branch Dashboard</value>
+    <comment>Branch Dashboard</comment>
+  </data>
+  <data name="Window_Title_Catalog" xml:space="preserve">
+    <value>Catalog</value>
+    <comment>Catalog</comment>
+  </data>
+  <data name="Window_Title_CBIObjectProperties" xml:space="preserve">
+    <value>CBI Object Properties</value>
+    <comment>CBI Object Properties</comment>
+  </data>
+  <data name="Window_Title_ChooseBranch" xml:space="preserve">
+    <value>Choose Branch</value>
+    <comment>Choose Branch</comment>
+  </data>
+  <data name="Window_Title_ChooseCustomer" xml:space="preserve">
+    <value>Choose Customer</value>
+    <comment>Choose Customer</comment>
+  </data>
+  <data name="Window_Title_ChooseInventor" xml:space="preserve">
+    <value>Choose Inventor</value>
+    <comment>Choose Inventor</comment>
+  </data>
+  <data name="Window_Title_ConfigurationSetAdd" xml:space="preserve">
+    <value>Add configuration set</value>
+    <comment>Add configuration set</comment>
+  </data>
+  <data name="Window_Title_CustomerDashboard" xml:space="preserve">
+    <value>Customer Dashboard</value>
+    <comment>Customer Dashboard</comment>
+  </data>
+  <data name="Window_Title_DocumentHeaderAddEdit" xml:space="preserve">
+    <value>Add/Edit Document Header</value>
+    <comment>Add/Edit Document Header</comment>
+  </data>
+  <data name="Window_Title_EditBranch" xml:space="preserve">
+    <value>Edit branch</value>
+    <comment>Edit branch</comment>
+  </data>
+  <data name="Window_Title_EditCustomer" xml:space="preserve">
+    <value>Edit customer</value>
+    <comment>Edit customer</comment>
+  </data>
+  <data name="Window_Title_EditInventor" xml:space="preserve">
+    <value>Edit inventor</value>
+    <comment>Edit inventor</comment>
+  </data>
+  <data name="Window_Title_EditItur" xml:space="preserve">
+    <value>Edit Itur</value>
+    <comment>Edit Itur</comment>
+  </data>
+  <data name="Window_Title_EditMask" xml:space="preserve">
+    <value>Edit mask</value>
+    <comment>Edit mask</comment>
+  </data>
+  <data name="Window_Title_EditMaskTemplate" xml:space="preserve">
+    <value>Edit mask template</value>
+    <comment>Edit mask template</comment>
+  </data>
+  <data name="Window_Title_EditReportToFavorites" xml:space="preserve">
+    <value>Edit Report in Favorites</value>
+    <comment>Edit Report in Favorites</comment>
+  </data>
+  <data name="Window_Title_ErpExpectedStep1" xml:space="preserve">
+    <value>ERP Expected Step 1</value>
+    <comment>ERP Expected Step 1</comment>
+  </data>
+  <data name="Window_Title_ImportCatalog" xml:space="preserve">
+    <value>Import/Update Catalog</value>
+    <comment>Import/Update Catalog</comment>
+  </data>
+  <data name="Window_Title_ImportFromPda" xml:space="preserve">
+    <value>Import From PDA</value>
+    <comment>Import From PDA</comment>
+  </data>
+  <data name="Window_Title_ImportIturs" xml:space="preserve">
+    <value>Import Iturs</value>
+    <comment>Import Iturs</comment>
+  </data>
+  <data name="Window_Title_ImportLocations" xml:space="preserve">
+    <value>Import Locations</value>
+    <comment>Import Locations</comment>
+  </data>
+  <data name="Window_Title_ImportSection" xml:space="preserve">
+    <value>Import section</value>
+    <comment>Import section</comment>
+  </data>
+  <data name="Window_Title_InventorDashboard" xml:space="preserve">
+    <value>Inventor Dashboard</value>
+    <comment>Inventor Dashboard</comment>
+  </data>
+  <data name="Window_Title_InventorStatusChange" xml:space="preserve">
+    <value>Inventor change status</value>
+    <comment>Inventor change status</comment>
+  </data>
+  <data name="Window_Title_InventoryForm" xml:space="preserve">
+    <value>Inventory Form</value>
+    <comment>Inventory Form</comment>
+  </data>
+  <data name="Window_Title_InventProduct" xml:space="preserve">
+    <value>Invent Product List</value>
+    <comment>Invent Product List</comment>
+  </data>
+  <data name="Window_Title_InventProductAdd" xml:space="preserve">
+    <value>Invent Product Add</value>
+    <comment>Invent Product Add</comment>
+  </data>
+  <data name="Window_Title_InventProductEdit" xml:space="preserve">
+    <value>Invent Product Edit</value>
+    <comment>Invent Product Edit</comment>
+  </data>
+  <data name="Window_Title_IturChangeLocation" xml:space="preserve">
+    <value>Change Location</value>
+    <comment>Change Location</comment>
+  </data>
+  <data name="Window_Title_IturChangeState" xml:space="preserve">
+    <value>Change State</value>
+    <comment>Change State</comment>
+  </data>
+  <data name="Window_Title_IturChangeStatus" xml:space="preserve">
+    <value>Change Status</value>
+    <comment>Change Status</comment>
+  </data>
+  <data name="Window_Title_IturimAddEdit" xml:space="preserve">
+    <value>Edit/Add/Delete Iturim</value>
+    <comment>Edit/Add/Delete Iturim</comment>
+  </data>
+  <data name="Window_Title_LocationAdd" xml:space="preserve">
+    <value>New Location</value>
+    <comment>New Location</comment>
+  </data>
+  <data name="Window_Title_LocationAddEditDelete" xml:space="preserve">
+    <value>Add/Delete Location</value>
+    <comment>Add/Delete Location</comment>
+  </data>
+  <data name="Window_Title_LocationEdit" xml:space="preserve">
+    <value>Edit Location</value>
+    <comment>Edit Location</comment>
+  </data>
+  <data name="Window_Title_MainDashboard" xml:space="preserve">
+    <value>Main Dashboard</value>
+    <comment>Main Dashboard</comment>
+  </data>
+  <data name="Window_Title_NewBranch" xml:space="preserve">
+    <value>New branch</value>
+    <comment>New branch</comment>
+  </data>
+  <data name="Window_Title_NewCustomer" xml:space="preserve">
+    <value>New customer</value>
+    <comment>New customer</comment>
+  </data>
+  <data name="Window_Title_NewInventor" xml:space="preserve">
+    <value>New inventor</value>
+    <comment>New inventor</comment>
+  </data>
+  <data name="Window_Title_ProductAddEdit" xml:space="preserve">
+    <value>Add/Edit Product</value>
+    <comment>Add/Edit Product</comment>
+  </data>
+  <data name="Window_Title_ReportScript" xml:space="preserve">
+    <value>Open Script</value>
+    <comment>Open Script</comment>
+  </data>
+  <data name="Window_Title_ReportScriptSave" xml:space="preserve">
+    <value>Save Script</value>
+    <comment>Save Script</comment>
+  </data>
+  <data name="Window_Title_ScriptOpen" xml:space="preserve">
+    <value>Open Script</value>
+    <comment>Open Script</comment>
+  </data>
+  <data name="Window_Title_ScriptSave" xml:space="preserve">
+    <value>Save Script</value>
+    <comment>Save Script</comment>
+  </data>
+  <data name="Window_Title_SectionAdd" xml:space="preserve">
+    <value>Section Add</value>
+    <comment>Section Add</comment>
+  </data>
+  <data name="Window_Title_SectionAddEditDelete" xml:space="preserve">
+    <value>Section</value>
+    <comment>Section</comment>
+  </data>
+  <data name="Window_Title_SectionEdit" xml:space="preserve">
+    <value>Section Edit</value>
+    <comment>Section Edit</comment>
+  </data>
+  <data name="Window_Title_ViewBranch" xml:space="preserve">
+    <value>View branch</value>
+    <comment>View branch</comment>
+  </data>
+  <data name="Window_Title_ViewCustomer" xml:space="preserve">
+    <value>View customer</value>
+    <comment>View customer</comment>
+  </data>
+  <data name="Window_Title_ViewExportErpLog" xml:space="preserve">
+    <value>View Export ERP Log</value>
+    <comment>View Export ERP Log</comment>
+  </data>
+  <data name="Window_Title_ViewExportLog" xml:space="preserve">
+    <value>View Export Log</value>
+    <comment>View Export Log</comment>
+  </data>
+  <data name="Window_Title_ViewImportLog" xml:space="preserve">
+    <value>View Import Log</value>
+    <comment>View Import Log</comment>
+  </data>
+  <data name="Window_Title_ViewInventor" xml:space="preserve">
+    <value>View inventor</value>
+    <comment>View inventor</comment>
+  </data>
+</root>

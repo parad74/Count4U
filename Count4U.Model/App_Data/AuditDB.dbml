@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="AuditDB" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="AuditConfig">
+    <Type Name="AuditConfig">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="InventorDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="CustomerCode" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="CustomerName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="BranchCode" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="BranchName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="StatusID" Type="System.Int64" DbType="BigInt NOT NULL" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DirtyCode" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Association Name="Status_AuditConfig" Member="Status" ThisKey="StatusID" OtherKey="ID" Type="Status" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="Status">
+    <Type Name="Status">
+      <Column Name="ID" Type="System.Int64" DbType="BigInt NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Association Name="Status_AuditConfig" Member="AuditConfig" ThisKey="ID" OtherKey="StatusID" Type="AuditConfig" />
+    </Type>
+  </Table>
+</Database>

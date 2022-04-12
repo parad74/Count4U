@@ -1,0 +1,166 @@
+﻿<UserControl x:Class="Count4U.Modules.Audit.Views.Family.FamilyAddEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             xmlns:Behaviours="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+             xmlns:textBox="clr-namespace:Count4U.CustomControls.TextBox;assembly=Count4U.CustomControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Buttons/ButtonThemeV7.xaml"/>                    
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+
+
+        <TextBlock Height="23" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,10,0,0" 
+                   Text="{x:Static Localization:Resources.View_SectionAddEdit_tbCode}"
+                   VerticalAlignment="Top" />
+
+        <textBox:TextBoxV7 Height="23" Margin="100,10,10,0" Name="txtCode" 
+				 IsReadOnly="{Binding Path=IsEdit}"
+				 Style="{StaticResource textBoxErrorStyle}" 
+                 VerticalAlignment="Top" 
+                 MaxLength="50" >
+            <TextBox.Text>
+                <Binding Path="Code" UpdateSourceTrigger="Explicit" IsAsync="False" >
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule></DataErrorValidationRule>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+            <i:Interaction.Behaviors>
+                <Behaviours:TextChangedDelayedBehavior IsTimerEnabled="True" />
+            </i:Interaction.Behaviors>
+
+        </textBox:TextBoxV7>
+
+        <TextBlock Height="23" 
+                   HorizontalAlignment="Left"
+                   Margin="8,40,0,0" 
+                   Text="{x:Static Localization:Resources.View_SectionAddEdit_tbName}"
+                   VerticalAlignment="Top" />
+
+        <textBox:TextBoxV7 Height="23" 
+                 IsReadOnly="False"
+                 Margin="100,40,10,0"
+                 Style="{StaticResource textBoxErrorStyle}" 
+				 MaxLength="50"
+                 Name="txtName"
+				 Text="{Binding IsAsync=False, Path=Name, UpdateSourceTrigger=PropertyChanged}" 
+                 VerticalAlignment="Top">
+        </textBox:TextBoxV7>
+
+        <TextBlock Height="23" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,70,0,0" 
+                   Text="{x:Static Localization:Resources.View_SectionAddEdit_tbDescription}"
+                   VerticalAlignment="Top" />
+
+        <textBox:TextBoxV7 Height="23"
+                 Margin="100,70,10,0" Style="{StaticResource textBoxErrorStyle}"
+                 VerticalAlignment="Top" 
+                 MaxLength="50"
+                 Text="{Binding IsAsync=False, Path=Description, UpdateSourceTrigger=PropertyChanged}" >
+        </textBox:TextBoxV7>
+        
+          <TextBlock Height="23" 
+                   HorizontalAlignment="Left"
+                   Margin="8,100,0,0" 
+                   Text="{x:Static Localization:Resources.View_SectionAddEdit_tbType}"
+                   VerticalAlignment="Top" />
+
+        <textBox:TextBoxV7 Height="23" 
+                 IsReadOnly="False"
+                 Margin="100,100,10,0"
+                 Style="{StaticResource textBoxErrorStyle}" 
+				 MaxLength="50"
+                 Name="txtType"
+				 Text="{Binding IsAsync=False, Path=Type, UpdateSourceTrigger=PropertyChanged}" 
+                 VerticalAlignment="Top">
+        </textBox:TextBoxV7>
+
+        <TextBlock Height="23" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,130,0,0" 
+                   Text="{x:Static Localization:Resources.View_SectionAddEdit_tbSize}"
+                   VerticalAlignment="Top" />
+
+        <textBox:TextBoxV7 Height="23"
+                 Margin="100,130,10,0" Style="{StaticResource textBoxErrorStyle}"
+                 VerticalAlignment="Top" 
+                 MaxLength="50"
+                 Name="txtSize"
+                 Text="{Binding IsAsync=False, Path=Size, UpdateSourceTrigger=PropertyChanged}" >
+        </textBox:TextBoxV7>
+
+        <TextBlock Height="23" 
+                   HorizontalAlignment="Left"
+                   Margin="8,160,0,0" 
+                   
+                   Text="{x:Static Localization:Resources.View_SectionAddEdit_tbExtra1}"
+                   VerticalAlignment="Top" />
+
+        <textBox:TextBoxV7 Height="23" 
+                 IsReadOnly="False"
+                 Margin="100,160,10,0"
+                 Style="{StaticResource textBoxErrorStyle}" 
+				 MaxLength="50"
+                 Name="txtExtra1"
+				 Text="{Binding IsAsync=False, Path=Extra1, UpdateSourceTrigger=PropertyChanged}" 
+                 VerticalAlignment="Top">
+        </textBox:TextBoxV7>
+
+        <TextBlock Height="23" 
+                   HorizontalAlignment="Left" 
+                   Margin="10,190,0,0" 
+                   Text="{x:Static Localization:Resources.View_SectionAddEdit_tbExtra2}"
+                   VerticalAlignment="Top" />
+
+        <textBox:TextBoxV7 Height="23"
+                 Margin="100,190,10,0" Style="{StaticResource textBoxErrorStyle}"
+                 VerticalAlignment="Top" 
+                 MaxLength="50"
+                 Name="txtExtra2"
+                 Text="{Binding IsAsync=False, Path=Extra2, UpdateSourceTrigger=PropertyChanged}" >
+        </textBox:TextBoxV7>
+
+
+        <Grid Grid.Row="1" Background="#FF7EAFE5">
+            <Button Content="{x:Static Localization:Resources.Command_OK}"
+                    Height="23" 
+                    HorizontalAlignment="Right" 
+                    Margin="0,0,94,0" 
+                    VerticalAlignment="Center" 
+                    Width="75" 
+                     Style="{StaticResource ButtonStyleV7}"
+                    Command="{Binding Path=OkCommand}" />
+
+            <Button Content="{x:Static Localization:Resources.Command_Cancel}"
+                    Height="23" 
+                    IsCancel="True"
+				    HorizontalAlignment="Right" 
+                    Margin="0,0,10,0" 
+                    VerticalAlignment="Center" 
+                    Width="75" 
+                     Style="{StaticResource ButtonStyleV7_2}"
+                    Command="{Binding Path=CancelCommand}"/>
+        </Grid>
+
+    </Grid>
+</UserControl>

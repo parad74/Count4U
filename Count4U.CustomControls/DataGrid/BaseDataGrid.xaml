@@ -1,0 +1,166 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:Microsoft_Windows_Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero"
+                    xmlns:Converters="clr-namespace:Count4U.CustomControls.Converters">
+
+    <Style x:Key="DataGridStyle" TargetType="{x:Type DataGrid}" x:Shared="true">
+        <Setter Property="SelectionMode" Value="Single" />
+        <Setter Property="SelectionUnit" Value="FullRow" />
+        <Setter Property="AutoGenerateColumns" Value="False" />
+        <Setter Property="GridLinesVisibility" Value="None" />
+        <Setter Property="HeadersVisibility" Value="Column" />
+        <Setter Property="CanUserReorderColumns" Value="False" />
+        <Setter Property="CanUserSortColumns" Value="False" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="AlternationCount" Value="2" />
+        <Setter Property="VirtualizingStackPanel.VirtualizationMode" Value="Standard" />
+
+    </Style>
+
+    <!--	<SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="#FF000000"/>-->
+
+    <Style x:Key="ColumnHeaderGripperStyle" TargetType="{x:Type Thumb}" x:Shared="true">
+        <Setter Property="Width" Value="8"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="SizeWE"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Thumb}">
+                    <Border Padding="{TemplateBinding Padding}"
+                        Background="{TemplateBinding Background}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DefaultDataGridColumnHeader" TargetType="{x:Type DataGridColumnHeader}" x:Shared="true">
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                    <Grid>
+                        <Microsoft_Windows_Themes:DataGridHeaderBorder SortDirection="{TemplateBinding SortDirection}"
+                                         IsHovered="{TemplateBinding IsMouseOver}"
+                                         IsPressed="{TemplateBinding IsPressed}"
+                                         IsClickable="{TemplateBinding CanUserSort}"
+                                         Background="{TemplateBinding Background}"
+                                         BorderBrush="{TemplateBinding BorderBrush}"
+                                         BorderThickness="{TemplateBinding BorderThickness}"
+                                         Padding ="{TemplateBinding Padding}"
+                                         SeparatorVisibility="{TemplateBinding SeparatorVisibility}"																				 
+                                         SeparatorBrush="{TemplateBinding SeparatorBrush}">
+
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                      		VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+																					HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                        </Microsoft_Windows_Themes:DataGridHeaderBorder>
+
+                        <Thumb x:Name="PART_LeftHeaderGripper"
+                               HorizontalAlignment="Left"
+                               Style="{StaticResource ColumnHeaderGripperStyle}"/>
+                        <Thumb x:Name="PART_RightHeaderGripper"
+                               HorizontalAlignment="Right"
+                               Style="{StaticResource ColumnHeaderGripperStyle}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DataGridColumnHeadersPresenterStyle" TargetType="{x:Type DataGridColumnHeadersPresenter}" x:Shared="true">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridColumnHeadersPresenter}">
+                    <Grid>
+                        <!--								<DataGridColumnHeader IsHitTestVisible="False"-->
+                        <!--																			Background="Transparent"-->
+                        <!--                                      Style="{StaticResource DefaultDataGridColumnHeader}"-->
+                        <!--                                      Name="PART_FillerColumnHeader"/>-->
+                        <ItemsPresenter />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}" x:Shared="true">
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Margin" Value="0,1,1,1" />
+        <Setter Property="Padding" Value="2" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                    <Grid >
+                        <Microsoft_Windows_Themes:DataGridHeaderBorder SortDirection="{TemplateBinding SortDirection}"
+                                         IsHovered="{TemplateBinding IsMouseOver}"
+                                         IsPressed="{TemplateBinding IsPressed}"
+                                         IsClickable="{TemplateBinding CanUserSort}"
+                                         Background="{TemplateBinding Background}"
+                                         BorderBrush="{TemplateBinding BorderBrush}"
+                                         BorderThickness="{TemplateBinding BorderThickness}"
+                                         Padding ="{TemplateBinding Padding}"
+                                         Margin="{TemplateBinding Margin}"
+                                         SeparatorVisibility="{TemplateBinding SeparatorVisibility}"
+                                         SeparatorBrush="{TemplateBinding SeparatorBrush}">
+                            <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                      VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                        </Microsoft_Windows_Themes:DataGridHeaderBorder>
+
+                        <Thumb x:Name="PART_LeftHeaderGripper"
+                               HorizontalAlignment="Left"
+                               Style="{StaticResource ColumnHeaderGripperStyle}"/>
+                        <Thumb x:Name="PART_RightHeaderGripper"
+                               HorizontalAlignment="Right"
+                               Style="{StaticResource ColumnHeaderGripperStyle}"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <LinearGradientBrush x:Key="ListItemSelectedHoverFill" EndPoint="0,1" StartPoint="0,0" x:Shared="true">
+        <GradientStop Color="#FFEAF9FF" Offset="0"/>
+        <GradientStop Color="#FFC9EDFD" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="cellBorderBrush" Color="#FFCCFF66" />
+
+    <Style x:Key="DataGridCellStyle" TargetType="{x:Type DataGridCell}" x:Shared="true">
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Margin" Value="0" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Border						Name="border"
+								Background="{TemplateBinding Background}"
+                                BorderBrush="{DynamicResource cellBorderBrush}"  
+                                BorderThickness="1" 
+                                Margin="0,2,2,1"
+                                SnapsToDevicePixels="True">
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Background" Value="{StaticResource ListItemSelectedHoverFill}"/>
+                            <Setter Property="BorderBrush" Value="#FF98DDFB"/>
+                            <Setter Property="Foreground" Value="Black"/>
+                            <Setter Property="BorderBrush" Value="Gray" TargetName="border"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                            <Setter Property="BorderBrush" Value="#FF98DDFB" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

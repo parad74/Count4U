@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+	<Style x:Key="alphabetFilter" TargetType="{x:Type ListBoxItem}">
+		<Style.Resources>
+			<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent"/>
+			<SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent"/>
+		</Style.Resources>
+		<Style.Triggers>
+			<Trigger Property="IsSelected" Value="True">
+				<Trigger.Setters>
+					<Setter Property="LayoutTransform">
+						<Setter.Value>
+							<ScaleTransform ScaleX="1.1" ScaleY="1.1" />
+						</Setter.Value>
+					</Setter>
+				</Trigger.Setters>
+			</Trigger>
+		</Style.Triggers>
+	</Style>
+	
+</ResourceDictionary>

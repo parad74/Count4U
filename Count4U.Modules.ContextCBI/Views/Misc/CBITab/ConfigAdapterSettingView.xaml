@@ -1,0 +1,231 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.Misc.CBITab.ConfigAdapterSettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Combobox/ComboboxThemeV7.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Grid Margin="0,0,0,0">
+
+        <Grid.Resources>
+            <BooleanToVisibilityConverter x:Key="boolToVis" />
+        </Grid.Resources>
+
+        <Border BorderBrush="LightGray" Background="LightGray" BorderThickness="1" VerticalAlignment="Top" Height="550" Margin="1,0,0,0" Width="1"  HorizontalAlignment="Left" >
+        </Border>
+
+        <!--<Border BorderBrush="#E2E2E2" 
+                    BorderThickness="1" 
+                    Height="1" 
+                    HorizontalAlignment="Left" 
+                    Margin="0,205,0,0" Name="border1" 
+                    VerticalAlignment="Top" 
+                    Width="430" Background="#E2E2E2" />-->
+
+        <Grid Visibility="{Binding Path=IsEditable, Converter={StaticResource boolToVis}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <!--<ColumnDefinition Width="*" />-->
+                    </Grid.ColumnDefinitions>
+                    <!--<Grid Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="90" />
+                            <RowDefinition Height="90" />
+                            <RowDefinition Height="90" />
+                            <RowDefinition Height="90" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>-->
+
+                        <!-- ============= Adapters  16  40 =============== -->
+                        <!--<Grid Grid.Row="0">-->
+                            <!--<RadioButton
+                                        IsChecked="{Binding Path=FromAdapter}"
+					                         Content="{x:Static Localization:Resources.View_ImportWithModules_radioFromAdapter}"
+                                             Height="18" 
+                                             HorizontalAlignment="Left" 
+                                             Margin="20,16,0,0" 
+                                             Name="radioInitFromConfigAdapter"
+                                             Visibility="{Binding Path=CBIDbContext, Converter={StaticResource fromConfigCBIConverter}, ConverterParameter='Customer'}"
+                                             VerticalAlignment="Top" Width="169" IsEnabled="True" />-->
+
+                            <!--<ComboBox Height="22" HorizontalAlignment="Left" Margin="51,40,0,0" 
+							                VerticalAlignment="Top" Width="266" 
+							                ItemsSource="{Binding Path=Adapters}"
+							                SelectedItem="{Binding Path=SelectedAdapter}"
+							                DisplayMemberPath="Title"
+							                />-->
+                        <!--</Grid>-->
+                        <!-- ============= FromCustomer  =============== -->
+                        <!--<Grid Grid.Row="1">-->
+                            <!--<RadioButton IsChecked="{Binding Path=FromCustomer}"
+					                         Content="{x:Static Localization:Resources.View_ImportWithModules_radioFromCustomer}"
+                                             Height="18" 
+                                             HorizontalAlignment="Left" 
+                                             Margin="20,16,0,0" 
+                                             Name="radioInitFromConfigCustomer"
+                                             Visibility="{Binding Path=CBIDbContext, Converter={StaticResource fromConfigCBIConverter}, ConverterParameter='Customer'}"
+                                             VerticalAlignment="Top" Width="169" IsEnabled="True" />
+
+                            <TextBlock   Height="21" 
+                                             HorizontalAlignment="Left" 
+                                             Margin="51,40,0,0" 
+                                             Visibility="{Binding Path=Visibility, ElementName=radioInitFromConfigCustomer}"
+                                             Text="{x:Static Localization:Resources.View_ImportWithModules_tbCustomerName}"
+                                             VerticalAlignment="Top" 
+                                             Width="124" 
+                                             Opacity="1" />
+
+                            <TextBlock Height="21"
+                                           HorizontalAlignment="Left"
+                                           Margin="168,40,0,0" 
+                                           Opacity="1" 
+                                           Text="{Binding Path=CurrentCustomer.Name}" 
+                                           Visibility="{Binding Path=Visibility, ElementName=radioInitFromConfigCustomer}"
+                                           VerticalAlignment="Top"
+                                           Width="205" />-->
+
+                         <!--</Grid>-->
+                        <!-- ============= FromBranch   =============== -->
+                        <!--<Grid Grid.Row="2">-->
+                            <!--<RadioButton IsChecked="{Binding Path=FromBranch}"
+					                         Content="{x:Static Localization:Resources.View_ImportWithModules_radioFromBranch}"
+                                             Height="18" 
+                                             HorizontalAlignment="Left"
+                                             Margin="20,16,0,0" 
+                                             Name="radioInitFromConfigBranch"
+                                             Visibility="{Binding Path=CBIDbContext, Converter={StaticResource fromConfigCBIConverter}, ConverterParameter='Branch'}"
+                                             VerticalAlignment="Top" 
+                                             Width="169" 
+                                             IsEnabled="True" />
+
+                            <TextBlock Height="21" 
+                                           HorizontalAlignment="Left"
+                                           Margin="51,40,0,0" 
+                                           Name="textBlock41" 
+                                           Opacity="1" 
+                                           Visibility="{Binding Path=Visibility, ElementName=radioInitFromConfigBranch}"
+                                           Text="{x:Static Localization:Resources.View_ImportWithModules_tbBranchName}"
+                                           VerticalAlignment="Top" 
+                                           Width="124" />
+
+                            <TextBlock Height="21"
+                                           HorizontalAlignment="Left"
+                                           Margin="168,40,0,0" 
+                                           Opacity="1" 
+                                           Text="{Binding Path=CurrentBranch.Name}" 
+                                           Visibility="{Binding Path=Visibility, ElementName=radioInitFromConfigBranch}"
+                                           VerticalAlignment="Top" 
+                                           Width="205" />-->
+
+                         
+
+                        <!--</Grid>-->
+                        <!-- ============= FromInventor  =============== -->
+                        <!--<Grid Grid.Row="3">-->
+                            <!--<RadioButton IsChecked="{Binding Path=FromInventor}"
+					                         Content="{x:Static Localization:Resources.View_ImportWithModules_radioFromInventor}"
+                                             Height="18" 
+                                             HorizontalAlignment="Left" 
+                                             Margin="20,16,0,0" 
+                                             Name="radioInitFromConfigInventor"
+                                             VerticalAlignment="Top" 
+                                             Visibility="{Binding Path=CBIDbContext, Converter={StaticResource fromConfigCBIConverter}, ConverterParameter='Inventor'}"
+                                             Width="169" 
+                                             IsEnabled="True" />
+
+                            <TextBlock Height="21" HorizontalAlignment="Left" 
+                                           Margin="51,40,0,0" 
+                                           Visibility="{Binding Path=Visibility, ElementName=radioInitFromConfigInventor}"
+                                           Opacity="1" 
+                                           Text="{x:Static Localization:Resources.View_ImportWithModules_tbInventorName}"
+                                           VerticalAlignment="Top" 
+                                           Width="124" />
+
+                            <TextBlock Height="21" HorizontalAlignment="Left" 
+                                           Margin="168,40,0,0" 
+                                           Opacity="1" 
+                                           Text="{Binding Path=CurrentInventor.InventorDate}" 
+                                           Visibility="{Binding Path=Visibility, ElementName=radioInitFromConfigInventor}"
+                                           VerticalAlignment="Top" 
+                                           Width="205" />-->
+
+                    
+                        <!--</Grid>-->
+                    <!--</Grid>-->
+                <!--<Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="400" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                            <Button  Content="{Binding Path=SaveConfigContent}"
+                                        Height="23" HorizontalAlignment="Stretch" Margin="10,10,10,10"  VerticalAlignment="Top"
+                                        Command="{Binding Path=SaveConfigCommand}"/>
+
+                            <Button  Content="{x:Static Localization:Resources.View_InventorStatusChange_btnRunConfig}"
+                                        Height="23" HorizontalAlignment="Stretch" Margin="10,40,10,10"  VerticalAlignment="Top" 
+                                        Command="{Binding Path=ImportByConfigCommand}"/>
+                        </Grid>-->
+
+                   
+                    <Grid Grid.Column="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="484" />
+                           <RowDefinition Height="60" />
+                        </Grid.RowDefinitions>
+                        <TextBox Grid.Row="0" 
+                                            Text="{Binding Path=ConfigXML}" Margin="10,0,0,0" IsReadOnly="True" AcceptsReturn="True" VerticalScrollBarVisibility="Auto">
+                        </TextBox>
+
+                    <!--<Grid Grid.Row="1">
+                        <Button  Content="{Binding Path=SaveConfigContent}"
+                                        Height="23" HorizontalAlignment="Stretch" Margin="10,10,10,10"  VerticalAlignment="Top"
+                                        Command="{Binding Path=SaveConfigCommand}"/>
+
+                    <Button  Content="{x:Static Localization:Resources.View_InventorStatusChange_btnRunConfig}"
+                                        Height="23" HorizontalAlignment="Stretch" Margin="10,40,10,10"  VerticalAlignment="Top" 
+                                        Command="{Binding Path=ImportByConfigCommand}"/>
+                    </Grid>-->
+                        
+                    <Grid Grid.Row="1">
+                            <TextBlock 
+                                            	HorizontalAlignment="Left" 
+                                            	Margin="10,10,0,0" 
+                                            	x:Name="textBlock3_Copy" 
+                                            	Text="{x:Static Localization:Resources.View_ConfigAdapterSetting_tbPath}" 
+                                            	Width="60" Height="21" VerticalAlignment="Top" />
+
+                            <TextBox  Height="22" Margin="50,9,0,0" Name="textBox41" VerticalAlignment="Top" IsReadOnly="True" 
+                                             Text="{Binding Path=DataInConfigPath}" ToolTip="{Binding Path=DataInConfigPath}" 
+                                             />
+
+                            <Button  Content="{x:Static Localization:Resources.View_ExportLog_btnOpen}"
+                                            Height="23" HorizontalAlignment="Right" Margin="0,35,0,0"  VerticalAlignment="Bottom" Width="75" 
+                                            Command="{Binding Path=OpenConfigCommand}"/>
+
+                            <Button  Content="{x:Static Localization:Resources.View_ExportLog_btnReload}"
+                                            Height="23" HorizontalAlignment="Right" Margin="0,35,86,0"  VerticalAlignment="Bottom" Width="75" 
+                                            Command="{Binding Path=ReloadConfigCommand}"/>
+
+
+
+                    </Grid>
+
+
+                    </Grid>
+                </Grid>
+            <!--</Border>-->
+
+    </Grid>
+</UserControl>

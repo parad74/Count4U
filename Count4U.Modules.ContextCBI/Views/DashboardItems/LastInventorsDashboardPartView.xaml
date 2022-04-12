@@ -1,0 +1,155 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.DashboardItems.LastInventorsDashboardPartView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+              xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" 
+             xmlns:MDI="clr-namespace:WPF.MDI;assembly=WPF.MDI" mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+
+    <UserControl.Resources>
+
+    </UserControl.Resources>
+
+    <Grid Background="White">
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" MinHeight="100" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <DataGrid Grid.Row="0" 
+							ItemsSource="{Binding Path=Items}" 										
+                            VirtualizingStackPanel.VirtualizationMode="Standard"  
+							SelectionMode="Single"
+							BorderBrush="Transparent"
+							BorderThickness="0"
+                            VirtualizingStackPanel.IsVirtualizing="True"
+                            EnableColumnVirtualization="False"
+                            EnableRowVirtualization="False"
+                            ScrollViewer.CanContentScroll="False"
+							>
+
+            <DataGrid.Columns>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_LastInventorsDashboardPart_columnStatus}"
+                                        Width="70" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Status, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_InventorChoose_columnDescription}"
+                                        Width="100" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Description, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_LastInventorsDashboardPart_columnDate}"
+                                        Width="70" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Date, Mode=OneWay}" Style="{StaticResource textBlockLinkStyle}">
+								 <i:Interaction.Triggers>
+								<i:EventTrigger EventName="MouseLeftButtonDown">
+									<i:InvokeCommandAction Command="{Binding Path=DataContext.AuditNavigateCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" 
+																				 CommandParameter="{Binding}"/>
+								</i:EventTrigger>
+							 </i:Interaction.Triggers>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.Domain_Customer}"
+                                        Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Customer, Mode=OneWay}" Style="{StaticResource textBlockLinkStyle}">
+								 <i:Interaction.Triggers>
+								<i:EventTrigger EventName="MouseLeftButtonDown">
+									<i:InvokeCommandAction Command="{Binding Path=DataContext.CustomerNavigateCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" 
+																				 CommandParameter="{Binding}"/>
+								</i:EventTrigger>
+							 </i:Interaction.Triggers>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.Domain_Branch}"
+                                        Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=Branch, Mode=OneWay}" Style="{StaticResource textBlockLinkStyle}">
+								 <i:Interaction.Triggers>
+								<i:EventTrigger EventName="MouseLeftButtonDown">
+									<i:InvokeCommandAction Command="{Binding Path=DataContext.BranchNavigateCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" 
+																				 CommandParameter="{Binding}"/>
+								</i:EventTrigger>
+							 </i:Interaction.Triggers>
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_InventorChoose_columnUpdateCatalogDate}"
+                                        Width="100" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Path=CompleteDate, Mode=OneWay}" HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <Border Grid.Row="1" Background="{DynamicResource cellBorderBrush}" Height="20"
+						BorderBrush="{DynamicResource cellBorderBrush}" >
+            <Grid HorizontalAlignment="Right">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock Grid.Column="2"  Margin="5,0,5,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Hyperlink Command="{Binding Path=MoreInventorsCommand}">
+			            <Run Text="{Binding Path=MoreInventorsCommand.Title}"/>
+                    </Hyperlink>
+                </TextBlock>
+
+                <TextBlock Grid.Column="1" Margin="5,0,5,0" HorizontalAlignment="Right" VerticalAlignment="Center">
+                    <Hyperlink Command="{Binding Path=AddCommand}">
+			            <Run Text="{Binding Path=AddCommand.Title}"/>
+                    </Hyperlink>
+                </TextBlock>
+
+<!--                <TextBlock Grid.Column="0"  Margin="5,0,5,0" HorizontalAlignment="Right" VerticalAlignment="Center">-->
+<!--                    <Hyperlink Command="{Binding Path=SearchCommand}">-->
+<!--			            <Run Text="{Binding Path=SearchCommand.Title}"/>-->
+<!--                    </Hyperlink>-->
+<!--                </TextBlock>-->
+
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

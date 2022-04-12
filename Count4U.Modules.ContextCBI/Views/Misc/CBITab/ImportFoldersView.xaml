@@ -1,0 +1,251 @@
+﻿<UserControl x:Class="Count4U.Modules.ContextCBI.Views.Misc.CBITab.ImportFoldersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+              xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization" 
+              xmlns:Converters="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="700" d:DesignWidth="700">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls,ProcessorArchitecture=MSIL;component/Combobox/ComboboxThemeV7.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters:BoolToVisiblityConverter  x:Key="boolToVis" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+        <Grid Name="gridMain">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBlock Height="25" 
+                   HorizontalAlignment="Left"
+                   Margin="0,32,0,0" 
+                   Name="textBlock5" 
+                   Text="{x:Static Localization:Resources.View_ImportFolders_tbIturim}"
+                   VerticalAlignment="Top" 
+                   Width="136" />
+            
+        <ComboBox Height="23" 
+                  HorizontalAlignment="Left" 
+                  Margin="160,32,0,0" 
+                  Name="cmbIturs" 
+                  VerticalAlignment="Top"
+                  Width="220" 
+                  ItemsSource="{Binding Path=ItemsIturs}" 
+                  SelectedItem="{Binding Path=SelectedIturs}" 
+                  DisplayMemberPath="Title" 
+                  IsEnabled="{Binding Path=IsEditable}"
+                  Style="{StaticResource ComboBoxStyleV7}" />
+
+        <TextBlock Margin="390,32,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Visibility="{Binding Path=IsShowConfig, Converter={StaticResource boolToVis}}">
+                        <Hyperlink Command="{Binding Path=ShowIturConfigCommand}" CommandParameter="{Binding Path=SelectedIturs}">
+			              <Run Text="{Binding Path=ShowIturConfigCommand.Title}"/>
+                         </Hyperlink>
+        </TextBlock>
+
+        <TextBlock Height="25" 
+                   HorizontalAlignment="Left" 
+                   Margin="0,67,0,0"
+                   Name="textBlock7"
+                   Text="{x:Static Localization:Resources.View_ImportFolders_tbLocation}"
+                   VerticalAlignment="Top"
+                   Width="136" />
+            
+        <ComboBox Height="23" 
+                  HorizontalAlignment="Left"
+                  Margin="160,67,0,0" 
+                  Name="cmbLocation" 
+                  VerticalAlignment="Top"
+                  Width="220" 
+                  ItemsSource="{Binding Path=ItemsLocations}"
+                  SelectedItem="{Binding Path=SelectedLocations}"
+                  DisplayMemberPath="Title" 
+                  IsEnabled="{Binding Path=IsEditable}" 
+                  Style="{StaticResource ComboBoxStyleV7}" />
+
+        <TextBlock Margin="390,67,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Visibility="{Binding Path=IsShowConfig, Converter={StaticResource boolToVis}}">
+                        <Hyperlink Command="{Binding Path=ShowLocationConfigCommand}" CommandParameter="{Binding Path=SelectedLocations}">
+			              <Run Text="{Binding Path=ShowLocationConfigCommand.Title}"/>
+                         </Hyperlink>
+        </TextBlock>
+            
+        <TextBlock Height="25" 
+                   HorizontalAlignment="Left" 
+                   Margin="0,102,0,0" 
+                   Text="{x:Static Localization:Resources.View_ImportFolders_tbSection}"
+                   VerticalAlignment="Top" 
+                   Width="136" />
+            
+        <ComboBox DisplayMemberPath="Title" 
+                  Height="23" 
+                  HorizontalAlignment="Left" 
+                  IsEnabled="{Binding Path=IsEditable}"
+                  ItemsSource="{Binding Path=ItemsSections}"
+                  Margin="160,102,0,0" 
+                  SelectedItem="{Binding Path=SelectedSections}" 
+                  VerticalAlignment="Top" 
+                  Width="220" 
+                  Style="{StaticResource ComboBoxStyleV7}" />
+
+        <TextBlock Margin="390,102,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Visibility="{Binding Path=IsShowConfig, Converter={StaticResource boolToVis}}">
+                        <Hyperlink Command="{Binding Path=ShowSectionConfigCommand}" CommandParameter="{Binding Path=SelectedSections}">
+			              <Run Text="{Binding Path=ShowSectionConfigCommand.Title}"/>
+                         </Hyperlink>
+        </TextBlock>
+
+        <TextBlock Height="25" 
+        	HorizontalAlignment="Left" 
+        	Margin="0,135,0,0" 
+        	Text="{x:Static Localization:Resources.View_ImportFolders_tbSupplier}"
+        	VerticalAlignment="Top" 
+        	Width="136" />
+
+        <ComboBox DisplayMemberPath="Title" 
+        	Height="23" 
+        	HorizontalAlignment="Left" 
+        	IsEnabled="{Binding IsEditable}"
+        	ItemsSource="{Binding ItemsSuppliers}"
+        	Margin="160,135,0,0" 
+        	SelectedItem="{Binding SelectedSuppliers}" 
+        	VerticalAlignment="Top" 
+        	Width="220" 
+        	Style="{StaticResource ComboBoxStyleV7}" />
+
+        <TextBlock Margin="390,135,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Visibility="{Binding Path=IsShowConfig, Converter={StaticResource boolToVis}}">
+                        <Hyperlink Command="{Binding Path=ShowSupplierConfigCommand}" CommandParameter="{Binding Path=SelectedSuppliers}">
+			              <Run Text="{Binding Path=ShowSupplierConfigCommand.Title}"/>
+                         </Hyperlink>
+        </TextBlock>
+
+        <TextBlock Height="25" 
+        	HorizontalAlignment="Left" 
+        	Margin="0,169,0,0" 
+        	Text="{x:Static Localization:Resources.View_ImportFolders_tbFamily}"
+        	VerticalAlignment="Top" 
+        	Width="136" />
+
+        <ComboBox DisplayMemberPath="Title" 
+        	Height="23" 
+        	HorizontalAlignment="Left" 
+        	IsEnabled="{Binding IsEditable}"
+        	ItemsSource="{Binding ItemsFamilys}"
+        	Margin="160,169,0,0" 
+        	SelectedItem="{Binding SelectedFamily}" 
+        	VerticalAlignment="Top" 
+        	Width="220" 
+        	Style="{StaticResource ComboBoxStyleV7}" />
+
+        <TextBlock Margin="390,169,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Visibility="{Binding Path=IsShowConfig, Converter={StaticResource boolToVis}}">
+                        <Hyperlink Command="{Binding Path=ShowFamilyConfigCommand}" CommandParameter="{Binding Path=SelectedFamily}">
+			              <Run Text="{Binding Path=ShowFamilyConfigCommand.Title}"/>
+                         </Hyperlink>
+        </TextBlock>
+            
+        <ComboBox Height="23" 
+                  HorizontalAlignment="Left"
+                  Margin="160,0,0,0" 
+                  Name="cmbCatalogs" 
+                  VerticalAlignment="Top"
+                  Width="220" 
+                  ItemsSource="{Binding Path=ItemsCatalogs}"
+                  SelectedItem="{Binding Path=SelectedCatalogs}"
+                  DisplayMemberPath="Title"
+                  IsEnabled="{Binding Path=IsEditable}" 
+                  Style="{StaticResource ComboBoxStyleV7}" />
+
+            
+        <TextBlock Margin="390,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Visibility="{Binding Path=IsShowConfig, Converter={StaticResource boolToVis}}">
+                        <Hyperlink Command="{Binding Path=ShowCatalogConfigCommand}" CommandParameter="{Binding Path=SelectedCatalogs}">
+			              <Run Text="{Binding Path=ShowCatalogConfigCommand.Title}"/>
+                         </Hyperlink>
+        </TextBlock>
+
+        <TextBlock Height="25" 
+                   HorizontalAlignment="Left" 
+                   Name="textBlock1" 
+                   Text="{x:Static Localization:Resources.View_ImportFolders_tbCatalog}"
+                   VerticalAlignment="Top"
+                   Width="149" />
+            
+        <TextBlock Height="25" 
+                   HorizontalAlignment="Left"
+                   Margin="0,215,0,0"
+                   Text="{x:Static Localization:Resources.View_ImportFolders_tbInventProduct}" 
+                   VerticalAlignment="Top"
+                   Width="136" />
+
+        <Border BorderBrush="#E2E2E2" 
+                    BorderThickness="1" 
+                    Height="1" 
+                    HorizontalAlignment="Left" 
+                    Margin="0,205,0,0" Name="border1" 
+                    VerticalAlignment="Top" 
+                    Width="430" Background="#E2E2E2" />
+            
+            
+            
+        <ComboBox DisplayMemberPath="Title" 
+                  Height="23" HorizontalAlignment="Left" 
+                  IsEnabled="{Binding Path=IsEditable}"
+                  ItemsSource="{Binding Path=ItemsPDA}" 
+                  Margin="160,215,0,0" SelectedItem="{Binding Path=SelectedPDA}" 
+                  Style="{StaticResource ComboBoxStyleV7}" 
+                  VerticalAlignment="Top" 
+                  Width="220" />
+
+        <TextBlock Margin="390,215,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                   Visibility="{Binding Path=IsShowConfig, Converter={StaticResource boolToVis}}">
+                        <Hyperlink Command="{Binding Path=ShowPDAConfigCommand}" CommandParameter="{Binding Path=SelectedPDA}">
+			              <Run Text="{Binding Path=ShowPDAConfigCommand.Title}"/>
+                         </Hyperlink>
+        </TextBlock>
+        </Grid>
+        <Grid Grid.Row="2">
+            <GroupBox  Margin="160,10,0,0" 
+                Header="{x:Static Localization:Resources.View_ComareSettings_CompareBy}"    
+               Width="200" Height="80" HorizontalAlignment="Left" VerticalAlignment="Top"
+                         Visibility="{Binding Path=IsMakatRadioVisible, Converter={StaticResource boolToVis}}">
+                <Grid>
+                    <RadioButton Content="{x:Static Localization:Resources.View_ComareSettings_radioMakat}"
+                             Height="21" 
+                             HorizontalAlignment="Left" 
+                             Margin="10,10,0,0" 
+                             Name="checkBox1" 
+                             VerticalAlignment="Top"
+                             Width="133"
+                             IsEnabled="{Binding Path=IsEditable}" 
+                          IsChecked="{Binding Path=Makat}"
+                          Visibility="{Binding Path=IsMakatRadioVisible, Converter={StaticResource boolToVis}}"/>
+
+        <RadioButton Content="{x:Static Localization:Resources.View_ComareSettings_radioBarcode}"
+                             Height="16" HorizontalAlignment="Left" 
+                             Margin="10,35,0,0" 
+                             Name="checkBox2"
+                                IsEnabled="{Binding Path=IsEditable}" 
+                             VerticalAlignment="Top" 
+                          IsChecked="{Binding Path=Barcode}"
+                          Visibility="{Binding Path=IsMakatRadioVisible, Converter={StaticResource boolToVis}}"/>
+                </Grid>
+            </GroupBox>
+            </Grid>
+            <Grid Grid.Row="1">
+            <ContentControl x:Name="extraSettings" Margin="160,10,0,0" Height="121" VerticalAlignment="Top" 
+                        HorizontalAlignment="Left" Width="237" />
+            </Grid>
+        
+    </Grid>
+</UserControl>

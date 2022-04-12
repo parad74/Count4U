@@ -1,0 +1,147 @@
+﻿<UserControl x:Class="Count4U.ImportPdaNativPlusSqliteAdapter.ImportPdaNativPlusSqliteAdapterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:my="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Interactivity.InteractionRequest;assembly=Microsoft.Practices.Prism.Interactivity"
+             xmlns:Helpers="clr-namespace:Count4U.Common.Helpers;assembly=Count4U.Common"
+             xmlns:Converters="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:ImageButtonCursor="clr-namespace:Count4U.CustomControls.ImageButtonCursor;assembly=Count4U.CustomControls"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:TextBox="clr-namespace:Count4U.CustomControls.TextBox;assembly=Count4U.CustomControls"
+             xmlns:actions="clr-namespace:Count4U.Common.Helpers.Actions;assembly=Count4U.Common"
+             xmlns:uiCommandService="clr-namespace:Count4U.Common.Services.UICommandService;assembly=Count4U.Common"
+             d:DesignHeight="700" d:DesignWidth="700">
+    <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                 </ResourceDictionary.MergedDictionaries>
+                <Converters:BoolToVisiblityConverter  x:Key="boolToVis" />
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <i:Interaction.Triggers>
+            <prism:InteractionRequestTrigger SourceObject="{Binding FileChooseDilogRequest}">
+                <actions:OpenFileDialogAction />
+            </prism:InteractionRequestTrigger>
+
+            <prism:InteractionRequestTrigger SourceObject="{Binding FolderChooseDilogRequest}">
+                <actions:OpenFolderDialogAction />
+            </prism:InteractionRequestTrigger>
+            
+            <prism:InteractionRequestTrigger SourceObject="{Binding YesNoRequest}">
+                    <actions:MessageBoxYesNoAction />
+            </prism:InteractionRequestTrigger>
+
+        </i:Interaction.Triggers>
+
+        <Grid Height="171" Margin="0" VerticalAlignment="Top">
+
+            <RadioButton Content="{x:Static Localization:Resources.View_ImportAdapter_radioDirectory}"
+                         Height="16" HorizontalAlignment="Left" IsChecked="{Binding Path=IsDirectory}" 
+						 Margin="10,10,0,0" VerticalAlignment="Top" 
+                         Visibility="Visible" />
+
+            <RadioButton Content="{x:Static Localization:Resources.View_ImportAdapter_radioFile}"
+                         Height="20" HorizontalAlignment="Left" IsChecked="{Binding Path=IsSingleFile}" 
+						 Margin="10,33,0,0"  VerticalAlignment="Top" />
+
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,58,0,0" 
+                       Text="{x:Static Localization:Resources.View_ImportAdapterPath}"
+                       VerticalAlignment="Top" />
+
+            <TextBox:TextBoxV7 Height="23" IsReadOnly="False" Margin="60,58,95,0" 
+					IsNecessary="True"                     
+					 VerticalAlignment="Top">
+                
+                <TextBox.ToolTip>
+                    <ToolTip Style="{StaticResource adapterToolTipStyle}" />
+                </TextBox.ToolTip>
+                
+                <i:Interaction.Behaviors>
+                    <my:TextChangedDelayedBehavior  IsTimerEnabled="True" />
+                </i:Interaction.Behaviors>
+                
+                <Binding IsAsync="False" Path="Path" UpdateSourceTrigger="Explicit">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+
+            </TextBox:TextBoxV7>
+
+                <Button Command="{Binding Path=BrowseCommand}" 
+                    Content="{x:Static Localization:Resources.Command_Browse}"
+                    Height="23" HorizontalAlignment="Right" Margin="0,58,40,0" VerticalAlignment="Top" Width="50" />
+
+                <ImageButtonCursor:ImageButtonCursor ToolTip="{x:Static Localization:Resources.Command_OpenInExplorer}"
+                                                 Width="24" Height="24"
+                                                 Command="{Binding Path=OpenCommand}"									                
+                ImageSource="{x:Static uiCommandService:UICommandIconRepository.OpenFolder}"
+                                                 ImageWidth="24" ImageHeight="24" Margin="0,58,10,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                </ImageButtonCursor:ImageButtonCursor>
+
+            <!--<CheckBox Content="{x:Static Localization:Resources.View_ImportAdapter_tbFromSourceFolder}"
+                  Height="16" HorizontalAlignment="Left" 
+                  IsChecked="{Binding Path=ListeningSourceFolder}" 
+                  Margin="10,90,0,0" VerticalAlignment="Top" Width="170"/>-->
+
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,90,0,0" 
+                          Text="{x:Static Localization:Resources.View_ImportAdapterCountFiles}"
+                       VerticalAlignment="Top"/>
+            
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="90,90,0,0" 
+                       Text="{Binding Path=ProcessLisner}"  
+                       VerticalAlignment="Top" FontWeight="Bold" Width="66"/>
+
+            <!--<CheckBox Content="{x:Static Localization:Resources.View_ImportAdapter_tbCopyFromSourceFolder}"
+                  Height="16" HorizontalAlignment="Left" 
+                  IsChecked="{Binding Path=IsCopyFromSourceFolder}" 
+                  Margin="330,90,0,0" VerticalAlignment="Top" Width="270" Visibility="{Binding Path=ListeningSourceFolder, Converter={StaticResource boolToVis}}" />-->
+
+            <!--=============-->
+            <!--<Grid Height="36" Margin="0,110,0,0" VerticalAlignment="Top">
+                <TextBlock Height="23" HorizontalAlignment="Left" Margin="10,5,0,0" 
+                       Text="{x:Static Localization:Resources.View_ImportAdapterPath}"
+                       VerticalAlignment="Top" Visibility="{Binding Path=ListeningSourceFolder, Converter={StaticResource boolToVis}}"/>
+
+                <TextBox:TextBoxV7 Height="23" IsReadOnly="False" Margin="60,5,95,0" 
+					IsNecessary="True"                     
+					 VerticalAlignment="Top"  Visibility="{Binding Path=ListeningSourceFolder, Converter={StaticResource boolToVis}}">
+
+                    <TextBox.ToolTip>
+                        <ToolTip Style="{StaticResource adapterToolTipStyle}" />
+                    </TextBox.ToolTip>
+
+                    <i:Interaction.Behaviors>
+                        <my:TextChangedDelayedBehavior  IsTimerEnabled="True" />
+                    </i:Interaction.Behaviors>
+
+                    <Binding IsAsync="False" Path="SourcePath" UpdateSourceTrigger="Explicit">
+                        <Binding.ValidationRules>
+                            <DataErrorValidationRule />
+                        </Binding.ValidationRules>
+                    </Binding>
+
+                </TextBox:TextBoxV7>
+
+                <Button Command="{Binding Path=BrowseSourcePathCommand}" 
+                    Content="{x:Static Localization:Resources.Command_Browse}"
+                    Height="23" HorizontalAlignment="Right" Margin="0,5,40,0" VerticalAlignment="Top" Width="50" Visibility="{Binding Path=ListeningSourceFolder, Converter={StaticResource boolToVis}}"/>
+
+                <ImageButtonCursor:ImageButtonCursor ToolTip="{x:Static Localization:Resources.Command_OpenInExplorer}"
+                                                 Width="24" Height="24"
+                                                 Command="{Binding Path=OpenSourcePathCommand}"		
+                                                 Visibility="{Binding Path=ListeningSourceFolder, Converter={StaticResource boolToVis}}"
+                    ImageSource="{x:Static uiCommandService:UICommandIconRepository.OpenFolder}"
+                                                 ImageWidth="24" ImageHeight="24" Margin="0,5,10,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                </ImageButtonCursor:ImageButtonCursor>
+            </Grid>-->
+        </Grid>
+    </Grid>
+</UserControl>

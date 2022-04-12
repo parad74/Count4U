@@ -1,0 +1,325 @@
+﻿<UserControl x:Class="Count4U.ImportPdaContinueAfterCompareCount4UdbSdfAdapter.ImportPdaContinueAfterCompareCount4UdbSdfAdapterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+			 xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:my="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+             xmlns:prism="clr-namespace:Microsoft.Practices.Prism.Interactivity.InteractionRequest;assembly=Microsoft.Practices.Prism.Interactivity"
+             xmlns:Helpers="clr-namespace:Count4U.Common.Helpers;assembly=Count4U.Common"
+             xmlns:Converters="clr-namespace:Count4U.Common.Converters;assembly=Count4U.Common"
+             xmlns:Behaviours="clr-namespace:Count4U.Common.Behaviours;assembly=Count4U.Common"
+             xmlns:ImageButtonCursor="clr-namespace:Count4U.CustomControls.ImageButtonCursor;assembly=Count4U.CustomControls"
+             xmlns:ImageButton="clr-namespace:Count4U.CustomControls.ImageButton;assembly=Count4U.CustomControls"
+             xmlns:Localization="clr-namespace:Count4U.Localization;assembly=Count4U.Localization"
+             xmlns:TextBox="clr-namespace:Count4U.CustomControls.TextBox;assembly=Count4U.CustomControls"
+             xmlns:actions="clr-namespace:Count4U.Common.Helpers.Actions;assembly=Count4U.Common"
+             xmlns:uiCommandService="clr-namespace:Count4U.Common.Services.UICommandService;assembly=Count4U.Common"
+             d:DesignHeight="700" d:DesignWidth="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Common;component/CommonResources.xaml"/>
+                    <ResourceDictionary Source="pack://application:,,,/Count4U.Modules.ContextCBI;component/Views/Resources.xaml"/>
+
+                </ResourceDictionary.MergedDictionaries>
+                <Converters:StringToBrushConverter x:Key="locationToBrush" />
+                <Converters:BoolToVisiblityConverter  x:Key="boolToVis" />
+            </ResourceDictionary>
+        </Grid.Resources>
+
+        <i:Interaction.Triggers>
+            <prism:InteractionRequestTrigger SourceObject="{Binding FileChooseDilogRequest}">
+                <actions:OpenFileDialogAction />
+            </prism:InteractionRequestTrigger>
+
+            <prism:InteractionRequestTrigger SourceObject="{Binding FolderChooseDilogRequest}">
+                <actions:OpenFolderDialogAction />
+            </prism:InteractionRequestTrigger>
+
+            <prism:InteractionRequestTrigger SourceObject="{Binding YesNoRequest}">
+                <actions:MessageBoxYesNoAction />
+            </prism:InteractionRequestTrigger>
+
+        </i:Interaction.Triggers>
+
+        <!--<Grid Height="131" Margin="0" VerticalAlignment="Top">
+
+            <RadioButton Content="{x:Static Localization:Resources.View_ImportAdapter_radioFile}"
+                         Height="20" HorizontalAlignment="Left" IsChecked="{Binding Path=IsDbFile}" 
+						 Margin="10,10,0,0"  VerticalAlignment="Top" />
+
+            <TextBox:TextBoxV7 Height="23" IsReadOnly="False" Margin="100,10,95,0" 
+					IsNecessary="True"                     
+					 VerticalAlignment="Top">
+                
+                <TextBox.ToolTip>
+                    <ToolTip Style="{StaticResource adapterToolTipStyle}" />
+                </TextBox.ToolTip>
+                
+                <i:Interaction.Behaviors>
+                    <my:TextChangedDelayedBehavior  IsTimerEnabled="True" />
+                </i:Interaction.Behaviors>
+                
+                <Binding IsAsync="False" Path="Path" UpdateSourceTrigger="Explicit">
+                    <Binding.ValidationRules>
+                        <DataErrorValidationRule />
+                    </Binding.ValidationRules>
+                </Binding>
+
+            </TextBox:TextBoxV7>
+            
+            <Button Command="{Binding Path=BrowseCommand}" 
+                    Content="{x:Static Localization:Resources.Command_Browse}"
+                    Height="23" HorizontalAlignment="Right" Margin="0,10,40,0" VerticalAlignment="Top" Width="50" />
+
+            <ImageButtonCursor:ImageButtonCursor ToolTip="{x:Static Localization:Resources.Command_OpenInExplorer}"
+                                                 Width="24" Height="24"
+                                                 Command="{Binding Path=OpenCommand}"									                
+                                                    ImageSource="{x:Static uiCommandService:UICommandIconRepository.OpenFolder}"
+                                                     ImageWidth="24" ImageHeight="24" Margin="0,10,10,0" HorizontalAlignment="Right" VerticalAlignment="Top">
+                </ImageButtonCursor:ImageButtonCursor>
+
+        
+
+        </Grid>-->
+
+        <Grid Grid.Row="0" Margin="0,5,10,3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                    <!--<ColumnDefinition Width="83" />-->
+                </Grid.ColumnDefinitions>
+                <!--<RadioButton Grid.Column="0" 
+                    Content="{x:Static Localization:Resources.View_ImportAdapter_radioInventorys}"
+                             Height="16" HorizontalAlignment="Left" IsChecked="{Binding Path=IsDbInventories}" 
+						     Margin="10,3,0,0" VerticalAlignment="Top" 
+                             Visibility="Visible" />-->
+
+                <TextBlock Grid.Column="0" Height="23" HorizontalAlignment="Left" Margin="10,5,0,0" 
+                          Text="{x:Static Localization:Resources.View_ImportAdapter_radioInventorys}"
+                       VerticalAlignment="Top"/>
+
+                <!--<CheckBox  x:Name="withSerialNumberCheckBox" Grid.Column="0" Content="{x:Static Localization:Resources.View_ImportAdapter_tbWithSerialNumber}"
+                  Height="16" HorizontalAlignment="Left" 
+                  IsChecked="{Binding Path=WithSerialNumber}" 
+                  Margin="10,0,0,10" VerticalAlignment="Bottom" Width="170" Grid.ColumnSpan="2"/>
+
+                <CheckBox  x:Name="byMakatCheckBox" Grid.Column="0" Content="{x:Static Localization:Resources.View_ImportAdapter_tbByMakat}"
+                  Height="16" HorizontalAlignment="Left" 
+                  IsChecked="{Binding Path=ByMakat}" 
+                  Margin="10,0,0,31" VerticalAlignment="Bottom" Width="170" Grid.ColumnSpan="2"/>-->
+
+                <CheckBox  x:Name="showSourceCheckBox" Grid.Column="0" Content="{x:Static Localization:Resources.View_ImportAdapter_tbShowSource}"
+                  Height="16" HorizontalAlignment="Left" 
+                  IsChecked="{Binding Path=ShowSource}" 
+                  Margin="10,0,0,10" VerticalAlignment="Bottom" Width="170" Grid.ColumnSpan="2"/>
+
+                <CheckBox  x:Name="showDestinationCheckBox" Grid.Column="0" Content="{x:Static Localization:Resources.View_ImportAdapter_tbShowDestination}"
+                  Height="16" HorizontalAlignment="Left" 
+                  IsChecked="{Binding Path=ShowDestination}" 
+                  Margin="10,0,0,31" VerticalAlignment="Bottom" Width="170" Grid.ColumnSpan="2"/>
+
+                
+
+
+                <DataGrid Grid.Column="1" 
+				  ItemsSource="{Binding Path=Items}" 		
+                  SelectedItem="{Binding Path=SelectedItem}"
+				  Name="dataGrid"
+                  VirtualizingStackPanel.VirtualizationMode="Standard"  
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+				  SelectionMode="Extended"
+                  BorderBrush="Transparent"
+                  BorderThickness="0"
+                  MouseDoubleClick="DataGrid_MouseDoubleClick"
+				>
+                    <DataGrid.Resources>
+                        <ResourceDictionary>
+                            <ResourceDictionary.MergedDictionaries>
+                                <ResourceDictionary Source="pack://application:,,,/Count4U.CustomControls;component/MdiThemes/Theme2.xaml"/>
+                            </ResourceDictionary.MergedDictionaries>
+                        </ResourceDictionary>
+                    </DataGrid.Resources>
+
+                    <DataGrid.Columns>
+
+                        <DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn.HeaderTemplate>
+                                <DataTemplate>
+                                    <CheckBox Margin="3,0,3,0" 
+                                 IsChecked="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, 
+                                    Path=DataContext.IsChecked, 
+                                    UpdateSourceTrigger=PropertyChanged, 
+                                    Mode=TwoWay}"
+                                  IsEnabled="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type UserControl}}, 
+                                    Path=DataContext.IsCheckedEnabled, 
+                                    UpdateSourceTrigger=PropertyChanged
+                                    }"
+                                 VerticalAlignment="Center" 
+                                 HorizontalAlignment="Center" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.HeaderTemplate>
+
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox 
+                                    IsChecked="{Binding Path=IsChecked, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" 
+                                    IsEnabled="{Binding Path=IsCheckedEnabled}"
+                                    VerticalAlignment="Center" 
+                                    HorizontalAlignment="Center"></CheckBox>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_UploadToPda_columnFile}"
+                                        Width="3*" MinWidth="75" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid Name="grid11" Background="Transparent">
+                                    <TextBlock ToolTip="{Binding File}"
+                                        Text="{Binding Path=File, Mode=OneWay}" HorizontalAlignment="Left"  Style="{StaticResource textBlockLinkStyle}">
+                                    </TextBlock>
+                                    </Grid>
+                                    <DataTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding IsSource}" Value="True">
+                                            <Setter TargetName="grid11"  Property="Background" 
+                                                    Value="{Binding Path=SourceColor, Converter={StaticResource locationToBrush}}" >
+                                            </Setter>
+                                        </DataTrigger>
+                                    </DataTemplate.Triggers>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <!--<DataGridTemplateColumn Header="{x:Static Localization:Resources.View_LastInventorsDashboardPart_columnDate}"
+                                        Width="70" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Date, Mode=OneWay}" Style="{StaticResource textBlockLinkStyle}">
+								 <i:Interaction.Triggers>
+								<i:EventTrigger EventName="MouseLeftButtonDown">
+									<i:InvokeCommandAction Command="{Binding Path=DataContext.AuditNavigateCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" 
+																				 CommandParameter="{Binding}"/>
+								</i:EventTrigger>
+							 </i:Interaction.Triggers>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>-->
+
+
+                        <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_UploadToPda_columnInventoryDate}"
+                                        Width="1*" MinWidth="75" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock ToolTip="{Binding Code}"  Text="{Binding Path=Code, Mode=OneWay}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_UploadToPda_columnDateModify}"
+                                        Width="1*" MinWidth="75" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Date, Mode=OneWay}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_UploadToPda_columnSize}"
+                                        Width="1*" MinWidth="75" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Path=Size, Mode=OneWay}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_BranchChoose_columnDescription}"
+                                        Width="1*" MinWidth="75" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock ToolTip="{Binding Description}"  Text="{Binding Path=Description, Mode=OneWay}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="{x:Static Localization:Resources.View_BranchChoose_columnSource}"
+                                        Width="2*" MinWidth="75" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock ToolTip="{Binding Manager}" Text="{Binding Path=Manager, Mode=OneWay}" HorizontalAlignment="Left" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                        <DataGridTemplateColumn Header="" Width="40" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid >
+                                        <Grid  HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <!--<ColumnDefinition Width="*" />-->
+                                            </Grid.ColumnDefinitions>
+
+                                            <!--<ImageButtonCursor:ImageButtonCursor HorizontalAlignment="Right" Grid.Column="0" Margin="0,0,3,0"
+                                                		Command="{Binding Path=DataContext.EditSelectedCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+												        CommandParameter="{Binding Path=.}"
+                                                        ImageSource="{Binding Path=DataContext.EditSelectedCommand.Icon16, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                                        ImageWidth="12" ImageHeight="12">
+                                            </ImageButtonCursor:ImageButtonCursor>-->
+
+                                            <ImageButtonCursor:ImageButtonCursor Grid.Column="1" HorizontalAlignment="Left" Margin="3,0,0,0"
+                                                 	Command="{Binding Path=DataContext.DeleteSelectedCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+													CommandParameter="{Binding Path=.}"
+                                                    ImageSource="{Binding Path=DataContext.DeleteSelectedCommand.Icon16, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                                    ImageWidth="12" ImageHeight="12"
+                                                      Visibility="{Binding Path=IsDestination, Converter={StaticResource boolToVis}}">
+                                            </ImageButtonCursor:ImageButtonCursor>
+                                        </Grid>
+
+                                        <!--<StackPanel x:Name="stackView" Orientation="Horizontal" HorizontalAlignment="Center"  VerticalAlignment="Center">
+
+                                            <ImageButtonCursor:ImageButtonCursor HorizontalAlignment="Center" Margin="0,0,0,0"
+                                                 Command="{Binding Path=DataContext.ViewCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+									             CommandParameter="{Binding Path=.}"
+                                                 ImageSource="{Binding Path=DataContext.ViewCommand.Icon, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                                 ImageWidth="12" ImageHeight="12">
+                                            </ImageButtonCursor:ImageButtonCursor>
+
+                                        </StackPanel>-->
+                                    </Grid>
+
+                                    <!--<DataTemplate.Triggers>
+                                        <DataTrigger Binding="{Binding Path=DataContext.Context, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Converter={StaticResource contextToBool}}" Value="True"  >
+                                            <Setter TargetName="stackView" Property="Visibility" Value="Visible" />
+                                            <Setter TargetName="stackEdit" Property="Visibility" Value="Collapsed" />
+                                        </DataTrigger>
+
+                                        <DataTrigger Binding="{Binding Path=DataContext.Context, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}, Converter={StaticResource contextToBool}}" Value="False"  >
+                                            <Setter TargetName="stackView" Property="Visibility" Value="Collapsed" />
+                                            <Setter TargetName="stackEdit" Property="Visibility" Value="Visible" />
+                                        </DataTrigger>
+                                    </DataTemplate.Triggers>-->
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>

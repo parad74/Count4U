@@ -1,0 +1,305 @@
+﻿using System;
+using System.Windows.Input;
+
+namespace Count4U.Common.Services.UICommandService
+{
+    public class UICommandTitleRepository
+    {
+        public string GetTitle(enUICommand type)
+        {
+            switch (type)
+            {
+                case enUICommand.Add:
+                    return Localization.Resources.Command_Add;
+				case enUICommand.Edit:
+					return Localization.Resources.Command_Edit;
+				case enUICommand.ShowImage:
+					return Localization.Resources.Command_Edit;			   //TODO
+				case enUICommand.Delete:
+					return Localization.Resources.Command_Delete;
+
+				case enUICommand.MultiAdd:
+					return Localization.Resources.Command_MultiAdd;
+
+				case enUICommand.ShowConfig:
+					return Localization.Resources.Command_ShowConfig;
+				case enUICommand.ShowIni:
+					return Localization.Resources.Command_ShowIni;
+				case enUICommand.RunByConfig:
+					return Localization.Resources.Command_RunByConfig;
+				case enUICommand.ClearByConfig:
+					return Localization.Resources.Command_ClearByConfig;
+				case enUICommand.NavigateToGrid:
+					return Localization.Resources.Command_NavigateToGrid;
+					
+				case enUICommand.ShowLogByConfig:
+					return Localization.Resources.Command_ShowLogByConfig;
+             
+				case enUICommand.DeleteNoneCatalog:
+				case enUICommand.DeleteNoneCatalogMain:
+					return Localization.Resources.Command_DeleteNoneInCatalog;
+				case enUICommand.ClearIturs:
+					return Localization.Resources.Command_ClearItemsFromItur;
+					
+                case enUICommand.DeleteWithoutChild:
+                    return Localization.Resources.Command_DeleteWithoutChild;
+				case enUICommand.DeleteObjectsFromMainDB:
+					return Localization.Resources.Command_DeleteFromMainDB;
+                case enUICommand.DeleteAll:
+                    return Localization.Resources.Command_DeleteAll;
+                case enUICommand.DeleteAllWithoutChild:
+                    return Localization.Resources.Command_DeleteAllWithoutChild;
+				case enUICommand.MultiDelete:
+					return Localization.Resources.Command_DeleteAllChecked;
+                case enUICommand.Import:
+                    return Localization.Resources.Command_Import;
+                case enUICommand.Report:
+                    return Localization.Resources.Command_Report;
+				case enUICommand.GoToPage:
+					return Localization.Resources.GoToPage;
+                case enUICommand.RepairFromDb:
+                    return Localization.Resources.Command_RepairFromDb;
+				case enUICommand.EditInventorOptions:
+					return  Localization.Resources.Command_SetOptions;
+				case enUICommand.EditCustomerOptions:
+					return  Localization.Resources.Command_EditCustomerOptions;
+                case enUICommand.Filter:
+                    throw new NotImplementedException();
+                case enUICommand.ImportFromPda:
+                    return Localization.Resources.View_IturListDetails_btnImportFromPda;
+                case enUICommand.ImportFromPdaAuto:
+                    return Localization.Resources.Command_AutorImportFromPda;
+                case enUICommand.IturAddEdit:
+                    return Localization.Resources.View_IturListDetails_btnAddEditDelete;
+                case enUICommand.Refresh:
+                    return Localization.Resources.View_IturListDetails_btnRefresh;
+                case enUICommand.Search:
+                    return Localization.Resources.Command_Search;
+                case enUICommand.ChangeLocation:
+                    return Localization.Resources.View_IturAddEditDelete_tpChangeLocation;
+				case enUICommand.ChangeLocationTag:
+					return Localization.Resources.View_LocationAddEditDelete_tpChangeLocationTag;
+				case enUICommand.ChangeIturTag:
+					return Localization.Resources.View_IturAddEditDelete_tpChangeIturTag;
+
+				case enUICommand.ShowShelf:
+					return Localization.Resources.View_IturAddEditDelete_tpShelf;
+				case enUICommand.ChangeIturPrefix:
+					return Localization.Resources.View_IturAddEditDelete_tpChangeIturPrefix;
+				case enUICommand.ChangeIturName:
+					return Localization.Resources.View_Itur_tpChangeName;
+                case enUICommand.ChangeState:
+                    return Localization.Resources.View_IturAddEditDelete_tbChangeState;
+                case enUICommand.OpenScript:
+                    return Localization.Resources.Command_OpenScript;
+                case enUICommand.SaveScript:
+                    return Localization.Resources.Command_SaveScript;
+                case enUICommand.Restore:
+                    return Localization.Resources.View_AdapterLink_btnRestoreLinks;
+                case enUICommand.Child:
+                    return String.Empty;
+                case enUICommand.Clear:
+                    return Localization.Resources.Command_Clear;
+                case enUICommand.ClearTag:
+                    return Localization.Resources.Command_ClearTag;
+                case enUICommand.Log:
+                    return Localization.Resources.Command_ViewLog;
+				case enUICommand.Config:
+					return Localization.Resources.Command_ViewConfig;
+                case enUICommand.Export:
+                    return Localization.Resources.Command_Export;
+                case enUICommand.Generate:
+                    return Localization.Resources.View_ReportTemplate_btnGenerate;
+                case enUICommand.Up:
+                    return Localization.Resources.Command_Up;
+                case enUICommand.Down:
+                    return Localization.Resources.Command_Down;
+                case enUICommand.More:
+                    return Localization.Resources.Command_More;
+					 case enUICommand.Compare:
+					return Localization.Resources.Command_Compare;
+                case enUICommand.Update:
+                    return Localization.Resources.Command_Update;
+                case enUICommand.UpdateMain:
+                    return Localization.Resources.Command_Update;
+                case enUICommand.UpdateCatalog:
+                    return Localization.Resources.Command_UpdateCatalog;
+				case enUICommand.ComplexOperation:
+					return Localization.Resources.Command_ImportExport;
+                case enUICommand.MaskEdit:
+                    return Localization.Resources.View_CatalogInfoForCBI_tbEditMask;
+                case enUICommand.GetFromPda:
+                    return Localization.Resources.View_FromPdaDashboardPart_tbGetDataFromPda;
+                case enUICommand.RefreshStatus:
+                    return Localization.Resources.Command_RefreshStatus;
+                case enUICommand.Reset:
+                    return Localization.Resources.Command_ResetErrorStatus;
+				case enUICommand.Accept:
+					return Localization.Resources.Command_Accept;
+                case enUICommand.AddCustomer:
+                    return Localization.Resources.Menu_Name_AddCustomer;
+                case enUICommand.AddBranch:
+                    return Localization.Resources.Menu_Name_AddBranch;
+                case enUICommand.AddInventor:
+                    return Localization.Resources.Menu_Name_AddInventor;
+                case enUICommand.SearchCustomer:
+                    return Localization.Resources.Menu_Name_SearchCustomer;
+                case enUICommand.SearchBranch:
+                    return Localization.Resources.Menu_Name_SearchBranch;
+                case enUICommand.SearchInventor:
+                    return Localization.Resources.Menu_Name_SearchInventor;
+                case enUICommand.ReportFavorites:
+                    return Localization.Resources.Menu_Name_ReportFavorites;
+                case enUICommand.Adapters:
+                    return Localization.Resources.Menu_Name_Adapters;
+                case enUICommand.EditCustomer:
+                    return Localization.Resources.Menu_Name_EditCustomer;
+                case enUICommand.EditBranch:
+                    return Localization.Resources.Menu_Name_EditBranch;
+                case enUICommand.EditInventor:
+                    return Localization.Resources.Menu_Name_EditInventor;
+                case enUICommand.Properties:
+                    return Localization.Resources.Menu_Name_Properties;
+                case enUICommand.ChangeCatalog:
+                    return Localization.Resources.Menu_Name_ChangeCatalog;
+                case enUICommand.Catalog:
+                    return Localization.Resources.Menu_Name_Catalog;
+                case enUICommand.ExportPDA:
+                    return Localization.Resources.Menu_Name_ExportPDA;
+                case enUICommand.ExportPDAMain:
+                    return Localization.Resources.Menu_Name_ExportPDA;
+                case enUICommand.ExportERP:
+                    return Localization.Resources.Menu_Name_ExportERP;
+                case enUICommand.ExportERPMain:
+                    return Localization.Resources.Menu_Name_ExportERP;
+				case enUICommand.UploadToPDA:
+					return Localization.Resources.Menu_Name_UploadToPDA;
+				case enUICommand.DownloadFromPDA:
+					return Localization.Resources.Menu_Name_DownloadFromPDA;
+				case enUICommand.FromFtp:
+					return Localization.Resources.Menu_Name_FromFtp;
+				case enUICommand.ToFtp:
+					return Localization.Resources.Menu_Name_ToFtp;
+				case enUICommand.GetFromFtp:
+					return Localization.Resources.Menu_Name_GetFromFtp;
+				case enUICommand.ChangeStatus:
+					return Localization.Resources.Menu_Name_ChangeStatus;
+	            case enUICommand.SendZipOffice:
+                    return Localization.Resources.Menu_Name_SendZipOffice;
+                case enUICommand.Pack:
+                    return Localization.Resources.Menu_Name_PackData;
+				case enUICommand.Profile:
+					return Localization.Resources.Menu_Name_Profile;
+				case enUICommand.Ftp:
+					return Localization.Resources.Menu_Name_Ftp;
+				case enUICommand.AddPack:
+					return Localization.Resources.Menu_Name_AddToPackData;
+				case enUICommand.ClearList:
+					return Localization.Resources.Menu_Name_ClearCodeList;
+                case enUICommand.Unpack:
+                    return Localization.Resources.Menu_Name_UnpackData;
+				case enUICommand.AddNewInventor:
+					return Localization.Resources.Menu_Name_AddNewInventor;
+                case enUICommand.FromImportToGrid:
+                    return Localization.Resources.Common_FromImportToGrid;
+                case enUICommand.PrintReport:
+                    return Localization.Resources.Command_Print_Report;
+				case enUICommand.DissableIturs:
+					return Localization.Resources.Window_Title_SetDissableIturs;
+					
+				case enUICommand.PrintReportByLocationCode:
+					return Localization.Resources.Command_Print_ByLocationCode_Report;
+                case enUICommand.AddEditLocationItur:
+                    return Localization.Resources.Command_AddEditLocationIturt;
+                case enUICommand.PrintReportByTag:
+					return Localization.Resources.Command_Print_ByTag_Report;
+                case enUICommand.View:
+                    return Localization.Resources.Command_View;
+                case enUICommand.ResetBit:
+                case enUICommand.Undo:
+                case enUICommand.ChildrenForBranch:
+                case enUICommand.ChildrenForCustomer:
+                    return String.Empty;
+
+                case enUICommand.CustomerPostAddCustomer:
+                    return Localization.Resources.Command_CustomerPostAddCustomer;
+                case enUICommand.CustomerPostAddBranch:
+                    return Localization.Resources.Command_CustomerPostAddBranch;
+                case enUICommand.CustomerPostEditCustomer:
+                    return Localization.Resources.Command_CustomerPostEditCustomer;
+                case enUICommand.CustomerPostCustomerDashboard:
+                    return Localization.Resources.Command_CustomerPostCustomerDashboard;
+                case enUICommand.CustomerPostHomeDashboard:
+                    return Localization.Resources.Command_CustomerPostHomeDashboard;
+
+                case enUICommand.BranchPostAddBranch:
+                    return Localization.Resources.Command_BranchPostAddBranch;
+                case enUICommand.BranchPostAddInventor:
+                    return Localization.Resources.Command_BranchPostAddInventor;
+                case enUICommand.BranchPostEditBranch:
+                    return Localization.Resources.Command_BranchPostEditBranch;
+                case enUICommand.BranchPostBranchDashboard:
+                    return Localization.Resources.Command_BranchPostBranchDashboard;
+                case enUICommand.BranchPostHomeDashboard:
+                    return Localization.Resources.Command_BranchPostHomeDashboard;
+
+                case enUICommand.InventorPostInventorForm:
+                    return Localization.Resources.Command_InventorPostInventorForm;
+                case enUICommand.InventorPostEditInventor:
+                    return Localization.Resources.Command_InventorPostEditInventor;
+                case enUICommand.InventorPostInventorDashboard:
+                    return Localization.Resources.Command_InventorPostInventorDashboard;
+                case enUICommand.InventorPostMainDashboard:
+                    return Localization.Resources.Command_InventorPostMainDashboard;
+                case enUICommand.InventorPostHomeDashboard:
+                    return Localization.Resources.Command_InventorPostHomeDashboard;
+				case enUICommand.CreateNewInventor:
+					return Localization.Resources.Command_CreateNewInventor;
+				case enUICommand.CreateAndNavigateToProcessInventor:
+					return Localization.Resources.Command_CreateAndNavigateToProcessInventor;
+				case enUICommand.ToProcessInventor:
+					return Localization.Resources.Command_ToProcessInventor;
+					
+				case enUICommand.ChangeCurrentInventor:
+					return Localization.Resources.Command_ChangeCurrentInventor;
+
+                case enUICommand.Clone:
+                    return Localization.Resources.Command_Clone;
+				case enUICommand.Copy:
+					return Localization.Resources.Command_Copy;
+                case enUICommand.Planogram:
+                    return Localization.Resources.Command_Planogram;
+                case enUICommand.PlanogramStatistic:
+                    return Localization.Resources.Command_Statistic;
+                case enUICommand.WorkerStatistic:
+                    return Localization.Resources.Command_WorkerStatistic;
+                case enUICommand.SessionStatistic:
+                    return Localization.Resources.Command_SessionStatistic;
+                case enUICommand.DocumentHeaderStatistic:
+                    return Localization.Resources.Command_DocumentHeaderStatistic;
+				case enUICommand.DevicePDAStatistic:
+					return Localization.Resources.Command_DevicePDAStatistic;
+                case enUICommand.DeviceWorkerPDAStatistic:
+                    return Localization.Resources.Command_DeviceWorkerPDAStatistic;
+                case enUICommand.AlignLeft:
+                    return Localization.Resources.Command_AlignLeft;
+                case enUICommand.AlignRight:
+                    return Localization.Resources.Command_AlignRight;
+                case enUICommand.AlignTop:
+                    return Localization.Resources.Command_AlignTop;
+                case enUICommand.AlignBottom:
+                    return Localization.Resources.Command_AlignBottom;
+                case enUICommand.AlignSameWidth:
+                    return Localization.Resources.Command_AlignSameWidth;
+                case enUICommand.AlignSameHeight:
+                    return Localization.Resources.Command_AlignSameHeight;
+                case enUICommand.BringForward:
+                    return Localization.Resources.Command_BringForward;
+                    case enUICommand.SendBackward:
+                    return Localization.Resources.Command_SendBackward;
+                default:
+                    throw new ArgumentOutOfRangeException("type");
+            }
+        }
+    }
+}

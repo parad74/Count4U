@@ -1,0 +1,1078 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<liber8>
+<operation code="99" name="SCStatusRequest" type="request" function="SIP2_Status" back="98">
+<field name="status_code" id="" datacontract="1" description="" sent="Y"
+      datasample="1"  datadefault="1">
+  <format type="fixed" length="1" startindex="1"  required="0|1|2">
+</format>
+</field>
+<field name="max_print_width" id="" datacontract="0"  description=""  sent="Y"
+       datasample="040" datadefault="040">
+ <format type="fixed" length="3" startindex="2"  required="">
+</format>
+</field>
+<field  name="protocol_version" id="" datacontract="1"  description=""  sent="Y"
+        datasample="2.00" datadefault="2.00">
+  <format type="fixed" length="4" startindex="5"  required="">
+</format>
+</field>
+  <field  name="proprietary_fields" id="" datacontract="0"  description=""  sent="optional"
+          datasample="" datadefault="">
+    <format type="variablelength_startindex" startindex="9"  required="">
+    </format>
+  </field>
+</operation> <!-- end 99 -->
+  
+<operation code="98" name="SCStatusResponse" type="response" function="SIP2_Status" back ="99">
+<field name="on_line_status" id="" datacontract="0"  description=""  sent="optional"
+          datasample="Y" datadefault="Y">
+  <format type="fixed" length="1" startindex="1" required="Y|N">
+  </format> 
+</field>
+<field name="checkin_ok" id="" datacontract="0"  description=""  sent="optional"
+          datasample="Y" datadefault="Y">
+  <format type="fixed" length="1" startindex="2" required="Y|N">
+  </format>
+</field>
+<field name="checkout_ok" id="" datacontract="0"  description=""  sent="optional"
+          datasample="Y" datadefault="Y">
+  <format type="fixed" length="1" startindex="3" required="Y|N">
+  </format>
+</field>
+ <field name="ACSrenewal_policy" id="" datacontract="0"  description=""  sent="Y"
+          datasample="Y" datadefault="Y">
+   <format type="fixed" length="1" startindex="4" required="Y|N">
+   </format>
+ </field>
+<field name="status_update_ok" id="" datacontract="0"  description=""  sent="N"
+          datasample="Y" datadefault="Y">
+  <format type="fixed" length="1" startindex="5" required="Y|N">
+  </format>
+</field>
+<field name="off_line_ok" id="" datacontract="0"  description=""  sent="optional"
+          datasample="N" datadefault="N">
+  <format type="fixed" length="1" startindex="6" required="Y|N">
+  </format>
+</field>
+<field name="timeout_period" id="" datacontract="0"  description=""  sent="Y"
+          datasample="150" datadefault="150">
+  <format type="fixed" length="3" startindex="7" required="">
+  </format>
+</field>
+<field name="retries_allowed" id="" datacontract="0"  description=""  sent="Y"
+          datasample="010" datadefault="010">
+  <format type="fixed" length="3" startindex="10"  required="">
+  </format>
+</field>
+<field name="date_time_sync" id="" datacontract="0"  description=""  sent="optional"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="13" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="protocol_version" id="" datacontract="0"  description=""  sent="N"
+          datasample="2.00" datadefault="2.00">
+  <format type="fixed" length="4" startindex="31"  required="">
+  </format>
+</field>
+<field name="institution_id" id="AO" datacontract="1"  description=""  sent="Y"
+          datasample="IDNEXT" datadefault="IDNEXT">
+  <format type="variablelength" start="AO" startindex="35" required="">
+ </format> 
+</field>
+<field name="library_name" id="AM" datacontract="1"  description=""  sent="N"
+          datasample="KFAR SABA" datadefault="KFAR SABA">
+  <format type="variablelength" start="AM" required=""> 
+</format> 
+</field>
+<field name="supported_messages" id="BX" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="BX" required="">
+ </format> 
+</field>
+<field name="terminal_location" id="AN" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AN" required="">
+</format> 
+</field>
+<field name="screen_message" id="AF" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AF" required="">
+ </format> 
+</field>
+<field name="print_line" id="AG" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AG" required="">
+ </format>
+</field>
+</operation>  <!--end 98-->
+  
+<operation code="93" name="SIP2LoginRequest" type="request" function="" back="94">
+<field name="uid_algorithm" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="1" startindex="1" required="">
+  </format> 
+    </field>
+<field name="pwd_algorithm" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="1" startindex="2" required="">
+  </format>
+</field>
+<field name="login_user_id" id="CN" datacontract="1"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CN" startindex="3" required="">
+  </format>
+</field>
+<field name="login_password" id="CO" datacontract="1"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CO" required="">
+  </format>
+</field>
+<field name="location_code" id="CP" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CP" required="">
+  </format>
+</field>
+</operation>  <!--end 93-->
+  
+<operation code="94" name="SIP2LoginResponse" type="response" function="" back ="93">
+<field name="ok" id="" datacontract="1"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="1" startindex="1" required="">
+  </format>
+</field>
+  </operation>  <!--end 94-->
+  
+<operation code="17" name="ItemInformationRequest" type="request" function="SIP2_ItemInfo" back="18">
+<field name="transaction_date" id="" datacontract="1"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="1"  required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="institution_id" id="AO" datacontract="1"  description=""  sent="Y"
+          datasample="IDNEXT" datadefault="IDNEXT">
+  <format type="variablelength" start="AO" startindex="19" required="">
+  </format>
+</field>
+<field name="item_identifier" id="AB" datacontract="1"  description=""  sent="Y"
+          datasample="123456" datadefault="123456">
+  <format type="variablelength" start="AB" required="">
+  </format>
+</field>
+<field name="terminal_password" id="AC" datacontract="1"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AC" required="">
+  </format>
+</field>
+</operation>  <!--end 17-->
+  
+<operation code="18" name="ItemInformationResponse" type="response" function="SIP2_ItemInfo" back ="17">
+<field name="circulation_status" id="" datacontract="0"  description=""  sent="N"
+          datasample="01" datadefault="01">
+  <format type="fixed" length="2" startindex="1" required="">
+  </format>
+</field>
+<field name="security_marker" id="" datacontract="0"  description=""  sent="N"
+          datasample="00" datadefault="00">
+  <format type="fixed" length="2" startindex="3"  required="">
+  </format>
+</field>
+<field name="fee_type" id="" datacontract="1"  description=""  sent="Y"
+          datasample="06" datadefault="06">
+  <format type="fixed" length="2" startindex="5"  required="">
+  </format>
+</field>
+<field name="transaction_date" id="" datacontract="1"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="7" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="hold_queue_length" id="CF" datacontract="1"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CF" startindex="25"  required="excludeIfEmpty">
+  </format>
+</field>
+<field name="due_date" id="AH" datacontract="1"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AH" required="DD.MM.YYYY">
+  </format>
+</field>
+<field name="recall_date" id="CJ" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="IDfixed"  length="18" start="CJ" required="YYYYMMDDZZZZHHMMSS">
+ </format> 
+</field>
+<field name="hold_pickup_date" id="CM" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="IDfixed"  length="18" start="CM" required="YYYYMMDDZZZZHHMMSS">
+ </format>
+</field>
+<field name="item_identifier" id="AB" datacontract="1"  description=""  sent="N" link="item_identifier"
+          datasample="123456" datadefault="123456">
+  <format type="variablelength" start="AB" required="">
+  </format>
+</field>
+<field name="title_identifier" id="AJ" datacontract="1"  description=""  sent="Y"
+          datasample="Our First Book" datadefault="Our First Book">
+  <format type="variablelength" start="AJ" required="">
+  </format>
+</field>
+<field name="owner" id="BG" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="BG" required="excludeIfEmpty">
+  </format> 
+</field>
+<field name="currency_type" id="BH" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="IDfixed"  length="3" start="BH" required="">
+  </format>
+</field>
+<field name="fee_amount" id="BV" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="BV"  required="excludeIfEmpty">
+  </format> </field>
+<field name="media_type" id="CK" datacontract="1"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="IDfixed"  length="3" start="CK" required="">
+  </format>
+</field>
+<field name="permanent_location" id="AQ" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AQ" required="excludeIfEmpty">
+  </format> </field>
+<field name="current_location" id="AP" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AP"  required="excludeIfEmpty">
+  </format>
+</field>
+<field name="item_properties" id="CH" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CH" required="excludeIfEmpty">
+  </format>
+</field>
+<field name="screen_message" id="AF" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AF" required="excludeIfEmpty">
+  </format>
+</field>
+</operation>  <!--end 18-->
+  
+<operation code="63" name="PatronInformationRequest" type="request" function="SIP2_Patron_Info" back="64">
+<field name="language" id="" datacontract="0" description="" sent="Y"
+      datasample="001"  datadefault="001">
+  <format type="fixed" length="3" startindex="1" required="">
+  </format>
+</field>
+<field name="transaction_date" id="" datacontract="1" description="" sent="Y"
+      datasample=""  datadefault="">
+  <format type="fixed" length="18" startindex="4" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="summary" id="" datacontract="1" description="" sent="Y"
+      datasample="Y"  datadefault="Y">
+  <format type="fixed" length="10" startindex="22" required="">
+  </format>
+</field>
+	<field name="institution_id" id="AO" datacontract="1" description="" sent="Y"
+      datasample="IDNEXT"  datadefault="IDNEXT">
+  <format type="variablelength" start="AO" startindex="32" required="">
+  </format>
+</field>
+<field name="patron_identifier" id="AA" datacontract="1" description="" sent="Y"
+      datasample="145694"  datadefault="145694">
+  <format type="variablelength" start="AA" required="">
+  </format>
+</field>
+<field name="terminal_password" id="AC" datacontract="0" description="" sent="N"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="AC" required="">
+  </format>
+</field>
+<field name="patron_password" id="AD" datacontract="1" description="" sent="Y"
+      datasample="145694"  datadefault="145694">
+  <format type="variablelength" start="AD"  required="">
+  </format>
+</field>
+<field name="start_item" id="BP" datacontract="0" description="" sent="Y"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="BP" required="">
+  </format>
+</field>
+<field name="end_item" id="BQ" datacontract="0" description="" sent="Y"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="BQ" required="">
+  </format>
+</field>
+ </operation>  <!--end 63-->
+  
+<operation code="64" name="PatronInformationResponse" type="response" function="SIP2_Patron_Info" back ="63">
+<field name="patron_status" id=""  datacontract="0" description="" sent="Y"
+      datasample=""  datadefault="">
+  <format type="fixed" length="14" startindex="1"  required="">
+  </format>
+</field>
+<field name="language" id=""  datacontract="0" description="" sent="N"
+      datasample="001"  datadefault="001">
+  <format type="fixed" length="3" startindex="15" required="">
+  </format>
+</field>
+<field name="transaction_date" id=""  datacontract="1" description="" sent="N"
+      datasample=""  datadefault="">
+  <format type="fixed" length="18" startindex="18" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="hold_items_count" id=""  datacontract="1" description="" sent="Y"
+      datasample="0003"  datadefault="0003">
+  <format type="fixed" length="4" startindex="36" required="PadLeft0">
+  </format>
+</field>
+<field name="overdue_items_count" id=""  datacontract="1" description="" sent="Y"
+      datasample="0005"  datadefault="0005">
+  <format type="fixed" length="4" startindex="40" required="PadLeft0">
+  </format>
+</field>
+<field name="charged_items_count" id=""  datacontract="1" description="" sent="Y"
+      datasample="0009"  datadefault="0009">
+  <format type="fixed" length="4" startindex="44" required="PadLeft0">
+  </format>
+</field>
+<field name="fine_items_count" id=""  datacontract="0" description="" sent="N"
+      datasample="0000"  datadefault="0000">
+  <format type="fixed" length="4" startindex="48" required="PadLeft0">
+  </format>
+</field>
+	<field name="recall_items_count" id=""  datacontract="0" description="" sent="N"
+      datasample="0000"  datadefault="0000">
+  <format type="fixed" length="4" startindex="52" required="PadLeft0">
+  </format>
+</field>
+<field name="unavailable_holds_count" id=""  datacontract="1" description="" sent="Y"
+      datasample="0001"  datadefault="0001">
+  <format type="fixed" length="4" startindex="56" required="PadLeft0">
+  </format>
+</field>
+	<field name="institution_id" id="AO"  datacontract="1" description="" sent="Y"
+      datasample="IDNEXT"  datadefault="IDNEXT">
+  <format type="variablelength" start="AO" startindex="60" required="">
+  </format>
+</field>
+<field name="patron_identifier" id="AA"  datacontract="1" description="" sent="N"
+      datasample="311961403"  datadefault="311961403">
+  <format type="variablelength" start="AA" required="">
+  </format>
+</field>
+<field name="personal_name" id="AE"  datacontract="1" description="" sent="Y"
+      datasample="Eran Harel"  datadefault="Eran Harel">
+  <format type="variablelength" start="AE" required="">
+  </format>
+</field>
+<field name="hold_items_limit" id="BZ"  datacontract="0" description="" sent="N"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="BZ" required="">
+  </format>
+</field>
+<field name="overdue_items_limit" id="CA"  datacontract="0" description="" sent="N"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="CA" required="">
+  </format>
+</field>
+<field name="charged_items_limit" id="CB"  datacontract="0" description="" sent="N"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="CB" required="">
+  </format>
+</field>
+<field name="valid_patron" id="BL"  datacontract="1" description="" sent="Y"
+      datasample="Y"  datadefault="Y">
+  <format type="variablelength" start="BL" required="Y|N">
+  </format>
+</field>
+<field name="valid_patron_password" id="CQ"  datacontract="1" description="" sent="Y"
+      datasample="Y"  datadefault="Y">
+  <format type="variablelength" start="CQ" required="Y|N">
+  </format>
+</field>
+<field name="currency_type" id="BH"  datacontract="0" description="" sent="N"
+      datasample="ILS"  datadefault="ILS">
+  <format type="variablelength" start="BH" required="">
+  </format>
+</field>
+<!--<field name="fee_amount" id="BV"  datacontract="1" description="" sent="Y"
+      datasample="+0.00"  datadefault="+0.00">
+  <format type="variablelength" start="BV" required="">
+  </format>
+</field>
+<field name="fee_limit" id="CC"  datacontract="1" description="" sent="N"
+      datasample="1000"  datadefault="1000">
+  <format type="variablelength" start="CC" required="">
+  </format> </field>-->
+  
+<!--<items name="patron" parent="64" type="patron">-->
+<!--<field name="hold_items" id="AS"  datacontract="0" description="" sent="Y"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="AS" required="">
+  </format>
+</field>
+<field name="overdue_items" id="AT"  datacontract="0" description="" sent="N"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="AT" required="">
+  </format>
+</field>-->
+<!--<field name="charged_items" id="AU"  datacontract="1" description="" sent="Y"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="AU" required="">
+  </format>
+</field>-->
+<!--<field name="fine_items" id="AV"  datacontract="0" description="" sent="Y"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="AV" required="">
+  </format>
+</field>
+<field name="recall_items" id="BU"  datacontract="0" description="" sent="N"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="BU" required="">
+  </format>
+</field>
+<field name="unavailable_hold_items" id="CD"  datacontract="0" description="" sent="Y"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="CD" required="">
+  </format> </field>
+<field name="home_address" id="BD"  datacontract="1" description="" sent="N"
+      datasample="Tel Aviv"  datadefault="Tel Aviv">
+  <format type="variablelength" start="BD" required="">
+  </format>
+</field>
+<field name="email_address" id="BE"  datacontract="1" description="" sent="Y"
+      datasample="eran@idnext.co.il"  datadefault="eran@idnext.co.il">
+  <format type="variablelength" start="BE" required="">
+  </format>
+</field>
+<field name="home_phone_number" id="BF"  datacontract="1" description="" sent="Y"
+      datasample="036120385"  datadefault="036120385">
+  <format type="variablelength" start="BF" required="">
+  </format>
+</field>
+<field name="screen_message" id="AF"  datacontract="1" description="" sent="Y"
+      datasample="Patron In File"  datadefault="Patron In File">
+  <format type="variablelength" start="AF" required="">
+  </format>
+</field>
+<field name="print_line" id="AG"  datacontract="0" description="" sent="N"
+      datasample=""  datadefault="">
+  <format type="variablelength" start="AG" required="">
+  </format>
+</field>-->
+<!--</items>-->
+</operation>  <!--end 64-->
+  
+<operation code="09" name="CheckinRequest" type="request" function="SIP2_CheckIn" back="10">
+<field name="no_block" id="" datacontract="0"  description=""  sent="Y"
+          datasample="N" datadefault="N">
+  <format type="fixed" length="1" startindex="1"  required="">
+  </format>
+</field>
+<field name="transaction_date" id="" datacontract="1"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="2"  required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="return_date" id="" datacontract="1"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="20" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="current_location" id="AP" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AP" startindex="38" required="">
+  </format>
+</field>
+<field name="institution_id" id="AO" datacontract="1"  description=""  sent="Y"
+          datasample="IDNEXT" datadefault="IDNEXT">
+  <format type="variablelength" start="AO"  required="">
+  </format>
+</field>
+<field name="item_identifier" id="AB" datacontract="1"  description=""  sent="Y"
+          datasample="123456" datadefault="123456">
+  <format type="variablelength" start="AB" required="">
+  </format>
+</field>
+<field name="terminal_password" id="AC" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AC" required="">
+  </format>
+</field>
+<field name="item_properties" id="CH" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CH" required="">
+  </format>
+</field>
+<field name="cancel" id="BI" datacontract="0"  description=""  sent="N"
+          datasample="N" datadefault="N">
+  <format type="IDfixed"  length="1" start="BI" required="">
+  </format>
+</field>
+</operation>  <!--end 09-->
+  
+<operation code="10" name="CheckinResponse" type="response" function="SIP2_CheckIn" back ="09">
+<field name="ok" id="" datacontract="1"  description=""  sent="Y"
+          datasample="1" datadefault="1">
+  <format type="fixed" length="1" startindex="1"  required="">
+  </format>
+</field>
+<field name="resensitize" id="" datacontract="0"  description=""  sent="Y"
+          datasample="Y" datadefault="Y">
+  <format type="fixed" length="1" startindex="2" required="">
+  </format>
+</field>
+<field name="magnetic_media" id="" datacontract="1"  description=""  sent="Y"
+          datasample="N" datadefault="N">
+  <format type="fixed" length="1" startindex="3"  required="">
+  </format>
+</field>
+<field name="alert" id="" datacontract="0"  description=""  sent="Y"
+          datasample="N" datadefault="N">
+  <format type="fixed" length="1" startindex="4"  required="">
+  </format>
+</field>
+<field name="transaction_date" id="" datacontract="1"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="1" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="institution_id" id="AO" datacontract="1"  description=""  sent="N"
+          datasample="IDNEXT" datadefault="IDNEXT">
+  <format type="variablelength" start="AO"  startindex="19" required="">
+  </format>
+</field>
+<field name="item_identifier" id="AB" datacontract="1"  description=""  sent="N"
+          datasample="123456" datadefault="123456">
+  <format type="variablelength" start="AB" required="">
+  </format>
+</field>
+<field name="permanent_location" id="AQ" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AQ" required="">
+  </format>
+</field>
+<field name="title_identifier" id="AJ" datacontract="1"  description=""  sent="Y"
+          datasample="Our First Book" datadefault="Our First Book">
+  <format type="variablelength" start="AJ" required="">
+  </format>
+</field>
+<field name="sort_bin" id="CL" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CL" required="">
+  </format>
+</field>
+<field name="patron_identifier" id="AA" datacontract="1"  description=""  sent="Y"
+          datasample="311961403" datadefault="311961403">
+  <format type="variablelength" start="AA"  required="">
+  </format>
+</field>
+  <field name="media_type" id="CK" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+    <format type="IDfixed"  length="3" start="CK" required="">
+    </format>
+  </field>
+<field name="item_properties" id="CH" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CH" required="">
+  </format>
+</field>
+<field name="screen_message" id="AF" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AF" required="">
+  </format>
+</field>
+<field name="print_line" id="AG" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AG" required="">
+  </format>
+</field>
+  <field name="fee_amount" id="BV" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+    <format type="variablelength" start="BV" required="">
+    </format>
+  </field>
+</operation>  <!--end 10-->
+  
+  
+<operation code="11" name="CheckoutRequest" type="request" function="SIP2_Checkout" back="12">
+<field name="sc_renewal_policy" id="" datacontract="0"  description=""  sent="Y"
+          datasample="Y" datadefault="Y">
+  <format type="fixed" length="1" startindex="1" required="">
+  </format>
+</field>
+<field name="no_block" id="" datacontract="0"  description=""  sent="Y"
+          datasample="N" datadefault="N">
+  <format type="fixed" length="1" startindex="2" required="">
+  </format>
+</field>
+<field name="transaction_date" id="" datacontract="1"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="3" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="nb_due_date" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="21" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="institution_id" id="AO" datacontract="1"  description=""  sent="Y"
+          datasample="IDNEXT" datadefault="IDNEXT">
+  <format type="variablelength" start="AO" startindex="39" required="">
+  </format>
+</field>
+<field name="patron_identifier" id="AA" datacontract="1"  description=""  sent="Y"
+          datasample="311961403" datadefault="311961403">
+  <format type="variablelength" start="AA" required="">
+  </format>
+</field>
+<field name="item_identifier" id="AB" datacontract="1"  description=""  sent="Y"
+          datasample="123456" datadefault="123456">
+  <format type="variablelength" start="AB" required="">
+  </format>
+</field>
+<field name="terminal_password" id="AC" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AC" required="">
+  </format>
+</field>
+<field name="item_properties" id="CH" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CH" required="">
+  </format>
+</field>
+<field name="patron_password" id="AD" datacontract="1"  description=""  sent="Y"
+          datasample="15071983" datadefault="15071983">
+  <format type="variablelength" start="AD" required="">
+  </format>
+</field>
+<field name="fee_acknowledged" id="BO" datacontract="0"  description=""  sent="Y"
+          datasample="Y" datadefault="Y">
+  <format type="IDfixed"  length="1" start="BO" required="">
+  </format>
+</field>
+<field name="cancel" id="BI" datacontract="0"  description=""  sent="N"
+          datasample="N" datadefault="N">
+  <format type="IDfixed"  length="1" start="BI" required="">
+  </format>
+</field>
+</operation>   <!--end 11-->
+  
+<operation code="12" name="CheckoutResponse" type="response" function="SIP2_Checkout" back ="11">
+<field name="ok" id="" datacontract="1"  description=""  sent="Y"
+          datasample="1" datadefault="1">
+  <format type="fixed" length="1" startindex="1" required="">
+  </format>
+</field>
+<field name="renewal_ok" id="" datacontract="1"  description=""  sent="Y"
+          datasample="Y" datadefault="Y">
+  <format type="fixed" length="1" startindex="2" required="">
+  </format>
+</field>
+<field name="magnetic_media" id="" datacontract="1"  description=""  sent="Y"
+          datasample="N" datadefault="N">
+  <format type="fixed" length="1" startindex="3" required="">
+  </format>
+</field>
+<field name="desensitize" id="" datacontract="0"  description=""  sent="Y"
+          datasample="N" datadefault="N">
+  <format type="fixed" length="1" startindex="4"  required="">
+  </format>
+</field>
+<field name="transaction_date" id="" datacontract="1"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="5" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="institution_id" id="AO" datacontract="1"  description=""  sent="N"
+          datasample="IDNEXT" datadefault="IDNEXT">
+  <format type="variablelength" start="AO" startindex="23" required="">
+  </format>
+</field>
+<field name="patron_identifier" id="AA" datacontract="1"  description=""  sent="N"
+          datasample="311961403" datadefault="311961403">
+  <format type="variablelength" start="AA" required="">
+  </format>
+</field>
+<field name="item_identifier" id="AB" datacontract="1"  description=""  sent="N"
+          datasample="123456" datadefault="123456">
+  <format type="variablelength" start="AB" required="">
+  </format>
+</field>
+<field name="title_identifier" id="AJ" datacontract="1"  description=""  sent="Y"
+          datasample="Our First Book" datadefault="Our First Book">
+  <format type="variablelength" start="AJ" required="">
+  </format>
+</field>
+<field name="due_date" id="AH" datacontract="1"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AH"  required="DD.MM.YYYY">
+  </format>
+</field>
+<field name="fee_type" id="BT" datacontract="1"  description=""  sent="Y"
+          datasample="6" datadefault="6">
+  <format type="IDfixed"  length="2" start="BT" required="">
+  </format>
+</field>
+<field name="security_inhibit" id="CI" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="IDfixed"  length="1" start="CI" required="">
+  </format>
+</field>
+<field name="currency_type" id="BH" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="IDfixed"  length="3" start="BH" required="">
+  </format>
+</field>
+<field name="fee_amount" id="BV" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault=""> 
+  <format type="variablelength" start="BV" required="">
+  </format>
+</field>
+<field name="media_type" id="CK" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="IDfixed"  length="3" start="CK" required="">
+  </format>
+</field>
+<field name="item_properties" id="CH" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CH" required="">
+  </format>
+</field>
+<field name="transaction_id" id="BK" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="BK" required="">
+  </format>
+</field>
+<field name="screen_message" id="AF" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AF" required="">
+  </format>
+</field>
+<field name="print_line" id="AG" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AG" required="">
+  </format> </field>
+</operation>  <!--end 12-->
+  
+<operation code="29" name="RenewRequest" type="request" function="" back="30">
+<field name="third_party_allowed" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="1" startindex="1"  required="">
+  </format>
+</field>
+<field name="no_block" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="1" startindex="2" required="">
+  </format>
+</field>
+<field name="transaction_date" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="3" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="nb_due_date" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="21" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="institution_id" id="AO" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AO" startindex="39" required="">
+  </format>
+</field>
+<field name="patron_identifier" id="AA" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AA" required="">
+  </format>
+</field>
+<field name="patron_password" id="AD" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AD" required="">
+  </format>
+</field>
+<field name="item_identifier" id="AB" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AB" required="">
+  </format>
+</field>
+<field name="title_identifier" id="AJ" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AJ" required="">
+  </format>
+</field>
+<field name="terminal_password" id="AC" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AC"  required="">
+  </format>
+</field>
+<field name="item_properties" id="CH" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CH" required="">
+  </format>
+</field>
+<field name="fee_acknowledged" id="BO" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="BO" required="">
+  </format>
+</field>
+</operation>   <!--end 29-->
+  
+<operation code="30" name="RenewResponse" type="response" function="" back ="29">
+<field name="ok" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="1" startindex="1" required="">
+  </format>
+</field>
+<field name="renewal_ok" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="1" startindex="2" required="">
+  </format>
+</field>
+<field name="magnetic_media" id="" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="fixed" length="1" startindex="3" required="">
+  </format>
+</field>
+<field name="desensitize" id="" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="fixed" length="1" startindex="4" required="">
+  </format>
+</field>
+<field name="transaction_date" id="" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="5" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="institution_id" id="AO" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AO" startindex="23" required="">
+  </format>
+</field>
+<field name="patron_identifier" id="AA" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AA" required="">
+  </format>
+</field>
+<field name="item_identifier" id="AB" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AB" required="">
+  </format>
+</field>
+<field name="title_identifier" id="AJ" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AJ" required="">
+  </format>
+</field>
+<field name="due_date" id="AH" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AH" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="fee_type" id="BT" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="IDfixed"  length="1" start="BT" required="">
+  </format>
+</field>
+<field name="security_inhibit" id="CI" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="IDfixed"  length="1" start="CI" required="">
+  </format>
+</field>
+<field name="currency_type" id="BH" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="IDfixed"  length="3" start="BH" required="">
+  </format>
+</field>
+<field name="fee_amount" id="BV" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="BV" required="">
+  </format>
+</field>
+<field name="media_type" id="CK" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="IDfixed"  length="3" start="CK" required="">
+  </format>
+</field>
+<field name="item_properties" id="CH" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CH" required="">
+  </format>
+</field>
+<field name="transaction_id" id="BK" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="BK" required="">
+  </format>
+</field>
+<field name="screen_message" id="AF" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AF" required="">
+  </format>
+</field>
+<field name="print_line" id="AG" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AG" required="">
+  </format>
+</field>
+</operation>  <!--end 29-->
+  
+<operation code="37" name="FeePaidRequest" type="request" function="" back="38">
+<field name="transaction_date" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="1"   required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="fee_type" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="2" startindex="19" required="">
+  </format>
+</field>
+<field name="payment_type" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="2" startindex="21" required="">
+  </format>
+</field>
+<field name="currency_type" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="3" startindex="23" required="">
+  </format>
+</field>
+<field name="fee_amount" id="BV" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="BV" startindex="26" required="">
+  </format>
+  </field>
+<field name="institution_id" id="AO" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AO" required="">
+  </format>
+</field>
+<field name="patron_identifier" id="AA" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AA" required="">
+  </format>
+</field>
+<field name="terminal_password" id="AC" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AC" required="">
+  </format>
+</field>
+<field name="patron_password" id="AD" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AD" required="">
+  </format>
+</field>
+<field name="fee_identifier" id="CG" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="CG" required="">
+  </format>
+</field>
+<field name="transaction_id" id="BK" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="BK" required="">
+  </format>
+</field>
+</operation>  <!--end 37-->
+  
+<operation code="38" name="FeePaidResponse" type="response" function="" back ="37">
+<field name="payment_accepted" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="1" startindex="1"  required="">
+  </format>
+</field>
+<field name="transaction_date" id="" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="2" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="institution_id" id="AO" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AO" startindex="20" required="">
+  </format>
+</field>
+<field name="patron_identifier" id="AA" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AA" required="">
+  </format>
+</field>
+<field name="transaction_id" id="BK" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="BK" required="">
+  </format>
+</field>
+<field name="screen_message" id="AF" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AF" required="">
+  </format>
+</field>
+<field name="print_line" id="AG" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AG" required="">
+  </format>
+</field>
+</operation>  <!--end 38-->
+  
+<operation code="35" name="EndPatronSessionRequest" type="request" function="" back="36">
+<field name="transaction_date" id="" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="1" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="institution_id" id="AO" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AO" startindex="19" required="">
+  </format>
+</field>
+<field name="patron_identifier" id="AA" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AA" required="">
+  </format>
+</field>
+<field name="terminal_password" id="AC" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AC" required="">
+  </format>
+</field>
+<field name="patron_password" id="AD" datacontract="0"  description=""  sent="Y"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AD" required="">
+  </format>
+</field>
+</operation>  <!--end 35-->
+  
+<operation code="36" name="EndPatronSessionResponse" type="response" function="" back ="35">
+<field name="end_session" id="" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="fixed" length="1" startindex="1" required="">
+  </format>
+</field>
+<field name="transaction_date" id="" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="fixed" length="18" startindex="2" required="YYYYMMDDZZZZHHMMSS">
+  </format>
+</field>
+<field name="institution_id" id="AO" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AO" startindex="20" required="">
+  </format>
+</field>
+<field name="patron_identifier" id="AA" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AA" required="">
+  </format>
+</field>
+<field name="screen_message" id="AF" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AF" required="">
+  </format>
+</field>
+<field name="print_line" id="AG" datacontract="0"  description=""  sent="N"
+          datasample="" datadefault="">
+  <format type="variablelength" start="AG" required="">
+  </format>
+</field>
+</operation>  <!--end 36-->
+
+  
+
+</liber8>
