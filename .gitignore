@@ -15,7 +15,8 @@
 *.c4u
 *.zip
 *.xlsx
-
+*.dat
+*.asp
 
 
 
